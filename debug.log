@@ -1,0 +1,28 @@
+[0503/152521.066:ERROR:process_info.cc(329)] VirtualQueryEx: Odmowa dostêpu. (0x5)
+[0503/152521.067:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0503/152521.067:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Podjêto próbê uzyskania dostêpu do procesu koñcz¹cego dzia³anie. (0xc000010a)
+[0508/104217.401:ERROR:process_info.cc(329)] VirtualQueryEx: Odmowa dostêpu. (0x5)
+[0508/104217.401:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0508/104217.401:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Podjêto próbê uzyskania dostêpu do procesu koñcz¹cego dzia³anie. (0xc000010a)
+[0520/143637.205:ERROR:file_io.cc(134)] WriteFile: Trwa zamykanie potoku. (0xE8)
+[0608/105718.164:ERROR:file_io.cc(134)] WriteFile: Trwa zamykanie potoku. (0xE8)
+[0608/173723.491:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0608/173723.492:ERROR:exception_snapshot_win.cc(98)] thread ID 20992 not found in process
+[0608/181148.208:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0608/181148.208:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0608/181148.208:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0608/181148.208:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0608/181148.208:ERROR:exception_snapshot_win.cc(98)] thread ID 16136 not found in process
+[0611/130737.219:ERROR:file_io.cc(134)] WriteFile: Trwa zamykanie potoku. (0xE8)
+[0612/124109.488:ERROR:process_info.cc(329)] VirtualQueryEx: Odmowa dostêpu. (0x5)
+[0612/124109.510:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0612/124109.510:ERROR:process_memory_win.cc(39)] Failed to initialize ProcessInfo.
+[0612/124109.510:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Podjêto próbê uzyskania dostêpu do procesu koñcz¹cego dzia³anie. (0xc000010a)
+[0612/190731.123:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0612/190731.123:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0612/190731.123:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0612/190731.123:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0612/190731.123:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0612/190731.123:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0612/190731.123:ERROR:exception_snapshot_win.cc(98)] thread ID 10604 not found in process
+[0723/174901.776:ERROR:file_io.cc(134)] WriteFile: Trwa zamykanie potoku. (0xE8)
