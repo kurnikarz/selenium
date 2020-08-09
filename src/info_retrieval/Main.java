@@ -650,7 +650,7 @@ public class Main extends Narzedzia{
         grupy[27] = "https://www.facebook.com/groups/1622951457992792/";
         grupy[28] = "https://www.facebook.com/groups/1781838958705367/";
         grupy[29] = "https://www.facebook.com/groups/172681430256680/";
-        grupy[30] = "https://www.facebook.com/groups/zarabianie.praca.biznes.online/";
+        grupy[30] = "https://www.facebook.com/groups/zarabianie.praca.biznes.online/"; //TU
         grupy[31] = "https://www.facebook.com/groups/ZarabianiePrzezInternet/";
         grupy[32] = "https://www.facebook.com/groups/kryptorodzina/";
         grupy[33] = "https://www.facebook.com/groups/MLM.w.POLSCE/";
@@ -723,7 +723,7 @@ public class Main extends Narzedzia{
                     Thread.sleep(3000);
                     Narzedzia.ScrollBy(driver, "300");
                     Thread.sleep(1000);
-                    /*
+
                     try {
                         driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div/div[2]/div[1]/div/div/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[1]/td[1]/div")).click();
                     } catch (Exception e) {
@@ -736,7 +736,7 @@ public class Main extends Narzedzia{
                     Thread.sleep(1000);
                     robot.keyPress(KeyEvent.VK_ENTER);
                     Thread.sleep(17000);
-                    */
+
                     Thread.sleep(3000);
                     driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
                     Thread.sleep(1000);
@@ -1807,6 +1807,7 @@ public class Main extends Narzedzia{
         Scanner numerKon = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\numerKon.txt"));
         Scanner mailKon = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\konkursy.txt"));
         Scanner spartoo = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\spartoo.txt"));
+        Scanner samsung = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\samsung.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\everyInt.txt"));
@@ -1858,22 +1859,36 @@ public class Main extends Narzedzia{
         odp.add("Najlepszy czas na sprzątanie to taki kiedy zobaczymy że jest brudno");
         odp.add("Najlepiej się sprząta zgodnie z fazami księżyca, wtedy wszystko wychodzi dobrze");
 
-
         Random r = new Random();
         String mail2;
         String mail3;
         String numer;
 
-        String post = "UWAGA! Prosze o udostepnianie aby jak najwiecej ludzi ostrzec! SCAM i szukanie jeleni dobrze, że są jeszcze ludzie jak autor filmu który wyjaśnia jak to wszystko dziala! \n" +
-                "Udostępnij! Tobie zajmie to chwile a może ostrzeże potencjalne nowe ofiary. \n" +
+        String post = "Uwaga Udostepniac!\n" +
+                "Moi drodzy pamiętacie akcje POLOWANIE NA HEJTERA ZA 1000zl! \n" +
+                "Właśnie ją powtarzamy! Po ogromnym sukcesie i wyeliminowaniu kilku osobników z życia na FB czas na ostatniego!\n" +
+                "Pawel Zdziech znany oszust i scamer na swoje  dziwne linki. Mało tego publiczne grozi mojemu dziecku że cytuje „Rozj*bie szczeniaka i Twoja tłusta lochę” \n" +
+                "Z racji że nie pozwolę publicznie obrażać rodziny prosze Was abyście zgłaszali jego profil! WAZNE! Zgłaszać trzeba najlepiej jako fałszywe konto i prześladowanie i tu istotne aby zawsze zaznaczyć wysłanie prośby o sprawdzenie do pracownika FB (bedzie taka opcja przy zgloszeniu) Dalej algorytmy zrobią już swoje i konto poleci na amen jak wcześniej miało już to miejsce. \n" +
+                "Pierwsza osoba która wyśle screana jako dowód że konto zostało zablokowane dostaje 1000zl. Każde samo zgłoszenie i screan to 20zl extra! Im więcej tym lepiej! \n" +
+                "Proszę Was o pomoc i zapraszam do zapoznania się z filmem na temat tej kanalii gdzie jasno pokazałem jak oszukuje ludzi. Bardzo merytorycznie i treściwie. Wszystko macie na moim blogu: \n" +
+                "Miroslawklos .pl (Bez spacji przed kropka bo FB tnie zasięgi)\n" +
+                "Dla Was to chwila a pozbędziemy się kolejnej upośledzonej osoby z tej społeczności. \n" +
+                "1000zl dla mnie to nie wiele a zapewne komuś się przyda! \n" +
+                "Link do jego profilu:\n" +
                 "\n" +
-                "https://youtu.be/tgoy1RUHT2I";
+                "https://www.facebook.com/pzdziech1983";
+        for (int i=0;i<90;i++){
+            Neworklead.Cpc("dede","dede");
+            System.out.println(i);
+            Koniec.RestarHujawei();
+        }
+
         try {
-            String[] fb = {"natalia.woszczylo@o2.pl","ewa1dymkowska@gmail.com"};
-            String haslo[] = {"natalia123456","Arturek1040"};
+            String[] fb = {"natalia.woszczylo@o2.pl","ewa1dymkowska@gmail.com","dumcio.97@wp.pl"};
+            String haslo[] = {"natalia654321","Arturek1050","MrcbucHv2.6"};
             /*
-            for (int i=0;i<fb.length;i++){
-                dodajPostLepak(fb[i],haslo[i],post,0,25);
+            for (int i=0;i<fb.length-1;i++){
+                dodajPostLepak(fb[i],haslo[i],post,50,55);
                 System.out.println(i);
                 System.out.println(fb[i]);
                 Koniec.RestarHujawei();
@@ -1886,46 +1901,8 @@ public class Main extends Narzedzia{
                 Koniec.RestarHujawei();
             }
 
-            for (int i=1;i<=160;i++){
-                interia();
-                if (i%20==0)
-                    Koniec.RestarHujawei();
-                System.out.println(i);
-            }
-
-
-            //pobierzAdres(100);
-            int j = 11;
-            for (int i=11;i<=100;i++){
-                kodVee = kodVe.nextLine();
-                ulicaVee = ulicaVe.nextLine();
-                miastoVee = miastoVe.nextLine();
-                mail = everyInt.nextLine();
-                if (i%2==0)
-                    Neworklead.Every3(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else
-                    Neworklead.Every4(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                j++;
-                if (j > 31)
-                    j = 0;
-                System.out.println(i);
-                System.out.println(mail);
-                Koniec.RestarHujawei();
-            }
-
              */
 
-            int j = 6;
-            for (int i=36;i<60;i++){
-                kodVee = kodVe.nextLine();
-                ulicaVee = ulicaVe.nextLine();
-                miastoVee = miastoVe.nextLine();
-                mail = everyInt.nextLine();
-                Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                System.out.println(i);
-                System.out.println(mail);
-                Koniec.RestarHujawei();
-            }
         }
          catch (Exception e) {
             blad.println(e);
@@ -1936,6 +1913,7 @@ public class Main extends Narzedzia{
             wylacz();
         }
         wylacz();
+
 
     }
 }
