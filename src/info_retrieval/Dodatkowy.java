@@ -1984,208 +1984,126 @@ public class Dodatkowy extends Narzedzia {
 
     }
 
-    public static void EveryZbiorowe11(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        OperaOptions options = new OperaOptions();
-        options.setBinary("E:\\Programy\\Opera\\69.0.3686.77\\opera.exe");
-        System.setProperty("webdriver.opera.driver","E:\\bot\\operadriver\\operadriver.exe");
-        WebDriver driver = new OperaDriver(options);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        driver.manage().window().maximize();
-
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/c83a1222f4743402a824d539c7e920c9/395f9228e215ba2ce7abdb3808296edf/201920950f63cee967982b759fde80b1");
-        Thread.sleep(5000);
-        driver.get("http://tajemniczaaaakonstiiii.blogspot.com/");
-        Thread.sleep(10000);
-        Zmniejsz(2);
-        Thread.sleep(1000);
-        clickXY(1300,908);
-        clickXY(1300,980);
-        Thread.sleep(25000);
-        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
-        Thread.sleep(1000);
-
-    }
-
-    public static void EveryZbiorowe12(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        OperaOptions options = new OperaOptions();
-        options.setBinary("E:\\Programy\\Opera\\69.0.3686.77\\opera.exe");
-        System.setProperty("webdriver.opera.driver","E:\\bot\\operadriver\\operadriver.exe");
-        WebDriver driver = new OperaDriver(options);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        driver.manage().window().maximize();
-
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/c83a1222f4743402a824d539c7e920c9/395f9228e215ba2ce7abdb3808296edf/201920950f63cee967982b759fde80b1");
-        Thread.sleep(5000);
-        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2019/01/najwiekszy-przyjaciel-naszej-rodziny.html");
-        Thread.sleep(10000);
-        clickXY(786,860);
-        Thread.sleep(25000);
-        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
-        Thread.sleep(1000);
-
-    }
-
-    public static void EveryZbiorowe13(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        OperaOptions options = new OperaOptions();
-        options.setBinary("E:\\Programy\\Opera\\69.0.3686.77\\opera.exe");
-        System.setProperty("webdriver.opera.driver","E:\\bot\\operadriver\\operadriver.exe");
-        WebDriver driver = new OperaDriver(options);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        driver.manage().window().maximize();
-
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/c83a1222f4743402a824d539c7e920c9/395f9228e215ba2ce7abdb3808296edf/201920950f63cee967982b759fde80b1");
-        Thread.sleep(5000);
-        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/11/nowy-przyjaciel-zakuj.html");
-        Thread.sleep(10000);
-        clickXY(783,709);
-        Thread.sleep(25000);
-        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
-        Thread.sleep(1000);
-
-    }
-
-    public static void EveryZbiorowe14(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        OperaOptions options = new OperaOptions();
-        options.setBinary("E:\\Programy\\Opera\\69.0.3686.77\\opera.exe");
-        System.setProperty("webdriver.opera.driver","E:\\bot\\operadriver\\operadriver.exe");
-        WebDriver driver = new OperaDriver(options);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        driver.manage().window().maximize();
-
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/c83a1222f4743402a824d539c7e920c9/395f9228e215ba2ce7abdb3808296edf/201920950f63cee967982b759fde80b1");
-        Thread.sleep(5000);
-        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/06/wawel-z-miosci-do-radosci.html");
-        Thread.sleep(10000);
-        clickXY(766,760);
-        Thread.sleep(25000);
-        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
-        Thread.sleep(1000);
-
-    }
-
-    public static void EveryZbiorowe15(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        OperaOptions options = new OperaOptions();
-        options.setBinary("E:\\Programy\\Opera\\69.0.3686.77\\opera.exe");
-        System.setProperty("webdriver.opera.driver","E:\\bot\\operadriver\\operadriver.exe");
-        WebDriver driver = new OperaDriver(options);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        driver.manage().window().maximize();
-
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/c83a1222f4743402a824d539c7e920c9/395f9228e215ba2ce7abdb3808296edf/201920950f63cee967982b759fde80b1");
-        Thread.sleep(5000);
-        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2016/10/odzywka-do-paznokci-eveline-nail.html");
-        Thread.sleep(10000);
-        clickXY(766,760);
-        Thread.sleep(25000);
-        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
-        Thread.sleep(1000);
-
-    }
-
-    public static void EveryZbiorowe16(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        OperaOptions options = new OperaOptions();
-        options.setBinary("E:\\Programy\\Opera\\69.0.3686.77\\opera.exe");
-        System.setProperty("webdriver.opera.driver","E:\\bot\\operadriver\\operadriver.exe");
-        WebDriver driver = new OperaDriver(options);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        driver.manage().window().maximize();
-
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/c83a1222f4743402a824d539c7e920c9/395f9228e215ba2ce7abdb3808296edf/201920950f63cee967982b759fde80b1");
-        Thread.sleep(5000);
-        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2016/10/podkad-maybelline-affinitone-hd.html");
-        Thread.sleep(10000);
-        clickXY(766,760);
-        Thread.sleep(25000);
-        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
-        Thread.sleep(1000);
-
-    }
-
-    public static void EveryZbiorowe17(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        OperaOptions options = new OperaOptions();
-        options.setBinary("E:\\Programy\\Opera\\69.0.3686.77\\opera.exe");
-        System.setProperty("webdriver.opera.driver","E:\\bot\\operadriver\\operadriver.exe");
-        WebDriver driver = new OperaDriver(options);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        driver.manage().window().maximize();
-
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/c83a1222f4743402a824d539c7e920c9/395f9228e215ba2ce7abdb3808296edf/201920950f63cee967982b759fde80b1");
-        Thread.sleep(5000);
-        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2016/10/odzywka-do-rzes-long-4-lashes.html");
-        Thread.sleep(10000);
-        clickXY(766,694);
-        Thread.sleep(25000);
-        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
-        Thread.sleep(1000);
-
-    }
-
-    public static void EveryZbiorowe21(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+    public static void Every1(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/a6d5b570066886e9a56d4430c3f538e8/52eb5c6961b03686e91c8906c7b868b9/201920950f63cee967982b759fde80b1");
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/ac86f5ba1983d6a4860d0c22ee2a7679/12c2301aaa9042c9228b48640bccd5cf/201920950f63cee967982b759fde80b1");
         Thread.sleep(5000);
-        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2017/11/makijaz-pauliny.html");
+        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/06/uroczystosc-rodzinna.html");
         Thread.sleep(10000);
-        clickXY(776,770);
+        clickXY(773,837);
+
         Thread.sleep(25000);
         Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
         Thread.sleep(1000);
 
     }
 
-    public static void EveryZbiorowe22(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+    public static void Every2(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/a6d5b570066886e9a56d4430c3f538e8/52eb5c6961b03686e91c8906c7b868b9/201920950f63cee967982b759fde80b1");
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/ac86f5ba1983d6a4860d0c22ee2a7679/12c2301aaa9042c9228b48640bccd5cf/201920950f63cee967982b759fde80b1");
         Thread.sleep(5000);
-        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2017/11/soczewki-tak-czy-nie-promocja-acuvue.html");
+        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/05/niespodzianka-od-trade-tracker.html");
         Thread.sleep(10000);
-        clickXY(783,860);
+        clickXY(773,753);
+
         Thread.sleep(25000);
         Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
         Thread.sleep(1000);
 
     }
 
-    public static void EveryZbiorowe23(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+    public static void Every3(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/a6d5b570066886e9a56d4430c3f538e8/52eb5c6961b03686e91c8906c7b868b9/201920950f63cee967982b759fde80b1");
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/ac86f5ba1983d6a4860d0c22ee2a7679/12c2301aaa9042c9228b48640bccd5cf/201920950f63cee967982b759fde80b1");
         Thread.sleep(5000);
-        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2017/11/drozdze-piwowarskie.html");
+        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/03/zima-zima-po-zimie-wiosna.html");
         Thread.sleep(10000);
-        clickXY(770,711);
+        clickXY(773,688);
+
         Thread.sleep(25000);
         Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
         Thread.sleep(1000);
 
     }
 
-    public static void EveryZbiorowe24(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+    public static void Every11(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/a6d5b570066886e9a56d4430c3f538e8/52eb5c6961b03686e91c8906c7b868b9/201920950f63cee967982b759fde80b1");
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/fbcfaf5ffcfd9dcf1c1276f9c9c95fb8/338e8abc23a44c7a31b3b9299ffe10cd/201920950f63cee967982b759fde80b1");
         Thread.sleep(5000);
         driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/02/spacer.html");
         Thread.sleep(10000);
-        clickXY(780,707);
+        clickXY(786,765);
+
+        Thread.sleep(25000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+    }
+
+    public static void Every22(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/ac86f5ba1983d6a4860d0c22ee2a7679/12c2301aaa9042c9228b48640bccd5cf/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2017/11/drozdze-piwowarskie.html");
+        Thread.sleep(10000);
+        clickXY(755,715);
+
+        Thread.sleep(25000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+    }
+
+    public static void Every33(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/ac86f5ba1983d6a4860d0c22ee2a7679/12c2301aaa9042c9228b48640bccd5cf/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/05/niespodzianka-od-trade-tracker.html");
+        Thread.sleep(10000);
+        clickXY(779,880);
+
         Thread.sleep(25000);
         Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
         Thread.sleep(1000);
@@ -2201,19 +2119,33 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/4373bf90ad58c8e2f43bec7394a4aade/9b474dbf3309083991f65298e4a5fb44/201920950f63cee967982b759fde80b1");
-        Thread.sleep(3000);
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/ca3172cbf7284005cba393202436d4bb/79732e264371a1c440a2ec88fb21342b/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://technologicznaprzyszlosc.blogspot.com/2019/11/cybertruck-od-tesli-nowa-zabawka-elona.html");
+        Thread.sleep(10000);
+        clickXY(745,850);
 
-        Zmniejsz(4);
+        Thread.sleep(25000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
         Thread.sleep(1000);
-        ScrollBy(driver,"700");
-        Thread.sleep(1000);
-        ScrollBy(driver,"-700");
-        Thread.sleep(1000);
-        clickXY(1205,960);
-        clickXY(1205,962);
-        clickXY(1205,964);
-        clickXY(1205,966);
+
+    }
+
+    public static void Every77(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/ca3172cbf7284005cba393202436d4bb/79732e264371a1c440a2ec88fb21342b/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://technologicznaprzyszlosc.blogspot.com/2019/11/iphone-11-sprzedaje-sie-jak-swieze.html");
+        Thread.sleep(10000);
+        clickXY(745,853);
+
         Thread.sleep(25000);
         Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
         Thread.sleep(1000);
@@ -2347,6 +2279,148 @@ public class Dodatkowy extends Narzedzia {
         driver.quit();
 
         } catch (Exception f){
+            driver.quit();
+        }
+
+    }
+
+    public static void Cola(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        int dzien = r.nextInt(29)+1;
+        int miesiac = r.nextInt(11)+1;
+        int rok = r.nextInt(1994 - 1980 + 1) + 1980;
+        int kupon = r.nextInt(2);
+        boolean flaga = false;
+        boolean flaga2 = false;
+        boolean flaga3 = false;
+        int m = 0;
+        int n = 0;
+        int k = 0;
+        String imie = null;
+        String nazwisko = null;
+        if (plec == 0){
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        options.addExtensions(new File("E:\\bot\\captcha.crx"));
+        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        ChromeDriver driver = new ChromeDriver(options);
+
+        try {
+            driver.manage().window().maximize();
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/8c620fe20f83883f756882d79cc36000/492abc71bebe029fab117c00cbc695f0/201920950f63cee967982b759fde80b1");
+            //driver.get("https://www.coca-cola.pl/coca-cola-od-nas");
+
+            Thread.sleep(10000);
+            Zmniejsz(3);
+            Thread.sleep(1000);
+            clickXY(793,960);
+
+            Thread.sleep(20000);
+            zmienKarte(driver);
+            Thread.sleep(1000);
+
+            while (!flaga2) {
+                try {
+                    driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[4]/div[2]/div/button")).click();
+                    flaga2 = true;
+                } catch (Exception e) {
+                    Thread.sleep(5000);
+                }
+                if (n == 4){
+                    break;
+                }
+                n++;
+            }
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("/html/body/div[3]/div/div/div/div[6]/div/div[1]/span/a/button/span")).click();
+            Thread.sleep(7000);
+            driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/div/div[9]/div/div/div[1]/p/a/u")).click();
+            Thread.sleep(7000);
+            while (!flaga3) {
+                try {
+                    driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys(imie);
+                    driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys(nazwisko);
+                    driver.findElement(By.xpath("//*[@id=\"emailAddress\"]")).sendKeys(mail);
+                    driver.findElement(By.xpath("//*[@id=\"birthdate_day\"]")).sendKeys(String.valueOf(dzien));
+                    driver.findElement(By.xpath("//*[@id=\"birthdate_month\"]")).sendKeys(String.valueOf(miesiac));
+                    driver.findElement(By.xpath("//*[@id=\"birthdate_year\"]")).sendKeys(String.valueOf(rok));
+                    driver.findElement(By.xpath("//*[@id=\"newPassword\"]")).sendKeys(mail+"V2");
+                    driver.findElement(By.xpath("//*[@id=\"newPasswordConfirm\"]")).sendKeys(mail+"V2");
+                    driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/div/div[2]/span/div/div[1]/form/div[8]/label/span")).click();
+                    Thread.sleep(1000);
+                    driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/div/div[2]/span/div/div[1]/form/div[9]/label/span")).click();
+                    driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/div/div[2]/span/div/div[1]/form/div[10]/label/span")).click();
+                    Thread.sleep(1000);
+                    driver.switchTo().frame(0);
+                    Thread.sleep(1000);
+                    driver.findElement(By.xpath("//*[@id=\"recaptcha-anchor-label\"]")).click();
+                    Thread.sleep(5000);
+                    for (int i=0;i<5;i++){
+                        clickXY(965,1028);
+                        Thread.sleep(3000);
+                    }
+                    driver.switchTo().defaultContent();
+                    Thread.sleep(1000);
+                    driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/div/div[2]/span/div/div[1]/form/button")).click();
+                    Thread.sleep(10000);
+                    flaga3 = true;
+                } catch (Exception e){
+                    driver.navigate().refresh();
+                    Thread.sleep(6000);
+                }
+                if (k == 10){
+                    break;
+                }
+                k++;
+            }
+
+
+            //WP
+            driver.get("http://poczta.wp.pl/");
+            Thread.sleep(3000);
+            driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
+            //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+            //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"btnSubmit\"]")).click();
+            Thread.sleep(10000);
+            while (!flaga) {
+                try {
+                    driver.findElement(By.xpath("//*[text()='Coca-Cola']")).click();
+                    Thread.sleep(3000);
+                    driver.findElement(By.xpath("/html/body/div/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr/td/center/div[2]/table[2]/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/a")).click();
+                    Thread.sleep(10000);
+                    zmienKarte(driver);
+                    Thread.sleep(1000);
+                    driver.findElement(By.xpath("//*[@id=\"signInEmailAddress\"]")).sendKeys(mail);
+                    driver.findElement(By.xpath("//*[@id=\"currentPassword\"]")).sendKeys(mail+"V2");
+                    Thread.sleep(1000);
+                    driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/div/div[7]/span/div/div[1]/form/button")).click();
+                    Thread.sleep(10000);
+                    if (kupon == 0){
+                        driver.findElement(By.xpath("/html/body/div[3]/div/div/div/div[8]/div/div[1]/form/button")).click();
+                        Thread.sleep(5000);
+                    }
+                    flaga = true;
+                } catch (Exception e) {
+                    driver.navigate().refresh();
+                    Thread.sleep(10000);
+                }
+                if (m == 5) {
+                    break;
+                }
+                m++;
+            }
+            driver.quit();
+        } catch (Exception e){
             driver.quit();
         }
 

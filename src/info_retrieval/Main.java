@@ -611,6 +611,8 @@ public class Main extends Narzedzia{
     public static void dodajPostLepak(String mail, String haslo, String post, int a, int b) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
+        options.addExtensions(new File("E:\\bot\\captcha.crx"));
+        options.addExtensions(new File("E:\\bot\\buster.crx"));
         /*
         options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Googlehttps://www.facebook.com/groups/172681430256680/\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile "+profil);
@@ -756,6 +758,7 @@ public class Main extends Narzedzia{
                     linki.append(driver.getCurrentUrl()+"\r\n");
                 } catch (Exception e) {
                     try {
+                        driver.findElement(By.xpath("//*[text()='Dołacz do grupy']")).click();
                         Thread.sleep(5000);
                     } catch (Exception d) {
                         System.out.println("====================== "+grupy[i]+" ===================");
@@ -1783,6 +1786,7 @@ public class Main extends Narzedzia{
 
     public static void main(String[] args) throws InterruptedException, IOException, AWTException {
         Scanner kod = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\kod.txt"));
+        Scanner cola = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\cola.txt"));
         Scanner loginy = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\loginy.txt"));
         Scanner nestle3 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\nestle3.txt"));
         Scanner mailVee = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\mail.txt"));
@@ -1825,84 +1829,137 @@ public class Main extends Narzedzia{
         List<String> odp = new ArrayList<>();
         String[] maileArk = new String[80];
 
-        //Kiedy, Twoim zdaniem, jest najlepszy czas na sprzątanie domu?
-        odp.add("Moim zdaniem najlepszym czas na sprzątanie jest w piątek po południu");
-        odp.add("W sobotę rano najlepiej mi się sprząta");
-        odp.add("Najlepiej mi się sprząta kiedy nie ma nikogo w domu");
-        odp.add("Dla mnie najlepiej się sprząta w sobotę kiedy mój mąż jest na rybach");
-        odp.add("Najlepszy czas na sprzątanie to gdy dzieci są w szkole");
-        odp.add("Najlepiej mi się sprząta jak mąż wyjdzie z kolegami na piwo");
-        odp.add("Ja akurad sprzątam codziennie bo sprawia mi to przyjemność");
-        odp.add("Najlepszy czas na sprzątanie to ten kiedy mam wolne od pracy");
-        odp.add("Sprzątam wtedy kiedy muszę");
-        odp.add("Najlepszy czas dla mnie na sprzątanie to kiedy wracam z pracy");
-        odp.add("Sprzątam wtedy kiedy robi się brudno");
-        odp.add("Najlepszy czas na sprzątanie to ten czas, w którym odczuwamy bałagan w domu");
-        odp.add("Według mnie najlepiej jest sprzątać często, ale krótko");
-        odp.add("Powinniśmy sprzątać zgodnie z fazami księżyca");
-        odp.add("Raz w miesiącu powinniśmy porządnie wysprzątać mieszkanie");
-        odp.add("Lubię sprzątać dom w piątek po południu gdy już zaczyna się weekend a ja skończę pracę");
-        odp.add("Dla mnie najlepiej się sprząta w sobotę rano, a później robię obiad");
-        odp.add("Najlepszy czas na sprzątanie to gdy jestem sama w domu i nikt mi nie przeszkadza");
-        odp.add("Lubię sprzątać jak mąż pojedzie z kolegami na ryby");
-        odp.add("Sprzątam jak dzieci są w szkole a mąż w pracy");
-        odp.add("Ja mam dużo czasu więc sprzątam codziennie");
-        odp.add("Najlepszy czas dla mnie na sprzątanie to jak wrócę z pracy a na następny dzień mam wolne");
-        odp.add("Ja sprzątam jak jest brudno");
-        odp.add("Gdy zbliżają się jakieś święta lub jakiś wielki dzień");
-        odp.add("Sprzątam w domu kiedy uznam że jest bałagan");
-        odp.add("Lubię często sprzątać dzięki czemu nie zabiera mi to tak wiele czas jak bym sobie odkładała na później");
-        odp.add("Najlepszy czas na sprzątanie to gdy jesteśmy wypoczęci i nikt nam nie przeszkadza");
-        odp.add("Lubię sprzątać gdy akurad niema nikogo w domu");
-        odp.add("Sobota jest odpowiednim dniem na sprzątanie");
-        odp.add("Sprzątam zawsze w piątki i soboty");
-        odp.add("Najlepszy czas na sprzątanie to taki kiedy zobaczymy że jest brudno");
-        odp.add("Najlepiej się sprząta zgodnie z fazami księżyca, wtedy wszystko wychodzi dobrze");
+        //Jak dbasz o urodę latem ?
+        odp.add("Regularnie złuszczam swoją skórę naturalnym peelingiem na przykład kawa z odrobiną olejku");
+        odp.add("Jak jest mocne słońce to staram się pozostawać w cieniu o ile to możliwe");
+        odp.add("Zdecydowanie więcej piję wody ze względu na upały jakie panują podczas lata");
+        odp.add("Nakładam minimalny makijaż ponieważ przy wysokich temperaturach makijaż może spływać i bardzo nie ładnie do wygląa");
+        odp.add("Troskliwie oczyszczam swoją twarz w tym celu stosuję żel do mycia twarzy, który usuwa pozostałości po makijażu");
+        odp.add("Dostarczam swojej skórze antyoksydantów aby zapewnić jej optymalną pielęgnację");
+        odp.add("Gdy jest mocne słońce chronię swoją skórę filtrami przeciwsłonecznymi");
+        odp.add("Gdy się opalam zbyt długo to stosuję jakiś dobrej jakości balsam po opalaniu, żeby pomóc swojej skórze");
+        odp.add("Gdy moja skóra staje się podrażniona używam wody termalnej");
+        odp.add("Dwa razy dziennie bardzo dokładnie oczyszczam swoją twarz, przed snem w celu usunięcia makijażu oraz rano");
+        odp.add("Do demakijażu oczu stosuję specjalnie do tego celu przygotowane kosmetyki");
+        odp.add("Każdy nowy dzień zxaczynam od wypicia wody z miodem");
+        odp.add("Staram się dobrze odżywiać, jeść owoce i warzywa");
+        odp.add("Stosuję produkty bogate w wyraminę E i kwasy omega 3");
+        odp.add("Dwa razy w tygodniu robię sobie peelink ciała przygotowany na bazie kawy, cynamonu oraz oliwy z oliwek");
+        odp.add("W diecie staram się ogarniczać jak to tylko mozliwe cukier oraz sól, używam zamienników");
+        odp.add("Co najmniej 3 razy w tygodniu staram się wykonywać jakąś czynność fizyczną - spacer, jazda na rowerze albo pływanie w jeziorze");
+        odp.add("Raz w tygodniu organizuję sobie kąpiek z dodatkiem miodu oraz mleka");
+        odp.add("Robię sobie maseczkę ziołową na twarz");
+        odp.add("Kupuję kremy z filtrem głęboko nawilżające");
+        odp.add("Staram się nie opalać twarzy zabezpieczając kremem z filtrem");
+        odp.add("Robię sobię okłady z zielonego ogórka wieczorem");
+        odp.add("Staram się regularnie smarować swoją skórę naturalnym peelingiem");
+        odp.add("Nie wychodzę na mocne słońce jeżeli nie mam takiej palącej potrzeby");
+        odp.add("Piję bardzo dużo wodu mineralnej nie gazowanej żeby nawodnić swój organizm");
+        odp.add("Nie nakładam tak dużo makijażu na twarz, ponieważ w lato jest gorąco i makijaż spływa co nie wygląda zbyt elegancko");
+        odp.add("Bardzo starannie oczyszczam swoją twarz");
+        odp.add("Gdy słońce mocno świeci to smaruję swoją skóręfiltrami przeciwsłonecznymi");
+        odp.add("Czasami używam wody termalnej w celu nawilżenia swojej skóry");
 
         Random r = new Random();
         String mail2;
         String mail3;
         String numer;
 
-        String post = "Uwaga Udostepniac!\n" +
-                "Moi drodzy pamiętacie akcje POLOWANIE NA HEJTERA ZA 1000zl! \n" +
-                "Właśnie ją powtarzamy! Po ogromnym sukcesie i wyeliminowaniu kilku osobników z życia na FB czas na ostatniego!\n" +
-                "Pawel Zdziech znany oszust i scamer na swoje  dziwne linki. Mało tego publiczne grozi mojemu dziecku że cytuje „Rozj*bie szczeniaka i Twoja tłusta lochę” \n" +
-                "Z racji że nie pozwolę publicznie obrażać rodziny prosze Was abyście zgłaszali jego profil! WAZNE! Zgłaszać trzeba najlepiej jako fałszywe konto i prześladowanie i tu istotne aby zawsze zaznaczyć wysłanie prośby o sprawdzenie do pracownika FB (bedzie taka opcja przy zgloszeniu) Dalej algorytmy zrobią już swoje i konto poleci na amen jak wcześniej miało już to miejsce. \n" +
-                "Pierwsza osoba która wyśle screana jako dowód że konto zostało zablokowane dostaje 1000zl. Każde samo zgłoszenie i screan to 20zl extra! Im więcej tym lepiej! \n" +
-                "Proszę Was o pomoc i zapraszam do zapoznania się z filmem na temat tej kanalii gdzie jasno pokazałem jak oszukuje ludzi. Bardzo merytorycznie i treściwie. Wszystko macie na moim blogu: \n" +
-                "Miroslawklos .pl (Bez spacji przed kropka bo FB tnie zasięgi)\n" +
-                "Dla Was to chwila a pozbędziemy się kolejnej upośledzonej osoby z tej społeczności. \n" +
-                "1000zl dla mnie to nie wiele a zapewne komuś się przyda! \n" +
-                "Link do jego profilu:\n" +
+        String post = "Post od Mirosława! \n" +
+                "UWAGA! Nota prawna: Każda osoba która skomentuje ten post zgadza się na upublicznienie swoich danych osobowych, wpisów, listy znajomych oraz wszystkiego co ma w swoim profilu. Na kolejnym filmie Miroslawa Klos!\n" +
                 "\n" +
-                "https://www.facebook.com/pzdziech1983";
-        for (int i=0;i<90;i++){
-            Neworklead.Cpc("dede","dede");
-            System.out.println(i);
-            Koniec.RestarHujawei();
-        }
+                "Jedni nazywają mnie pogromcą smoków inni gwałcicielem niewiast ;) Ogólnie nazwisko Klos mocno elektryzuje ludzi w internecie. Działam już publicznie od wielu lat zarabiając na grach wideo w wersji cyfrowej. W skrócie kupujemy jedną grę za 20zł i sprzedajemy cały czas na portalach aukcyjnych jak Allegro czy Ebay. Generując w ten sposób stały zysk. Przez te wszystkie lata były już przeróżne historie na mój temat. Była słynna na całą Polskę Madzia ze Szczecina. Wariatka, chora kobieta czy jak wielu sądzi nieszczęśliwie zakochana we mnie, która w rozpaczy zgłasza mnie na policję czy do urzędu skarbowego. Był nie mniej słynny Recacly Bot gdzie zainwestowałem 13000zł tylko po to aby pokazać jak tego typu programy zarabiania działają. Pamiętam jak mnie wtedy tu zlinczowali 'Klos oszuście nie kłam! Ten program wypłaca!'' Gdzie dziś jest RB? Pewnie tam gdzie Wasze pieniądze \uD83D\uDE02 czyli chu* wie gdzie \uD83D\uDE2D \n" +
+                "Wszystkie te historie jak i wiele więcej znajdziecie na moim blogu jak i na kanale youtube. Obnażając te Wasze scamy stałem się wrogiem publicznym nr 1. Ponieważ uświadamiam ludzi i nie możecie już tylu jeleni łapać co kiedyś \uD83E\uDD8C\n" +
+                "Gry wideo to branża, która rozwija się niesamowicie. Dziś grają wszyscy i Ci mali i Ci duzi. Sam działam na ponad 10 portalach aukcyjnych głównie za granicą i mam aktywnych ponad 1000 aukcji! Na tym etapie to wszystko już pracuje samodzielnie. Razem ze mną współpracuje wielu z Was! Wielu też odmieniło swoje życie i bardzo się cieszę, że miałem w tym swój udział. Jeżeli i Ty chcesz dołączyć do mojego zespołu to zapraszam serdecznie na mojego Bloga gdzie uczę jak sam zarabiam w internecie!\n" +
+                "\n" +
+                "Blog:  Miroslawklos .pl  (Bez spacji przed kropką bo FB tnie zasięgi)\n" +
+                "\n" +
+                "Lub email:  Dishar82@gmail.com \n" +
+                "\n" +
+                "Napisz! Pomogłem już wielu ludziom, pomogę i Tobie!";
 
         try {
-            String[] fb = {"natalia.woszczylo@o2.pl","ewa1dymkowska@gmail.com","dumcio.97@wp.pl"};
-            String haslo[] = {"natalia654321","Arturek1050","MrcbucHv2.6"};
-            /*
-            for (int i=0;i<fb.length-1;i++){
-                dodajPostLepak(fb[i],haslo[i],post,50,55);
+            String[] fb = {"dumcio.97@wp.pl","natalia.woszczylo@o2.pl","ewa1dymkowska@gmail.com","aga.dobrowolska0@gmail.com"};
+            String haslo[] = {"MrcbucHv2.9","Natalia65432109","Arturek1070","Mrcbuch1234"};
+            int j = 1;
+            int x = 84;
+
+            for (int i=2;i<=83;i++){
+                mail = cola.nextLine();
+                mail2 = everyInt.nextLine();
+                ulicaVee = ulicaVe.nextLine();
+                miastoVee = miastoVe.nextLine();
+                kodVee = kodVe.nextLine();
+                if (i%2==0)
+                    Neworklead.EverySap1c(mail2, kodVee, ulicaVee, miastoVee, odp.get(j));
+                else
+                    Neworklead.EveryIbnk(mail2, kodVee, ulicaVee, miastoVee, odp.get(j));
+                if (i<=20)
+                    Neworklead.Cola2CC(mail);
+                else if (i<=40)
+                    Neworklead.ColaCon(mail);
+                else if (i<=60)
+                    Neworklead.ColaDeb(mail);
+                j++;
+                if (j > 27)
+                    j = 0;
                 System.out.println(i);
-                System.out.println(fb[i]);
+                System.out.println(mail);
                 Koniec.RestarHujawei();
             }
 
+            /*
+            pobierzAdres(150);
+
             for (int i=0;i<fb.length;i++){
-                dodajPostLepak(fb[i],haslo[i],post,25,50);
+                dodajPostLepak(fb[i],haslo[i],post,0,25);
                 System.out.println(i);
                 System.out.println(fb[i]);
-                Koniec.RestarHujawei();
+                Koniec.Restart();
+            }
+
+            for (int i=0;i<fb.length-1;i++){
+                dodajPostLepak(fb[i],haslo[i],post,25,57);
+                System.out.println(i);
+                System.out.println(fb[i]);
+                Koniec.Restart();
+            }
+            dodajPostLepak(fb[3],haslo[3],post,25,52);
+
+            for(int i = 0; i < x; i++) {
+                mail = cola.nextLine();
+                mail2 = everyInt.nextLine();
+                ulicaVee = ulicaVe.nextLine();
+                miastoVee = miastoVe.nextLine();
+                kodVee = kodVe.nextLine();
+
+                if (i == 0) {
+                    Neworklead.Cola(mail);
+                }
+                if (i == 1) {
+                    Neworklead.Cola2(mail);
+                }
+                if (i == 2) {
+                    Neworklead.Cola3(mail);
+                    x -= 3;
+                    i = -1;
+                }
+                if (i%2==0)
+                    Dodatkowy.Every7(mail2, kodVee, ulicaVee, miastoVee, odp.get(j));
+                else
+                    Dodatkowy.Every77(mail2, kodVee, ulicaVee, miastoVee, odp.get(j));
+                j++;
+                if (j > 27)
+                    j = 0;
+                //System.out.println(mail);
+                System.out.println(i);
+                System.out.println(x);
+                System.out.println(mail2);
+                //Koniec.RestarHujawei();
+                Koniec.Restart();
             }
 
              */
-
         }
          catch (Exception e) {
             blad.println(e);
@@ -1913,7 +1970,5 @@ public class Main extends Narzedzia{
             wylacz();
         }
         wylacz();
-
-
     }
 }

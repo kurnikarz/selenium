@@ -26,3 +26,15 @@
 [0612/190731.123:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
 [0612/190731.123:ERROR:exception_snapshot_win.cc(98)] thread ID 10604 not found in process
 [0723/174901.776:ERROR:file_io.cc(134)] WriteFile: Trwa zamykanie potoku. (0xE8)
+[0731/145338.286:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0731/145338.302:ERROR:exception_snapshot_win.cc(98)] thread ID 6308 not found in process
+[0731/145338.302:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Podjêto próbê uzyskania dostêpu do procesu koñcz¹cego dzia³anie. (0xc000010a)
+[0802/174743.101:ERROR:process_info.cc(329)] VirtualQueryEx: Odmowa dostêpu. (0x5)
+[0802/174743.119:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0802/174743.119:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Podjêto próbê uzyskania dostêpu do procesu koñcz¹cego dzia³anie. (0xc000010a)
+[0816/141325.476:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0816/141325.491:ERROR:exception_snapshot_win.cc(98)] thread ID 2824 not found in process
+[0816/141325.491:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Podjêto próbê uzyskania dostêpu do procesu koñcz¹cego dzia³anie. (0xc000010a)
+[0819/082812.213:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0819/082812.237:ERROR:exception_snapshot_win.cc(98)] thread ID 444 not found in process
+[0819/082812.238:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Podjêto próbê uzyskania dostêpu do procesu koñcz¹cego dzia³anie. (0xc000010a)
