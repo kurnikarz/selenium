@@ -1883,8 +1883,8 @@ public class Main extends Narzedzia{
             String haslo[] = {"MrcbucHv2.9","Natalia65432109","Arturek1070","Mrcbuch1234"};
             int j = 1;
             int x = 84;
-
-            for (int i=2;i<=83;i++){
+            pobierzAdres(3);
+            for (int i=1;i<=83;i++){
                 mail = cola.nextLine();
                 mail2 = everyInt.nextLine();
                 ulicaVee = ulicaVe.nextLine();
