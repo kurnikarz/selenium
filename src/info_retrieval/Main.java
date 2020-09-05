@@ -725,7 +725,7 @@ public class Main extends Narzedzia{
                     Thread.sleep(3000);
                     Narzedzia.ScrollBy(driver, "300");
                     Thread.sleep(1000);
-
+                    /*
                     try {
                         driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div/div[2]/div[1]/div/div/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[1]/td[1]/div")).click();
                     } catch (Exception e) {
@@ -738,7 +738,7 @@ public class Main extends Narzedzia{
                     Thread.sleep(1000);
                     robot.keyPress(KeyEvent.VK_ENTER);
                     Thread.sleep(17000);
-
+                    */
                     Thread.sleep(3000);
                     driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
                     Thread.sleep(1000);
@@ -1865,101 +1865,69 @@ public class Main extends Narzedzia{
         String mail3;
         String numer;
 
-        String post = "Post od Mirosława! \n" +
-                "UWAGA! Nota prawna: Każda osoba która skomentuje ten post zgadza się na upublicznienie swoich danych osobowych, wpisów, listy znajomych oraz wszystkiego co ma w swoim profilu. Na kolejnym filmie Miroslawa Klos!\n" +
+        String post = "PRACA!!!\n" +
+                "Szukamy ludzi do pracy przy wklejaniu postów na FB. \n" +
+                "Płacimy codziennie! Można robić posty z wielu kont i zarobi się więcej. Mamy w zespole ludzi co zarabiają po 3000zl w skali miesiaca za pół godziny pracy dziennie. \n" +
                 "\n" +
-                "Jedni nazywają mnie pogromcą smoków inni gwałcicielem niewiast ;) Ogólnie nazwisko Klos mocno elektryzuje ludzi w internecie. Działam już publicznie od wielu lat zarabiając na grach wideo w wersji cyfrowej. W skrócie kupujemy jedną grę za 20zł i sprzedajemy cały czas na portalach aukcyjnych jak Allegro czy Ebay. Generując w ten sposób stały zysk. Przez te wszystkie lata były już przeróżne historie na mój temat. Była słynna na całą Polskę Madzia ze Szczecina. Wariatka, chora kobieta czy jak wielu sądzi nieszczęśliwie zakochana we mnie, która w rozpaczy zgłasza mnie na policję czy do urzędu skarbowego. Był nie mniej słynny Recacly Bot gdzie zainwestowałem 13000zł tylko po to aby pokazać jak tego typu programy zarabiania działają. Pamiętam jak mnie wtedy tu zlinczowali 'Klos oszuście nie kłam! Ten program wypłaca!'' Gdzie dziś jest RB? Pewnie tam gdzie Wasze pieniądze \uD83D\uDE02 czyli chu* wie gdzie \uD83D\uDE2D \n" +
-                "Wszystkie te historie jak i wiele więcej znajdziecie na moim blogu jak i na kanale youtube. Obnażając te Wasze scamy stałem się wrogiem publicznym nr 1. Ponieważ uświadamiam ludzi i nie możecie już tylu jeleni łapać co kiedyś \uD83E\uDD8C\n" +
-                "Gry wideo to branża, która rozwija się niesamowicie. Dziś grają wszyscy i Ci mali i Ci duzi. Sam działam na ponad 10 portalach aukcyjnych głównie za granicą i mam aktywnych ponad 1000 aukcji! Na tym etapie to wszystko już pracuje samodzielnie. Razem ze mną współpracuje wielu z Was! Wielu też odmieniło swoje życie i bardzo się cieszę, że miałem w tym swój udział. Jeżeli i Ty chcesz dołączyć do mojego zespołu to zapraszam serdecznie na mojego Bloga gdzie uczę jak sam zarabiam w internecie!\n" +
+                "Kontakt tylko mailowy:\n" +
                 "\n" +
-                "Blog:  Miroslawklos .pl  (Bez spacji przed kropką bo FB tnie zasięgi)\n" +
+                "Pracujekiedychce@gmail.com\n" +
                 "\n" +
-                "Lub email:  Dishar82@gmail.com \n" +
-                "\n" +
-                "Napisz! Pomogłem już wielu ludziom, pomogę i Tobie!";
-
+                "Nie odpowiadamy na wiadomości na FB oraz komentarze pod postem. \n" +
+                "Nawet ich NIE czytamy. Proszę pisać TYLKO na email.";
         try {
-            String[] fb = {"dumcio.97@wp.pl","natalia.woszczylo@o2.pl","ewa1dymkowska@gmail.com","aga.dobrowolska0@gmail.com"};
-            String haslo[] = {"MrcbucHv2.9","Natalia65432109","Arturek1070","Mrcbuch1234"};
-            int j = 1;
-            int x = 84;
-            pobierzAdres(3);
-            for (int i=1;i<=83;i++){
-                mail = cola.nextLine();
-                mail2 = everyInt.nextLine();
-                ulicaVee = ulicaVe.nextLine();
-                miastoVee = miastoVe.nextLine();
-                kodVee = kodVe.nextLine();
-                if (i%2==0)
-                    Neworklead.EverySap1c(mail2, kodVee, ulicaVee, miastoVee, odp.get(j));
-                else
-                    Neworklead.EveryIbnk(mail2, kodVee, ulicaVee, miastoVee, odp.get(j));
-                if (i<=20)
-                    Neworklead.Cola2CC(mail);
-                else if (i<=40)
-                    Neworklead.ColaCon(mail);
-                else if (i<=60)
-                    Neworklead.ColaDeb(mail);
-                j++;
-                if (j > 27)
-                    j = 0;
-                System.out.println(i);
-                System.out.println(mail);
-                Koniec.RestarHujawei();
-            }
-
+            String[] fb = {/*"dumcio.97@wp.pl",*/"natalia.woszczylo@o2.pl", "ewa1dymkowska@gmail.com"/*,"aga.dobrowolska0@gmail.com"*/};
+            String haslo[] = {/*"MrcbucHv2.9",*/"Natalia65432109", "Arturek1070"/*,"Mrcbuch1234"*/};
             /*
-            pobierzAdres(150);
-
             for (int i=0;i<fb.length;i++){
                 dodajPostLepak(fb[i],haslo[i],post,0,25);
                 System.out.println(i);
                 System.out.println(fb[i]);
-                Koniec.Restart();
             }
 
-            for (int i=0;i<fb.length-1;i++){
+            for (int i=0;i<fb.length;i++){
                 dodajPostLepak(fb[i],haslo[i],post,25,57);
                 System.out.println(i);
                 System.out.println(fb[i]);
-                Koniec.Restart();
-            }
-            dodajPostLepak(fb[3],haslo[3],post,25,52);
-
-            for(int i = 0; i < x; i++) {
-                mail = cola.nextLine();
-                mail2 = everyInt.nextLine();
-                ulicaVee = ulicaVe.nextLine();
-                miastoVee = miastoVe.nextLine();
-                kodVee = kodVe.nextLine();
-
-                if (i == 0) {
-                    Neworklead.Cola(mail);
-                }
-                if (i == 1) {
-                    Neworklead.Cola2(mail);
-                }
-                if (i == 2) {
-                    Neworklead.Cola3(mail);
-                    x -= 3;
-                    i = -1;
-                }
-                if (i%2==0)
-                    Dodatkowy.Every7(mail2, kodVee, ulicaVee, miastoVee, odp.get(j));
-                else
-                    Dodatkowy.Every77(mail2, kodVee, ulicaVee, miastoVee, odp.get(j));
-                j++;
-                if (j > 27)
-                    j = 0;
-                //System.out.println(mail);
-                System.out.println(i);
-                System.out.println(x);
-                System.out.println(mail2);
-                //Koniec.RestarHujawei();
-                Koniec.Restart();
             }
 
              */
+
+            int j = 0;
+            int x = 84;
+            pobierzAdres(120);
+            for (int i=0;i<120;i++){
+                mail = everyInt.nextLine();
+                kodVee = kodVe.nextLine();
+                ulicaVee = ulicaVe.nextLine();
+                miastoVee = miastoVe.nextLine();
+                if (i<15)
+                    Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<30)
+                    Dodatkowy.Every77(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<40)
+                    Dodatkowy.EveryZbiorowe11(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<50)
+                    Dodatkowy.EveryZbiorowe12(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<60)
+                    Dodatkowy.EveryZbiorowe13(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<70)
+                    Dodatkowy.EveryZbiorowe14(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<90)
+                    Dodatkowy.EveryZbiorowe21(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<110)
+                    Dodatkowy.EveryZbiorowe22(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<120)
+                    Dodatkowy.EveryZbiorowe23(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                if (j > 26)
+                    j = 0;
+                j++;
+                System.out.println(i);
+                System.out.println(mail);
+                Koniec.Restart();
+            }
+
+
         }
          catch (Exception e) {
             blad.println(e);

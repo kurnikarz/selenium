@@ -1668,7 +1668,7 @@ public class Neworklead extends Narzedzia {
             Thread.sleep(1000);
             while (!cookie){
                 try {
-                    driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[4]/div[2]/div/button")).click();
+                    driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
                     cookie = true;
                 } catch (Exception e){
                     Thread.sleep(5000);
@@ -1703,9 +1703,9 @@ public class Neworklead extends Narzedzia {
             driver.findElement(By.xpath("//*[@id=\"Kobieta \"]")).click();
             driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys(imie);
             driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys(nazwisko);
-            Select miesiacc = new Select(driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[5]/div/div/select[1]")));
+            Select miesiacc = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[1]")));
             miesiacc.selectByIndex(miesiac);
-            Select rokk = new Select(driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[5]/div/div/select[2]")));
+            Select rokk = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[2]")));
             rokk.selectByValue(roko);
             Thread.sleep(1000);
             driver.findElement(By.xpath("//*[@id=\"addressPostalCode\"]")).sendKeys(kod);
@@ -1716,17 +1716,17 @@ public class Neworklead extends Narzedzia {
             ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,700)", "");
             driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus\"]")).click();
             Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[11]/button")).click();
+            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[11]/button")).click();
 
-            Thread.sleep(20000);
+            Thread.sleep(40000);
             driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][line1]\"]")).sendKeys(ulica);
             driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][postalarea]\"]")).sendKeys(kod);
             driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][city]\"]")).sendKeys(miasto);
             Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[6]/div/div/form/button")).click();
-            Thread.sleep(8000);
+            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[6]/div/div/form/button")).click();
+            Thread.sleep(30000);
             try {
-                driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[7]/a[2]")).click();
+                driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[7]/a[2]")).click();
             } catch (Exception e) {
                 clickXY(950,824);
                 clickXY(950,910);
@@ -1795,13 +1795,13 @@ public class Neworklead extends Narzedzia {
             }
 
             Thread.sleep(4000);
-            driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/form/div[2]/div[3]/div[2]/textarea")).sendKeys(odp);
+            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/form/div[2]/div[3]/div[2]/textarea")).sendKeys(odp);
             Thread.sleep(1000);
             driver.findElement(By.xpath("//*[@id=\"spq-form\"]/div[2]/div[3]/div[3]/button")).click();
             Thread.sleep(10000);
             ScrollBy(driver,"-700");
             Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[4]/header/div[3]/div/div/div[1]/div/div[1]/ul/li[2]/a")).click();
+            driver.findElement(By.xpath("/html/body/div[2]/header/div[3]/div/div/div[1]/div/div[1]/ul/li[2]/a")).click();
             Thread.sleep(10000);
             Zmniejsz(5);
             Thread.sleep(1000);
@@ -1813,15 +1813,19 @@ public class Neworklead extends Narzedzia {
                     clickXY(1245,848);
                     break;
             }
-            Thread.sleep(10000);
+            Thread.sleep(30000);
             driver.quit();
 
         } catch (Exception e) {
             driver.quit();
         }
+
+
+
+
     }
 
-    public static void EverySap1c(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+    public static void Every(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
@@ -1829,15 +1833,15 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
-        driver.get("http://neworklead.elk.pl/action/5416/uid/122/");
+        driver.get("http://neworklead.elk.pl/action/5438/uid/122/");
 
-        Thread.sleep(30000);
+        Thread.sleep(25000);
         Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
         Thread.sleep(1000);
 
     }
 
-    public static void EveryIbnk(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+    public static void EveryIb1(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
@@ -1845,10 +1849,9 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
-
-        driver.get("http://neworklead.elk.pl/action/5419/uid/122/");
+        driver.get("http://neworklead.elk.pl/action/5440/uid/122/");
         Thread.sleep(10000);
-        clickXY(880,343);
+        clickXY(356,570);
 
         Thread.sleep(25000);
         Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
