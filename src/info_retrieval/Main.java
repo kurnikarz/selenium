@@ -1785,38 +1785,13 @@ public class Main extends Narzedzia{
     }
 
     public static void main(String[] args) throws InterruptedException, IOException, AWTException {
-        Scanner kod = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\kod.txt"));
-        Scanner cola = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\cola.txt"));
-        Scanner loginy = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\loginy.txt"));
-        Scanner nestle3 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\nestle3.txt"));
-        Scanner mailVee = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\mail.txt"));
-        Scanner mailVee2 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\mail2.txt"));
-        Scanner kodVe = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\kody.txt"));
-        Scanner kodVe2 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\kody2.txt"));
-        Scanner miastoVe = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\miasto.txt"));
-        Scanner ulicaVe = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\ulica.txt"));
-        Scanner mailArke = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia.txt"));
-        Scanner mailArke1 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia1.txt"));
-        Scanner limango = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\limango.txt"));
-        Scanner travelist = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\travelist.txt"));
-        Scanner pampers = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\pampers.txt"));
-        Scanner pampers2 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\pampers2.txt"));
-        Scanner lidl = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\lidl.txt"));
-        Scanner ecoin = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\ecoin.txt"));
-        Scanner potwierdzlidl = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\potwierdzlidl.txt"));
-        Scanner lidl2 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\lidl2.txt"));
-        Scanner lidl3 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\lidl3.txt"));
-        Scanner lidl4 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\lidl4.txt"));
-        Scanner cu = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\cu.txt"));
-        Scanner numerKon = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\numerKon.txt"));
-        Scanner mailKon = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\konkursy.txt"));
-        Scanner spartoo = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\spartoo.txt"));
-        Scanner samsung = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\samsung.txt"));
-
-        Scanner every = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\every.txt"));
-        Scanner everyInt = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\everyInt.txt"));
+        Scanner everyInt = new Scanner(new File("C:\\bot\\everyInt.txt"));
+        Scanner cola = new Scanner(new File("C:\\bot\\cola.txt"));
+        Scanner kod = new Scanner(new File("C:\\bot\\kod.txt"));
+        Scanner ulica = new Scanner(new File("C:\\bot\\ulica.txt"));
+        Scanner miasto = new Scanner(new File("C:\\bot\\miasto.txt"));
         //Scanner chili = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\chili.txt"));
-        PrintWriter blad = new PrintWriter("C:\\Users\\Artur\\Desktop\\klikanie\\blad.txt");
+        PrintWriter blad = new PrintWriter("C:\\bot\\blad.txt");
         String kodd[] = new String[43785];
         String mail;
         String mailEv;
@@ -1879,89 +1854,61 @@ public class Main extends Narzedzia{
                 "Napisz! Pomogłem już wielu ludziom, pomogę i Tobie!";
 
         try {
-            String[] fb = {"dumcio.97@wp.pl","natalia.woszczylo@o2.pl","ewa1dymkowska@gmail.com","aga.dobrowolska0@gmail.com"};
-            String haslo[] = {"MrcbucHv2.9","Natalia65432109","Arturek1070","Mrcbuch1234"};
-            int j = 1;
-            int x = 84;
-
-            for (int i=2;i<=83;i++){
-                mail = cola.nextLine();
-                mail2 = everyInt.nextLine();
-                ulicaVee = ulicaVe.nextLine();
-                miastoVee = miastoVe.nextLine();
-                kodVee = kodVe.nextLine();
-                if (i%2==0)
-                    Neworklead.EverySap1c(mail2, kodVee, ulicaVee, miastoVee, odp.get(j));
-                else
-                    Neworklead.EveryIbnk(mail2, kodVee, ulicaVee, miastoVee, odp.get(j));
-                if (i<=20)
-                    Neworklead.Cola2CC(mail);
-                else if (i<=40)
-                    Neworklead.ColaCon(mail);
-                else if (i<=60)
-                    Neworklead.ColaDeb(mail);
-                j++;
-                if (j > 27)
-                    j = 0;
-                System.out.println(i);
-                System.out.println(mail);
-                Koniec.RestarHujawei();
-            }
-
+            String[] fb = {/*"dumcio.97@wp.pl",*/"natalia.woszczylo@o2.pl", "ewa1dymkowska@gmail.com"/*,"aga.dobrowolska0@gmail.com"*/};
+            String haslo[] = {/*"MrcbucHv2.9",*/"Natalia65432109", "Arturek1070"/*,"Mrcbuch1234"*/};
             /*
-            pobierzAdres(150);
-
             for (int i=0;i<fb.length;i++){
                 dodajPostLepak(fb[i],haslo[i],post,0,25);
                 System.out.println(i);
                 System.out.println(fb[i]);
-                Koniec.Restart();
             }
-
-            for (int i=0;i<fb.length-1;i++){
+            for (int i=0;i<fb.length;i++){
                 dodajPostLepak(fb[i],haslo[i],post,25,57);
                 System.out.println(i);
                 System.out.println(fb[i]);
-                Koniec.Restart();
             }
-            dodajPostLepak(fb[3],haslo[3],post,25,52);
 
-            for(int i = 0; i < x; i++) {
-                mail = cola.nextLine();
-                mail2 = everyInt.nextLine();
-                ulicaVee = ulicaVe.nextLine();
-                miastoVee = miastoVe.nextLine();
-                kodVee = kodVe.nextLine();
 
-                if (i == 0) {
-                    Neworklead.Cola(mail);
-                }
-                if (i == 1) {
-                    Neworklead.Cola2(mail);
-                }
-                if (i == 2) {
-                    Neworklead.Cola3(mail);
-                    x -= 3;
-                    i = -1;
-                }
-                if (i%2==0)
-                    Dodatkowy.Every7(mail2, kodVee, ulicaVee, miastoVee, odp.get(j));
-                else
-                    Dodatkowy.Every77(mail2, kodVee, ulicaVee, miastoVee, odp.get(j));
-                j++;
-                if (j > 27)
+            int j = 0;
+            int x = 84;
+            pobierzAdres(120);
+            for (int i=0;i<120;i++){
+                mail = everyInt.nextLine();
+                kodVee = kod.nextLine();
+                ulicaVee = ulica.nextLine();
+                miastoVee = miasto.nextLine();
+                if (i<15)
+                    Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<30)
+                    Dodatkowy.Every77(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<40)
+                    Dodatkowy.EveryZbiorowe11(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<50)
+                    Dodatkowy.EveryZbiorowe12(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<60)
+                    Dodatkowy.EveryZbiorowe13(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<70)
+                    Dodatkowy.EveryZbiorowe14(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<90)
+                    Dodatkowy.EveryZbiorowe21(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<110)
+                    Dodatkowy.EveryZbiorowe22(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<120)
+                    Dodatkowy.EveryZbiorowe23(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                if (j > 26)
                     j = 0;
-                //System.out.println(mail);
+                j++;
                 System.out.println(i);
-                System.out.println(x);
-                System.out.println(mail2);
-                //Koniec.RestarHujawei();
+                System.out.println(mail);
                 Koniec.Restart();
             }
 
              */
+
+
+
         }
-         catch (Exception e) {
+        catch (Exception e) {
             blad.println(e);
             blad.close();
             System.out.println("=============ERROR===============");
@@ -1970,5 +1917,8 @@ public class Main extends Narzedzia{
             wylacz();
         }
         wylacz();
+
+
+        //wylacz();
     }
 }

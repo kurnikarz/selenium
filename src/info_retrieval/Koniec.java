@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 public class Koniec {
     public static void Restart() throws InterruptedException{
-        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         WebDriver firefox = new FirefoxDriver();
         try {
             firefox.get("http://192.168.1.1/");
@@ -76,7 +76,7 @@ public class Koniec {
     }
 
     public static void RestarHujawei() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
 
         HashMap<String, Object> images = new HashMap<String, Object>();
@@ -95,11 +95,11 @@ public class Koniec {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[text()='Ponowny rozruch']")).click();
         Thread.sleep(3000);
-        Narzedzia.clickXY(1340,390);
+        Narzedzia.clickXY(1154,393);
         Thread.sleep(2000);
-        Narzedzia.clickXY(1076,633);
+        Narzedzia.clickXY(885,524);
         Thread.sleep(35000);
-        Narzedzia.clickXY(1893,9);
+        Narzedzia.clickXY(1522,9);
         driver.quit();
     }
 }

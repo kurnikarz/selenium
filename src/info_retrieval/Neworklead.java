@@ -403,7 +403,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void VeePeeDaszek(String mail, String ulica, String miasto, String kod) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Random r = new Random();
@@ -515,7 +515,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void VeePeeGwiazdka(String mail, String ulica, String miasto, String kod) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Random r = new Random();
@@ -631,7 +631,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void VeePeeStrzalki(String mail, String ulica, String miasto, String kod) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Random r = new Random();
@@ -740,7 +740,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void VeePeeMalpa(String mail, String ulica, String miasto, String kod) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Random r = new Random();
@@ -853,7 +853,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void VeePeeHasz(String mail, String ulica, String miasto, String kod) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Random r = new Random();
@@ -966,7 +966,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void VeePee(String mail, String ulica, String miasto, String kod) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Random r = new Random();
@@ -1132,7 +1132,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Galeria21(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Random r = new Random();
@@ -1355,7 +1355,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Nestle(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         String imie = genImieZen();
         String nazwisko = genNazwiskoZen();
         Random r = new Random();
@@ -1659,7 +1659,7 @@ public class Neworklead extends Narzedzia {
         boolean cookie = false;
         Robot robot = new Robot();
         String roko = String.valueOf(rok);
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        //Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
 
         //WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[2]/a"));
         //driver.get("https://www.everydayme.pl/konkurszimowy");
@@ -1668,7 +1668,7 @@ public class Neworklead extends Narzedzia {
             Thread.sleep(1000);
             while (!cookie){
                 try {
-                    driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[4]/div[2]/div/button")).click();
+                    driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
                     cookie = true;
                 } catch (Exception e){
                     Thread.sleep(5000);
@@ -1677,24 +1677,24 @@ public class Neworklead extends Narzedzia {
                 if (m > 10)
                     break;;
             }
-        Thread.sleep(3000);
-        ScrollBy(driver, "1000");
-        Thread.sleep(1000);
-        try {
-            driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[1]/div[4]/a[1]")).click();
-        } catch (Exception e){
-            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[1]/div[4]/a[1]")).click();
-        }
-        Thread.sleep(10000);
-        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)", "");
-        Thread.sleep(1000);
-        clickXY(861,668);
-        Thread.sleep(1000);
-        clickXY(861,668);
-        Thread.sleep(1000);
-        clickXY(861,668);
-        Thread.sleep(1000);
-        clickXY(935,750);
+            Thread.sleep(3000);
+            ScrollBy(driver, "1000");
+            Thread.sleep(1000);
+            try {
+                driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[1]/div[4]/a[1]")).click();
+            } catch (Exception e){
+                driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[1]/div[4]/a[1]")).click();
+            }
+            Thread.sleep(10000);
+            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)", "");
+            Thread.sleep(1000);
+            clickXY(861,668);
+            Thread.sleep(1000);
+            clickXY(861,668);
+            Thread.sleep(1000);
+            clickXY(861,668);
+            Thread.sleep(1000);
+            clickXY(935,750);
 
 
             Thread.sleep(3000);
@@ -1703,9 +1703,9 @@ public class Neworklead extends Narzedzia {
             driver.findElement(By.xpath("//*[@id=\"Kobieta \"]")).click();
             driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys(imie);
             driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys(nazwisko);
-            Select miesiacc = new Select(driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[5]/div/div/select[1]")));
+            Select miesiacc = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[1]")));
             miesiacc.selectByIndex(miesiac);
-            Select rokk = new Select(driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[5]/div/div/select[2]")));
+            Select rokk = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[2]")));
             rokk.selectByValue(roko);
             Thread.sleep(1000);
             driver.findElement(By.xpath("//*[@id=\"addressPostalCode\"]")).sendKeys(kod);
@@ -1716,17 +1716,17 @@ public class Neworklead extends Narzedzia {
             ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,700)", "");
             driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus\"]")).click();
             Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[11]/button")).click();
+            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[11]/button")).click();
 
-            Thread.sleep(20000);
+            Thread.sleep(40000);
             driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][line1]\"]")).sendKeys(ulica);
             driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][postalarea]\"]")).sendKeys(kod);
             driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][city]\"]")).sendKeys(miasto);
             Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[6]/div/div/form/button")).click();
-            Thread.sleep(8000);
+            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[6]/div/div/form/button")).click();
+            Thread.sleep(30000);
             try {
-                driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[7]/a[2]")).click();
+                driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[7]/a[2]")).click();
             } catch (Exception e) {
                 clickXY(950,824);
                 clickXY(950,910);
@@ -1795,13 +1795,13 @@ public class Neworklead extends Narzedzia {
             }
 
             Thread.sleep(4000);
-            driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/form/div[2]/div[3]/div[2]/textarea")).sendKeys(odp);
+            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/form/div[2]/div[3]/div[2]/textarea")).sendKeys(odp);
             Thread.sleep(1000);
             driver.findElement(By.xpath("//*[@id=\"spq-form\"]/div[2]/div[3]/div[3]/button")).click();
             Thread.sleep(10000);
             ScrollBy(driver,"-700");
             Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[4]/header/div[3]/div/div/div[1]/div/div[1]/ul/li[2]/a")).click();
+            driver.findElement(By.xpath("/html/body/div[2]/header/div[3]/div/div/div[1]/div/div[1]/ul/li[2]/a")).click();
             Thread.sleep(10000);
             Zmniejsz(5);
             Thread.sleep(1000);
@@ -1813,23 +1813,24 @@ public class Neworklead extends Narzedzia {
                     clickXY(1245,848);
                     break;
             }
-            Thread.sleep(10000);
+            Thread.sleep(30000);
             driver.quit();
 
         } catch (Exception e) {
             driver.quit();
         }
+
     }
 
-    public static void EverySap1c(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+    public static void EveryAg(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\bot\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--allow-running-insecure-content");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
-        driver.get("http://neworklead.elk.pl/action/5416/uid/122/");
+        driver.get("http://neworklead.elk.pl/action/5437/uid/122/");
 
         Thread.sleep(30000);
         Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
@@ -1838,8 +1839,8 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void EveryIbnk(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\bot\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--allow-running-insecure-content");
         WebDriver driver = new ChromeDriver(options);
@@ -1857,7 +1858,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Pampers(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -1877,7 +1878,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Pampers2(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -1894,7 +1895,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Pampers3(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -1911,7 +1912,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Pampers4(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -1928,7 +1929,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Rossman(String mail, String numer, String kod1, String kod2, String ulica) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         Random r = new Random();
@@ -2125,7 +2126,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void HM(String mail, String numer, String kod1, String kod2, String ulica) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         Random r = new Random();
@@ -2322,7 +2323,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Ikea(String mail, String numer, String kod1, String kod2, String ulica) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         Random r = new Random();
@@ -2482,7 +2483,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Biedronka(String mail, String numer, String kod1, String kod2, String ulica) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         Random r = new Random();
@@ -2825,7 +2826,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Momondo22() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -2841,7 +2842,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Momondo24() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -2857,7 +2858,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Momondo27() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -2873,7 +2874,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Momondo6() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");   //PRZETESTOWAĆ!
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //PRZETESTOWAĆ!
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -2889,7 +2890,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Momondo29() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -2908,7 +2909,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Momondo8() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -2924,7 +2925,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Momondo33() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -2940,7 +2941,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Momondo31() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -2956,7 +2957,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Momondo30() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -2972,7 +2973,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Momondo19() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -2988,7 +2989,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Momondo87() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -3004,7 +3005,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Momondo94() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -3020,7 +3021,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Momondo32() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -3036,7 +3037,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Samsung(String mail) throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         Random r = new Random();
         int plec = r.nextInt(2);
@@ -3051,8 +3052,8 @@ public class Neworklead extends Narzedzia {
             imie = genImieMes();
             nazwisko = genNazwisko();
         }
-        options.addExtensions(new File("E:\\bot\\captcha.crx"));
-        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
         ChromeDriver driver = new ChromeDriver(options);
         Robot robot = new Robot();
         driver.manage().window().maximize();
@@ -3146,7 +3147,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Samsung2(String mail) throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         Random r = new Random();
         int plec = r.nextInt(2);
@@ -3161,8 +3162,8 @@ public class Neworklead extends Narzedzia {
             imie = genImieMes();
             nazwisko = genNazwisko();
         }
-        options.addExtensions(new File("E:\\bot\\captcha.crx"));
-        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
         ChromeDriver driver = new ChromeDriver(options);
         Robot robot = new Robot();
         driver.manage().window().maximize();
@@ -3257,7 +3258,7 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Cpc(String linkCuk, String linkSamsung) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         Random r = new Random();
         int wybor = 5;//r.nextInt(10);
         WebDriver driver[] = new ChromeDriver[2];
@@ -3357,7 +3358,7 @@ public class Neworklead extends Narzedzia {
             nazwisko = genNazwisko();
         }
 
-        try {
+//        try {
             driver.manage().window().maximize();
             Thread.sleep(20000);
             zmienKarte(driver);
@@ -3400,7 +3401,7 @@ public class Neworklead extends Narzedzia {
                     driver.findElement(By.xpath("//*[@id=\"recaptcha-anchor-label\"]")).click();
                     Thread.sleep(5000);
                     for (int i=0;i<5;i++){
-                        clickXY(965,1028);
+                        clickXY(779,808);
                         Thread.sleep(3000);
                     }
                     driver.switchTo().defaultContent();
@@ -3462,10 +3463,14 @@ public class Neworklead extends Narzedzia {
                 m++;
             }
             driver.quit();
-
+/*
         } catch (Exception e){
             driver.quit();
         }
+
+
+ */
+
 
 
 
@@ -3473,30 +3478,30 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void ColaCon(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addExtensions(new File("E:\\bot\\captcha.crx"));
-        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
         ChromeDriver driver = new ChromeDriver(options);
         driver.get("http://neworklead.elk.pl/action/5423/uid/122/");
         Cola(driver,mail);
     }
 
     public static void Cola2CC(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addExtensions(new File("E:\\bot\\captcha.crx"));
-        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
         ChromeDriver driver = new ChromeDriver(options);
         driver.get("http://neworklead.elk.pl/action/5424/uid/122/");
         Cola(driver,mail);
     }
 
     public static void ColaDeb(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addExtensions(new File("E:\\bot\\captcha.crx"));
-        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
         ChromeDriver driver = new ChromeDriver(options);
         driver.get("http://neworklead.elk.pl/action/5425/uid/122/");
         Cola(driver,mail);

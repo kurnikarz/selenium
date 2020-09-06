@@ -67,7 +67,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Nivea(String mail) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         boolean flaga = true;
         boolean flaga2 = true;
@@ -83,7 +83,7 @@ public class Dodatkowy extends Narzedzia {
         Robot robot = new Robot();
         //options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystanaNivea.txt", true));
-        options.addExtensions(new File("E:\\botPythonn\\captcha.crx"));
+        options.addExtensions(new File("C:\\botPythonn\\captcha.crx"));
         HashMap<String, Object> images = new HashMap<String, Object>();
         images.put("images", 2);
         HashMap<String, Object> prefs = new HashMap<String, Object>();
@@ -264,7 +264,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static int NiveaTest(String mail) throws AWTException, InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         boolean flaga = true;
         boolean flaga2 = true;
@@ -280,7 +280,7 @@ public class Dodatkowy extends Narzedzia {
         int odp2 = r.nextInt(5);
         Robot robot = new Robot();
         //options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1");
-        options.addExtensions(new File("E:\\botPythonn\\captcha.crx"));
+        options.addExtensions(new File("C:\\botPythonn\\captcha.crx"));
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -446,7 +446,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void PotwierdzNivea(String mail, String haslo) throws AWTException, InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
         images.put("images", 2);
@@ -1107,7 +1107,7 @@ public class Dodatkowy extends Narzedzia {
         int x = 1750;
         Robot robot = new Robot();
         String roko = String.valueOf(rok);
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        //////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
 
         Thread.sleep(1000);
         driver.get("https://www.everydayme.pl/wygraj-produkty-marki-electrolux-lub-fairy");
@@ -1355,7 +1355,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Nestle3(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
         images.put("images", 2);
@@ -1388,7 +1388,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void NestleTest3(String mail) throws InterruptedException, AWTException { //nestle3
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         /*
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
@@ -1425,7 +1425,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void NestleTest4(String mail) throws InterruptedException, AWTException { //nestle3
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
         images.put("images", 2);
@@ -1460,7 +1460,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void NestleTest5(String mail) throws InterruptedException, AWTException { //nestle4
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
         images.put("images", 2);
@@ -1495,7 +1495,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Nestle4(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
         images.put("images", 2);
@@ -1716,7 +1716,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void PampersZbiorowe1(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -1742,7 +1742,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void potwierdzEvInteria(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         boolean flaga = false;
         Random r = new Random();
         int zaloguj = r.nextInt(2);
@@ -1849,7 +1849,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void potwierdzEvWp(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -1943,7 +1943,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Lidl(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         Random r = new Random();
         int plec = r.nextInt(2);
         String imie;
@@ -1985,8 +1985,8 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Every1(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        //////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--allow-running-insecure-content");
         WebDriver driver = new ChromeDriver(options);
@@ -2006,8 +2006,8 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Every2(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        //////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--allow-running-insecure-content");
         WebDriver driver = new ChromeDriver(options);
@@ -2027,8 +2027,8 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Every3(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        //////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--allow-running-insecure-content");
         WebDriver driver = new ChromeDriver(options);
@@ -2048,8 +2048,8 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Every11(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        ////////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--allow-running-insecure-content");
         WebDriver driver = new ChromeDriver(options);
@@ -2060,7 +2060,7 @@ public class Dodatkowy extends Narzedzia {
         Thread.sleep(5000);
         driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/02/spacer.html");
         Thread.sleep(10000);
-        clickXY(786,765);
+        clickXY(590,760);
 
         Thread.sleep(25000);
         Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
@@ -2069,18 +2069,18 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Every22(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        //////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--allow-running-insecure-content");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/ac86f5ba1983d6a4860d0c22ee2a7679/12c2301aaa9042c9228b48640bccd5cf/201920950f63cee967982b759fde80b1");
-        Thread.sleep(5000);
+        //driver.get("http://www.dodatkowypieniadz.com/zadanie/ac86f5ba1983d6a4860d0c22ee2a7679/12c2301aaa9042c9228b48640bccd5cf/201920950f63cee967982b759fde80b1");
+        //Thread.sleep(5000);
         driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2017/11/drozdze-piwowarskie.html");
-        Thread.sleep(10000);
+        Thread.sleep(10000000);
         clickXY(755,715);
 
         Thread.sleep(25000);
@@ -2090,8 +2090,8 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Every33(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        //////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--allow-running-insecure-content");
         WebDriver driver = new ChromeDriver(options);
@@ -2111,8 +2111,8 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Every7(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\bot\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--allow-running-insecure-content");
         WebDriver driver = new ChromeDriver(options);
@@ -2123,7 +2123,9 @@ public class Dodatkowy extends Narzedzia {
         Thread.sleep(5000);
         driver.get("https://technologicznaprzyszlosc.blogspot.com/2019/11/cybertruck-od-tesli-nowa-zabawka-elona.html");
         Thread.sleep(10000);
-        clickXY(745,850);
+        Zmniejsz(1);
+        Thread.sleep(1000);
+        clickXY(585,776);
 
         Thread.sleep(25000);
         Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
@@ -2132,8 +2134,8 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Every77(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\bot\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--allow-running-insecure-content");
         WebDriver driver = new ChromeDriver(options);
@@ -2144,7 +2146,9 @@ public class Dodatkowy extends Narzedzia {
         Thread.sleep(5000);
         driver.get("https://technologicznaprzyszlosc.blogspot.com/2019/11/iphone-11-sprzedaje-sie-jak-swieze.html");
         Thread.sleep(10000);
-        clickXY(745,853);
+        Zmniejsz(1);
+        Thread.sleep(1000);
+        clickXY(585,776);
 
         Thread.sleep(25000);
         Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
@@ -2153,11 +2157,11 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void EveryTest8(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        //System.setProperty("webdriver.opera.driver", "E:\\bot\\operadriver\\operadriver.exe");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        //System.setProperty("webdriver.opera.driver", "C:\\bot\\operadriver\\operadriver.exe");
+        //////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         OperaOptions options = new OperaOptions();
-        options.setBinary("E:\\Programy\\Opera\\69.0.3686.77\\opera.exe");
-        System.setProperty("webdriver.opera.driver","E:\\bot\\operadriver\\operadriver.exe");
+        options.setBinary("C:\\Programy\\Opera\\69.0.3686.77\\opera.exe");
+        System.setProperty("webdriver.opera.driver","C:\\bot\\operadriver\\operadriver.exe");
         WebDriver driver = new OperaDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2171,7 +2175,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Samsung(String mail) throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         Random r = new Random();
         int plec = r.nextInt(2);
@@ -2186,8 +2190,8 @@ public class Dodatkowy extends Narzedzia {
             imie = genImieMes();
             nazwisko = genNazwisko();
         }
-        options.addExtensions(new File("E:\\bot\\captcha.crx"));
-        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
         ChromeDriver driver = new ChromeDriver(options);
         Robot robot = new Robot();
         driver.manage().window().maximize();
@@ -2285,7 +2289,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Cola(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         Random r = new Random();
         int plec = r.nextInt(2);
@@ -2308,8 +2312,8 @@ public class Dodatkowy extends Narzedzia {
             imie = genImieMes();
             nazwisko = genNazwisko();
         }
-        options.addExtensions(new File("E:\\bot\\captcha.crx"));
-        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
         ChromeDriver driver = new ChromeDriver(options);
 
         try {
@@ -2423,6 +2427,174 @@ public class Dodatkowy extends Narzedzia {
         } catch (Exception e){
             driver.quit();
         }
+
+    }
+
+    public static void EveryZbiorowe11(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        ////////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/b3536920a65088a3a853bb1179d9a746/d453bb399faa68c5adde0bebfd854f73/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2019/01/najwiekszy-przyjaciel-naszej-rodziny.html");
+        Thread.sleep(10000);
+        clickXY(590,763);
+
+        Thread.sleep(25000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+    }
+
+    public static void EveryZbiorowe12(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        //////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/b3536920a65088a3a853bb1179d9a746/d453bb399faa68c5adde0bebfd854f73/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/11/nowy-przyjaciel-zakuj.html");
+        Thread.sleep(10000);
+        clickXY(590,740);
+
+        Thread.sleep(25000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+    }
+
+    public static void EveryZbiorowe13(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        //////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/b3536920a65088a3a853bb1179d9a746/d453bb399faa68c5adde0bebfd854f73/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/06/wawel-z-miosci-do-radosci.html");
+        Thread.sleep(10000);
+        clickXY(574,700);
+
+        Thread.sleep(25000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+    }
+
+    public static void EveryZbiorowe14(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        //////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/b3536920a65088a3a853bb1179d9a746/d453bb399faa68c5adde0bebfd854f73/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/06/uroczystosc-rodzinna.html");
+        Thread.sleep(10000);
+        clickXY(590,700);
+
+        Thread.sleep(25000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+    }
+
+    public static void EveryZbiorowe15(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        //////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/b3536920a65088a3a853bb1179d9a746/d453bb399faa68c5adde0bebfd854f73/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/05/niespodzianka-od-trade-tracker.html");
+        Thread.sleep(10000);
+        clickXY(590,700);
+
+        Thread.sleep(25000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+    }
+
+    public static void EveryZbiorowe21(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        //////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/f793e74adce27d2a1f79c301b69bd40f/6fc1eca7f53df3598d904786cba93eeb/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/03/zima-zima-po-zimie-wiosna.html");
+        Thread.sleep(10000);
+        clickXY(600,700);
+
+        Thread.sleep(25000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+    }
+
+    public static void EveryZbiorowe22(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        //////Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/f793e74adce27d2a1f79c301b69bd40f/6fc1eca7f53df3598d904786cba93eeb/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/02/spacer.html");
+        Thread.sleep(10000);
+        clickXY(586,700);
+
+        Thread.sleep(25000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+    }
+
+    public static void EveryZbiorowe23(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        //Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/f793e74adce27d2a1f79c301b69bd40f/6fc1eca7f53df3598d904786cba93eeb/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2017/11/soczewki-tak-czy-nie-promocja-acuvue.html");
+        Thread.sleep(10000);
+        clickXY(600,700);
+
+        Thread.sleep(25000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
 
     }
 }
