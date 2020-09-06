@@ -1853,6 +1853,7 @@ public class Main extends Narzedzia{
                 "\n" +
                 "Napisz! Pomogłem już wielu ludziom, pomogę i Tobie!";
 
+
         try {
             String[] fb = {/*"dumcio.97@wp.pl",*/"natalia.woszczylo@o2.pl", "ewa1dymkowska@gmail.com"/*,"aga.dobrowolska0@gmail.com"*/};
             String haslo[] = {/*"MrcbucHv2.9",*/"Natalia65432109", "Arturek1070"/*,"Mrcbuch1234"*/};
@@ -1868,33 +1869,28 @@ public class Main extends Narzedzia{
                 System.out.println(fb[i]);
             }
 
+            */
 
             int j = 0;
             int x = 84;
-            pobierzAdres(120);
-            for (int i=0;i<120;i++){
+            pobierzAdres(75);
+            for (int i=0;i<75;i++){
                 mail = everyInt.nextLine();
                 kodVee = kod.nextLine();
                 ulicaVee = ulica.nextLine();
                 miastoVee = miasto.nextLine();
-                if (i<15)
+                if (i<22)
+                    Dodatkowy.EveryMaly(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<39)
                     Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<30)
+                else if (i<55)
                     Dodatkowy.Every77(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<40)
+                else if (i<65)
                     Dodatkowy.EveryZbiorowe11(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<50)
+                else if (i<75)
                     Dodatkowy.EveryZbiorowe12(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<60)
-                    Dodatkowy.EveryZbiorowe13(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<70)
-                    Dodatkowy.EveryZbiorowe14(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<90)
-                    Dodatkowy.EveryZbiorowe21(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<110)
-                    Dodatkowy.EveryZbiorowe22(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<120)
-                    Dodatkowy.EveryZbiorowe23(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                    //=======================================================================
+
                 if (j > 26)
                     j = 0;
                 j++;
@@ -1902,9 +1898,6 @@ public class Main extends Narzedzia{
                 System.out.println(mail);
                 Koniec.Restart();
             }
-
-             */
-
 
 
         }
@@ -1917,8 +1910,5 @@ public class Main extends Narzedzia{
             wylacz();
         }
         wylacz();
-
-
-        //wylacz();
     }
 }
