@@ -1864,7 +1864,7 @@ public class Main extends Narzedzia{
         String mail2;
         String mail3;
         String numer;
-
+        Dodatkowy.Every8("eded","Dede","Deded","deded","Deded");
         String post = "PRACA!!!\n" +
                 "Szukamy ludzi do pracy przy wklejaniu postów na FB. \n" +
                 "Płacimy codziennie! Można robić posty z wielu kont i zarobi się więcej. Mamy w zespole ludzi co zarabiają po 3000zl w skali miesiaca za pół godziny pracy dziennie. \n" +
@@ -1890,41 +1890,46 @@ public class Main extends Narzedzia{
                 System.out.println(i);
                 System.out.println(fb[i]);
             }
+            */
 
-             */
 
             int j = 0;
             int x = 84;
-            pobierzAdres(120);
-            for (int i=0;i<120;i++){
+            pobierzAdres(85);
+            for (int i=0;i<166;i++){
                 mail = everyInt.nextLine();
                 kodVee = kodVe.nextLine();
                 ulicaVee = ulicaVe.nextLine();
                 miastoVee = miastoVe.nextLine();
-                if (i<15)
+                if (i<22)
+                    Dodatkowy.EveryMaly(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<39)
                     Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<30)
+                else if (i<55)
                     Dodatkowy.Every77(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<40)
+                else if (i<65)
                     Dodatkowy.EveryZbiorowe11(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<50)
+                else if (i<75)
                     Dodatkowy.EveryZbiorowe12(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<60)
+                else if (i<86)
                     Dodatkowy.EveryZbiorowe13(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<70)
+                else if (i<97)
                     Dodatkowy.EveryZbiorowe14(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<90)
+                else if (i<112)
                     Dodatkowy.EveryZbiorowe21(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<110)
+                else if (i<127)
                     Dodatkowy.EveryZbiorowe22(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<120)
+                else if (i<143)
                     Dodatkowy.EveryZbiorowe23(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<166)
+                    Dodatkowy.Every8(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+
                 if (j > 26)
                     j = 0;
                 j++;
                 System.out.println(i);
                 System.out.println(mail);
-                Koniec.Restart();
+                Koniec.RestarHujawei();
             }
 
 
