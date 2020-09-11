@@ -25,6 +25,7 @@ public class Main extends Narzedzia{
     public static void interia() throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer maile = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\everyInt.txt", true));
+        Writer botowe = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\botowe.txt", true));
         ChromeOptions options = new ChromeOptions();
         String profil = "113";
         int j = 0;
@@ -36,9 +37,6 @@ public class Main extends Narzedzia{
         options.addArguments("profile-directory=Profile "+profil);
         options.addExtensions(new File("E:\\bot\\captcha.crx"));
         options.addExtensions(new File("E:\\bot\\buster.crx"));
-        ChromeDriver driver = new ChromeDriver(options);
-        Robot robot = new Robot();
-        driver.manage().window().maximize();
 
             String imie = genImieZen();
             String nazwiwsko = genNazwiskoZen();
@@ -47,6 +45,9 @@ public class Main extends Narzedzia{
             String cyfra2 = String.valueOf(r.nextInt(9));
 
             try {
+                ChromeDriver driver = new ChromeDriver(options);
+                Robot robot = new Robot();
+                driver.manage().window().maximize();
                 driver.get("https://konto-pocztowe.interia.pl/#/nowe-konto/darmowe");
                 Thread.sleep(5000);
                 try {
@@ -111,11 +112,13 @@ public class Main extends Narzedzia{
                 //driver.findElement(By.xpath("//*[text()='Załóż darmowe konto']")).click();
                 clickXY(969,1002);
                 maile.append(mail+"\r\n");
+                botowe.append(mail+"\r\n");
                 maile.close();
+                botowe.close();
                 Thread.sleep(15000);
                 driver.quit();
             } catch (Exception f){
-                driver.quit();
+                System.out.println("ERROR INTERIA");
             }
 
         }
@@ -1864,7 +1867,6 @@ public class Main extends Narzedzia{
         String mail2;
         String mail3;
         String numer;
-        Dodatkowy.Every8("eded","Dede","Deded","deded","Deded");
         String post = "PRACA!!!\n" +
                 "Szukamy ludzi do pracy przy wklejaniu postów na FB. \n" +
                 "Płacimy codziennie! Można robić posty z wielu kont i zarobi się więcej. Mamy w zespole ludzi co zarabiają po 3000zl w skali miesiaca za pół godziny pracy dziennie. \n" +
@@ -1876,52 +1878,36 @@ public class Main extends Narzedzia{
                 "Nie odpowiadamy na wiadomości na FB oraz komentarze pod postem. \n" +
                 "Nawet ich NIE czytamy. Proszę pisać TYLKO na email.";
         try {
-            String[] fb = {/*"dumcio.97@wp.pl",*/"natalia.woszczylo@o2.pl", "ewa1dymkowska@gmail.com"/*,"aga.dobrowolska0@gmail.com"*/};
-            String haslo[] = {/*"MrcbucHv2.9",*/"Natalia65432109", "Arturek1070"/*,"Mrcbuch1234"*/};
+
+            Thread.sleep(7200000);
+            Koniec.RestarHujawei();
+            Koniec.RestarHujawei();
             /*
-            for (int i=0;i<fb.length;i++){
-                dodajPostLepak(fb[i],haslo[i],post,0,25);
+            for (int i=0;i<100;i++){
+                interia();
+                if (i%20==0)
+                    Koniec.RestarHujawei();
                 System.out.println(i);
-                System.out.println(fb[i]);
             }
 
-            for (int i=0;i<fb.length;i++){
-                dodajPostLepak(fb[i],haslo[i],post,25,57);
-                System.out.println(i);
-                System.out.println(fb[i]);
-            }
-            */
-
+             */
 
             int j = 0;
             int x = 84;
-            pobierzAdres(85);
-            for (int i=0;i<166;i++){
+            pobierzAdres(84);
+            for (int i=0;i<84;i++){
                 mail = everyInt.nextLine();
                 kodVee = kodVe.nextLine();
                 ulicaVee = ulicaVe.nextLine();
                 miastoVee = miastoVe.nextLine();
-                if (i<22)
-                    Dodatkowy.EveryMaly(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<39)
-                    Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<55)
-                    Dodatkowy.Every77(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<65)
-                    Dodatkowy.EveryZbiorowe11(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<75)
-                    Dodatkowy.EveryZbiorowe12(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<86)
-                    Dodatkowy.EveryZbiorowe13(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<97)
-                    Dodatkowy.EveryZbiorowe14(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<112)
+
+                if (i<23)
                     Dodatkowy.EveryZbiorowe21(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<127)
+                else if (i<46)
                     Dodatkowy.EveryZbiorowe22(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<143)
+                else if (i<70)
                     Dodatkowy.EveryZbiorowe23(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<166)
+                else
                     Dodatkowy.Every8(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
 
                 if (j > 26)
@@ -1942,6 +1928,11 @@ public class Main extends Narzedzia{
             System.out.println("=============ERROR===============");
             wylacz();
         }
+        
+
+
+
+
         wylacz();
     }
 }

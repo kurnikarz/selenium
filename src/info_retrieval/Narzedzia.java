@@ -371,29 +371,36 @@ public class Narzedzia {
         //PrintWriter kodo2 = new PrintWriter("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\kody2.txt");
         PrintWriter ulica = new PrintWriter("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\ulica.txt");
         PrintWriter miastok = new PrintWriter("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\miasto.txt");
-        driver.get("https://www.fakeaddressgenerator.com/World/Poland_address_generator");
+        try {
+            driver.get("https://www.fakeaddressgenerator.com/World/Poland_address_generator");
 
-        Thread.sleep(5000);
-        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,300)", "");
-        Thread.sleep(1000);
-        for (int i=0;i<ile*2;i++)
-        {
-            if (i%2==0) {
-                kods = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[3]/div[2]/div[11]/div[2]/strong/input")).getAttribute("value");
-                ulicak = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[3]/div[2]/div[8]/div[2]/strong/input")).getAttribute("value");
-                miaston = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[3]/div[2]/div[9]/div[2]/strong/input")).getAttribute("value");
-                Thread.sleep(1000);
-                kodo.println(kods);
-                ulica.println(ulicak);
-                miastok.println(miaston);
-            }
-            robot.keyPress(KeyEvent.VK_F5);
             Thread.sleep(5000);
+            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,300)", "");
+            Thread.sleep(1000);
+            for (int i=0;i<ile*2;i++)
+            {
+                if (i%2==0) {
+                    kods = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[3]/div[2]/div[11]/div[2]/strong/input")).getAttribute("value");
+                    ulicak = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[3]/div[2]/div[8]/div[2]/strong/input")).getAttribute("value");
+                    miaston = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[3]/div[2]/div[9]/div[2]/strong/input")).getAttribute("value");
+                    Thread.sleep(1000);
+                    kodo.println(kods);
+                    ulica.println(ulicak);
+                    miastok.println(miaston);
+                }
+                robot.keyPress(KeyEvent.VK_F5);
+                Thread.sleep(5000);
+            }
+            kodo.close();
+            ulica.close();
+            miastok.close();
+            driver.quit();
+        } catch (Exception e){
+            driver.quit();
+            Koniec.RestarHujawei();
+            pobierzAdres(ile);
         }
-        kodo.close();
-        ulica.close();
-        miastok.close();
-        driver.quit();
+
     }
 
     public static void potwierdzArkadie(String mail) throws InterruptedException, AWTException {

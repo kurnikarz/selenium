@@ -86,6 +86,30 @@ public class Koniec {
         options.setExperimentalOption("prefs", prefs);
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+        driver.get("http://192.168.8.1/html/reboot.html");
+
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[text()='Ponowny rozruch']")).click();
+        Thread.sleep(3000);
+        Narzedzia.clickXY(1340,390);
+        Thread.sleep(2000);
+        Narzedzia.clickXY(1076,633);
+        Thread.sleep(35000);
+        Narzedzia.clickXY(1893,9);
+        driver.quit();
+    }
+
+    public static void RestarHujaweiKopia() throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+
+        HashMap<String, Object> images = new HashMap<String, Object>();
+        images.put("images", 2);
+        HashMap<String, Object> prefs = new HashMap<String, Object>();
+        prefs.put("profile.default_content_setting_values", images);
+        options.setExperimentalOption("prefs", prefs);
+        WebDriver driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
         driver.get("http://192.168.8.1/");
 
         Thread.sleep(3000);
