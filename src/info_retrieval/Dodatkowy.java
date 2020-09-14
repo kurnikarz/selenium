@@ -19,6 +19,10 @@ import java.util.Random;
 import java.util.TreeMap;
 
 public class Dodatkowy extends Narzedzia {
+    public static void sprawdzEvery(WebDriver driver) {
+
+    }
+
     public static void Lenovo(String mail, String temat, String opinia) throws InterruptedException, AWTException {
         Random r = new Random();
         int imieZenskie = r.nextInt(153);
@@ -1988,7 +1992,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2009,7 +2014,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2030,7 +2036,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2051,7 +2058,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2072,7 +2080,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2093,7 +2102,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2114,7 +2124,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2140,7 +2151,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2166,7 +2178,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2174,6 +2187,7 @@ public class Dodatkowy extends Narzedzia {
         try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/b3536920a65088a3a853bb1179d9a746/d453bb399faa68c5adde0bebfd854f73/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+            driver.findElement(By.xpath("//*[text()='Everydayme")).click();
             driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2019/01/najwiekszy-przyjaciel-naszej-rodziny.html");
             Thread.sleep(10000);
             clickXY(778,864);
@@ -2189,7 +2203,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2197,6 +2212,7 @@ public class Dodatkowy extends Narzedzia {
         try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/b3536920a65088a3a853bb1179d9a746/d453bb399faa68c5adde0bebfd854f73/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+            driver.findElement(By.xpath("//*[text()='Everydayme")).click();
             driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/11/nowy-przyjaciel-zakuj.html");
             Thread.sleep(10000);
             clickXY(778,733);
@@ -2213,7 +2229,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2221,6 +2238,7 @@ public class Dodatkowy extends Narzedzia {
         try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/b3536920a65088a3a853bb1179d9a746/d453bb399faa68c5adde0bebfd854f73/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+            driver.findElement(By.xpath("//*[text()='Everydayme")).click();
             driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/06/wawel-z-miosci-do-radosci.html");
             Thread.sleep(10000);
             clickXY(778,700);
@@ -2239,7 +2257,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2247,6 +2266,7 @@ public class Dodatkowy extends Narzedzia {
         try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/b3536920a65088a3a853bb1179d9a746/d453bb399faa68c5adde0bebfd854f73/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+            driver.findElement(By.xpath("//*[text()='Everydayme")).click();
             driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/06/uroczystosc-rodzinna.html");
             Thread.sleep(10000);
             clickXY(778,700);
@@ -2265,7 +2285,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2273,6 +2294,7 @@ public class Dodatkowy extends Narzedzia {
         try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/b3536920a65088a3a853bb1179d9a746/d453bb399faa68c5adde0bebfd854f73/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+            driver.findElement(By.xpath("//*[text()='Everydayme")).click();
             driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/05/niespodzianka-od-trade-tracker.html");
             Thread.sleep(10000);
             clickXY(778,700);
@@ -2291,23 +2313,30 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-        try {
+
+
+        //try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/f793e74adce27d2a1f79c301b69bd40f/6fc1eca7f53df3598d904786cba93eeb/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+            driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
             driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/03/zima-zima-po-zimie-wiosna.html");
             Thread.sleep(10000);
             clickXY(778,700);
             Thread.sleep(25000);
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
+        /*
         } catch (Exception e){
             driver.quit();
         }
+
+         */
 
     }
 
@@ -2315,7 +2344,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2323,6 +2353,7 @@ public class Dodatkowy extends Narzedzia {
         try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/f793e74adce27d2a1f79c301b69bd40f/6fc1eca7f53df3598d904786cba93eeb/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+            driver.findElement(By.xpath("//*[text()='Everydayme")).click();
             driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/02/spacer.html");
             Thread.sleep(10000);
             clickXY(778,700);
@@ -2341,7 +2372,8 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2349,6 +2381,7 @@ public class Dodatkowy extends Narzedzia {
         try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/f793e74adce27d2a1f79c301b69bd40f/6fc1eca7f53df3598d904786cba93eeb/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+            driver.findElement(By.xpath("//*[text()='Everydayme")).click();
             driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2017/11/soczewki-tak-czy-nie-promocja-acuvue.html");
             Thread.sleep(10000);
             clickXY(778,685);
@@ -2367,13 +2400,15 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
         driver.get("http://www.dodatkowypieniadz.com/zadanie/05adaa5e8bf3f9ff942f0e5852e84747/2a54107debba1c1b5b6ba30f68b1424c/201920950f63cee967982b759fde80b1");
         Thread.sleep(10000);
+        driver.findElement(By.xpath("//*[text()='Everydayme")).click();
         clickXY(750,846);
 
         Thread.sleep(20000);
@@ -2386,13 +2421,15 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
         driver.get("http://www.dodatkowypieniadz.com/zadanie/27e6c96b89ecff9f33961753e29b6334/e4f437908bd171fdf75626c25fab1647/201920950f63cee967982b759fde80b1");
         Thread.sleep(10000);
+        driver.findElement(By.xpath("//*[text()='Everydayme")).click();
         clickXY(450,490);
 
         Thread.sleep(20000);

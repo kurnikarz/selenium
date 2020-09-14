@@ -1877,25 +1877,26 @@ public class Main extends Narzedzia{
                 "\n" +
                 "Nie odpowiadamy na wiadomości na FB oraz komentarze pod postem. \n" +
                 "Nawet ich NIE czytamy. Proszę pisać TYLKO na email.";
-        try {
-
+        //try {
+            /*
             Thread.sleep(7200000);
             Koniec.RestarHujawei();
             Koniec.RestarHujawei();
-            /*
+
             for (int i=0;i<100;i++){
                 interia();
                 if (i%20==0)
                     Koniec.RestarHujawei();
                 System.out.println(i);
             }
+            */
 
-             */
 
             int j = 0;
             int x = 84;
-            pobierzAdres(84);
-            for (int i=0;i<84;i++){
+            //pobierzAdres(85); i=84
+            //pobierzAdres(30);
+            for (int i=0;i<30;i++){
                 mail = everyInt.nextLine();
                 kodVee = kodVe.nextLine();
                 ulicaVee = ulicaVe.nextLine();
@@ -1918,7 +1919,7 @@ public class Main extends Narzedzia{
                 Koniec.RestarHujawei();
             }
 
-
+        /*
         }
          catch (Exception e) {
             blad.println(e);
@@ -1928,10 +1929,8 @@ public class Main extends Narzedzia{
             System.out.println("=============ERROR===============");
             wylacz();
         }
-        
 
-
-
+         */
 
         wylacz();
     }

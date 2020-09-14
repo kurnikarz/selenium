@@ -1663,7 +1663,7 @@ public class Neworklead extends Narzedzia {
 
         //WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[2]/a"));
         //driver.get("https://www.everydayme.pl/konkurszimowy");
-        try {
+        //try {
             zmienKarte(driver);
             Thread.sleep(10000);
             while (!cookie){
@@ -1815,17 +1815,14 @@ public class Neworklead extends Narzedzia {
             }
             Thread.sleep(20000);
             driver.quit();
-
+        /*
         } catch (Exception e) {
+            niewykorzystane.append(mail+"\r\n");
+            niewykorzystane.close();
             driver.quit();
         }
 
-
-
-
-
-
-
+         */
 
     }
 
