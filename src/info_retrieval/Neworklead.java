@@ -1663,7 +1663,7 @@ public class Neworklead extends Narzedzia {
 
         //WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[2]/a"));
         //driver.get("https://www.everydayme.pl/konkurszimowy");
-        //try {
+        try {
             zmienKarte(driver);
             Thread.sleep(10000);
             while (!cookie){
@@ -1673,9 +1673,12 @@ public class Neworklead extends Narzedzia {
                 } catch (Exception e){
                     Thread.sleep(5000);
                 }
+
                 m++;
                 if (m > 10)
-                    break;;
+                    break;
+
+
             }
         Thread.sleep(3000);
         ScrollBy(driver, "1000");
@@ -1815,18 +1818,18 @@ public class Neworklead extends Narzedzia {
             }
             Thread.sleep(20000);
             driver.quit();
-        /*
+
         } catch (Exception e) {
             niewykorzystane.append(mail+"\r\n");
             niewykorzystane.close();
             driver.quit();
         }
 
-         */
+
 
     }
 
-    public static void Every(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+    public static void Every1(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
@@ -1834,7 +1837,7 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
-        driver.get("http://neworklead.elk.pl/action/5438/uid/122/");
+        driver.get("https://neworklead.pl/zadanie/ab886c17d48bb0dbd8fd894a6c05ae89/9979f5fe642390094bd380258035c139/d654be842d14f320ad92ef039fb6aa4c");
 
         Thread.sleep(25000);
         Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
@@ -1842,7 +1845,7 @@ public class Neworklead extends Narzedzia {
 
     }
 
-    public static void EveryIb1(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+    public static void Every2(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
@@ -1850,9 +1853,23 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
-        driver.get("http://neworklead.elk.pl/action/5440/uid/122/");
-        Thread.sleep(10000);
-        clickXY(356,570);
+        driver.get("https://neworklead.pl/zadanie/d64986704bbe84edf3772bc467e974cc/3981dac1410407404f36ee3abb8eac61/d654be842d14f320ad92ef039fb6aa4c");
+
+        Thread.sleep(25000000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+    }
+
+    public static void EveryAga(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+        driver.get("https://neworklead.pl/zadanie/544dbb011400480fd39a8c701d0ed41a/c274dd993973bc54d01b8649377276d8/d654be842d14f320ad92ef039fb6aa4c");
 
         Thread.sleep(25000);
         Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);

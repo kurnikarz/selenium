@@ -106,8 +106,8 @@ public class Main extends Narzedzia{
                 Thread.sleep(1000);
                 driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(cyfra1+cyfra2);
                 String mail = driver.findElement(By.xpath("//*[@id=\"login\"]")).getAttribute("value")+"@interia.pl";
-                driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
-                driver.findElement(By.xpath("//*[@id=\"rePassword\"]")).sendKeys("mrcbuch2");
+                driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("Mrcbuch123");
+                driver.findElement(By.xpath("//*[@id=\"rePassword\"]")).sendKeys("Mrcbuch123");
                 driver.findElement(By.xpath("//*[@id=\"mainApp\"]/div/div/div/div/div[2]/div/form/div[2]/div[1]/div[1]/label/div/div")).click();
                 //driver.findElement(By.xpath("//*[text()='Załóż darmowe konto']")).click();
                 clickXY(969,1002);
@@ -1877,7 +1877,7 @@ public class Main extends Narzedzia{
                 "\n" +
                 "Nie odpowiadamy na wiadomości na FB oraz komentarze pod postem. \n" +
                 "Nawet ich NIE czytamy. Proszę pisać TYLKO na email.";
-        //try {
+        try {
             /*
             Thread.sleep(7200000);
             Koniec.RestarHujawei();
@@ -1890,13 +1890,13 @@ public class Main extends Narzedzia{
                 System.out.println(i);
             }
             */
+            Neworklead.EveryAga("dede","dede","Deded","Deded","Deded");
 
 
             int j = 0;
             int x = 84;
-            //pobierzAdres(85); i=84
-            //pobierzAdres(30);
-            for (int i=0;i<30;i++){
+            pobierzAdres(85);
+            for (int i=0;i<81;i++){
                 mail = everyInt.nextLine();
                 kodVee = kodVe.nextLine();
                 ulicaVee = ulicaVe.nextLine();
@@ -1917,9 +1917,10 @@ public class Main extends Narzedzia{
                 System.out.println(i);
                 System.out.println(mail);
                 Koniec.RestarHujawei();
+                //Koniec.Restart();
             }
 
-        /*
+
         }
          catch (Exception e) {
             blad.println(e);
@@ -1930,7 +1931,7 @@ public class Main extends Narzedzia{
             wylacz();
         }
 
-         */
+
 
         wylacz();
     }
