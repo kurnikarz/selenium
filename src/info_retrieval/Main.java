@@ -775,6 +775,167 @@ public class Main extends Narzedzia{
 
     }
 
+    public static void dodajPostLepakNowy(String mail, String haslo, String post, int a, int b) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        options.addExtensions(new File("E:\\bot\\captcha.crx"));
+        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        /*
+        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Googlehttps://www.facebook.com/groups/172681430256680/\\Chrome\\User Data\\");
+        options.addArguments("profile-directory=Profile "+profil);
+         */
+        options.addArguments("--disable-notifications");
+        Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\"+mail+"\\linki.txt", true));
+        ChromeDriver driver = new ChromeDriver(options);
+        Robot robot = new Robot();
+        String[] grupy = new String[100];
+        grupy[0] = "https://www.facebook.com/groups/197656314112177/";
+        grupy[1] = "https://www.facebook.com/groups/298229136881926/";
+        grupy[2] = "https://www.facebook.com/groups/mlmstylzycia/";
+        grupy[3] = "https://www.facebook.com/groups/822032214568755/";
+        grupy[4] = "https://www.facebook.com/groups/pasywnezarabianie/";
+        grupy[5] = "https://www.facebook.com/groups/181436575590022/";
+        grupy[6] = "https://www.facebook.com/groups/inwestorzyiinwestycje/";
+        grupy[7] = "https://www.facebook.com/groups/zarabiajwnecie/";
+        grupy[8] = "https://www.facebook.com/groups/410873349362708/";
+        grupy[9] = "https://www.facebook.com/groups/270165996779362/";
+        grupy[10] = "https://www.facebook.com/groups/389679508482812/";
+        grupy[11] = "https://www.facebook.com/groups/531288753733140/";
+        grupy[12] = "https://www.facebook.com/groups/pracawmlm/";
+        grupy[13] = "https://www.facebook.com/groups/168679147406607/";
+        grupy[14] = "https://www.facebook.com/groups/yeahcoachpl/";
+        grupy[15] = "https://www.facebook.com/groups/381018519002791/";
+        grupy[16] = "https://www.facebook.com/groups/pracaonline24/";
+        grupy[17] = "https://www.facebook.com/groups/pieniadzezinternetu/";
+        grupy[18] = "https://www.facebook.com/groups/210289873049520/";
+        grupy[19] = "https://www.facebook.com/groups/pracazarabianie/";
+        grupy[20] = "https://www.facebook.com/groups/zarabianieinternet/";
+        grupy[21] = "https://www.facebook.com/groups/519298171753298/";
+        grupy[22] = "https://www.facebook.com/groups/PracaBezSzefa/";
+        grupy[23] = "https://www.facebook.com/groups/934587176605807/";
+        grupy[24] = "https://www.facebook.com/groups/920488634709636/";
+        grupy[25] = "https://www.facebook.com/groups/1895279054050554/";
+        grupy[26] = "https://www.facebook.com/groups/zarabianie.praca.internet/";
+        grupy[27] = "https://www.facebook.com/groups/1622951457992792/";
+        grupy[28] = "https://www.facebook.com/groups/1781838958705367/";
+        grupy[29] = "https://www.facebook.com/groups/172681430256680/";
+        grupy[30] = "https://www.facebook.com/groups/zarabianie.praca.biznes.online/"; //TU
+        grupy[31] = "https://www.facebook.com/groups/ZarabianiePrzezInternet/";
+        grupy[32] = "https://www.facebook.com/groups/kryptorodzina/";
+        grupy[33] = "https://www.facebook.com/groups/MLM.w.POLSCE/";
+        grupy[34] = "https://www.facebook.com/groups/932562780136151/";
+        grupy[35] = "https://www.facebook.com/groups/zarabianiewinternecie24h/";
+        grupy[36] = "https://www.facebook.com/groups/114051159156931/";
+        grupy[37] = "https://www.facebook.com/groups/4139968925/";
+        grupy[38] = "https://www.facebook.com/groups/322192781615024/";
+        grupy[39] = "https://www.facebook.com/groups/636328313209736/";
+        grupy[42] = "https://www.facebook.com/groups/470108560157347/";
+        grupy[43] = "https://www.facebook.com/groups/316265375706455/";
+        grupy[44] = "https://www.facebook.com/groups/InternetowaPraca/";
+        //===========================MOJE
+        grupy[45]="https://www.facebook.com/groups/1478777662423430/";
+        grupy[46]="https://www.facebook.com/groups/1303356579748916/";
+        grupy[47]="https://www.facebook.com/groups/794811483876118/";
+        grupy[48]="https://www.facebook.com/groups/505718296215064/";
+        grupy[49]="https://www.facebook.com/groups/408111472862824/";
+        grupy[50]="https://www.facebook.com/groups/351384515297725/";
+        grupy[51]="https://www.facebook.com/groups/319514972052497/";
+        grupy[52]="https://www.facebook.com/groups/1932167580368778/";
+        grupy[53]="https://www.facebook.com/groups/1483378875270025/";
+        grupy[54]="https://www.facebook.com/groups/1481353345440772/";
+        grupy[55]="https://www.facebook.com/groups/688755227963589/";
+        grupy[56]="https://www.facebook.com/groups/544747138926998/";
+        grupy[57]="https://www.facebook.com/groups/316265375706455/";
+        grupy[58]="https://www.facebook.com/groups/InternetowaPraca/";
+        grupy[59]="https://www.facebook.com/groups/315509495130995/";
+        grupy[60]="https://www.facebook.com/groups/298670413999878/";
+        grupy[61]="https://www.facebook.com/groups/2935674523171777/";
+        driver.manage().window().maximize();
+            driver.get("https://pl-pl.facebook.com/login/");
+            Thread.sleep(3000);
+
+            //try {
+                try {
+                    driver.findElement(By.xpath("/html/body/div[3]/div[2]/div/div/div/div/div[3]/button[2]")).click();
+                    Thread.sleep(2000);
+                } catch (Exception e) {
+
+                }
+                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div[1]/input")).sendKeys(mail);
+                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div[2]/input")).sendKeys(haslo);
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div[3]/button")).click();
+                /*
+            } catch (Exception e) {
+                System.out.println("ZALOGOWANA");
+            }
+
+                 */
+
+            for (int i = a; i < b; i++) {
+                /*
+                try {
+                    driver.findElement(By.xpath("//*[text()='Twoje konto zostało zablokowane']")).click();
+                    System.out.println("ZABLOKOWANE");
+                    driver.quit();
+                    break;
+                } catch (Exception e) {
+                    System.out.println("la");
+                }
+                */
+                //try {
+                    Thread.sleep(2000);
+                    driver.get(grupy[i]);
+                    Thread.sleep(3000);
+                    driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[1]/div/div/div/div[1]/div/div[1]/span")).click();
+                    Thread.sleep(3000);
+                    Narzedzia.Kopiuj(post);
+                    Thread.sleep(1000);
+                    Narzedzia.Wklej();
+                    Thread.sleep(2000);
+                    //ZDJECIE=======================
+                    /*
+                    driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[1]/span/div/div/div/div/div[1]/i")).click();
+                    Thread.sleep(3000);
+                    Kopiuj("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\klos.jpg");
+                    Thread.sleep(1000);
+                    Wklej();
+                    Thread.sleep(1000);
+                    robot.keyPress(KeyEvent.VK_ENTER);
+                    Thread.sleep(5000);
+
+                     */
+                driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
+                    Thread.sleep(5000);
+                    //driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span/a/span/span/span[2]")).click();
+
+                Thread.sleep(120000);
+                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span/a/span")).click();
+
+
+                    Thread.sleep(5000);
+                    zrobScreena(i,mail);
+                    linki.append(driver.getCurrentUrl()+"\r\n");
+
+                /*
+                } catch (Exception e) {
+                    try {
+                        driver.findElement(By.xpath("//*[text()='Dołacz do grupy']")).click();
+                        Thread.sleep(5000);
+                    } catch (Exception d) {
+                        System.out.println("====================== "+grupy[i]+" ===================");
+                    }
+                }
+
+                 */
+
+
+            }
+        linki.close();
+            //driver.quit();
+
+    }
+
     public static void poprawGrupe(String profil) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
@@ -1832,53 +1993,44 @@ public class Main extends Narzedzia{
         List<String> odp = new ArrayList<>();
         String[] maileArk = new String[80];
 
-        //Jak dbasz o urodę latem ?
-        odp.add("Regularnie złuszczam swoją skórę naturalnym peelingiem na przykład kawa z odrobiną olejku");
-        odp.add("Jak jest mocne słońce to staram się pozostawać w cieniu o ile to możliwe");
-        odp.add("Zdecydowanie więcej piję wody ze względu na upały jakie panują podczas lata");
-        odp.add("Nakładam minimalny makijaż ponieważ przy wysokich temperaturach makijaż może spływać i bardzo nie ładnie do wygląa");
-        odp.add("Troskliwie oczyszczam swoją twarz w tym celu stosuję żel do mycia twarzy, który usuwa pozostałości po makijażu");
-        odp.add("Dostarczam swojej skórze antyoksydantów aby zapewnić jej optymalną pielęgnację");
-        odp.add("Gdy jest mocne słońce chronię swoją skórę filtrami przeciwsłonecznymi");
-        odp.add("Gdy się opalam zbyt długo to stosuję jakiś dobrej jakości balsam po opalaniu, żeby pomóc swojej skórze");
-        odp.add("Gdy moja skóra staje się podrażniona używam wody termalnej");
-        odp.add("Dwa razy dziennie bardzo dokładnie oczyszczam swoją twarz, przed snem w celu usunięcia makijażu oraz rano");
-        odp.add("Do demakijażu oczu stosuję specjalnie do tego celu przygotowane kosmetyki");
-        odp.add("Każdy nowy dzień zxaczynam od wypicia wody z miodem");
-        odp.add("Staram się dobrze odżywiać, jeść owoce i warzywa");
-        odp.add("Stosuję produkty bogate w wyraminę E i kwasy omega 3");
-        odp.add("Dwa razy w tygodniu robię sobie peelink ciała przygotowany na bazie kawy, cynamonu oraz oliwy z oliwek");
-        odp.add("W diecie staram się ogarniczać jak to tylko mozliwe cukier oraz sól, używam zamienników");
-        odp.add("Co najmniej 3 razy w tygodniu staram się wykonywać jakąś czynność fizyczną - spacer, jazda na rowerze albo pływanie w jeziorze");
-        odp.add("Raz w tygodniu organizuję sobie kąpiek z dodatkiem miodu oraz mleka");
-        odp.add("Robię sobie maseczkę ziołową na twarz");
-        odp.add("Kupuję kremy z filtrem głęboko nawilżające");
-        odp.add("Staram się nie opalać twarzy zabezpieczając kremem z filtrem");
-        odp.add("Robię sobię okłady z zielonego ogórka wieczorem");
-        odp.add("Staram się regularnie smarować swoją skórę naturalnym peelingiem");
-        odp.add("Nie wychodzę na mocne słońce jeżeli nie mam takiej palącej potrzeby");
-        odp.add("Piję bardzo dużo wodu mineralnej nie gazowanej żeby nawodnić swój organizm");
-        odp.add("Nie nakładam tak dużo makijażu na twarz, ponieważ w lato jest gorąco i makijaż spływa co nie wygląda zbyt elegancko");
-        odp.add("Bardzo starannie oczyszczam swoją twarz");
-        odp.add("Gdy słońce mocno świeci to smaruję swoją skóręfiltrami przeciwsłonecznymi");
-        odp.add("Czasami używam wody termalnej w celu nawilżenia swojej skóry");
+        //Jakie są twoje sposoby na sprawny poranek ?
+        odp.add("Wstaję wcześnie rano, tak między 6 a 7, człowiek nie może długo spać bo później jest się ciągle zmęczonym");
+        odp.add("Po przebudzeniu staram się mieć dobry humor, myśleć pozytywnie i być zadowoloną :)");
+        odp.add("Codziennie budzę się o tej samej porze, dzięki czemu reguluję sobie długość snu i rytm dnia");
+        odp.add("Staram się nie zrywać gwałotownie z łóżka, że aż ciemno przed oczami się robi i zawroty głowy są");
+        odp.add("Po przebudzeniu robię kilka skłonów i rozciągnięć żeby rozluźnić mięśnie po kilkugofzinnym leżeniu");
+        odp.add("Gdy wstanę piję szklankę wody z cytryną, miodem, imbirem lub poprostu zwykłą bez żadnych dodatków");
+        odp.add("Oczywiście kawusie rano wypijam i od razu dzień zapowiada się lepiej ;) Kawka to podstawa");
+        odp.add("Lubię po przebudzeniu opłukać sobie twarz chłodną wodą, która mnie bardzo skutecznie rozbudza");
+        odp.add("Podstawą sprawnego poranka jest zdrowe i pożywne śniadanie");
+        odp.add("Staram się zawsze, żeby mój poranek był przyjemny i spokojny, im lepszy poranek tym lepszy dzień");
+        odp.add("Gdy się obudzem właczam sobie swoją ulubioną muzykę, to sprawia że od razu mam lepszy humor i motywację do działania");
+        odp.add("Staram się poprzedniego wieczora sobie wszystko poogarniać i przygotować na następny dzień");
+        odp.add("Oczywiście poranne przytulanie to podstawa ! Nie wyobrażam sobie, żeby w moim domu zabrakło na nie czasu");
+        odp.add("Wstaję zawszę trochę wcześniej aby mieć zapas minut i nie robić wszystkiego w pośpiechu");
+        odp.add("Każdego poranka od razu po przebudzeniu wypijam sobię szklankę przegotowanej wody z cytryną");
+        odp.add("Nie wyobrażam sobie wyjścia z domu bez makijażu, chociaż przyznam że czasami mi się zdaża ale rzadko");
+        odp.add("Zawsze, lub prawie zawsze :) przygotowuję sobie dzień wcześniej ubrania i torbę, żeby nie śpieszyć się rano ze wszystkim");
+        odp.add("Lubię wypić sobię poranną kawę ale jeżeli kawa to tylko we własnym domu, tylko taka mi smakuje");
+        odp.add("Jeśli uda mi się wstać odpowiednio wcześniej, czasem budzę się przed budzikiem, to wolny czas poświęcam na prasówkę, szybkie czytanie wiadomości");
+        odp.add("Zdrowe, pożywne i kolorowe śniadanie to podstawa każdego poranka, jeżeli chce się wyruszyć na podbój dnia");
+        odp.add("Nic nie wprawia mnie w tak dobry nastrój z rana jak rozmowa z dziećmi. Wyspane, pełne energii, zabawnych pytań i spostrzeżeń potrafią naprawdę rozbawić mnie do łez");
+        odp.add("Staram się aktywnie zaczynać każdy dzień, chociażby od krótkiej gimnastyki, wtedy czuję się wspaniale");
+        odp.add("Budzik trzymam daleko od łóżka, Ile to razy zdarzyło się mi gdzieś spóźnić, tylko dlatego, że przez sen wyłączyłam budzik. Teraz telefon zawsze mam na tyle daleko, że po prostu muszę wstać, aby go wyłączyć");
+        odp.add("Poranna gimnastyka to jest podstawa każdego dnia ! Jakieś delikatne rozciąganie lub skłony i od razu chce się żyć");
+
 
         Random r = new Random();
         String mail2;
         String mail3;
         String numer;
-        String post = "PRACA!!!\n" +
-                "Szukamy ludzi do pracy przy wklejaniu postów na FB. \n" +
-                "Płacimy codziennie! Można robić posty z wielu kont i zarobi się więcej. Mamy w zespole ludzi co zarabiają po 3000zl w skali miesiaca za pół godziny pracy dziennie. \n" +
-                "\n" +
-                "Kontakt tylko mailowy:\n" +
-                "\n" +
-                "Pracujekiedychce@gmail.com\n" +
-                "\n" +
-                "Nie odpowiadamy na wiadomości na FB oraz komentarze pod postem. \n" +
-                "Nawet ich NIE czytamy. Proszę pisać TYLKO na email.";
+        String post = "test";
+
+        String fb[] = {"dumcio.97@wp.pl","ewa1dymkowska@gmail.com","natalia.woszczylo@o2.pl"};
+        String hasla[] = {"MrcbucHv3.0","Arturek1070","Natalia654321098"};
+        Neworklead.EveryDsa(everyInt.nextLine(),kodVe.nextLine(),ulicaVe.nextLine(),miastoVe.nextLine(),odp.get(1));
         try {
-            /*
+            /*https://www.everydayme.pl/summer-weeks-contest-beauty
             Thread.sleep(7200000);
             Koniec.RestarHujawei();
             Koniec.RestarHujawei();
@@ -1889,9 +2041,6 @@ public class Main extends Narzedzia{
                     Koniec.RestarHujawei();
                 System.out.println(i);
             }
-            */
-            Neworklead.EveryAga("dede","dede","Deded","Deded","Deded");
-
 
             int j = 0;
             int x = 84;
@@ -1920,7 +2069,27 @@ public class Main extends Narzedzia{
                 //Koniec.Restart();
             }
 
+            Thread.sleep(7200000);
+            Koniec.RestarHujawei();
+            Koniec.RestarHujawei();
+            int j = 0;
+            for (int i=0;i<30;i++){
+                mail = everyInt.nextLine();
+                kodVee = kodVe.nextLine();
+                ulicaVee = ulicaVe.nextLine();
+                miastoVee = miastoVe.nextLine();
 
+                Neworklead.Every1(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+
+                if (j > 26)
+                    j = 0;
+                j++;
+                System.out.println(i);
+                System.out.println(mail);
+                Koniec.RestarHujawei();
+                //Koniec.Restart();
+            }
+*/
         }
          catch (Exception e) {
             blad.println(e);
@@ -1933,6 +2102,6 @@ public class Main extends Narzedzia{
 
 
 
-        wylacz();
+        //wylacz();
     }
 }
