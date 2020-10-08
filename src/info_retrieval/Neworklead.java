@@ -1665,7 +1665,7 @@ public class Neworklead extends Narzedzia {
         //driver.get("https://www.everydayme.pl/konkurszimowy");
 //        try {
             zmienKarte(driver);
-            Thread.sleep(1000);
+            Thread.sleep(10000);
             while (!cookie){
                 try {
                     driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
@@ -1721,7 +1721,7 @@ public class Neworklead extends Narzedzia {
             Thread.sleep(1000);
             driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[11]/button")).click();
 
-            Thread.sleep(20000);
+            Thread.sleep(40000);
             driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][line1]\"]")).sendKeys(ulica);
             driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][postalarea]\"]")).sendKeys(kod);
             driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][city]\"]")).sendKeys(miasto);
@@ -1774,7 +1774,7 @@ public class Neworklead extends Narzedzia {
                     clickXY(1245,848);
                     break;
             }
-            Thread.sleep(5000);
+            Thread.sleep(20000);
             driver.quit();
 
 //        } catch (Exception e) {
@@ -1795,16 +1795,16 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
-        //try {
+        try {
             driver.get("https://neworklead.pl/zadanie/b4d9f1be5c17fc6eb7b5484fdac208b9/00a6e1e9e47aa3504dfb08de61db32d9/d654be842d14f320ad92ef039fb6aa4c");
 
             Thread.sleep(25000);
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
 
-//        } catch (Exception e){
-//            driver.quit();
-//        }
+        } catch (Exception e){
+            driver.quit();
+        }
 
 
     }

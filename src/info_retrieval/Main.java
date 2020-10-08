@@ -2028,9 +2028,23 @@ public class Main extends Narzedzia{
 
         String fb[] = {"dumcio.97@wp.pl","ewa1dymkowska@gmail.com","natalia.woszczylo@o2.pl"};
         String hasla[] = {"MrcbucHv3.0","Arturek1070","Natalia654321098"};
-        Neworklead.EveryDsa(everyInt.nextLine(),kodVe.nextLine(),ulicaVe.nextLine(),miastoVe.nextLine(),odp.get(1));
+        int j=0;
+        Dodatkowy.EveryZbiorowe11("dede","dede","deded","Deded","dede");
         try {
-            /*https://www.everydayme.pl/summer-weeks-contest-beauty
+            for (int i=0;i<100;i++) {
+                ulicaVee = ulicaVe.nextLine();
+                miastoVee = miastoVe.nextLine();
+                kodVee = kodVe.nextLine();
+                mail = everyInt.nextLine();
+                Neworklead.EveryDsa(mail, kodVee, ulicaVee, miastoVee,odp.get(j));
+                j++;
+                if (j > 22)
+                    j = 0;
+                System.out.println(i);
+                System.out.println(mail);
+                Koniec.Restart();
+            }
+            /*
             Thread.sleep(7200000);
             Koniec.RestarHujawei();
             Koniec.RestarHujawei();
@@ -2102,6 +2116,6 @@ public class Main extends Narzedzia{
 
 
 
-        //wylacz();
+        wylacz();
     }
 }
