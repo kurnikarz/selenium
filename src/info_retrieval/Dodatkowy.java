@@ -2130,7 +2130,7 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
+        try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/be16a979c5c89372926ec880d8f701a6/8fe96f6cd0f73fb3ba773a63d7459475/201920950f63cee967982b759fde80b1");
             Thread.sleep(10000);
             clickXY(745,850);
@@ -2139,9 +2139,9 @@ public class Dodatkowy extends Narzedzia {
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
             
-//        } catch (Exception e){
-//            driver.quit();
-//        }
+        } catch (Exception e){
+            driver.quit();
+        }
 
              
 
@@ -2188,7 +2188,7 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
+        try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/1b2f946bd2ee3f277a78641cd6164214/167dbe8c4e2ebf7c32edf17e7d3defb7/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
@@ -2199,9 +2199,9 @@ public class Dodatkowy extends Narzedzia {
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
             
-//        } catch (Exception e){
-//            driver.quit();
-//        }
+        } catch (Exception e){
+            driver.quit();
+        }
 
              
     }
@@ -2216,7 +2216,7 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
+        try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/1b2f946bd2ee3f277a78641cd6164214/167dbe8c4e2ebf7c32edf17e7d3defb7/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
@@ -2227,9 +2227,9 @@ public class Dodatkowy extends Narzedzia {
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
             
-//        } catch (Exception e){
-//            driver.quit();
-//        }
+        } catch (Exception e){
+            driver.quit();
+        }
 
              
 
@@ -2245,7 +2245,7 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
+        try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/1b2f946bd2ee3f277a78641cd6164214/167dbe8c4e2ebf7c32edf17e7d3defb7/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
@@ -2257,9 +2257,9 @@ public class Dodatkowy extends Narzedzia {
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
             
-//        } catch (Exception e){
-//            driver.quit();
-//        }
+        } catch (Exception e){
+            driver.quit();
+        }
 
              
 
@@ -2276,7 +2276,7 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
+        try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/1b2f946bd2ee3f277a78641cd6164214/167dbe8c4e2ebf7c32edf17e7d3defb7/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
@@ -2288,9 +2288,9 @@ public class Dodatkowy extends Narzedzia {
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
             
-//        } catch (Exception e){
-//            driver.quit();
-//        }
+        } catch (Exception e){
+            driver.quit();
+        }
 
              
 

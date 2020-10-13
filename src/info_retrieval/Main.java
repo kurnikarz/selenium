@@ -50,22 +50,22 @@ public class Main extends Narzedzia{
                 driver.manage().window().maximize();
                 driver.get("https://konto-pocztowe.interia.pl/#/nowe-konto/darmowe");
                 Thread.sleep(5000);
-                try {
-                    driver.switchTo().frame(5);
-                    //driver.findElement(By.xpath("//*[@id=\"reset-button\"]")).click();
-                    //clickXY(85, 52);
-                    Thread.sleep(2000);
-                    while (true) {
-                        Thread.sleep(1000);
-                        String znak = scan.nextLine();
-                        if (znak.equals("q")) {
-                            break;
-                        }
-                    }
-
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
+    //                try {
+    //                    driver.switchTo().frame(5);
+    //                    //driver.findElement(By.xpath("//*[@id=\"reset-button\"]")).click();
+    //                    //clickXY(85, 52);
+    //                    Thread.sleep(2000);
+    //                    while (true) {
+    //                        Thread.sleep(1000);
+    //                        String znak = scan.nextLine();
+    //                        if (znak.equals("q")) {
+    //                            break;
+    //                        }
+    //                    }
+    //
+    //                } catch (Exception e) {
+    //                    System.out.println(e);
+    //                }
             /*
             while (true) {
                 Thread.sleep(1000);
@@ -850,6 +850,7 @@ public class Main extends Narzedzia{
         grupy[59]="https://www.facebook.com/groups/315509495130995/";
         grupy[60]="https://www.facebook.com/groups/298670413999878/";
         grupy[61]="https://www.facebook.com/groups/2935674523171777/";
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
             driver.get("https://pl-pl.facebook.com/login/");
             Thread.sleep(3000);
@@ -908,8 +909,8 @@ public class Main extends Narzedzia{
                 driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
                     Thread.sleep(5000);
                     //driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span/a/span/span/span[2]")).click();
-
-                Thread.sleep(120000);
+                
+                //Thread.sleep(120000);
                 driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span/a/span")).click();
 
 
@@ -2029,81 +2030,37 @@ public class Main extends Narzedzia{
         String fb[] = {"dumcio.97@wp.pl","ewa1dymkowska@gmail.com","natalia.woszczylo@o2.pl"};
         String hasla[] = {"MrcbucHv3.0","Arturek1070","Natalia654321098"};
         int j=0;
-        Dodatkowy.EveryZbiorowe11("dede","dede","deded","Deded","dede");
+//        dodajPostLepakNowy(fb[0],hasla[0],post,0,1);
         try {
-            for (int i=0;i<100;i++) {
-                ulicaVee = ulicaVe.nextLine();
-                miastoVee = miastoVe.nextLine();
-                kodVee = kodVe.nextLine();
-                mail = everyInt.nextLine();
-                Neworklead.EveryDsa(mail, kodVee, ulicaVee, miastoVee,odp.get(j));
-                j++;
-                if (j > 22)
-                    j = 0;
-                System.out.println(i);
-                System.out.println(mail);
-                Koniec.Restart();
-            }
-            /*
-            Thread.sleep(7200000);
-            Koniec.RestarHujawei();
-            Koniec.RestarHujawei();
-
-            for (int i=0;i<100;i++){
+            for (int i=1;i<100;i++) {
                 interia();
                 if (i%20==0)
-                    Koniec.RestarHujawei();
+                    Koniec.Restart();
                 System.out.println(i);
             }
-
-            int j = 0;
-            int x = 84;
-            pobierzAdres(85);
-            for (int i=0;i<81;i++){
+            pobierzAdres(90);
+            for (int i=0;i<90;i++) {
                 mail = everyInt.nextLine();
                 kodVee = kodVe.nextLine();
                 ulicaVee = ulicaVe.nextLine();
                 miastoVee = miastoVe.nextLine();
-
-                if (i<23)
-                    Dodatkowy.EveryZbiorowe21(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<46)
-                    Dodatkowy.EveryZbiorowe22(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<70)
-                    Dodatkowy.EveryZbiorowe23(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else
-                    Dodatkowy.Every8(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-
-                if (j > 26)
+                if (i < 45)
+                    Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<55)
+                    Dodatkowy.EveryZbiorowe11(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<65)
+                    Dodatkowy.EveryZbiorowe12(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<75)
+                    Dodatkowy.EveryZbiorowe13(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                else if (i<90)
+                    Dodatkowy.EveryZbiorowe14(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                 j++;
+                if (j > 22)
                     j = 0;
-                j++;
-                System.out.println(i);
                 System.out.println(mail);
-                Koniec.RestarHujawei();
-                //Koniec.Restart();
-            }
-
-            Thread.sleep(7200000);
-            Koniec.RestarHujawei();
-            Koniec.RestarHujawei();
-            int j = 0;
-            for (int i=0;i<30;i++){
-                mail = everyInt.nextLine();
-                kodVee = kodVe.nextLine();
-                ulicaVee = ulicaVe.nextLine();
-                miastoVee = miastoVe.nextLine();
-
-                Neworklead.Every1(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-
-                if (j > 26)
-                    j = 0;
-                j++;
                 System.out.println(i);
-                System.out.println(mail);
                 Koniec.RestarHujawei();
-                //Koniec.Restart();
             }
-*/
         }
          catch (Exception e) {
             blad.println(e);
