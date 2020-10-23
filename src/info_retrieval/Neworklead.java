@@ -1663,7 +1663,7 @@ public class Neworklead extends Narzedzia {
 
         //WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[2]/a"));
         //driver.get("https://www.everydayme.pl/konkurszimowy");
-        try {
+//        try {
             zmienKarte(driver);
             Thread.sleep(10000);
             while (!cookie){
@@ -1689,37 +1689,45 @@ public class Neworklead extends Narzedzia {
             driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[1]/div[4]/a[1]")).click();
         }
         Thread.sleep(10000);
-        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)", "");
-        Thread.sleep(1000);
-        clickXY(861,584);
-        Thread.sleep(1000);
-        clickXY(861,584);
-        Thread.sleep(1000);
-        clickXY(861,584);
-        Thread.sleep(1000);
-        clickXY(935,666);
+        boolean flaga = false;
+        while (!flaga) {
+            try {
+                ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)", "");
+                Thread.sleep(1000);
+                clickXY(861,580);
+                Thread.sleep(1000);
+                clickXY(861,580);
+                Thread.sleep(1000);
+                clickXY(861,580);
+                Thread.sleep(1000);
+                clickXY(935,670);
 
-
-            Thread.sleep(3000);
-            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)", "");
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"Kobieta \"]")).click();
-            driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys(imie);
-            driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys(nazwisko);
-            Select miesiacc = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[1]")));
-            miesiacc.selectByIndex(miesiac);
-            Select rokk = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[2]")));
-            rokk.selectByValue(roko);
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"addressPostalCode\"]")).sendKeys(kod);
-            driver.findElement(By.xpath("//*[@id=\"emailAddress\"]")).sendKeys(mail);
-            driver.findElement(By.xpath("//*[@id=\"newPassword\"]")).sendKeys(mail + "V2");
-            Thread.sleep(1000);
-            clickXY(x, 1012);
-            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,700)", "");
-            driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus\"]")).click();
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[11]/button")).click();
+                Thread.sleep(3000);
+                ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)", "");
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("//*[@id=\"Kobieta \"]")).click();
+                driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys(imie);
+                driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys(nazwisko);
+                Select miesiacc = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[1]")));
+                miesiacc.selectByIndex(miesiac);
+                Select rokk = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[2]")));
+                rokk.selectByValue(roko);
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("//*[@id=\"addressPostalCode\"]")).sendKeys(kod);
+                driver.findElement(By.xpath("//*[@id=\"emailAddress\"]")).sendKeys(mail);
+                driver.findElement(By.xpath("//*[@id=\"newPassword\"]")).sendKeys(mail + "V2");
+                Thread.sleep(1000);
+                clickXY(x, 1012);
+                ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,700)", "");
+                driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus\"]")).click();
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[11]/button")).click();
+                flaga = true;
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(5000);
+            }
+        }
 
             Thread.sleep(40000);
             driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][line1]\"]")).sendKeys(ulica);
@@ -1777,11 +1785,11 @@ public class Neworklead extends Narzedzia {
             Thread.sleep(20000);
             driver.quit();
 
-        } catch (Exception e) {
-            niewykorzystane.append(mail+"\r\n");
-            niewykorzystane.close();
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            niewykorzystane.append(mail+"\r\n");
+//            niewykorzystane.close();
+//            driver.quit();
+//        }
 
 
 

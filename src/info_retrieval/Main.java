@@ -911,7 +911,7 @@ public class Main extends Narzedzia{
                     //driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span/a/span/span/span[2]")).click();
                 
                 //Thread.sleep(120000);
-                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span/a/span")).click();
+                ((JavascriptExecutor) driver).executeScript("", "");
 
 
                     Thread.sleep(5000);
@@ -2029,17 +2029,18 @@ public class Main extends Narzedzia{
 
         String fb[] = {"dumcio.97@wp.pl","ewa1dymkowska@gmail.com","natalia.woszczylo@o2.pl"};
         String hasla[] = {"MrcbucHv3.0","Arturek1070","Natalia654321098"};
+//        Dodatkowy.EveryZbiorowe11("dede","Deded","Deded","Deded","Ded");
         int j=0;
 //        dodajPostLepakNowy(fb[0],hasla[0],post,0,1);
-        try {
-            for (int i=1;i<100;i++) {
-                interia();
-                if (i%20==0)
-                    Koniec.Restart();
-                System.out.println(i);
-            }
-            pobierzAdres(90);
-            for (int i=0;i<90;i++) {
+//        try {
+//            for (int i=1;i<100;i++) {
+//                interia();
+//                if (i%20==0)
+//                    Koniec.Restart();
+//                System.out.println(i);
+//            }
+//            pobierzAdres(90);
+            for (int i=45;i<90;i++) {
                 mail = everyInt.nextLine();
                 kodVee = kodVe.nextLine();
                 ulicaVee = ulicaVe.nextLine();
@@ -2061,15 +2062,15 @@ public class Main extends Narzedzia{
                 System.out.println(i);
                 Koniec.RestarHujawei();
             }
-        }
-         catch (Exception e) {
-            blad.println(e);
-            blad.close();
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            wylacz();
-        }
+//        }
+//         catch (Exception e) {
+//            blad.println(e);
+//            blad.close();
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            wylacz();
+//        }
 
 
 
