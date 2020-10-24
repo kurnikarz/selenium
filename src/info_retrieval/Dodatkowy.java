@@ -2130,18 +2130,20 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
+        try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/be16a979c5c89372926ec880d8f701a6/8fe96f6cd0f73fb3ba773a63d7459475/201920950f63cee967982b759fde80b1");
             Thread.sleep(10000);
+            sprawdzEvery(driver);
+            refreshEvery(driver);
             clickXY(745,850);
 
             Thread.sleep(25000);
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
             
-//        } catch (Exception e){
-//            driver.quit();
-//        }
+        } catch (Exception e){
+            driver.quit();
+        }
 
              
 
@@ -2188,9 +2190,11 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
+        try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/1b2f946bd2ee3f277a78641cd6164214/167dbe8c4e2ebf7c32edf17e7d3defb7/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+        sprawdzEvery(driver);
+        refreshEvery(driver);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
             driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2019/01/najwiekszy-przyjaciel-naszej-rodziny.html");
             Thread.sleep(10000);
@@ -2199,9 +2203,9 @@ public class Dodatkowy extends Narzedzia {
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
             
-//        } catch (Exception e){
-//            driver.quit();
-//        }
+        } catch (Exception e){
+            driver.quit();
+        }
 
              
     }
@@ -2216,9 +2220,11 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
+        try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/1b2f946bd2ee3f277a78641cd6164214/167dbe8c4e2ebf7c32edf17e7d3defb7/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+        sprawdzEvery(driver);
+        refreshEvery(driver);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
             driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/11/nowy-przyjaciel-zakuj.html");
             Thread.sleep(10000);
@@ -2227,9 +2233,9 @@ public class Dodatkowy extends Narzedzia {
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
             
-//        } catch (Exception e){
-//            driver.quit();
-//        }
+        } catch (Exception e){
+            driver.quit();
+        }
 
              
 
@@ -2245,9 +2251,11 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
+        try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/1b2f946bd2ee3f277a78641cd6164214/167dbe8c4e2ebf7c32edf17e7d3defb7/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+        sprawdzEvery(driver);
+        refreshEvery(driver);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
             driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/06/wawel-z-miosci-do-radosci.html");
             Thread.sleep(10000);
@@ -2257,9 +2265,9 @@ public class Dodatkowy extends Narzedzia {
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
             
-//        } catch (Exception e){
-//            driver.quit();
-//        }
+        } catch (Exception e){
+            driver.quit();
+        }
 
              
 
@@ -2276,9 +2284,11 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
+        try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/1b2f946bd2ee3f277a78641cd6164214/167dbe8c4e2ebf7c32edf17e7d3defb7/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+        sprawdzEvery(driver);
+        refreshEvery(driver);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
             driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/06/uroczystosc-rodzinna.html");
             Thread.sleep(10000);
@@ -2288,9 +2298,9 @@ public class Dodatkowy extends Narzedzia {
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
             
-//        } catch (Exception e){
-//            driver.quit();
-//        }
+        } catch (Exception e){
+            driver.quit();
+        }
 
              
 
@@ -2310,10 +2320,12 @@ public class Dodatkowy extends Narzedzia {
 
 
         try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/f793e74adce27d2a1f79c301b69bd40f/6fc1eca7f53df3598d904786cba93eeb/201920950f63cee967982b759fde80b1");
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/cd4552c5e94d26aab8d275b49a8edc73/e7d366fc65895f6adfb6811ba5c0c90d/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+            sprawdzEvery(driver);
+            refreshEvery(driver);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
-            driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/03/zima-zima-po-zimie-wiosna.html");
+            driver.get("http://tajemniczakonsta.blogspot.com/2017/10/zmiany-i-jeszcze-raz-zmiany.html ");
             Thread.sleep(10000);
             clickXY(778,700);
             Thread.sleep(25000);
@@ -2339,10 +2351,12 @@ public class Dodatkowy extends Narzedzia {
         driver.manage().window().maximize();
 
         try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/f793e74adce27d2a1f79c301b69bd40f/6fc1eca7f53df3598d904786cba93eeb/201920950f63cee967982b759fde80b1");
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/cd4552c5e94d26aab8d275b49a8edc73/e7d366fc65895f6adfb6811ba5c0c90d/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+            sprawdzEvery(driver);
+            refreshEvery(driver);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
-            driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2018/02/spacer.html");
+            driver.get("http://tajemniczakonsta.blogspot.com/2017/07/maska-l-czysta-glinka-detoksykujaco.html");
             Thread.sleep(10000);
             clickXY(778,700);
 
@@ -2370,10 +2384,12 @@ public class Dodatkowy extends Narzedzia {
         driver.manage().window().maximize();
 
         try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/f793e74adce27d2a1f79c301b69bd40f/6fc1eca7f53df3598d904786cba93eeb/201920950f63cee967982b759fde80b1");
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/cd4552c5e94d26aab8d275b49a8edc73/e7d366fc65895f6adfb6811ba5c0c90d/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
+            sprawdzEvery(driver);
+            refreshEvery(driver);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
-            driver.get("https://tajemniczaaaakonstiiii.blogspot.com/2017/11/soczewki-tak-czy-nie-promocja-acuvue.html");
+            driver.get("http://tajemniczakonsta.blogspot.com/2017/03/puder-do-twarzy-ecocera.html");
             Thread.sleep(10000);
             clickXY(778,685);
 
@@ -2386,6 +2402,39 @@ public class Dodatkowy extends Narzedzia {
         }
 
              
+
+
+    }
+
+    public static void EveryZbiorowe24(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/cd4552c5e94d26aab8d275b49a8edc73/e7d366fc65895f6adfb6811ba5c0c90d/201920950f63cee967982b759fde80b1");
+            Thread.sleep(5000);
+            sprawdzEvery(driver);
+            refreshEvery(driver);
+            driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
+            driver.get("http://tajemniczakonsta.blogspot.com/2017/02/bronzer-rio-look-beauty-holiday-glow.html");
+            Thread.sleep(10000);
+            clickXY(778,685);
+
+            Thread.sleep(25000);
+            Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+            Thread.sleep(1000);
+
+        } catch (Exception e){
+            driver.quit();
+        }
+
+
 
 
     }

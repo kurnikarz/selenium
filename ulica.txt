@@ -1,45 +1,50 @@
-ul. Kopalnii Karol 34
-ul. Jaworowa 138
-ul. Buszkowska 26
-ul. Skłodowskiej Curie Marii 62
-ul. Ogińskiego Michała Kleofasa 62
-ul. Bukowa 111
-ul. Liliowa 94
-ul. Słupecka 73
-ul. Murarska 11
-ul. Głucha 78
-ul. Baczyńskiego Krzysztofa Kamila 79
-ul. Oświęcimska 22
-ul. Magnolii 107
-ul. Cisowa 85
-ul. Owsiana 119
-ul. Astrów 14
-ul. Muszkieterów 1
-ul. Małka Zbigniewa 16
-ul. Powstańców Śląskich 110
-ul. Barlickiego Norberta 147
-ul. Nadodrzańska 37
-ul. Strykowska 111
-ul. Generała Dąbrowskiego Jana Henryka 113
-ul. Próżna 132
-ul. Zbójnicka 89
-ul. Komuny Paryskiej 14
-ul. Kościuszki 29
-ul. Rajska 143
-ul. Podlesie 43
-ul. Wiśniowa 46
-ul. Dębowa 123
-ul. Aksini 96
-ul. Mickiewicza Adama 30
-ul. Pyrzycka 75
-ul. Przyleśna 127
-ul. Żołnierska 149
-ul. Lutniowa 143
-ul. Vogla Zygmunta 49
-ul. DR Jordana Henryka 119
-ul. Agrestowa 148
-ul. Czarnieckiego Stefana 42
-ul. Seredyńskiego Mariana 4
-ul. Bzury 56
-ul. Kazimierza Jagiellończyka 137
-ul. Tryszczyńska 132
+ul. Stefczyka Franciszka 126
+ul. Pruszkowska 52
+ul. Indyjska 56
+ul. Wiśniowieckiego Jeremiego 89
+ul. Szeflera Antoniego 145
+ul. Morcinka Gustawa 114
+ul. Długosza Jana 47
+ul. Fausta 92
+ul. Prusa Bolesława 76
+ul. Wilcza 139
+ul. Sienkiewicza Henryka 63
+ul. Jarzębinowa 86
+ul. Małopolska 118
+ul. Orna 98
+ul. Zwycięstwa 50
+ul. Traktorowa 32
+ul. Kmicica 28
+ul. Warszawska 54
+ul. Nowa 5
+ul. Karpa Karola 148
+ul. Toruńska 14
+ul. Rybnicka 123
+ul. Rzeczna 44
+ul. 7 Kamienic 94
+ul. Hempla Jana 128
+ul. Pierwszej Dywizji 56
+ul. Sierpowa 22
+ul. Nad Przemszą 129
+ul. Komuny Paryskiej 127
+ul. Ołbińska 140
+ul. Główna 50
+ul. Bednarska 89
+ul. Podwale 49
+ul. Młodzieżowa 9
+ul. Cyganka 2
+ul. Świętego Proroka Eliasza 19
+ul. Rynek 140
+ul. Promienista 116
+ul. Bielawska 14
+ul. Okulickiego 95
+ul. Dziedzicka 116
+ul. Żeromskiego Stefana 124
+ul. Świdnicka 73
+ul. Droga Siedmiu Młynów 137
+ul. Bohaterów Westerplatte 137
+ul. Czernichowska 94
+ul. Planetarna 46
+ul. Kukuczki Jerzego 115
+ul. Manganowa 45
+ul. 13 Zakrętów 45

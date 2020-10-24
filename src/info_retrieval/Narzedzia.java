@@ -610,4 +610,24 @@ public class Narzedzia {
             driver.switchTo().window(winHandle);
         }
     }
+
+    public static void refreshEvery(WebDriver driver) {
+        try {
+            driver.findElement(By.xpath("//*[text()='Połączenie zostało przerwane'")).click();
+            driver.navigate().refresh();
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+
+        }
+    }
+
+    public static void sprawdzLinkEvery(WebDriver driver) {
+        try {
+            driver.findElement(By.xpath("//*[text()='Ta witryna jest nieosiągalna'")).click();
+            driver.navigate().refresh();
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+
+        }
+    }
 }

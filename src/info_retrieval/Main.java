@@ -2029,48 +2029,44 @@ public class Main extends Narzedzia{
 
         String fb[] = {"dumcio.97@wp.pl","ewa1dymkowska@gmail.com","natalia.woszczylo@o2.pl"};
         String hasla[] = {"MrcbucHv3.0","Arturek1070","Natalia654321098"};
-//        Dodatkowy.EveryZbiorowe11("dede","Deded","Deded","Deded","Ded");
         int j=0;
-//        dodajPostLepakNowy(fb[0],hasla[0],post,0,1);
-//        try {
-//            for (int i=1;i<100;i++) {
-//                interia();
-//                if (i%20==0)
-//                    Koniec.Restart();
-//                System.out.println(i);
-//            }
-//            pobierzAdres(90);
-            for (int i=45;i<90;i++) {
+        try {
+            for (int i=31;i<50;i++) {
+                interia();
+                if (i%20==0)
+                    Koniec.Restart();
+                System.out.println(i);
+            }
+            pobierzAdres(50);
+            for (int i=0;i<50;i++) {
                 mail = everyInt.nextLine();
                 kodVee = kodVe.nextLine();
                 ulicaVee = ulicaVe.nextLine();
                 miastoVee = miastoVe.nextLine();
-                if (i < 45)
-                    Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<55)
+                if (i<10)
                     Dodatkowy.EveryZbiorowe11(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<65)
+                else if (i<20)
                     Dodatkowy.EveryZbiorowe12(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<75)
+                else if (i<30)
                     Dodatkowy.EveryZbiorowe13(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<90)
+                else
                     Dodatkowy.EveryZbiorowe14(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
                  j++;
                 if (j > 22)
                     j = 0;
                 System.out.println(mail);
                 System.out.println(i);
-                Koniec.RestarHujawei();
+                Koniec.Restart();
             }
-//        }
-//         catch (Exception e) {
-//            blad.println(e);
-//            blad.close();
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            wylacz();
-//        }
+        }
+         catch (Exception e) {
+            blad.println(e);
+            blad.close();
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            wylacz();
+        }
 
 
 

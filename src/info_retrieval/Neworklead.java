@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.print.attribute.standard.RequestingUserName;
 import java.awt.*;
@@ -1660,10 +1661,11 @@ public class Neworklead extends Narzedzia {
         Robot robot = new Robot();
         String roko = String.valueOf(rok);
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        WebDriverWait wait = new WebDriverWait(driver,1000);
 
         //WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[2]/a"));
         //driver.get("https://www.everydayme.pl/konkurszimowy");
-//        try {
+        try {
             zmienKarte(driver);
             Thread.sleep(10000);
             while (!cookie){
@@ -1730,6 +1732,7 @@ public class Neworklead extends Narzedzia {
         }
 
             Thread.sleep(40000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][line1]\"]")));
             driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][line1]\"]")).sendKeys(ulica);
             driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][postalarea]\"]")).sendKeys(kod);
             driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][city]\"]")).sendKeys(miasto);
@@ -1737,6 +1740,7 @@ public class Neworklead extends Narzedzia {
             driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[6]/div/div/form/button")).click();
             Thread.sleep(10000);
             try {
+                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[7]/a[2]")));
                 driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[7]/a[2]")).click();
             } catch (Exception e) {
                 clickXY(950,824);
@@ -1785,11 +1789,11 @@ public class Neworklead extends Narzedzia {
             Thread.sleep(20000);
             driver.quit();
 
-//        } catch (Exception e) {
-//            niewykorzystane.append(mail+"\r\n");
-//            niewykorzystane.close();
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            niewykorzystane.append(mail+"\r\n");
+            niewykorzystane.close();
+            driver.quit();
+        }
 
 
 
