@@ -2031,26 +2031,29 @@ public class Main extends Narzedzia{
         String hasla[] = {"MrcbucHv3.0","Arturek1070","Natalia654321098"};
         int j=0;
         try {
-            for (int i=31;i<50;i++) {
-                interia();
-                if (i%20==0)
-                    Koniec.Restart();
-                System.out.println(i);
-            }
-            pobierzAdres(50);
-            for (int i=0;i<50;i++) {
+//            for (int i=1;i<=50;i++) {
+//                interia();
+//                if (i%20==0)
+//                    Koniec.Restart();
+//                System.out.println(i);
+//            }
+//
+//
+//            pobierzAdres(50);
+            for (int i=12;i<50;i++) {
                 mail = everyInt.nextLine();
                 kodVee = kodVe.nextLine();
                 ulicaVee = ulicaVe.nextLine();
                 miastoVee = miastoVe.nextLine();
-                if (i<10)
-                    Dodatkowy.EveryZbiorowe11(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<20)
-                    Dodatkowy.EveryZbiorowe12(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<30)
-                    Dodatkowy.EveryZbiorowe13(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else
-                    Dodatkowy.EveryZbiorowe14(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+                Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+//                if (i<10)
+//                    Dodatkowy.EveryZbiorowe11(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+//                else if (i<20)
+//                    Dodatkowy.EveryZbiorowe12(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+//                else if (i<30)
+//                    Dodatkowy.EveryZbiorowe13(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+//                else
+//                    Dodatkowy.EveryZbiorowe14(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
                  j++;
                 if (j > 22)
                     j = 0;

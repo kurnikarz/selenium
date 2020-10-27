@@ -397,7 +397,7 @@ public class Narzedzia {
             driver.quit();
         } catch (Exception e){
             driver.quit();
-            Koniec.RestarHujawei();
+            Koniec.Restart();
             pobierzAdres(ile);
         }
 
@@ -613,20 +613,20 @@ public class Narzedzia {
 
     public static void refreshEvery(WebDriver driver) {
         try {
-            driver.findElement(By.xpath("//*[text()='Połączenie zostało przerwane'")).click();
+            driver.findElement(By.xpath("//*[text()='Połączenie zostało przerwane']"));
             driver.navigate().refresh();
             Thread.sleep(10000);
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
 
         }
     }
 
     public static void sprawdzLinkEvery(WebDriver driver) {
         try {
-            driver.findElement(By.xpath("//*[text()='Ta witryna jest nieosiągalna'")).click();
+            driver.findElement(By.xpath("//*[text()='Ta witryna jest nieosiągalna']"));
             driver.navigate().refresh();
             Thread.sleep(10000);
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
 
         }
     }
