@@ -2315,22 +2315,22 @@ public class Dodatkowy extends Narzedzia {
 
 
 
-        try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/cd4552c5e94d26aab8d275b49a8edc73/e7d366fc65895f6adfb6811ba5c0c90d/201920950f63cee967982b759fde80b1");
+//        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/084008e5e344972deb3b7d8c31549cba/201730aa6f4df9fd410154c6ce97390a/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
             sprawdzLinkEvery(driver);
             refreshEvery(driver);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
-            driver.get("http://tajemniczakonsta.blogspot.com/2017/10/zmiany-i-jeszcze-raz-zmiany.html ");
+            driver.get("https://tajemniczakonsta.blogspot.com/2018/06/uroczystosc-rodzinna.html");
             Thread.sleep(10000);
             clickXY(778,700);
             Thread.sleep(25000);
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
 
-        } catch (Exception e){
-            driver.quit();
-        }
+//        } catch (Exception e){
+//            driver.quit();
+//        }
 
 
 
@@ -2346,13 +2346,13 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-        try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/cd4552c5e94d26aab8d275b49a8edc73/e7d366fc65895f6adfb6811ba5c0c90d/201920950f63cee967982b759fde80b1");
+//        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/084008e5e344972deb3b7d8c31549cba/201730aa6f4df9fd410154c6ce97390a/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
             sprawdzLinkEvery(driver);
             refreshEvery(driver);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
-            driver.get("http://tajemniczakonsta.blogspot.com/2017/07/maska-l-czysta-glinka-detoksykujaco.html");
+            driver.get("https://tajemniczakonsta.blogspot.com/2018/05/niespodzianka-od-trade-tracker.html");
             Thread.sleep(10000);
             clickXY(778,700);
 
@@ -2360,9 +2360,9 @@ public class Dodatkowy extends Narzedzia {
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
             
-        } catch (Exception e){
-            driver.quit();
-        }
+//        } catch (Exception e){
+//            driver.quit();
+//        }
 
              
 
@@ -2379,13 +2379,13 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-        try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/cd4552c5e94d26aab8d275b49a8edc73/e7d366fc65895f6adfb6811ba5c0c90d/201920950f63cee967982b759fde80b1");
+//        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/084008e5e344972deb3b7d8c31549cba/201730aa6f4df9fd410154c6ce97390a/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
             sprawdzLinkEvery(driver);
             refreshEvery(driver);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
-            driver.get("http://tajemniczakonsta.blogspot.com/2017/03/puder-do-twarzy-ecocera.html");
+            driver.get("https://tajemniczakonsta.blogspot.com/2018/03/zima-zima-po-zimie-wiosna.html");
             Thread.sleep(10000);
             clickXY(778,685);
 
@@ -2393,9 +2393,9 @@ public class Dodatkowy extends Narzedzia {
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
             
-        } catch (Exception e){
-            driver.quit();
-        }
+//        } catch (Exception e){
+//            driver.quit();
+//        }
 
              
 
@@ -2413,7 +2413,7 @@ public class Dodatkowy extends Narzedzia {
         driver.manage().window().maximize();
 
         try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/cd4552c5e94d26aab8d275b49a8edc73/e7d366fc65895f6adfb6811ba5c0c90d/201920950f63cee967982b759fde80b1");
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/084008e5e344972deb3b7d8c31549cba/201730aa6f4df9fd410154c6ce97390a/201920950f63cee967982b759fde80b1");
             Thread.sleep(5000);
             sprawdzLinkEvery(driver);
             refreshEvery(driver);

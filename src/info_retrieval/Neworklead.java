@@ -1663,37 +1663,40 @@ public class Neworklead extends Narzedzia {
 
         //WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[2]/a"));
         //driver.get("https://www.everydayme.pl/konkurszimowy");
-//        try {
-//        zmienKarte(driver);
-//            Thread.sleep(10000);
-//            while (!cookie){
-//                try {
-//                    driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
-//                    cookie = true;
-//                } catch (Exception e){
-//                    Thread.sleep(5000);
-//                }
-//
-//                m++;
-//                if (m > 10)
-//                    break;
-//
-//
-//            }
-//        Thread.sleep(3000);
-//        ScrollBy(driver, "1000");
-//        Thread.sleep(1000);
-//        try {
-//            driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[1]/div[4]/a[1]")).click();
-//        } catch (Exception e) {
-//            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[1]/div[4]/a[1]")).click();
-//        }
-//        Thread.sleep(10000);
+        try {
+        zmienKarte(driver);
+            Thread.sleep(10000);
+            while (!cookie){
+                try {
+                    driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
+                    cookie = true;
+                } catch (Exception e){
+                    Thread.sleep(5000);
+                }
+
+                m++;
+                if (m > 10)
+                    break;
+
+
+            }
+        Thread.sleep(3000);
+        ScrollBy(driver, "1000");
+        Thread.sleep(1000);
+        try {
+            driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[1]/div[4]/a[1]")).click();
+        } catch (Exception e) {
+            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[1]/div[4]/a[1]")).click();
+        }
+        Thread.sleep(10000);
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)", "");
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[1]/div[2]/div/label")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[1]/div[2]/button")).click();
+        WebElement button = driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[1]/div[2]/button"));
+        while (!button.isEnabled()) {
+            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[1]/div[2]/div/label")).click();
+            Thread.sleep(2000);
+        }
+        button.click();
 //        clickXY(861, 532);
 //        Thread.sleep(1000);
 //        clickXY(861, 532);
@@ -1719,7 +1722,7 @@ public class Neworklead extends Narzedzia {
         Thread.sleep(1000);
         clickXY(x, 1012);
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,700)", "");
-        driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus_1\"]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[11]/button")).click();
 
@@ -1781,11 +1784,11 @@ public class Neworklead extends Narzedzia {
         Thread.sleep(20000);
         driver.quit();
 
-//        } catch (Exception e) {
-//            niewykorzystane.append(mail+"\r\n");
-//            niewykorzystane.close();
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            niewykorzystane.append(mail+"\r\n");
+            niewykorzystane.close();
+            driver.quit();
+        }
 
 
     }

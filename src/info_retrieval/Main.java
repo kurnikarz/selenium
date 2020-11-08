@@ -2123,17 +2123,29 @@ public class Main extends Narzedzia{
         String fb[] = {"dumcio.97@wp.pl","ewa1dymkowska@gmail.com"};
         String[] profil = {"113","192"};
 
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        Neworklead.Everyday(driver,"dede","dede","dede","deed","dede");
-        int j=0;
-        try {
-//            for(int i=0;i<40;i++) {
+        int j=15;
+//        try {
+        for (int i=0;i<100;i++){
+            interia();
+            if (i%20==0)
+                Koniec.Restart();
+            System.out.println(i);
+        }
+        pobierzAdres(100);
+//            for(int i=0;i<30;i++) {
 //                mail = everyInt.nextLine();
 //                ulicaVee = ulicaVe.nextLine();
 //                kodVee = kodVe.nextLine();
 //                miastoVee = miastoVe.nextLine();
+//                /*
+//                if (i<20)
+//                    Dodatkowy.EveryZbiorowe21(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+//                else if (i<30)
+//                    Dodatkowy.EveryZbiorowe22(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+//                else
+//                    Dodatkowy.EveryZbiorowe23(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+//
+//                 */
 //                if (i%2==0)
 //                    Dodatkowy.EveryZbiorowe11(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
 //                else
@@ -2145,15 +2157,15 @@ public class Main extends Narzedzia{
 //                System.out.println(mail);
 //                Koniec.Restart();
 //            }
-        }
-         catch (Exception e) {
-            blad.println(e);
-            blad.close();
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            wylacz();
-        }
+//        }
+//         catch (Exception e) {
+//            blad.println(e);
+//            blad.close();
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            wylacz();
+//        }
 
 
 

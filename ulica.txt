@@ -1,22 +1,100 @@
-ul. Nowowiejska 22
-ul. Elegijna 86
-ul. Pomocnicza 137
-ul. Januszowicka 98
-ul. Skwer 30 Pułku Strzelców Kaniowskich 137
-ul. Księcia Mazowieckiego Janusza 148
-ul. Trwała 1
-ul. Pułkowa 80
-ul. Wodopojna 112
-ul. Wolności 69
-ul. Belwederska 18
-ul. Bulwar Dunikowskiego Xawerego 125
-ul. Ludowa 110
-ul. Grenadierów 48
-ul. Trzebowiańska 8
-ul. Rezedowa 41
-ul. Polna 55
-ul. Bardzka 26
-ul. Kozielska 35
-ul. Kardynała Wyszyńskiego Stefana 143
-ul. Włocławska 33
-ul. Orląt Lwowskich 91
+ul. Niepołomicka 87
+ul. Przedborska 1
+ul. Wojciechowskiego Stanisława 25
+ul. Konarskiego Szymona 31
+ul. Poniatowskiego Józefa 41
+ul. Czternastu Straconych 66
+ul. Storczykowa 97
+ul. Lęborska 87
+ul. Zbożowa 94
+ul. Żeglarska 49
+ul. Azotowa 77
+ul. Pasterska 50
+ul. Szczecińska 50
+ul. Heleny 60
+ul. Plebiscytowa 32
+ul. Chopina Fryderyka 78
+ul. Akacjowa 79
+ul. Generała Thommee Wiktora 38
+ul. Kórnicka 85
+ul. Afrykańska 123
+ul. Leca Stanisława 99
+ul. Nowogródzka 113
+ul. Cegielniana 9
+ul. Tatrzańska 144
+ul. Księdza Renka Henryka 32
+ul. Weigla Rudolfa 57
+ul. Olechowska 149
+ul. Miętowa 44
+ul. Barwinek 9
+ul. Królów Polskich 145
+ul. Podgrodzie 129
+ul. Powstańców Śląskich 138
+ul. Wilcza 77
+ul. Narwicka 123
+ul. Leszka Czarnego 104
+ul. Rynek 150
+ul. Kazimierza Wielkiego 54
+ul. Wolska 127
+ul. Próchnika Adama 123
+Al. Jana Pawła II 35
+ul. Zelwerowicza Aleksandra 108
+ul. Rynek Jeżycki 112
+ul. Tulipanów 68
+ul. Polanki 21
+ul. Jaworskiego Iwo 89
+ul. Orzegowska 124
+ul. Partyzantów 59
+ul. Żytnia 106
+ul. Langiewicza Mariana 30
+ul. Wczasowa 74
+ul. Brzozowa 52
+ul. Soplicy 36
+ul. Mozarta Wolfganga Amadeusza 111
+ul. Kmicica Andrzeja 98
+ul. Leszczyny 111
+ul. Drużbickiego Kaspra 131
+ul. Rotmistrza Pileckiego Witolda 107
+Pl. Wileński 12
+ul. Bohaterów Getta Warszawskiego 103
+ul. Wczasowa 68
+ul. Inżyniera Skrzywana Stefana 22
+ul. Jarocińska 12
+ul. Boliny 138
+ul. Kurantów 74
+ul. Gerwela Czesława 4
+ul. Dzielnicowa 88
+ul. Łużycka 145
+ul. Krasickiego Ignacego 64
+Al. Niepodległości 41
+Pl. Wolności 72
+ul. Cedry Krzysztofa 126
+ul. Przemyska 34
+ul. Chopina Fryderyka 26
+ul. Mehla Franciszka 142
+ul. Bożywoja 38
+ul. Łąkowa 124
+ul. Fałata Juliana 85
+ul. Kubańska 38
+ul. Grzegórzecka 90
+ul. Smukalska 71
+ul. Księdza Skargi Piotra 121
+ul. Domagały Mariana 39
+ul. Ciszewskiego Józefa Feliksa 17
+ul. Księdza Blachnickiego Franciszka 105
+ul. Tulipanowa 95
+ul. Liliowa 63
+ul. 1 Maja 30
+ul. Sowia 10
+ul. Dąbrowska 108
+ul. Konopnickiej Marii 127
+ul. Targowa 8
+ul. Cząstkowska 38
+ul. Chopina Fryderyka 55
+Pl. Wolności 33
+ul. Lubelska 74
+ul. Malownicza 95
+ul. Krzywa 46
+ul. Eskadrowa 132
+ul. Łowińskiego Karola 142
+ul. Żółta 60
