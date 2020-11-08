@@ -2033,10 +2033,7 @@ public class Main extends Narzedzia{
         Scanner cola = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\cola.txt"));
         Scanner loginy = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\loginy.txt"));
         Scanner nestle3 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\nestle3.txt"));
-        Scanner mailVee = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\mail.txt"));
-        Scanner mailVee2 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\mail2.txt"));
         Scanner kodVe = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\kody.txt"));
-        Scanner kodVe2 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\kody2.txt"));
         Scanner miastoVe = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\miasto.txt"));
         Scanner ulicaVe = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\ulica.txt"));
         Scanner mailArke = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia.txt"));
@@ -2122,34 +2119,29 @@ public class Main extends Narzedzia{
 
         String fb[] = {"dumcio.97@wp.pl","ewa1dymkowska@gmail.com"};
         String[] profil = {"113","192"};
-
+        Neworklead.NestleM2B("kasia.czapor@wp.pl");
         int j=15;
-//        try {
-        for (int i=0;i<100;i++){
-            interia();
-            if (i%20==0)
-                Koniec.Restart();
-            System.out.println(i);
-        }
-        pobierzAdres(100);
+        try {
+//        for (int i=0;i<100;i++){
+//            interia();
+//            if (i%20==0)
+//                Koniec.Restart();
+//            System.out.println(i);
+//        }
+//        pobierzAdres(10);
 //            for(int i=0;i<30;i++) {
 //                mail = everyInt.nextLine();
 //                ulicaVee = ulicaVe.nextLine();
 //                kodVee = kodVe.nextLine();
 //                miastoVee = miastoVe.nextLine();
-//                /*
-//                if (i<20)
+//
+//                if (i<10)
 //                    Dodatkowy.EveryZbiorowe21(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-//                else if (i<30)
+//                else if (i<20)
 //                    Dodatkowy.EveryZbiorowe22(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
 //                else
 //                    Dodatkowy.EveryZbiorowe23(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
 //
-//                 */
-//                if (i%2==0)
-//                    Dodatkowy.EveryZbiorowe11(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-//                else
-//                    Dodatkowy.EveryZbiorowe12(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
 //                j++;
 //                if (j > 22)
 //                    j = 0;
@@ -2157,15 +2149,15 @@ public class Main extends Narzedzia{
 //                System.out.println(mail);
 //                Koniec.Restart();
 //            }
-//        }
-//         catch (Exception e) {
-//            blad.println(e);
-//            blad.close();
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            wylacz();
-//        }
+        }
+         catch (Exception e) {
+            blad.println(e);
+            blad.close();
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            wylacz();
+        }
 
 
 
