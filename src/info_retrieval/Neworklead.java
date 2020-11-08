@@ -3173,8 +3173,8 @@ public class Neworklead extends Narzedzia {
         int miesUro = r.nextInt(10 - 4 + 1) + 4;
         int rokUro = 2019;
         int dzienSpo = r.nextInt(29) + 1;
-        int miesSpo = r.nextInt(7 - 3 + 1) + 3;
-        int rokSpo = 2020;
+        int miesSpo = r.nextInt(6 - 1 + 1) + 1;
+        int rokSpo = 2021;
         int m = 0;
         boolean flaga = false;
         Robot robot = new Robot();
@@ -3183,7 +3183,7 @@ public class Neworklead extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver,10000);
 
-        try {
+//        try {
             Thread.sleep(2000);
             wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"dev-popin\"]/div/div[2]/div/div/div[2]/div/div/div"))));
             driver.findElement(By.xpath("//*[@id=\"dev-popin\"]/div/div[2]/div/div/div[2]/div/div/div")).click();
@@ -3234,7 +3234,7 @@ public class Neworklead extends Narzedzia {
             driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
             Thread.sleep(10000);
             try {
-                driver.findElement(By.xpath("//*[@id=\"nh-modal\"]/div/div[2]/div/div/div/div/button")).click();
+                driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div/div/div/button")).click();
             } catch (Exception e){
 
             }
@@ -3247,7 +3247,7 @@ public class Neworklead extends Narzedzia {
                     flaga = true;
                 } catch (Exception e) {
                     driver.navigate().refresh();
-                    Thread.sleep(10000);
+                    Thread.sleep(5000);
                 }
                 m++;
                 if (m > 4) {
@@ -3255,9 +3255,9 @@ public class Neworklead extends Narzedzia {
                 }
 
             }
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
 
 

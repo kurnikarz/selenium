@@ -2119,7 +2119,13 @@ public class Main extends Narzedzia{
 
         String fb[] = {"dumcio.97@wp.pl","ewa1dymkowska@gmail.com"};
         String[] profil = {"113","192"};
-        Neworklead.NestleM2B("kasia.czapor@wp.pl");
+        for (int i=1;i<60;i++){
+            mail = nestle3.nextLine();
+            Neworklead.NestleM2B(mail);
+            System.out.println(i);
+            System.out.println(mail);
+            Koniec.Restart();
+        }
         int j=15;
         try {
 //        for (int i=0;i<100;i++){
