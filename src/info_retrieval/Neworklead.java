@@ -3167,11 +3167,11 @@ public class Neworklead extends Narzedzia {
         String imie = genImieZen();
         String nazwisko = genNazwiskoZen();
         Random r = new Random();
-        int dziecko = 1;//r.nextInt(2);
+        int dziecko = r.nextInt(2);
         int plec = r.nextInt(2);
         int dzienUro = r.nextInt(29) + 1;
-        int miesUro = r.nextInt(10 - 4 + 1) + 4;
-        int rokUro = 2019;
+        int miesUro = r.nextInt(10 - 1 + 1) + 1;
+        int rokUro = 2020;
         int dzienSpo = r.nextInt(29) + 1;
         int miesSpo = r.nextInt(6 - 1 + 1) + 1;
         int rokSpo = 2021;
@@ -3216,7 +3216,7 @@ public class Neworklead extends Narzedzia {
                 js.executeScript("document.getElementById(\"gigya-textbox-153337984387971650_5\").removeAttribute(\"readonly\")");
                 driver.findElement(By.xpath("//*[@id=\"gigya-textbox-153337984387971650_5\"]")).sendKeys(dzieckoSpodziewane);
             }
-            clickXY(1090, 521);
+//            clickXY(1090, 521);
             Thread.sleep(1000);
             driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-0-63592377505834030\"]")).click();
             Thread.sleep(1000);
