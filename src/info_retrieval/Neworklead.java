@@ -3183,7 +3183,7 @@ public class Neworklead extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver,10000);
 
-//        try {
+        try {
             Thread.sleep(2000);
             wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"dev-popin\"]/div/div[2]/div/div/div[2]/div/div/div"))));
             driver.findElement(By.xpath("//*[@id=\"dev-popin\"]/div/div[2]/div/div/div[2]/div/div/div")).click();
@@ -3198,15 +3198,14 @@ public class Neworklead extends Narzedzia {
 
             if (dziecko == 0) {
                 if (plec == 0) {
-                    driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-1-61880958754256200_6\"]")).click();
-                    driver.findElement(By.xpath("//*[@id=\"gigya-textbox-121321499907850700_3\"]")).sendKeys(genImieZen());
+                    driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-1-135031870266671040_8\"]")).click();
+                    driver.findElement(By.xpath("//*[@id=\"gigya-textbox-151298633113062270_4\"]")).sendKeys(genImieZen());
                 } else {
-                    driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-0-61880958754256200_5\"]")).click();
-                    driver.findElement(By.xpath("//*[@id=\"gigya-textbox-121321499907850700_3\"]")).sendKeys(genImieMes());
+                    driver.findElement(By.xpath("//*[@id=\"gigya-textbox-151298633113062270_4\"]")).sendKeys(genImieMes());
                 }
-                js.executeScript("document.getElementById(\"gigya-textbox-92124100465386450_7\").removeAttribute(\"readonly\")");
+                js.executeScript("document.getElementById(\"gigya-textbox-65513374974246824_9\").removeAttribute(\"readonly\")");
                 Thread.sleep(1000);
-                driver.findElement(By.xpath("//*[@id=\"gigya-textbox-92124100465386450_7\"]")).sendKeys(dzieckoUrodzone);
+                driver.findElement(By.xpath("//*[@id=\"gigya-textbox-65513374974246824_9\"]")).sendKeys(dzieckoUrodzone);
             } else {
                 driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-1-87599078661341020_3\"]")).click();
                 if (plec == 0)
@@ -3255,9 +3254,9 @@ public class Neworklead extends Narzedzia {
                 }
 
             }
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            driver.quit();
+        }
 
 
 
@@ -3269,7 +3268,7 @@ public class Neworklead extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
+        try {
             driver.get("https://neworklead.pl/zadanie/9c28bd0c4260364e48e724610641b267/ea6eac2c6549f21b8b8edc99328f7fa3/d654be842d14f320ad92ef039fb6aa4c");
 //            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
             Thread.sleep(5000);
@@ -3282,9 +3281,35 @@ public class Neworklead extends Narzedzia {
             Thread.sleep(3000);
             driver.quit();
 
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+
+    }
+
+    public static void NestleTAR(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        try {
+            driver.get("https://neworklead.pl/zadanie/4f461c0912a0f6bdd24df4c6d7419de3/efea389a3f1e8db7e1560f1a309e4ed0/d654be842d14f320ad92ef039fb6aa4c");
+//            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
+            Thread.sleep(5000);
+
+            for (String winHandle : driver.getWindowHandles()) {
+                driver.switchTo().window(winHandle);
+            }
+            Thread.sleep(1000);
+            Nestle(driver, mail);
+            Thread.sleep(3000);
+            driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
 
 
     }

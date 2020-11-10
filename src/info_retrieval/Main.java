@@ -2121,20 +2121,20 @@ public class Main extends Narzedzia{
         String[] profil = {"113","192"};
         int j=15;
         try {
-//        for (int i=0;i<100;i++){
-//            interia();
-//            if (i%20==0)
-//                Koniec.Restart();
-//            System.out.println(i);
-//        }
-//        pobierzAdres(10);
-            for(int i=20;i<150;i++) {
+        for (int i=0;i<100;i++){
+            interia();
+            if (i%20==0)
+                Koniec.Restart();
+            System.out.println(i);
+        }
+        pobierzAdres(100);
+//            for(int i=52;i<150;i++) {
 //                mail = everyInt.nextLine();
-                mail2 = nestle3.nextLine();
+//                mail2 = nestle3.nextLine();
 //                ulicaVee = ulicaVe.nextLine();
 //                kodVee = kodVe.nextLine();
 //                miastoVee = miastoVe.nextLine();
-                Neworklead.NestleM2B(mail2);
+//                Neworklead.NestleTAR(mail2);
 //                if (i<20)
 //                    Dodatkowy.EveryZbiorowe21(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
 //                else if (i<40)
@@ -2142,13 +2142,13 @@ public class Main extends Narzedzia{
 //                else
 //                    Dodatkowy.EveryZbiorowe23(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
 
-                j++;
-                if (j > 22)
-                    j = 0;
-                System.out.println(i);
-                System.out.println(mail2);
-                Koniec.Restart();
-            }
+//                j++;
+//                if (j > 22)
+//                    j = 0;
+//                System.out.println(i);
+//                System.out.println(mail2);
+//                Koniec.Restart();
+//            }
         }
          catch (Exception e) {
             blad.println(e);
