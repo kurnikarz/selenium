@@ -1,150 +1,41 @@
-﻿ul. Księdza Tunkla Ludwika 5
-ul. Akademicka 110
-ul. Siewierska 14
-ul. Modrzejewskiej Heleny 36
-ul. Działyńskich 26
-ul. Stępińska 148
-ul. Kmieca 19
-ul. Waliszewskiego Zygmunta 83
-ul. Batalionów Chłopskich 107
-ul. Przy Torze 22
-ul. Rynek Sienny 147
-ul. Konopnickiej Marii 81
-ul. Powojowa 119
-ul. Słowackiego Juliusza 66
-ul. 18 Sierpnia 31
-ul. Tybury Stanisława 33
-ul. Dywizjonu AK "Jeleń" 115
-ul. Harcerska 99
-ul. Bohaterów Monte Cassino 91
-ul. Żelazna 38
-ul. Idy 42
-ul. Wileńska 143
-ul. Wiejska 62
-ul. Morska 77
-ul. Sardyńska 105
-ul. Skalista 36
-ul. Generała Sikorskiego Władysława 115
-ul. Notecka 120
-ul. Krynoliny 111
-ul. Lindego Samuela Bogumiła 15
-ul. Rynek 82
-ul. Rzędzińska 145
-ul. Kasztanowa 115
-Al. ZHP 13
-ul. Długa 138
-ul. Norwida Cypriana Kamila 84
-ul. Długosza Jana 149
-ul. Narutowicza Gabriela 16
-ul. Kamienna 75
-ul. Poranna 37
-ul. Wielkopolska 57
-ul. Kętrzyńskiego Wojciecha 11
-Pl. Aliantów 87
-ul. Skwerowa 47
-ul. Ustronna 79
-ul. Henryka Pobożnego 67
-ul. Sporna 25
-ul. Na Łąkach 107
-ul. Lasek 50
-ul. Krakowskie Przedmieście 47
-ul. Piasta Kołodzieja 50
-ul. Tucholska 64
-ul. Żeglarska 62
-ul. Generała Maczka Stanisława 13
-ul. Jurczyka Adama 93
-ul. Nysy Łużyckiej 98
-ul. Podzamcze 81
-ul. Sowlańska 89
-ul. Wały Jagiellońskie 11
-ul. Jasełkowa 18
-ul. Łąkowa 59
-ul. Energetyków 44
-ul. Hetmańska 145
-ul. Świętego Marcina 88
-ul. Smolki Emanuela 32
-ul. Sawickiej Hanki 72
-ul. Modrzewiowa 100
-ul. Myśliwska 30
-ul. Hałdy 35
-ul. Widok 10
-ul. Przyleśna 60
-ul. Zamkowa 79
-ul. Przytulna 8
-ul. Apteczna 114
-ul. Pacanowskiej Zuli 71
-ul. Hoża 91
-ul. Naczelnikowska 137
-ul. Oliwkowa 42
-ul. Lissowskiego 76
-ul. Daliowa 18
-ul. Wygon 3
-ul. Mogiłki 61
-ul. Poziomkowa 131
-ul. Ciołkowskiego Konstantego 110
-ul. Wieniawskiego Henryka 29
-ul. Chmielarczyka Maksymiliana 117
-ul. Kętrzyńskiego 114
-ul. Kręta 116
-ul. Przecznica 122
-ul. Wiewiórcza 106
-ul. Mazowiecka 133
-ul. Jasieńskiego Brunona 86
-ul. Księdza Machy Jana 18
-ul. Ozdobna 41
-ul. Lawendy 95
-ul. Żeromskiego Stefana 46
-ul. Pomorska 121
-ul. Kameliowa 26
-ul. Chwarznieńska 116
-Al. Różana 143
-ul. Dąbrówki 8
-ul. Alpejska 10
-ul. Zamenhofa 77
-ul. Kaznowskiego Kazimierza 55
-ul. Osiedlowa 75
-ul. Goździkowa 28
-ul. Bytomska 24
-ul. Makowa 30
-ul. Przedborska 54
-ul. I Armii Wojska Polskiego 4
-ul. Pajdaka Antoniego 119
-ul. Wyspiańskiego Stanisława 94
-ul. Leśna 78
-ul. Radockiego Marcina 21
-ul. Nałkowskiej Zofii 145
-ul. Knolla Kownackiego Edmunda 142
-ul. Krochmalna 6
-ul. Leszczyńskiej Stanisławy 22
-Al. Dwudziestolatków 35
-ul. Siodłowa 140
-ul. Grota Roweckiego 121
-ul. Tektoniczna 139
-ul. Jagodowa 16
-ul. Koralowa 54
-ul. Obornicka 143
-ul. Dahlberga Eryka 73
-ul. Strumieńska 54
-ul. Jaronia Jana Nikodema 137
-ul. Pankiewicza Józefa 88
-ul. Wspólna 50
-ul. Balladyny 19
-ul. Borzęcińska 46
-ul. Centralna 129
-ul. Kościańska 93
-ul. Rejonowa 71
-ul. Królewska 83
-Pl. Kościuszki Tadeusza 50
-ul. Kapucyńska 125
-ul. Pocztowa 4
-ul. Dworcowa 102
-ul. Zajęcza 137
-ul. Szeroka 4
-ul. Nastolatków 120
-ul. Brodeckich Jana i Antoniego 48
-ul. Majakowskiego Włodzimierza 30
-ul. Pokrzywno 148
-ul. Handlowa 13
-ul. Nizinna 138
-ul. Górzysta 85
-ul. Plater Emilii 21
+ul. Popka Ferdynarda 35
+ul. Sztolniowa 78
+ul. Ciechanowska 145
+ul. Sprzymierzonych 4
+ul. Rembertowska 10
+ul. Ślimaka 6
+ul. Warzywna 121
+ul. Sąsiedzka 128
+ul. 5 Lipca 34
+ul. Mistrzejowicka 84
+ul. Van Gogha 62
+ul. 3 Maja 66
+ul. Okulickiego Leopolda 81
+ul. Paganiniego Mikołaja 102
+ul. Fabryczna 65
+ul. Chłodna 144
+ul. Centurii 124
+ul. Kwiatkowskiego Eugeniusza 120
+Al. Ostoi Zagórskiego Włodzimierza 74
+ul. Anielewicza Mordechaja 88
+ul. Profesora Taszyckiego Witolda 41
+ul. Karłowicza Mieczysława 131
+ul. Umińskiego Jana 136
+ul. Malownicza 104
+ul. Akademii Zamojskiej 89
+ul. Portofino 54
+ul. Olsztyńska 120
+ul. Żniwna 62
+ul. Leszka Białego 31
+ul. Melcera Henryka 94
+ul. Konduktorska 30
+ul. Derdowskiego Jana 107
+ul. Rojna 140
+ul. Chemiczna 132
+ul. Wolności 35
+ul. Czuchnowskiego Mariana 49
+ul. Piekarska 28
+ul. Fałata Juliana 102
+ul. Limanowskiego 126
+ul. Lotnicza 139
+ul. Kościuszki 129
