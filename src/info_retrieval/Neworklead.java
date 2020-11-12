@@ -3232,12 +3232,21 @@ public class Neworklead extends Narzedzia {
             Thread.sleep(1000);
             driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
             Thread.sleep(10000);
-            try {
-                driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div/div/div/button")).click();
-            } catch (Exception e){
-
-            }
             while (!flaga) {
+                try {
+                    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div/div/button")).click();
+                } catch (Exception e){
+                    try {
+                        driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div/div/div/button")).click();
+                    } catch (Exception f) {
+                        try {
+                            driver.findElement(By.xpath("/div/div[2]/div/div/div/div/button")).click();
+                        } catch (Exception g) {
+
+                        }
+                    }
+                }
+
                 try {
                     driver.findElement(By.xpath("//*[text()='Nestlé Baby&me']")).click();
                     Thread.sleep(4000);
@@ -3296,6 +3305,32 @@ public class Neworklead extends Narzedzia {
 
         try {
             driver.get("https://neworklead.pl/zadanie/4f461c0912a0f6bdd24df4c6d7419de3/efea389a3f1e8db7e1560f1a309e4ed0/d654be842d14f320ad92ef039fb6aa4c");
+//            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
+            Thread.sleep(5000);
+
+            for (String winHandle : driver.getWindowHandles()) {
+                driver.switchTo().window(winHandle);
+            }
+            Thread.sleep(1000);
+            Nestle(driver, mail);
+            Thread.sleep(3000);
+            driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+
+    }
+
+    public static void NestleDC(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        try {
+            driver.get("https://neworklead.pl/zadanie/384fbc853edf07b2907b023bd8b1915d/145a8ea5008607a8b5ba69b7b96af883/d654be842d14f320ad92ef039fb6aa4c");
 //            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
             Thread.sleep(5000);
 

@@ -2121,13 +2121,13 @@ public class Main extends Narzedzia{
         String[] profil = {"113","192"};
         int j=15;
         try {
-        for (int i=0;i<100;i++){
-            interia();
-            if (i%20==0)
-                Koniec.Restart();
-            System.out.println(i);
-        }
-        pobierzAdres(100);
+//        for (int i=0;i<100;i++){
+//            interia();
+//            if (i%20==0)
+//                Koniec.Restart();
+//            System.out.println(i);
+//        }
+//        pobierzAdres(100);
 //            for(int i=52;i<150;i++) {
 //                mail = everyInt.nextLine();
 //                mail2 = nestle3.nextLine();
@@ -2149,6 +2149,16 @@ public class Main extends Narzedzia{
 //                System.out.println(mail2);
 //                Koniec.Restart();
 //            }
+            for(int i = 1; i < 30; i++) {
+                mail = nestle3.nextLine();
+                if (i%2==0)
+                    Neworklead.NestleM2B(mail);
+                else
+                    Neworklead.NestleTAR(mail);
+                System.out.println(i);
+                System.out.println(mail);
+                Koniec.Restart();
+            }
         }
          catch (Exception e) {
             blad.println(e);
