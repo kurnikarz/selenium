@@ -2435,6 +2435,105 @@ public class Dodatkowy extends Narzedzia {
 
     }
 
+    public static void EveryZbiorowe31(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/60cf6d19ec87b67d6d923523c3508bcb/4350f7b078fbc3f4fc36b0ec88babf25/201920950f63cee967982b759fde80b1");
+            Thread.sleep(5000);
+            sprawdzLinkEvery(driver);
+            refreshEvery(driver);
+            driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
+            driver.get("https://tajemniczakonsta.blogspot.com/2016/10/paznokcie-hybrydowe-zestaw-neonail.html");
+            Thread.sleep(10000);
+            clickXY(778,685);
+
+            Thread.sleep(25000);
+            Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+            Thread.sleep(1000);
+
+        } catch (Exception e){
+            driver.quit();
+        }
+
+
+
+
+    }
+
+    public static void EveryZbiorowe32(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/60cf6d19ec87b67d6d923523c3508bcb/4350f7b078fbc3f4fc36b0ec88babf25/201920950f63cee967982b759fde80b1");
+            Thread.sleep(5000);
+            sprawdzLinkEvery(driver);
+            refreshEvery(driver);
+            driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
+            driver.get("https://tajemniczakonsta.blogspot.com/2016/10/tusz-do-rzes-max-factor-2000-calorie.html");
+            Thread.sleep(10000);
+            clickXY(778,685);
+
+            Thread.sleep(25000);
+            Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+            Thread.sleep(1000);
+
+        } catch (Exception e){
+            driver.quit();
+        }
+
+
+
+
+    }
+
+    public static void EveryZbiorowe33(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/60cf6d19ec87b67d6d923523c3508bcb/4350f7b078fbc3f4fc36b0ec88babf25/201920950f63cee967982b759fde80b1");
+            Thread.sleep(5000);
+            sprawdzLinkEvery(driver);
+            refreshEvery(driver);
+            driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
+            driver.get("https://tajemniczakonsta.blogspot.com/2016/10/podkad-max-factor-skin-luminizer.html");
+            Thread.sleep(10000);
+            clickXY(778,685);
+
+            Thread.sleep(25000);
+            Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+            Thread.sleep(1000);
+
+        } catch (Exception e){
+            driver.quit();
+        }
+
+
+
+
+    }
+
     public static void EveryMale(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
@@ -2446,9 +2545,12 @@ public class Dodatkowy extends Narzedzia {
         driver.manage().window().maximize();
 
         try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/85b76e1895e8b05fb5e1952ee54cf9fc/f6d9925b6fbf3e0a0ca68c619b09c225/201920950f63cee967982b759fde80b1");
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/e9c10c8793814b348a72cfd7c3e4c479/757b5d930b3e6954519d038ea733982d/201920950f63cee967982b759fde80b1");
             Thread.sleep(10000);
-            clickXY(770,600);
+            sprawdzLinkEvery(driver);
+            refreshEvery(driver);
+            Zmniejsz(4);
+            clickXY(1082,940);
 
             Thread.sleep(25000);
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);

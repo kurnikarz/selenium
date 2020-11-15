@@ -1,4 +1,5 @@
 package info_retrieval;
+
 import net.bytebuddy.dynamic.Transformer;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -25,7 +26,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 
-public class Main extends Narzedzia{
+public class Main extends Narzedzia {
 
     public static void interia() throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
@@ -39,38 +40,38 @@ public class Main extends Narzedzia{
         boolean flaga = true;
         boolean flaga2 = true;
         options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
-        options.addArguments("profile-directory=Profile "+profil);
+        options.addArguments("profile-directory=Profile " + profil);
         options.addExtensions(new File("E:\\bot\\captcha.crx"));
         options.addExtensions(new File("E:\\bot\\buster.crx"));
 
-            String imie = genImieZen();
-            String nazwiwsko = genNazwiskoZen();
-            int dzien = r.nextInt(29) + 1;
-            String cyfra1 = String.valueOf(r.nextInt(9));
-            String cyfra2 = String.valueOf(r.nextInt(9));
+        String imie = genImieZen();
+        String nazwiwsko = genNazwiskoZen();
+        int dzien = r.nextInt(29) + 1;
+        String cyfra1 = String.valueOf(r.nextInt(9));
+        String cyfra2 = String.valueOf(r.nextInt(9));
 
-            try {
-                ChromeDriver driver = new ChromeDriver(options);
-                Robot robot = new Robot();
-                driver.manage().window().maximize();
-                driver.get("https://konto-pocztowe.interia.pl/#/nowe-konto/darmowe");
-                Thread.sleep(5000);
-    //                try {
-    //                    driver.switchTo().frame(5);
-    //                    //driver.findElement(By.xpath("//*[@id=\"reset-button\"]")).click();
-    //                    //clickXY(85, 52);
-    //                    Thread.sleep(2000);
-    //                    while (true) {
-    //                        Thread.sleep(1000);
-    //                        String znak = scan.nextLine();
-    //                        if (znak.equals("q")) {
-    //                            break;
-    //                        }
-    //                    }
-    //
-    //                } catch (Exception e) {
-    //                    System.out.println(e);
-    //                }
+        try {
+            ChromeDriver driver = new ChromeDriver(options);
+            Robot robot = new Robot();
+            driver.manage().window().maximize();
+            driver.get("https://konto-pocztowe.interia.pl/#/nowe-konto/darmowe");
+            Thread.sleep(5000);
+            //                try {
+            //                    driver.switchTo().frame(5);
+            //                    //driver.findElement(By.xpath("//*[@id=\"reset-button\"]")).click();
+            //                    //clickXY(85, 52);
+            //                    Thread.sleep(2000);
+            //                    while (true) {
+            //                        Thread.sleep(1000);
+            //                        String znak = scan.nextLine();
+            //                        if (znak.equals("q")) {
+            //                            break;
+            //                        }
+            //                    }
+            //
+            //                } catch (Exception e) {
+            //                    System.out.println(e);
+            //                }
             /*
             while (true) {
                 Thread.sleep(1000);
@@ -97,36 +98,36 @@ public class Main extends Narzedzia{
 
          */
 
-                driver.findElement(By.xpath("//*[@id=\"name\"]")).sendKeys(imie);
-                driver.findElement(By.xpath("//*[@id=\"surname\"]")).sendKeys(nazwiwsko);
-                driver.findElement(By.xpath("//*[@id=\"birthdayDay\"]")).sendKeys(String.valueOf(dzien));
-                driver.findElement(By.xpath("//*[@id=\"mainApp\"]/div/div/div/div/div[2]/div/form/div[1]/div[3]/div[2]/label")).click();
-                //Thread.sleep(1000);
-                clickXY(712,480);
-                driver.findElement(By.xpath("//*[@id=\"birthdayYear\"]")).sendKeys("1990");
-                driver.findElement(By.xpath("//*[@id=\"mainApp\"]/div/div/div/div/div[2]/div/form/div[1]/div[4]/div[1]")).click();
-                //Thread.sleep(1000);
-                clickXY(1082,544);
-                driver.findElement(By.xpath("//*[@id=\"login\"]")).click();
-                Thread.sleep(1000);
-                driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(cyfra1+cyfra2);
-                String mail = driver.findElement(By.xpath("//*[@id=\"login\"]")).getAttribute("value")+"@interia.pl";
-                driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("Mrcbuch123");
-                driver.findElement(By.xpath("//*[@id=\"rePassword\"]")).sendKeys("Mrcbuch123");
-                driver.findElement(By.xpath("//*[@id=\"mainApp\"]/div/div/div/div/div[2]/div/form/div[2]/div[1]/div[1]/label/div/div")).click();
-                //driver.findElement(By.xpath("//*[text()='Załóż darmowe konto']")).click();
-                clickXY(969,1002);
-                maile.append(mail+"\r\n");
-                botowe.append(mail+"\r\n");
-                maile.close();
-                botowe.close();
-                Thread.sleep(15000);
-                driver.quit();
-            } catch (Exception f){
-                System.out.println("ERROR INTERIA");
-            }
-
+            driver.findElement(By.xpath("//*[@id=\"name\"]")).sendKeys(imie);
+            driver.findElement(By.xpath("//*[@id=\"surname\"]")).sendKeys(nazwiwsko);
+            driver.findElement(By.xpath("//*[@id=\"birthdayDay\"]")).sendKeys(String.valueOf(dzien));
+            driver.findElement(By.xpath("//*[@id=\"mainApp\"]/div/div/div/div/div[2]/div/form/div[1]/div[3]/div[2]/label")).click();
+            //Thread.sleep(1000);
+            clickXY(712, 480);
+            driver.findElement(By.xpath("//*[@id=\"birthdayYear\"]")).sendKeys("1990");
+            driver.findElement(By.xpath("//*[@id=\"mainApp\"]/div/div/div/div/div[2]/div/form/div[1]/div[4]/div[1]")).click();
+            //Thread.sleep(1000);
+            clickXY(1082, 544);
+            driver.findElement(By.xpath("//*[@id=\"login\"]")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(cyfra1 + cyfra2);
+            String mail = driver.findElement(By.xpath("//*[@id=\"login\"]")).getAttribute("value") + "@interia.pl";
+            driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("Mrcbuch123");
+            driver.findElement(By.xpath("//*[@id=\"rePassword\"]")).sendKeys("Mrcbuch123");
+            driver.findElement(By.xpath("//*[@id=\"mainApp\"]/div/div/div/div/div[2]/div/form/div[2]/div[1]/div[1]/label/div/div")).click();
+            //driver.findElement(By.xpath("//*[text()='Załóż darmowe konto']")).click();
+            clickXY(969, 1002);
+            maile.append(mail + "\r\n");
+            botowe.append(mail + "\r\n");
+            maile.close();
+            botowe.close();
+            Thread.sleep(15000);
+            driver.quit();
+        } catch (Exception f) {
+            System.out.println("ERROR INTERIA");
         }
+
+    }
 
     public static void Maile(String mail) throws InterruptedException {
         FirefoxDriver firefox = new FirefoxDriver();
@@ -378,7 +379,7 @@ public class Main extends Narzedzia{
         Robot r = new Robot();
 
         // It saves screenshot to desired path
-        String path = "C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\"+mail+"\\" + i + ".jpg";
+        String path = "C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\" + mail + "\\" + i + ".jpg";
 
         // Used to get ScreenSize and capture image
         Rectangle capture =
@@ -392,9 +393,9 @@ public class Main extends Narzedzia{
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
-        options.addArguments("profile-directory=Profile "+profil);
+        options.addArguments("profile-directory=Profile " + profil);
         options.addArguments("--disable-notifications");
-        Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\"+mail+"\\linki.txt", true));
+        Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\" + mail + "\\linki.txt", true));
         ChromeDriver driver = new ChromeDriver(options);
         Robot robot = new Robot();
         List<String> grupy = new ArrayList<>();
@@ -413,7 +414,7 @@ public class Main extends Narzedzia{
         grupy.add("https://www.facebook.com/groups/389679508482812/");//12
         grupy.add("https://www.facebook.com/groups/351384515297725/");//13-
         grupy.add("https://www.facebook.com/groups/319514972052497/");//14-
-        grupy.add("https://www.facebook.com/groups/270165996779362/");	//OCZEKUJACE 15
+        grupy.add("https://www.facebook.com/groups/270165996779362/");    //OCZEKUJACE 15
         grupy.add("https://www.facebook.com/groups/181436575590022/");//16
         grupy.add("https://www.facebook.com/groups/172681430256680/");//17
         grupy.add("https://www.facebook.com/groups/932562780136151/");//18
@@ -439,87 +440,86 @@ public class Main extends Narzedzia{
         grupy.add("https://www.facebook.com/groups/2935674523171777/");//38-
         grupy.add("https://www.facebook.com/groups/636328313209736/");//39
         driver.manage().window().maximize();
-            driver.get("https://pl-pl.facebook.com/login/");
-            Thread.sleep(3000);
+        driver.get("https://pl-pl.facebook.com/login/");
+        Thread.sleep(3000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys(mail + "V2");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"loginbutton\"]")).click();
+        } catch (Exception e) {
+            System.out.println("ZALOGOWANA");
+        }
+
+
+        for (int i = a; i < b; i++) {
             try {
-                driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(mail);
-                driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys(mail + "V2");
-                Thread.sleep(1000);
-                driver.findElement(By.xpath("//*[@id=\"loginbutton\"]")).click();
+                driver.findElement(By.xpath("//*[text()='Twoje konto zostało zablokowane']")).click();
+                System.out.println("ZABLOKOWANE");
+                driver.quit();
+                break;
             } catch (Exception e) {
-                System.out.println("ZALOGOWANA");
+                System.out.println("la");
             }
 
-
-            for (int i = a; i < b; i++) {
+            try {
+                Thread.sleep(2000);
+                driver.get(grupy.get(i));
+                Thread.sleep(3000);
                 try {
-                    driver.findElement(By.xpath("//*[text()='Twoje konto zostało zablokowane']")).click();
-                    System.out.println("ZABLOKOWANE");
-                    driver.quit();
-                    break;
-                } catch (Exception e) {
-                    System.out.println("la");
+                    driver.findElement(By.xpath("//*[text()='Napisz post']")).click();
+                } catch (Exception f) {
+                    driver.findElement(By.xpath("//*[text()='Rozpocznij dyskusję']")).click();
                 }
+                Narzedzia.Kopiuj(post);
+                Thread.sleep(3000);
+                clickXY(694, 642);
+                clickXY(750, 642);
+                Thread.sleep(1000);
+                Narzedzia.Wklej();
+                Thread.sleep(3000);
+                Narzedzia.ScrollBy(driver, "300");
+                Thread.sleep(1000);
 
                 try {
-                    Thread.sleep(2000);
-                    driver.get(grupy.get(i));
-                    Thread.sleep(3000);
-                    try {
-                        driver.findElement(By.xpath("//*[text()='Napisz post']")).click();
-                    }
-                    catch (Exception f) {
-                        driver.findElement(By.xpath("//*[text()='Rozpocznij dyskusję']")).click();
-                    }
-                    Narzedzia.Kopiuj(post);
-                    Thread.sleep(3000);
-                    clickXY(694,642);
-                    clickXY(750,642);
-                    Thread.sleep(1000);
-                    Narzedzia.Wklej();
-                    Thread.sleep(3000);
-                    Narzedzia.ScrollBy(driver, "300");
-                    Thread.sleep(1000);
+                    driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div/div[2]/div[1]/div/div/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[1]/td[1]/div")).click();
+                } catch (Exception e) {
+                    driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div/div[2]/div[1]/div/div/div/div[2]/div/div[3]/div[2]/div/table/tbody/tr[1]/td[1]/div/div/span/a/div[2]")).click();
+                }
+                Thread.sleep(5000);
+                Narzedzia.Kopiuj("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\klos.jpg");
+                Thread.sleep(1000);
+                Narzedzia.Wklej();
+                Thread.sleep(1000);
+                robot.keyPress(KeyEvent.VK_ENTER);
+                Thread.sleep(20000);
 
-                    try {
-                        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div/div[2]/div[1]/div/div/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[1]/td[1]/div")).click();
-                    } catch (Exception e) {
-                        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div/div[2]/div[1]/div/div/div/div[2]/div/div[3]/div[2]/div/table/tbody/tr[1]/td[1]/div/div/span/a/div[2]")).click();
-                    }
-                    Thread.sleep(5000);
-                    Narzedzia.Kopiuj("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\klos.jpg");
-                    Thread.sleep(1000);
-                    Narzedzia.Wklej();
-                    Thread.sleep(1000);
-                    robot.keyPress(KeyEvent.VK_ENTER);
-                    Thread.sleep(20000);
-
-                    driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
-                    Thread.sleep(1000);
-                    clickXY(962,498);
-                    Thread.sleep(10000);
-                    ScrollBy(driver,"-15000");
-                    Thread.sleep(1000);
+                driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
+                Thread.sleep(1000);
+                clickXY(962, 498);
+                Thread.sleep(10000);
+                ScrollBy(driver, "-15000");
+                Thread.sleep(1000);
                 //Thread.sleep(1000000);
                 driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[3]/div[5]/div/div/div[2]/div[1]/div[3]/div[1]/div/div/div[2]/div/div/div[2]/div/span/span/a/abbr/span")).click();
-                    //driver.findElement(By.xpath("//div[2]/div[1]/div[3]/div[3]/div/div/div/div/a")).click();  //ZDJECIE
-                    //driver.findElement(By.xpath("//div[2]/div[1]/div[2]/div[3]/div/div")).click();
-                    //driver.findElement(By.className("timestampContent")).click();
-                    Thread.sleep(10000);
-                    zrobScreena(i,mail);
-                    linki.append(driver.getCurrentUrl()+"\r\n");
-                } catch (Exception e) {
-                    try {
-                        Thread.sleep(5000);
-                    } catch (Exception d) {
-                        System.out.println("====================== "+grupy.get(i)+" ===================");
-                    }
+                //driver.findElement(By.xpath("//div[2]/div[1]/div[3]/div[3]/div/div/div/div/a")).click();  //ZDJECIE
+                //driver.findElement(By.xpath("//div[2]/div[1]/div[2]/div[3]/div/div")).click();
+                //driver.findElement(By.className("timestampContent")).click();
+                Thread.sleep(10000);
+                zrobScreena(i, mail);
+                linki.append(driver.getCurrentUrl() + "\r\n");
+            } catch (Exception e) {
+                try {
+                    Thread.sleep(5000);
+                } catch (Exception d) {
+                    System.out.println("====================== " + grupy.get(i) + " ===================");
                 }
-
-
             }
+
+
+        }
         linki.close();
-            driver.quit();
+        driver.quit();
 
     }
 
@@ -546,12 +546,12 @@ public class Main extends Narzedzia{
             driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/div/form/div[2]/input")).sendKeys("lakunka@wp.pl");
             Thread.sleep(1000);
             driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[2]/div/div[2]/div/form/fieldset/button[1]")).click();
-        } catch (Exception e){
+        } catch (Exception e) {
             Thread.sleep(1000);
         }
         try {
             driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div[1]")).click();
-        } catch (Exception e){
+        } catch (Exception e) {
             Thread.sleep(1000);
         }
         while (!flaga) {
@@ -572,32 +572,32 @@ public class Main extends Narzedzia{
                 Thread.sleep(1000);
                 switch (kupon1) {
                     case 0:
-                        clickXY(924,865);
+                        clickXY(924, 865);
                         break;
                     case 1:
-                        clickXY(1222,865);
+                        clickXY(1222, 865);
                         break;
                     case 2:
-                        clickXY(924,1020);
+                        clickXY(924, 1020);
                         break;
                     case 3:
-                        clickXY(1222,1020);
+                        clickXY(1222, 1020);
                         break;
 
                 }
                 Thread.sleep(5000);
                 switch (kupon2) {
                     case 0:
-                        clickXY(924,865);
+                        clickXY(924, 865);
                         break;
                     case 1:
-                        clickXY(1222,865);
+                        clickXY(1222, 865);
                         break;
                     case 2:
-                        clickXY(924,1020);
+                        clickXY(924, 1020);
                         break;
                     case 3:
-                        clickXY(1222,1020);
+                        clickXY(1222, 1020);
                         break;
                 }
                 Thread.sleep(10000);
@@ -626,7 +626,7 @@ public class Main extends Narzedzia{
         options.addArguments("profile-directory=Profile "+profil);
          */
         options.addArguments("--disable-notifications");
-        Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\"+mail+"\\linki.txt", true));
+        Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\" + mail + "\\linki.txt", true));
         ChromeDriver driver = new ChromeDriver(options);
         Robot robot = new Robot();
         String[] grupy = new String[100];
@@ -674,65 +674,64 @@ public class Main extends Narzedzia{
         grupy[43] = "https://www.facebook.com/groups/316265375706455/";
         grupy[44] = "https://www.facebook.com/groups/InternetowaPraca/";
         //===========================MOJE
-        grupy[45]="https://www.facebook.com/groups/1478777662423430/";
-        grupy[46]="https://www.facebook.com/groups/1303356579748916/";
-        grupy[47]="https://www.facebook.com/groups/794811483876118/";
-        grupy[48]="https://www.facebook.com/groups/505718296215064/";
-        grupy[49]="https://www.facebook.com/groups/408111472862824/";
-        grupy[50]="https://www.facebook.com/groups/351384515297725/";
-        grupy[51]="https://www.facebook.com/groups/319514972052497/";
-        grupy[52]="https://www.facebook.com/groups/1932167580368778/";
-        grupy[53]="https://www.facebook.com/groups/1483378875270025/";
-        grupy[54]="https://www.facebook.com/groups/1481353345440772/";
-        grupy[55]="https://www.facebook.com/groups/688755227963589/";
-        grupy[56]="https://www.facebook.com/groups/544747138926998/";
-        grupy[57]="https://www.facebook.com/groups/316265375706455/";
-        grupy[58]="https://www.facebook.com/groups/InternetowaPraca/";
-        grupy[59]="https://www.facebook.com/groups/315509495130995/";
-        grupy[60]="https://www.facebook.com/groups/298670413999878/";
-        grupy[61]="https://www.facebook.com/groups/2935674523171777/";
+        grupy[45] = "https://www.facebook.com/groups/1478777662423430/";
+        grupy[46] = "https://www.facebook.com/groups/1303356579748916/";
+        grupy[47] = "https://www.facebook.com/groups/794811483876118/";
+        grupy[48] = "https://www.facebook.com/groups/505718296215064/";
+        grupy[49] = "https://www.facebook.com/groups/408111472862824/";
+        grupy[50] = "https://www.facebook.com/groups/351384515297725/";
+        grupy[51] = "https://www.facebook.com/groups/319514972052497/";
+        grupy[52] = "https://www.facebook.com/groups/1932167580368778/";
+        grupy[53] = "https://www.facebook.com/groups/1483378875270025/";
+        grupy[54] = "https://www.facebook.com/groups/1481353345440772/";
+        grupy[55] = "https://www.facebook.com/groups/688755227963589/";
+        grupy[56] = "https://www.facebook.com/groups/544747138926998/";
+        grupy[57] = "https://www.facebook.com/groups/316265375706455/";
+        grupy[58] = "https://www.facebook.com/groups/InternetowaPraca/";
+        grupy[59] = "https://www.facebook.com/groups/315509495130995/";
+        grupy[60] = "https://www.facebook.com/groups/298670413999878/";
+        grupy[61] = "https://www.facebook.com/groups/2935674523171777/";
         driver.manage().window().maximize();
-            driver.get("https://pl-pl.facebook.com/login/");
-            Thread.sleep(3000);
+        driver.get("https://pl-pl.facebook.com/login/");
+        Thread.sleep(3000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys(haslo);
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"loginbutton\"]")).click();
+        } catch (Exception e) {
+            System.out.println("ZALOGOWANA");
+        }
+
+
+        for (int i = a; i < b; i++) {
             try {
-                driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(mail);
-                driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys(haslo);
-                Thread.sleep(1000);
-                driver.findElement(By.xpath("//*[@id=\"loginbutton\"]")).click();
+                driver.findElement(By.xpath("//*[text()='Twoje konto zostało zablokowane']")).click();
+                System.out.println("ZABLOKOWANE");
+                driver.quit();
+                break;
             } catch (Exception e) {
-                System.out.println("ZALOGOWANA");
+                System.out.println("la");
             }
 
-
-            for (int i = a; i < b; i++) {
+            try {
+                Thread.sleep(2000);
+                driver.get(grupy[i]);
+                Thread.sleep(3000);
                 try {
-                    driver.findElement(By.xpath("//*[text()='Twoje konto zostało zablokowane']")).click();
-                    System.out.println("ZABLOKOWANE");
-                    driver.quit();
-                    break;
-                } catch (Exception e) {
-                    System.out.println("la");
+                    driver.findElement(By.xpath("//*[text()='Napisz post']")).click();
+                } catch (Exception f) {
+                    driver.findElement(By.xpath("//*[text()='Rozpocznij dyskusję']")).click();
                 }
-
-                try {
-                    Thread.sleep(2000);
-                    driver.get(grupy[i]);
-                    Thread.sleep(3000);
-                    try {
-                        driver.findElement(By.xpath("//*[text()='Napisz post']")).click();
-                    }
-                    catch (Exception f) {
-                        driver.findElement(By.xpath("//*[text()='Rozpocznij dyskusję']")).click();
-                    }
-                    Narzedzia.Kopiuj(post);
-                    Thread.sleep(3000);
-                    clickXY(694,642);
-                    clickXY(750,642);
-                    Thread.sleep(1000);
-                    Narzedzia.Wklej();
-                    Thread.sleep(3000);
-                    Narzedzia.ScrollBy(driver, "300");
-                    Thread.sleep(1000);
+                Narzedzia.Kopiuj(post);
+                Thread.sleep(3000);
+                clickXY(694, 642);
+                clickXY(750, 642);
+                Thread.sleep(1000);
+                Narzedzia.Wklej();
+                Thread.sleep(3000);
+                Narzedzia.ScrollBy(driver, "300");
+                Thread.sleep(1000);
                     /*
                     try {
                         driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div/div[2]/div[1]/div/div/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[1]/td[1]/div")).click();
@@ -747,36 +746,36 @@ public class Main extends Narzedzia{
                     robot.keyPress(KeyEvent.VK_ENTER);
                     Thread.sleep(17000);
                     */
-                    Thread.sleep(3000);
-                    driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
-                    Thread.sleep(1000);
-                    clickXY(962,498);
-                    Thread.sleep(10000);
-                    ScrollBy(driver,"-15000");
-                    Thread.sleep(1000);
+                Thread.sleep(3000);
+                driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
+                Thread.sleep(1000);
+                clickXY(962, 498);
+                Thread.sleep(10000);
+                ScrollBy(driver, "-15000");
+                Thread.sleep(1000);
                 //Thread.sleep(1000000);
                 driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[3]/div[5]/div/div/div[2]/div[1]/div[3]/div[1]/div/div/div[2]/div/div/div[2]/div/span/span/a/abbr/span")).click();
-                    //driver.findElement(By.xpath("//div[2]/div[1]/div[3]/div[3]/div/div/div/div/a")).click();  //ZDJECIE
-                    //driver.findElement(By.xpath("//div[2]/div[1]/div[2]/div[3]/div/div")).click();
-                    //driver.findElement(By.className("timestampContent")).click();
-                    Thread.sleep(8000);
-                    clickXY(1520,517);
-                    Thread.sleep(1000);
-                    zrobScreena(i,mail);
-                    linki.append(driver.getCurrentUrl()+"\r\n");
-                } catch (Exception e) {
-                    try {
-                        driver.findElement(By.xpath("//*[text()='Dołacz do grupy']")).click();
-                        Thread.sleep(5000);
-                    } catch (Exception d) {
-                        System.out.println("====================== "+grupy[i]+" ===================");
-                    }
+                //driver.findElement(By.xpath("//div[2]/div[1]/div[3]/div[3]/div/div/div/div/a")).click();  //ZDJECIE
+                //driver.findElement(By.xpath("//div[2]/div[1]/div[2]/div[3]/div/div")).click();
+                //driver.findElement(By.className("timestampContent")).click();
+                Thread.sleep(8000);
+                clickXY(1520, 517);
+                Thread.sleep(1000);
+                zrobScreena(i, mail);
+                linki.append(driver.getCurrentUrl() + "\r\n");
+            } catch (Exception e) {
+                try {
+                    driver.findElement(By.xpath("//*[text()='Dołacz do grupy']")).click();
+                    Thread.sleep(5000);
+                } catch (Exception d) {
+                    System.out.println("====================== " + grupy[i] + " ===================");
                 }
-
-
             }
+
+
+        }
         linki.close();
-            driver.quit();
+        driver.quit();
 
     }
 
@@ -787,10 +786,10 @@ public class Main extends Narzedzia{
         options.addExtensions(new File("E:\\bot\\buster.crx"));
 
         options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
-        options.addArguments("profile-directory=Profile "+profil);
+        options.addArguments("profile-directory=Profile " + profil);
 
         options.addArguments("--disable-notifications");
-        Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\"+mail+"\\linki.txt", true));
+        Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\" + mail + "\\linki.txt", true));
         ChromeDriver driver = new ChromeDriver(options);
         Robot robot = new Robot();
         String[] grupy = new String[100];
@@ -801,25 +800,25 @@ public class Main extends Narzedzia{
         grupy[4] = "https://www.facebook.com/groups/pasywnezarabianie/";
         grupy[5] = "https://www.facebook.com/groups/181436575590022/";
         grupy[6] = "https://www.facebook.com/groups/inwestorzyiinwestycje/";
-        grupy[7] = "https://www.facebook.com/groups/zarabiajwnecie/";	//blokada
-        grupy[8] = "https://www.facebook.com/groups/410873349362708/";	//blok
+        grupy[7] = "https://www.facebook.com/groups/zarabiajwnecie/";    //blokada
+        grupy[8] = "https://www.facebook.com/groups/410873349362708/";    //blok
         grupy[9] = "https://www.facebook.com/groups/270165996779362/";
         grupy[10] = "https://www.facebook.com/groups/389679508482812/";
         grupy[11] = "https://www.facebook.com/groups/531288753733140/";
         grupy[12] = "https://www.facebook.com/groups/pracawmlm/";
-        grupy[13] = "https://www.facebook.com/groups/168679147406607/";	//blok
-        grupy[14] = "https://www.facebook.com/groups/yeahcoachpl/";	//blok
+        grupy[13] = "https://www.facebook.com/groups/168679147406607/";    //blok
+        grupy[14] = "https://www.facebook.com/groups/yeahcoachpl/";    //blok
         grupy[15] = "https://www.facebook.com/groups/381018519002791/";
         grupy[16] = "https://www.facebook.com/groups/pracaonline24/";
-        grupy[17] = "https://www.facebook.com/groups/pieniadzezinternetu/";	//blok
+        grupy[17] = "https://www.facebook.com/groups/pieniadzezinternetu/";    //blok
         grupy[18] = "https://www.facebook.com/groups/210289873049520/";
         grupy[19] = "https://www.facebook.com/groups/pracazarabianie/";
         grupy[20] = "https://www.facebook.com/groups/zarabianieinternet/";
         grupy[21] = "https://www.facebook.com/groups/519298171753298/";
         grupy[22] = "https://www.facebook.com/groups/PracaBezSzefa/";
         grupy[23] = "https://www.facebook.com/groups/934587176605807/";
-        grupy[24] = "https://www.facebook.com/groups/920488634709636/";	//blok
-        grupy[25] = "https://www.facebook.com/groups/1895279054050554/";	//blok
+        grupy[24] = "https://www.facebook.com/groups/920488634709636/";    //blok
+        grupy[25] = "https://www.facebook.com/groups/1895279054050554/";    //blok
         grupy[26] = "https://www.facebook.com/groups/zarabianie.praca.internet/";
         grupy[27] = "https://www.facebook.com/groups/1622951457992792/";
         grupy[28] = "https://www.facebook.com/groups/1781838958705367/";
@@ -827,58 +826,57 @@ public class Main extends Narzedzia{
         grupy[30] = "https://www.facebook.com/groups/zarabianie.praca.biznes.online/"; //TU
         grupy[31] = "https://www.facebook.com/groups/ZarabianiePrzezInternet/";
         grupy[32] = "https://www.facebook.com/groups/kryptorodzina/";
-        grupy[33] = "https://www.facebook.com/groups/MLM.w.POLSCE/";	//blok
-        grupy[34] = "https://www.facebook.com/groups/932562780136151/";	//blok
-        grupy[35] = "https://www.facebook.com/groups/zarabianiewinternecie24h/";	//blok
+        grupy[33] = "https://www.facebook.com/groups/MLM.w.POLSCE/";    //blok
+        grupy[34] = "https://www.facebook.com/groups/932562780136151/";    //blok
+        grupy[35] = "https://www.facebook.com/groups/zarabianiewinternecie24h/";    //blok
         grupy[36] = "https://www.facebook.com/groups/114051159156931/";
         grupy[37] = "https://www.facebook.com/groups/4139968925/";
         grupy[38] = "https://www.facebook.com/groups/322192781615024/";
-        grupy[39] = "https://www.facebook.com/groups/636328313209736/";	//blok
-        grupy[42] = "https://www.facebook.com/groups/470108560157347/";	//blok
-        grupy[43] = "https://www.facebook.com/groups/316265375706455/";	//blok
-        grupy[44] = "https://www.facebook.com/groups/InternetowaPraca/";	//blok
+        grupy[39] = "https://www.facebook.com/groups/636328313209736/";    //blok
+        grupy[42] = "https://www.facebook.com/groups/470108560157347/";    //blok
+        grupy[43] = "https://www.facebook.com/groups/316265375706455/";    //blok
+        grupy[44] = "https://www.facebook.com/groups/InternetowaPraca/";    //blok
         //===========================MOJE
-        grupy[45]="https://www.facebook.com/groups/1478777662423430/";
-        grupy[46]="https://www.facebook.com/groups/1303356579748916/";
-        grupy[47]="https://www.facebook.com/groups/794811483876118/";
-        grupy[48]="https://www.facebook.com/groups/505718296215064/";
-        grupy[49]="https://www.facebook.com/groups/408111472862824/";	//blok
-        grupy[50]="https://www.facebook.com/groups/351384515297725/";	//blok
-        grupy[51]="https://www.facebook.com/groups/319514972052497/";
-        grupy[52]="https://www.facebook.com/groups/1932167580368778/";
-        grupy[53]="https://www.facebook.com/groups/1483378875270025/";
-        grupy[54]="https://www.facebook.com/groups/1481353345440772/";
-        grupy[55]="https://www.facebook.com/groups/688755227963589/";
-        grupy[56]="https://www.facebook.com/groups/544747138926998/";	//blok
-        grupy[57]="https://www.facebook.com/groups/316265375706455/";	//blok
-        grupy[58]="https://www.facebook.com/groups/InternetowaPraca/";	//blok
-        grupy[59]="https://www.facebook.com/groups/315509495130995/";
-        grupy[60]="https://www.facebook.com/groups/298670413999878/";
-        grupy[61]="https://www.facebook.com/groups/2935674523171777/";
+        grupy[45] = "https://www.facebook.com/groups/1478777662423430/";
+        grupy[46] = "https://www.facebook.com/groups/1303356579748916/";
+        grupy[47] = "https://www.facebook.com/groups/794811483876118/";
+        grupy[48] = "https://www.facebook.com/groups/505718296215064/";
+        grupy[49] = "https://www.facebook.com/groups/408111472862824/";    //blok
+        grupy[50] = "https://www.facebook.com/groups/351384515297725/";    //blok
+        grupy[51] = "https://www.facebook.com/groups/319514972052497/";
+        grupy[52] = "https://www.facebook.com/groups/1932167580368778/";
+        grupy[53] = "https://www.facebook.com/groups/1483378875270025/";
+        grupy[54] = "https://www.facebook.com/groups/1481353345440772/";
+        grupy[55] = "https://www.facebook.com/groups/688755227963589/";
+        grupy[56] = "https://www.facebook.com/groups/544747138926998/";    //blok
+        grupy[57] = "https://www.facebook.com/groups/316265375706455/";    //blok
+        grupy[58] = "https://www.facebook.com/groups/InternetowaPraca/";    //blok
+        grupy[59] = "https://www.facebook.com/groups/315509495130995/";
+        grupy[60] = "https://www.facebook.com/groups/298670413999878/";
+        grupy[61] = "https://www.facebook.com/groups/2935674523171777/";
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
-            driver.get("https://pl-pl.facebook.com/login/");
-            Thread.sleep(3000);
+        driver.get("https://pl-pl.facebook.com/login/");
+        Thread.sleep(3000);
 
+        try {
             try {
-                try {
-                    driver.findElement(By.xpath("/html/body/div[3]/div[2]/div/div/div/div/div[3]/button[2]")).click();
-                    Thread.sleep(2000);
-                } catch (Exception e) {
-
-                }
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div[1]/input")).sendKeys(mail);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div[2]/input")).sendKeys(haslo);
-                Thread.sleep(1000);
-                driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div[3]/button")).click();
-
+                driver.findElement(By.xpath("/html/body/div[3]/div[2]/div/div/div/div/div[3]/button[2]")).click();
+                Thread.sleep(2000);
             } catch (Exception e) {
-                System.out.println("ZALOGOWANA");
+
             }
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div[1]/input")).sendKeys(mail);
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div[2]/input")).sendKeys(haslo);
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div[3]/button")).click();
+
+        } catch (Exception e) {
+            System.out.println("ZALOGOWANA");
+        }
 
 
-
-            for (int i = a; i < b; i++) {
+        for (int i = a; i < b; i++) {
                 /*
                 try {
                     driver.findElement(By.xpath("//*[text()='Twoje konto zostało zablokowane']")).click();
@@ -889,49 +887,47 @@ public class Main extends Narzedzia{
                     System.out.println("la");
                 }
                 */
+            try {
+                Thread.sleep(2000);
+                driver.get(grupy[i]);
+                Thread.sleep(3000);
+                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[1]/div/div/div/div[1]/div/div[1]/span")).click();
+                Thread.sleep(3000);
+                Narzedzia.Kopiuj(post);
+                clickXY(915, 500);
+                Thread.sleep(1000);
+                Narzedzia.Wklej();
+                Thread.sleep(2000);
+                //ZDJECIE=======================
+
+//                    driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[1]/span/div/div/div/div/div[1]/i")).click();
+//                    Thread.sleep(3000);
+//                    Kopiuj("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\klos.jpg");
+//                    Thread.sleep(1000);
+//                    Wklej();
+//                    Thread.sleep(1000);
+//                    robot.keyPress(KeyEvent.VK_ENTER);
+//                    Thread.sleep(5000);
+
+                driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
+                Thread.sleep(5000);
+                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span/a/span/span/span[2]")).click();
+                Thread.sleep(5000);
+                zrobScreena(i, mail);
+                linki.append(driver.getCurrentUrl() + "\r\n");
+
+
+            } catch (Exception e) {
                 try {
-                    Thread.sleep(2000);
-                    driver.get(grupy[i]);
-                    Thread.sleep(3000);
-                    driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[1]/div/div/div/div[1]/div/div[1]/span")).click();
-                    Thread.sleep(3000);
-                    Narzedzia.Kopiuj(post);
-                    clickXY(915,500);
-                    Thread.sleep(1000);
-                    Narzedzia.Wklej();
-                    Thread.sleep(2000);
-                    //ZDJECIE=======================
-
-                    driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[1]/span/div/div/div/div/div[1]/i")).click();
-                    Thread.sleep(3000);
-                    Kopiuj("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\klos.jpg");
-                    Thread.sleep(1000);
-                    Wklej();
-                    Thread.sleep(1000);
-                    robot.keyPress(KeyEvent.VK_ENTER);
+                    driver.findElement(By.xpath("//*[text()='Dołacz do grupy']")).click();
                     Thread.sleep(5000);
-
-                    driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
-                    Thread.sleep(5000);
-                    driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span/a/span/span/span[2]")).click();
-                    Thread.sleep(5000);
-                    zrobScreena(i,mail);
-                    linki.append(driver.getCurrentUrl()+"\r\n");
-
-
-                } catch (Exception e) {
-                    try {
-                        driver.findElement(By.xpath("//*[text()='Dołacz do grupy']")).click();
-                        Thread.sleep(5000);
-                    } catch (Exception d) {
-                        System.out.println("====================== "+grupy[i]+" ===================");
-                    }
+                } catch (Exception d) {
+                    System.out.println("====================== " + grupy[i] + " ===================");
                 }
-
-
-
-
             }
+
+
+        }
         linki.close();
         driver.quit();
 
@@ -941,7 +937,7 @@ public class Main extends Narzedzia{
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
-        options.addArguments("profile-directory=Profile "+profil);
+        options.addArguments("profile-directory=Profile " + profil);
         options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
 
@@ -952,13 +948,13 @@ public class Main extends Narzedzia{
         grupy.add("https://www.facebook.com/groups/inwestorzyiinwestycje/");
         grupy.add("https://www.facebook.com/groups/519298171753298/");
 
-        for (int i=0;i<grupy.size();i++){
+        for (int i = 0; i < grupy.size(); i++) {
             try {
                 driver.get(grupy.get(i));
                 Thread.sleep(3000);
                 driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[1]/div/div[3]/a")).click();
                 Thread.sleep(2000);
-                if (grupy.get(i) == "https://www.facebook.com/groups/298229136881926/"){
+                if (grupy.get(i) == "https://www.facebook.com/groups/298229136881926/") {
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("rozumiem");
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
@@ -966,28 +962,25 @@ public class Main extends Narzedzia{
                     driver.findElement(By.xpath("/html/body/div[16]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("zrobione");
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy.get(i) == "https://www.facebook.com/groups/pasywnezarabianie/"){
+                } else if (grupy.get(i) == "https://www.facebook.com/groups/pasywnezarabianie/") {
                     driver.findElement(By.xpath("/html/body/div[15]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/div/input")).click();
                     driver.findElement(By.xpath("/html/body/div[15]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/div/div[1]/div[1]/div/input")).click();
                     driver.findElement(By.xpath("/html/body/div[15]/div[2]/div/div/div/div/div/div/div[2]/div/div[5]/div[2]/div/div/div[1]/div[1]/div/input")).click();
                     driver.findElement(By.xpath("/html/body/div[15]/div[2]/div/div/div/div/div/div/div[2]/div/div[6]/div[1]/div[2]/div/input")).click();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy.get(i) == "https://www.facebook.com/groups/inwestorzyiinwestycje/"){
+                } else if (grupy.get(i) == "https://www.facebook.com/groups/inwestorzyiinwestycje/") {
                     driver.findElement(By.xpath("/html/body/div[14]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("nie");
                     driver.findElement(By.xpath("/html/body/div[14]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/span/textarea")).sendKeys("nie");
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy.get(i) == "https://www.facebook.com/groups/519298171753298/"){
+                } else if (grupy.get(i) == "https://www.facebook.com/groups/519298171753298/") {
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("ponieważ szukam pracy online");
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
                 }
                 Thread.sleep(5000);
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("NIE");
             }
 
@@ -1005,7 +998,7 @@ public class Main extends Narzedzia{
         options.addArguments("--disable-notifications");
         options.setExperimentalOption("prefs", prefs);
         ChromeDriver driver = new ChromeDriver(options);
-        Writer niedolaczone = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\"+mail+".txt", true));
+        Writer niedolaczone = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\" + mail + ".txt", true));
         Robot robot = new Robot();
         String[] grupy = new String[45];
         grupy[0] = "https://www.facebook.com/groups/125548817802832/";
@@ -1065,12 +1058,11 @@ public class Main extends Narzedzia{
             try {
                 try {
                     driver.findElement(By.xpath("//*[text()='Napisz post']")).click();
-                }
-                catch (Exception f) {
+                } catch (Exception f) {
                     driver.findElement(By.xpath("//*[text()='Rozpocznij dyskusję']")).click();
                 }
             } catch (Exception e) {
-                niedolaczone.append(grupy[i]+";");
+                niedolaczone.append(grupy[i] + ";");
             }
         }
         niedolaczone.close();
@@ -1081,7 +1073,7 @@ public class Main extends Narzedzia{
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
-        options.addArguments("profile-directory=Profile "+profil);
+        options.addArguments("profile-directory=Profile " + profil);
         LocalDate data = LocalDate.now();
         HashMap<String, Object> images = new HashMap<String, Object>();
         images.put("images", 2);
@@ -1186,206 +1178,187 @@ public class Main extends Narzedzia{
                 driver.findElement(By.xpath("//*[text()='Dołącz do grupy']")).click();
                 Thread.sleep(5000);
                 if (grupy[i] == "https://www.facebook.com/groups/125548817802832/") {
-                    Narzedzia.clickXY(940,450);
+                    Narzedzia.clickXY(940, 450);
                     Narzedzia.Kopiuj("ok");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/1442053002718329/") {
-                    clickXY(728,400);
-                    clickXY(728,526);
-                    clickXY(728,645);
-                    clickXY(728,743);
+                } else if (grupy[i] == "https://www.facebook.com/groups/1442053002718329/") {
+                    clickXY(728, 400);
+                    clickXY(728, 526);
+                    clickXY(728, 645);
+                    clickXY(728, 743);
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/1570795726299278/") {
-                    Narzedzia.clickXY(940,450);
+                } else if (grupy[i] == "https://www.facebook.com/groups/1570795726299278/") {
+                    Narzedzia.clickXY(940, 450);
                     Narzedzia.Kopiuj("ok");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/1764049867255940/") {
-                    Narzedzia.clickXY(940,570);
+                } else if (grupy[i] == "https://www.facebook.com/groups/1764049867255940/") {
+                    Narzedzia.clickXY(940, 570);
                     Narzedzia.Kopiuj("ok");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/1715869212053509/") {
-                    Narzedzia.clickXY(940,490);
+                } else if (grupy[i] == "https://www.facebook.com/groups/1715869212053509/") {
+                    Narzedzia.clickXY(940, 490);
                     Narzedzia.Kopiuj("ok");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/1303356579748916/") {
-                    Narzedzia.clickXY(940,490);
+                } else if (grupy[i] == "https://www.facebook.com/groups/1303356579748916/") {
+                    Narzedzia.clickXY(940, 490);
                     Narzedzia.Kopiuj("ok");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/1008127719282719/") {
-                    Narzedzia.clickXY(940,470);
+                } else if (grupy[i] == "https://www.facebook.com/groups/1008127719282719/") {
+                    Narzedzia.clickXY(940, 470);
                     Narzedzia.Kopiuj("tak");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/809783852435874/") {
-                    Narzedzia.clickXY(940,502);
+                } else if (grupy[i] == "https://www.facebook.com/groups/809783852435874/") {
+                    Narzedzia.clickXY(940, 502);
                     Narzedzia.Kopiuj(data.toString());
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     Kopiuj("tak");
-                    clickXY(940,620);
+                    clickXY(940, 620);
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/540350133012925/") {
-                    Narzedzia.clickXY(940,400);
+                } else if (grupy[i] == "https://www.facebook.com/groups/540350133012925/") {
+                    Narzedzia.clickXY(940, 400);
                     Narzedzia.Kopiuj("na terenie europy");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/409112686230138/") {
-                    Narzedzia.clickXY(940,502);
+                } else if (grupy[i] == "https://www.facebook.com/groups/409112686230138/") {
+                    Narzedzia.clickXY(940, 502);
                     Narzedzia.Kopiuj("ponieważ szukam pracy za granicą");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     Kopiuj("bo jest lepsze wynagrodzenie");
-                    clickXY(940,620);
+                    clickXY(940, 620);
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/408111472862824/") {
-                    Narzedzia.clickXY(940,546);
+                } else if (grupy[i] == "https://www.facebook.com/groups/408111472862824/") {
+                    Narzedzia.clickXY(940, 546);
                     Narzedzia.Kopiuj("tak");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/208321705846755/") {
-                    Narzedzia.clickXY(940,487);
+                } else if (grupy[i] == "https://www.facebook.com/groups/208321705846755/") {
+                    Narzedzia.clickXY(940, 487);
                     Narzedzia.Kopiuj("rozumiem");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/1754524728151510/") {
-                    Narzedzia.clickXY(940,470);
+                } else if (grupy[i] == "https://www.facebook.com/groups/1754524728151510/") {
+                    Narzedzia.clickXY(940, 470);
                     Narzedzia.Kopiuj("rozumiem");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/575459339202696/") {
-                    Narzedzia.clickXY(940,382);
+                } else if (grupy[i] == "https://www.facebook.com/groups/575459339202696/") {
+                    Narzedzia.clickXY(940, 382);
                     Narzedzia.Kopiuj("rozumiem");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     Kopiuj("ok");
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/470892019739734/") {
-                    Narzedzia.clickXY(940,473);
+                } else if (grupy[i] == "https://www.facebook.com/groups/470892019739734/") {
+                    Narzedzia.clickXY(940, 473);
                     Narzedzia.Kopiuj("ponad 2 lata");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     Kopiuj("chcę dodać swoje ogłoszenie i przeglądać inne");
-                    clickXY(940,1000);
+                    clickXY(940, 1000);
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/389866961186981/") {
-                    Narzedzia.clickXY(940,440);
+                } else if (grupy[i] == "https://www.facebook.com/groups/389866961186981/") {
+                    Narzedzia.clickXY(940, 440);
                     Narzedzia.Kopiuj("tak będę");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     Kopiuj("spróbuję");
-                    clickXY(940,625);
+                    clickXY(940, 625);
                     Thread.sleep(1000);
                     Wklej();
                     Kopiuj("rozumiem");
-                    clickXY(940,813);
+                    clickXY(940, 813);
                     Thread.sleep(1000);
                     Wklej();
-                    clickXY(726,901);
+                    clickXY(726, 901);
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/216088472226388/") {
-                    Narzedzia.clickXY(940,400);
+                } else if (grupy[i] == "https://www.facebook.com/groups/216088472226388/") {
+                    Narzedzia.clickXY(940, 400);
                     Narzedzia.Kopiuj("tak");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     Kopiuj("szukam pracy");
-                    clickXY(940,511);
+                    clickXY(940, 511);
                     Thread.sleep(1000);
                     Wklej();
                     Kopiuj("nie chcę");
-                    clickXY(940,641);
+                    clickXY(940, 641);
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/544747138926998/") {
-                    Narzedzia.clickXY(940,450);
+                } else if (grupy[i] == "https://www.facebook.com/groups/544747138926998/") {
+                    Narzedzia.clickXY(940, 450);
                     Narzedzia.Kopiuj("poszukuje");
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     Kopiuj("w Polsce");
-                    clickXY(940,576);
+                    clickXY(940, 576);
                     Thread.sleep(1000);
                     Wklej();
                     Kopiuj("2");
-                    clickXY(940,718);
+                    clickXY(940, 718);
                     Thread.sleep(1000);
                     Wklej();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/351384515297725/") {
-                    clickXY(727,264);
+                } else if (grupy[i] == "https://www.facebook.com/groups/351384515297725/") {
+                    clickXY(727, 264);
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/1659769224298606/") {
-                    clickXY(728,565);
+                } else if (grupy[i] == "https://www.facebook.com/groups/1659769224298606/") {
+                    clickXY(728, 565);
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
                 }
                 Thread.sleep(3000);
             } catch (Exception e) {
-                System.out.println("====================== "+grupy[i]+" =================");
+                System.out.println("====================== " + grupy[i] + " =================");
             }
 
         }
@@ -1454,57 +1427,49 @@ public class Main extends Narzedzia{
                 driver.findElement(By.xpath("//*[text()='Dołącz do grupy']")).click();
                 Thread.sleep(5000);
 
-                if (grupy[i] == "https://www.facebook.com/groups/esingle"){
+                if (grupy[i] == "https://www.facebook.com/groups/esingle") {
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("tak");
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/span/textarea")).sendKeys("tak");
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[5]/div[2]/div/div/div[2]/div[1]/div/input")).click();
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[6]/div[1]/div[2]/div/input")).click();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/779803685436670"){
+                } else if (grupy[i] == "https://www.facebook.com/groups/779803685436670") {
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[2]/div[1]/div[2]/div/input")).click();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/1638108599742339/"){
+                } else if (grupy[i] == "https://www.facebook.com/groups/1638108599742339/") {
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/div/div[1]/div[1]/div/input")).click();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/randkiwsieci/"){
+                } else if (grupy[i] == "https://www.facebook.com/groups/randkiwsieci/") {
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("tak");
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/span/textarea")).sendKeys("tak");
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[5]/div[2]/div/div/input")).click();
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[5]/div[3]/div/div/input")).click();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/1951008294932277/"){
+                } else if (grupy[i] == "https://www.facebook.com/groups/1951008294932277/") {
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("tak");
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/div[2]/div/input")).click();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/443818016228381/"){
+                } else if (grupy[i] == "https://www.facebook.com/groups/443818016228381/") {
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("tak");
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/div[2]/div/input")).click();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/577232589129313/"){
+                } else if (grupy[i] == "https://www.facebook.com/groups/577232589129313/") {
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("żeby poznań nowe ciekawe osoby");
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/div/input")).click();
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[5]/div[1]/div[2]/div/input")).click();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/ChetnieKogosPoznam/"){
+                } else if (grupy[i] == "https://www.facebook.com/groups/ChetnieKogosPoznam/") {
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/div/input")).click();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/1583819578552649/"){
+                } else if (grupy[i] == "https://www.facebook.com/groups/1583819578552649/") {
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("rozumiem");
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/span/textarea")).sendKeys("mam 26 lat i jestem z poznania");
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[5]/div[2]/div/span/textarea")).sendKeys("szukam nowych osobowości");
@@ -1584,23 +1549,23 @@ public class Main extends Narzedzia{
         grupy[43] = "https://www.facebook.com/groups/316265375706455/";
         grupy[44] = "https://www.facebook.com/groups/InternetowaPraca/";
         //===========================MOJE
-        grupy[45]="https://www.facebook.com/groups/1478777662423430/";
-        grupy[46]="https://www.facebook.com/groups/1303356579748916/";
-        grupy[47]="https://www.facebook.com/groups/794811483876118/";
-        grupy[48]="https://www.facebook.com/groups/505718296215064/";
-        grupy[49]="https://www.facebook.com/groups/408111472862824/";
-        grupy[50]="https://www.facebook.com/groups/351384515297725/";
-        grupy[51]="https://www.facebook.com/groups/319514972052497/";
-        grupy[52]="https://www.facebook.com/groups/1932167580368778/";
-        grupy[53]="https://www.facebook.com/groups/1483378875270025/";
-        grupy[54]="https://www.facebook.com/groups/1481353345440772/"; //-----
-        grupy[55]="https://www.facebook.com/groups/688755227963589/";
-        grupy[56]="https://www.facebook.com/groups/544747138926998/";
-        grupy[57]="https://www.facebook.com/groups/316265375706455/";
-        grupy[58]="https://www.facebook.com/groups/InternetowaPraca/";
-        grupy[59]="https://www.facebook.com/groups/315509495130995/";
-        grupy[60]="https://www.facebook.com/groups/298670413999878/";
-        grupy[61]="https://www.facebook.com/groups/2935674523171777/";
+        grupy[45] = "https://www.facebook.com/groups/1478777662423430/";
+        grupy[46] = "https://www.facebook.com/groups/1303356579748916/";
+        grupy[47] = "https://www.facebook.com/groups/794811483876118/";
+        grupy[48] = "https://www.facebook.com/groups/505718296215064/";
+        grupy[49] = "https://www.facebook.com/groups/408111472862824/";
+        grupy[50] = "https://www.facebook.com/groups/351384515297725/";
+        grupy[51] = "https://www.facebook.com/groups/319514972052497/";
+        grupy[52] = "https://www.facebook.com/groups/1932167580368778/";
+        grupy[53] = "https://www.facebook.com/groups/1483378875270025/";
+        grupy[54] = "https://www.facebook.com/groups/1481353345440772/"; //-----
+        grupy[55] = "https://www.facebook.com/groups/688755227963589/";
+        grupy[56] = "https://www.facebook.com/groups/544747138926998/";
+        grupy[57] = "https://www.facebook.com/groups/316265375706455/";
+        grupy[58] = "https://www.facebook.com/groups/InternetowaPraca/";
+        grupy[59] = "https://www.facebook.com/groups/315509495130995/";
+        grupy[60] = "https://www.facebook.com/groups/298670413999878/";
+        grupy[61] = "https://www.facebook.com/groups/2935674523171777/";
         driver.manage().window().maximize();
 
         try {
@@ -1637,40 +1602,35 @@ public class Main extends Narzedzia{
                     driver.findElement(By.xpath("/html/body/div[14]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/span/textarea")).sendKeys("oki");
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/pasywnezarabianie/") {
+                } else if (grupy[i] == "https://www.facebook.com/groups/pasywnezarabianie/") {
                     driver.findElement(By.xpath("/html/body/div[15]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/div/input")).click();
                     driver.findElement(By.xpath("/html/body/div[15]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/div/div[1]/div[1]/div/input")).click();
                     driver.findElement(By.xpath("/html/body/div[15]/div[2]/div/div/div/div/div/div/div[2]/div/div[5]/div[2]/div/div/div[1]/div[1]/div/input")).click();
                     driver.findElement(By.xpath("/html/body/div[15]/div[2]/div/div/div/div/div/div/div[2]/div/div[6]/div[1]/div[2]/div/input")).click();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/inwestorzyiinwestycje/") {
+                } else if (grupy[i] == "https://www.facebook.com/groups/inwestorzyiinwestycje/") {
                     driver.findElement(By.xpath("/html/body/div[14]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("nie");
                     driver.findElement(By.xpath("/html/body/div[14]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/span/textarea")).sendKeys("nie");
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/410873349362708/") {
+                } else if (grupy[i] == "https://www.facebook.com/groups/410873349362708/") {
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/div/div[1]/div[1]/div/input")).click();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
                 }
 
                 //10-20
-                else if (grupy[i] == "https://www.facebook.com/groups/pracawmlm/"){
+                else if (grupy[i] == "https://www.facebook.com/groups/pracawmlm/") {
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("szukam współpracy");
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/381018519002791/") {
+                } else if (grupy[i] == "https://www.facebook.com/groups/381018519002791/") {
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("oki");
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/div[2]/div/input")).click();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/pracaonline24/") {
+                } else if (grupy[i] == "https://www.facebook.com/groups/pracaonline24/") {
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("szukam pracy online");
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/div[2]/div/input")).click();
                     Thread.sleep(1000);
@@ -1678,17 +1638,15 @@ public class Main extends Narzedzia{
                 }
 
                 //20-30
-                else if (grupy[i] == "https://www.facebook.com/groups/519298171753298/"){
+                else if (grupy[i] == "https://www.facebook.com/groups/519298171753298/") {
                     driver.findElement(By.xpath("/html/body/div[15]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("mam nowe konto założone w 2k20.. :/ chcę dołączyć ponieważ szukam zarobku w internecie");
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/PracaBezSzefa/") {
+                } else if (grupy[i] == "https://www.facebook.com/groups/PracaBezSzefa/") {
                     driver.findElement(By.xpath("/html/body/div[15]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("oki");
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/zarabianie.praca.internet/") {
+                } else if (grupy[i] == "https://www.facebook.com/groups/zarabianie.praca.internet/") {
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("oki");
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[2]/div/span/textarea")).sendKeys("chcę");
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[5]/div[2]/div/span/textarea")).sendKeys("no pewnie że tak !");
@@ -1709,8 +1667,7 @@ public class Main extends Narzedzia{
                     driver.findElement(By.xpath("/html/body/div[13]/div[2]/div/div/div/div/div/div/div[2]/div/div[4]/div[1]/div[2]/div/input")).click();
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
-                }
-                else if (grupy[i] == "https://www.facebook.com/groups/316265375706455/") {
+                } else if (grupy[i] == "https://www.facebook.com/groups/316265375706455/") {
                     driver.findElement(By.xpath("/html/body/div[11]/div[2]/div/div/div/div/div/div/div[2]/div/div[3]/div[2]/div/span/textarea")).sendKeys("szukam pracy");
                     Thread.sleep(1000);
                     driver.findElement(By.xpath("//*[text()='Wyślij']")).click();
@@ -1718,12 +1675,11 @@ public class Main extends Narzedzia{
 
                 Thread.sleep(3000);
             } catch (Exception e) {
-                System.out.println("====================== "+grupy[i]+" =================");
+                System.out.println("====================== " + grupy[i] + " =================");
             }
 
         }
         driver.quit();
-
 
 
     }
@@ -1753,39 +1709,39 @@ public class Main extends Narzedzia{
                 "\n" +
                 "https://www.youtube.com/c/MiroslawKlos";
 
-        String fb[] = {"henryka.tenerowicz@o2.pl","zuzanna-krzysztofowicz@o2.pl","kowazofi@interia.pl","filikra@interia.pl","kajeszu@interia.pl"};
-        String profil[] = {"155","160","166","167","168"};
+        String fb[] = {"henryka.tenerowicz@o2.pl", "zuzanna-krzysztofowicz@o2.pl", "kowazofi@interia.pl", "filikra@interia.pl", "kajeszu@interia.pl"};
+        String profil[] = {"155", "160", "166", "167", "168"};
 
-        for (int i=0;i<fb.length;i++){
-            dodajPost(fb[i],post,profil[i],0,12);
+        for (int i = 0; i < fb.length; i++) {
+            dodajPost(fb[i], post, profil[i], 0, 12);
             System.out.println(i);
             System.out.println(fb[i]);
             Koniec.RestarHujawei();
         }
 
-        for (int i=0;i<fb.length;i++){
-            dodajPost(fb[i],post,profil[i],12,24);
+        for (int i = 0; i < fb.length; i++) {
+            dodajPost(fb[i], post, profil[i], 12, 24);
             System.out.println(i);
             System.out.println(fb[i]);
             Koniec.RestarHujawei();
         }
 
-        for (int i=0;i<fb.length;i++){
-            dodajPost(fb[i],post,profil[i],24,36);
+        for (int i = 0; i < fb.length; i++) {
+            dodajPost(fb[i], post, profil[i], 24, 36);
             System.out.println(i);
             System.out.println(fb[i]);
             Koniec.RestarHujawei();
         }
 
-        for (int i=0;i<fb.length;i++){
-            dodajPost(fb[i],post,profil[i],36,48);
+        for (int i = 0; i < fb.length; i++) {
+            dodajPost(fb[i], post, profil[i], 36, 48);
             System.out.println(i);
             System.out.println(fb[i]);
             Koniec.RestarHujawei();
         }
 
-        for (int i=0;i<fb.length;i++){
-            dodajPost(fb[i],post,profil[i],48,55);
+        for (int i = 0; i < fb.length; i++) {
+            dodajPost(fb[i], post, profil[i], 48, 55);
             System.out.println(i);
             System.out.println(fb[i]);
             Koniec.RestarHujawei();
@@ -1851,7 +1807,7 @@ public class Main extends Narzedzia{
         }
 
         try {
-            for (int i=0;i<fp.size();i++) {
+            for (int i = 0; i < fp.size(); i++) {
                 try {
                     driver.findElement(By.xpath("//*[text()='Jeszcze kilka kroków do zalogowania']")).click();
                     System.out.println("ZABLOKOWANE");
@@ -1887,17 +1843,16 @@ public class Main extends Narzedzia{
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
-        options.addArguments("profile-directory=Profile "+profil);
+        options.addArguments("profile-directory=Profile " + profil);
         options.addArguments("--disable-notifications");
-        ChromeDriver driver = new  ChromeDriver(options);
+        ChromeDriver driver = new ChromeDriver(options);
 
-        for (int i=0;i<20;i++) {
+        for (int i = 0; i < 20; i++) {
             driver.get("https://www.facebook.com/groups/125548817802832/");
             Thread.sleep(3000);
             try {
                 driver.findElement(By.xpath("//*[text()='Napisz post']")).click();
-            }
-            catch (Exception f) {
+            } catch (Exception f) {
                 driver.findElement(By.xpath("//*[text()='Rozpocznij dyskusję']")).click();
             }
             Thread.sleep(3000);
@@ -1914,15 +1869,15 @@ public class Main extends Narzedzia{
         Random r = new Random();
         int lajk = r.nextInt(2);
         options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
-        options.addArguments("profile-directory=Profile "+profil);
+        options.addArguments("profile-directory=Profile " + profil);
         options.addArguments("--disable-notifications");
-        ChromeDriver driver = new  ChromeDriver(options);
+        ChromeDriver driver = new ChromeDriver(options);
         Robot robot = new Robot();
 
         driver.get("https://pl-pl.facebook.com/login/");
         Thread.sleep(5000);
-        for (int i=0;i<300;i++) {
-            ScrollBy(driver,"500");
+        for (int i = 0; i < 300; i++) {
+            ScrollBy(driver, "500");
             /*
             if (lajk == 0) {
                 try {
@@ -1953,17 +1908,17 @@ public class Main extends Narzedzia{
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
-        options.addArguments("profile-directory=Profile "+"113");
+        options.addArguments("profile-directory=Profile " + "113");
         options.addArguments("--disable-notifications");
         ChromeDriver driver = new ChromeDriver(options);
-        WebDriverWait wait = new WebDriverWait(driver,10000);
+        WebDriverWait wait = new WebDriverWait(driver, 10000);
 
         try {
             driver.get("https://www.thecrims.com/newspaper#/robberies");
             Thread.sleep(5000);
             driver.findElement(By.xpath("//*[@id=\"loginform\"]/button")).click();
             Thread.sleep(5000);
-        } catch (Exception e){
+        } catch (Exception e) {
 
         }
 
@@ -1981,7 +1936,7 @@ public class Main extends Narzedzia{
         Thread.sleep(3000);
         try {
             driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/div[2]/ul[2]/li[1]/div/div[2]/button")).click();
-        } catch (Exception e){
+        } catch (Exception e) {
             try {
                 driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/div[2]/ul[3]/li[1]/div/div[2]/button")).click();
             } catch (Exception f) {
@@ -1993,7 +1948,7 @@ public class Main extends Narzedzia{
         Thread.sleep(1000);
         Thread.sleep(7000);
 
-        for (;;) {
+        for (; ; ) {
             driver.findElement(By.xpath("//*[@id=\"menu-robbery\"]")).click();
             Thread.sleep(3000);
 
@@ -2007,7 +1962,7 @@ public class Main extends Narzedzia{
             Thread.sleep(3000);
             try {
                 driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/div[2]/ul[2]/li[1]/div/div[2]/button")).click();
-            } catch (Exception e){
+            } catch (Exception e) {
                 try {
                     try {
                         driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/div[2]/ul[3]/li[1]/div/div[2]/button")).click();
@@ -2101,66 +2056,83 @@ public class Main extends Narzedzia{
         String mail2;
         String mail3;
         String numer;
-        String post = "Post od Pana Miroslawa Klos!\n" +
+        String post = "Uwaga! Uwaga!!!!\n" +
+                "Post od Pana Miroslawa Klos!\n" +
+                "Witajcie!\n" +
+                "Czas na podsumowanie tego roku! W zeszłym mi się nie udało choć byłem blisko tak teraz z dumą oświadczam, że zarobiłem pierwszy milion w tym roku!\n" +
+                "W biznesie który stworzyłem sam od podstaw i działam już wiele lat. \n" +
+                "Więcej informacji znajdziecie na moim Blogu: Miroslawklos .pl (Bez spacji przed kropką bo FB tnie zasięgi)\n" +
+                "W skrócie zajmuję się sprzedażą gier wideo w formie cyfrowej. Jedną grę kupujemy za 20zł i następnie sprzedajemy wiele razy generując stały zysk. Na portalach jak Allegro, Ebay etc.\n" +
+                "Na dzień dzisiejszy działam na 15 portalach zagranicznych i mam aktywnych ponad 1500 aukcji! W zasadzie po tylu latach biznes kręci już się sam.\n" +
+                "Współpracuje ze mną wielu z Was a przez ostatnie lata nazwisko Klos elektryzuje fora i grupy społecznościowe ;)\n" +
+                "Ujawniłem wiele scamów i przekrętów jakie na co dzień tu widzicie. Jednym z największych była akcja z RecycleBOT. Czyli przekrętem znanym już na całą polskę gdzie zainwestowałem ponad 13000zł tylko po to aby następnie wejść z ich właścicielami w psychologiczną grę i pokazać jak ten przekręt działa. Wielu wówczas śmiało się ze mnie, że wariatem jestem no ale cóż gdzie dziś jesteście?\n" +
+                "Pewnie tam gdzie Wasze pieniądze czyli w czarnej dupie ;)\n" +
+                "Od kliku lat biegają też za mną ci życiowi nieudacznicy styrani życiem na etacie jak słynna już Madzia ze Szczecina, która zgłaszał mnie do US czy prokuratury. Wariatka, psychofanka czy jak niektórzy twierdzą, nieszczęśliwie zakochana we mnie kobieta. Z tego miejsca Madziu pozdrawiam Cię serdecznie i pamiętaj Twoje gówniane życie od tych 4 lat dalej jest w tym samym gównianym punkcie ;)\n" +
+                "Ja natomiast dalej jadę do przodu!\n" +
+                "Było więcej tych oszołomów i raz po raz pojawiają się nowi gdzie jak tylko widzą nazwisko Klos to mają pretensje do całego świata o swój nędzny byt.\n" +
+                "Na blogu jak i moim kanale youtube macie więcej historii gdzie tych dzbanów wyjaśniam jeden po drugim bardzo konkretnie.\n" +
                 "\n" +
-                "Witajcie od wielu miesięcy widzicie posty jak ten. Sa to osoby co pracują dla mnie. Place najwiecej w Polsce za taka prace i łącznie pracuje dla mnie ponad 80 osób! \n" +
+                "Ten rok to też moje podróże, niestety w dużo mniejszej skali niż wcześniej z wiadomych względów. Najbardziej szkoda mi tej odwołanej Dominikany no ale cóż co się odwlecze to...\n" +
+                "Wielu z Was dzięki mnie zrezygnowało z pracy na etacie i biznes z grami stał się Waszym głównym zajęciem. Tak trzymać! Nie oglądać się na ludzi, którzy tylko patrzą jak podciąć Wam skrzydła. To Wy bierzecie życie we własne ręce i o to chodzi!\n" +
+                "Kolejne miesiące to kolejne duże premiery a co za tym idzie duże pieniądze do zarobienia. Zapraszam jeżeli też chcesz dołączyć do nas!\n" +
                 "\n" +
-                "Jedni nazywają mnie pogromcą smoków inni gwałcicielem niewiast ;) Ogólnie nazwisko Klos mocno elektryzuje ludzi w internecie. Działam już publicznie od wielu lat zarabiając na grach wideo w wersji cyfrowej. W skrócie kupujemy jedną grę za 20zł i sprzedajemy cały czas na portalach aukcyjnych jak Allegro czy Ebay. Generując w ten sposób stały zysk. Przez te wszystkie lata były już przeróżne historie na mój temat. Była słynna na całą Polskę Madzia ze Szczecina. Wariatka, chora kobieta czy jak wielu sądzi nieszczęśliwie zakochana we mnie, która w rozpaczy zgłasza mnie na policję czy do urzędu skarbowego. Był nie mniej słynny Recacly Bot gdzie zainwestowałem 13000zł tylko po to aby pokazać jak tego typu programy zarabiania działają. Pamiętam jak mnie wtedy tu zlinczowali 'Klos oszuście nie kłam! Ten program wypłaca!'' Gdzie dziś jest RB? Pewnie tam gdzie Wasze pieniądze \uD83D\uDE02 czyli chu* wie gdzie \uD83D\uDE2D \n" +
-                "Wszystkie te historie jak i wiele więcej znajdziecie na moim blogu jak i na kanale youtube. Obnażając te Wasze scamy stałem się wrogiem publicznym nr 1. Ponieważ uświadamiam ludzi i nie możecie już tylu jeleni łapać co kiedyś \uD83E\uDD8C\n" +
+                "Na koniec zapraszam na bloga gdzie możecie zgarnąć 500zł na święta i z tego miejsca życzę Wam wesołych i zdrowych świąt jak i udanego nowego roku!\n" +
                 "\n" +
-                "Od kliku lat działam w branży gier wideo. W skrócie kupujemy jedna grę za 20zl i sprzedajemy cały czas generując stały zysk na portalach jak Allegro czy Ebay. \n" +
-                "Gry wideo to branża, która rozwija się niesamowicie. Dziś grają wszyscy i Ci mali i Ci duzi. Sam działam na ponad 10 portalach aukcyjnych głównie za granicą i mam aktywnych ponad 1000 aukcji! Na tym etapie to wszystko już pracuje samodzielnie. Razem ze mną współpracuje wielu z Was! Wielu też odmieniło swoje życie i bardzo się cieszę, że miałem w tym swój udział. Jeżeli i Ty chcesz dołączyć do mojego zespołu to zapraszam serdecznie na mojego Bloga gdzie uczę jak sam zarabiam w internecie!\n" +
+                "Nikt nie odpisze Wam w komentarzach, są to tylko osoby które pracują dla mnie i robią posty jak ten ;)\n" +
+                "Kontakt tylko poprzez bloga lub email:\n" +
+                "Dishar82@gmail .com (bez spacji przed kropka bo FB tnie zasiegi)\n" +
                 "\n" +
-                "Blog:  Miroslawklos .pl  (Bez spacji przed kropką bo FB tnie zasięgi)\n" +
-                "\n" +
-                "Lub email:  Dishar82@gmail .com (Również bez spacji dla zasięgów)\n" +
-                "\n" +
-                "Napisz! Pomogłem już wielu ludziom, pomogę i Tobie!";
+                "https://youtu.be/wLp1GdEtlyk";
 
-        String fb[] = {"dumcio.97@wp.pl","ewa1dymkowska@gmail.com"};
-        String[] profil = {"113","192"};
-        int j=15;
+        String fb[] = {"dumcio.97@wp.pl", "ewa1dymkowska@gmail.com"};
+        String[] profil = {"113", "192"};
+        int j = 15;
         try {
-//        for (int i=0;i<100;i++){
-//            interia();
-//            if (i%20==0)
-//                Koniec.Restart();
-//            System.out.println(i);
-//        }
-//        pobierzAdres(100);
-//            for(int i=52;i<150;i++) {
-//                mail = everyInt.nextLine();
-//                mail2 = nestle3.nextLine();
-//                ulicaVee = ulicaVe.nextLine();
-//                kodVee = kodVe.nextLine();
-//                miastoVee = miastoVe.nextLine();
-//                Neworklead.NestleTAR(mail2);
-//                if (i<20)
-//                    Dodatkowy.EveryZbiorowe21(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-//                else if (i<40)
-//                    Dodatkowy.EveryZbiorowe22(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-//                else
-//                    Dodatkowy.EveryZbiorowe23(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
 
-//                j++;
-//                if (j > 22)
-//                    j = 0;
+//            for (int i = 0; i < fb.length; i++) {
+//                dodajPostLepakNowy(profil[i], fb[i], "", post, 0, 30);
 //                System.out.println(i);
-//                System.out.println(mail2);
+//                System.out.println(fb[i]);
 //                Koniec.Restart();
 //            }
-            for(int i = 1; i < 30; i++) {
-                mail = nestle3.nextLine();
-                if (i%2==0)
-                    Neworklead.NestleM2B(mail);
-                else
-                    Neworklead.NestleTAR(mail);
+//
+//            for (int i = 0; i < fb.length; i++) {
+//                dodajPostLepakNowy(profil[i], fb[i], "", post, 30, 61);
+//                System.out.println(i);
+//                System.out.println(fb[i]);
+//                Koniec.Restart();
+//            }
+            for (int i = 73; i < 100; i++) {
+                interia();
+                if (i % 20 == 0)
+                    Koniec.Restart();
                 System.out.println(i);
-                System.out.println(mail);
+            }
+            pobierzAdres(100);
+            for (int i = 0; i < 43; i++) {
+                mail = everyInt.nextLine();
+                mail2 = nestle3.nextLine();
+                ulicaVee = ulicaVe.nextLine();
+                kodVee = kodVe.nextLine();
+                miastoVee = miastoVe.nextLine();
+
+                if (i<6)
+                    Dodatkowy.EveryZbiorowe31(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
+                else if (i<12)
+                    Dodatkowy.EveryZbiorowe32(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
+                else if (i<18)
+                    Dodatkowy.EveryZbiorowe33(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
+                else
+                    Dodatkowy.EveryMale(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
+
+                j++;
+                if (j > 22)
+                    j = 0;
+                System.out.println(i);
+                System.out.println(mail2);
                 Koniec.Restart();
             }
-        }
-         catch (Exception e) {
+        } catch (Exception e) {
             blad.println(e);
             blad.close();
             System.out.println("=============ERROR===============");
@@ -2168,7 +2140,6 @@ public class Main extends Narzedzia{
             System.out.println("=============ERROR===============");
             wylacz();
         }
-
 
 
         wylacz();
