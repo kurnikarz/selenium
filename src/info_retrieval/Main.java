@@ -839,14 +839,14 @@ public class Main extends Narzedzia {
         //===========================MOJE
         grupy[45] = "https://www.facebook.com/groups/1478777662423430/";
         grupy[46] = "https://www.facebook.com/groups/1303356579748916/";
-        grupy[47] = "https://www.facebook.com/groups/794811483876118/";
+        grupy[47] = "https://www.facebook.com/groups/794811483876118/";	//DYSKUSJA
         grupy[48] = "https://www.facebook.com/groups/505718296215064/";
         grupy[49] = "https://www.facebook.com/groups/408111472862824/";    //blok
         grupy[50] = "https://www.facebook.com/groups/351384515297725/";    //blok
         grupy[51] = "https://www.facebook.com/groups/319514972052497/";
         grupy[52] = "https://www.facebook.com/groups/1932167580368778/";
         grupy[53] = "https://www.facebook.com/groups/1483378875270025/";
-        grupy[54] = "https://www.facebook.com/groups/1481353345440772/";
+        grupy[54] = "https://www.facebook.com/groups/1481353345440772/";	//DYSKUSJA
         grupy[55] = "https://www.facebook.com/groups/688755227963589/";
         grupy[56] = "https://www.facebook.com/groups/544747138926998/";    //blok
         grupy[57] = "https://www.facebook.com/groups/316265375706455/";    //blok
@@ -898,20 +898,23 @@ public class Main extends Narzedzia {
                 Thread.sleep(1000);
                 Narzedzia.Wklej();
                 Thread.sleep(2000);
-                //ZDJECIE=======================
-
-//                    driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[1]/span/div/div/div/div/div[1]/i")).click();
-//                    Thread.sleep(3000);
-//                    Kopiuj("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\klos.jpg");
-//                    Thread.sleep(1000);
-//                    Wklej();
-//                    Thread.sleep(1000);
-//                    robot.keyPress(KeyEvent.VK_ENTER);
-//                    Thread.sleep(5000);
+//                ZDJECIE =======================
+                Kopiuj("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\klos.jpg");
+                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[1]/span/div/div/div/div/div[1]/i")).click();
+                Thread.sleep(2000);
+                Wklej();
+                Thread.sleep(1000);
+                robot.keyPress(KeyEvent.VK_ENTER);
+                Thread.sleep(3000);
 
                 driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
                 Thread.sleep(5000);
-                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span/a/span/span/span[2]")).click();
+                try {
+                    driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span/a/span/span/span[2]")).click();
+                } catch (Exception e) {
+                    driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span")).click();
+                }
+
                 Thread.sleep(5000);
                 zrobScreena(i, mail);
                 linki.append(driver.getCurrentUrl() + "\r\n");
@@ -2056,8 +2059,7 @@ public class Main extends Narzedzia {
         String mail2;
         String mail3;
         String numer;
-        String post = "Uwaga! Uwaga!!!!\n" +
-                "Post od Pana Miroslawa Klos!\n" +
+        String post = "Post od Pana Miroslawa Klos!\n" +
                 "Witajcie!\n" +
                 "Czas na podsumowanie tego roku! W zeszłym mi się nie udało choć byłem blisko tak teraz z dumą oświadczam, że zarobiłem pierwszy milion w tym roku!\n" +
                 "W biznesie który stworzyłem sam od podstaw i działam już wiele lat. \n" +
@@ -2080,68 +2082,74 @@ public class Main extends Narzedzia {
                 "\n" +
                 "Nikt nie odpisze Wam w komentarzach, są to tylko osoby które pracują dla mnie i robią posty jak ten ;)\n" +
                 "Kontakt tylko poprzez bloga lub email:\n" +
-                "Dishar82@gmail .com (bez spacji przed kropka bo FB tnie zasiegi)\n" +
-                "\n" +
-                "https://youtu.be/wLp1GdEtlyk";
+                "Dishar82@gmail .com (bez spacji przed kropka bo FB tnie zasiegi)";
 
-        String fb[] = {"dumcio.97@wp.pl", "ewa1dymkowska@gmail.com"};
-        String[] profil = {"113", "192"};
+        String fb[] = {"dumcio.97@wp.pl","natalia.woszczylo@o2.pl"};
+        String[] profil = {"113", "193"};
         int j = 15;
-        try {
+//        try {
+                for (int i=0;i<25;i++) {
+                    mail = everyInt.nextLine();
+                    Neworklead.EveryTar(mail);
+                    System.out.println(i);
+                    System.out.println(mail);
+                    Koniec.Restart();
+                }
 
 //            for (int i = 0; i < fb.length; i++) {
 //                dodajPostLepakNowy(profil[i], fb[i], "", post, 0, 30);
 //                System.out.println(i);
 //                System.out.println(fb[i]);
-//                Koniec.Restart();
+////                Koniec.Restart();
 //            }
 //
 //            for (int i = 0; i < fb.length; i++) {
-//                dodajPostLepakNowy(profil[i], fb[i], "", post, 30, 61);
+//                dodajPostLepakNowy(profil[i], fb[i], "", post, 30, 62);
 //                System.out.println(i);
 //                System.out.println(fb[i]);
+////                Koniec.Restart();
+//            }
+//            for (int i = 1; i <= 100; i++) {
+//                interia();
+//                if (i % 20 == 0)
+//                    Koniec.Restart();
+//                System.out.println(i);
+//            }
+//            pobierzAdres(100);
+//            for (int i = 67; i < 78; i++) {
+//                mail = everyInt.nextLine();
+//                ulicaVee = ulicaVe.nextLine();
+//                kodVee = kodVe.nextLine();
+//                miastoVee = miastoVe.nextLine();
+//
+//                if (i<45)
+//                    Dodatkowy.Every7(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
+//                else if (i<60)
+//                    Dodatkowy.EveryMale(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
+//                else if (i<66)
+//                    Dodatkowy.EveryZbiorowe31(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
+//                else if (i<72)
+//                    Dodatkowy.EveryZbiorowe32(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
+//                else if (i<78)
+//                    Dodatkowy.EveryZbiorowe33(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
+//
+//                j++;
+//                if (j > 22)
+//                    j = 0;
+//                System.out.println(i);
+//                System.out.println(mail);
 //                Koniec.Restart();
 //            }
-            for (int i = 73; i < 100; i++) {
-                interia();
-                if (i % 20 == 0)
-                    Koniec.Restart();
-                System.out.println(i);
-            }
-            pobierzAdres(100);
-            for (int i = 0; i < 43; i++) {
-                mail = everyInt.nextLine();
-                mail2 = nestle3.nextLine();
-                ulicaVee = ulicaVe.nextLine();
-                kodVee = kodVe.nextLine();
-                miastoVee = miastoVe.nextLine();
-
-                if (i<6)
-                    Dodatkowy.EveryZbiorowe31(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
-                else if (i<12)
-                    Dodatkowy.EveryZbiorowe32(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
-                else if (i<18)
-                    Dodatkowy.EveryZbiorowe33(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
-                else
-                    Dodatkowy.EveryMale(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
-
-                j++;
-                if (j > 22)
-                    j = 0;
-                System.out.println(i);
-                System.out.println(mail2);
-                Koniec.Restart();
-            }
-        } catch (Exception e) {
-            blad.println(e);
-            blad.close();
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            wylacz();
-        }
+//        } catch (Exception e) {
+//            blad.println(e);
+//            blad.close();
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            wylacz();
+//        }
 
 
-        wylacz();
+//        wylacz();
     }
 }

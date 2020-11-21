@@ -2126,20 +2126,20 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/be16a979c5c89372926ec880d8f701a6/8fe96f6cd0f73fb3ba773a63d7459475/201920950f63cee967982b759fde80b1");
+        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/6d48e9d23802e2eb39b5f4d93c2b3566/e3c3f0dbefcc7403638393eec3418004/201920950f63cee967982b759fde80b1");
             Thread.sleep(10000);
             sprawdzLinkEvery(driver);
             refreshEvery(driver);
-            clickXY(745,850);
+            clickXY(745,600);
 
             Thread.sleep(25000);
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
             
-//        } catch (Exception e){
-//            driver.quit();
-//        }
+        } catch (Exception e){
+            driver.quit();
+        }
 
              
 
@@ -2309,6 +2309,8 @@ public class Dodatkowy extends Narzedzia {
         ChromeOptions options = new ChromeOptions();
                 options.addArguments("--allow-running-insecure-content");
         options.addArguments("--disable-notifications");
+        options.addExtensions(new File("E:\\bot\\captcha.crx"));
+        options.addExtensions(new File("E:\\bot\\buster.crx"));
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -2325,7 +2327,7 @@ public class Dodatkowy extends Narzedzia {
             Thread.sleep(10000);
             clickXY(778,700);
             Thread.sleep(25000);
-            Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+            Neworklead.Everyday2(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
 
 //        } catch (Exception e){

@@ -1509,6 +1509,79 @@ public class Neworklead extends Narzedzia {
 
     }
 
+    public static void Everyday2(WebDriver driver, String mail) throws AWTException, IOException, InterruptedException {
+        String imie = genImieZen();
+        String nazwisko = genNazwiskoZen();
+        Random r = new Random();
+        int miesiac = r.nextInt(12 - 2 + 1) + 2;
+        int rok = r.nextInt(1995 - 1986 + 1) + 1986;
+        int dzien = r.nextInt(29) + 1;
+        int odp1 = r.nextInt(3);
+        int odp2 = r.nextInt(2);
+        int odp3 = r.nextInt(4);
+        int odp4 = r.nextInt(4);
+        int kupon1 = r.nextInt(2);
+        int kupon2 = r.nextInt(4);
+        int x = 1750;
+        int m = 0;
+        boolean cookie = false;
+        Robot robot = new Robot();
+        String roko = String.valueOf(rok);
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        WebDriverWait wait = new WebDriverWait(driver, 1000);
+        //WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[2]/a"));
+        //driver.get("https://www.everydayme.pl/konkurszimowy");
+//        try {
+        zmienKarte(driver);
+            Thread.sleep(10000);
+            while (!cookie){
+                try {
+                    driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
+                    cookie = true;
+                } catch (Exception e){
+                    Thread.sleep(5000);
+                }
+
+                m++;
+                if (m > 10)
+                    break;
+
+
+            }
+        Thread.sleep(3000);
+        ScrollBy(driver, "1000");
+        Thread.sleep(1000);
+        try {
+            driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/div/div/div/div[1]/div/div/form/div[3]/div/div/button[1]")).click();
+        } catch (Exception e) {
+            driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/div/div/div/div[1]/div/div/form/div[3]/div/div/button[1]")).click();
+        }
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"firstName\"]")));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys(imie);
+        driver.findElement(By.xpath("//*[@id=\"emailAddress\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"newPassword\"]")).sendKeys("Mamatata14");
+        Select dzie = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[1]")));
+        dzie.selectByIndex(dzien);
+        Select mies = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[2]")));
+        mies.selectByIndex(miesiac);
+        Select ro = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[3]")));
+        ro.selectByValue(roko);
+        driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus_1\"]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/div/div/div/div[1]/div/div/div[2]/div/div[2]/form/div[8]/button")).click();
+        Thread.sleep(30000);
+        driver.quit();
+
+//        } catch (Exception e) {
+//            niewykorzystane.append(mail+"\r\n");
+//            niewykorzystane.close();
+//            driver.quit();
+//        }
+
+
+    }
+
     public static void EveryDsa(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
@@ -3345,6 +3418,32 @@ public class Neworklead extends Narzedzia {
         } catch (Exception e) {
             driver.quit();
         }
+
+
+    }
+
+    public static void EveryTar(String mail) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
+        options.addExtensions(new File("E:\\bot\\captcha.crx"));
+        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+//        try {
+        driver.get("https://neworklead.pl/zadanie/efa8f23c27110a4797cc2870fbbcda3c/721d330d9f5a88415c8aa24bc5eae235/d654be842d14f320ad92ef039fb6aa4c");
+        Thread.sleep(25000);
+        Neworklead.Everyday2(driver, mail);
+        Thread.sleep(1000);
+
+//        } catch (Exception e){
+//            driver.quit();
+//        }
+
 
 
     }
