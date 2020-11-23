@@ -1521,7 +1521,6 @@ public class Neworklead extends Narzedzia {
         int odp3 = r.nextInt(4);
         int odp4 = r.nextInt(4);
         int kupon1 = r.nextInt(2);
-        int kupon2 = r.nextInt(4);
         int x = 1750;
         int m = 0;
         boolean cookie = false;
@@ -1567,9 +1566,33 @@ public class Neworklead extends Narzedzia {
         mies.selectByIndex(miesiac);
         Select ro = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[3]")));
         ro.selectByValue(roko);
-        driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus_1\"]")).click();
+        try {
+            driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus_1\"]")).click();
+        } catch (Exception e) {
+            driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus\"]")).click();
+        }
+
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/div/div/div/div[1]/div/div/div[2]/div/div[2]/form/div[8]/button")).click();
+        try {
+            Thread.sleep(2000);
+            driver.switchTo().frame(7);
+            driver.findElement(By.xpath("/html/body/div/div/div[3]/div[2]/div[1]/div[1]/div[6]/button")).click();
+            Thread.sleep(10000);
+//            boolean solve = false;
+            try {
+//                while (!solve) {
+                    WebElement incorrect = driver.findElement(By.xpath("/html/body/div/div/div[1]"));
+                    driver.findElement(By.xpath("/html/body/div/div/div[7]/div[2]/div[1]/div[1]/div[6]/button")).click();
+                    Thread.sleep(5000);
+//                    solve = true;
+//                }
+            } catch (Exception f) {
+
+            }
+        } catch (Exception e) {
+
+        }
         Thread.sleep(30000);
         driver.quit();
 

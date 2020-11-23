@@ -899,13 +899,13 @@ public class Main extends Narzedzia {
                 Narzedzia.Wklej();
                 Thread.sleep(2000);
 //                ZDJECIE =======================
-                Kopiuj("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\klos.jpg");
-                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[1]/span/div/div/div/div/div[1]/i")).click();
-                Thread.sleep(2000);
-                Wklej();
-                Thread.sleep(1000);
-                robot.keyPress(KeyEvent.VK_ENTER);
-                Thread.sleep(3000);
+//                Kopiuj("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\klos.jpg");
+//                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[1]/span/div/div/div/div/div[1]/i")).click();
+//                Thread.sleep(2000);
+//                Wklej();
+//                Thread.sleep(1000);
+//                robot.keyPress(KeyEvent.VK_ENTER);
+//                Thread.sleep(3000);
 
                 driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
                 Thread.sleep(5000);
@@ -2059,56 +2059,43 @@ public class Main extends Narzedzia {
         String mail2;
         String mail3;
         String numer;
-        String post = "Post od Pana Miroslawa Klos!\n" +
-                "Witajcie!\n" +
-                "Czas na podsumowanie tego roku! W zeszłym mi się nie udało choć byłem blisko tak teraz z dumą oświadczam, że zarobiłem pierwszy milion w tym roku!\n" +
-                "W biznesie który stworzyłem sam od podstaw i działam już wiele lat. \n" +
-                "Więcej informacji znajdziecie na moim Blogu: Miroslawklos .pl (Bez spacji przed kropką bo FB tnie zasięgi)\n" +
-                "W skrócie zajmuję się sprzedażą gier wideo w formie cyfrowej. Jedną grę kupujemy za 20zł i następnie sprzedajemy wiele razy generując stały zysk. Na portalach jak Allegro, Ebay etc.\n" +
-                "Na dzień dzisiejszy działam na 15 portalach zagranicznych i mam aktywnych ponad 1500 aukcji! W zasadzie po tylu latach biznes kręci już się sam.\n" +
-                "Współpracuje ze mną wielu z Was a przez ostatnie lata nazwisko Klos elektryzuje fora i grupy społecznościowe ;)\n" +
-                "Ujawniłem wiele scamów i przekrętów jakie na co dzień tu widzicie. Jednym z największych była akcja z RecycleBOT. Czyli przekrętem znanym już na całą polskę gdzie zainwestowałem ponad 13000zł tylko po to aby następnie wejść z ich właścicielami w psychologiczną grę i pokazać jak ten przekręt działa. Wielu wówczas śmiało się ze mnie, że wariatem jestem no ale cóż gdzie dziś jesteście?\n" +
-                "Pewnie tam gdzie Wasze pieniądze czyli w czarnej dupie ;)\n" +
-                "Od kliku lat biegają też za mną ci życiowi nieudacznicy styrani życiem na etacie jak słynna już Madzia ze Szczecina, która zgłaszał mnie do US czy prokuratury. Wariatka, psychofanka czy jak niektórzy twierdzą, nieszczęśliwie zakochana we mnie kobieta. Z tego miejsca Madziu pozdrawiam Cię serdecznie i pamiętaj Twoje gówniane życie od tych 4 lat dalej jest w tym samym gównianym punkcie ;)\n" +
-                "Ja natomiast dalej jadę do przodu!\n" +
-                "Było więcej tych oszołomów i raz po raz pojawiają się nowi gdzie jak tylko widzą nazwisko Klos to mają pretensje do całego świata o swój nędzny byt.\n" +
-                "Na blogu jak i moim kanale youtube macie więcej historii gdzie tych dzbanów wyjaśniam jeden po drugim bardzo konkretnie.\n" +
+        String post = "Polecam!\n" +
+                "Biznes który różni się całkowicie od tego wszystkiego co widujecie tu na co dzień.  \n" +
+                "Polecam Pana Mirka który zarabia na grach cyfrowych.\n" +
+                "Kupujemy jedną grę i sprzedajemy ją cały czas generując już czysty zysk. Gry to produkt jak każdy inny i na samym tylko allegro ludzie zarabiają krocie tygodniowo. Nie mówiąc już ile wyciąga się na portalach zagranicznych gdzie płacą w euro czy dolarach. Jeżeli masz dosyć MLM i całej reszty tego chłamu to Autore wszystko tłumaczy w filmie poniżej. \n" +
+                "Tak to jest ta sama osoba która obnażyła ten SCAM zwany Recacly Botem gdzie zainwestowała 13000zł i zadrwiła z całego supportu ;) Na jego kanale jest i ta historia...\n" +
+                "Więcej info w filmie poniżej:\n" +
                 "\n" +
-                "Ten rok to też moje podróże, niestety w dużo mniejszej skali niż wcześniej z wiadomych względów. Najbardziej szkoda mi tej odwołanej Dominikany no ale cóż co się odwlecze to...\n" +
-                "Wielu z Was dzięki mnie zrezygnowało z pracy na etacie i biznes z grami stał się Waszym głównym zajęciem. Tak trzymać! Nie oglądać się na ludzi, którzy tylko patrzą jak podciąć Wam skrzydła. To Wy bierzecie życie we własne ręce i o to chodzi!\n" +
-                "Kolejne miesiące to kolejne duże premiery a co za tym idzie duże pieniądze do zarobienia. Zapraszam jeżeli też chcesz dołączyć do nas!\n" +
-                "\n" +
-                "Na koniec zapraszam na bloga gdzie możecie zgarnąć 500zł na święta i z tego miejsca życzę Wam wesołych i zdrowych świąt jak i udanego nowego roku!\n" +
-                "\n" +
-                "Nikt nie odpisze Wam w komentarzach, są to tylko osoby które pracują dla mnie i robią posty jak ten ;)\n" +
-                "Kontakt tylko poprzez bloga lub email:\n" +
-                "Dishar82@gmail .com (bez spacji przed kropka bo FB tnie zasiegi)";
+                "https://youtu.be/wLp1GdEtlyk";
 
         String fb[] = {"dumcio.97@wp.pl","natalia.woszczylo@o2.pl"};
         String[] profil = {"113", "193"};
         int j = 15;
 //        try {
-                for (int i=0;i<25;i++) {
-                    mail = everyInt.nextLine();
-                    Neworklead.EveryTar(mail);
-                    System.out.println(i);
-                    System.out.println(mail);
-                    Koniec.Restart();
-                }
+//                for (int i=9;i<20;i++) {
+//                    mail = everyInt.nextLine();
+//                    if (i%2==0)
+//                        Dodatkowy.EveryZbiorowe21(mail);
+//                    else
+//                        Dodatkowy.EveryZbiorowe22(mail);
+//                    System.out.println(i);
+//                    System.out.println(mail);
+//                    Koniec.Restart();
+//                }
 
-//            for (int i = 0; i < fb.length; i++) {
-//                dodajPostLepakNowy(profil[i], fb[i], "", post, 0, 30);
-//                System.out.println(i);
-//                System.out.println(fb[i]);
-////                Koniec.Restart();
-//            }
-//
-//            for (int i = 0; i < fb.length; i++) {
-//                dodajPostLepakNowy(profil[i], fb[i], "", post, 30, 62);
-//                System.out.println(i);
-//                System.out.println(fb[i]);
-////                Koniec.Restart();
-//            }
+            for (int i = 0; i < fb.length; i++) {
+                dodajPostLepakNowy(profil[i], fb[i], "", post, 0, 30);
+                System.out.println(i);
+                System.out.println(fb[i]);
+//                Koniec.Restart();
+            }
+
+            for (int i = 0; i < fb.length; i++) {
+                dodajPostLepakNowy(profil[i], fb[i], "", post, 30, 62);
+                System.out.println(i);
+                System.out.println(fb[i]);
+//                Koniec.Restart();
+            }
 //            for (int i = 1; i <= 100; i++) {
 //                interia();
 //                if (i % 20 == 0)

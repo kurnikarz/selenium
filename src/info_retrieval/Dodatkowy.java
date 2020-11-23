@@ -2303,7 +2303,7 @@ public class Dodatkowy extends Narzedzia {
 
     }
 
-    public static void EveryZbiorowe21(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+    public static void EveryZbiorowe21(String mail) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
@@ -2319,15 +2319,21 @@ public class Dodatkowy extends Narzedzia {
 
 //        try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/084008e5e344972deb3b7d8c31549cba/201730aa6f4df9fd410154c6ce97390a/201920950f63cee967982b759fde80b1");
-            Thread.sleep(5000);
+            Thread.sleep(6000);
             sprawdzLinkEvery(driver);
             refreshEvery(driver);
+            try {
+                driver.findElement(By.xpath("/html/div/div/div/div/div/div/div[2]/div")).click();
+            } catch (Exception e) {
+
+            }
+            Thread.sleep(1000);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
             driver.get("https://tajemniczakonsta.blogspot.com/2018/06/uroczystosc-rodzinna.html");
             Thread.sleep(10000);
             clickXY(778,700);
             Thread.sleep(25000);
-            Neworklead.Everyday2(driver, mail, kod, ulica, miasto, odp);
+            Neworklead.Everyday2(driver, mail);
             Thread.sleep(1000);
 
 //        } catch (Exception e){
@@ -2338,28 +2344,36 @@ public class Dodatkowy extends Narzedzia {
 
     }
 
-    public static void EveryZbiorowe22(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+    public static void EveryZbiorowe22(String mail) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
                 options.addArguments("--allow-running-insecure-content");
         options.addArguments("--disable-notifications");
+        options.addExtensions(new File("E:\\bot\\captcha.crx"));
+        options.addExtensions(new File("E:\\bot\\buster.crx"));
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
 //        try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/084008e5e344972deb3b7d8c31549cba/201730aa6f4df9fd410154c6ce97390a/201920950f63cee967982b759fde80b1");
-            Thread.sleep(5000);
+            Thread.sleep(4000);
             sprawdzLinkEvery(driver);
             refreshEvery(driver);
+            try {
+                driver.findElement(By.xpath("/html/div/div/div/div/div/div/div[2]/div")).click();
+            } catch (Exception e) {
+
+            }
+            Thread.sleep(1000);
             driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
             driver.get("https://tajemniczakonsta.blogspot.com/2018/05/niespodzianka-od-trade-tracker.html");
             Thread.sleep(10000);
             clickXY(778,700);
 
             Thread.sleep(25000);
-            Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+            Neworklead.Everyday2(driver, mail);
             Thread.sleep(1000);
             
 //        } catch (Exception e){
