@@ -2332,6 +2332,8 @@ public class Dodatkowy extends Narzedzia {
             driver.get("https://tajemniczakonsta.blogspot.com/2018/06/uroczystosc-rodzinna.html");
             Thread.sleep(10000);
             clickXY(778,700);
+            Thread.sleep(1000);
+            clickXY(778,730);
             Thread.sleep(25000);
             Neworklead.Everyday2(driver, mail);
             Thread.sleep(1000);
@@ -2371,6 +2373,8 @@ public class Dodatkowy extends Narzedzia {
             driver.get("https://tajemniczakonsta.blogspot.com/2018/05/niespodzianka-od-trade-tracker.html");
             Thread.sleep(10000);
             clickXY(778,700);
+            Thread.sleep(1000);
+            clickXY(778,730);
 
             Thread.sleep(25000);
             Neworklead.Everyday2(driver, mail);
@@ -2419,6 +2423,39 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void EveryZbiorowe24(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/084008e5e344972deb3b7d8c31549cba/201730aa6f4df9fd410154c6ce97390a/201920950f63cee967982b759fde80b1");
+            Thread.sleep(5000);
+            sprawdzLinkEvery(driver);
+            refreshEvery(driver);
+            driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
+            driver.get("http://tajemniczakonsta.blogspot.com/2017/02/bronzer-rio-look-beauty-holiday-glow.html");
+            Thread.sleep(10000);
+            clickXY(778,685);
+
+            Thread.sleep(25000);
+            Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+            Thread.sleep(1000);
+
+        } catch (Exception e){
+            driver.quit();
+        }
+
+
+
+
+    }
+
+    public static void EveryAA(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         ChromeOptions options = new ChromeOptions();
@@ -2877,6 +2914,73 @@ public class Dodatkowy extends Narzedzia {
         } catch (Exception e){
             driver.quit();
         }
+
+    }
+
+    public static void Heineken(String mail, String miasto, String numer, String zyczenie) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Robot robot = new Robot();
+        Random r = new Random();
+        String dzien = String.valueOf(r.nextInt(29) + 1);
+        String mies = String.valueOf(r.nextInt(10) + 1);
+        String rok = String.valueOf(r.nextInt(1995 - 1980 + 1) + 1980);
+        int im = r.nextInt(2);
+        String imie;
+        String nazwisko;
+        if (im == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/7f00231311039b7ae57717ebc30438c6/d6c3a40c4da84772f440a0c5afdb63f0/201920950f63cee967982b759fde80b1");
+        Kopiuj("av126");
+        Thread.sleep(3000);
+        Wklej();
+        Thread.sleep(1000);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        Thread.sleep(8000);
+        clickXY(775,752);
+        Thread.sleep(5000);
+        zmienKarte(driver);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"cookies\"]/div/span/span")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"wiek\"]/div/div[2]/div[1]/div/form/div[1]/input[1]")).sendKeys(dzien);
+        driver.findElement(By.xpath("//*[@id=\"wiek\"]/div/div[2]/div[1]/div/form/div[1]/input[2]")).sendKeys(mies);
+        driver.findElement(By.xpath("//*[@id=\"wiek\"]/div/div[2]/div[1]/div/form/div[1]/input[3]")).sendKeys(rok);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"wiek\"]/div/div[2]/div[1]/div/form/div[2]/button")).click();
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//*[@id=\"start\"]/div/div[2]/div[4]/div/a/span")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"overlay\"]/form/div[1]/div[1]/textarea")).sendKeys(zyczenie);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"overlay\"]/form/div[1]/div[2]/a/span")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"overlay\"]/form/div[2]/div[1]/input")).sendKeys(imie);
+        driver.findElement(By.xpath("//*[@id=\"overlay\"]/form/div[2]/div[2]/input")).sendKeys(nazwisko);
+        driver.findElement(By.xpath("//*[@id=\"overlay\"]/form/div[2]/div[3]/input")).sendKeys(miasto);
+        driver.findElement(By.xpath("//*[@id=\"overlay\"]/form/div[2]/div[4]/input")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"overlay\"]/form/div[2]/div[5]/input")).sendKeys(numer);
+        driver.findElement(By.xpath("//*[@id=\"overlay\"]/form/div[2]/div[6]/a[2]/span")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[1]/form/div[3]/div[1]/label")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/form/div[3]/div[2]/label")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/form/div[3]/div[3]/label")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/form/div[3]/div[4]/label")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"overlay\"]/form/div[3]/div[5]/button")).click();
+        Thread.sleep(7000);
+        driver.quit();
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
 }

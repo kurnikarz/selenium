@@ -3470,4 +3470,127 @@ public class Neworklead extends Narzedzia {
 
 
     }
+
+    public static void Enfamil(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int dzienUro = r.nextInt(29) + 1;
+        int miesUro = r.nextInt(10) + 1;
+        String rokUro = "2020";
+        int dzienSpo = r.nextInt(29) + 1;
+        int miesSpo = r.nextInt(2) + 1;
+        String rokSpo = "2021";
+        int dziecko = r.nextInt(2);
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+            driver.get("https://neworklead.pl/zadanie/737f188c462f8841bfd2239674f0cb5b/a35902d757fae0f931fe37801ed58125/d654be842d14f320ad92ef039fb6aa4c");
+
+            Thread.sleep(10000);
+            clickXY(525,400);
+
+            Thread.sleep(5000);
+            zmienKarte(driver);
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"_evidon-accept-button\"]")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"field_enroll_first_name\"]")).sendKeys(genImieZen());
+            driver.findElement(By.xpath("//*[@id=\"field_enroll_last_name\"]")).sendKeys(genNazwiskoZen());
+            driver.findElement(By.xpath("//*[@id=\"field_enroll_email_address\"]")).sendKeys(mail);
+            Select dzien = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_day\"]")));
+            Select mies = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_month\"]")));
+            Select rok = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_year\"]")));
+            if (dziecko == 0) {
+                dzien.selectByIndex(dzienSpo);
+                mies.selectByIndex(miesSpo);
+                rok.selectByValue(rokSpo);
+            }
+            else {
+                dzien.selectByIndex(dzienUro);
+                mies.selectByIndex(miesUro);
+                rok.selectByValue(rokUro);
+            }
+            driver.findElement(By.xpath("//*[@id=\"field_enroll_agree_terms_personalised_optin\"]")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"edit-submit\"]")).click();
+            Thread.sleep(6000);
+            driver.quit();
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void Enfamil2(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int dzienUro = r.nextInt(29) + 1;
+        int miesUro = r.nextInt(10) + 1;
+        String rokUro = "2020";
+        int dzienSpo = r.nextInt(29) + 1;
+        int miesSpo = r.nextInt(2) + 1;
+        String rokSpo = "2021";
+        int dziecko = r.nextInt(2);
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+            driver.get("https://neworklead.pl/zadanie/60134c33909dfa0d1a75d288fa6bc489/a156cbbb890c0f32f53e6c81018299fc/d654be842d14f320ad92ef039fb6aa4c");
+
+            Thread.sleep(8000);
+            zmienKarte(driver);
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"_evidon-accept-button\"]")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"field_enroll_first_name\"]")).sendKeys(genImieZen());
+            driver.findElement(By.xpath("//*[@id=\"field_enroll_last_name\"]")).sendKeys(genNazwiskoZen());
+            driver.findElement(By.xpath("//*[@id=\"field_enroll_email_address\"]")).sendKeys(mail);
+            Select dzien = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_day\"]")));
+            Select mies = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_month\"]")));
+            Select rok = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_year\"]")));
+            if (dziecko == 0) {
+                dzien.selectByIndex(dzienSpo);
+                mies.selectByIndex(miesSpo);
+                rok.selectByValue(rokSpo);
+            }
+            else {
+                dzien.selectByIndex(dzienUro);
+                mies.selectByIndex(miesUro);
+                rok.selectByValue(rokUro);
+            }
+            driver.findElement(By.xpath("//*[@id=\"field_enroll_agree_terms_personalised_optin\"]")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"edit-submit\"]")).click();
+            Thread.sleep(6000);
+            driver.quit();
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void Przepis(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+            driver.get("https://neworklead.pl/zadanie/5bad31cb0472a15dcb546e905af7faf3/12dc8c5459704a2f362879474bffcfa2/d654be842d14f320ad92ef039fb6aa4c");
+
+            Thread.sleep(4000);
+            driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
+            Thread.sleep(6000);
+            driver.quit();
+
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
 }

@@ -900,7 +900,11 @@ public class Main extends Narzedzia {
                 Thread.sleep(2000);
 //                ZDJECIE =======================
 //                Kopiuj("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\klos.jpg");
-//                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[1]/span/div/div/div/div/div[1]/i")).click();
+//
+//                    driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[1]/span/div/div/div/div/div[1]/i")).click();
+//
+////                    driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[2]/span/div/div/div/div/div[1]/i")).click();
+//
 //                Thread.sleep(2000);
 //                Wklej();
 //                Thread.sleep(1000);
@@ -2011,6 +2015,9 @@ public class Main extends Narzedzia {
         Scanner mailKon = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\konkursy.txt"));
         Scanner spartoo = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\spartoo.txt"));
         Scanner samsung = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\samsung.txt"));
+        Scanner enfamil = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\enfamil.txt"));
+        Scanner miasto = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\miasto.txt"));
+        Scanner numer = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\numerHei.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\everyInt.txt"));
@@ -2054,87 +2061,235 @@ public class Main extends Narzedzia {
         odp.add("Budzik trzymam daleko od łóżka, Ile to razy zdarzyło się mi gdzieś spóźnić, tylko dlatego, że przez sen wyłączyłam budzik. Teraz telefon zawsze mam na tyle daleko, że po prostu muszę wstać, aby go wyłączyć");
         odp.add("Poranna gimnastyka to jest podstawa każdego dnia ! Jakieś delikatne rozciąganie lub skłony i od razu chce się żyć");
 
+        String[] zyczenia = new String[50];
+        zyczenia[0] = "W noc wigilijną, w blasku\n" +
+                "\n" +
+                "Świec melodia kolęd \n" +
+                "\n" +
+                "Płynie w mrok. \n" +
+                "\n" +
+                "Niechaj przyniesie radości moc\n" +
+                "\n" +
+                "I wiele szczęścia w Nowy Rok.";
+        zyczenia[1] = "Choć los rzucił mnie \n" +
+                "\n" +
+                "Daleko stąd,\n" +
+                "\n" +
+                "W myślach z Tobą będę. \n" +
+                "\n" +
+                "Na odległość życzę Ci\n" +
+                "\n" +
+                "Wesołych Świąt\n" +
+                "\n" +
+                "W sercu śląc kolędę.";
+        zyczenia[2] = "Najlepsze życzenia z okazji\n" +
+                "\n" +
+                "Świąt Bożego Narodzenia oraz \n" +
+                "\n" +
+                "Szczęśliwego Nowego Roku.\n" +
+                "\n" +
+                "By przyjście na świat Chrystusa \n" +
+                "\n" +
+                "Przyniosło ze sobą radość,\n" +
+                "\n" +
+                "Pokój, nadzieję i miłość.";
+        zyczenia[3] = "Radosnych świąt \n" +
+                "\n" +
+                "Bożego Narodzenia,\n" +
+                "\n" +
+                "Rychłego spełnienia \n" +
+                "\n" +
+                "Każdego marzenia.\n" +
+                "\n" +
+                "Ciepła, wiary i życzliwości \n" +
+                "\n" +
+                "Życzymy Ci łącząc wyrazy miłości.";
+        zyczenia[4] = "Świąt prawdziwie świątecznych,\n" +
+                "\n" +
+                "Ciepłych w sercu\n" +
+                "\n" +
+                "Zimowych na podwórku\n" +
+                "\n" +
+                "Jaśniejących pierwszą gwiazdką \n" +
+                "\n" +
+                "Co daje nadzieję \n" +
+                "\n" +
+                "Na następny rok.";
+        zyczenia[5] = "Święto Bożego Narodzenia \n" +
+                "\n" +
+                "To czas otuchy i nadziei.\n" +
+                "\n" +
+                "Czas odradzania się wiary \n" +
+                "\n" +
+                "W siłę Chrystusa\n" +
+                "\n" +
+                "I siłę człowieka.\n" +
+                "\n" +
+                "Pogody ducha na \n" +
+                "\n" +
+                "nadchodzący rok";
+        zyczenia[6] = "W ten świąteczny czas\n" +
+                "\n" +
+                "Niechaj miłość będzie w nas.\n" +
+                "\n" +
+                "Pokój wokół niech panuje \n" +
+                "\n" +
+                "A nad złem dobro króluje! \n" +
+                "\n" +
+                "Wesołych Świąt Bożego Narodzenia! ";
+        zyczenia[7] = "Z okazji Świąt \n" +
+                "\n" +
+                "Bożego Narodzenia \n" +
+                "\n" +
+                "Życzę wszystkiego tego, \n" +
+                "\n" +
+                "Co od Boga pochodzi. \n" +
+                "\n" +
+                "Oby skrzydła wiary przykryły \n" +
+                "\n" +
+                "Kamienie zwątpienia i uniosły \n" +
+                "\n" +
+                "Serca ponad przemijanie.";
+        zyczenia[8] = "Życzymy Wam zdrowych i pogodnych\n" +
+                "\n" +
+                "Świąt Bożego Narodzenia.\n" +
+                "\n" +
+                "Niech ten czas spędzony w gronie najbliższych\n" +
+                "\n" +
+                "napełni Wasze serca spokojem i radością.\n" +
+                "\n" +
+                "Niech błogosławieństwo Bożego Dzieciątka\n" +
+                "\n" +
+                "towarzyszy Wam przez całe Wasze życie,\n" +
+                "\n" +
+                "a szczere i najpiękniejsze\n" +
+                "\n" +
+                "Bożonarodzeniowe życzenia\n" +
+                "\n" +
+                "spełniają się w każdym momencie.";
+        zyczenia[9] = "Niech te święta obfitują w spokój, a szczęście nie opuszcza Was nawet na krok. Dzięki nim optymizmu z pewnością nie zabraknie Wam przez cały kolejny rok. ";
+        zyczenia[10] = "Niech Bóg miłością nasze dusze napełnia, niech Duch Święty swą rolę wypełnia. A Jezusek maleńki dziś narodzony rozkołysze wszystkie szczęścia dzwony.";
+        zyczenia[11] = "Nim gwiazdka zabłyśnie, nim święta przeminą, niech Ci błogosławi Panienka z Dzieciną, niech się w Twoje życie szczęście, miłość wplata, dziś, jutro, w Nowym Roku i po wszystkie lata! ";
+        zyczenia[12] = "W Bożego Narodzenia czas niech miłość będzie w nas, niech pokój wokół panuje, a dobro nad złem króluje! Wesołych Świąt!";
+        zyczenia[13] = "W ten wigilijny dzień zaśnieżony, kiedy w kościele biją dzwony, przyjmijcie życzenia pełne radości, a w Nowym Roku szczęścia, zdrowia i pomyślności!";
+        zyczenia[14] = "Z rodziną przy stole zasiąść już czas, opłatkiem dzielimy się wszyscy wraz. Składamy sobie dzisiaj życzenia, zdrowia, szczęścia i powodzenia.";
+        zyczenia[15] = "Pokój zamieszka, kiedy Pan przybędzie. W adwentowej refleksji, w skupieniu przy konfesjonale, w ciszy wyczekiwania na wigilijną gwiazdę, do gorącego i otwartego serca niech przyjdzie Pan i umocni nas swoim pokojem, byśmy go mogli rozdawać wszędzie tam, gdzie niepokój. Błogosławionych świąt Bożego Narodzenia.";
+        zyczenia[16] = "Białe myśli lekkie jak puch\n" +
+                "\n" +
+                "niech anioł przywieje z nieba,\n" +
+                "\n" +
+                "otworzy skrzydłem nadziei\n" +
+                "\n" +
+                "i kolędę zaśpiewa.\n" +
+                "\n" +
+                "Bo dzisiaj jest piękny dzień,\n" +
+                "\n" +
+                "wszystko się rodzi na nowo,\n" +
+                "\n" +
+                "więc w blasku tajemnych świąt\n" +
+                "\n" +
+                "żyj zdrowo i kolorowo.";
+        zyczenia[17] = "Cicha noc, święta noc, jakiż w tobie dzisiaj cud, w Betlejem dziecina Święta wznosi w górę swe rączęta błogosławi lud. Radosnych Świąt.";
+        zyczenia[18] = "Dzisiaj jest ten rodzaj ciszy, że każdy wszystko usłyszy: i sanie w obłokach mknące i gwiazdy na dach spadające. A wszędzie to ufne czekanie. Czekajmy dziś cud się stanie.";
+        zyczenia[19] = "Jak obyczaj każe stary,\n" +
+                "\n" +
+                "według ojców naszych wiary,\n" +
+                "\n" +
+                "chcemy złożyć Wam życzenia,\n" +
+                "\n" +
+                "z dniem Bożego Narodzenia.\n" +
+                "\n" +
+                "Niech ta Gwiazdka Betlejemska,\n" +
+                "\n" +
+                "która wschodzi tuż po zmroku,\n" +
+                "\n" +
+                "da Wam szczęście i pomyślność,\n" +
+                "\n" +
+                "w nadchodzącym Nowy Roku.";
+        zyczenia[20] = "Jest taki wyjątkowy wieczór w roku, gdy wszyscy obecni gromadzą się przy wspólnym stole. Jest taki wieczór, gdy gasną spory, znika nienawiść. Wieczór, gdy łamiemy opłatek, składamy życzenia. To noc wyjątkowa jedyna, niepowtarzalna noc Bożego Narodzenia.";
+        zyczenia[21] = "Jesteśmy daleko od siebie,\n" +
+                "\n" +
+                "ale pamiętaj ja w to głęboko wierzę,\n" +
+                "\n" +
+                "jeśli jest nawet jedna osoba,\n" +
+                "\n" +
+                "która tylko myślami\n" +
+                "\n" +
+                "chce przyciągnąć do Ciebie to co najlepsze,\n" +
+                "\n" +
+                "to na pewno wszechświat zawróci,\n" +
+                "\n" +
+                "aby spełnić Twoje pragnienia.";
+        zyczenia[22] = "Lśni dokoła choinkowy blask, niebo pełne śniegu, niebo pełne gwiazd. Niech święta Bożego Narodzenia radością wypełnią Wasz dom, A Nowy Rok blasku doda Waszym dniom.";
+        zyczenia[23] = "Nadchodząca Wigilia to nie tylko okres radości, ale również zadumy nad tym, co minęło i nad tym, co nas czeka. Tak więc dużo optymizmu i wiary w pogodne jutro życzy…";
+        zyczenia[23] = "Najlepsze życzenia z okazji świąt Bożego Narodzenia oraz szczęśliwego Nowego Roku, aby przyjście na świat Chrystusa przyniosło ze sobą radość, pokój, nadzieję i miłość.";
+        zyczenia[23] = "Niech magiczna moc wigilijnego wieczoru\n" +
+                "\n" +
+                "przyniesie spokój i radość,\n" +
+                "\n" +
+                "niech każda chwila świąt Bożego Narodzenia\n" +
+                "\n" +
+                "żyje własnym pięknem,\n" +
+                "\n" +
+                "a Nowy Rok obdaruje Was\n" +
+                "\n" +
+                "pomyślnością i szczęściem.\n" +
+                "\n" +
+                "W najpiękniejsze święta Bożego Narodzenia\n" +
+                "\n" +
+                "niech się spełnią wszystkie Wasze marzenia!";
+        zyczenia[24] = "Niech te święta Bożego Narodzenia przyniosą nam wiele radości, niech uśmiech zagości w domach, niech ogarnie nas ciepło wigilijnej świecy, a jej blask zamieni się w żywe iskierki w oczach, niech samotność odejdzie w niepamięć, niech zima otula nas białym puchem, jak ciepły koc przy kominku, niech bieluteńkie gwiazdeczki skrzypią wesoło pod naszymi butami na wieczornym spacerze. Niech dobry Bóg namaluje szczęście na naszych twarzach, niech miłość dotyka nas delikatnie, lecz bez ustanku, niech marzenia płyną wysoko w górę i spełniają się.";
+        zyczenia[25] = "Niech te święta przyniosą Wam Boże łaski, spokój, radość i dostatek wszelki, a Nowy Rok niech spełni marzenia ukryte na samym dnie serca.";
+        zyczenia[26] = "Przy wigilijnym stole łamiąc opłatek święty, wspomnijcie, że dzień radosny w miłości jest poczęty, że jak mówi Wam wszystkim dawne orędzie - w pierwszą na niebie gwiazdkę Bóg w naszym domu zasiądzie.";
+        zyczenia[27] = "Pusty rynek. Nad dachami gwiazda. Świeci każdy dom. W zamyśleniu, uliczkami, idę, tuląc świętość świąt. Wielobarwne w oknach błyski i zabawek kusi czar. Radość dzieci, śpiew kołyski, trwa kruchego szczęścia dar. Więc opuszczam mury miasta, idę polom białym rad. Zachwyt w drżeniu świętym wzrasta: jak jest wielki cichy świat! Gwiazdy niby łyżwy krzeszą śnieżne iskry, cudów blask. Kolęd dźwięki niech Cię wskrzeszą - czasie pełen Bożych łask!";
+        zyczenia[28] = "Śnieg okrył ziemię puszystą bielą, wokół się wszyscy ludzie weselą. Spłynęła z niebios dla nas nowina - Najświętsza Panna powiła Syna. I my Dzieciątku dziś hołd oddajmy polską kolędę Mu zaśpiewajmy. Niech śpiew przy żłóbku i w dzień i w nocy mocą, radością serca jednoczy.";
+        zyczenia[29] = "Święto Bożego Narodzenia to czas otuchy i nadziei. Czas odradzania się wiary w siłę Chrystusa i w siłę człowieka.";
+        zyczenia[30] = "Szczęśliwych, kojących, wartych pamięci, przeżytych w zgodzie ze światem i z sobą samym, pełnych miłości świąt Bożego Narodzenia oraz niesamowitego, niezapomnianego, niepowtarzalnego Sylwestra.";
+        zyczenia[31] = "W Betlejem na sianku Zbawiciel się rodzi, niech Wam jak najlepiej w życiu się powodzi, zaś w Nowym Roku o każdej godzinie, niechaj nic co dobre Was w życiu nie minie.";
+        zyczenia[32] = "W Bożego Narodzenia dni urocze, niechaj szczęściem serce gra, niech miłość Was otoczy i jak najdłużej trwa. Niech te święta przyniosą Wam Boże łaski, spokój, radość i dostatek wszelki, a Nowy Rok niech spełni marzenia ukryte na samym dnie serca. ";
+        zyczenia[33] = "Wiary co góry przenosi, nadziei, która nie gaśnie, miłości w każdej ilości - od Bożej Dzieciny.";
+        zyczenia[34] = "Wigilia, piękne rodzin zbratanie, kiedy nas bliscy otoczą w krąg, kiedy się kruchy opłatek łamie, wśród dobrych życzeń na cały rok wesołych świąt życzy...";
+        zyczenia[35] = "Z okazji Świąt Bożego Narodzenia życzę wszystkiego tego, co od Boga pochodzi. Oby skrzydła wiary przykryły kamienie zwątpienia i uniosły serca ponad przemijanie.";
+
 
         Random r = new Random();
         String mail2;
         String mail3;
-        String numer;
-        String post = "Polecam!\n" +
-                "Biznes który różni się całkowicie od tego wszystkiego co widujecie tu na co dzień.  \n" +
-                "Polecam Pana Mirka który zarabia na grach cyfrowych.\n" +
-                "Kupujemy jedną grę i sprzedajemy ją cały czas generując już czysty zysk. Gry to produkt jak każdy inny i na samym tylko allegro ludzie zarabiają krocie tygodniowo. Nie mówiąc już ile wyciąga się na portalach zagranicznych gdzie płacą w euro czy dolarach. Jeżeli masz dosyć MLM i całej reszty tego chłamu to Autore wszystko tłumaczy w filmie poniżej. \n" +
-                "Tak to jest ta sama osoba która obnażyła ten SCAM zwany Recacly Botem gdzie zainwestowała 13000zł i zadrwiła z całego supportu ;) Na jego kanale jest i ta historia...\n" +
-                "Więcej info w filmie poniżej:\n" +
+        String post = "!!!\n" +
+                "Uwaga nowosc!\n" +
+                "Chcesz zarabiać na sprzedaży gier wideo? \n" +
+                "Nic nie kupujesz na zapas i sam wysyłasz wszystko mailowo do klienta na portalach jak Allegro czy Ebay!\n" +
+                "Polecam Pana Miroslawa i jego biznes który wyjaśnia w filmie poniżej. \n" +
+                "Branża gier to najszybciej rozwijająca się forma biznesu online w dzisiejszych czasach!\n" +
                 "\n" +
                 "https://youtu.be/wLp1GdEtlyk";
 
         String fb[] = {"dumcio.97@wp.pl","natalia.woszczylo@o2.pl"};
         String[] profil = {"113", "193"};
         int j = 15;
-//        try {
-//                for (int i=9;i<20;i++) {
-//                    mail = everyInt.nextLine();
-//                    if (i%2==0)
-//                        Dodatkowy.EveryZbiorowe21(mail);
-//                    else
-//                        Dodatkowy.EveryZbiorowe22(mail);
-//                    System.out.println(i);
-//                    System.out.println(mail);
-//                    Koniec.Restart();
-//                }
+        String num;
+        for (int i=10;i<30;i++) {
+            mail = enfamil.nextLine();
+            miastoVee = miasto.nextLine();
+            num = numer.nextLine();
+//            Neworklead.Enfamil2(mail);
+//            Neworklead.Przepis(mail);
+            Dodatkowy.Heineken(mail,miastoVee,num,zyczenia[i]);
+            System.out.println(i);
+            System.out.println(mail);
+            Koniec.Restart();
+        }
 
-            for (int i = 0; i < fb.length; i++) {
-                dodajPostLepakNowy(profil[i], fb[i], "", post, 0, 30);
-                System.out.println(i);
-                System.out.println(fb[i]);
-//                Koniec.Restart();
-            }
+        try {
 
-            for (int i = 0; i < fb.length; i++) {
-                dodajPostLepakNowy(profil[i], fb[i], "", post, 30, 62);
-                System.out.println(i);
-                System.out.println(fb[i]);
-//                Koniec.Restart();
-            }
-//            for (int i = 1; i <= 100; i++) {
-//                interia();
-//                if (i % 20 == 0)
-//                    Koniec.Restart();
-//                System.out.println(i);
-//            }
-//            pobierzAdres(100);
-//            for (int i = 67; i < 78; i++) {
-//                mail = everyInt.nextLine();
-//                ulicaVee = ulicaVe.nextLine();
-//                kodVee = kodVe.nextLine();
-//                miastoVee = miastoVe.nextLine();
-//
-//                if (i<45)
-//                    Dodatkowy.Every7(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
-//                else if (i<60)
-//                    Dodatkowy.EveryMale(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
-//                else if (i<66)
-//                    Dodatkowy.EveryZbiorowe31(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
-//                else if (i<72)
-//                    Dodatkowy.EveryZbiorowe32(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
-//                else if (i<78)
-//                    Dodatkowy.EveryZbiorowe33(mail, kodVee, ulicaVee, miastoVee, odp.get(j));
-//
-//                j++;
-//                if (j > 22)
-//                    j = 0;
-//                System.out.println(i);
-//                System.out.println(mail);
-//                Koniec.Restart();
-//            }
-//        } catch (Exception e) {
-//            blad.println(e);
-//            blad.close();
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            wylacz();
-//        }
+        } catch (Exception e) {
+            blad.println(e);
+            blad.close();
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            wylacz();
+        }
 
 
 //        wylacz();
