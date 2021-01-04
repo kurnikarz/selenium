@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
@@ -533,5 +534,172 @@ public class Mirasbas extends Narzedzia {
             driver.quit();
         }
 
+    }
+
+    public static void Pampers(String mail, String ulica, String kod1, String kod2, String miasto, String tel) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        String imie = genImieZen();
+        String nazwisko = genNazwiskoZen();
+        Random r = new Random();
+        int m = 0;
+        boolean flaga = false;
+        String dzien = String.valueOf(r.nextInt(29) + 1);
+        String mies = String.valueOf(r.nextInt(11) + 1);
+        String rok = String.valueOf(r.nextInt(1995 - 1985 + 1) + 1987);
+        String numer = String.valueOf(r.nextInt(70) + 1);
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("https://mirasbas.pl/zadanie/36/149ba14d0352f9133a371dca827148f1");
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//*[@id=\"start\"]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"1\"]/div[3]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"2\"]/div[3]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"3\"]/div[3]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"4\"]/div[3]")).click();
+
+        Thread.sleep(6000);
+        driver.findElement(By.xpath("//*[@id=\"email_field\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"name_field\"]")).sendKeys(imie);
+        driver.findElement(By.xpath("//*[@id=\"agreements-content\"]/div[3]/div[1]/label/input")).click();
+        driver.findElement(By.xpath("//*[@id=\"agreements-content\"]/div[3]/div[2]/label/input")).click();
+        driver.findElement(By.xpath("//*[@id=\"agreements-content\"]/div[3]/div[3]/label/input")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"agreements-content\"]/div[3]/div[3]/label/input")).click();
+        Thread.sleep(500);
+        driver.findElement(By.xpath("//*[@id=\"btn-confirm\"]/span")).click();
+        Thread.sleep(500);
+        driver.findElement(By.xpath("//*[@id=\"btn-confirm\"]/span")).click();
+
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//*[@id=\"surname_field\"]")).sendKeys(nazwisko);
+        driver.findElement(By.xpath("//*[@id=\"street_field\"]")).sendKeys(ulica);
+        driver.findElement(By.xpath("//*[@id=\"building_no_field\"]")).sendKeys(numer);
+        driver.findElement(By.xpath("//*[@id=\"postal-1\"]")).sendKeys(kod1);
+        driver.findElement(By.xpath("//*[@id=\"postal-2\"]")).sendKeys(kod2);
+        driver.findElement(By.xpath("//*[@id=\"town_field\"]")).sendKeys(miasto);
+        driver.findElement(By.xpath("//*[@id=\"select-day\"]")).sendKeys(dzien);
+        driver.findElement(By.xpath("//*[@id=\"select-month\"]")).sendKeys(mies);
+        driver.findElement(By.xpath("//*[@id=\"select-year\"]")).sendKeys(rok);
+        driver.findElement(By.xpath("//*[@id=\"phone_field\"]")).sendKeys(tel);
+        driver.findElement(By.xpath("//*[@id=\"type_card_field\"]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"btn-next\"]")).click();
+
+        Thread.sleep(5000);
+//        try {
+            driver.findElement(By.xpath("//*[@id=\"FYR_NEW2\"]/div[2]/div[4]/label/img")).click();
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("//*[@id=\"UBEZP_RODZAJ\"]/div[2]/div[5]/label")).click();
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("//*[@id=\"DZIECI_WIEK\"]/div[2]/div[5]/label")).click();
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("//*[@id=\"STATUS\"]/div[2]/div[4]/label")).click();
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("//*[@id=\"Internet_LTE_NEW\"]/div[2]/div[1]/label")).click();
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("//*[@id=\"SYTUACJA_MIESZKANIOWA\"]/div[2]/div[4]/label")).click();
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("//*[@id=\"UBEZP_NIERUCH\"]/div[2]/div[4]/label")).click();
+
+//        } catch (Exception e) {
+//            driver.findElement(By.xpath("//*[@id=\"poll_submit\"]")).click();
+//        }
+        Thread.sleep(7000);
+
+        //WP
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[5]/button")).click();
+        } catch (Exception e) {
+
+        }
+        Thread.sleep(3000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='Maluszki Pieluszki']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr[5]/td/a/img")).click();
+                Thread.sleep(10000);
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 5) {
+                break;
+            }
+
+        }
+        driver.quit();
+    }
+
+    public static void Edison(String mail, String tel) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        String imie;
+        String nazwisko;
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        if (plec == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("https://mirasbas.pl/zadanie/51/149ba14d0352f9133a371dca827148f1");
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//*[@id=\"Imię\"]")).sendKeys(imie);
+        driver.findElement(By.xpath("//*[@id=\"Nazwisko\"]")).sendKeys(nazwisko);
+        driver.findElement(By.xpath("//*[@id=\"Numer telefonu\"]")).sendKeys(tel);
+        driver.findElement(By.xpath("//*[@id=\"Email\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[3]/div/div/div/div/form/div/label[5]/label/input")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"top\"]/div[1]/div[2]/div[3]/div/div/div/div/form/div/input")).click();
+        Thread.sleep(7000);
+        driver.quit();
+    }
+
+    public static void Newsletter(String mail) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        String imie;
+        String nazwisko;
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        if (plec == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        String dane = imie+" "+nazwisko;
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("https://mirasbas.pl/zadanie/59/149ba14d0352f9133a371dca827148f1");
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[1]/input")).sendKeys(dane);
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[2]/input")).sendKeys(mail);
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[3]/label/input")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[4]/input")).click();
+        Thread.sleep(7000);
+        driver.quit();
     }
 }

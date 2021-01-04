@@ -20,143 +20,6 @@ import java.util.Random;
 
 public class Ads extends Narzedzia {
 
-    public static void Every(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Random r = new Random();
-        int kupon = r.nextInt(6);
-        int kupon2 = r.nextInt(6);
-        int kupon3 = r.nextInt(6);
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-
-        try {
-            driver.get("http://adsmaker.pl/action/1513/uid/26dd63a0ef72a51af97c0efa88357f15/");
-            Thread.sleep(20000);
-            driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[1]/a")).click();
-            Thread.sleep(3000);
-            driver.findElement(By.xpath("//*[@id=\"signInEmailAddress\"]")).sendKeys(mail);
-            driver.findElement(By.xpath("//*[@id=\"currentPassword\"]")).sendKeys(mail+"V2");
-            Thread.sleep(2000);
-            clickXY(960,525);
-            Thread.sleep(7000);
-            clickXY(1700,1000);
-            Thread.sleep(2000);
-            driver.findElement(By.xpath("/html/body/header/div[3]/div/div/div[1]/div/div[1]/ul/li[2]/a")).click();
-            Thread.sleep(7000);
-            ScrollBy(driver,"600");
-            Thread.sleep(1000);
-            Zmniejsz(5);
-            Thread.sleep(1000);
-            switch (kupon) {
-                case 0:
-                    clickXY(925,580);
-                    clickXY(925,555);
-                    clickXY(925,567);
-                    break;
-                case 1:
-                    clickXY(1225,580);
-                    clickXY(1225,555);
-                    clickXY(1225,567);
-                    break;
-                case 2:
-                    clickXY(925,737);
-                    clickXY(925,711);
-                    clickXY(925,720);
-                    break;
-                case 3:
-                    clickXY(1225,737);
-                    clickXY(1225,711);
-                    clickXY(1225,720);
-                    break;
-                case 4:
-                    clickXY(925,894);
-                    clickXY(925,865);
-                    clickXY(925,875);
-                    break;
-                case 5:
-                    clickXY(1225,894);
-                    clickXY(1225,865);
-                    clickXY(1225,875);
-                    break;
-            }
-            Thread.sleep(3000);
-
-            switch (kupon2) {
-                case 0:
-                    clickXY(925,580);
-                    clickXY(925,555);
-                    clickXY(925,567);
-                    break;
-                case 1:
-                    clickXY(1225,580);
-                    clickXY(1225,555);
-                    clickXY(1225,567);
-                    break;
-                case 2:
-                    clickXY(925,737);
-                    clickXY(925,711);
-                    clickXY(925,720);
-                    break;
-                case 3:
-                    clickXY(1225,737);
-                    clickXY(1225,711);
-                    clickXY(1225,720);
-                    break;
-                case 4:
-                    clickXY(925,894);
-                    clickXY(925,865);
-                    clickXY(925,875);
-                    break;
-                case 5:
-                    clickXY(1225,894);
-                    clickXY(1225,865);
-                    clickXY(1225,875);
-                    break;
-            }
-            Thread.sleep(3000);
-
-            switch (kupon3) {
-                case 0:
-                    clickXY(925,580);
-                    clickXY(925,555);
-                    clickXY(925,567);
-                    break;
-                case 1:
-                    clickXY(1225,580);
-                    clickXY(1225,555);
-                    clickXY(1225,567);
-                    break;
-                case 2:
-                    clickXY(925,737);
-                    clickXY(925,711);
-                    clickXY(925,720);
-                    break;
-                case 3:
-                    clickXY(1225,737);
-                    clickXY(1225,711);
-                    clickXY(1225,720);
-                    break;
-                case 4:
-                    clickXY(925,894);
-                    clickXY(925,865);
-                    clickXY(925,875);
-                    break;
-                case 5:
-                    clickXY(1225,894);
-                    clickXY(1225,865);
-                    clickXY(1225,875);
-                    break;
-            }
-
-            Thread.sleep(240000);
-            driver.quit();
-        } catch (Exception e) {
-            driver.quit();
-        }
-
-
-    }
-
     public static void Lidl(String mail) throws InterruptedException, AWTException {
         WebDriver driver = new FirefoxDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -368,6 +231,60 @@ public class Ads extends Narzedzia {
         } catch (Exception e) {
             driver.quit();
         }
+
+    }
+
+    public static void EveryAdp(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+//        try {
+        driver.get("http://adsmaker.pl/action/2122/uid/26dd63a0ef72a51af97c0efa88357f15/");
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("/html/body/div[2]/a[1]")).click();
+
+        Thread.sleep(20000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+//        } catch (Exception e){
+//            driver.quit();
+//        }
+
+
+
+
+    }
+
+    public static void EveryAdp1(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+//        try {
+        driver.get("http://adsmaker.pl/action/2123/uid/26dd63a0ef72a51af97c0efa88357f15/");
+
+        Thread.sleep(20000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+//        } catch (Exception e){
+//            driver.quit();
+//        }
+
+
+
 
     }
 }

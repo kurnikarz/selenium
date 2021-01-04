@@ -19,6 +19,16 @@ import java.util.Random;
 import java.util.TreeMap;
 
 public class Dodatkowy extends Narzedzia {
+    public static void wpiszHaslo() throws InterruptedException, AWTException {
+        Robot robot = new Robot();
+        Kopiuj("av126");
+        Thread.sleep(3000);
+        Wklej();
+        Thread.sleep(1000);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        Thread.sleep(7000);
+    }
+
     public static void Lenovo(String mail, String temat, String opinia) throws InterruptedException, AWTException {
         Random r = new Random();
         int imieZenskie = r.nextInt(153);
@@ -2116,36 +2126,6 @@ public class Dodatkowy extends Narzedzia {
 
     }
 
-    public static void Every7(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
-        ChromeOptions options = new ChromeOptions();
-                options.addArguments("--allow-running-insecure-content");
-        options.addArguments("--disable-notifications");
-        WebDriver driver = new ChromeDriver(options);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        driver.manage().window().maximize();
-
-        try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/6d48e9d23802e2eb39b5f4d93c2b3566/e3c3f0dbefcc7403638393eec3418004/201920950f63cee967982b759fde80b1");
-            Thread.sleep(10000);
-            sprawdzLinkEvery(driver);
-            refreshEvery(driver);
-            clickXY(745,600);
-
-            Thread.sleep(25000);
-            Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
-            Thread.sleep(1000);
-            
-        } catch (Exception e){
-            driver.quit();
-        }
-
-             
-
-
-    }
-
     public static void Every77(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
@@ -2465,23 +2445,54 @@ public class Dodatkowy extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-        try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/084008e5e344972deb3b7d8c31549cba/201730aa6f4df9fd410154c6ce97390a/201920950f63cee967982b759fde80b1");
-            Thread.sleep(5000);
+//        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/f98a6574fd41ac2f2456b8c86aeea7d5/cdaa9e143ae200f9b8a7309bebf392e3/201920950f63cee967982b759fde80b1");
+            wpiszHaslo();
+//            Thread.sleep(50000000);
             sprawdzLinkEvery(driver);
             refreshEvery(driver);
-            driver.findElement(By.xpath("//*[@id=\"note_header\"]")).click();
-            driver.get("http://tajemniczakonsta.blogspot.com/2017/02/bronzer-rio-look-beauty-holiday-glow.html");
-            Thread.sleep(10000);
+            Thread.sleep(1000);
             clickXY(778,685);
 
-            Thread.sleep(25000);
+            Thread.sleep(20000);
             Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
 
-        } catch (Exception e){
-            driver.quit();
-        }
+//        } catch (Exception e){
+//            driver.quit();
+//        }
+
+
+
+
+    }
+
+    public static void Every7(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+                options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+//        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/73fdd27dfcba78df8a7725b07a2afe4b/9c04de2da2d236d9836cfc9aeba3c276/201920950f63cee967982b759fde80b1");
+            wpiszHaslo();
+//            Thread.sleep(50000000);
+            sprawdzLinkEvery(driver);
+            refreshEvery(driver);
+            Thread.sleep(1000);
+            clickXY(778,768);
+
+            Thread.sleep(20000);
+            Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+            Thread.sleep(1000);
+
+//        } catch (Exception e){
+//            driver.quit();
+//        }
 
 
 

@@ -571,4 +571,40 @@ public class Szuracze extends Narzedzia{
 
 
     }
+
+    public static void Newsletter(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        String imie;
+        String nazwisko;
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        if (plec == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        String dane = imie+" "+nazwisko;
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("http://www.szuracze.pl/action/1611/uid/f5654c6a537aa357f56724568a57f357/");
+        Thread.sleep(5000);
+        Zmniejsz(2);
+        Thread.sleep(1000);
+        clickXY(1581,1030);
+        Kopiuj(dane);
+        clickXY(1261,817);
+        Thread.sleep(500);
+        Wklej();
+        Kopiuj(mail);
+        clickXY(1261,878);
+        Thread.sleep(500);
+        Wklej();
+        clickXY(1194,910);
+        clickXY(1268,967);
+        Thread.sleep(7000);
+        driver.quit();
+    }
 }
