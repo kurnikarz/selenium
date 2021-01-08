@@ -3206,7 +3206,13 @@ public class Neworklead extends Narzedzia {
             //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
             Thread.sleep(1000);       //*[@id="nh-modal"]/div/div[2]/div/div/div/button
             driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
-            Thread.sleep(10000);
+            Thread.sleep(5000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+            } catch (Exception e) {
+
+            }
+            Thread.sleep(3000);
             while (!flaga) {
                 try {
                     try {
@@ -3285,10 +3291,10 @@ public class Neworklead extends Narzedzia {
         int dziecko = r.nextInt(2);
         int plec = r.nextInt(2);
         int dzienUro = r.nextInt(29) + 1;
-        int miesUro = r.nextInt(10 - 1 + 1) + 1;
+        int miesUro = r.nextInt(12 - 1 + 1) + 1;
         int rokUro = 2020;
         int dzienSpo = r.nextInt(29) + 1;
-        int miesSpo = r.nextInt(6 - 1 + 1) + 1;
+        int miesSpo = r.nextInt(9 - 3 + 1) + 3;
         int rokSpo = 2021;
         int m = 0;
         boolean flaga = false;
@@ -3298,18 +3304,19 @@ public class Neworklead extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver,10000);
 
-        try {
+//        try {
             Thread.sleep(2000);
-            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"dev-popin\"]/div/div[2]/div/div/div[2]/div/div/div"))));
-            driver.findElement(By.xpath("//*[@id=\"dev-popin\"]/div/div[2]/div/div/div[2]/div/div/div")).click();
-            Thread.sleep(3000);
             wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"gigya-textbox-86190741038286000\"]"))));
+            Thread.sleep(1000);
 
             driver.findElement(By.xpath("//*[@id=\"gigya-textbox-86190741038286000\"]")).sendKeys(imie);
             driver.findElement(By.xpath("//*[@id=\"gigya-textbox-98147042545906400\"]")).sendKeys(nazwisko);
             driver.findElement(By.xpath("//*[@id=\"gigya-textbox-32672274042894692\"]")).sendKeys(mail);
             driver.findElement(By.xpath("//*[@id=\"gigya-password-40553674254645060\"]")).sendKeys(mail + "V2");
             driver.findElement(By.xpath("//*[@id=\"gigya-password-49311983690159380\"]")).sendKeys(mail + "V2");
+            Thread.sleep(500);
+            ScrollBy(driver,"1200");
+            Thread.sleep(1000);
 
             if (dziecko == 0) {
                 if (plec == 0) {
@@ -3330,7 +3337,8 @@ public class Neworklead extends Narzedzia {
                 js.executeScript("document.getElementById(\"gigya-textbox-153337984387971650_5\").removeAttribute(\"readonly\")");
                 driver.findElement(By.xpath("//*[@id=\"gigya-textbox-153337984387971650_5\"]")).sendKeys(dzieckoSpodziewane);
             }
-//            clickXY(1090, 521);
+            Thread.sleep(1000);
+            clickXY(1417, 510);
             Thread.sleep(1000);
             driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-0-63592377505834030\"]")).click();
             Thread.sleep(1000);
@@ -3346,7 +3354,13 @@ public class Neworklead extends Narzedzia {
             driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
             Thread.sleep(1000);
             driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
-            Thread.sleep(10000);
+            Thread.sleep(5000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+            } catch (Exception e) {
+
+            }
+            Thread.sleep(3000);
             while (!flaga) {
                 try {
                     driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div/div/button")).click();
@@ -3378,22 +3392,22 @@ public class Neworklead extends Narzedzia {
                 }
 
             }
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
 
 
     }
 
-    public static void NestleM2B(String mail) throws InterruptedException, AWTException {
+    public static void NestleMB2(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-        try {
-            driver.get("https://neworklead.pl/zadanie/9c28bd0c4260364e48e724610641b267/ea6eac2c6549f21b8b8edc99328f7fa3/d654be842d14f320ad92ef039fb6aa4c");
+//        try {
+            driver.get("https://neworklead.pl/zadanie/8e615955102833e6a219bf653e23b0fe/1289b842dd69cb45a54e63c9b57c377e/d654be842d14f320ad92ef039fb6aa4c");
 //            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
             Thread.sleep(5000);
 
@@ -3405,9 +3419,9 @@ public class Neworklead extends Narzedzia {
             Thread.sleep(3000);
             driver.quit();
 
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
 
     }
@@ -3438,14 +3452,14 @@ public class Neworklead extends Narzedzia {
 
     }
 
-    public static void NestleDC(String mail) throws InterruptedException, AWTException {
+    public static void NestleDC2(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-        try {
-            driver.get("https://neworklead.pl/zadanie/384fbc853edf07b2907b023bd8b1915d/145a8ea5008607a8b5ba69b7b96af883/d654be842d14f320ad92ef039fb6aa4c");
+//        try {
+            driver.get("https://neworklead.pl/zadanie/9dac22c989dd4f221c4e7ec95702616c/ad87a50f78865144f8d0939b6518e5da/d654be842d14f320ad92ef039fb6aa4c");
 //            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
             Thread.sleep(5000);
 
@@ -3457,9 +3471,9 @@ public class Neworklead extends Narzedzia {
             Thread.sleep(3000);
             driver.quit();
 
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
 
     }

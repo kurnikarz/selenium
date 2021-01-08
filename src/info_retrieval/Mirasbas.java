@@ -621,7 +621,7 @@ public class Mirasbas extends Narzedzia {
         driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
         Thread.sleep(5000);
         try {
-            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[5]/button")).click();
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
         } catch (Exception e) {
 
         }

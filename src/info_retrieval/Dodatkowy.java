@@ -1964,13 +1964,12 @@ public class Dodatkowy extends Narzedzia {
         ChromeDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/6b32bb3691f7b185065f9d0e21d14110/c47d3d238e37a83017f057461631f699/201920950f63cee967982b759fde80b1");
+//        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/bb26a2ed5033b95d971820220bc93a9f/1d4b786e931fc68d801be06c7dd7ecd5/201920950f63cee967982b759fde80b1");
 
-            Thread.sleep(10000);
-            Zmniejsz(7);
-            Thread.sleep(1000);
-            clickXY(1060,876);
+            Thread.sleep(3000);
+            wpiszHaslo();
+            clickXY(780,640);
             Thread.sleep(10000);
             for(String winHandle : driver.getWindowHandles()){
                 driver.switchTo().window(winHandle);
@@ -1980,17 +1979,54 @@ public class Dodatkowy extends Narzedzia {
             Thread.sleep(7000);
             driver.switchTo().frame(0);
             Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"s_prename\"]")).sendKeys(imie);
-            driver.findElement(By.xpath("//*[@id=\"s_email\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("/html/body/form/div[2]/div[2]/div[2]/div/div[1]/div[3]/input")).sendKeys(imie);
+            driver.findElement(By.xpath("/html/body/form/div[2]/div[2]/div[2]/div/div[1]/div[4]/input")).sendKeys(mail);
             Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
+            driver.findElement(By.xpath("/html/body/form/div[2]/div[2]/div[2]/div/div[1]/div[6]/button")).click();
             Thread.sleep(7000);
-            driver.quit();
 
-
+        //WP
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
         } catch (Exception e) {
-            driver.quit();
+
         }
+        Thread.sleep(3000);
+        driver.get("https://poczta.wp.pl/k/#/mails/?label=154");
+        Thread.sleep(2000);
+        boolean flaga = false;
+        int m = 0;
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='Lidl Newsletter']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/center/table/tbody/tr/td/table/tbody/tr/td/table[3]/tbody/tr/td/table[1]/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[2]/td[2]/a/span")).click();
+                Thread.sleep(10000);
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 5) {
+                break;
+            }
+
+        }
+            driver.quit();
+
+
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
 
