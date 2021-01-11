@@ -6,7 +6,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
 import java.awt.*;
@@ -1119,6 +1121,7 @@ public class Dodatkowy extends Narzedzia {
         String roko = String.valueOf(rok);
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
 
+
         Thread.sleep(1000);
         driver.get("https://www.everydayme.pl/wygraj-produkty-marki-electrolux-lub-fairy");
 
@@ -1962,6 +1965,7 @@ public class Dodatkowy extends Narzedzia {
         else
             imie = genImieZen();
         ChromeDriver driver = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().window().maximize();
 
 //        try {
@@ -1976,9 +1980,10 @@ public class Dodatkowy extends Narzedzia {
             }
             Thread.sleep(1000);
             ScrollBy(driver,"700");
-            Thread.sleep(7000);
             driver.switchTo().frame(0);
             Thread.sleep(1000);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/form/div[2]/div[2]/div[2]/div/div[1]/div[3]/input")));
+            Thread.sleep(2000);
             driver.findElement(By.xpath("/html/body/form/div[2]/div[2]/div[2]/div/div[1]/div[3]/input")).sendKeys(imie);
             driver.findElement(By.xpath("/html/body/form/div[2]/div[2]/div[2]/div/div[1]/div[4]/input")).sendKeys(mail);
             Thread.sleep(1000);
@@ -2024,9 +2029,7 @@ public class Dodatkowy extends Narzedzia {
             driver.quit();
 
 
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+///html/body/form/div[2]/div[2]/div[2]/div/div[1]/div[3]/input
 
     }
 
@@ -2712,18 +2715,6 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         Random r = new Random();
-        int plec = r.nextInt(2);
-        int wybor1 = r.nextInt(4);
-        int wybor2 = r.nextInt(4);
-        String imie = null;
-        String nazwisko = null;
-        if (plec == 0){
-            imie = genImieZen();
-            nazwisko = genNazwiskoZen();
-        } else {
-            imie = genImieMes();
-            nazwisko = genNazwisko();
-        }
         options.addExtensions(new File("E:\\bot\\captcha.crx"));
         options.addExtensions(new File("E:\\bot\\buster.crx"));
         ChromeDriver driver = new ChromeDriver(options);
@@ -2731,94 +2722,46 @@ public class Dodatkowy extends Narzedzia {
         driver.manage().window().maximize();
 
 
-        try {
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/0c51f00b8e715291feeb3472214eed7a/5432e7299c83aa9de45afadfe2e23c8e/201920950f63cee967982b759fde80b1");
-        //driver.get("https://www.samsung.com/pl/unpacked/");
+//        try {
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/6d19e61cbbbb447f51a66fce1402780b/027d20a2df90ea039a75b5743f43294f/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://technologicznaaprzyszloscc.blogspot.com/2019/11/irobot-odkurzacze-ida-do-lamusa.html");
+        wpiszHaslo();
+        clickXY(760,980);
         Thread.sleep(10000);
-        clickXY(744,847);
-        Thread.sleep(40000);
         zmienKarte(driver);
-        Thread.sleep(1000);
-        try {
-            driver.findElement(By.xpath("//*[@id=\"truste-consent-button\"]")).click();
-        } catch (Exception e){
+        Neworklead.Samsung(driver, mail);
 
-        }
-        Thread.sleep(2000);
-        ScrollBy(driver,"1000");
-        driver.switchTo().frame(0);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div/div[3]/div/div/input")).sendKeys(imie);
-        driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys(nazwisko);
-        driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(mail);
-        try {
-            Select urzadzenie = new Select(driver.findElement(By.xpath("//*[@id=\"q1\"]")));
-            urzadzenie.selectByIndex(wybor1);
-            Thread.sleep(1000);
-            Select urzadzenie2 = new Select(driver.findElement(By.xpath("//*[@id=\"q2\"]")));
-            urzadzenie2.selectByIndex(wybor2);
-        } catch (Exception e){
+//        } catch (Exception f){
+//            driver.quit();
+//        }
 
-        }
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"datacapture_form\"]/div/div[8]/div/div/label/span[3]")).click();
-        driver.findElement(By.xpath("//*[@id=\"datacapture_form\"]/div/div[9]/div/div/label/span[2]")).click();
-        Thread.sleep(1000);
-        driver.switchTo().frame(0);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"recaptcha-anchor-label\"]")).click();
-        Thread.sleep(3000);
-        clickXY(660,582);
-        Thread.sleep(3000);
-        for (int i=0;i<3;i++){
-            clickXY(663,432);
-            Thread.sleep(3000);
-        }
-        Thread.sleep(3000);
-        clickXY(950,432);
+    }
+
+    public static void Samsung2(String mail) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        Random r = new Random();
+        options.addExtensions(new File("E:\\bot\\captcha.crx"));
+        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        ChromeDriver driver = new ChromeDriver(options);
+        Robot robot = new Robot();
+        driver.manage().window().maximize();
+
+
+//        try {
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/6d19e61cbbbb447f51a66fce1402780b/027d20a2df90ea039a75b5743f43294f/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://tajemniczaakkonstaa.blogspot.com/2017/10/zmiany-i-jeszcze-raz-zmiany.html");
+        wpiszHaslo();
+        clickXY(760,755);
         Thread.sleep(10000);
+        zmienKarte(driver);
+        Neworklead.Samsung(driver, mail);
 
-        //WP
-        driver.get("http://poczta.wp.pl/");
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
-        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
-        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"btnSubmit\"]")).click();
-        Thread.sleep(15000);
-        boolean flaga = false;
-        int m = 0;
-        while (!flaga) {
-            try {
-                driver.findElement(By.xpath("//*[text()='Oferty']")).click();
-                Thread.sleep(4000);
-                driver.findElement(By.xpath("//*[text()='Samsung']")).click();
-                Thread.sleep(4000);
-                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/center/div/table[3]/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr/td/a")).click();
-                Thread.sleep(3000);
-                zmienKarte(driver);
-                Thread.sleep(1000);
-                driver.findElement(By.xpath("/html/body/div[2]/div/div[3]/div[2]/a[1]")).click();
-                Thread.sleep(5000);
-                driver.findElement(By.xpath("/html/body/div/div/div[2]/div[2]/p/a")).click();
-                Thread.sleep(10000);
-                flaga = true;
-            } catch (Exception e) {
-                driver.navigate().refresh();
-                Thread.sleep(10000);
-            }
-            m++;
-            if (m > 4) {
-                break;
-            }
-
-        }
-        driver.quit();
-
-        } catch (Exception f){
-            driver.quit();
-        }
+//        } catch (Exception f){
+//            driver.quit();
+//        }
 
     }
 
