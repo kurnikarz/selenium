@@ -702,4 +702,91 @@ public class Mirasbas extends Narzedzia {
         Thread.sleep(7000);
         driver.quit();
     }
+
+    public static void Energia(String mail, String numer, String kod, String miasto) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        String imie;
+        String nazwisko;
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        if (plec == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        String dane = imie + " " + nazwisko;
+        String adres = kod + " " + miasto;
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("https://mirasbas.pl/zadanie/71/149ba14d0352f9133a371dca827148f1");
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("/html/body/div[5]/div[1]/div/div[1]/div[1]/img")).click();
+        } catch (Exception e) {
+
+        }
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"cn-accept-cookie\"]")).click();
+        driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div/form/div[2]/div[1]/span/input")).sendKeys(dane);
+        driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div/form/div[2]/div[2]/span/input")).sendKeys(numer);
+        driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div/form/div[2]/div[3]/span/input")).sendKeys(mail);
+        driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div/form/div[2]/div[4]/span/input")).sendKeys(adres);
+        driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div/form/div[2]/div[5]/p/span[1]/span/span/label/span")).click();
+        driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div/form/div[2]/div[5]/p/span[2]/span/span/label/span")).click();
+        Thread.sleep(1000);
+        ScrollBy(driver,"700");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div/form/p[2]/input")).click();
+        Thread.sleep(10000);
+        driver.quit();
+    }
+
+    public static void GData() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("https://mirasbas.pl/zadanie/74/149ba14d0352f9133a371dca827148f1");
+        Thread.sleep(7000);
+        driver.findElement(By.xpath("/html/body/div[1]/header/nav[1]/ul/li[4]/a")).click();
+        Thread.sleep(3000);
+        ScrollBy(driver,"800");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"trial-av\"]")).click();
+        Thread.sleep(20000);
+        driver.quit();
+    }
+
+    public static void Tauron(String mail, String numer) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        String imie;
+        String nazwisko;
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        if (plec == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("https://mirasbas.pl/zadanie/75/149ba14d0352f9133a371dca827148f1");
+        Thread.sleep(5000);
+
+        driver.findElement(By.xpath("/html/body/header/div[2]/div/div[5]/a")).click();
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("/html/body/main/section/div/div/div/div/section[1]/div[5]/div[2]/input")).sendKeys("100");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/main/section/div/div/div/div/section[1]/div[10]/div/div/button")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("/html/body/main/section/div/div/div/div/section[2]/div[2]/div[2]/div[1]/div[2]/label/span/span")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/main/section/div/div/div/div/section[2]/div[6]/div/button[2]")).click();
+    }
 }
