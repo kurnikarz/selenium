@@ -23,11 +23,11 @@ public class Mirasbas extends Narzedzia {
         int dzienKoniec = r.nextInt(30 - 15 + 1) + 15;
         String dzienKonieca = String.valueOf(dzienKoniec);
         if (dzienKoniec < 10)
-            dzienKonieca = "0"+dzienKonieca;
+            dzienKonieca = "0" + dzienKonieca;
         if (dzienPocz < 10)
-            dzienPocza = "0"+dzienPocz;
-        String poczUbe = dzienPocza+"-"+"08"+"-"+"2019";
-        String koniecUbe = dzienKonieca+"-"+"08"+"-"+"2019";
+            dzienPocza = "0" + dzienPocz;
+        String poczUbe = dzienPocza + "-" + "08" + "-" + "2019";
+        String koniecUbe = dzienKonieca + "-" + "08" + "-" + "2019";
         int dzien = r.nextInt(29) + 1;
         int mies = r.nextInt(11) + 1;
         int rok = r.nextInt(1998 - 1980 + 1) + 1980;
@@ -47,13 +47,13 @@ public class Mirasbas extends Narzedzia {
         driver.get("https://mirasbas.pl/zadanie/22/149ba14d0352f9133a371dca827148f1");
 
         Thread.sleep(10000);
-        Narzedzia.clickXY(1292,1017);
+        Narzedzia.clickXY(1292, 1017);
         Thread.sleep(1000);
-        Narzedzia.clickXY(486,575);
+        Narzedzia.clickXY(486, 575);
         Thread.sleep(8000);
-        Narzedzia.clickXY(723,426);
+        Narzedzia.clickXY(723, 426);
         Thread.sleep(1000);
-        Narzedzia.clickXY(752,673);
+        Narzedzia.clickXY(752, 673);
         switch (kraje) {
             case 0:
                 Narzedzia.Kopiuj("Belgia");
@@ -148,27 +148,27 @@ public class Mirasbas extends Narzedzia {
         Narzedzia.Wklej();
         Thread.sleep(1000);
         robot.keyPress(KeyEvent.VK_ENTER);
-        Narzedzia.clickXY(1531,562);
+        Narzedzia.clickXY(1531, 562);
         Thread.sleep(1000);
-        switch(cel) {
+        switch (cel) {
             case 0:
-                Narzedzia.clickXY(728,765);
+                Narzedzia.clickXY(728, 765);
                 break;
             case 1:
-                Narzedzia.clickXY(728,892);
+                Narzedzia.clickXY(728, 892);
                 break;
             case 2:
-                Narzedzia.clickXY(866,892);
+                Narzedzia.clickXY(866, 892);
                 break;
             case 3:
-                Narzedzia.clickXY(994,892);
+                Narzedzia.clickXY(994, 892);
                 break;
         }
         Thread.sleep(1000);
         Narzedzia.Zmniejsz(4);
         Thread.sleep(1000);
         Narzedzia.Kopiuj(poczUbe);
-        Narzedzia.clickXY(848,540);
+        Narzedzia.clickXY(848, 540);
         Narzedzia.Wklej();
         Narzedzia.Kopiuj(koniecUbe);
         Thread.sleep(1000);
@@ -176,28 +176,68 @@ public class Mirasbas extends Narzedzia {
         Thread.sleep(1000);
         robot.keyPress(KeyEvent.VK_ENTER);
         Thread.sleep(1000);
-        Narzedzia.clickXY(831,671);
+        Narzedzia.clickXY(831, 671);
         Narzedzia.Kopiuj(dataUr);
-        Narzedzia.clickXY(819,701);
+        Narzedzia.clickXY(819, 701);
         Narzedzia.Wklej();
-        Narzedzia.clickXY(819,735);
+        Narzedzia.clickXY(819, 735);
         Thread.sleep(1000);
-        Narzedzia.clickXY(967,862);
+        Narzedzia.clickXY(967, 862);
 
         Thread.sleep(15000);
-        Narzedzia.clickXY(1913,1009);
-        Narzedzia.clickXY(1913,1009);
+        Narzedzia.clickXY(1913, 1009);
+        Narzedzia.clickXY(1913, 1009);
         Thread.sleep(1000);
-        Narzedzia.clickXY(942,1039);
-        Narzedzia.clickXY(942,988);
+        Narzedzia.clickXY(942, 1039);
+        Narzedzia.clickXY(942, 988);
         Thread.sleep(2000);
         Narzedzia.Kopiuj(mail);
-        Narzedzia.clickXY(954,200);
+        Narzedzia.clickXY(954, 200);
         Narzedzia.Wklej();
-        Narzedzia.clickXY(926,229);
-        Narzedzia.clickXY(1026,285);
+        Narzedzia.clickXY(926, 229);
+        Narzedzia.clickXY(1026, 285);
         Thread.sleep(8000);
         driver.quit();
+
+    }
+
+    public static void Newsletter(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        String imie;
+        String nazwisko;
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        if (plec == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        String dane = imie + " " + nazwisko;
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        try {
+            driver.get("https://mirasbas.pl/zadanie/59/149ba14d0352f9133a371dca827148f1");
+            Thread.sleep(2000);
+
+            driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[1]/input")).sendKeys(dane);
+            driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[2]/input")).sendKeys(mail);
+            driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[3]/label/input")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[2]/div/span[2]/a")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[4]/input")).click();
+            Thread.sleep(7000);
+            driver.quit();
+        } catch (Exception e) {
+            driver.quit();
+            Koniec.RestarHujawei();
+            Mirasbas.Newsletter(mail);
+        }
+
+
 
     }
 
@@ -212,8 +252,7 @@ public class Mirasbas extends Narzedzia {
         if (plec == 0) {
             imie = genImieZen();
             nazwisko = genNazwiskoZen();
-        }
-        else {
+        } else {
             imie = genImieMes();
             nazwisko = genNazwisko();
         }
@@ -222,16 +261,16 @@ public class Mirasbas extends Narzedzia {
 
         Thread.sleep(8000);
         Kopiuj(mail);
-        clickXY(1283,540);
+        clickXY(1283, 540);
         Thread.sleep(1000);
         Wklej();
-        Kopiuj(mail+"V2");
-        clickXY(1283,605);
+        Kopiuj(mail + "V2");
+        clickXY(1283, 605);
         Thread.sleep(1000);
         Wklej();
-        clickXY(1165,662);
-        clickXY(1165,707);
-        clickXY(1341,810);
+        clickXY(1165, 662);
+        clickXY(1165, 707);
+        clickXY(1341, 810);
         Thread.sleep(5000);
 
         //WP
@@ -251,67 +290,67 @@ public class Mirasbas extends Narzedzia {
         driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div[1]/nh-html-compile/div/div/div/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td/table/tbody/tr/td/a")).click();
 
         Thread.sleep(7000);
-        clickXY(955,450);
+        clickXY(955, 450);
         Thread.sleep(3000);
-        clickXY(765,306);
+        clickXY(765, 306);
         Thread.sleep(2000);
         Kopiuj(imie);
-        clickXY(780,392);
+        clickXY(780, 392);
         Thread.sleep(1000);
         Wklej();
         Kopiuj(nazwisko);
-        clickXY(1014,392);
+        clickXY(1014, 392);
         Thread.sleep(1000);
         Wklej();
         clickXY(835, 457);
         Thread.sleep(1000);
-        clickXY(898,530);
+        clickXY(898, 530);
         Thread.sleep(1000);
-        clickXY(898,530);
+        clickXY(898, 530);
         Thread.sleep(1000);
-        clickXY(911,602);
+        clickXY(911, 602);
 
         Kopiuj(adres);
-        clickXY(780,716);
+        clickXY(780, 716);
         Thread.sleep(1000);
         Wklej();
         Kopiuj(kod);
-        clickXY(776,790);
+        clickXY(776, 790);
         Thread.sleep(1000);
         Wklej();
         Kopiuj(miasto);
-        clickXY(932,790);
+        clickXY(932, 790);
         Thread.sleep(1000);
         Wklej();
-        clickXY(1076,790);
+        clickXY(1076, 790);
         Thread.sleep(1000);
-        clickXY(1103,867);
+        clickXY(1103, 867);
         Thread.sleep(1000);
-        clickXY(944,1010);
+        clickXY(944, 1010);
 
         Thread.sleep(3000);
         robot.mouseMove(1912, 408);
         Thread.sleep(1000);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        robot.mouseMove(1912,712);
+        robot.mouseMove(1912, 712);
         Thread.sleep(1000);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(1000);
-        clickXY(774,364);
-        clickXY(774,535);
-        clickXY(774,742);
-        clickXY(774,876);
+        clickXY(774, 364);
+        clickXY(774, 535);
+        clickXY(774, 742);
+        clickXY(774, 876);
         Thread.sleep(1000);
-        clickXY(945,926);
+        clickXY(945, 926);
 
         Thread.sleep(4000);
-        clickXY(111,267);
+        clickXY(111, 267);
         Thread.sleep(1000);
-        clickXY(79,330);
+        clickXY(79, 330);
         Thread.sleep(20000);
-        clickXY(105,470);
+        clickXY(105, 470);
         Thread.sleep(1000);
-        clickXY(110,560);
+        clickXY(110, 560);
         Thread.sleep(30000);
         driver.quit();
 
@@ -336,7 +375,7 @@ public class Mirasbas extends Narzedzia {
             driver.get("https://mirasbas.pl/zadanie/11/149ba14d0352f9133a371dca827148f1");
             Thread.sleep(30000);
             Narzedzia.ArkadiaFF(driver, mail);
-            Narzedzia.potwierdzArkadia(driver,mail);
+            Narzedzia.potwierdzArkadia(driver, mail);
             driver.quit();
 
         } catch (Exception e) {
@@ -427,49 +466,49 @@ public class Mirasbas extends Narzedzia {
 
             Thread.sleep(10000);
             Kopiuj(mail);
-            clickXY(453,450);
+            clickXY(453, 450);
             Thread.sleep(1000);
             Wklej();
-            Kopiuj(mail+"V2");
-            clickXY(453,495);
+            Kopiuj(mail + "V2");
+            clickXY(453, 495);
             Thread.sleep(1000);
             Wklej();
-            clickXY(370,546);
-            clickXY(370,575);
+            clickXY(370, 546);
+            clickXY(370, 575);
             Thread.sleep(1000);
-            clickXY(453,684);
+            clickXY(453, 684);
 
             Thread.sleep(10000);
-            clickXY(380,104);
+            clickXY(380, 104);
             Thread.sleep(1000);
-            clickXY(412,233);
+            clickXY(412, 233);
 
             Thread.sleep(6000);
             Kopiuj(imieZenskie[randomImie]);
-            clickXY(1109,493);
+            clickXY(1109, 493);
             Thread.sleep(1000);
             Wklej();
             Kopiuj(nazwiskoo);
-            clickXY(1109,535);
+            clickXY(1109, 535);
             Thread.sleep(1000);
             Wklej();
             Kopiuj(ulica);
-            clickXY(1109,632);
+            clickXY(1109, 632);
             Thread.sleep(1000);
             Wklej();
             Kopiuj(miasto);
-            clickXY(1109,680);
+            clickXY(1109, 680);
             Thread.sleep(1000);
             Wklej();
             Kopiuj(kod);
-            clickXY(1109,724);
+            clickXY(1109, 724);
             Thread.sleep(1000);
             Wklej();
             Kopiuj(numer);
-            clickXY(1109,770);
+            clickXY(1109, 770);
             Thread.sleep(1000);
             Wklej();
-            clickXY(1109,823);
+            clickXY(1109, 823);
             Thread.sleep(10000);
             driver.quit();
         } catch (Exception e) {
@@ -529,7 +568,7 @@ public class Mirasbas extends Narzedzia {
             else
                 Neworklead.MomondoHotel(driver);
 
-        } catch (Exception e){
+        } catch (Exception e) {
             driver.quit();
         }
 

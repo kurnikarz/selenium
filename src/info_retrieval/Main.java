@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
@@ -23,8 +26,9 @@ import java.util.ArrayList;
 public class Main extends Narzedzia{
 
     public static void interia() throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer maile = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\everyInt.txt", true));
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        Writer maile = new BufferedWriter(new FileWriter("C:\\bot\\everyInt.txt", true));
+        Writer botowe = new BufferedWriter(new FileWriter("C:\\bot\\botowe.txt", true));
         ChromeOptions options = new ChromeOptions();
         String profil = "113";
         int j = 0;
@@ -32,10 +36,10 @@ public class Main extends Narzedzia{
         Random r = new Random();
         boolean flaga = true;
         boolean flaga2 = true;
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\ewa\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile "+profil);
-        options.addExtensions(new File("E:\\bot\\captcha.crx"));
-        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
         ChromeDriver driver = new ChromeDriver(options);
         Robot robot = new Robot();
         driver.manage().window().maximize();
@@ -49,22 +53,22 @@ public class Main extends Narzedzia{
             try {
                 driver.get("https://konto-pocztowe.interia.pl/#/nowe-konto/darmowe");
                 Thread.sleep(5000);
-                try {
-                    driver.switchTo().frame(5);
-                    //driver.findElement(By.xpath("//*[@id=\"reset-button\"]")).click();
-                    //clickXY(85, 52);
-                    Thread.sleep(2000);
-                    while (true) {
-                        Thread.sleep(1000);
-                        String znak = scan.nextLine();
-                        if (znak.equals("q")) {
-                            break;
-                        }
-                    }
-
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
+//                try {
+//                    driver.switchTo().frame(5);
+//                    //driver.findElement(By.xpath("//*[@id=\"reset-button\"]")).click();
+//                    //clickXY(85, 52);
+//                    Thread.sleep(2000);
+//                    while (true) {
+//                        Thread.sleep(1000);
+//                        String znak = scan.nextLine();
+//                        if (znak.equals("q")) {
+//                            break;
+//                        }
+//                    }
+//
+//                } catch (Exception e) {
+//                    System.out.println(e);
+//                }
             /*
             while (true) {
                 Thread.sleep(1000);
@@ -95,8 +99,8 @@ public class Main extends Narzedzia{
                 driver.findElement(By.xpath("//*[@id=\"surname\"]")).sendKeys(nazwiwsko);
                 driver.findElement(By.xpath("//*[@id=\"birthdayDay\"]")).sendKeys(String.valueOf(dzien));
                 driver.findElement(By.xpath("//*[@id=\"mainApp\"]/div/div/div/div/div[2]/div/form/div[1]/div[3]/div[2]/label")).click();
-                //Thread.sleep(1000);
-                clickXY(712,480);
+                //Thread.sleep(1000000);
+                clickXY(674,517);
                 driver.findElement(By.xpath("//*[@id=\"birthdayYear\"]")).sendKeys("1990");
                 driver.findElement(By.xpath("//*[@id=\"mainApp\"]/div/div/div/div/div[2]/div/form/div[1]/div[4]/div[1]")).click();
                 //Thread.sleep(1000);
@@ -105,14 +109,18 @@ public class Main extends Narzedzia{
                 Thread.sleep(1000);
                 driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(cyfra1+cyfra2);
                 String mail = driver.findElement(By.xpath("//*[@id=\"login\"]")).getAttribute("value")+"@interia.pl";
-                driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
-                driver.findElement(By.xpath("//*[@id=\"rePassword\"]")).sendKeys("mrcbuch2");
+                driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("Mrcbuch123");
+                driver.findElement(By.xpath("//*[@id=\"rePassword\"]")).sendKeys("Mrcbuch123");
                 driver.findElement(By.xpath("//*[@id=\"mainApp\"]/div/div/div/div/div[2]/div/form/div[2]/div[1]/div[1]/label/div/div")).click();
                 //driver.findElement(By.xpath("//*[text()='Załóż darmowe konto']")).click();
-                clickXY(969,1002);
-                maile.append(mail+"\r\n");
-                maile.close();
+                Thread.sleep(1000);
+                ScrollBy(driver,"400");
+                clickXY(780,630);
                 Thread.sleep(15000);
+                maile.append(mail+"\r\n");
+                botowe.append(mail+"\r\n");
+                maile.close();
+                botowe.close();
                 driver.quit();
             } catch (Exception f){
                 driver.quit();
@@ -1784,14 +1792,101 @@ public class Main extends Narzedzia{
         System.exit(0);
     }
 
+    public static void theCrims(String login, String haslo) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+//        options.addArguments("profile-directory=Profile "+"113");
+//        options.addArguments("--disable-notifications");
+//        ChromeDriver driver = new ChromeDriver(options);
+        ChromeDriver driver = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(driver,10000);
+
+        try {
+            driver.get("https://www.thecrims.com/");
+            Thread.sleep(5000);
+            driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/div/div/div/div[2]/div[1]/form/input[1]")).sendKeys(login);
+            driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/div/div/div/div[2]/div[1]/form/input[2]")).sendKeys(haslo);
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/div/div/div/div[2]/div[1]/form/button")).click();
+        } catch (Exception e){
+
+        }
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//*[@id=\"menu-robbery\"]")).click();
+        Thread.sleep(3000);
+
+        Select robber = new Select(driver.findElement(By.xpath("//*[@id=\"singlerobbery-select-robbery\"]")));
+        robber.selectByIndex(12);
+        driver.findElement(By.xpath("//*[@id=\"full\"]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"singlerobbery-rob\"]")).click();
+        Thread.sleep(3000);
+
+        driver.get("https://www.thecrims.com/newspaper#/nightlife/nightclub");
+        Thread.sleep(3000);
+        try {
+            driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/div[2]/ul[2]/li[1]/div/div[2]/button")).click();
+        } catch (Exception e){
+            try {
+                driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/div[2]/ul[3]/li[1]/div/div[2]/button")).click();
+            } catch (Exception f) {
+                driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/div[2]/ul[4]/li[1]/div/div[2]/button")).click();
+            }
+        }
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/table[2]/tbody/tr/td[4]/button")).click();
+        Thread.sleep(1000);
+        Thread.sleep(7000);
+
+        for (;;) {
+            driver.findElement(By.xpath("//*[@id=\"menu-robbery\"]")).click();
+            Thread.sleep(3000);
+
+            Select robber2 = new Select(driver.findElement(By.xpath("//*[@id=\"singlerobbery-select-robbery\"]")));
+            robber2.selectByIndex(12);
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"singlerobbery-rob\"]")).click();
+            Thread.sleep(3000);
+
+            driver.get("https://www.thecrims.com/newspaper#/nightlife/nightclub");
+            Thread.sleep(3000);
+            try {
+                driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/div[2]/ul[2]/li[1]/div/div[2]/button")).click();
+            } catch (Exception e){
+                try {
+                    try {
+                        driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/div[2]/ul[3]/li[1]/div/div[2]/button")).click();
+                    } catch (Exception g) {
+                        driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/div[2]/ul[2]/li[1]/div/div[2]/button")).click();
+                    }
+                } catch (Exception f) {
+                    driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/div[2]/ul[4]/li[1]/div/div[2]/button")).click();
+                }
+            }
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/table[2]/tbody/tr/td[4]/button")).click();
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("/html/body/div[2]/div[4]/div/table/tbody/tr/td[1]/div[2]/table/tbody/tr/td/div[2]/div/div[3]/div[2]/button")).click();
+            Thread.sleep(2000);
+        }
+    }
+
     public static void main(String[] args) throws InterruptedException, IOException, AWTException {
         Scanner everyInt = new Scanner(new File("C:\\bot\\everyInt.txt"));
+        Scanner nestle = new Scanner(new File("C:\\bot\\nestle.txt"));
         Scanner cola = new Scanner(new File("C:\\bot\\cola.txt"));
         Scanner kod = new Scanner(new File("C:\\bot\\kod.txt"));
         Scanner ulica = new Scanner(new File("C:\\bot\\ulica.txt"));
         Scanner miasto = new Scanner(new File("C:\\bot\\miasto.txt"));
+        Scanner miastoHei = new Scanner(new File("C:\\bot\\miastoHei.txt"));
+        Scanner numHei = new Scanner(new File("C:\\bot\\numHei.txt"));
+        Scanner enfamil = new Scanner(new File("C:\\bot\\enfamil.txt"));
+        Scanner samsung = new Scanner(new File("C:\\bot\\samsung.txt"));
+        Scanner news = new Scanner(new File("C:\\bot\\news.txt"));
         //Scanner chili = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\chili.txt"));
         PrintWriter blad = new PrintWriter("C:\\bot\\blad.txt");
+        PrintWriter ostatni = new PrintWriter("C:\\bot\\ostatni.txt");
         String kodd[] = new String[43785];
         String mail;
         String mailEv;
@@ -1804,111 +1899,127 @@ public class Main extends Narzedzia{
         List<String> odp = new ArrayList<>();
         String[] maileArk = new String[80];
 
-        //Jak dbasz o urodę latem ?
-        odp.add("Regularnie złuszczam swoją skórę naturalnym peelingiem na przykład kawa z odrobiną olejku");
-        odp.add("Jak jest mocne słońce to staram się pozostawać w cieniu o ile to możliwe");
-        odp.add("Zdecydowanie więcej piję wody ze względu na upały jakie panują podczas lata");
-        odp.add("Nakładam minimalny makijaż ponieważ przy wysokich temperaturach makijaż może spływać i bardzo nie ładnie do wygląa");
-        odp.add("Troskliwie oczyszczam swoją twarz w tym celu stosuję żel do mycia twarzy, który usuwa pozostałości po makijażu");
-        odp.add("Dostarczam swojej skórze antyoksydantów aby zapewnić jej optymalną pielęgnację");
-        odp.add("Gdy jest mocne słońce chronię swoją skórę filtrami przeciwsłonecznymi");
-        odp.add("Gdy się opalam zbyt długo to stosuję jakiś dobrej jakości balsam po opalaniu, żeby pomóc swojej skórze");
-        odp.add("Gdy moja skóra staje się podrażniona używam wody termalnej");
-        odp.add("Dwa razy dziennie bardzo dokładnie oczyszczam swoją twarz, przed snem w celu usunięcia makijażu oraz rano");
-        odp.add("Do demakijażu oczu stosuję specjalnie do tego celu przygotowane kosmetyki");
-        odp.add("Każdy nowy dzień zxaczynam od wypicia wody z miodem");
-        odp.add("Staram się dobrze odżywiać, jeść owoce i warzywa");
-        odp.add("Stosuję produkty bogate w wyraminę E i kwasy omega 3");
-        odp.add("Dwa razy w tygodniu robię sobie peelink ciała przygotowany na bazie kawy, cynamonu oraz oliwy z oliwek");
-        odp.add("W diecie staram się ogarniczać jak to tylko mozliwe cukier oraz sól, używam zamienników");
-        odp.add("Co najmniej 3 razy w tygodniu staram się wykonywać jakąś czynność fizyczną - spacer, jazda na rowerze albo pływanie w jeziorze");
-        odp.add("Raz w tygodniu organizuję sobie kąpiek z dodatkiem miodu oraz mleka");
-        odp.add("Robię sobie maseczkę ziołową na twarz");
-        odp.add("Kupuję kremy z filtrem głęboko nawilżające");
-        odp.add("Staram się nie opalać twarzy zabezpieczając kremem z filtrem");
-        odp.add("Robię sobię okłady z zielonego ogórka wieczorem");
-        odp.add("Staram się regularnie smarować swoją skórę naturalnym peelingiem");
-        odp.add("Nie wychodzę na mocne słońce jeżeli nie mam takiej palącej potrzeby");
-        odp.add("Piję bardzo dużo wodu mineralnej nie gazowanej żeby nawodnić swój organizm");
-        odp.add("Nie nakładam tak dużo makijażu na twarz, ponieważ w lato jest gorąco i makijaż spływa co nie wygląda zbyt elegancko");
-        odp.add("Bardzo starannie oczyszczam swoją twarz");
-        odp.add("Gdy słońce mocno świeci to smaruję swoją skóręfiltrami przeciwsłonecznymi");
-        odp.add("Czasami używam wody termalnej w celu nawilżenia swojej skóry");
+        //Co najchętniej robisz ze swoją rodziną w czasie Bożego Narodzenia? ?
+        odp.add("Jemy wspólną kolację wigilijną i śpiewamy kolędy");
+        odp.add("Dzielimy się opłatkiem i składamy sobie życzenia");
+        odp.add("Wspólnie czytamy ulubione książki naszych dzieci");
+        odp.add("Wychodzimy razem na długie rodzinne spacery");
+        odp.add("Gramy razem w różne gry planszowe");
+        odp.add("Oglądamy wspólnie filmy familijne, rozrywkowe lub bajki");
+        odp.add("Wspólnie śpiewamy kolędy");
+        odp.add("Odwiedzamy naszych znajomych i zabieramy nasze dzieci");
+        odp.add("Wspólnie całą rodziną idziemy do kina");
+        odp.add("Idziemy do kina z rodziną i przyjaciółmi");
+        odp.add("Oglądamy nasze stare zdjęcia z rodzinnego albumu");
+        odp.add("Oglądamy śmieszne filmiki na youtube");
+        odp.add("Chodzimy razem po kościołach i oglądamy przepiękne szopki");
+        odp.add("Robimy sobię listę marzeń na nowy rok, każdy swoją");
+        odp.add("Całą rodziną idziemy na lodowisko");
+        odp.add("Całą rodziną oraz ze znajomymi idziemy na lodowisko");
+        odp.add("Planujemy sobie wspólny weekendowy wypad");
+        odp.add("Udajemy się na koncert piosenki dziecięcej");
+        odp.add("W wigilię wspólnie ubieramy choinkę");
+        odp.add("Moje dzieci pomagają mi gdy przygotowuję kolację wigilijną");
+        odp.add("Jak jest ładna pogoda udajemy się całą rodziną na rodzinny spacer");
+        odp.add("Często odwiedza nas wujek z rodziną i świętujemy razem");
+        odp.add("Wyjeżdżamy gdzieś do rodziny na święta"); //23
 
         Random r = new Random();
         String mail2;
         String mail3;
         String numer;
 
-        String post = "Post od Mirosława! \n" +
-                "UWAGA! Nota prawna: Każda osoba która skomentuje ten post zgadza się na upublicznienie swoich danych osobowych, wpisów, listy znajomych oraz wszystkiego co ma w swoim profilu. Na kolejnym filmie Miroslawa Klos!\n" +
-                "\n" +
-                "Jedni nazywają mnie pogromcą smoków inni gwałcicielem niewiast ;) Ogólnie nazwisko Klos mocno elektryzuje ludzi w internecie. Działam już publicznie od wielu lat zarabiając na grach wideo w wersji cyfrowej. W skrócie kupujemy jedną grę za 20zł i sprzedajemy cały czas na portalach aukcyjnych jak Allegro czy Ebay. Generując w ten sposób stały zysk. Przez te wszystkie lata były już przeróżne historie na mój temat. Była słynna na całą Polskę Madzia ze Szczecina. Wariatka, chora kobieta czy jak wielu sądzi nieszczęśliwie zakochana we mnie, która w rozpaczy zgłasza mnie na policję czy do urzędu skarbowego. Był nie mniej słynny Recacly Bot gdzie zainwestowałem 13000zł tylko po to aby pokazać jak tego typu programy zarabiania działają. Pamiętam jak mnie wtedy tu zlinczowali 'Klos oszuście nie kłam! Ten program wypłaca!'' Gdzie dziś jest RB? Pewnie tam gdzie Wasze pieniądze \uD83D\uDE02 czyli chu* wie gdzie \uD83D\uDE2D \n" +
-                "Wszystkie te historie jak i wiele więcej znajdziecie na moim blogu jak i na kanale youtube. Obnażając te Wasze scamy stałem się wrogiem publicznym nr 1. Ponieważ uświadamiam ludzi i nie możecie już tylu jeleni łapać co kiedyś \uD83E\uDD8C\n" +
-                "Gry wideo to branża, która rozwija się niesamowicie. Dziś grają wszyscy i Ci mali i Ci duzi. Sam działam na ponad 10 portalach aukcyjnych głównie za granicą i mam aktywnych ponad 1000 aukcji! Na tym etapie to wszystko już pracuje samodzielnie. Razem ze mną współpracuje wielu z Was! Wielu też odmieniło swoje życie i bardzo się cieszę, że miałem w tym swój udział. Jeżeli i Ty chcesz dołączyć do mojego zespołu to zapraszam serdecznie na mojego Bloga gdzie uczę jak sam zarabiam w internecie!\n" +
-                "\n" +
-                "Blog:  Miroslawklos .pl  (Bez spacji przed kropką bo FB tnie zasięgi)\n" +
-                "\n" +
-                "Lub email:  Dishar82@gmail.com \n" +
-                "\n" +
-                "Napisz! Pomogłem już wielu ludziom, pomogę i Tobie!";
+        int j = 0;
+        String num;
 
-
-        try {
-            String[] fb = {/*"dumcio.97@wp.pl",*/"natalia.woszczylo@o2.pl", "ewa1dymkowska@gmail.com"/*,"aga.dobrowolska0@gmail.com"*/};
-            String haslo[] = {/*"MrcbucHv2.9",*/"Natalia65432109", "Arturek1070"/*,"Mrcbuch1234"*/};
-            /*
-            for (int i=0;i<fb.length;i++){
-                dodajPostLepak(fb[i],haslo[i],post,0,25);
-                System.out.println(i);
-                System.out.println(fb[i]);
-            }
-            for (int i=0;i<fb.length;i++){
-                dodajPostLepak(fb[i],haslo[i],post,25,57);
-                System.out.println(i);
-                System.out.println(fb[i]);
-            }
-
-            */
-
-            int j = 0;
-            int x = 84;
-            pobierzAdres(75);
-            for (int i=0;i<75;i++){
-                mail = everyInt.nextLine();
-                kodVee = kod.nextLine();
-                ulicaVee = ulica.nextLine();
-                miastoVee = miasto.nextLine();
-                if (i<22)
-                    Dodatkowy.EveryMaly(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<39)
-                    Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<55)
-                    Dodatkowy.Every77(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<65)
-                    Dodatkowy.EveryZbiorowe11(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                else if (i<75)
-                    Dodatkowy.EveryZbiorowe12(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-                    //=======================================================================
-
-                if (j > 26)
-                    j = 0;
-                j++;
-                System.out.println(i);
-                System.out.println(mail);
-                Koniec.Restart();
-            }
-
-
+        for (int i=0;i<500;i++) {
+            mail = news.nextLine();
+            Mirasbas.Newsletter(mail);
+            System.out.println(i);
+            System.out.println(mail);
+            ostatni.println(mail);
+            Koniec.RestarHujawei();
         }
-        catch (Exception e) {
-            blad.println(e);
-            blad.close();
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            wylacz();
-        }
-        wylacz();
+
+//        for (int i=10;i<100;i++) {
+//            mail = samsung.nextLine();
+//            if (i%2==0)
+//                Dodatkowy.Samsung(mail);
+//            else
+//                Dodatkowy.Samsung2(mail);
+//            System.out.println(i);
+//            System.out.println(mail);
+//            Koniec.Restart();
+//        }
+
+//        for (int i=0;i<9;i++) {
+//            mail = everyInt.nextLine();
+//            ulicaVee = ulica.nextLine();
+//            kodVee = kod.nextLine();
+//            miastoVee = miasto.nextLine();
+//            Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+//            System.out.println(i);
+//            System.out.println(mail);
+//            j++;
+//            if (j > 23)
+//                j = 0;
+//            Koniec.Restart();
+//        }
+
+//        for (int i=2;;i++) {
+//            mail = everyInt.nextLine();
+//            ulicaVee = ulica.nextLine();
+//            kodVee = kod.nextLine();
+//            miastoVee = miasto.nextLine();
+//            if (i%2==0)
+//                Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+//            else
+//                Ads.EveryAdp1(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+//            j++;
+//            if (j > 23)
+//                j = 0;
+//            System.out.println(i);
+//            System.out.println(mail);
+//            Koniec.Restart();
+//        }
+
+//        int x = 45;
+//        j=5;
+//        for(int i = 2; i < x; i++) {
+//            mail = everyInt.nextLine();
+//            ulicaVee = ulica.nextLine();
+//            kodVee = kod.nextLine();
+//            miastoVee = miasto.nextLine();
+//            if(i == 0) { Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));}
+//            if(i == 1) { Ads.EveryAdp1(mail,kodVee,ulicaVee,miastoVee,odp.get(j)); }
+//            if(i == 2) {
+//                Ads.EveryAdp(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+//                x -= 3;
+//                i=-1;
+//            }
+//            j++;
+//            if (j > 22)
+//                j = 0;
+//            System.out.println(i);
+//            System.out.println(x);
+//            System.out.println(mail);
+//            Koniec.Restart();
+//        }
+
+//        try {
+
+
+//        }
+//
+//        catch (Exception e) {
+//            blad.println(e);
+//            blad.close();
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            wylacz();
+//        }
+//        wylacz();
+
     }
 }

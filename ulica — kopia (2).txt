@@ -1,0 +1,200 @@
+Pl. Czysty 106
+ul. Pionierów 90
+ul. Narcyzowa 6
+ul. Jawłowskiego Hieronima 41
+ul. Lipowa 57
+ul. Sarny 141
+ul. Pospieszna 85
+ul. Niewachlowska 143
+ul. Iłowa 17
+ul. Kombajnistów 147
+ul. Księdza Popiełuszki Jerzego 68
+ul. Łyskowskiego 97
+ul. Kalwaryjska 30
+ul. Dekabrystów 32
+ul. Świętokrzyska 79
+ul. Odległa 55
+ul. Przełomowa 76
+ul. Koło Strzelnicy 134
+ul. Nad Wisłą 129
+ul. Tylna 103
+ul. Modrzejewskiej Heleny 118
+ul. Gembarzewskiego Bronisława 37
+ul. Wojskowa 127
+ul. Skotnica 58
+ul. Andrzejewskiego Jerzego 52
+ul. Wąska 15
+ul. Engelsa Fryderyka 94
+ul. Ślazy 18
+ul. Jasna 39
+Al. 11 Listopada 146
+ul. Przechodnia 79
+ul. Hermesa 110
+ul. Gorczyczewskiego Jana 35
+Pl. Grunwaldzki 9
+ul. Pajęcza 147
+ul. Bratków 126
+ul. Pocztowa 15
+ul. Niemcewicza Juliana Ursyna 33
+ul. Paszkiewicza Ludwika 50
+ul. Floksowa 107
+ul. Axentowicza Teodora 39
+ul. Przesieka 17
+ul. Łozowa 130
+ul. Sąsiedzka 128
+ul. Wąwolnicka 140
+ul. Krucza 107
+ul. Budziszyńska 101
+ul. Długosza Jana 132
+ul. Gruntowa 124
+ul. Łącznikowa 97
+ul. Kickiego Ludwika 55
+ul. Szymanowskiego Karola 50
+ul. Łukasiewicza 95
+ul. Toruńska 31
+ul. Maratońska 67
+ul. Kowalska 50
+ul. Małkowskiego Andrzeja 74
+ul. Łużycka 93
+ul. Paderewskiego Ignacego 49
+ul. Krótka 74
+ul. Opatkowicka 107
+ul. Księżnej Anny 19
+ul. Mysłowicka 67
+ul. Hoene Emilii 88
+ul. Kaletnicza 120
+ul. Majerankowa 73
+ul. Podmiejska 70
+ul. Ficka 21
+ul. Porzeczkowa 61
+ul. Ruchliwa 122
+ul. Bukowa 57
+ul. Lodowa 61
+ul. Gostyńska 69
+ul. Redłowska 106
+ul. Czekanowskiego Jana 149
+ul. Wiankowa 66
+ul. Zamkowa 30
+ul. Czeremchowa 109
+ul. Międzychodzka 102
+ul. Nowowiejska 140
+ul. Wybrzeże Kościuszkowskie 9
+ul. Kapelusznicza 123
+ul. Zaniemyska 96
+ul. Regatowa 127
+ul. Łuczan 135
+ul. Generała Władysława Sikorskiego 30
+ul. Urbanowskiej Zofii 34
+ul. Świętego Czesława 31
+ul. Gajowa 108
+ul. Kempki Pawła 41
+ul. Niezapominajek 21
+ul. Złota 69
+ul. Generała Berlinga Zygmunta 119
+ul. Bosmańska 98
+ul. Bożka Arki 54
+ul. Dąbrowszczaków 58
+ul. Legionów 65
+ul. Nad Potokiem 54
+ul. Jasienicka 74
+ul. Turystyczna 79
+ul. Lelechowska 124
+ul. Ożarowska 115
+ul. Granitowa 53
+ul. Kujawska 19
+ul. Owsiana 11
+ul. Styrska 11
+ul. Poznańska 83
+ul. Kalinowskiego Rafała 14
+ul. Błękitna 58
+ul. Zbierska 9
+ul. Kościuszki 91
+ul. Unicka 59
+ul. Generała Komorowskiego Tadeusza Bora 9
+ul. Sierakowskiego Zygmunta 68
+ul. Konwalii 89
+ul. Bartnicza 94
+ul. Lelewela Joachima 4
+ul. Rybitwy 57
+ul. Pułkownika Księdza Kubsza Wilhelma 31
+ul. Kosynierów 145
+ul. Malborska 76
+ul. Zagraniczna 84
+ul. Stacyjna 124
+ul. Spadzista 95
+ul. Czapli 49
+ul. Buczacka 103
+ul. Bzurska 137
+Al. Piastów 147
+ul. Amarantowa 90
+ul. Burszty Józefa 25
+ul. Cieślewskiego Ernesta 86
+ul. Kochanowskiego Jana 74
+Al. Jerozolimskie 2
+ul. Strzeszyńska 76
+ul. Chopina Fryderyka 111
+ul. Kolejarzy 41
+ul. Kadłubka Wincentego 77
+ul. Krzemionki 7
+ul. Szarotki 59
+ul. Kukułeczki 18
+ul. Konstytucji 3 Maja 110
+Al. Roździeńskiego Walentego 92
+ul. Świetlista 99
+ul. Energetyków 86
+ul. Perseusza 30
+ul. Dobiegniewska 140
+ul. Rzeźnicza 64
+ul. Ogrody 2
+ul. Lisiej Góry 90
+ul. Kurska 18
+ul. Wendy Apolinarskiego Tadeusza 126
+ul. Modrakowa 104
+ul. Staffa Leopolda 25
+ul. Ugorek 138
+ul. Reja Mikołaja 53
+ul. Boya Żeleńskiego Tadeusza 65
+ul. Marszałka Piłsudskiego Józefa 128
+ul. Keplera Jana 134
+ul. Okręglik 147
+ul. Tenisowa 107
+ul. Standego Ryszarda 58
+ul. Nowa 88
+ul. Bajkowa 9
+ul. Generała Andersa Władysława 112
+ul. Wereszyckiego Henryka 69
+ul. Nowotoruńska 101
+ul. Modrzejewskiej Heleny 30
+ul. Majakowskiego Włodzimierza 27
+ul. Sejneńska 49
+ul. Wyzwolenia 109
+ul. Chmurna 15
+ul. Kobaltowa 129
+ul. Hłaski Marka 7
+ul. Krzemienna 14
+ul. Burzyńskiego Zbigniewa 4
+ul. Jabłońskiego Stanisława 3
+ul. Helska 70
+ul. Konstytucji 3 Maja 119
+ul. Przepiórcza 24
+ul. Władysława Łokietka 138
+ul. Dobra 41
+ul. Agrarna 127
+ul. Leśna 42
+ul. Wróblewskiego Zygmunta 60
+ul. Sobieskiego Jana 42
+ul. Żywiecka 70
+ul. Traugutta Romualda 79
+ul. Wejherowska 57
+ul. Potworowskiego Gustawa 4
+ul. Koszalińska 132
+ul. Parkowa 81
+ul. Panasa Henryka 135
+ul. Schroegera Efraima 16
+ul. Aplikancka 55
+Al. Zwycięstwa 87
+ul. Margaretkowa 38
+ul. Franciszkańska 51
+ul. Odkrywkowa 12
+ul. Nasza 150
+ul. Kopernika Mikołaja 77

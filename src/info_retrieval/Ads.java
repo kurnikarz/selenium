@@ -370,4 +370,202 @@ public class Ads extends Narzedzia {
         }
 
     }
+
+    public static void Enfamil(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int dzienUro = r.nextInt(29) + 1;
+        int miesUro = r.nextInt(10) + 1;
+        String rokUro = "2020";
+        int dzienSpo = r.nextInt(29) + 1;
+        int miesSpo = r.nextInt(2) + 1;
+        String rokSpo = "2021";
+        int dziecko = r.nextInt(2);
+        Robot robot = new Robot();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("http://adsmaker.pl/action/1995/uid/26dd63a0ef72a51af97c0efa88357f15/");
+
+        Thread.sleep(7000);
+        zmienKarte(driver);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"_evidon-accept-button\"]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"field_enroll_first_name\"]")).sendKeys(genImieZen());
+        driver.findElement(By.xpath("//*[@id=\"field_enroll_last_name\"]")).sendKeys(genNazwiskoZen());
+        driver.findElement(By.xpath("//*[@id=\"field_enroll_email_address\"]")).sendKeys(mail);
+        Select dzien = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_day\"]")));
+        Select mies = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_month\"]")));
+        Select rok = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_year\"]")));
+        if (dziecko == 0) {
+            dzien.selectByIndex(dzienSpo);
+            mies.selectByIndex(miesSpo);
+            rok.selectByValue(rokSpo);
+        }
+        else {
+            dzien.selectByIndex(dzienUro);
+            mies.selectByIndex(miesUro);
+            rok.selectByValue(rokUro);
+        }
+        driver.findElement(By.xpath("//*[@id=\"field_enroll_agree_terms_personalised_optin\"]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"edit-submit\"]")).click();
+        Thread.sleep(6000);
+        driver.quit();
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void Enfamil2(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int dzienUro = r.nextInt(29) + 1;
+        int miesUro = r.nextInt(10) + 1;
+        String rokUro = "2020";
+        int dzienSpo = r.nextInt(29) + 1;
+        int miesSpo = r.nextInt(2) + 1;
+        String rokSpo = "2021";
+        int dziecko = r.nextInt(2);
+        Robot robot = new Robot();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("http://adsmaker.pl/action/1994/uid/26dd63a0ef72a51af97c0efa88357f15/");
+
+        Thread.sleep(7000);
+        zmienKarte(driver);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"_evidon-accept-button\"]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"field_enroll_first_name\"]")).sendKeys(genImieZen());
+        driver.findElement(By.xpath("//*[@id=\"field_enroll_last_name\"]")).sendKeys(genNazwiskoZen());
+        driver.findElement(By.xpath("//*[@id=\"field_enroll_email_address\"]")).sendKeys(mail);
+        Select dzien = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_day\"]")));
+        Select mies = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_month\"]")));
+        Select rok = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_year\"]")));
+        if (dziecko == 0) {
+            dzien.selectByIndex(dzienSpo);
+            mies.selectByIndex(miesSpo);
+            rok.selectByValue(rokSpo);
+        }
+        else {
+            dzien.selectByIndex(dzienUro);
+            mies.selectByIndex(miesUro);
+            rok.selectByValue(rokUro);
+        }
+        driver.findElement(By.xpath("//*[@id=\"field_enroll_agree_terms_personalised_optin\"]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"edit-submit\"]")).click();
+        Thread.sleep(6000);
+        driver.quit();
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void Enfamil3(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int dzienUro = r.nextInt(29) + 1;
+        int miesUro = r.nextInt(10) + 1;
+        String rokUro = "2020";
+        int dzienSpo = r.nextInt(29) + 1;
+        int miesSpo = r.nextInt(2) + 1;
+        String rokSpo = "2021";
+        int dziecko = r.nextInt(2);
+        Robot robot = new Robot();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("http://adsmaker.pl/action/1996/uid/26dd63a0ef72a51af97c0efa88357f15/");
+
+        Thread.sleep(7000);
+        zmienKarte(driver);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"_evidon-accept-button\"]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"field_enroll_first_name\"]")).sendKeys(genImieZen());
+        driver.findElement(By.xpath("//*[@id=\"field_enroll_last_name\"]")).sendKeys(genNazwiskoZen());
+        driver.findElement(By.xpath("//*[@id=\"field_enroll_email_address\"]")).sendKeys(mail);
+        Select dzien = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_day\"]")));
+        Select mies = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_month\"]")));
+        Select rok = new Select(driver.findElement(By.xpath("//*[@id=\"field_enroll_date_of_birth_year\"]")));
+        if (dziecko == 0) {
+            dzien.selectByIndex(dzienSpo);
+            mies.selectByIndex(miesSpo);
+            rok.selectByValue(rokSpo);
+        }
+        else {
+            dzien.selectByIndex(dzienUro);
+            mies.selectByIndex(miesUro);
+            rok.selectByValue(rokUro);
+        }
+        driver.findElement(By.xpath("//*[@id=\"field_enroll_agree_terms_personalised_optin\"]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"edit-submit\"]")).click();
+        Thread.sleep(6000);
+        driver.quit();
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void EveryAdp(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\bot\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+//        try {
+        driver.get("http://adsmaker.pl/action/2122/uid/26dd63a0ef72a51af97c0efa88357f15/");
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("/html/body/div[2]/a[1]")).click();
+
+        Thread.sleep(20000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+//        } catch (Exception e){
+//            driver.quit();
+//        }
+
+
+
+
+    }
+
+    public static void EveryAdp1(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\bot\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+//        try {
+        driver.get("http://adsmaker.pl/action/2123/uid/26dd63a0ef72a51af97c0efa88357f15/");
+
+        Thread.sleep(20000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+
+//        } catch (Exception e){
+//            driver.quit();
+//        }
+
+
+
+
+    }
 }

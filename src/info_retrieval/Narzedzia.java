@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -602,5 +603,36 @@ public class Narzedzia {
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
+    }
+
+    public static void refreshEvery(WebDriver driver) {
+        try {
+            driver.findElement(By.xpath("//*[text()='Połączenie zostało przerwane']")).click();
+            driver.navigate().refresh();
+            Thread.sleep(10000);
+        } catch (Exception e) {
+
+        }
+    }
+
+    public static void sprawdzLinkEvery(WebDriver driver) {
+        try {
+            driver.findElement(By.xpath("//*[text()='Ta witryna jest nieosiągalna']")).click();
+            driver.navigate().refresh();
+            Thread.sleep(10000);
+        } catch (Exception e) {
+
+        }
+    }
+
+    public static boolean sprawdzInternet(WebDriver driver) {
+        boolean ok = true;
+        try {
+            driver.findElement(By.xpath("//*[text()='Ta witryna jest nieosiągalna']"));
+            ok = false;
+        } catch (Exception e) {
+
+        }
+        return ok;
     }
 }

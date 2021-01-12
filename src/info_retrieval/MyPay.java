@@ -1121,7 +1121,7 @@ public class MyPay extends Narzedzia{
     }
 
     public static void Everyday(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, IOException, InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         String imie = genImieZen();
         String nazwisko = genNazwiskoZen();
         Random r = new Random();
@@ -1136,193 +1136,41 @@ public class MyPay extends Narzedzia{
         int x = 1750;
         Robot robot = new Robot();
         String roko = String.valueOf(rok);
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\bot\\niewykorzystaneEvery.txt", true));
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        try {
+        //try {
             driver.get("https://www.mypay.pl/webapp/extern.php?k=6934&u=230491");
             Thread.sleep(20000);
-            driver.get("https://www.everydayme.pl/letnia-swiezosc");
-
-            Thread.sleep(5000);
-            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)", "");
-            Thread.sleep(1000);
-            clickXY(772, 540);
-            Thread.sleep(1000);
-            clickXY(943, 628);
-
-            Thread.sleep(3000);
-            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)", "");
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"Kobieta \"]")).click();
-            driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys(imie);
-            driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys(nazwisko);
-            Select miesiacc = new Select(driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[5]/div/div/select[1]")));
-            miesiacc.selectByIndex(miesiac);
-            Select rokk = new Select(driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[5]/div/div/select[2]")));
-            rokk.selectByValue(roko);
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"addressPostalCode\"]")).sendKeys(kod);
-            driver.findElement(By.xpath("//*[@id=\"emailAddress\"]")).sendKeys(mail);
-            driver.findElement(By.xpath("//*[@id=\"newPassword\"]")).sendKeys(mail + "V2");
-            Thread.sleep(1000);
-            clickXY(x, 1012);
-            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,700)", "");
-            driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus\"]")).click();
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[11]/button")).click();
-
-            Thread.sleep(20000);
-            driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][line1]\"]")).sendKeys(ulica);
-            driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][postalarea]\"]")).sendKeys(kod);
-            driver.findElement(By.xpath("//*[@id=\"grs_account[shipping_addresses][0][city]\"]")).sendKeys(miasto);
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[6]/div/div/form/button")).click();
-            Thread.sleep(8000);
-            try {
-                driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/div[7]/a[2]")).click();
-            } catch (Exception e) {
-                clickXY(950,824);
-                clickXY(950,910);
-            }
-            Thread.sleep(3000);
-            switch (odp1) {
-                case 0:
-                    driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/form/div[2]/div[1]/div[2]/label[1]")).click();
-                    break;
-                case 1:
-                    driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/form/div[2]/div[1]/div[2]/label[2]")).click();
-                    break;
-            }
-            Thread.sleep(2000);
-            switch (odp2) {
-                case 0:
-                    driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/form/div[2]/div[2]/div[2]/label[1]")).click();
-                    break;
-                case 1:
-                    driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/form/div[2]/div[2]/div[2]/label[2]")).click();
-                    break;
-            }
-            Thread.sleep(2000);
-            switch (odp3) {
-                case 0:
-                    driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/form/div[2]/div[3]/div[2]/label[1]")).click();
-                    break;
-                case 1:
-                    driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/form/div[2]/div[3]/div[2]/label[2]")).click();
-                    break;
-                case 2:
-                    driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/form/div[2]/div[3]/div[2]/label[3]")).click();
-                    break;
-            }
-            Thread.sleep(4000);
-            driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div[1]/form/div[2]/div[4]/div[2]/textarea")).sendKeys(odp);
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"spq-form\"]/div[2]/div[4]/div[3]/button")).click();
-            Thread.sleep(10000);
-            driver.findElement(By.xpath("//*[@id=\"spq-form\"]/div[2]/div[5]/p[2]/b/a")).click();
-            Thread.sleep(10000);
-            Zmniejsz(5);
-            Thread.sleep(1000);
-            ScrollBy(driver,"700");
-            Thread.sleep(1000);
-            switch (kupon1) {
-                case 0:
-                    clickXY(924,516);
-                    break;
-                case 1:
-                    clickXY(1222,516);
-                    break;
-                case 2:
-                    clickXY(924,673);
-                    break;
-                case 3:
-                    clickXY(1222,673);
-                    break;
-                case 4:
-                    clickXY(924,826);
-                    break;
-                case 5:
-                    clickXY(1222,826);
-                    break;
-                case 6:
-                    clickXY(924,980);
-                    break;
-                case 7:
-                    clickXY(1222,980);
-                    break;
-
-            }
-            Thread.sleep(5000);
-            switch (kupon2) {
-                case 0:
-                    clickXY(924,516);
-                    break;
-                case 1:
-                    clickXY(1222,516);
-                    break;
-                case 2:
-                    clickXY(924,673);
-                    break;
-                case 3:
-                    clickXY(1222,673);
-                    break;
-                case 4:
-                    clickXY(924,826);
-                    break;
-                case 5:
-                    clickXY(1222,826);
-                    break;
-                case 6:
-                    clickXY(924,980);
-                    break;
-                case 7:
-                    clickXY(1222,980);
-                    break;
-
-            }
-            Thread.sleep(10000);
-            /*
-            //WP
-            driver.get("http://poczta.wp.pl/");
-            Thread.sleep(6000);
-            driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"btnSubmit\"]")).click();
-            Thread.sleep(20000);
-            driver.findElement(By.xpath("//*[text()='Oferty']")).click();
-            //driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/nh-sidebar/div/div/div[3]/div[1]/div[5]/div[2]")).click();
-            Thread.sleep(10000);
-            boolean flaga = false;
-            int m = 0;
-            while (!flaga) {
-                try {
-                    driver.findElement(By.xpath("//*[text()='EverydayMe']")).click();
-                    Thread.sleep(4000);
-                    driver.findElement(By.xpath("//*[text()='Do dzieła']")).click();
-                    Thread.sleep(20000);
-                    flaga = true;
-                } catch (Exception e) {
-                    clickXY(85, 52);
-                    Thread.sleep(10000);
-                }
-                m++;
-                if (m > 4) {
-                    break;
-                }
-
-            }
-             */
-
-            driver.quit();
-
+            Neworklead.Everyday(driver,mail,kod,ulica,miasto,odp);
+        /*
         } catch (Exception e) {
             driver.quit();
         }
+*/
 
+
+    }
+
+    public static void Every(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        //////////C:Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--allow-running-insecure-content");
+        WebDriver driver = new ChromeDriver(options);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        driver.manage().window().maximize();
+
+        try {
+        driver.get("https://www.mypay.pl/webapp/extern.php?k=7374&u=230491");
+
+        Thread.sleep(30000);
+        Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+        Thread.sleep(1000);
+        } catch (Exception e) {
+            driver.quit();
+        }
 
 
     }

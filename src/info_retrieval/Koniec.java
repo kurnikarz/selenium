@@ -86,20 +86,20 @@ public class Koniec {
         options.setExperimentalOption("prefs", prefs);
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.get("http://192.168.8.1/");
+        try {
+            driver.get("http://192.168.8.1/html/reboot.html");
 
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[text()='Ustawienia']")).click();
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[text()='System']")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[text()='Ponowny rozruch']")).click();
-        Thread.sleep(3000);
-        Narzedzia.clickXY(1154,393);
-        Thread.sleep(2000);
-        Narzedzia.clickXY(885,524);
-        Thread.sleep(35000);
-        Narzedzia.clickXY(1522,9);
-        driver.quit();
+            driver.findElement(By.xpath("//*[text()='Ponowny rozruch']")).click();
+            Thread.sleep(3000);
+            Narzedzia.clickXY(1154,393);
+            Thread.sleep(2000);
+            Narzedzia.clickXY(885,516);
+            Thread.sleep(35000);
+            Narzedzia.clickXY(1522,9);
+            driver.quit();
+        } catch (Exception e) {
+            RestarHujawei();
+        }
+
     }
 }
