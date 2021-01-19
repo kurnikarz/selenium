@@ -615,7 +615,7 @@ public class Mirasbas extends Narzedzia {
         driver.get("http://poczta.wp.pl/");
         Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
-        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
         //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
@@ -628,7 +628,14 @@ public class Mirasbas extends Narzedzia {
         Thread.sleep(3000);
         while (!flaga) {
             try {
-                driver.findElement(By.xpath("//*[text()='Maluszki Pieluszki']")).click();
+                try {
+                    driver.findElement(By.xpath("//*[text()='Maluszki Pieluszki']")).click();
+                } catch (Exception f) {
+                    driver.get("https://poczta.wp.pl/k/#/mails/?label=5");
+                    Thread.sleep(3000);
+                    driver.findElement(By.xpath("//*[text()='Maluszki Pieluszki']")).click();
+                }
+
                 flaga = true;
                 Thread.sleep(4000);
                 driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr[5]/td/a/img")).click();
@@ -697,6 +704,8 @@ public class Mirasbas extends Narzedzia {
         driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[1]/input")).sendKeys(dane);
         driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[2]/input")).sendKeys(mail);
         driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[3]/label/input")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[2]/div/span[2]/a")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[4]/input")).click();
         Thread.sleep(7000);

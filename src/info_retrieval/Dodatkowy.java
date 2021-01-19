@@ -1,5 +1,6 @@
 package info_retrieval;
 
+import javafx.scene.control.TabPane;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -26,7 +27,7 @@ public class Dodatkowy extends Narzedzia {
         Kopiuj("av126");
         Thread.sleep(3000);
         Wklej();
-        Thread.sleep(1000);
+        Thread.sleep(500);
         robot.keyPress(KeyEvent.VK_ENTER);
         Thread.sleep(7000);
     }
@@ -1973,13 +1974,13 @@ public class Dodatkowy extends Narzedzia {
 
             Thread.sleep(3000);
             wpiszHaslo();
-            clickXY(780,640);
+            clickXY(780, 640);
             Thread.sleep(10000);
-            for(String winHandle : driver.getWindowHandles()){
+            for (String winHandle : driver.getWindowHandles()) {
                 driver.switchTo().window(winHandle);
             }
             Thread.sleep(1000);
-            ScrollBy(driver,"700");
+            ScrollBy(driver, "700");
             driver.switchTo().frame(0);
             Thread.sleep(1000);
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/form/div[2]/div[2]/div[2]/div/div[1]/div[3]/input")));
@@ -1990,43 +1991,46 @@ public class Dodatkowy extends Narzedzia {
             driver.findElement(By.xpath("/html/body/form/div[2]/div[2]/div[2]/div/div[1]/div[6]/button")).click();
             Thread.sleep(7000);
 
-        //WP
-        driver.get("http://poczta.wp.pl/");
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
-        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
-        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
-        Thread.sleep(5000);
-        try {
-            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
-        } catch (Exception e) {
-
-        }
-        Thread.sleep(3000);
-        driver.get("https://poczta.wp.pl/k/#/mails/?label=154");
-        Thread.sleep(2000);
-        boolean flaga = false;
-        int m = 0;
-        while (!flaga) {
+            //WP
+            driver.get("http://poczta.wp.pl/");
+            Thread.sleep(3000);
+            driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+            //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+            Thread.sleep(5000);
             try {
-                driver.findElement(By.xpath("//*[text()='Lidl Newsletter']")).click();
-                flaga = true;
-                Thread.sleep(4000);
-                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/center/table/tbody/tr/td/table/tbody/tr/td/table[3]/tbody/tr/td/table[1]/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[2]/td[2]/a/span")).click();
-                Thread.sleep(10000);
+                driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
             } catch (Exception e) {
-                driver.navigate().refresh();
-                Thread.sleep(10000);
-            }
-            m++;
-            if (m > 5) {
-                break;
-            }
 
-        }
+            }
+            Thread.sleep(3000);
+            driver.get("https://poczta.wp.pl/k/#/mails/?label=154");
+            Thread.sleep(2000);
+            boolean flaga = false;
+            int m = 0;
+            while (!flaga) {
+                try {
+                    driver.findElement(By.xpath("//*[text()='Lidl Newsletter']")).click();
+                    flaga = true;
+                    Thread.sleep(4000);
+                    driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/center/table/tbody/tr/td/table/tbody/tr/td/table[3]/tbody/tr/td/table[1]/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[2]/td[2]/a/span")).click();
+                    Thread.sleep(10000);
+                } catch (Exception e) {
+                    driver.navigate().refresh();
+                    Thread.sleep(10000);
+                }
+                m++;
+                if (m > 5) {
+                    break;
+                }
+
+            }
             driver.quit();
+//        } catch (Exception e){
+//            driver.quit();
+//        }
 
 
 ///html/body/form/div[2]/div[2]/div[2]/div/div[1]/div[3]/input
@@ -2971,6 +2975,64 @@ public class Dodatkowy extends Narzedzia {
 //        } catch (Exception e) {
 //            driver.quit();
 //        }
+
+    }
+
+    public static void Crunchips(String mail, String paragon, String data) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        String imie;
+        if (plec == 0)
+            imie = genImieMes();
+        else
+            imie = genImieZen();
+        ChromeDriver driver = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        driver.manage().window().maximize();
+
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/0f1039b390cb29a4a0ebbf75b2ac74ad/91003e56088694b423e60e3218f783a5/201920950f63cee967982b759fde80b1");
+        Thread.sleep(3000);
+        wpiszHaslo();
+        clickXY(750,826);
+
+        zmienKarte(driver);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"home\"]/div/div/a/img"))));
+        driver.findElement(By.xpath("//*[@id=\"home\"]/div/div/a/img")).click();
+    }
+
+    public static void Insiders(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        String imie;
+        if (plec == 0)
+            imie = genImieMes();
+        else
+            imie = genImieZen();
+        ChromeDriver driver = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        driver.manage().window().maximize();
+
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/4055fdb888e1d7a731518d5ddde843d6/77165896373ed7fa197334d821e51345/201920950f63cee967982b759fde80b1");
+        Thread.sleep(5000);
+        driver.get("https://tajemniczaakkonstaa.blogspot.com/2018/11/nowy-przyjaciel-zakuj.html");
+        Thread.sleep(3000);
+        wpiszHaslo();
+        clickXY(776,690);
+
+        zmienKarte(driver);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"navigation-bar\"]/div/div[3]/ul/li[1]/a"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"navigation-bar\"]/div/div[3]/ul/li[1]/a")).click();
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"loginformulier\"]/div[1]/div/div/p[2]/a"))));
+        driver.findElement(By.xpath("//*[@id=\"loginformulier\"]/div[1]/div/div/p[2]/a")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"register\"]/div/div/div[2]/div[3]/div/a[2]"))));
+        driver.findElement(By.xpath("//*[@id=\"register\"]/div/div/div[2]/div[3]/div/a[2]")).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"register\"]/div/div/div[2]/div[3]/div/a[2]"))));
+        driver.findElement(By.xpath("//*[@id=\"register\"]/div/div/div[2]/div[3]/div/a[2]")).click();
 
     }
 }

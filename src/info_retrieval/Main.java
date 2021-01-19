@@ -802,7 +802,7 @@ public class Main extends Narzedzia {
         grupy[6] = "https://www.facebook.com/groups/inwestorzyiinwestycje/";
         grupy[7] = "https://www.facebook.com/groups/zarabiajwnecie/";    //blokada
         grupy[8] = "https://www.facebook.com/groups/410873349362708/";    //blok
-        grupy[9] = "https://www.facebook.com/groups/270165996779362/";
+        grupy[9] = "https://www.facebook.com/groups/270165996779362/";	//blok
         grupy[10] = "https://www.facebook.com/groups/389679508482812/";
         grupy[11] = "https://www.facebook.com/groups/531288753733140/";
         grupy[12] = "https://www.facebook.com/groups/pracawmlm/";
@@ -838,7 +838,7 @@ public class Main extends Narzedzia {
         grupy[44] = "https://www.facebook.com/groups/InternetowaPraca/";    //blok
         //===========================MOJE
         grupy[45] = "https://www.facebook.com/groups/1478777662423430/";
-        grupy[46] = "https://www.facebook.com/groups/1303356579748916/";
+        grupy[46] = "https://www.facebook.com/groups/1303356579748916/";	//blook
         grupy[47] = "https://www.facebook.com/groups/794811483876118/";	//DYSKUSJA
         grupy[48] = "https://www.facebook.com/groups/505718296215064/";
         grupy[49] = "https://www.facebook.com/groups/408111472862824/";    //blok
@@ -2021,6 +2021,7 @@ public class Main extends Narzedzia {
         Scanner edison = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\edison.txt"));
         Scanner numPam = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\numPam.txt"));
         Scanner numEn = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\numEn.txt"));
+        Scanner news = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\news.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\everyInt.txt"));
@@ -2067,31 +2068,8 @@ public class Main extends Narzedzia {
         Random r = new Random();
         String mail2;
         String mail3;
-        String post = "Uwaga!!!!\n" +
-                "Post od Pana Miroslawa Klos, którego gorąco polecam.\n" +
-                "\n" +
-                "Witajcie nazywam się Miroslaw Klos a posty które widzicie są wstawiane przez osoby, które pracują dla mnie. Płacę najwięcej w Polsce za taką robotę ale dziś nie o tym...\n" +
-                "W internecie zarabiam od wielu lat i to z powodzeniem. Prowadzę Bloga jak i kanał na youtubie gdzie skutecznie obnażam te wszystkie bzdury i scamy jakie widzicie tu na co dzień.\n" +
-                "Może dlatego mało lubiany jestem w pewnych gronach \uD83D\uDE09\n" +
-                "Był słynny na całą polskę program RB gdzie włożyłem 12.000zł tylko po to aby pokazać jak działa ten syf. Film macie na moim kanale gdzie prowadziłem psychologiczną zagrywkę z całym supportem.\n" +
-                "Czy zarobiłem? Sprawdźcie sami! \n" +
-                "Była też słynna Madzia ze Szczecina czyli wariatka a jak nie którzy twierdzą zakochana we mnie chora kobieta. Która zgłaszała mnie masowo na policję, prokuraturę czy do US. Filmy z przygód z tą wariatką również na moim kanale!\n" +
-                "\n" +
-                "Prowadzę w tej chwili już kilka biznesów online ale głównym jest sprzedaż gier komputerowych w formie cyfrowej. Które wysyłamy do klienta mailowo. NIC sami nie kupujemy dopóki sami nie sprzedamy.\n" +
-                "Jedną grę bierzemy za 20zł i sprzedajemy cały czas generując stały zysk na portalach aukcyjnych na całym świecie.\n" +
-                "Współpracuje ze mną wiele osób i jeżeli masz ochotę to zapraszam na Bloga gdzie możesz zapoznać się ze wszystkim.\n" +
-                "\n" +
-                "Blog:  Miroslawklos .pl  (Bez spacji bo FB tnie zasięgi)\n" +
-                "\n" +
-                "Na koniec dwa słowa do tych wszystkich dzbanów co biegają za mną od dobrych 5 lat! Kolejny rok dobiega końca a Wy kolejny rok swojego życia poświęcacie na promocje mojej osoby \uD83D\uDE09\n" +
-                "Dziękuje za wszelkie komentarze, których co prawda nie czytam ale zawsze podbijają one posty!\n" +
-                "Po części to dzięki Wam mam te pokoje kinowe, karty za grube tysiące czy wyjazdy na moją ukochaną Ibizę. Jak i w inne miejsca na świecie.\n" +
-                "Wielu z Was już wyjaśniłem w moich filmach. Wielu pewnie jeszcze wyjaśnię....\n" +
-                "\n" +
-                "Szczęśliwego nowego roku!\n" +
-                "Mirek.\n" +
-                "\n" +
-                "P.S. Na blogu możecie zgarnąć teraz stówkę całkowicie za darmo. \n" +
+        String post = "Uwaga!\n" +
+                "Jeżeli w tych ciężkich czasach ktoś szuka pracy online to polecam pana z filmu poniżej i biznes oparty na sprzedaży gier cyfrowych na portalach typu Alelgro, Ebay. W skrócie kupujemy jedną grę wideo w postaci kodu za 20zł i sprzedajemy cały czas, wielokrotnie generując stały zysk! Proste jak budowa cepa i wszystko wysyłane mailowo do klienta. Więcej informacji i opis jak wszystko wygląda oraz kontakt do autora poradnika macie w filmie poniżej. \n" +
                 "\n" +
                 "https://youtu.be/5sKRKhfU0kQ";
 
@@ -2104,127 +2082,74 @@ public class Main extends Narzedzia {
         String miastEn;
         String koEn;
 
-        for (int i=0;i<12;i++) {
-            mail = edison.nextLine();
-            mail2 = pam.nextLine();
-            num = numer.nextLine();
-            num2 = numPam.nextLine();
-            num3 = numEn.nextLine();
-            miastoVee = miastoPam.nextLine();
-            ulicaVee = ulicaPam.nextLine();
-            kodVee = kodPam.nextLine();
-            kodVee2 = kodPam2.nextLine();
-            miastEn = miastoEn.nextLine();
-            koEn = kodEn.nextLine();
-
-            Mirasbas.Newsletter(mail);
-
-            if (i<5) {
-               Mirasbas.Pampers(mail2,ulicaVee,kodVee,kodVee2,miastoVee,num2);
-                Thread.sleep(200000);
-            }
-            if (i<6) {
-                Mirasbas.Edison(mail,num);
-                Mirasbas.GData();
-            }
-            Mirasbas.Energia(mail,num3,koEn,miastEn);
-            System.out.println(i);
-            System.out.println(mail);
-            Koniec.Restart();
-        }
-
-        for (int i=0;i<fb.length;i++) {
-            dodajPostLepakNowy(profil[i],fb[i],"",post,0,62);
-            System.out.println(i);
-            System.out.println(fb[i]);
-        }
-
-//        for (int i=0;i<9;i++) {
-//            mail = edison.nextLine();
-//            mail2 = everyInt.nextLine();
-//            miastoVee = miastoVe.nextLine();
-//            ulicaVee = ulicaVe.nextLine();
-//            kodVee = kodVe.nextLine();
-//            num = numer.nextLine();
-//            Dodatkowy.Every7(mail2,kodVee,ulicaVee,miastoVee,odp.get(j));
-//            if (i<6)
-//                Mirasbas.Edison(mail,num);
-//            if (i<3)
-//                Mirasbas.Newsletter(mail);
-//            if (j > 23)
-//                j = 0;
-//            j++;
-//            System.out.println(i);
-//            System.out.println(mail2);
-//            Koniec.Restart();
-//        }
-
-//        for (int i=7;i<20;i++) {
+//        for (int i=6;i<22;i++) {
 //            mail = lidl.nextLine();
-//            Dodatkowy.Lidl(mail);
-//            System.out.println(i);
-//            System.out.println(mail);
-//            Koniec.RestarHujawei();
-//        }
-
-//        for (int i=0;i<fb.length;i++) {
-////            dodajPostLepakNowy(profil[i],fb[i],"",post,0,62);
-////            System.out.println(i);
-////            System.out.println(fb[i]);
-////        }
-//String num2;
-//        for (int i=3;i<6;i++) {
-//            mail = edison.nextLine();
 //            mail2 = pam.nextLine();
+//            mail3 = edison.nextLine();
+//            num = numer.nextLine();
+//            num2 = numPam.nextLine();
 //            miastoVee = miastoPam.nextLine();
 //            ulicaVee = ulicaPam.nextLine();
 //            kodVee = kodPam.nextLine();
 //            kodVee2 = kodPam2.nextLine();
-//            num = numPam.nextLine();
-//            num2 = numer.nextLine();
-//            if (i<3)
-//                Mirasbas.Newsletter(mail);
-//            if (i<5)
-//                Mirasbas.Pampers(mail2,ulicaVee,kodVee,kodVee2,miastoVee,num);
-//            Mirasbas.Edison(mail,num2);
+//            if (i<4) {
+//                Mirasbas.Pampers(mail2,ulicaVee,kodVee,kodVee2,miastoVee,num2);
+//                Thread.sleep(200000);
+//            }
+//            if (i<6) {
+//                Mirasbas.Edison(mail3,num);
+//            }
+//            Mirasbas.Newsletter(mail3);
+//            Dodatkowy.Lidl(mail);
+//            System.out.println(mail);
+//            System.out.println(i);
+//            Koniec.Restart();
+//        }
+
+//        dodajPostLepakNowy(profil[0],fb[0],"",post,0,62);
+
+//
+
+//        for (int i=4;i<12;i++) {
+//            mail = edison.nextLine();
+//            mail2 = pam.nextLine();
+//            num = numer.nextLine();
+//            num2 = numPam.nextLine();
+//            num3 = numEn.nextLine();
+//            miastoVee = miastoPam.nextLine();
+//            ulicaVee = ulicaPam.nextLine();
+//            kodVee = kodPam.nextLine();
+//            kodVee2 = kodPam2.nextLine();
+//            miastEn = miastoEn.nextLine();
+//            koEn = kodEn.nextLine();
+//
+//            Mirasbas.Newsletter(mail);
+//
+////            if (i<5) {
+////               Mirasbas.Pampers(mail2,ulicaVee,kodVee,kodVee2,miastoVee,num2);
+////                Thread.sleep(200000);
+////            }
+//            if (i<6) {
+//                Mirasbas.Edison(mail,num);
+//                Mirasbas.GData();
+//            }
+//            Mirasbas.Energia(mail,num3,koEn,miastEn);
 //            System.out.println(i);
 //            System.out.println(mail);
 //            Koniec.Restart();
-//            Thread.sleep(230000);
 //        }
 
         try {
 
+//            dodajPostLepakNowy(profil[0],fb[0],"",post,0,62);
 
-//
-//            for (int i=0;i<6;i++) {
-//                mail = edison.nextLine();
-//                num = numer.nextLine();
-////            mail2 = lidl.nextLine();
-//                if (i<3)
-//                    Mirasbas.Newsletter(mail);
-//                Mirasbas.Edison(mail,num);
-////            Dodatkowy.Lidl(mail2);
-//                System.out.println(i);
-//                System.out.println(mail);
-//                Koniec.Restart();
-//            }
-
-//            for (int i=0;i<5;i++) {
-//                mail = pam.nextLine();
-////            mail2 = lidl.nextLine();
-//                miastoVee = miastoPam.nextLine();
-//                ulicaVee = ulicaPam.nextLine();
-//                kodVee = kodPam.nextLine();
-//                kodVee2 = kodPam2.nextLine();
-//                num = numPam.nextLine();
-//                Mirasbas.Pampers(mail,ulicaVee,kodVee,kodVee2,miastoVee,num);
-////            Dodatkowy.Lidl(mail2);
-//                System.out.println(i);
-//                System.out.println(mail);
-//                Koniec.Restart();
-//                Thread.sleep(280000);
-//            }
+            for (int i=0;i<500;i++) {
+                mail = news.nextLine();
+                Mirasbas.Newsletter(mail);
+                System.out.println(i);
+                System.out.println(mail);
+                Koniec.Restart();
+            }
 
         } catch (Exception e) {
             blad.println(e);
@@ -2236,6 +2161,6 @@ public class Main extends Narzedzia {
         }
 
 
-//        wylacz();
+        wylacz();
     }
 }
