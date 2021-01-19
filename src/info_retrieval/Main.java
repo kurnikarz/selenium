@@ -2068,7 +2068,7 @@ public class Main extends Narzedzia {
         Random r = new Random();
         String mail2;
         String mail3;
-        String post = "Uwaga!\n" +
+        String post = "Uwaga!!!\n" +
                 "Jeżeli w tych ciężkich czasach ktoś szuka pracy online to polecam pana z filmu poniżej i biznes oparty na sprzedaży gier cyfrowych na portalach typu Alelgro, Ebay. W skrócie kupujemy jedną grę wideo w postaci kodu za 20zł i sprzedajemy cały czas, wielokrotnie generując stały zysk! Proste jak budowa cepa i wszystko wysyłane mailowo do klienta. Więcej informacji i opis jak wszystko wygląda oraz kontakt do autora poradnika macie w filmie poniżej. \n" +
                 "\n" +
                 "https://youtu.be/5sKRKhfU0kQ";
@@ -2141,15 +2141,15 @@ public class Main extends Narzedzia {
 
         try {
 
-//            dodajPostLepakNowy(profil[0],fb[0],"",post,0,62);
+            dodajPostLepakNowy(profil[0],fb[0],"",post,0,62);
 
-            for (int i=0;i<500;i++) {
-                mail = news.nextLine();
-                Mirasbas.Newsletter(mail);
-                System.out.println(i);
-                System.out.println(mail);
-                Koniec.Restart();
-            }
+//            for (int i=0;i<500;i++) {
+//                mail = news.nextLine();
+//                Mirasbas.Newsletter(mail);
+//                System.out.println(i);
+//                System.out.println(mail);
+//                Koniec.Restart();
+//            }
 
         } catch (Exception e) {
             blad.println(e);
@@ -2161,6 +2161,6 @@ public class Main extends Narzedzia {
         }
 
 
-        wylacz();
+//        wylacz();
     }
 }
