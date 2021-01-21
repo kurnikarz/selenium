@@ -2494,11 +2494,11 @@ public class Dodatkowy extends Narzedzia {
 //            Thread.sleep(50000000);
             sprawdzLinkEvery(driver);
             refreshEvery(driver);
-            Thread.sleep(1000);
+            Thread.sleep(10000);
             clickXY(778,685);
 
             Thread.sleep(20000);
-            Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
+            Neworklead.Everyday3(driver, mail, kod, ulica, miasto, odp);
             Thread.sleep(1000);
 
 //        } catch (Exception e){

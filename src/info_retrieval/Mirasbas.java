@@ -699,17 +699,22 @@ public class Mirasbas extends Narzedzia {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        driver.get("https://mirasbas.pl/zadanie/59/149ba14d0352f9133a371dca827148f1");
-        Thread.sleep(5000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[1]/input")).sendKeys(dane);
-        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[2]/input")).sendKeys(mail);
-        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[3]/label/input")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[2]/div/span[2]/a")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[4]/input")).click();
-        Thread.sleep(7000);
-        driver.quit();
+        try {
+            driver.get("https://mirasbas.pl/zadanie/59/149ba14d0352f9133a371dca827148f1");
+            Thread.sleep(5000);
+            driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[1]/input")).sendKeys(dane);
+            driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[2]/input")).sendKeys(mail);
+            driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[3]/label/input")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[2]/div/span[2]/a")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/main/article/div[2]/div/form/div[4]/input")).click();
+            Thread.sleep(7000);
+            driver.quit();
+        } catch (Exception e) {
+            driver.quit();
+        }
+
     }
 
     public static void Energia(String mail, String numer, String kod, String miasto) throws InterruptedException {
