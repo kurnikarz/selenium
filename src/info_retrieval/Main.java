@@ -2138,6 +2138,7 @@ public class Main extends Narzedzia {
 //            System.out.println(mail);
 //            Koniec.Restart();
 //        }
+        Neworklead.Przepis("maurok17@wp.pl");
         try {
 
             for (int i=0;i<500;i++) {
@@ -2158,6 +2159,6 @@ public class Main extends Narzedzia {
         }
 
 
-//        wylacz();
+        wylacz();
     }
 }
