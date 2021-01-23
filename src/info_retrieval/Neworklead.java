@@ -3801,7 +3801,7 @@ public class Neworklead extends Narzedzia {
                 driver.findElement(By.xpath("//*[text()='Przepisy.pl']")).click();
                 flaga = true;
                 Thread.sleep(4000);
-                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr[5]/td[2]/a[2]")).click();
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr[4]/td[2]/div[1]/a")).click();
                 Thread.sleep(10000);
             } catch (Exception e) {
                 driver.navigate().refresh();
