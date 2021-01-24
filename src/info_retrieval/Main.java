@@ -2022,6 +2022,7 @@ public class Main extends Narzedzia {
         Scanner numPam = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\numPam.txt"));
         Scanner numEn = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\numEn.txt"));
         Scanner news = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\news.txt"));
+        Scanner przepisy = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\przepisy.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\everyInt.txt"));
@@ -2138,15 +2139,20 @@ public class Main extends Narzedzia {
 //            System.out.println(mail);
 //            Koniec.Restart();
 //        }
+
+        for (int i=0;i<500;i++) {
+            mail = news.nextLine();
+            mail2 = przepisy.nextLine();
+            Neworklead.Przepis(mail2);
+            Mirasbas.Newsletter(mail);
+            System.out.println(i);
+            System.out.println(mail);
+            Koniec.Restart();
+        }
+
         try {
 
-            for (int i=0;i<500;i++) {
-                mail = news.nextLine();
-                Mirasbas.Newsletter(mail);
-                System.out.println(i);
-                System.out.println(mail);
-                Koniec.Restart();
-            }
+
 
         } catch (Exception e) {
             blad.println(e);
