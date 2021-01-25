@@ -324,8 +324,8 @@ public class Main extends Narzedzia{
     }
 
     public static void pobierzIp() throws IOException, InterruptedException {
-        Writer ip = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\ip.txt", true));
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer ip = new BufferedWriter(new FileWriter("C:\\bot\\ip.txt", true));
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
         images.put("images", 2);
@@ -1884,6 +1884,7 @@ public class Main extends Narzedzia{
         Scanner enfamil = new Scanner(new File("C:\\bot\\enfamil.txt"));
         Scanner samsung = new Scanner(new File("C:\\bot\\samsung.txt"));
         Scanner news = new Scanner(new File("C:\\bot\\news.txt"));
+        Scanner przepisy = new Scanner(new File("C:\\bot\\przepisy.txt"));
         //Scanner chili = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\chili.txt"));
         PrintWriter blad = new PrintWriter("C:\\bot\\blad.txt");
         PrintWriter ostatni = new PrintWriter("C:\\bot\\ostatni.txt");
@@ -1932,14 +1933,7 @@ public class Main extends Narzedzia{
         int j = 0;
         String num;
 
-        for (int i=0;i<500;i++) {
-            mail = news.nextLine();
-            Mirasbas.Newsletter(mail);
-            System.out.println(i);
-            System.out.println(mail);
-            ostatni.println(mail);
-            Koniec.RestarHujawei();
-        }
+
 
 //        for (int i=10;i<100;i++) {
 //            mail = samsung.nextLine();
@@ -2006,20 +2000,29 @@ public class Main extends Narzedzia{
 //            Koniec.Restart();
 //        }
 
-//        try {
+        for (int i=0;i<500;i++) {
+            mail2 = przepisy.nextLine();
+            Neworklead.Przepis(mail2);
+            System.out.println(i);
+            System.out.println(mail2);
+            Koniec.RestarHujawei();
+        }
+
+        try {
 
 
-//        }
-//
-//        catch (Exception e) {
-//            blad.println(e);
-//            blad.close();
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            wylacz();
-//        }
-//        wylacz();
+
+        }
+
+        catch (Exception e) {
+            blad.println(e);
+            blad.close();
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            wylacz();
+        }
+        wylacz();
 
     }
 }

@@ -3844,37 +3844,109 @@ public class Neworklead extends Narzedzia {
 
     }
 
+
     public static void Przepis(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         Random r = new Random();
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().window().maximize();
 //        try {
-        driver.get("https://neworklead.pl/zadanie/5bad31cb0472a15dcb546e905af7faf3/12dc8c5459704a2f362879474bffcfa2/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/edefbb40bb96a35b2bd3fe75dd5c4543/f37f4e53ed27c445e53be3f527668206/d654be842d14f320ad92ef039fb6aa4c");
 
-        Thread.sleep(4000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]"))));
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
         Thread.sleep(2000);
+        try {
+            PrzepisPopup(driver);
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
+            Thread.sleep(6000);
+        } catch (Exception e) {
+            driver.navigate().refresh();
+            Thread.sleep(5000);
 
-        clickXY(1191,496);
-        clickXY(1191,496);
-        clickXY(1191,496);
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"page\"]/div/div[2]/div/div/div/div/a")).click();
-        Thread.sleep(2000);
-
-        driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
-        driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
-        driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
-        driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
-        Thread.sleep(6000);
+            PrzepisPopup(driver);
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
+            Thread.sleep(6000);
+        }
+        driver.get("https://www.przepisy.pl/ebook/a11a744b-b4f3-477e-a89a-fed7f21b5d02/zimowa-kuchnia-roslinna-9-smacznych-przepisow-na-rozgrzewajace-dania-z-warzyw");
+        Thread.sleep(30000);
         driver.quit();
+
+
+//        //WP
+//        driver.get("http://poczta.wp.pl/");
+//        Thread.sleep(3000);
+//        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+//        boolean flaga = false;
+//        int m = 0;
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+//        Thread.sleep(5000);
+//        try {
+//            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+//        } catch (Exception e) {
+//
+//        }
+//        Thread.sleep(3000);
+//        driver.get("https://poczta.wp.pl/k/#/mails/?label=154");
+//        Thread.sleep(3000);
+//        while (!flaga) {
+//            try {
+//                driver.findElement(By.xpath("//*[text()='Przepisy.pl']")).click();
+//                flaga = true;
+//                Thread.sleep(4000);
+//                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr[4]/td[2]/div[1]/a")).click();
+//                Thread.sleep(10000);
+//            } catch (Exception e) {
+//                driver.navigate().refresh();
+//                Thread.sleep(10000);
+//            }
+//            m++;
+//            if (m > 5) {
+//                break;
+//            }
+//
+//        }
+//
+//        driver.quit();
 
 //        } catch (Exception e) {
 //            driver.quit();
 //        }
+
+    }
+
+    public static void PrzepisPopup(WebDriver driver) throws InterruptedException {
+        boolean flaga = false;
+        int m = 0;
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[@id=\"close-icon1\"]/img")).click();
+                Thread.sleep(1000);
+                flaga = true;
+
+            } catch (Exception e) {
+                Thread.sleep(2000);
+            }
+            m++;
+            if (m > 10)
+                break;
+        }
 
     }
 }
