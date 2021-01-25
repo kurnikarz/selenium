@@ -3769,51 +3769,68 @@ public class Neworklead extends Narzedzia {
             Thread.sleep(1000);
             driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
             Thread.sleep(2000);
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
-            Thread.sleep(6000);
-
-        //WP
-        driver.get("http://poczta.wp.pl/");
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
-        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
-        boolean flaga = false;
-        int m = 0;
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
-        Thread.sleep(5000);
-        try {
-            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
-        } catch (Exception e) {
-
-        }
-        Thread.sleep(3000);
-        driver.get("https://poczta.wp.pl/k/#/mails/?label=154");
-        Thread.sleep(3000);
-        while (!flaga) {
             try {
-                driver.findElement(By.xpath("//*[text()='Przepisy.pl']")).click();
-                flaga = true;
-                Thread.sleep(4000);
-                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr[4]/td[2]/div[1]/a")).click();
-                Thread.sleep(10000);
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
+                Thread.sleep(6000);
             } catch (Exception e) {
                 driver.navigate().refresh();
-                Thread.sleep(10000);
-            }
-            m++;
-            if (m > 5) {
-                break;
-            }
+                Thread.sleep(5000);
 
-        }
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
+                Thread.sleep(6000);
+            }
+            driver.get("https://www.przepisy.pl/ebook/a11a744b-b4f3-477e-a89a-fed7f21b5d02/zimowa-kuchnia-roslinna-9-smacznych-przepisow-na-rozgrzewajace-dania-z-warzyw");
+            Thread.sleep(15000);
+            driver.quit();
 
-        driver.quit();
+
+//        //WP
+//        driver.get("http://poczta.wp.pl/");
+//        Thread.sleep(3000);
+//        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+//        boolean flaga = false;
+//        int m = 0;
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+//        Thread.sleep(5000);
+//        try {
+//            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+//        } catch (Exception e) {
+//
+//        }
+//        Thread.sleep(3000);
+//        driver.get("https://poczta.wp.pl/k/#/mails/?label=154");
+//        Thread.sleep(3000);
+//        while (!flaga) {
+//            try {
+//                driver.findElement(By.xpath("//*[text()='Przepisy.pl']")).click();
+//                flaga = true;
+//                Thread.sleep(4000);
+//                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr[4]/td[2]/div[1]/a")).click();
+//                Thread.sleep(10000);
+//            } catch (Exception e) {
+//                driver.navigate().refresh();
+//                Thread.sleep(10000);
+//            }
+//            m++;
+//            if (m > 5) {
+//                break;
+//            }
+//
+//        }
+//
+//        driver.quit();
 
 //        } catch (Exception e) {
 //            driver.quit();

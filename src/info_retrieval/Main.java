@@ -2140,15 +2140,13 @@ public class Main extends Narzedzia {
 //            Koniec.Restart();
 //        }
 
-        for (int i=0;i<500;i++) {
-            mail = news.nextLine();
-            mail2 = przepisy.nextLine();
-            Neworklead.Przepis(mail2);
-            Mirasbas.Newsletter(mail);
-            System.out.println(i);
-            System.out.println(mail);
-            Koniec.Restart();
-        }
+//        for (int i=12;i<500;i++) {
+//            mail = news.nextLine();
+//            Mirasbas.Newsletter(mail);
+//            System.out.println(i);
+//            System.out.println(mail);
+//            Koniec.Restart();
+//        }
 
         try {
 
@@ -2163,7 +2161,7 @@ public class Main extends Narzedzia {
             wylacz();
         }
 
-
-        wylacz();
+Neworklead.Przepis("chmieleksa@wp.pl");
+//        wylacz();
     }
 }
