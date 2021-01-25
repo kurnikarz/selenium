@@ -3863,10 +3863,14 @@ public class Neworklead extends Narzedzia {
         try {
             PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
             Thread.sleep(1000);
+            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
             Thread.sleep(6000);
         } catch (Exception e) {
@@ -3875,10 +3879,14 @@ public class Neworklead extends Narzedzia {
 
             PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
             Thread.sleep(1000);
+            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
             Thread.sleep(6000);
         }
@@ -3932,21 +3940,21 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void PrzepisPopup(WebDriver driver) throws InterruptedException {
-        boolean flaga = false;
-        int m = 0;
-        while (!flaga) {
+//        boolean flaga = false;
+//        int m = 0;
+//        while (!flaga) {
             try {
                 driver.findElement(By.xpath("//*[@id=\"close-icon1\"]/img")).click();
                 Thread.sleep(1000);
-                flaga = true;
+//                flaga = true;
 
             } catch (Exception e) {
                 Thread.sleep(2000);
             }
-            m++;
-            if (m > 10)
-                break;
-        }
+//            m++;
+//            if (m > 10)
+//                break;
+//        }
 
     }
 }
