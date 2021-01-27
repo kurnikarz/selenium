@@ -2000,17 +2000,17 @@ public class Main extends Narzedzia{
 //            Koniec.Restart();
 //        }
 
-        for (int i=0;i<500;i++) {
-            mail2 = przepisy.nextLine();
-            Neworklead.Przepis(mail2);
-            System.out.println(i);
-            System.out.println(mail2);
-            Koniec.RestarHujawei();
-        }
+
 
         try {
 
-
+            for (int i=0;i<400;i++) {
+                mail2 = przepisy.nextLine();
+                Neworklead.Przepis(mail2);
+                System.out.println(i);
+                System.out.println(mail2);
+                Koniec.RestarHujawei();
+            }
 
         }
 
