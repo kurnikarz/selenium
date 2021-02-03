@@ -2149,8 +2149,13 @@ public class Main extends Narzedzia {
 //        }
 
         try {
-
-
+//            for (int i=0;i<200;i++) {
+//            mail = przepisy.nextLine();
+//            Neworklead.Przepis(mail);
+//            System.out.println(i);
+//            System.out.println(mail);
+//            Koniec.Restart();
+//        }
 
         } catch (Exception e) {
             blad.println(e);
@@ -2161,7 +2166,7 @@ public class Main extends Narzedzia {
             wylacz();
         }
 
-Neworklead.Przepis("chmieleksa@wp.pl");
-//        wylacz();
+        Neworklead.NestleTAR("zuzanna.goliat@wp.pl");
+        //wylacz();
     }
 }

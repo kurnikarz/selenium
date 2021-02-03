@@ -3588,7 +3588,7 @@ public class Neworklead extends Narzedzia {
         driver.manage().window().maximize();
 
         try {
-            driver.get("https://neworklead.pl/zadanie/4f461c0912a0f6bdd24df4c6d7419de3/efea389a3f1e8db7e1560f1a309e4ed0/d654be842d14f320ad92ef039fb6aa4c");
+            driver.get("https://neworklead.pl/zadanie/c712fd94c14e12b059c740c9617243cb/9544eb42d9111135e92358daad784fa4/d654be842d14f320ad92ef039fb6aa4c");
 //            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
             Thread.sleep(5000);
 
@@ -3607,14 +3607,14 @@ public class Neworklead extends Narzedzia {
 
     }
 
-    public static void NestleDC2(String mail) throws InterruptedException, AWTException {
+    public static void NestleDC(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
 //        try {
-            driver.get("https://neworklead.pl/zadanie/9dac22c989dd4f221c4e7ec95702616c/ad87a50f78865144f8d0939b6518e5da/d654be842d14f320ad92ef039fb6aa4c");
+            driver.get("https://neworklead.pl/zadanie/c3f43d3b9c03140910885736a7afb6b2/5400b8591301fd50389bda417a999b4f/d654be842d14f320ad92ef039fb6aa4c");
 //            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
             Thread.sleep(5000);
 
@@ -3759,39 +3759,47 @@ public class Neworklead extends Narzedzia {
     public static void Przepis(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Random r = new Random();
-        WebDriver driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 40);
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().window().maximize();
-//        try {
-            driver.get("https://neworklead.pl/zadanie/edefbb40bb96a35b2bd3fe75dd5c4543/f37f4e53ed27c445e53be3f527668206/d654be842d14f320ad92ef039fb6aa4c");
+        try {
+        driver.get("https://neworklead.pl/zadanie/edefbb40bb96a35b2bd3fe75dd5c4543/f37f4e53ed27c445e53be3f527668206/d654be842d14f320ad92ef039fb6aa4c");
 
-            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]"))));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
+        Thread.sleep(2000);
+        try {
+            PrzepisPopup(driver);
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+            PrzepisPopup(driver);
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
             Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
-            Thread.sleep(2000);
-            try {
-                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
-                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
-                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
-                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
-                Thread.sleep(1000);
-                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
-                Thread.sleep(6000);
-            } catch (Exception e) {
-                driver.navigate().refresh();
-                Thread.sleep(5000);
+            PrzepisPopup(driver);
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
+            Thread.sleep(6000);
+        } catch (Exception e) {
+            driver.navigate().refresh();
+            Thread.sleep(5000);
 
-                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
-                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
-                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
-                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
-                Thread.sleep(1000);
-                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
-                Thread.sleep(6000);
-            }
-            driver.get("https://www.przepisy.pl/ebook/a11a744b-b4f3-477e-a89a-fed7f21b5d02/zimowa-kuchnia-roslinna-9-smacznych-przepisow-na-rozgrzewajace-dania-z-warzyw");
-            Thread.sleep(15000);
-            driver.quit();
+            PrzepisPopup(driver);
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+            PrzepisPopup(driver);
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
+            Thread.sleep(1000);
+            PrzepisPopup(driver);
+            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
+            Thread.sleep(6000);
+        }
+        driver.get("https://www.przepisy.pl/ebook/a11a744b-b4f3-477e-a89a-fed7f21b5d02/zimowa-kuchnia-roslinna-9-smacznych-przepisow-na-rozgrzewajace-dania-z-warzyw");
+        Thread.sleep(30000);
+        driver.quit();
 
 
 //        //WP
@@ -3832,9 +3840,64 @@ public class Neworklead extends Narzedzia {
 //
 //        driver.quit();
 
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+    }
+
+    public static void PrzepisPopup(WebDriver driver) throws InterruptedException {
+        boolean flaga = false;
+        int m = 0;
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[@id=\"close-icon1\"]/img")).click();
+                Thread.sleep(1000);
+                flaga = true;
+
+            } catch (Exception e) {
+                Thread.sleep(2000);
+            }
+            m++;
+            if (m > 10)
+                break;
+        }
+
+    }
+
+    public static void Biedronka(String mail) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int dzien = r.nextInt(29);
+        int mies = r.nextInt(12 - 9 + 1) + 9;
+        String rok = "2020";
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        options.addExtensions(new File("E:\\bot\\captcha.crx"));
+        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        WebDriver driver = new ChromeDriver(options);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        driver.manage().window().maximize();
+
+        driver.get("https://neworklead.pl/zadanie/d46993d225d229228d86631cbd88337d/c72ca1f3ac3ae497c224f0d1135c6a94/d654be842d14f320ad92ef039fb6aa4c");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"cookies_accepted\"]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password1\"]")).sendKeys(mail+"V2");
+        driver.findElement(By.xpath("//*[@id=\"password2\"]")).sendKeys(mail+"V2");
+        Select dzie = new Select(driver.findElement(By.xpath("//*[@id=\"childBirthday1\"]")));
+        dzie.selectByIndex(dzien);
+        Select mie = new Select(driver.findElement(By.xpath("//*[@id=\"register\"]/div[3]/div[1]/div/div[1]/select[2]")));
+        mie.selectByIndex(mies);
+        Select ro = new Select(driver.findElement(By.xpath("//*[@id=\"register\"]/div[3]/div[1]/div/div[1]/select[3]")));
+        ro.selectByValue(rok);
+        driver.findElement(By.xpath("//*[@id=\"childFirstName1\"]")).sendKeys(genImieMes());
+        driver.findElement(By.xpath("//*[@id=\"register\"]/div[3]/div[2]/div[2]/div[1]/div[1]/label")).click();
+        driver.findElement(By.xpath("//*[@id=\"register\"]/div[5]/div/div[1]/div[1]/label")).click();
+        driver.findElement(By.xpath("//*[@id=\"register\"]/div[5]/div/div[2]/div[1]/label")).click();
+        driver.findElement(By.xpath("//*[@id=\"register\"]/div[5]/div/div[3]/div[1]/label")).click();
+        driver.findElement(By.xpath("//*[@id=\"register\"]/div[5]/div/div[4]/div[1]/label")).click();
 
     }
 }
