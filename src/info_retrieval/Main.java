@@ -2023,6 +2023,7 @@ public class Main extends Narzedzia {
         Scanner numEn = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\numEn.txt"));
         Scanner news = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\news.txt"));
         Scanner przepisy = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\przepisy.txt"));
+        Scanner biedronka = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\biedronka.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\everyInt.txt"));
@@ -2082,80 +2083,32 @@ public class Main extends Narzedzia {
         String num3;
         String miastEn;
         String koEn;
-
-//        for (int i=6;i<22;i++) {
-//            mail = lidl.nextLine();
-//            mail2 = pam.nextLine();
-//            mail3 = edison.nextLine();
-//            num = numer.nextLine();
-//            num2 = numPam.nextLine();
-//            miastoVee = miastoPam.nextLine();
-//            ulicaVee = ulicaPam.nextLine();
-//            kodVee = kodPam.nextLine();
-//            kodVee2 = kodPam2.nextLine();
-//            if (i<4) {
-//                Mirasbas.Pampers(mail2,ulicaVee,kodVee,kodVee2,miastoVee,num2);
-//                Thread.sleep(200000);
-//            }
-//            if (i<6) {
-//                Mirasbas.Edison(mail3,num);
-//            }
-//            Mirasbas.Newsletter(mail3);
-//            Dodatkowy.Lidl(mail);
-//            System.out.println(mail);
-//            System.out.println(i);
-//            Koniec.Restart();
-//        }
-
-//        dodajPostLepakNowy(profil[0],fb[0],"",post,0,62);
-
-//
-
-//        for (int i=4;i<12;i++) {
-//            mail = edison.nextLine();
-//            mail2 = pam.nextLine();
-//            num = numer.nextLine();
-//            num2 = numPam.nextLine();
-//            num3 = numEn.nextLine();
-//            miastoVee = miastoPam.nextLine();
-//            ulicaVee = ulicaPam.nextLine();
-//            kodVee = kodPam.nextLine();
-//            kodVee2 = kodPam2.nextLine();
-//            miastEn = miastoEn.nextLine();
-//            koEn = kodEn.nextLine();
-//
-//            Mirasbas.Newsletter(mail);
-//
-////            if (i<5) {
-////               Mirasbas.Pampers(mail2,ulicaVee,kodVee,kodVee2,miastoVee,num2);
-////                Thread.sleep(200000);
-////            }
-//            if (i<6) {
-//                Mirasbas.Edison(mail,num);
-//                Mirasbas.GData();
-//            }
-//            Mirasbas.Energia(mail,num3,koEn,miastEn);
-//            System.out.println(i);
-//            System.out.println(mail);
-//            Koniec.Restart();
-//        }
-
-//        for (int i=12;i<500;i++) {
-//            mail = news.nextLine();
-//            Mirasbas.Newsletter(mail);
-//            System.out.println(i);
-//            System.out.println(mail);
-//            Koniec.Restart();
-//        }
+        Dodatkowy.Enfamil("");
 
         try {
 //            for (int i=0;i<200;i++) {
-//            mail = przepisy.nextLine();
-//            Neworklead.Przepis(mail);
+//            mail = enfamil.nextLine();
+//            if (i<45)
+//                Ads.Enfamil(mail);
+//            else if (i<75)
+//                Neworklead.EnfamilHash(mail);
+//            else if (i<105)
+//                Neworklead.EnfamilMinus(mail);
 //            System.out.println(i);
 //            System.out.println(mail);
 //            Koniec.Restart();
 //        }
+//            int x = 90;
+//            for(int i = 0; i < x; i++) {
+//                mail = enfamil.nextLine();
+//                if(i == 0) { Neworklead.EnfamilHash(mail);}
+//                if(i == 1) { Neworklead.EnfamilMinus(mail); }
+//                if(i == 2) {
+//                    Ads.Enfamil(mail);
+//                    x -= 3;
+//                    i=-1;
+//                }
+//            }
 
         } catch (Exception e) {
             blad.println(e);
@@ -2166,7 +2119,8 @@ public class Main extends Narzedzia {
             wylacz();
         }
 
-        Neworklead.NestleTAR("zuzanna.goliat@wp.pl");
-        //wylacz();
+        
+
+//        wylacz();
     }
 }

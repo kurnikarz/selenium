@@ -287,4 +287,17 @@ public class Ads extends Narzedzia {
 
 
     }
+
+    public static void Enfamil(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+//        try {
+        driver.get("http://adsmaker.pl/action/2245/uid/26dd63a0ef72a51af97c0efa88357f15/ ");
+        Thread.sleep(5000);
+        Neworklead.Enfamil(driver,mail);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
 }
