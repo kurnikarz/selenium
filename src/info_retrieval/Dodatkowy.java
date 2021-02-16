@@ -3054,8 +3054,13 @@ public class Dodatkowy extends Narzedzia {
     public static void Enfamil2(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
 //        try {
         driver.get("http://www.dodatkowypieniadz.com/zadanie/ce557112f34b187454d7b6d117a76cb5/2b9c9691d7ae5a9f7bb4bca25050040e/201920950f63cee967982b759fde80b1");
+        wpiszHaslo();
+        clickXY(780,800);
+        Thread.sleep(6000);
+        Neworklead.Enfamil(driver,mail);
 //        Neworklead.Enfamil(driver,mail);
 //        } catch (Exception e) {
 //            driver.quit();
@@ -3065,9 +3070,13 @@ public class Dodatkowy extends Narzedzia {
     public static void Enfamil3(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
 //        try {
         driver.get("http://www.dodatkowypieniadz.com/zadanie/e96dde531833ca19a2ccfe959362303f/c93423b6b57689a6dfb94a5e898fb517/201920950f63cee967982b759fde80b1");
-//        Neworklead.Enfamil(driver,mail);
+        wpiszHaslo();
+        clickXY(780,800);
+        Thread.sleep(6000);
+        Neworklead.Enfamil(driver,mail);
 //        } catch (Exception e) {
 //            driver.quit();
 //        }

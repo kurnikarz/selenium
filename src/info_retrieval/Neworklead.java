@@ -3668,7 +3668,6 @@ public class Neworklead extends Narzedzia {
         int miesSpo = r.nextInt(2) + 1;
         String rokSpo = "2021";
         int dziecko = r.nextInt(5 - 3 + 1) + 3;
-        driver.manage().window().maximize();
         try {
 
             Thread.sleep(1000);
@@ -3700,6 +3699,116 @@ public class Neworklead extends Narzedzia {
         } catch (Exception e) {
             driver.quit();
         }
+
+    }
+
+    public static void Limango(WebDriver driver, String mail) throws InterruptedException, AWTException {
+
+        try {
+            driver.findElement(By.xpath("//*[@id=\"uc-btn-accept-banner\"]")).click();
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("//*[@id=\"register_form_email\"]")).sendKeys(mail);
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"reg\"]")).click();
+            Thread.sleep(7000);
+
+            //WP
+            driver.get("http://poczta.wp.pl/");
+            Thread.sleep(3000);
+            driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+            Thread.sleep(5000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+            } catch (Exception e) {
+                try {
+                    driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div/div/div/div[2]/div/div[6]/button")).click();
+                } catch (Exception f) {
+
+                }
+            }
+            Thread.sleep(3000);
+            boolean flaga = false;
+            int m = 0;
+            while (!flaga) {
+                try {
+                    driver.findElement(By.xpath("//*[text()='Sklep limango.pl']")).click();
+                    flaga = true;
+                    Thread.sleep(4000);
+                    driver.findElement(By.xpath("//*[text()='Potwierdzam rejestrację i chcę otrzymywać newsletter']")).click();
+                    Thread.sleep(5000);
+                    for (String winHandle : driver.getWindowHandles()) {
+                        driver.switchTo().window(winHandle);
+                    }
+                    Thread.sleep(1000);
+                    driver.findElement(By.xpath("//*[@id=\"change_password_form_password_first\"]")).sendKeys(mail + "V2");
+                    driver.findElement(By.xpath("//*[@id=\"change_password_form_password_second\"]")).sendKeys(mail + "V2");
+                    Thread.sleep(1000);
+                    driver.findElement(By.xpath("//*[@id=\"change_password_form_save\"]")).click();
+                    Thread.sleep(6000);
+                    driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div[3]/div/a")).click();
+                    Thread.sleep(5000);
+                    driver.quit();
+
+                } catch (Exception e) {
+                    driver.navigate().refresh();
+                    Thread.sleep(3000);
+                }
+                m++;
+                if (m > 5) {
+                    break;
+
+                }
+            }
+        } catch (Exception e) {
+            driver.quit();
+        }
+        driver.quit();
+
+    }
+
+    public static void LimangoL(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("https://neworklead.pl/zadanie/41edb1661b548ec263eb735233ec3784/97d0e08b0a52c064169487a145030883/d654be842d14f320ad92ef039fb6aa4c");
+        Thread.sleep(7000);
+        Limango(driver,mail);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void LimangoK(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("https://neworklead.pl/zadanie/5a2dce33b69925a702f91743ecbfe673/7e9d10aa4394a8af18bae04b68d70dce/d654be842d14f320ad92ef039fb6aa4c");
+        Thread.sleep(7000);
+        Limango(driver,mail);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void LimangoT(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("https://neworklead.pl/zadanie/bf69f0a5f21dc650b4809703971041b5/e2cb4fdfaba7850425e0bb1cdf03f70e/d654be842d14f320ad92ef039fb6aa4c");
+        Thread.sleep(7000);
+        Limango(driver,mail);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
 
@@ -3762,40 +3871,34 @@ public class Neworklead extends Narzedzia {
         WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().window().maximize();
         try {
-        driver.get("https://neworklead.pl/zadanie/edefbb40bb96a35b2bd3fe75dd5c4543/f37f4e53ed27c445e53be3f527668206/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/d0af7b08c8032fe5a1c875b24a7aae8b/b91e84dd2fdbd5aa6aa35e9779a205ab/d654be842d14f320ad92ef039fb6aa4c");
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]"))));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
         Thread.sleep(2000);
         try {
-            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
-            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
             Thread.sleep(1000);
-            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
             Thread.sleep(6000);
         } catch (Exception e) {
             driver.navigate().refresh();
             Thread.sleep(5000);
 
-            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
-            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
             Thread.sleep(1000);
-            PrzepisPopup(driver);
             driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
             Thread.sleep(6000);
         }
-        driver.get("https://www.przepisy.pl/ebook/a11a744b-b4f3-477e-a89a-fed7f21b5d02/zimowa-kuchnia-roslinna-9-smacznych-przepisow-na-rozgrzewajace-dania-z-warzyw");
-        Thread.sleep(30000);
+//        driver.get("https://www.przepisy.pl/ebook/a11a744b-b4f3-477e-a89a-fed7f21b5d02/zimowa-kuchnia-roslinna-9-smacznych-przepisow-na-rozgrzewajace-dania-z-warzyw");
+//        Thread.sleep(5000);
         driver.quit();
 
 
@@ -3840,6 +3943,90 @@ public class Neworklead extends Narzedzia {
         } catch (Exception e) {
             driver.quit();
         }
+
+    }
+
+    public static void PrzepisErr(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        driver.manage().window().maximize();
+//        try {
+            driver.get("https://neworklead.pl/zadanie/ab98c45593742f16d17679392bec87ef/b5cb98f6e2dce96c34d02e4390343979/d654be842d14f320ad92ef039fb6aa4c");
+
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]"))));
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
+                Thread.sleep(6000);
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(5000);
+
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
+                Thread.sleep(6000);
+            }
+//        driver.get("https://www.przepisy.pl/ebook/a11a744b-b4f3-477e-a89a-fed7f21b5d02/zimowa-kuchnia-roslinna-9-smacznych-przepisow-na-rozgrzewajace-dania-z-warzyw");
+//        Thread.sleep(5000);
+            driver.quit();
+
+
+//        //WP
+//        driver.get("http://poczta.wp.pl/");
+//        Thread.sleep(3000);
+//        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+//        boolean flaga = false;
+//        int m = 0;
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+//        Thread.sleep(5000);
+//        try {
+//            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+//        } catch (Exception e) {
+//
+//        }
+//        Thread.sleep(3000);
+//        driver.get("https://poczta.wp.pl/k/#/mails/?label=154");
+//        Thread.sleep(3000);
+//        while (!flaga) {
+//            try {
+//                driver.findElement(By.xpath("//*[text()='Przepisy.pl']")).click();
+//                flaga = true;
+//                Thread.sleep(4000);
+//                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr[4]/td[2]/div[1]/a")).click();
+//                Thread.sleep(10000);
+//            } catch (Exception e) {
+//                driver.navigate().refresh();
+//                Thread.sleep(10000);
+//            }
+//            m++;
+//            if (m > 5) {
+//                break;
+//            }
+//
+//        }
+//
+//        driver.quit();
+
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
 

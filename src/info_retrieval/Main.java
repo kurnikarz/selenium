@@ -2083,31 +2083,35 @@ public class Main extends Narzedzia {
         String num3;
         String miastEn;
         String koEn;
-        Dodatkowy.Enfamil("");
+        int x = 135;
+
+        for (int i=0;i<50;i++) {
+            mail = przepisy.nextLine();
+            Neworklead.PrzepisErr(mail);
+            System.out.println(i);
+            System.out.println(mail);
+            Koniec.Restart();
+        }
 
         try {
-//            for (int i=0;i<200;i++) {
-//            mail = enfamil.nextLine();
-//            if (i<45)
-//                Ads.Enfamil(mail);
-//            else if (i<75)
-//                Neworklead.EnfamilHash(mail);
-//            else if (i<105)
-//                Neworklead.EnfamilMinus(mail);
-//            System.out.println(i);
-//            System.out.println(mail);
-//            Koniec.Restart();
-//        }
-//            int x = 90;
 //            for(int i = 0; i < x; i++) {
 //                mail = enfamil.nextLine();
-//                if(i == 0) { Neworklead.EnfamilHash(mail);}
-//                if(i == 1) { Neworklead.EnfamilMinus(mail); }
+//                if(i == 0) { Dodatkowy.Enfamil(mail); }
+//                if(i == 1) { Dodatkowy.Enfamil2(mail);;}
 //                if(i == 2) {
-//                    Ads.Enfamil(mail);
+//                    Dodatkowy.Enfamil3(mail);;
 //                    x -= 3;
 //                    i=-1;
 //                }
+//                if (x > 65) {
+//                    mail2 = przepisy.nextLine();
+//                    Neworklead.Przepis(mail2);
+//                }
+//
+//                System.out.println(i);
+//                System.out.println(x);
+//                System.out.println(mail);
+//                Koniec.Restart();
 //            }
 
         } catch (Exception e) {
@@ -2119,8 +2123,6 @@ public class Main extends Narzedzia {
             wylacz();
         }
 
-        
-
-//        wylacz();
+        wylacz();
     }
 }
