@@ -3081,4 +3081,163 @@ public class Dodatkowy extends Narzedzia {
 //            driver.quit();
 //        }
     }
+
+    public static void Przepis(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        driver.manage().window().maximize();
+        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/4eb1ab9d57522dc171c49ca80cce92dd/c58a8de14c5333e6b53197eeeb4899ec/201920950f63cee967982b759fde80b1");
+            Thread.sleep(3000);
+            wpiszHaslo();
+            clickXY(784,600);
+            Thread.sleep(3000);
+            zmienKarte(driver);
+            Thread.sleep(1000);
+
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]"))));
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
+                Thread.sleep(6000);
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(5000);
+
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
+                Thread.sleep(6000);
+            }
+//        driver.get("https://www.przepisy.pl/ebook/a11a744b-b4f3-477e-a89a-fed7f21b5d02/zimowa-kuchnia-roslinna-9-smacznych-przepisow-na-rozgrzewajace-dania-z-warzyw");
+//        Thread.sleep(5000);
+            driver.quit();
+
+
+//        //WP
+//        driver.get("http://poczta.wp.pl/");
+//        Thread.sleep(3000);
+//        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+//        boolean flaga = false;
+//        int m = 0;
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+//        Thread.sleep(5000);
+//        try {
+//            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+//        } catch (Exception e) {
+//
+//        }
+//        Thread.sleep(3000);
+//        driver.get("https://poczta.wp.pl/k/#/mails/?label=154");
+//        Thread.sleep(3000);
+//        while (!flaga) {
+//            try {
+//                driver.findElement(By.xpath("//*[text()='Przepisy.pl']")).click();
+//                flaga = true;
+//                Thread.sleep(4000);
+//                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr[4]/td[2]/div[1]/a")).click();
+//                Thread.sleep(10000);
+//            } catch (Exception e) {
+//                driver.navigate().refresh();
+//                Thread.sleep(10000);
+//            }
+//            m++;
+//            if (m > 5) {
+//                break;
+//            }
+//
+//        }
+//
+//        driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+    }
+
+    public static void Bimago(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        driver.manage().window().maximize();
+        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/1ed3d54d5bb5bec5412fca954597a53f/57d37e05d41458e14788c9b1c4e47894/201920950f63cee967982b759fde80b1");
+            Thread.sleep(3000);
+            wpiszHaslo();
+            Thread.sleep(5000);
+            clickXY(776,602);
+            Thread.sleep(3000);
+            zmienKarte(driver);
+            Thread.sleep(1000);
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"notice-cookie-block\"]/div/div/button")))).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"newsletter-cms\"]")).sendKeys(mail);
+            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id=\"newsletter-cms-form-submit-button\"]")).click();
+            wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[@id=\"confirm-newsletter\"]/div[2]/h3"))));
+            Thread.sleep(1000);
+
+
+            //WP
+            driver.get("http://poczta.wp.pl/");
+            Thread.sleep(3000);
+            driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+            boolean flaga = false;
+            int m = 0;
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+            Thread.sleep(5000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+            } catch (Exception e) {
+
+            }
+            Thread.sleep(3000);
+            while (!flaga) {
+                try {
+                    driver.findElement(By.xpath("//*[text()='bimago. witaj']")).click();
+                    flaga = true;
+                    Thread.sleep(4000);
+                    driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr/td/div[2]/div/div/div/div/div/div/div/div/a/span")).click();
+                    Thread.sleep(5000);
+                } catch (Exception e) {
+                    driver.navigate().refresh();
+                    Thread.sleep(10000);
+                }
+                m++;
+                if (m > 8) {
+                    driver.quit();
+                    break;
+                }
+
+            }
+
+            driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+    }
 }

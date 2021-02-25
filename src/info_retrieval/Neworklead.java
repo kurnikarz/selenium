@@ -3870,36 +3870,37 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver(options);
         WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().window().maximize();
-        try {
-        driver.get("https://neworklead.pl/zadanie/d0af7b08c8032fe5a1c875b24a7aae8b/b91e84dd2fdbd5aa6aa35e9779a205ab/d654be842d14f320ad92ef039fb6aa4c");
+//        try {
+            driver.get("https://neworklead.pl/zadanie/79a67949498623c8f8b72e37e98f39d0/48181da20b09f6cc71935180d9d88a3a/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(3000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]"))));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
-        Thread.sleep(2000);
-        try {
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]"))));
             Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
-            Thread.sleep(6000);
-        } catch (Exception e) {
-            driver.navigate().refresh();
-            Thread.sleep(5000);
+            driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
+                Thread.sleep(6000);
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(5000);
 
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
-            Thread.sleep(6000);
-        }
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[1]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[2]/div[1]/input")).click();
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[1]")).sendKeys(genImieZen());
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/input[2]")).sendKeys(mail);
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("//*[@id=\"modalDownloadEbook\"]/div/div/div/div/div[2]/div[4]/a")).click();
+                Thread.sleep(6000);
+            }
 //        driver.get("https://www.przepisy.pl/ebook/a11a744b-b4f3-477e-a89a-fed7f21b5d02/zimowa-kuchnia-roslinna-9-smacznych-przepisow-na-rozgrzewajace-dania-z-warzyw");
 //        Thread.sleep(5000);
-        driver.quit();
+            driver.quit();
 
 
 //        //WP
@@ -3940,9 +3941,9 @@ public class Neworklead extends Narzedzia {
 //
 //        driver.quit();
 
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
 
@@ -4140,5 +4141,131 @@ public class Neworklead extends Narzedzia {
             }
         }
         driver.quit();
+    }
+
+    public static void Bimago(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        driver.manage().window().maximize();
+        try {
+            driver.get("https://neworklead.pl/zadanie/906fe69994e1ba214153e2b9c5605182/93033d2d66aea20664c209ed88618b5c/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(3000);
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"notice-cookie-block\"]/div/div/button")))).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"newsletter-cms\"]")).sendKeys(mail);
+            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id=\"newsletter-cms-form-submit-button\"]")).click();
+            wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[@id=\"confirm-newsletter\"]/div[2]/h3"))));
+            Thread.sleep(1000);
+
+
+        //WP
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        boolean flaga = false;
+        int m = 0;
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+
+        }
+        Thread.sleep(3000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='bimago. witaj']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr/td/div[2]/div/div/div/div/div/div/div/div/a/span")).click();
+                Thread.sleep(5000);
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 8) {
+                driver.quit();
+                break;
+            }
+
+        }
+
+        driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+    }
+
+    public static void BimagoKP(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        driver.manage().window().maximize();
+        try {
+            driver.get("https://neworklead.pl/zadanie/aa474217029d6d607d4abde4be7be179/3632a7fde07f1ef7af30ac4dbe2a1667/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(3000);
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"notice-cookie-block\"]/div/div/button")))).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"newsletter-cms\"]")).sendKeys(mail);
+            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id=\"newsletter-cms-form-submit-button\"]")).click();
+            wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[@id=\"confirm-newsletter\"]/div[2]/h3"))));
+            Thread.sleep(1000);
+
+
+        //WP
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        boolean flaga = false;
+        int m = 0;
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+
+        }
+        Thread.sleep(3000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='bimago. witaj']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr/td/div[2]/div/div/div/div/div/div/div/div/a/span")).click();
+                Thread.sleep(5000);
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 8) {
+                driver.quit();
+                break;
+            }
+
+        }
+
+        driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
     }
 }

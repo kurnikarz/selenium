@@ -802,7 +802,7 @@ public class Main extends Narzedzia {
         grupy[6] = "https://www.facebook.com/groups/inwestorzyiinwestycje/";
         grupy[7] = "https://www.facebook.com/groups/zarabiajwnecie/";    //blokada
         grupy[8] = "https://www.facebook.com/groups/410873349362708/";    //blok
-        grupy[9] = "https://www.facebook.com/groups/270165996779362/";	//blok
+        grupy[9] = "https://www.facebook.com/groups/270165996779362/";    //blok
         grupy[10] = "https://www.facebook.com/groups/389679508482812/";
         grupy[11] = "https://www.facebook.com/groups/531288753733140/";
         grupy[12] = "https://www.facebook.com/groups/pracawmlm/";
@@ -838,15 +838,15 @@ public class Main extends Narzedzia {
         grupy[44] = "https://www.facebook.com/groups/InternetowaPraca/";    //blok
         //===========================MOJE
         grupy[45] = "https://www.facebook.com/groups/1478777662423430/";
-        grupy[46] = "https://www.facebook.com/groups/1303356579748916/";	//blook
-        grupy[47] = "https://www.facebook.com/groups/794811483876118/";	//DYSKUSJA
+        grupy[46] = "https://www.facebook.com/groups/1303356579748916/";    //blook
+        grupy[47] = "https://www.facebook.com/groups/794811483876118/";    //DYSKUSJA
         grupy[48] = "https://www.facebook.com/groups/505718296215064/";
         grupy[49] = "https://www.facebook.com/groups/408111472862824/";    //blok
         grupy[50] = "https://www.facebook.com/groups/351384515297725/";    //blok
         grupy[51] = "https://www.facebook.com/groups/319514972052497/";
         grupy[52] = "https://www.facebook.com/groups/1932167580368778/";
         grupy[53] = "https://www.facebook.com/groups/1483378875270025/";
-        grupy[54] = "https://www.facebook.com/groups/1481353345440772/";	//DYSKUSJA
+        grupy[54] = "https://www.facebook.com/groups/1481353345440772/";    //DYSKUSJA
         grupy[55] = "https://www.facebook.com/groups/688755227963589/";
         grupy[56] = "https://www.facebook.com/groups/544747138926998/";    //blok
         grupy[57] = "https://www.facebook.com/groups/316265375706455/";    //blok
@@ -2024,6 +2024,7 @@ public class Main extends Narzedzia {
         Scanner news = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\news.txt"));
         Scanner przepisy = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\przepisy.txt"));
         Scanner biedronka = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\biedronka.txt"));
+        Scanner bimago = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\bimago.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\everyInt.txt"));
@@ -2083,17 +2084,26 @@ public class Main extends Narzedzia {
         String num3;
         String miastEn;
         String koEn;
-        int x = 135;
-
-        for (int i=0;i<50;i++) {
-            mail = przepisy.nextLine();
-            Neworklead.PrzepisErr(mail);
-            System.out.println(i);
-            System.out.println(mail);
-            Koniec.Restart();
-        }
+        int x = 150;
+        Koniec.Restart();
 
         try {
+            for (int i = 0; i < 40; i++) {
+                mail = przepisy.nextLine();
+                mail2 = bimago.nextLine();
+                mail3 = enfamil.nextLine();
+                Dodatkowy.Przepis(mail);
+                if (i<25)
+                    Dodatkowy.Enfamil3(mail3);
+                if (i<20)
+                    Dodatkowy.Bimago(mail2);
+                else if (i<40)
+                    Neworklead.Bimago(mail2);
+
+                System.out.println(i);
+                System.out.println(mail);
+                Koniec.Restart();
+            }
 //            for(int i = 0; i < x; i++) {
 //                mail = enfamil.nextLine();
 //                if(i == 0) { Dodatkowy.Enfamil(mail); }
@@ -2105,7 +2115,7 @@ public class Main extends Narzedzia {
 //                }
 //                if (x > 65) {
 //                    mail2 = przepisy.nextLine();
-//                    Neworklead.Przepis(mail2);
+//                    Neworklead.PrzepisErr(mail2);
 //                }
 //
 //                System.out.println(i);
