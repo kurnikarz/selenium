@@ -38,8 +38,8 @@ public class Szuracze extends Narzedzia{
                 driver.switchTo().window(winHandle);
             }
             Thread.sleep(1000);
-            Narzedzia.Arkadia(driver, mail);
-            Narzedzia.potwierdzArkadia(driver, mail);
+//            Narzedzia.Arkadia(driver, mail);
+//            Narzedzia.potwierdzArkadia(driver, mail);
             driver.quit();
 
         } catch (Exception e) {
@@ -75,7 +75,7 @@ public class Szuracze extends Narzedzia{
             }
             Thread.sleep(1000);
             Narzedzia.ArkadiaFF(driver, mail);
-            Narzedzia.potwierdzArkadia(driver, mail);
+//            Narzedzia.potwierdzArkadia(driver, mail);
             driver.quit();
 
         } catch (Exception e) {
@@ -144,7 +144,7 @@ public class Szuracze extends Narzedzia{
             }
             Thread.sleep(1000);
             Narzedzia.ArkadiaFF(driver, mail);
-            Narzedzia.potwierdzGaleria(driver, mail);
+//            Narzedzia.potwierdzGaleria(driver, mail);
             driver.quit();
 
         } catch (Exception e) {
@@ -182,7 +182,7 @@ public class Szuracze extends Narzedzia{
             }
             Thread.sleep(1000);
             Narzedzia.ArkadiaFF(driver, mail);
-            Narzedzia.potwierdzGaleria(driver, mail);
+//            Narzedzia.potwierdzGaleria(driver, mail);
             driver.quit();
 
         } catch (Exception e) {
@@ -218,7 +218,7 @@ public class Szuracze extends Narzedzia{
             }
             Thread.sleep(1000);
             Narzedzia.ArkadiaFF(driver, mail);
-            Narzedzia.potwierdzGaleria(driver, mail);
+//            Narzedzia.potwierdzGaleria(driver, mail);
             driver.quit();
         } catch (Exception e) {
             driver.quit();
@@ -255,7 +255,7 @@ public class Szuracze extends Narzedzia{
             }
             Thread.sleep(1000);
             Narzedzia.ArkadiaFF(driver, mail);
-            Narzedzia.potwierdzWroclawia(driver, mail);
+//            Narzedzia.potwierdzWroclawia(driver, mail);
             driver.quit();
         } catch (Exception e) {
             driver.quit();
@@ -290,7 +290,7 @@ public class Szuracze extends Narzedzia{
             }
             Thread.sleep(1000);
             Narzedzia.ArkadiaFF(driver, mail);
-            Narzedzia.potwierdzWroclawia(driver, mail);
+//            Narzedzia.potwierdzWroclawia(driver, mail);
             driver.quit();
         } catch (Exception e) {
             driver.quit();

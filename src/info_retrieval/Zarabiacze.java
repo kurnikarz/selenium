@@ -3109,7 +3109,7 @@ public class Zarabiacze extends Narzedzia {
                 driver.switchTo().window(winHandle);
             }
             Thread.sleep(1000);
-            Narzedzia.Arkadia(driver, mail);
+//            Narzedzia.Arkadia(driver, mail);
             //Narzedzia.potwierdzArkadia(driver,mail);
             driver.quit();
 
@@ -3577,5 +3577,34 @@ public class Zarabiacze extends Narzedzia {
             driver.quit();
         }
 
+    }
+
+    public static void Edison(String mail, String tel) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        String imie;
+        String nazwisko;
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        if (plec == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("https://zarabiacze.pl/action/969/66d8eb8b90df0ee2fe42c70f6140d3c9");
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//*[@id=\"Imię\"]")).sendKeys(imie);
+        driver.findElement(By.xpath("//*[@id=\"Nazwisko\"]")).sendKeys(nazwisko);
+        driver.findElement(By.xpath("//*[@id=\"Numer telefonu\"]")).sendKeys(tel);
+        driver.findElement(By.xpath("//*[@id=\"Email\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[3]/div/div/div/div/form/div/label[5]/label/input")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"top\"]/div[1]/div[2]/div[3]/div/div/div/div/form/div/input")).click();
+        Thread.sleep(7000);
+        driver.quit();
     }
 }

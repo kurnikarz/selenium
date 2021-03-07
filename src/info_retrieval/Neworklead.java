@@ -3870,8 +3870,8 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver(options);
         WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().window().maximize();
-//        try {
-            driver.get("https://neworklead.pl/zadanie/79a67949498623c8f8b72e37e98f39d0/48181da20b09f6cc71935180d9d88a3a/d654be842d14f320ad92ef039fb6aa4c");
+        try {
+            driver.get("https://neworklead.pl/zadanie/83f165af4cd69f2364f0e169014a25a6/6b52a4ff350425aa8743d00cacee0a82/d654be842d14f320ad92ef039fb6aa4c");
             Thread.sleep(3000);
 
             wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]"))));
@@ -3941,9 +3941,9 @@ public class Neworklead extends Narzedzia {
 //
 //        driver.quit();
 
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            driver.quit();
+        }
 
     }
 
@@ -4266,6 +4266,146 @@ public class Neworklead extends Narzedzia {
         } catch (Exception e) {
             driver.quit();
         }
+
+    }
+
+    public static void aArkadia(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
+        try {
+            driver.get("https://neworklead.pl/zadanie/cc189e7b0b86db415a95a68f483bad0a/cb1dbdccb80748fc1c6988d3aebd5901/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(10000);
+            Zmniejsz(4);
+            Thread.sleep(1000);
+            ScrollBy(driver,"5000");
+            Thread.sleep(1000);
+            clickXY(550,170);
+            Thread.sleep(10000);
+            zmienKarte(driver);
+            Narzedzia.ArkadiaFF(driver, mail);
+            driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+
+    }
+
+    public static void LKArkadia(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
+        try {
+            driver.get("https://neworklead.pl/zadanie/8ea06b31faee27c890b66d2ef6236208/175c97afc45483a39c89ee33a1feb28a/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(10000);
+            clickXY(955,570);
+            Thread.sleep(10000);
+            zmienKarte(driver);
+            Narzedzia.ArkadiaFF(driver, mail);
+            driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+
+    }
+
+    public static void gwArkadia(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
+        try {
+            driver.get("https://neworklead.pl/zadanie/c769fa15443d36ec2f5b3e04dbc38759/b397d47d64292331b465febd29700ed6/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(10000);
+            clickXY(1170,940);
+            Thread.sleep(10000);
+            zmienKarte(driver);
+            Narzedzia.Galeria(driver, mail);
+            driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+
+    }
+
+    public static void aGaleria(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
+        try {
+            driver.get("https://neworklead.pl/zadanie/fb26a328cc07f251b2b3d457094051c9/14b7141adc6b59ab9a0229bdbb75c8c4/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(10000);
+            Zmniejsz(4);
+            Thread.sleep(1000);
+            ScrollBy(driver,"5000");
+            Thread.sleep(1000);
+            clickXY(550,580);
+            Thread.sleep(10000);
+            zmienKarte(driver);
+            Narzedzia.Galeria(driver, mail);
+            driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+
+    }
+
+    public static void gwGaleria(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
+        try {
+            driver.get("https://neworklead.pl/zadanie/3f3fb2566a6c4a5cf6ac9e23736765e7/aff645a70ee6ccea31ee52d3d9ae5c2e/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(10000);
+            Zmniejsz(6);
+            Thread.sleep(1000);
+            clickXY(1030,875);
+            Thread.sleep(10000);
+            zmienKarte(driver);
+            Narzedzia.Galeria(driver, mail);
+            driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+
+    }
+
+    public static void aWroclawia(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
+        try {
+            driver.get("https://neworklead.pl/zadanie/b672094b0fa7af3d0a39468e9a2896e0/1fab9c05db744fa5f6bcc8346e4b3272/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(10000);
+            Zmniejsz(4);
+            Thread.sleep(1000);
+            ScrollBy(driver,"5000");
+            Thread.sleep(1000);
+            clickXY(550,800);
+            Thread.sleep(10000);
+            zmienKarte(driver);
+            Narzedzia.Galeria(driver, mail);
+            driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
 
     }
 }

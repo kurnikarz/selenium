@@ -1969,16 +1969,19 @@ public class Dodatkowy extends Narzedzia {
         WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().window().maximize();
 
-//        try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/bb26a2ed5033b95d971820220bc93a9f/1d4b786e931fc68d801be06c7dd7ecd5/201920950f63cee967982b759fde80b1");
+        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/3cd064c614323bca908d9c8b50b5a4a9/79d9519c1fb6ae9022ef25075a824180/201920950f63cee967982b759fde80b1");
 
             Thread.sleep(3000);
             wpiszHaslo();
-            clickXY(780, 640);
-            Thread.sleep(10000);
+            clickXY(780, 600);
+            Thread.sleep(5000);
             for (String winHandle : driver.getWindowHandles()) {
                 driver.switchTo().window(winHandle);
             }
+            Thread.sleep(1000);
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"CybotCookiebotDialog\"]/div/div[1]/button"))));
+            driver.findElement(By.xpath("//*[@id=\"CybotCookiebotDialog\"]/div/div[1]/button")).click();
             Thread.sleep(1000);
             ScrollBy(driver, "700");
             driver.switchTo().frame(0);
@@ -2028,9 +2031,9 @@ public class Dodatkowy extends Narzedzia {
 
             }
             driver.quit();
-//        } catch (Exception e){
-//            driver.quit();
-//        }
+        } catch (Exception e){
+            driver.quit();
+        }
 
 
 ///html/body/form/div[2]/div[2]/div[2]/div/div[1]/div[3]/input

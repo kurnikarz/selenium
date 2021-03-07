@@ -2002,7 +2002,6 @@ public class Main extends Narzedzia {
         Scanner ulicaVe = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\ulica.txt"));
         Scanner ulicaPam = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\ulicaPam.txt"));
         Scanner mailArke = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia.txt"));
-        Scanner mailArke1 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia1.txt"));
         Scanner limango = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\limango.txt"));
         Scanner travelist = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\travelist.txt"));
         Scanner pampers = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\pampers.txt"));
@@ -2068,7 +2067,6 @@ public class Main extends Narzedzia {
         odp.add("Wyjeżdżamy gdzieś do rodziny na święta"); //23
 
 
-        Random r = new Random();
         String mail2;
         String mail3;
         String post = "!!!\n" +
@@ -2084,45 +2082,49 @@ public class Main extends Narzedzia {
         String num3;
         String miastEn;
         String koEn;
-        int x = 150;
-        Koniec.Restart();
 
         try {
-            for (int i = 0; i < 40; i++) {
-                mail = przepisy.nextLine();
-                mail2 = bimago.nextLine();
-                mail3 = enfamil.nextLine();
-                Dodatkowy.Przepis(mail);
-                if (i<25)
-                    Dodatkowy.Enfamil3(mail3);
-                if (i<20)
-                    Dodatkowy.Bimago(mail2);
-                else if (i<40)
-                    Neworklead.Bimago(mail2);
 
-                System.out.println(i);
-                System.out.println(mail);
-                Koniec.Restart();
-            }
+//            int x = 60;
 //            for(int i = 0; i < x; i++) {
-//                mail = enfamil.nextLine();
-//                if(i == 0) { Dodatkowy.Enfamil(mail); }
-//                if(i == 1) { Dodatkowy.Enfamil2(mail);;}
+//                mail = mailArke.nextLine();
+//                if(i == 0) {
+//                    Neworklead.aArkadia(mail);
+//                    Koniec.Restart();
+//                    Narzedzia.potwierdzArkadia(mail);
+//                }
+//                if(i == 1) {
+//                    Neworklead.aGaleria(mail);
+//                    Koniec.Restart();
+//                    Narzedzia.potwierdzGaleria(mail);
+//                }
 //                if(i == 2) {
-//                    Dodatkowy.Enfamil3(mail);;
+//                    Neworklead.aWroclawia(mail);
+//                    Koniec.Restart();
+//                    Narzedzia.potwierdzWroclawia(mail);
 //                    x -= 3;
 //                    i=-1;
 //                }
-//                if (x > 65) {
-//                    mail2 = przepisy.nextLine();
-//                    Neworklead.PrzepisErr(mail2);
-//                }
-//
+//                System.out.println(mail);
 //                System.out.println(i);
 //                System.out.println(x);
-//                System.out.println(mail);
-//                Koniec.Restart();
 //            }
+
+            for (int i=6;i<=50;i++) {
+                mail = mailArke.nextLine();
+                if (i%2==0) {
+                    Neworklead.LKArkadia(mail);
+                    Koniec.Restart();
+                    Narzedzia.potwierdzArkadia(mail);
+                }
+                else {
+                    Neworklead.gwArkadia(mail);
+                    Koniec.Restart();
+                    Narzedzia.potwierdzArkadia(mail);
+                }
+                System.out.println(i);
+                System.out.println(mail);
+            }
 
         } catch (Exception e) {
             blad.println(e);
