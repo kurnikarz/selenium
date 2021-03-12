@@ -3043,41 +3043,55 @@ public class Dodatkowy extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-//        try {
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/2fde583c7b5390ceb0ca7b4d4b4fdb75/abb10d39cb38a9582b5e158ba8e012fc/201920950f63cee967982b759fde80b1");
+        try {
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/9635acafe27392db9125eea2b00cf43c/885fcc6b2c73ed7ff4a5983fbba3d39e/201920950f63cee967982b759fde80b1");
         wpiszHaslo();
-        clickXY(770,600);
+        clickXY(770,770);
         Thread.sleep(6000);
         Neworklead.Enfamil(driver,mail);
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            driver.quit();
+        }
     }
 
     public static void Enfamil2(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-//        try {
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/ce557112f34b187454d7b6d117a76cb5/2b9c9691d7ae5a9f7bb4bca25050040e/201920950f63cee967982b759fde80b1");
-        wpiszHaslo();
-        clickXY(780,800);
-        Thread.sleep(6000);
-        Neworklead.Enfamil(driver,mail);
-//        Neworklead.Enfamil(driver,mail);
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
-    }
+        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/b3d865837fd4f842b079f82c1ed41013/86cc368252368e6ccf5fbce2db9263ca/201920950f63cee967982b759fde80b1");
+            wpiszHaslo();
+            clickXY(780,600);
+            Thread.sleep(6000);
+            Neworklead.Enfamil(driver,mail);
+        } catch (Exception e) {
+            driver.quit();
+        }
+    }///html/body/div[1]/div[3]/div/div/form/div[2]/label[1]/span
 
     public static void Enfamil3(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 //        try {
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/e96dde531833ca19a2ccfe959362303f/c93423b6b57689a6dfb94a5e898fb517/201920950f63cee967982b759fde80b1");
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/d3e89f6a8be6f2b9d2168f349adea656/e9b94bc4cb1be7020724724230aba89d/201920950f63cee967982b759fde80b1");
         wpiszHaslo();
         clickXY(780,800);
+        Thread.sleep(6000);
+        Neworklead.Enfamil(driver,mail);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
+
+    public static void Enfamil32(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("http://www.dodatkowypieniadz.com/zadanie/4d9e602824538b43595f6c63db4b68a9/e23874773ebec80cfb4548f71082e5f1/201920950f63cee967982b759fde80b1");
+        wpiszHaslo();
+        clickXY(780,600);
         Thread.sleep(6000);
         Neworklead.Enfamil(driver,mail);
 //        } catch (Exception e) {
@@ -3184,7 +3198,7 @@ public class Dodatkowy extends Narzedzia {
         WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().window().maximize();
         try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/1ed3d54d5bb5bec5412fca954597a53f/57d37e05d41458e14788c9b1c4e47894/201920950f63cee967982b759fde80b1");
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/b3d865837fd4f842b079f82c1ed41013/86cc368252368e6ccf5fbce2db9263ca/201920950f63cee967982b759fde80b1");
             Thread.sleep(3000);
             wpiszHaslo();
             Thread.sleep(5000);

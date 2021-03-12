@@ -397,7 +397,7 @@ public class Mirasbas extends Narzedzia {
 //            driver.get("https://mirasbas.pl/zadanie/12/149ba14d0352f9133a371dca827148f1");
             driver.get("https://mirasbas.pl/zadanie/13/149ba14d0352f9133a371dca827148f1");
             Thread.sleep(10000);
-            Narzedzia.Galeria(driver, mail);
+            Narzedzia.Wroclavia(driver, mail);
 //            Narzedzia.potwierdzArkadia(driver,mail);
             driver.quit();
 

@@ -2001,7 +2001,10 @@ public class Main extends Narzedzia {
         Scanner miastoPam = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\miastoPam.txt"));
         Scanner ulicaVe = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\ulica.txt"));
         Scanner ulicaPam = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\ulicaPam.txt"));
-        Scanner mailArke = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia.txt"));
+        Scanner arkadia = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia.txt"));
+        Scanner arkadia2 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia2.txt"));
+        Scanner arkadia3 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia3.txt"));
+        Scanner arkadia4 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia4.txt"));
         Scanner limango = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\limango.txt"));
         Scanner travelist = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\travelist.txt"));
         Scanner pampers = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\pampers.txt"));
@@ -2082,48 +2085,116 @@ public class Main extends Narzedzia {
         String num3;
         String miastEn;
         String koEn;
-
+Koniec.Restart();
         try {
 
-//            int x = 60;
-//            for(int i = 0; i < x; i++) {
-//                mail = mailArke.nextLine();
-//                if(i == 0) {
-//                    Neworklead.aArkadia(mail);
-//                    Koniec.Restart();
-//                    Narzedzia.potwierdzArkadia(mail);
-//                }
-//                if(i == 1) {
-//                    Neworklead.aGaleria(mail);
-//                    Koniec.Restart();
-//                    Narzedzia.potwierdzGaleria(mail);
-//                }
-//                if(i == 2) {
-//                    Neworklead.aWroclawia(mail);
-//                    Koniec.Restart();
-//                    Narzedzia.potwierdzWroclawia(mail);
-//                    x -= 3;
-//                    i=-1;
-//                }
-//                System.out.println(mail);
-//                System.out.println(i);
-//                System.out.println(x);
-//            }
+            for (int i=1;i<90;i++) {
+                mail = enfamil.nextLine();
+                mail2 = przepisy.nextLine();
+                mail3 = bimago.nextLine();
+                if (i<12)
+                    Dodatkowy.Enfamil(mail);
+                else if (i<30)
+                    Dodatkowy.Enfamil32(mail);
+                else if (i<60)
+                    Dodatkowy.Enfamil3(mail);
+                else if (i<80)
+                    Neworklead.gwEnfamil(mail);
+                else if (i<90)
+                    Neworklead.EnfamilDBL(mail);
 
-            for (int i=6;i<=50;i++) {
-                mail = mailArke.nextLine();
-                if (i%2==0) {
-                    Neworklead.LKArkadia(mail);
-                    Koniec.Restart();
-                    Narzedzia.potwierdzArkadia(mail);
-                }
-                else {
-                    Neworklead.gwArkadia(mail);
-                    Koniec.Restart();
-                    Narzedzia.potwierdzArkadia(mail);
-                }
+                if (i<20)
+                    Dodatkowy.Bimago(mail3);
+                else if (i<55)
+                    Neworklead.BimagoK1D(mail3);
+                else
+                    Neworklead.BimagoK1M(mail3);
+
+                Neworklead.Przepis(mail2);
                 System.out.println(i);
                 System.out.println(mail);
+                Koniec.Restart();
+            }
+
+            int x = 45;
+            for(int i = 0; i < x; i++) {
+                mail = arkadia.nextLine();
+
+                if(i == 0) {
+                    Neworklead.Arkadia(mail);
+                }
+                if(i == 1) {
+                    Neworklead.Galeria(mail);
+                }
+                if(i == 2) {
+                    Neworklead.Wroclawia(mail);
+                    x -= 3;
+                    i=-1;
+                }
+                System.out.println(mail);
+                System.out.println(i);
+                System.out.println(x);
+                Koniec.Restart();
+            }
+
+            x = 45;
+            for(int i = 0; i < x; i++) {
+                mail = arkadia.nextLine();
+                if(i == 0) {
+                    Neworklead.aArkadia(mail);
+                }
+                if(i == 1) {
+                    Neworklead.aGaleria(mail);
+                }
+                if(i == 2) {
+                    Neworklead.aWroclawia(mail);
+                    x -= 3;
+                    i=-1;
+                }
+                System.out.println(mail);
+                System.out.println(i);
+                System.out.println(x);
+                Koniec.Restart();
+            }
+
+            x = 45;
+            for(int i = 0; i < x; i++) {
+                mail = arkadia.nextLine();
+                if(i == 0) {
+                    Neworklead.gwArkadia(mail);
+                }
+                if(i == 1) {
+                    Neworklead.gwGaleria(mail);
+                }
+                if(i == 2) {
+                    Neworklead.gwWroclawia(mail);
+                    x -= 3;
+                    i=-1;
+                }
+                System.out.println(mail);
+                System.out.println(i);
+                System.out.println(x);
+                Koniec.Restart();
+            }
+
+            x = 36;
+            for(int i = 0; i < x; i++) {
+                mail = arkadia.nextLine();
+                if(i == 0) {
+                    Mirasbas.Arkaida(mail);
+                }
+                if(i == 1) {
+                    Mirasbas.Galeria(mail);
+                }
+                if(i == 2) {
+                    Mirasbas.Wroclawia(mail);
+                    x -= 3;
+                    i=-1;
+                }
+                System.out.println(mail);
+                System.out.println(i);
+                System.out.println(x);
+                Koniec.Restart();
             }
 
         } catch (Exception e) {

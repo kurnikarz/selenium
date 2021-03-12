@@ -3812,53 +3812,31 @@ public class Neworklead extends Narzedzia {
 
     }
 
-    public static void EnfamilHash(String mail) throws InterruptedException, AWTException {
+    public static void EnfamilDBL(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-//        try {
-                driver.get("https://neworklead.pl/zadanie/ca722f29496e6d1aafbe3f2c1347a5b8/498bc50a6391d2d8b53f8ff99db9e318/d654be842d14f320ad92ef039fb6aa4c");
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        driver.manage().window().maximize();
+        try {
+                driver.get("https://neworklead.pl/zadanie/dcc054c2b5f4d19922fdc6bc0afda388/fbfe4712449bf5d565be39ce21d93692/d654be842d14f320ad92ef039fb6aa4c");
+                Thread.sleep(6000);
+                Neworklead.Enfamil(driver,mail);
+        } catch (Exception e) {
+            driver.quit();
+        }
 
     }
 
-    public static void EnfamilMinus(String mail) throws InterruptedException, AWTException {
+    public static void gwEnfamil(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-//        try {
-                driver.get("https://neworklead.pl/zadanie/d235d62b28d9771406758f0cc2d92eb5/be842f41c41f85f844a75dbe3635a1ae/d654be842d14f320ad92ef039fb6aa4c");
-                Thread.sleep(5000);
-                Neworklead.Enfamil(driver,mail);
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
-
-    }
-
-    public static void Enfamila(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-//        try {
-                driver.get("https://neworklead.pl/zadanie/536fbf963bdd1d91c1e1a78ae8f58bf0/89b775f35635ea7216330a22e8db0605/d654be842d14f320ad92ef039fb6aa4c");
-                Thread.sleep(5000);
-                Neworklead.Enfamil(driver,mail);
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
-
-    }
-
-    public static void Enfamil(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-//        try {
-                driver.get("https://neworklead.pl/zadanie/9aff3cbe04164a6fe56123502d4904b3/2aa77b715a5c2e1669ccbac71c8240ba/d654be842d14f320ad92ef039fb6aa4c");
-                Thread.sleep(5000);
-                Neworklead.Enfamil(driver,mail);
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        driver.manage().window().maximize();
+        try {
+            driver.get("https://neworklead.pl/zadanie/dcc054c2b5f4d19922fdc6bc0afda388/fbfe4712449bf5d565be39ce21d93692/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(6000);
+            Neworklead.Enfamil(driver,mail);
+        } catch (Exception e) {
+            driver.quit();
+        }
 
     }
 
@@ -4143,7 +4121,7 @@ public class Neworklead extends Narzedzia {
         driver.quit();
     }
 
-    public static void Bimago(String mail) throws InterruptedException, AWTException {
+    public static void BimagoK1D(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Random r = new Random();
         ChromeOptions options = new ChromeOptions();
@@ -4152,7 +4130,7 @@ public class Neworklead extends Narzedzia {
         WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().window().maximize();
         try {
-            driver.get("https://neworklead.pl/zadanie/906fe69994e1ba214153e2b9c5605182/93033d2d66aea20664c209ed88618b5c/d654be842d14f320ad92ef039fb6aa4c");
+            driver.get("https://neworklead.pl/zadanie/5be038ba6fff2dcd3cbff884f977cde6/96e04f69256bfa42997ae2867b3400cc/d654be842d14f320ad92ef039fb6aa4c");
             Thread.sleep(3000);
             wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"notice-cookie-block\"]/div/div/button")))).click();
             Thread.sleep(1000);
@@ -4206,7 +4184,7 @@ public class Neworklead extends Narzedzia {
 
     }
 
-    public static void BimagoKP(String mail) throws InterruptedException, AWTException {
+    public static void BimagoK1M(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         Random r = new Random();
         ChromeOptions options = new ChromeOptions();
@@ -4215,7 +4193,7 @@ public class Neworklead extends Narzedzia {
         WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().window().maximize();
         try {
-            driver.get("https://neworklead.pl/zadanie/aa474217029d6d607d4abde4be7be179/3632a7fde07f1ef7af30ac4dbe2a1667/d654be842d14f320ad92ef039fb6aa4c");
+            driver.get("https://neworklead.pl/zadanie/be0aaa442a7d45d187e29751ca1dff33/a11a83242fe517088b7dd5dca22cbb61/d654be842d14f320ad92ef039fb6aa4c");
             Thread.sleep(3000);
             wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"notice-cookie-block\"]/div/div/button")))).click();
             Thread.sleep(1000);
@@ -4266,6 +4244,25 @@ public class Neworklead extends Narzedzia {
         } catch (Exception e) {
             driver.quit();
         }
+
+    }
+
+    public static void Arkadia(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
+        try {
+            driver.get("https://neworklead.pl/zadanie/9a8b6a54d3f267a68766f611908e0e8d/1df2d88df7e754f871d1c3cea9b52b06/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(10000);
+            zmienKarte(driver);
+            Narzedzia.ArkadiaFF(driver, mail);
+            driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
 
     }
 
@@ -4281,7 +4278,7 @@ public class Neworklead extends Narzedzia {
             Thread.sleep(1000);
             ScrollBy(driver,"5000");
             Thread.sleep(1000);
-            clickXY(550,170);
+            clickXY(550,160);
             Thread.sleep(10000);
             zmienKarte(driver);
             Narzedzia.ArkadiaFF(driver, mail);
@@ -4324,6 +4321,25 @@ public class Neworklead extends Narzedzia {
             driver.get("https://neworklead.pl/zadanie/c769fa15443d36ec2f5b3e04dbc38759/b397d47d64292331b465febd29700ed6/d654be842d14f320ad92ef039fb6aa4c");
             Thread.sleep(10000);
             clickXY(1170,940);
+            Thread.sleep(10000);
+            zmienKarte(driver);
+            Narzedzia.ArkadiaFF(driver, mail);
+            driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+
+    }
+
+    public static void Galeria(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
+        try {
+            driver.get("https://neworklead.pl/zadanie/fe6ab074e3701a236d74acc457bd7ba9/00b3e347b6d8d7f5abcde1e26a7d352d/d654be842d14f320ad92ef039fb6aa4c");
             Thread.sleep(10000);
             zmienKarte(driver);
             Narzedzia.Galeria(driver, mail);
@@ -4384,6 +4400,25 @@ public class Neworklead extends Narzedzia {
 
     }
 
+    public static void Wroclawia(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
+        try {
+            driver.get("https://neworklead.pl/zadanie/98b1c49ab3b23e346c194126b9d8fa0d/9dcbd7938b87f2b58b5c938a1f9f37d9/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(10000);
+            zmienKarte(driver);
+            Narzedzia.Wroclavia(driver, mail);
+            driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+
+    }
+
     public static void aWroclawia(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -4399,7 +4434,30 @@ public class Neworklead extends Narzedzia {
             clickXY(550,800);
             Thread.sleep(10000);
             zmienKarte(driver);
-            Narzedzia.Galeria(driver, mail);
+            Narzedzia.Wroclavia(driver, mail);
+            driver.quit();
+
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+
+    }
+
+    public static void gwWroclawia(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
+        try {
+            driver.get("https://neworklead.pl/zadanie/15ac6d7508bb6d27aef3adfeb109310a/ef6572a38c25ed43f3cf10d65c0b1ab8/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(10000);
+            Zmniejsz(6);
+            Thread.sleep(1000);
+            clickXY(1030,670);
+            Thread.sleep(10000);
+            zmienKarte(driver);
+            Narzedzia.Wroclavia(driver, mail);
             driver.quit();
 
         } catch (Exception e) {
