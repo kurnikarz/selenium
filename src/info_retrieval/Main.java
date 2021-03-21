@@ -2085,117 +2085,135 @@ public class Main extends Narzedzia {
         String num3;
         String miastEn;
         String koEn;
-Koniec.Restart();
         try {
+//            Koniec.Restart();
+//            for (int i=47;i<90;i++) {
+////                mail = enfamil.nextLine();
+//                mail2 = przepisy.nextLine();
+//                mail3 = bimago.nextLine();
+//                if (i<19)
+////                    Dodatkowy.Enfamil(mail);
+////                else if (i<54)
+////                    Dodatkowy.Enfamil2(mail);
+////                else if (i<72)
+////                    Dodatkowy.Enfamil3(mail);
+////                else if (i<80)
+////                    Neworklead.gwEnfamil(mail);
+////                else if (i<90)
+////                    Neworklead.EnfamilDBL(mail);
+//
+//                if (i<20)
+//                    Dodatkowy.Bimago(mail3);
+//                else if (i<55)
+//                    Neworklead.BimagoK1D(mail3);
+//                else
+//                    Neworklead.BimagoK1M(mail3);
+//
+//                Neworklead.Przepis(mail2);
+//                System.out.println(i);
+//                System.out.println(mail2);
+//                Koniec.Restart();
+//            }
+//
+//            int x = 45;
+//            for(int i = 0; i < x; i++) {
+//                mail = arkadia.nextLine();
+//
+//                if(i == 0) {
+//                    Neworklead.Arkadia(mail);
+//                }
+//                if(i == 1) {
+//                    Neworklead.Galeria(mail);
+//                }
+//                if(i == 2) {
+//                    Neworklead.Wroclawia(mail);
+//                    x -= 3;
+//                    i=-1;
+//                }
+//                System.out.println(mail);
+//                System.out.println(i);
+//                System.out.println(x);
+//                Koniec.Restart();
+//            }
+//
+//            x = 45;
+//            for(int i = 0; i < x; i++) {
+//                mail = arkadia.nextLine();
+//                if(i == 0) {
+//                    Neworklead.aArkadia(mail);
+//                }
+//                if(i == 1) {
+//                    Neworklead.aGaleria(mail);
+//                }
+//                if(i == 2) {
+//                    Neworklead.aWroclawia(mail);
+//                    x -= 3;
+//                    i=-1;
+//                }
+//                System.out.println(mail);
+//                System.out.println(i);
+//                System.out.println(x);
+//                Koniec.Restart();
+//            }
+//
+//            x = 45;
+//            for(int i = 0; i < x; i++) {
+//                mail = arkadia.nextLine();
+//                if(i == 0) {
+//                    Neworklead.gwArkadia(mail);
+//                }
+//                if(i == 1) {
+//                    Neworklead.gwGaleria(mail);
+//                }
+//                if(i == 2) {
+//                    Neworklead.gwWroclawia(mail);
+//                    x -= 3;
+//                    i=-1;
+//                }
+//                System.out.println(mail);
+//                System.out.println(i);
+//                System.out.println(x);
+//                Koniec.Restart();
+//            }
+//
+//            x = 36;
+//            for(int i = 0; i < x; i++) {
+//                mail = arkadia.nextLine();
+//                if(i == 0) {
+//                    Mirasbas.Arkaida(mail);
+//                }
+//                if(i == 1) {
+//                    Mirasbas.Galeria(mail);
+//                }
+//                if(i == 2) {
+//                    Mirasbas.Wroclawia(mail);
+//                    x -= 3;
+//                    i=-1;
+//                }
+//                System.out.println(mail);
+//                System.out.println(i);
+//                System.out.println(x);
+//                Koniec.Restart();
+//            }
 
-            for (int i=1;i<90;i++) {
-                mail = enfamil.nextLine();
-                mail2 = przepisy.nextLine();
-                mail3 = bimago.nextLine();
-                if (i<12)
-                    Dodatkowy.Enfamil(mail);
-                else if (i<30)
-                    Dodatkowy.Enfamil32(mail);
-                else if (i<60)
-                    Dodatkowy.Enfamil3(mail);
-                else if (i<80)
-                    Neworklead.gwEnfamil(mail);
-                else if (i<90)
-                    Neworklead.EnfamilDBL(mail);
-
-                if (i<20)
-                    Dodatkowy.Bimago(mail3);
-                else if (i<55)
-                    Neworklead.BimagoK1D(mail3);
-                else
-                    Neworklead.BimagoK1M(mail3);
-
-                Neworklead.Przepis(mail2);
+            for (int i=0;i<130;i++) {
+                mail = bimago.nextLine();
+                mail3 = enfamil.nextLine();
+                if (i<24)
+                    Dodatkowy.Enfamil(mail3);
+                else if (i<37)
+                    Dodatkowy.Enfamil4(mail3);
+                else if (i<52)
+                    Neworklead.EnfamilDBL(mail3);
+                else if (i<67)
+                    Neworklead.gwEnfamil(mail3);
+                Neworklead.BimagoK1D(mail);
                 System.out.println(i);
                 System.out.println(mail);
                 Koniec.Restart();
             }
 
-            int x = 45;
-            for(int i = 0; i < x; i++) {
-                mail = arkadia.nextLine();
 
-                if(i == 0) {
-                    Neworklead.Arkadia(mail);
-                }
-                if(i == 1) {
-                    Neworklead.Galeria(mail);
-                }
-                if(i == 2) {
-                    Neworklead.Wroclawia(mail);
-                    x -= 3;
-                    i=-1;
-                }
-                System.out.println(mail);
-                System.out.println(i);
-                System.out.println(x);
-                Koniec.Restart();
-            }
-
-            x = 45;
-            for(int i = 0; i < x; i++) {
-                mail = arkadia.nextLine();
-                if(i == 0) {
-                    Neworklead.aArkadia(mail);
-                }
-                if(i == 1) {
-                    Neworklead.aGaleria(mail);
-                }
-                if(i == 2) {
-                    Neworklead.aWroclawia(mail);
-                    x -= 3;
-                    i=-1;
-                }
-                System.out.println(mail);
-                System.out.println(i);
-                System.out.println(x);
-                Koniec.Restart();
-            }
-
-            x = 45;
-            for(int i = 0; i < x; i++) {
-                mail = arkadia.nextLine();
-                if(i == 0) {
-                    Neworklead.gwArkadia(mail);
-                }
-                if(i == 1) {
-                    Neworklead.gwGaleria(mail);
-                }
-                if(i == 2) {
-                    Neworklead.gwWroclawia(mail);
-                    x -= 3;
-                    i=-1;
-                }
-                System.out.println(mail);
-                System.out.println(i);
-                System.out.println(x);
-                Koniec.Restart();
-            }
-
-            x = 36;
-            for(int i = 0; i < x; i++) {
-                mail = arkadia.nextLine();
-                if(i == 0) {
-                    Mirasbas.Arkaida(mail);
-                }
-                if(i == 1) {
-                    Mirasbas.Galeria(mail);
-                }
-                if(i == 2) {
-                    Mirasbas.Wroclawia(mail);
-                    x -= 3;
-                    i=-1;
-                }
-                System.out.println(mail);
-                System.out.println(i);
-                System.out.println(x);
-                Koniec.Restart();
-            }
 
         } catch (Exception e) {
             blad.println(e);
@@ -2205,6 +2223,7 @@ Koniec.Restart();
             System.out.println("=============ERROR===============");
             wylacz();
         }
+
 
         wylacz();
     }
