@@ -800,40 +800,40 @@ public class Main extends Narzedzia {
         grupy[4] = "https://www.facebook.com/groups/pasywnezarabianie/";
         grupy[5] = "https://www.facebook.com/groups/181436575590022/";
         grupy[6] = "https://www.facebook.com/groups/inwestorzyiinwestycje/";
-        grupy[7] = "https://www.facebook.com/groups/zarabiajwnecie/";    //blokada
-        grupy[8] = "https://www.facebook.com/groups/410873349362708/";    //blok
-        grupy[9] = "https://www.facebook.com/groups/270165996779362/";    //blok
+        grupy[7] = "https://www.facebook.com/groups/1506859882734317/";
+        grupy[8] = "https://www.facebook.com/groups/1774831656147098/";
+        grupy[9] = "https://www.facebook.com/groups/995656560478126/";
         grupy[10] = "https://www.facebook.com/groups/389679508482812/";
         grupy[11] = "https://www.facebook.com/groups/531288753733140/";
         grupy[12] = "https://www.facebook.com/groups/pracawmlm/";
-        grupy[13] = "https://www.facebook.com/groups/168679147406607/";    //blok
-        grupy[14] = "https://www.facebook.com/groups/yeahcoachpl/";    //blok
+        grupy[13] = "https://www.facebook.com/groups/331639100303519/";
+        grupy[14] = "https://www.facebook.com/groups/2765218070379966/";
         grupy[15] = "https://www.facebook.com/groups/381018519002791/";
         grupy[16] = "https://www.facebook.com/groups/pracaonline24/";
-        grupy[17] = "https://www.facebook.com/groups/pieniadzezinternetu/";    //blok
+        grupy[17] = "https://www.facebook.com/groups/301376787777395/";
         grupy[18] = "https://www.facebook.com/groups/210289873049520/";
         grupy[19] = "https://www.facebook.com/groups/pracazarabianie/";
         grupy[20] = "https://www.facebook.com/groups/zarabianieinternet/";
         grupy[21] = "https://www.facebook.com/groups/519298171753298/";
         grupy[22] = "https://www.facebook.com/groups/PracaBezSzefa/";
         grupy[23] = "https://www.facebook.com/groups/934587176605807/";
-        grupy[24] = "https://www.facebook.com/groups/920488634709636/";    //blok
-        grupy[25] = "https://www.facebook.com/groups/1895279054050554/";    //blok
+        grupy[24] = "https://www.facebook.com/groups/341616220426009/";
+        grupy[25] = "https://www.facebook.com/groups/OgloszeniaBiznesowe/";
         grupy[26] = "https://www.facebook.com/groups/zarabianie.praca.internet/";
         grupy[27] = "https://www.facebook.com/groups/1622951457992792/";
         grupy[28] = "https://www.facebook.com/groups/1781838958705367/";
         grupy[29] = "https://www.facebook.com/groups/172681430256680/";
-        grupy[30] = "https://www.facebook.com/groups/zarabianie.praca.biznes.online/"; //TU
+        grupy[30] = "https://www.facebook.com/groups/zarabianie.praca.biznes.online/";
         grupy[31] = "https://www.facebook.com/groups/ZarabianiePrzezInternet/";
         grupy[32] = "https://www.facebook.com/groups/kryptorodzina/";
-        grupy[33] = "https://www.facebook.com/groups/MLM.w.POLSCE/";    //blok
-        grupy[34] = "https://www.facebook.com/groups/932562780136151/";    //blok
-        grupy[35] = "https://www.facebook.com/groups/zarabianiewinternecie24h/";    //blok
+        grupy[33] = "https://www.facebook.com/groups/272308946449620/";
+        grupy[34] = "https://www.facebook.com/groups/265129344197314/";
+        grupy[35] = "https://www.facebook.com/groups/1855184641179253/";
         grupy[36] = "https://www.facebook.com/groups/114051159156931/";
         grupy[37] = "https://www.facebook.com/groups/4139968925/";
         grupy[38] = "https://www.facebook.com/groups/322192781615024/";
-        grupy[39] = "https://www.facebook.com/groups/636328313209736/";    //blok
-        grupy[42] = "https://www.facebook.com/groups/470108560157347/";    //blok
+        grupy[39] = "https://www.facebook.com/groups/173291136529678/";
+        grupy[42] = "https://www.facebook.com/groups/632583150769729/";
         grupy[43] = "https://www.facebook.com/groups/316265375706455/";    //blok
         grupy[44] = "https://www.facebook.com/groups/InternetowaPraca/";    //blok
         //===========================MOJE
@@ -847,14 +847,14 @@ public class Main extends Narzedzia {
         grupy[52] = "https://www.facebook.com/groups/1932167580368778/";
         grupy[53] = "https://www.facebook.com/groups/1483378875270025/";
         grupy[54] = "https://www.facebook.com/groups/1481353345440772/";    //DYSKUSJA
-        grupy[55] = "https://www.facebook.com/groups/688755227963589/";
+        grupy[55] = "https://www.facebook.com/groups/688755227963589/";		//APCEKPTACJA
         grupy[56] = "https://www.facebook.com/groups/544747138926998/";    //blok
         grupy[57] = "https://www.facebook.com/groups/316265375706455/";    //blok
         grupy[58] = "https://www.facebook.com/groups/InternetowaPraca/";    //blok
         grupy[59] = "https://www.facebook.com/groups/315509495130995/";
         grupy[60] = "https://www.facebook.com/groups/298670413999878/";
-        grupy[61] = "https://www.facebook.com/groups/2935674523171777/";
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        grupy[61] = "https://www.facebook.com/groups/2935674523171777/";	//AKCEPTACJA
+        JavascriptExecutor js = (JavascriptExecutor) driver;	
         driver.manage().window().maximize();
         driver.get("https://pl-pl.facebook.com/login/");
         Thread.sleep(3000);
@@ -2027,6 +2027,7 @@ public class Main extends Narzedzia {
         Scanner przepisy = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\przepisy.txt"));
         Scanner biedronka = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\biedronka.txt"));
         Scanner bimago = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\bimago.txt"));
+        Scanner bimagoAds = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\bimagoAds.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\everyInt.txt"));
@@ -2072,146 +2073,48 @@ public class Main extends Narzedzia {
 
         String mail2;
         String mail3;
-        String post = "!!!\n" +
-                "Jeżeli w tych ciężkich czasach ktoś szuka pracy online to polecam pana z filmu poniżej i biznes oparty na sprzedaży gier cyfrowych na portalach typu Alelgro, Ebay. W skrócie kupujemy jedną grę wideo w postaci kodu za 20zł i sprzedajemy cały czas, wielokrotnie generując stały zysk! Proste jak budowa cepa i wszystko wysyłane mailowo do klienta. Więcej informacji i opis jak wszystko wygląda oraz kontakt do autora poradnika macie w filmie poniżej. \n" +
+        String post = "Szukasz pracy zdalnej? Masz dosyć Avonow,polecania dziwacznych produktów,liderowania i calej maści tego badziewia?\n" +
+                "Polecam Pana Miroslawa Klos i jego biznes oparty na handlu grami wideo w wersji cyfrowej. Na portalach jak Allegro Ebay etc.\n" +
+                "W skrócie jedną grę kupujemy za 20zł i sprzedajemy cały czas generując stały zysk. A wszystko wysyłamy mailowo!\n" +
+                "Nic sami nie kupujemy dopóki sami nie sprzedamy! Można działać na całym świecie i dowolnym portalu aukcyjnym.\n" +
+                "Biznes idealny na obecne czasy. \n" +
+                "W filmie poniżej kontakt do autora jak i jego szkolenie jak to wszystko wygląda od podstaw.\n" +
+                "Polecam serdecznie mega dawka wiedzy!\n" +
                 "\n" +
-                "https://youtu.be/5sKRKhfU0kQ";
+                "https://youtu.be/KTmkeuK3jJI";
 
-        String fb[] = {"natalia.woszczylo@o2.pl"};
-        String[] profil = {"193"};
+        String fb[] = {"natalia.woszczylo@o2.pl","dumcio.97@wp.pl"};
+        String[] profil = {"193","113"};
         int j = 6;
         String num;
         String num2;
         String num3;
         String miastEn;
         String koEn;
-        try {
-//            Koniec.Restart();
-//            for (int i=47;i<90;i++) {
-////                mail = enfamil.nextLine();
-//                mail2 = przepisy.nextLine();
-//                mail3 = bimago.nextLine();
-//                if (i<19)
-////                    Dodatkowy.Enfamil(mail);
-////                else if (i<54)
-////                    Dodatkowy.Enfamil2(mail);
-////                else if (i<72)
-////                    Dodatkowy.Enfamil3(mail);
-////                else if (i<80)
-////                    Neworklead.gwEnfamil(mail);
-////                else if (i<90)
-////                    Neworklead.EnfamilDBL(mail);
-//
-//                if (i<20)
-//                    Dodatkowy.Bimago(mail3);
-//                else if (i<55)
-//                    Neworklead.BimagoK1D(mail3);
-//                else
-//                    Neworklead.BimagoK1M(mail3);
-//
-//                Neworklead.Przepis(mail2);
-//                System.out.println(i);
-//                System.out.println(mail2);
-//                Koniec.Restart();
-//            }
-//
-//            int x = 45;
-//            for(int i = 0; i < x; i++) {
-//                mail = arkadia.nextLine();
-//
-//                if(i == 0) {
-//                    Neworklead.Arkadia(mail);
-//                }
-//                if(i == 1) {
-//                    Neworklead.Galeria(mail);
-//                }
-//                if(i == 2) {
-//                    Neworklead.Wroclawia(mail);
-//                    x -= 3;
-//                    i=-1;
-//                }
-//                System.out.println(mail);
-//                System.out.println(i);
-//                System.out.println(x);
-//                Koniec.Restart();
-//            }
-//
-//            x = 45;
-//            for(int i = 0; i < x; i++) {
-//                mail = arkadia.nextLine();
-//                if(i == 0) {
-//                    Neworklead.aArkadia(mail);
-//                }
-//                if(i == 1) {
-//                    Neworklead.aGaleria(mail);
-//                }
-//                if(i == 2) {
-//                    Neworklead.aWroclawia(mail);
-//                    x -= 3;
-//                    i=-1;
-//                }
-//                System.out.println(mail);
-//                System.out.println(i);
-//                System.out.println(x);
-//                Koniec.Restart();
-//            }
-//
-//            x = 45;
-//            for(int i = 0; i < x; i++) {
-//                mail = arkadia.nextLine();
-//                if(i == 0) {
-//                    Neworklead.gwArkadia(mail);
-//                }
-//                if(i == 1) {
-//                    Neworklead.gwGaleria(mail);
-//                }
-//                if(i == 2) {
-//                    Neworklead.gwWroclawia(mail);
-//                    x -= 3;
-//                    i=-1;
-//                }
-//                System.out.println(mail);
-//                System.out.println(i);
-//                System.out.println(x);
-//                Koniec.Restart();
-//            }
-//
-//            x = 36;
-//            for(int i = 0; i < x; i++) {
-//                mail = arkadia.nextLine();
-//                if(i == 0) {
-//                    Mirasbas.Arkaida(mail);
-//                }
-//                if(i == 1) {
-//                    Mirasbas.Galeria(mail);
-//                }
-//                if(i == 2) {
-//                    Mirasbas.Wroclawia(mail);
-//                    x -= 3;
-//                    i=-1;
-//                }
-//                System.out.println(mail);
-//                System.out.println(i);
-//                System.out.println(x);
-//                Koniec.Restart();
-//            }
 
-            for (int i=0;i<130;i++) {
-                mail = bimago.nextLine();
-                mail3 = enfamil.nextLine();
-                if (i<24)
-                    Dodatkowy.Enfamil(mail3);
-                else if (i<37)
-                    Dodatkowy.Enfamil4(mail3);
-                else if (i<52)
-                    Neworklead.EnfamilDBL(mail3);
-                else if (i<67)
-                    Neworklead.gwEnfamil(mail3);
-                Neworklead.BimagoK1D(mail);
-                System.out.println(i);
-                System.out.println(mail);
-                Koniec.Restart();
-            }
+
+        try {
+
+//            for (int i=0;i<100;i++) {
+//                mail = bimago.nextLine();
+//                mail3 = enfamil.nextLine();
+//                if (i<24)
+//                    Dodatkowy.Enfamil(mail3);
+//                else if (i<37)
+//                    Dodatkowy.Enfamil4(mail3);
+//                else if (i<47)
+//                    Neworklead.EnfamilDBL(mail3);
+//                else if (i<57)
+//                    Neworklead.gwEnfamil(mail3);
+//
+//                if (i<30)
+//                    Dodatkowy.Bimago(mail);
+//                else
+//                    Neworklead.BimagoK1D(mail);
+//                System.out.println(i);
+//                System.out.println(mail);
+//                Koniec.Restart();
+//            }
 
 
 
@@ -2224,7 +2127,6 @@ public class Main extends Narzedzia {
             wylacz();
         }
 
-
-        wylacz();
+//        wylacz();
     }
 }

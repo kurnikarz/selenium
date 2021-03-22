@@ -300,4 +300,29 @@ public class Ads extends Narzedzia {
 //        }
 
     }
+
+    public static void BimagoAdp(String mail) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("http://adsmaker.pl/action/2358/uid/26dd63a0ef72a51af97c0efa88357f15/");
+        Thread.sleep(2000);
+        driver.get("https://profil.wp.pl/login.html?zaloguj=poczta");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+
+        }
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[text()='bimago']")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr/td/div[8]/div/div/div/div/div/div/div/a/span")).click();
+    }
 }

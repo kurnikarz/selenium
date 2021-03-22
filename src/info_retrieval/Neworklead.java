@@ -3668,7 +3668,7 @@ public class Neworklead extends Narzedzia {
         int miesSpo = r.nextInt(2) + 1;
         String rokSpo = "2021";
         int dziecko = r.nextInt(5 - 3 + 1) + 3;
-        try {
+//        try {
 
             Thread.sleep(1000);
             zmienKarte(driver);
@@ -3696,9 +3696,9 @@ public class Neworklead extends Narzedzia {
             driver.findElement(By.xpath("//*[@id=\"edit-submit\"]")).click();
             Thread.sleep(6000);
             driver.quit();
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
 
@@ -3830,13 +3830,13 @@ public class Neworklead extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        try {
-            driver.get("https://neworklead.pl/zadanie/dcc054c2b5f4d19922fdc6bc0afda388/fbfe4712449bf5d565be39ce21d93692/d654be842d14f320ad92ef039fb6aa4c");
+//        try {
+            driver.get("https://neworklead.pl/zadanie/bef161d4f91f846dfb54bae7edf52575/f15208f4c18be321749c7430afaeb9cb/d654be842d14f320ad92ef039fb6aa4c");
             Thread.sleep(6000);
             Neworklead.Enfamil(driver,mail);
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
 
