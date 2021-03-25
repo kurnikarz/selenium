@@ -404,8 +404,6 @@ public class Mirasbas extends Narzedzia {
         } catch (Exception e) {
             driver.quit();
         }
-
-
     }
 
     public static void VeePee(String mail, String ulica, String miasto, String kod) throws InterruptedException, AWTException {
@@ -805,5 +803,122 @@ public class Mirasbas extends Narzedzia {
         driver.findElement(By.xpath("/html/body/main/section/div/div/div/div/section[2]/div[2]/div[2]/div[1]/div[2]/label/span/span")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/main/section/div/div/div/div/section[2]/div[6]/div/button[2]")).click();
+    }
+
+    public static void Sky() throws InterruptedException, AWTException {
+        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        String[] panstwa = {"Irlandia","Wielka Brytania","Norwegia","Szwecja","Finlandia","Portugalia","Hiszpania","Andora","Francja","Holandia","Belgia","Luxemburg","Niemcy","Dania","Szwajcaria","Lichtenstein","Włochy","Monako","San Marino","Czechy","Słowacja","Austria","Węgry","Słowenia","Chorwacja","Albania","Macedonia","Bułgaria","Grecja","Estonia","Łotwa","Litwa","Białoruś","Ukraina","Rosja","Islandia"};
+        Random r = new Random();
+        int i = r.nextInt(panstwa.length-1);
+        int dzien = r.nextInt(28);
+        Robot robot = new Robot();
+        WebDriver driver = new FirefoxDriver();
+        driver.manage().window().maximize();
+
+        driver.get("https://mirasbas.pl/zadanie/5/149ba14d0352f9133a371dca827148f1");
+        Thread.sleep(6000);
+        driver.findElement(By.xpath("/html/body/div/div[1]/div[1]/div/div[2]/button[1]")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"fsc-destination-search\"]")).clear();
+        Thread.sleep(500);
+        driver.findElement(By.xpath("//*[@id=\"fsc-destination-search\"]")).sendKeys(panstwa[i]);
+        Thread.sleep(3000);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        Thread.sleep(2000);
+        robot.keyPress(KeyEvent.VK_TAB);
+        Thread.sleep(1000);
+//        switch (dzien) {
+//            case 0:
+//                clickXY(890,834);
+//                break;
+//            case 1:
+//                clickXY(930,834);
+//                break;
+//            case 2:
+//                clickXY(973,834);
+//                break;
+//            case 3:
+//                clickXY(1017,834);
+//                break;
+//            case 4:
+//                clickXY(1060,834);
+//                break;
+//            case 5:
+//                clickXY(1100,834);
+//                break;
+//            case 6:
+//                clickXY(1143,834);
+//                break;
+//            //===============================
+//            case 7:
+//                clickXY(890,878);
+//                break;
+//            case 8:
+//                clickXY(930,878);
+//                break;
+//            case 9:
+//                clickXY(973,878);
+//                break;
+//            case 10:
+//                clickXY(1017,878);
+//                break;
+//            case 11:
+//                clickXY(1060,878);
+//                break;
+//            case 12:
+//                clickXY(1100,878);
+//                break;
+//            case 13:
+//                clickXY(1143,878);
+//                break;
+//            //=================================
+//            case 14:
+//                clickXY(890,920);
+//                break;
+//            case 15:
+//                clickXY(930,920);
+//                break;
+//            case 16:
+//                clickXY(973,920);
+//                break;
+//            case 17:
+//                clickXY(1017,920);
+//                break;
+//            case 18:
+//                clickXY(1060,920);
+//                break;
+//            case 19:
+//                clickXY(1100,920);
+//                break;
+//            case 20:
+//                clickXY(1143,920);
+//                break;
+//            //====================================
+//            case 21:
+//                clickXY(890,962);
+//                break;
+//            case 22:
+//                clickXY(930,962);
+//                break;
+//            case 24:
+//                clickXY(973,962);
+//                break;
+//            case 25:
+//                clickXY(1017,962);
+//                break;
+//            case 26:
+//                clickXY(1060,962);
+//                break;
+//            case 27:
+//                clickXY(1100,962);
+//                break;
+//            case 28:
+//                clickXY(1143,962);
+//                break;
+//        }
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/div[1]/div/div/div/div/div/form/div[3]/button")).click();
+
     }
 }

@@ -16,8 +16,9 @@ import java.util.HashMap;
 public class Koniec {
     public static void Restart() throws InterruptedException{
         System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
-        WebDriver firefox = new FirefoxDriver();
+
         try {
+            WebDriver firefox = new FirefoxDriver();
             firefox.get("http://192.168.1.1/");
 
             //Thread.sleep(4000);
@@ -57,7 +58,7 @@ public class Koniec {
             Thread.sleep(10000);
             firefox.quit();
         } catch (Exception e) {
-            firefox.quit();
+
         }
 
 }

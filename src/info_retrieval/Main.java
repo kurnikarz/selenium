@@ -779,7 +779,7 @@ public class Main extends Narzedzia {
 
     }
 
-    public static void dodajPostLepakNowy(String profil, String mail, String haslo, String post, int a, int b) throws InterruptedException, AWTException, IOException {
+    public static void dodajPostLepakNowy(String profil, String mail, String haslo, String post, int a, int b, boolean flaga) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addExtensions(new File("E:\\bot\\captcha.crx"));
@@ -792,7 +792,8 @@ public class Main extends Narzedzia {
         Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\" + mail + "\\linki.txt", true));
         ChromeDriver driver = new ChromeDriver(options);
         Robot robot = new Robot();
-        String[] grupy = new String[100];
+        String[] grupy = new String[70];
+        String[] grupy2 = new String[70];
         grupy[0] = "https://www.facebook.com/groups/197656314112177/";
         grupy[1] = "https://www.facebook.com/groups/298229136881926/";
         grupy[2] = "https://www.facebook.com/groups/mlmstylzycia/";
@@ -807,33 +808,33 @@ public class Main extends Narzedzia {
         grupy[11] = "https://www.facebook.com/groups/531288753733140/";
         grupy[12] = "https://www.facebook.com/groups/pracawmlm/";
         grupy[13] = "https://www.facebook.com/groups/331639100303519/";
-        grupy[14] = "https://www.facebook.com/groups/2765218070379966/";
+        grupy[14] = "https://www.facebook.com/groups/301376787777395/";
         grupy[15] = "https://www.facebook.com/groups/381018519002791/";
         grupy[16] = "https://www.facebook.com/groups/pracaonline24/";
-        grupy[17] = "https://www.facebook.com/groups/301376787777395/";
+        grupy[17] = "https://www.facebook.com/groups/341616220426009/";
         grupy[18] = "https://www.facebook.com/groups/210289873049520/";
         grupy[19] = "https://www.facebook.com/groups/pracazarabianie/";
         grupy[20] = "https://www.facebook.com/groups/zarabianieinternet/";
         grupy[21] = "https://www.facebook.com/groups/519298171753298/";
         grupy[22] = "https://www.facebook.com/groups/PracaBezSzefa/";
         grupy[23] = "https://www.facebook.com/groups/934587176605807/";
-        grupy[24] = "https://www.facebook.com/groups/341616220426009/";
-        grupy[25] = "https://www.facebook.com/groups/OgloszeniaBiznesowe/";
+        grupy[24] = "https://www.facebook.com/groups/OgloszeniaBiznesowe/";
+        grupy[25] = "https://www.facebook.com/groups/272308946449620/";
         grupy[26] = "https://www.facebook.com/groups/zarabianie.praca.internet/";
         grupy[27] = "https://www.facebook.com/groups/1622951457992792/";
         grupy[28] = "https://www.facebook.com/groups/1781838958705367/";
         grupy[29] = "https://www.facebook.com/groups/172681430256680/";
-        grupy[30] = "https://www.facebook.com/groups/zarabianie.praca.biznes.online/";
+        grupy[30] = "https://www.facebook.com/groups/zarabianie.praca.biznes.online/"; //TU
         grupy[31] = "https://www.facebook.com/groups/ZarabianiePrzezInternet/";
         grupy[32] = "https://www.facebook.com/groups/kryptorodzina/";
-        grupy[33] = "https://www.facebook.com/groups/272308946449620/";
-        grupy[34] = "https://www.facebook.com/groups/265129344197314/";
-        grupy[35] = "https://www.facebook.com/groups/1855184641179253/";
+        grupy[33] = "https://www.facebook.com/groups/265129344197314/";
+        grupy[34] = "https://www.facebook.com/groups/1855184641179253/";    //blok
+        grupy[35] = "https://www.facebook.com/groups/zarabianiewinternecie24h/";    //blok
         grupy[36] = "https://www.facebook.com/groups/114051159156931/";
         grupy[37] = "https://www.facebook.com/groups/4139968925/";
         grupy[38] = "https://www.facebook.com/groups/322192781615024/";
-        grupy[39] = "https://www.facebook.com/groups/173291136529678/";
-        grupy[42] = "https://www.facebook.com/groups/632583150769729/";
+        grupy[39] = "https://www.facebook.com/groups/636328313209736/";    //blok
+        grupy[42] = "https://www.facebook.com/groups/470108560157347/";    //blok
         grupy[43] = "https://www.facebook.com/groups/316265375706455/";    //blok
         grupy[44] = "https://www.facebook.com/groups/InternetowaPraca/";    //blok
         //===========================MOJE
@@ -854,6 +855,57 @@ public class Main extends Narzedzia {
         grupy[59] = "https://www.facebook.com/groups/315509495130995/";
         grupy[60] = "https://www.facebook.com/groups/298670413999878/";
         grupy[61] = "https://www.facebook.com/groups/2935674523171777/";	//AKCEPTACJA
+
+        grupy2[0] = "https://www.facebook.com/groups/ZarabiamWInternecie24/";
+        grupy2[1] = "https://www.facebook.com/groups/1738614476385924/";
+        grupy2[2] = "https://www.facebook.com/groups/1755764568010980/";
+        grupy2[3] = "https://www.facebook.com/groups/1062892473755654/";
+        grupy2[4] = "https://www.facebook.com/groups/zarabiamy24kryptowaluty/";
+        grupy2[5] = "https://www.facebook.com/groups/525083377540133/";
+        grupy2[6] = "https://www.facebook.com/groups/489737711047141/";
+        grupy2[7] = "https://www.facebook.com/groups/1430880976978615/";
+        grupy2[8] = "https://www.facebook.com/groups/kasawnecie/";
+        grupy2[9] = "https://www.facebook.com/groups/216664798801356/";
+        grupy2[10] = "https://www.facebook.com/groups/592252047798369/";
+        grupy2[11] = "https://www.facebook.com/groups/1825732451077240/";
+        grupy2[12] = "https://www.facebook.com/groups/370561153055562/";
+        grupy2[13] = "https://www.facebook.com/groups/czlowiekszukapracy/";
+        grupy2[14] = "https://www.facebook.com/groups/935964903461625/";
+        grupy2[15] = "https://www.facebook.com/groups/299288834120491/";
+        grupy2[16] = "https://www.facebook.com/groups/praca.siedlce/";
+        grupy2[17] = "https://www.facebook.com/groups/1504899066344311/";
+        grupy2[18] = "https://www.facebook.com/groups/587449044732733/";
+        grupy2[19] = "https://www.facebook.com/groups/140934702697559/";
+        grupy2[20] = "https://www.facebook.com/groups/723051031543696/";
+        grupy2[21] = "https://www.facebook.com/groups/zarabiamwinternecieUK/";
+        grupy2[22] = "https://www.facebook.com/groups/1652386318160820/";
+        grupy2[23] = "https://www.facebook.com/groups/553406364833950/";
+        grupy2[24] = "https://www.facebook.com/groups/328630974620800/";
+        grupy2[25] = "https://www.facebook.com/groups/401862109918110/";
+        grupy2[26] = "https://www.facebook.com/groups/zarabianieprzezneta/";
+        grupy2[27] = "https://www.facebook.com/groups/229163901448587/";
+        grupy2[28] = "https://www.facebook.com/groups/682480818432113/";
+        grupy2[29] = "https://www.facebook.com/groups/1269496053078983/";
+        grupy2[30] = "https://www.facebook.com/groups/784833528922575/";
+        grupy2[31] = "https://www.facebook.com/groups/304611164084232/";
+        grupy2[32] = "https://www.facebook.com/groups/grupawsparciamlm/";
+        grupy2[33] = "https://www.facebook.com/groups/1707876736106783/";
+        grupy2[34] = "https://www.facebook.com/groups/293083300801332/";
+        grupy2[35] = "https://www.facebook.com/groups/774760369558034/";
+        grupy2[36] = "https://www.facebook.com/groups/zarabiamywsieci/";
+        grupy2[37] = "https://www.facebook.com/groups/281402322004801/";
+        grupy2[38] = "https://www.facebook.com/groups/2603512513038480/";
+        grupy2[39] = "https://www.facebook.com/groups/SpelniajMarzenia/";
+        grupy2[40] = "https://www.facebook.com/groups/806093752751158/";
+        grupy2[41] = "https://www.facebook.com/groups/112506316105896/";
+        grupy2[42] = "https://www.facebook.com/groups/as.polska.polski/";
+        grupy2[43] = "https://www.facebook.com/groups/1411493178930704/";
+        grupy2[44] = "https://www.facebook.com/groups/260347977466204/";
+        grupy2[45] = "https://www.facebook.com/groups/260986967296826/";
+        grupy2[46] = "https://www.facebook.com/groups/1351959781640626/";
+        grupy2[47] = "https://www.facebook.com/groups/837024419659515/";
+        grupy2[48] = "https://www.facebook.com/groups/933677930171662/";
+
         JavascriptExecutor js = (JavascriptExecutor) driver;	
         driver.manage().window().maximize();
         driver.get("https://pl-pl.facebook.com/login/");
@@ -889,7 +941,10 @@ public class Main extends Narzedzia {
                 */
             try {
                 Thread.sleep(2000);
-                driver.get(grupy[i]);
+                if (flaga)
+                    driver.get(grupy[i]);
+                else
+                    driver.get(grupy2[i]);
                 Thread.sleep(3000);
                 driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[1]/div/div/div/div[1]/div/div[1]/span")).click();
                 Thread.sleep(3000);
@@ -2083,29 +2138,23 @@ public class Main extends Narzedzia {
                 "\n" +
                 "https://youtu.be/KTmkeuK3jJI";
 
-        String fb[] = {"natalia.woszczylo@o2.pl","dumcio.97@wp.pl"};
-        String[] profil = {"193","113"};
+        String fb[] = {"dumcio.97@wp.pl","ewa1dymkowska@gmail.com"};
+        String[] profil = {"113","194",};
         int j = 6;
         String num;
         String num2;
         String num3;
         String miastEn;
         String koEn;
-
-
         try {
 
 //            for (int i=0;i<100;i++) {
 //                mail = bimago.nextLine();
 //                mail3 = enfamil.nextLine();
-//                if (i<24)
-//                    Dodatkowy.Enfamil(mail3);
-//                else if (i<37)
-//                    Dodatkowy.Enfamil4(mail3);
-//                else if (i<47)
-//                    Neworklead.EnfamilDBL(mail3);
-//                else if (i<57)
+//                if (i<10)
 //                    Neworklead.gwEnfamil(mail3);
+//                else if (i<20)
+//                    Neworklead.EnfamilDBL(mail3);
 //
 //                if (i<30)
 //                    Dodatkowy.Bimago(mail);
@@ -2116,7 +2165,9 @@ public class Main extends Narzedzia {
 //                Koniec.Restart();
 //            }
 
-
+//            dodajPostLepakNowy(profil[0],fb[0],"",post,0,48,false);
+//            Koniec.Restart();
+//            dodajPostLepakNowy(profil[1],fb[1],"",post,0,50,true);
 
         } catch (Exception e) {
             blad.println(e);
@@ -2126,6 +2177,7 @@ public class Main extends Narzedzia {
             System.out.println("=============ERROR===============");
             wylacz();
         }
+        Neworklead.Dekoral("jolanta.kananowicz@wp.pl");
 
 //        wylacz();
     }

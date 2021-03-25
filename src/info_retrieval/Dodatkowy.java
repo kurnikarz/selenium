@@ -3261,4 +3261,21 @@ public class Dodatkowy extends Narzedzia {
         }
 
     }
+
+    public static void Dekoral(String mail) throws AWTException, InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+            driver.get("http://www.dodatkowypieniadz.com/zadanie/0699acb26feddf9de6d7cf093567d25a/9d8800799cadddb291f1728e72368c23/201920950f63cee967982b759fde80b1");
+            wpiszHaslo();
+            Thread.sleep(10000);
+            clickXY(780,800);
+            Thread.sleep(6000);
+            zmienKarte(driver);
+            Neworklead.Dekoral(driver,mail);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
 }
