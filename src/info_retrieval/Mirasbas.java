@@ -356,9 +356,9 @@ public class Mirasbas extends Narzedzia {
 
     }
 
-    public static void Arkaida(String mail) {
-        //System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+    public static void Arkaida(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+//        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
         /*
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
@@ -368,14 +368,15 @@ public class Mirasbas extends Narzedzia {
         options.setExperimentalOption("prefs", prefs);
         ChromeDriver driver = new ChromeDriver(options);
         */
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new ChromeDriver();
         String winHandleBefore = driver.getWindowHandle();
         driver.manage().window().maximize();
         try {
             driver.get("https://mirasbas.pl/zadanie/11/149ba14d0352f9133a371dca827148f1");
-            Thread.sleep(30000);
+//            driver.get("https://pl.westfield.com/arkadia/registration?destination=/arkadia/homepage");
+            Thread.sleep(10000);
             Narzedzia.ArkadiaFF(driver, mail);
-            Narzedzia.potwierdzArkadia(driver, mail);
+//            Narzedzia.potwierdzArkadia(driver,mail);
             driver.quit();
 
         } catch (Exception e) {
@@ -385,9 +386,9 @@ public class Mirasbas extends Narzedzia {
 
     }
 
-    public static void Galeria(String mail) {
-        //System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+    public static void Galeria(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+//        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
         /*
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
@@ -397,14 +398,15 @@ public class Mirasbas extends Narzedzia {
         options.setExperimentalOption("prefs", prefs);
         ChromeDriver driver = new ChromeDriver(options);
         */
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new ChromeDriver();
         String winHandleBefore = driver.getWindowHandle();
         driver.manage().window().maximize();
         try {
-            driver.get("https://mirasbas.pl/zadanie/12/149ba14d0352f9133a371dca827148f1");
-            Thread.sleep(30000);
-            Narzedzia.ArkadiaFF(driver, mail);
-            Narzedzia.potwierdzGaleria(driver, mail);
+//            driver.get("https://mirasbas.pl/zadanie/12/149ba14d0352f9133a371dca827148f1");
+            driver.get("https://www.galeriamokotow.pl/registration");
+            Thread.sleep(10000);
+            Narzedzia.Galeria(driver, mail);
+//            Narzedzia.potwierdzArkadia(driver,mail);
             driver.quit();
 
         } catch (Exception e) {
@@ -414,9 +416,9 @@ public class Mirasbas extends Narzedzia {
 
     }
 
-    public static void Wroclawia(String mail) {
-        //System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+    public static void Wroclawia(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+//        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
         /*
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
@@ -426,14 +428,15 @@ public class Mirasbas extends Narzedzia {
         options.setExperimentalOption("prefs", prefs);
         ChromeDriver driver = new ChromeDriver(options);
         */
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new ChromeDriver();
         String winHandleBefore = driver.getWindowHandle();
         driver.manage().window().maximize();
         try {
+//            driver.get("https://mirasbas.pl/zadanie/12/149ba14d0352f9133a371dca827148f1");
             driver.get("https://mirasbas.pl/zadanie/13/149ba14d0352f9133a371dca827148f1");
-            Thread.sleep(30000);
-            Narzedzia.ArkadiaFF(driver, mail);
-            Narzedzia.potwierdzWroclawia(driver, mail);
+            Thread.sleep(10000);
+            Narzedzia.Galeria(driver, mail);
+//            Narzedzia.potwierdzArkadia(driver,mail);
             driver.quit();
 
         } catch (Exception e) {
@@ -553,7 +556,7 @@ public class Mirasbas extends Narzedzia {
     }
 
     public static void Momondo() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         Random r = new Random();
         int momondo = r.nextInt(2);
         WebDriver driver = new ChromeDriver();

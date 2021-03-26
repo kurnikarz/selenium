@@ -1885,6 +1885,9 @@ public class Main extends Narzedzia{
         Scanner samsung = new Scanner(new File("C:\\bot\\samsung.txt"));
         Scanner news = new Scanner(new File("C:\\bot\\news.txt"));
         Scanner przepisy = new Scanner(new File("C:\\bot\\przepisy.txt"));
+        Scanner arkadia = new Scanner(new File("C:\\bot\\arkadia.txt"));
+        Scanner bimago = new Scanner(new File("C:\\bot\\bimago.txt"));
+        Scanner dekoral = new Scanner(new File("C:\\bot\\dekoral.txt"));
         //Scanner chili = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\chili.txt"));
         PrintWriter blad = new PrintWriter("C:\\bot\\blad.txt");
         PrintWriter ostatni = new PrintWriter("C:\\bot\\ostatni.txt");
@@ -1933,84 +1936,56 @@ public class Main extends Narzedzia{
         int j = 0;
         String num;
 
-
-
-//        for (int i=10;i<100;i++) {
-//            mail = samsung.nextLine();
+//        for (int i=1;i<=50;i++){
+//            mail = arkadia.nextLine();
+//            mail2 = bimago.nextLine();
+//            mail3 = przepisy.nextLine();
 //            if (i%2==0)
-//                Dodatkowy.Samsung(mail);
+//                Neworklead.aGaleria(mail);
 //            else
-//                Dodatkowy.Samsung2(mail);
-//            System.out.println(i);
-//            System.out.println(mail);
-//            Koniec.Restart();
-//        }
-
-//        for (int i=0;i<9;i++) {
-//            mail = everyInt.nextLine();
-//            ulicaVee = ulica.nextLine();
-//            kodVee = kod.nextLine();
-//            miastoVee = miasto.nextLine();
-//            Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-//            System.out.println(i);
-//            System.out.println(mail);
-//            j++;
-//            if (j > 23)
-//                j = 0;
-//            Koniec.Restart();
-//        }
-
-//        for (int i=2;;i++) {
-//            mail = everyInt.nextLine();
-//            ulicaVee = ulica.nextLine();
-//            kodVee = kod.nextLine();
-//            miastoVee = miasto.nextLine();
-//            if (i%2==0)
-//                Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+//                Neworklead.aWroclawia(mail);
+//            if (i<19)
+//                Neworklead.BimagoK1D(mail2);
 //            else
-//                Ads.EveryAdp1(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
-//            j++;
-//            if (j > 23)
-//                j = 0;
+//                Neworklead.BimagoK1M(mail2);
+//            Neworklead.Przepis(mail3);
 //            System.out.println(i);
 //            System.out.println(mail);
 //            Koniec.Restart();
 //        }
 
-//        int x = 45;
-//        j=5;
-//        for(int i = 2; i < x; i++) {
-//            mail = everyInt.nextLine();
-//            ulicaVee = ulica.nextLine();
-//            kodVee = kod.nextLine();
-//            miastoVee = miasto.nextLine();
-//            if(i == 0) { Dodatkowy.Every7(mail,kodVee,ulicaVee,miastoVee,odp.get(j));}
-//            if(i == 1) { Ads.EveryAdp1(mail,kodVee,ulicaVee,miastoVee,odp.get(j)); }
+//        Koniec.Restart();
+//        int x = 24;
+//        for(int i = 1; i < x; i++) {
+//            mail = arkadia.nextLine();
+//            mail2 = bimago.nextLine();
+//            mail3 = przepisy.nextLine();
+//            if(i == 0) { Neworklead.aArkadia(mail);}
+//            if(i == 1) { Neworklead.aGaleria(mail); }
 //            if(i == 2) {
-//                Ads.EveryAdp(mail,kodVee,ulicaVee,miastoVee,odp.get(j));
+//                Neworklead.aWroclawia(mail);
 //                x -= 3;
 //                i=-1;
 //            }
-//            j++;
-//            if (j > 22)
-//                j = 0;
+//            Neworklead.BimagoK1D(mail2);
+//            Neworklead.Przepis(mail3);
 //            System.out.println(i);
 //            System.out.println(x);
 //            System.out.println(mail);
 //            Koniec.Restart();
 //        }
-
-
+Koniec.Restart();
+        for (int i=0;i<40;i++){
+            mail = dekoral.nextLine();
+            Neworklead.Dekoral(mail);
+            System.out.println(mail);
+            System.out.println(i);
+            Koniec.Restart();
+        }
 
         try {
 
-            for (int i=0;i<400;i++) {
-                mail2 = przepisy.nextLine();
-                Neworklead.Przepis(mail2);
-                System.out.println(i);
-                System.out.println(mail2);
-                Koniec.RestarHujawei();
-            }
+
 
         }
 

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
@@ -275,92 +276,6 @@ public class Narzedzia {
         */
     }
 
-    public static void ArkadiaFF(WebDriver driver, String mail) throws InterruptedException, AWTException {
-        Random r = new Random();
-        int dzien = r.nextInt(28) + 1;
-        String dzie = String.valueOf(dzien);
-        int miesiac = r.nextInt(11) + 1;
-        String mie = String.valueOf(miesiac);
-        int rok = r.nextInt(1994 - 1976 + 1) + 1976;
-        String ro = String.valueOf(rok);
-        int m=0;
-        boolean flaga = false;
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-
-        clickXY(1880,1003);
-        Thread.sleep(2000);
-        clickXY(1870,1003);
-        Thread.sleep(2000);
-        clickXY(1861,1003);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"idms\"]")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"firstnameReg\"]")).sendKeys(genImieZen());
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"lastnameReg\"]")).sendKeys(genNazwiskoZen());
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"emailReg\"]")).sendKeys(mail);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"firstpassword\"]")).sendKeys(mail+"V2");
-        Thread.sleep(1000);
-        clickXY(680,627);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"dateDOB\"]")).sendKeys(dzie);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"monthDOB\"]")).sendKeys(mie);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"yearDOB\"]")).sendKeys(ro);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"lblcommercialoptin\"]/span")).click();
-        Thread.sleep(1000);
-        js.executeScript("window.scrollBy(0,1000)");
-        Thread.sleep(1000);
-        clickXY(976,982);
-
-        Thread.sleep(15000);
-        clickXY(832,289);
-        Thread.sleep(2000);
-        clickXY(950,376);
-        Thread.sleep(1000);
-        clickXY(951,508);
-        Thread.sleep(15000);
-        /*
-        //WP
-        driver.get("http://poczta.wp.pl/");
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
-        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"btnSubmit\"]")).click();
-        Thread.sleep(2000);
-        while (!flaga) {
-            try {
-                driver.findElement(By.xpath("//*[text()='Westfield Arkadia']")).click();
-                Thread.sleep(4000);
-                //driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/div[2]/div[3]/table[1]/tbody/tr/td/div[1]/table[2]/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/a")).click();
-                driver.findElement(By.xpath("//*[text()=' WYPEŁNIAM ANKIETĘ']")).click();
-                Thread.sleep(10000);
-                for (String winHandle : driver.getWindowHandles()) {
-                    driver.switchTo().window(winHandle);
-                }
-                Thread.sleep(1000);
-                driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div[2]/div/div[2]/a")).click();
-                Thread.sleep(10000);
-                flaga = true;
-            } catch (Exception e) {
-                clickXY(89, 51);
-                Thread.sleep(10000);
-            }
-            m++;
-            if (m > 6) {
-                break;
-            }
-        }
-        */
-    }
-
     public static void pobierzAdres(int ile) throws AWTException, FileNotFoundException, InterruptedException {
         System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         String kods,ulicak,miaston;
@@ -471,9 +386,18 @@ public class Narzedzia {
         }
     }
 
-    public static void potwierdzArkadia(WebDriver driver, String mail) throws InterruptedException, AWTException {
+    public static void potwierdzArkadia(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
         boolean flaga = false;
         int m = 0;
+        Random r = new Random();
+        int wybor1 = r.nextInt(6);
+        int wybor2 = r.nextInt(5);
+        int wybor3 = r.nextInt(6);
+        WebDriverWait wait = new WebDriverWait(driver,60);
         driver.get("http://poczta.wp.pl/");
         Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
@@ -481,40 +405,127 @@ public class Narzedzia {
         //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
         Thread.sleep(1000);
         //driver.findElement(By.xpath("//*[@id=\"btnSubmit\"]")).click();
-        clickXY(333,580);
-        clickXY(333,580);
-        Thread.sleep(15000);
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+
+        }
+        Thread.sleep(3000);
         while (!flaga) {
             try {
                 driver.findElement(By.xpath("//*[text()='Westfield Arkadia']")).click();
                 flaga = true;
                 Thread.sleep(4000);
-                Zmniejsz(1);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/div[2]/div[3]/table[1]/tbody/tr/td/div[1]/table[2]/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/a")).click();
+                Thread.sleep(2000);
+                zmienKarte(driver);
                 Thread.sleep(1000);
-                clickXY(1108,944);
-                Thread.sleep(10000);
-                for (String winHandle : driver.getWindowHandles()) {
-                    driver.switchTo().window(winHandle);
+                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"cookieconsent55\"]/div[2]/div/div[3]/div[1]/div"))));
+                driver.findElement(By.xpath("//*[@id=\"cookieconsent55\"]/div[2]/div/div[3]/div[1]/div")).click();
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/form/div[2]/label[1]/span")).click();
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/div[4]/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor1) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                    case 5:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[6]/div/div")).click();
+                        break;
                 }
                 Thread.sleep(1000);
-                driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div[2]/div/div[2]/a")).click();
-                Thread.sleep(10000);
-                driver.quit();
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor2) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor3) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                    case 5:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[6]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[5]/div/div/div/div[4]/a")).click();
+                Thread.sleep(3000);
             } catch (Exception e) {
-                clickXY(85, 52);
+                driver.navigate().refresh();
                 Thread.sleep(10000);
             }
             m++;
-            if (m > 10) {
-                driver.quit();
+            if (m > 15) {
                 break;
             }
+
         }
+        driver.quit();
     }
 
-    public static void potwierdzGaleria(WebDriver driver, String mail) throws InterruptedException, AWTException {
+    public static void potwierdzGaleria(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
         boolean flaga = false;
         int m = 0;
+        Random r = new Random();
+        int wybor1 = r.nextInt(6);
+        int wybor2 = r.nextInt(5);
+        int wybor3 = r.nextInt(6);
+        WebDriverWait wait = new WebDriverWait(driver,60);
         driver.get("http://poczta.wp.pl/");
         Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
@@ -522,81 +533,115 @@ public class Narzedzia {
         //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
         Thread.sleep(1000);
         //driver.findElement(By.xpath("//*[@id=\"btnSubmit\"]")).click();
-        clickXY(333,580);
-        clickXY(333,580);
-        Thread.sleep(15000);
-        driver.findElement(By.xpath("//*[text()='Oferty']")).click();
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+
+        }
         Thread.sleep(3000);
+        driver.get("https://poczta.wp.pl/k/#/mails/?label=152");
+        Thread.sleep(2000);
         while (!flaga) {
             try {
                 driver.findElement(By.xpath("//*[text()='Galeria Mokotów']")).click();
                 flaga = true;
                 Thread.sleep(4000);
-                //driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/div[2]/div[3]/table[1]/tbody/tr/td/div[1]/table[2]/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/a")).click();
-                Zmniejsz(1);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/div[2]/div[3]/table[1]/tbody/tr/td/div[1]/table[2]/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/a")).click();
+                Thread.sleep(2000);
+                zmienKarte(driver);
                 Thread.sleep(1000);
-                clickXY(1108,900);
-                Thread.sleep(10000);
-                for(String winHandle : driver.getWindowHandles()){
-                    driver.switchTo().window(winHandle);
-                }
+                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"cookieconsent55\"]/div[2]/div/div[3]/div[1]/div"))));
+                driver.findElement(By.xpath("//*[@id=\"cookieconsent55\"]/div[2]/div/div[3]/div[1]/div")).click();
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/form/div[2]/label[1]/span")).click();
                 Thread.sleep(1000);
-                driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/div/div[2]/div/div[2]/a")).click();
-                Thread.sleep(10000);
-                driver.quit();
-            } catch (Exception e) {
-                clickXY(85, 52);
-                Thread.sleep(10000);
-            }
-            m++;
-            if (m > 10) {
-                driver.quit();
-                break;
-            }
-        }
-    }
+                driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/div[4]/button")).click();
 
-    public static void potwierdzWroclawia(WebDriver driver, String mail) throws InterruptedException, AWTException {
-        boolean flaga = false;
-        int m = 0;
-        driver.get("http://poczta.wp.pl/");
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
-        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
-        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
-        Thread.sleep(1000);
-        //driver.findElement(By.xpath("//*[@id=\"btnSubmit\"]")).click();
-        clickXY(333,580);
-        clickXY(333,580);
-        Thread.sleep(15000);
-        driver.findElement(By.xpath("//*[text()='Oferty']")).click();
-        Thread.sleep(3000);
-        while (!flaga) {
-            try {
-                driver.findElement(By.xpath("//*[text()='Wroclavia']")).click();
-                flaga = true;
-                Thread.sleep(4000);
-                Zmniejsz(1);
-                Thread.sleep(1000);
-                clickXY(1108,944);
-                Thread.sleep(10000);
-                for(String winHandle : driver.getWindowHandles()){
-                    driver.switchTo().window(winHandle);
+                Thread.sleep(2000);
+                switch (wybor1) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                    case 5:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[6]/div/div")).click();
+                        break;
                 }
                 Thread.sleep(1000);
-                driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/div/div[2]/div/div[2]/a")).click();
-                Thread.sleep(10000);
-                driver.quit();
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor2) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor3) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                    case 5:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[6]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[5]/div/div/div/div[4]/a")).click();
+                Thread.sleep(3000);
             } catch (Exception e) {
-                clickXY(85, 52);
+                driver.navigate().refresh();
                 Thread.sleep(10000);
             }
             m++;
-            if (m > 10) {
-                driver.quit();
+            if (m > 15) {
                 break;
             }
+
         }
+        driver.quit();
     }
 
     public static void zmienKarte(WebDriver driver) {
@@ -634,5 +679,626 @@ public class Narzedzia {
 
         }
         return ok;
+    }
+
+    public static void ArkadiaFF(WebDriver driver, String mail) throws InterruptedException, AWTException {
+        Random r = new Random();
+        int dzien = r.nextInt(28) + 1;
+        String dzie = dodajZero(dzien);
+        int miesiac = r.nextInt(11) + 1;
+        String mie = dodajZero(miesiac);
+        int rok = r.nextInt(1994 - 1976 + 1) + 1976;
+        String ro = String.valueOf(rok);
+        int m=0;
+        boolean flaga = false;
+        int wybor1 = r.nextInt(6);
+        int wybor2 = r.nextInt(5);
+        int wybor3 = r.nextInt(6);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebDriverWait wait = new WebDriverWait(driver,60);
+        Robot robot = new Robot();
+
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[7]/div[2]/div/div[3]/div[1]/div"))));
+        driver.findElement(By.xpath("/html/body/div[7]/div[2]/div/div[3]/div[1]/div")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[4]/section[1]/div/section[1]/div/div/div/div/div[2]/a[1]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"idms\"]"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"idms\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"firstnameReg\"]")).sendKeys(genImieZen());
+        driver.findElement(By.xpath("//*[@id=\"lastnameReg\"]")).sendKeys(genNazwiskoZen());
+        driver.findElement(By.xpath("//*[@id=\"emailReg\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"firstpassword\"]")).sendKeys(mail+"V2");
+        Thread.sleep(1000);
+        Kopiuj(dzie);
+        driver.findElement(By.xpath("//*[@id=\"dateDOB\"]")).click();
+        Thread.sleep(500);
+        Wklej();
+        driver.findElement(By.xpath("//*[@id=\"monthDOB\"]")).sendKeys(mie);
+        driver.findElement(By.xpath("//*[@id=\"yearDOB\"]")).sendKeys(ro);
+        driver.findElement(By.xpath("//*[@id=\"lblcommercialoptin\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"lblloyaloptin\"]")).click();
+        js.executeScript("window.scrollBy(0,1000)");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"regSubmit\"]")).click();
+        Thread.sleep(15000);
+
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+        Thread.sleep(1000);
+        //driver.findElement(By.xpath("//*[@id=\"btnSubmit\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+
+        }
+        Thread.sleep(3000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='Westfield Arkadia']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/div[2]/div[3]/table[1]/tbody/tr/td/div[1]/table[2]/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/a")).click();
+                Thread.sleep(2000);
+                zmienKarte(driver);
+                Thread.sleep(1000);//html/body/div[1]/div[3]/div/div/form/div[2]/label[1]/span
+                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("html/body/div[1]/div[3]/div/div/form/div[2]/label[1]/span"))));
+                driver.findElement(By.xpath("html/body/div[1]/div[3]/div/div/form/div[2]/label[1]/span")).click();
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/form/div[2]/label[1]/span")).click();
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/div[4]/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor1) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                    case 5:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[6]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor2) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor3) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                    case 5:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[6]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[5]/div/div/div/div[4]/a")).click();
+                Thread.sleep(3000);
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 15) {
+                break;
+            }
+
+        }
+
+        driver.quit();
+
+//        ((JavascriptExecutor) driver).executeScript("window.open()");
+//        Thread.sleep(1000);
+//        zmienKarte(driver);
+//        Thread.sleep(1000);
+//        potwierdzArkadia(mail);
+
+    }
+
+    public static void Galeria(WebDriver driver, String mail) throws InterruptedException, AWTException {
+        Random r = new Random();
+        int dzien = r.nextInt(28) + 1;
+        String dzie = dodajZero(dzien);
+        int miesiac = r.nextInt(11) + 1;
+        String mie = dodajZero(miesiac);
+        int rok = r.nextInt(1994 - 1976 + 1) + 1976;
+        String ro = String.valueOf(rok);
+        int wybor1 = r.nextInt(6);
+        int wybor2 = r.nextInt(5);
+        int wybor3 = r.nextInt(6);
+        int m=0;
+        boolean flaga = false;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebDriverWait wait = new WebDriverWait(driver,60);
+        Robot robot = new Robot();
+
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div"))));
+        driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"idms\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"firstnameReg\"]")).sendKeys(genImieZen());
+        driver.findElement(By.xpath("//*[@id=\"lastnameReg\"]")).sendKeys(genNazwiskoZen());
+        driver.findElement(By.xpath("//*[@id=\"emailReg\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"firstpassword\"]")).sendKeys(mail+"V2");
+        Thread.sleep(1000);
+        Kopiuj(dzie);
+        driver.findElement(By.xpath("//*[@id=\"dateDOB\"]")).click();
+        Thread.sleep(500);
+        Wklej();
+        driver.findElement(By.xpath("//*[@id=\"monthDOB\"]")).sendKeys(mie);
+        driver.findElement(By.xpath("//*[@id=\"yearDOB\"]")).sendKeys(ro);
+        driver.findElement(By.xpath("//*[@id=\"lblcommercialoptin\"]/span")).click();
+        driver.findElement(By.xpath("//*[@id=\"lblloyaloptin\"]/span[1]")).click();
+        js.executeScript("window.scrollBy(0,1000)");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"regSubmit\"]")).click();
+        Thread.sleep(15000);
+
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+        Thread.sleep(1000);
+        //driver.findElement(By.xpath("//*[@id=\"btnSubmit\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+
+        }
+        Thread.sleep(3000);
+        driver.get("https://poczta.wp.pl/k/#/mails/?label=152");
+        Thread.sleep(2000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='Galeria Mokotów']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/div[2]/div[3]/table[1]/tbody/tr/td/div[1]/table[2]/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/a")).click();
+                Thread.sleep(2000);
+                zmienKarte(driver);
+                Thread.sleep(1000);
+                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"form-game\"]/div[2]/label[1]/span"))));
+                driver.findElement(By.xpath("//*[@id=\"form-game\"]/div[2]/label[1]/span")).click();
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/form/div[2]/label[1]/span")).click();
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/div[4]/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor1) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                    case 5:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[6]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor2) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor3) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                    case 5:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[6]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[5]/div/div/div/div[4]/a")).click();
+                Thread.sleep(3000);
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 15) {
+                break;
+            }
+
+        }
+
+        driver.quit();
+
+//        ((JavascriptExecutor) driver).executeScript("window.open()");
+//        Thread.sleep(1000);
+//        zmienKarte(driver);
+//        Thread.sleep(1000);
+//        potwierdzArkadia(mail);
+
+    }
+
+    public static void Wroclavia(WebDriver driver, String mail) throws InterruptedException, AWTException {
+        Random r = new Random();
+        int dzien = r.nextInt(28) + 1;
+        String dzie = dodajZero(dzien);
+        int miesiac = r.nextInt(11) + 1;
+        String mie = dodajZero(miesiac);
+        int rok = r.nextInt(1994 - 1976 + 1) + 1976;
+        String ro = String.valueOf(rok);
+        int wybor1 = r.nextInt(6);
+        int wybor2 = r.nextInt(5);
+        int wybor3 = r.nextInt(6);
+        int m = 0;
+        boolean flaga = false;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        Robot robot = new Robot();
+
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div"))));
+        driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"idms\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"firstnameReg\"]")).sendKeys(genImieZen());
+        driver.findElement(By.xpath("//*[@id=\"lastnameReg\"]")).sendKeys(genNazwiskoZen());
+        driver.findElement(By.xpath("//*[@id=\"emailReg\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"firstpassword\"]")).sendKeys(mail + "V2");
+        Thread.sleep(1000);
+        Kopiuj(dzie);
+        driver.findElement(By.xpath("//*[@id=\"dateDOB\"]")).click();
+        Thread.sleep(500);
+        Wklej();
+        driver.findElement(By.xpath("//*[@id=\"monthDOB\"]")).sendKeys(mie);
+        driver.findElement(By.xpath("//*[@id=\"yearDOB\"]")).sendKeys(ro);
+        driver.findElement(By.xpath("//*[@id=\"lblcommercialoptin\"]/span")).click();
+        driver.findElement(By.xpath("//*[@id=\"lblloyaloptin\"]/span[1]")).click();
+        js.executeScript("window.scrollBy(0,1000)");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"regSubmit\"]")).click();
+        Thread.sleep(15000);
+
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+        Thread.sleep(1000);
+        //driver.findElement(By.xpath("//*[@id=\"btnSubmit\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+
+        }
+        Thread.sleep(3000);
+        driver.get("https://poczta.wp.pl/k/#/mails/?label=152");
+        Thread.sleep(2000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='Wroclavia']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/div[2]/div[3]/table[1]/tbody/tr/td/div[1]/table[2]/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/a")).click();
+                Thread.sleep(2000);
+                zmienKarte(driver);
+                Thread.sleep(1000);
+                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"form-game\"]/div[2]/label[1]/span"))));
+                driver.findElement(By.xpath("//*[@id=\"form-game\"]/div[2]/label[1]/span")).click();
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/form/div[2]/label[1]/span")).click();
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/div[4]/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor1) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                    case 5:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[6]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor2) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor3) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                    case 5:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[6]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[5]/div/div/div/div[4]/a")).click();
+                Thread.sleep(3000);
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 15) {
+                break;
+            }
+
+        }
+        driver.quit();
+    }
+
+    public static void potwierdzWroclawia(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
+        boolean flaga = false;
+        int m = 0;
+        Random r = new Random();
+        int wybor1 = r.nextInt(6);
+        int wybor2 = r.nextInt(5);
+        int wybor3 = r.nextInt(6);
+        WebDriverWait wait = new WebDriverWait(driver,60);
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+        Thread.sleep(1000);
+        //driver.findElement(By.xpath("//*[@id=\"btnSubmit\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+
+        }
+        Thread.sleep(3000);
+        driver.get("https://poczta.wp.pl/k/#/mails/?label=5");
+        Thread.sleep(2000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='Wroclavia']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/div[2]/div[3]/table[1]/tbody/tr/td/div[1]/table[2]/tbody/tr/td/div/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/a")).click();
+                Thread.sleep(2000);
+                zmienKarte(driver);
+                Thread.sleep(1000);
+                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"cookieconsent55\"]/div[2]/div/div[3]/div[1]/div"))));
+                driver.findElement(By.xpath("//*[@id=\"cookieconsent55\"]/div[2]/div/div[3]/div[1]/div")).click();
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/form/div[2]/label[1]/span")).click();
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/div[4]/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor1) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                    case 5:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[6]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor2) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[2]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                switch (wybor3) {
+                    case 0:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[1]/div/div")).click();
+                        break;
+                    case 1:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[2]/div/div")).click();
+                        break;
+                    case 2:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[3]/div/div")).click();
+                        break;
+                    case 3:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[4]/div/div")).click();
+                        break;
+                    case 4:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[1]/div[5]/div/div")).click();
+                        break;
+                    case 5:
+                        driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[1]/div[2]/div[1]/div[6]/div/div")).click();
+                        break;
+                }
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div[3]/div[2]/div[2]/div/button")).click();
+
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("/html/body/div[1]/div[5]/div/div/div/div[4]/a")).click();
+                Thread.sleep(3000);
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 15) {
+                break;
+            }
+
+        }
+        driver.quit();
     }
 }
