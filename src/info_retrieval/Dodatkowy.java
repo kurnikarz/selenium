@@ -3201,7 +3201,7 @@ public class Dodatkowy extends Narzedzia {
         WebDriver driver = new ChromeDriver(options);
         WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().window().maximize();
-        try {
+//        try {
             driver.get("http://www.dodatkowypieniadz.com/zadanie/b3d865837fd4f842b079f82c1ed41013/86cc368252368e6ccf5fbce2db9263ca/201920950f63cee967982b759fde80b1");
             Thread.sleep(3000);
             wpiszHaslo();
@@ -3256,9 +3256,9 @@ public class Dodatkowy extends Narzedzia {
 
             driver.quit();
 
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
 

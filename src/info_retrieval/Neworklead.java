@@ -3714,17 +3714,24 @@ public class Neworklead extends Narzedzia {
         }
         WebDriverWait wait = new WebDriverWait(driver, 60);
 //        try {
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/button[1]"))));
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/button[1]")).click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[1]/button[1]"))));
+            driver.findElement(By.xpath("/html/body/div[3]/div[1]/button[1]")).click();
+        } catch (Exception e) {
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[2]/div[1]/button[1]"))));
+            driver.findElement(By.xpath("/html/body/div[2]/div[1]/button[1]")).click();
+        }
+
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/main/div[2]/div[1]/div/p[2]/a")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"__input10\"]"))));
+        Thread.sleep(3000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div/div/div/div/form/div/div[1]/div[2]/input"))));
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"__input10\"]")).sendKeys(imie);
-        driver.findElement(By.xpath("//*[@id=\"__input11\"]")).sendKeys(nazwisko);
-        driver.findElement(By.xpath("//*[@id=\"__input14\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div/div/div/div/form/div/div[1]/div[2]/input")).sendKeys(imie);
+        driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div/div/div/div/form/div/div[2]/div[2]/input")).sendKeys(nazwisko);
+        driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div/div/div/div/form/div/div[5]/div[2]/input")).sendKeys(mail);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"__button22\"]")).click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div/div/div/div/form/div/div[10]/div[2]/button")).click();
         Thread.sleep(6000);
 
 //        //WP
@@ -3857,13 +3864,13 @@ public class Neworklead extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        try {
+//        try {
             driver.get("https://neworklead.pl/zadanie/dcc054c2b5f4d19922fdc6bc0afda388/fbfe4712449bf5d565be39ce21d93692/d654be842d14f320ad92ef039fb6aa4c");
             Thread.sleep(6000);
             Neworklead.Enfamil(driver, mail);
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
 
@@ -4170,7 +4177,7 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver(options);
         WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().window().maximize();
-        try {
+//        try {
             driver.get("https://neworklead.pl/zadanie/5be038ba6fff2dcd3cbff884f977cde6/96e04f69256bfa42997ae2867b3400cc/d654be842d14f320ad92ef039fb6aa4c");
             Thread.sleep(3000);
             wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"notice-cookie-block\"]/div/div/button")))).click();
@@ -4219,11 +4226,12 @@ public class Neworklead extends Narzedzia {
 
             driver.quit();
 
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
+
 
     public static void BimagoK1M(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
@@ -4525,7 +4533,143 @@ public class Neworklead extends Narzedzia {
         driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, 60);
 
-        try {
+//        try {
+            driver.get("https://neworklead.pl/zadanie/ce97ad1763a632ad98948ffd3eaad88a/c82954baf19cd5e4ae6a1c287b05e072/d654be842d14f320ad92ef039fb6aa4c");
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[4]/div/div[1]/p[2]/button[2]"))));
+            driver.findElement(By.xpath("/html/body/div[4]/div/div[1]/p[2]/button[2]")).click();
+            driver.findElement(By.xpath("//*[@id=\"input_imie\"]")).sendKeys(imie);
+            driver.findElement(By.xpath("//*[@id=\"input_nazwisko\"]")).sendKeys(nazwisko);
+            driver.findElement(By.xpath("//*[@id=\"input_telefonKom\"]")).sendKeys(tel);
+            driver.findElement(By.xpath("//*[@id=\"input_email\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"checkbox_zgoda_all\"]")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"button_Wyslij\"]")).click();
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void aBgzkz(String tel, String mail) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        String imie;
+        String nazwisko;
+        if (plec == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+
+//        try {
+            driver.get("https://neworklead.pl/zadanie/9589cb05313c31e27f0f8d5297776eea/384bb812b527c2143e01fc95ad3fbd44/d654be842d14f320ad92ef039fb6aa4c");
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[4]/div/div[1]/p[2]/button[2]"))));
+            driver.findElement(By.xpath("/html/body/div[4]/div/div[1]/p[2]/button[2]")).click();
+            driver.findElement(By.xpath("//*[@id=\"input_imie\"]")).sendKeys(imie);
+            driver.findElement(By.xpath("//*[@id=\"input_nazwisko\"]")).sendKeys(nazwisko);
+            driver.findElement(By.xpath("//*[@id=\"input_telefonKom\"]")).sendKeys(tel);
+            driver.findElement(By.xpath("//*[@id=\"input_email\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"checkbox_zgoda_all\"]")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"button_Wyslij\"]")).click();
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void aBgzkg(String tel, String mail) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        String imie;
+        String nazwisko;
+        if (plec == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+
+//        try {
+            driver.get("https://neworklead.pl/zadanie/74dd8f3ecefeabcb8cd1a71b1a3892d7/a6ee2b08c7a7d40d8339d5a4c083353e/d654be842d14f320ad92ef039fb6aa4c");
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[4]/div/div[1]/p[2]/button[2]"))));
+            driver.findElement(By.xpath("/html/body/div[4]/div/div[1]/p[2]/button[2]")).click();
+            driver.findElement(By.xpath("//*[@id=\"input_imie\"]")).sendKeys(imie);
+            driver.findElement(By.xpath("//*[@id=\"input_nazwisko\"]")).sendKeys(nazwisko);
+            driver.findElement(By.xpath("//*[@id=\"input_telefonKom\"]")).sendKeys(tel);
+            driver.findElement(By.xpath("//*[@id=\"input_email\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"checkbox_zgoda_all\"]")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"button_Wyslij\"]")).click();
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void lkBgz(String tel, String mail) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        String imie;
+        String nazwisko;
+        if (plec == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+
+//        try {
+            driver.get("https://neworklead.pl/zadanie/c5fbc71074cbf00b7ba1584af6f2c0ce/703b5cde4f98a2d054fd48ecb00104b7/d654be842d14f320ad92ef039fb6aa4c");
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[4]/div/div[1]/p[2]/button[2]"))));
+            driver.findElement(By.xpath("/html/body/div[4]/div/div[1]/p[2]/button[2]")).click();
+            driver.findElement(By.xpath("//*[@id=\"input_imie\"]")).sendKeys(imie);
+            driver.findElement(By.xpath("//*[@id=\"input_nazwisko\"]")).sendKeys(nazwisko);
+            driver.findElement(By.xpath("//*[@id=\"input_telefonKom\"]")).sendKeys(tel);
+            driver.findElement(By.xpath("//*[@id=\"input_email\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"checkbox_zgoda_all\"]")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"button_Wyslij\"]")).click();
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void lkBgzkg(String tel, String mail) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        String imie;
+        String nazwisko;
+        if (plec == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+
+//        try {
             driver.get("https://neworklead.pl/zadanie/2d0e8f22e0892f4f3e3fedfd913631e4/d8b8754675fd19ba070faa19732c7641/d654be842d14f320ad92ef039fb6aa4c");
             wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[4]/div/div[1]/p[2]/button[2]"))));
             driver.findElement(By.xpath("/html/body/div[4]/div/div[1]/p[2]/button[2]")).click();
@@ -4536,9 +4680,9 @@ public class Neworklead extends Narzedzia {
             driver.findElement(By.xpath("//*[@id=\"checkbox_zgoda_all\"]")).click();
             Thread.sleep(1000);
             driver.findElement(By.xpath("//*[@id=\"button_Wyslij\"]")).click();
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
 
@@ -4550,6 +4694,53 @@ public class Neworklead extends Narzedzia {
         driver.get("https://neworklead.pl/zadanie/ed04ab10260b9bbafb58e54455fdc81f/41b0e7abc3547a43234a4905625c1797/d654be842d14f320ad92ef039fb6aa4c");
         Thread.sleep(6000);
         Dekoral(driver, mail);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void DekoralMail(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+            driver.get("https://neworklead.pl/zadanie/2f1fcfb4765b75731c3633607b5e4629/402a8b60be53613d3c8eae7672d58a29/d654be842d14f320ad92ef039fb6aa4c");
+            Thread.sleep(6000);
+            Dekoral(driver, mail);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void Letty(WebDriver driver, String mail) throws InterruptedException, AWTException {
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+
+//        try {
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"tmp-coutry-chouse\"]/div[2]"))));
+            driver.findElement(By.xpath("//*[@id=\"tmp-coutry-chouse\"]/div[2]")).click();
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div[1]/div[1]/div/div[1]/div/div[3]/div[2]/div[1]/div/div[2]/div[2]/form/div[2]/ul/li[16]/span")).click();
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div[3]/div[1]/div/div[2]/div/div[2]/div/div/div[6]/form/div[1]/input"))));
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div[3]/div[1]/div/div[2]/div/div[2]/div/div/div[6]/form/div[1]/input")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div[3]/div[1]/div/div[2]/div/div[2]/div/div/div[6]/form/div[3]/input")).sendKeys(mail+"V2");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div[3]/div[1]/div/div[2]/div/div[2]/div/div/div[6]/form/div[4]/button")).click();
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void Letty(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("https://neworklead.pl/zadanie/a649d85796d9d35569a69a0e817daea9/dea9073957a161f9e7c9f45dcc2cf5fd/d654be842d14f320ad92ef039fb6aa4c");
+        Thread.sleep(6000);
+        Letty(driver, mail);
 //        } catch (Exception e) {
 //            driver.quit();
 //        }
