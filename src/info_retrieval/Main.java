@@ -861,19 +861,19 @@ public class Main extends Narzedzia {
         grupy2[2] = "https://www.facebook.com/groups/1755764568010980/";
         grupy2[3] = "https://www.facebook.com/groups/1062892473755654/";
         grupy2[4] = "https://www.facebook.com/groups/275239426452519/";
-        grupy2[5] = "https://www.facebook.com/groups/525083377540133/";
+        grupy2[5] = "https://www.facebook.com/groups/525083377540133/";	//dyskusja
         grupy2[6] = "https://www.facebook.com/groups/489737711047141/";
         grupy2[7] = "https://www.facebook.com/groups/1430880976978615/";
-        grupy2[8] = "https://www.facebook.com/groups/1094254027714610/";
+        grupy2[8] = "https://www.facebook.com/groups/1094254027714610/";	//akceptacja
         grupy2[9] = "https://www.facebook.com/groups/216664798801356/";
         grupy2[10] = "https://www.facebook.com/groups/592252047798369/";
         grupy2[11] = "https://www.facebook.com/groups/1825732451077240/";
         grupy2[12] = "https://www.facebook.com/groups/370561153055562/";
         grupy2[13] = "https://www.facebook.com/groups/228459925434152/";
-        grupy2[14] = "https://www.facebook.com/groups/935964903461625/";
+        grupy2[14] = "https://www.facebook.com/groups/935964903461625/";	//nie mozna wystawic postu
         grupy2[15] = "https://www.facebook.com/groups/348871858855980/";
         grupy2[16] = "https://www.facebook.com/groups/praca.siedlce/";
-        grupy2[17] = "https://www.facebook.com/groups/254200585111377/";
+        grupy2[17] = "https://www.facebook.com/groups/254200585111377/";	//akceptacja
         grupy2[18] = "https://www.facebook.com/groups/587449044732733/";
         grupy2[19] = "https://www.facebook.com/groups/140934702697559/";
         grupy2[20] = "https://www.facebook.com/groups/723051031543696/";
@@ -887,28 +887,28 @@ public class Main extends Narzedzia {
         grupy2[28] = "https://www.facebook.com/groups/682480818432113/";
         grupy2[29] = "https://www.facebook.com/groups/1269496053078983/";
         grupy2[30] = "https://www.facebook.com/groups/730288703762088/";
-        grupy2[31] = "https://www.facebook.com/groups/304611164084232/";
-        grupy2[32] = "https://www.facebook.com/groups/grupawsparciamlm/";
+        grupy2[31] = "https://www.facebook.com/groups/304611164084232/";	//akceptacja
+        grupy2[32] = "https://www.facebook.com/groups/grupawsparciamlm/";	//dyskusja
         grupy2[33] = "https://www.facebook.com/groups/1707876736106783/";
         grupy2[34] = "https://www.facebook.com/groups/293083300801332/";
-        grupy2[35] = "https://www.facebook.com/groups/368105106970944/";
+        grupy2[35] = "https://www.facebook.com/groups/368105106970944/";	//akceptacja
         grupy2[36] = "https://www.facebook.com/groups/603093386381123/";
         grupy2[37] = "https://www.facebook.com/groups/281402322004801/";
-        grupy2[38] = "https://www.facebook.com/groups/736793290304625/";
+        grupy2[38] = "https://www.facebook.com/groups/736793290304625/";	//nie mozna post
         grupy2[39] = "https://www.facebook.com/groups/SpelniajMarzenia/";
         grupy2[40] = "https://www.facebook.com/groups/419672628799764/";
         grupy2[41] = "https://www.facebook.com/groups/112506316105896/";
         grupy2[42] = "https://www.facebook.com/groups/as.polska.polski/";
         grupy2[43] = "https://www.facebook.com/groups/1411493178930704/";
-        grupy2[44] = "https://www.facebook.com/groups/260347977466204/";
+        grupy2[44] = "https://www.facebook.com/groups/260347977466204/";	//dyskusja
         grupy2[45] = "https://www.facebook.com/groups/260986967296826/";
         grupy2[46] = "https://www.facebook.com/groups/173392000759936/";
         grupy2[47] = "https://www.facebook.com/groups/837024419659515/";
         grupy2[48] = "https://www.facebook.com/groups/933677930171662/";
-        grupy2[49] = "https://www.facebook.com/groups/1880353255553576/";
+        grupy2[49] = "https://www.facebook.com/groups/1880353255553576/";	//akceptacja
         grupy2[50] = "https://www.facebook.com/groups/292714161260017/";
         grupy2[51] = "https://www.facebook.com/groups/482209278847962/";
-        grupy2[52] = "https://www.facebook.com/groups/976057992777858/";
+        grupy2[52] = "https://www.facebook.com/groups/976057992777858/";	//nie mozna dac posta
         grupy2[53] = "https://www.facebook.com/groups/482209278847962/";
 
         JavascriptExecutor js = (JavascriptExecutor) driver;	
@@ -2153,8 +2153,7 @@ public class Main extends Narzedzia {
         String num3;
         String miastEn;
         String koEn;
-
-        Neworklead.Letty("");
+        dodajPostLepakNowy(profil[0],fb[0],"",post,0,30,true);
 
 //        try {
 
