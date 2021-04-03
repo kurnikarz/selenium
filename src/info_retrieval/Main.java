@@ -1974,18 +1974,21 @@ public class Main extends Narzedzia{
 //            System.out.println(mail);
 //            Koniec.Restart();
 //        }
-Koniec.Restart();
-        for (int i=0;i<40;i++){
-            mail = dekoral.nextLine();
-            Neworklead.Dekoral(mail);
-            System.out.println(mail);
-            System.out.println(i);
-            Koniec.Restart();
-        }
+//Koniec.Restart();
+
 
         try {
 
-
+            for (int i=0;i<70;i++){
+                mail = dekoral.nextLine();
+//                if (i%2==0)
+//                    Neworklead.Dekoral(mail);
+//                else
+                    Neworklead.DekoralMail(mail);
+                System.out.println(mail);
+                System.out.println(i);
+                Koniec.Restart();
+            }
 
         }
 

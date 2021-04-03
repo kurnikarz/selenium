@@ -4279,13 +4279,27 @@ public class Neworklead extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-//        try {
+        try {
         driver.get("https://neworklead.pl/zadanie/ed04ab10260b9bbafb58e54455fdc81f/41b0e7abc3547a43234a4905625c1797/d654be842d14f320ad92ef039fb6aa4c");
         Thread.sleep(6000);
         Dekoral(driver, mail);
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            driver.quit();
+        }
+
+    }
+
+    public static void DekoralMail(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        try {
+        driver.get("https://neworklead.pl/zadanie/2f1fcfb4765b75731c3633607b5e4629/402a8b60be53613d3c8eae7672d58a29/d654be842d14f320ad92ef039fb6aa4c");
+        Thread.sleep(6000);
+        Dekoral(driver, mail);
+        } catch (Exception e) {
+            driver.quit();
+        }
 
     }
 }
