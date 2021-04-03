@@ -1,6 +1,5 @@
 package info_retrieval;
 
-import javafx.scene.control.TabPane;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

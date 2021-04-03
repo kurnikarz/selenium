@@ -17,7 +17,7 @@ public class Koniec {
     public static void Restart() throws InterruptedException{
         System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
 
-        try {
+//        try {
             WebDriver firefox = new FirefoxDriver();
             firefox.get("http://192.168.1.1/");
 
@@ -57,9 +57,9 @@ public class Koniec {
             Thread.sleep(100000);
             Thread.sleep(10000);
             firefox.quit();
-        } catch (Exception e) {
-
-        }
+//        } catch (Exception e) {
+//
+//        }
 
 }
 

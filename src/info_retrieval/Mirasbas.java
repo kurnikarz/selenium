@@ -319,8 +319,8 @@ public class Mirasbas extends Narzedzia {
     }
 
     public static void Arkaida(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-//        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+//        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         /*
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
@@ -349,8 +349,8 @@ public class Mirasbas extends Narzedzia {
     }
 
     public static void Galeria(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-//        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+//        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         /*
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
@@ -379,8 +379,8 @@ public class Mirasbas extends Narzedzia {
     }
 
     public static void Wroclawia(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-//        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+//        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         /*
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
@@ -407,7 +407,7 @@ public class Mirasbas extends Narzedzia {
     }
 
     public static void VeePee(String mail, String ulica, String miasto, String kod) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Random r = new Random();
@@ -516,7 +516,7 @@ public class Mirasbas extends Narzedzia {
     }
 
     public static void Momondo() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         Random r = new Random();
         int momondo = r.nextInt(2);
         WebDriver driver = new ChromeDriver();
@@ -538,7 +538,7 @@ public class Mirasbas extends Narzedzia {
     }
 
     public static void Pampers(String mail, String ulica, String kod1, String kod2, String miasto, String tel) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         String imie = genImieZen();
         String nazwisko = genNazwiskoZen();
         Random r = new Random();
@@ -552,16 +552,16 @@ public class Mirasbas extends Narzedzia {
         driver.manage().window().maximize();
 
         driver.get("https://mirasbas.pl/zadanie/36/149ba14d0352f9133a371dca827148f1");
-        Thread.sleep(5000);
-        driver.findElement(By.xpath("//*[@id=\"start\"]")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"1\"]/div[3]")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"2\"]/div[3]")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"3\"]/div[3]")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"4\"]/div[3]")).click();
+//        Thread.sleep(5000);
+//        driver.findElement(By.xpath("//*[@id=\"start\"]")).click();
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"1\"]/div[3]")).click();
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"2\"]/div[3]")).click();
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"3\"]/div[3]")).click();
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"4\"]/div[3]")).click();
 
         Thread.sleep(6000);
         driver.findElement(By.xpath("//*[@id=\"email_field\"]")).sendKeys(mail);
@@ -570,8 +570,6 @@ public class Mirasbas extends Narzedzia {
         driver.findElement(By.xpath("//*[@id=\"agreements-content\"]/div[3]/div[2]/label/input")).click();
         driver.findElement(By.xpath("//*[@id=\"agreements-content\"]/div[3]/div[3]/label/input")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"agreements-content\"]/div[3]/div[3]/label/input")).click();
-        Thread.sleep(500);
         driver.findElement(By.xpath("//*[@id=\"btn-confirm\"]/span")).click();
         Thread.sleep(500);
         driver.findElement(By.xpath("//*[@id=\"btn-confirm\"]/span")).click();
@@ -629,8 +627,9 @@ public class Mirasbas extends Narzedzia {
         Thread.sleep(3000);
         while (!flaga) {
             try {
+                driver.get("https://poczta.wp.pl/k/#/mails/?label=1");
                 try {
-                    driver.findElement(By.xpath("//*[text()='Maluszki Pieluszki']")).click();
+                    driver.findElement(By.xpath("//*[text()='Wesołe maluszki']")).click();
                 } catch (Exception f) {
                     driver.get("https://poczta.wp.pl/k/#/mails/?label=5");
                     Thread.sleep(3000);
@@ -655,7 +654,7 @@ public class Mirasbas extends Narzedzia {
     }
 
     public static void Edison(String mail, String tel) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         String imie;
         String nazwisko;
         Random r = new Random();
@@ -684,7 +683,7 @@ public class Mirasbas extends Narzedzia {
     }
 
     public static void Newsletter(String mail) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         String imie;
         String nazwisko;
         Random r = new Random();
@@ -719,7 +718,7 @@ public class Mirasbas extends Narzedzia {
     }
 
     public static void Energia(String mail, String numer, String kod, String miasto) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         String imie;
         String nazwisko;
         Random r = new Random();
@@ -760,7 +759,7 @@ public class Mirasbas extends Narzedzia {
     }
 
     public static void GData() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -776,7 +775,7 @@ public class Mirasbas extends Narzedzia {
     }
 
     public static void Tauron(String mail, String numer) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         String imie;
         String nazwisko;
         Random r = new Random();
@@ -806,7 +805,7 @@ public class Mirasbas extends Narzedzia {
     }
 
     public static void Sky() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         String[] panstwa = {"Irlandia","Wielka Brytania","Norwegia","Szwecja","Finlandia","Portugalia","Hiszpania","Andora","Francja","Holandia","Belgia","Luxemburg","Niemcy","Dania","Szwajcaria","Lichtenstein","Włochy","Monako","San Marino","Czechy","Słowacja","Austria","Węgry","Słowenia","Chorwacja","Albania","Macedonia","Bułgaria","Grecja","Estonia","Łotwa","Litwa","Białoruś","Ukraina","Rosja","Islandia"};
         Random r = new Random();
         int i = r.nextInt(panstwa.length-1);

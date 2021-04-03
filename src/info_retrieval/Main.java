@@ -29,9 +29,9 @@ import java.util.ArrayList;
 public class Main extends Narzedzia {
 
     public static void interia() throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer maile = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\everyInt.txt", true));
-        Writer botowe = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\botowe.txt", true));
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        Writer maile = new BufferedWriter(new FileWriter("C:\\Users\\dumci\\Desktop\\klikanie\\everyInt.txt", true));
+        Writer botowe = new BufferedWriter(new FileWriter("C:\\Users\\dumci\\Desktop\\klikanie\\botowe.txt", true));
         ChromeOptions options = new ChromeOptions();
         String profil = "113";
         int j = 0;
@@ -39,10 +39,10 @@ public class Main extends Narzedzia {
         Random r = new Random();
         boolean flaga = true;
         boolean flaga2 = true;
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile " + profil);
-        options.addExtensions(new File("E:\\bot\\captcha.crx"));
-        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
 
         String imie = genImieZen();
         String nazwiwsko = genNazwiskoZen();
@@ -178,14 +178,14 @@ public class Main extends Narzedzia {
     }
 
     public static void testCaptcha() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         boolean flaga = true;
         WebElement blad;
         int i = 0;
         Robot robot = new Robot();
-        //options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1");
-        options.addExtensions(new File("E:\\botPythonn\\captcha.crx"));
+        //options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1");
+        options.addExtensions(new File("C:\\botPythonn\\captcha.crx"));
         WebDriver driver = new ChromeDriver(options);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -217,17 +217,17 @@ public class Main extends Narzedzia {
     }
 
     public static void testCaptcha2() throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         boolean flaga = true;
         WebElement blad;
         int i = 0;
         Robot robot = new Robot();
-        options.addExtensions(new File("E:\\botPythonn\\captcha.crx"));
+        options.addExtensions(new File("C:\\botPythonn\\captcha.crx"));
         //options.addArguments("--disable-web-security");
         //options.addArguments("--allow-running-insecure-content");
         //options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1");
         //Map<String, Object> prefs = new HashMap<String, Object>();
         //prefs.put("profile.default_content_settings.popups", 0);
         //options.setExperimentalOption("prefs", prefs);
@@ -249,7 +249,7 @@ public class Main extends Narzedzia {
     }
 
     public static void ecoin(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -325,8 +325,8 @@ public class Main extends Narzedzia {
     }
 
     public static void pobierzIp() throws IOException, InterruptedException {
-        Writer ip = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\ip.txt", true));
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        Writer ip = new BufferedWriter(new FileWriter("C:\\Users\\dumci\\Desktop\\klikanie\\ip.txt", true));
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
         images.put("images", 2);
@@ -345,15 +345,15 @@ public class Main extends Narzedzia {
     }
 
     public static void sprawdzMail(String mail, String haslo) throws IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
         images.put("images", 2);
         HashMap<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("profile.default_content_setting_values", images);
         options.setExperimentalOption("prefs", prefs);
-        Writer zablokowane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\zablokowane.txt", true));
-        Writer niezablokowane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niezablokowane.txt", true));
+        Writer zablokowane = new BufferedWriter(new FileWriter("C:\\Users\\dumci\\Desktop\\klikanie\\zablokowane.txt", true));
+        Writer niezablokowane = new BufferedWriter(new FileWriter("C:\\Users\\dumci\\Desktop\\klikanie\\niezablokowane.txt", true));
         WebDriver driver = new ChromeDriver(options);
         try {
             driver.get("http://poczta.wp.pl/");
@@ -379,7 +379,7 @@ public class Main extends Narzedzia {
         Robot r = new Robot();
 
         // It saves screenshot to desired path
-        String path = "C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\" + mail + "\\" + i + ".jpg";
+        String path = "C:\\Users\\dumci\\Desktop\\klikanie\\posty\\screeny\\" + mail + "\\" + i + ".jpg";
 
         // Used to get ScreenSize and capture image
         Rectangle capture =
@@ -390,12 +390,12 @@ public class Main extends Narzedzia {
     }
 
     public static void dodajPost(String mail, String post, String profil, int a, int b) throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile " + profil);
         options.addArguments("--disable-notifications");
-        Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\" + mail + "\\linki.txt", true));
+        Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\dumci\\Desktop\\klikanie\\posty\\screeny\\" + mail + "\\linki.txt", true));
         ChromeDriver driver = new ChromeDriver(options);
         Robot robot = new Robot();
         List<String> grupy = new ArrayList<>();
@@ -487,7 +487,7 @@ public class Main extends Narzedzia {
                     driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div/div[2]/div[1]/div/div/div/div[2]/div/div[3]/div[2]/div/table/tbody/tr[1]/td[1]/div/div/span/a/div[2]")).click();
                 }
                 Thread.sleep(5000);
-                Narzedzia.Kopiuj("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\klos.jpg");
+                Narzedzia.Kopiuj("C:\\Users\\dumci\\Desktop\\klikanie\\posty\\klos.jpg");
                 Thread.sleep(1000);
                 Narzedzia.Wklej();
                 Thread.sleep(1000);
@@ -524,7 +524,7 @@ public class Main extends Narzedzia {
     }
 
     public static void potwierdzEvery(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         boolean flaga = false;
         int m = 0;
@@ -617,16 +617,16 @@ public class Main extends Narzedzia {
     }
 
     public static void dodajPostLepak(String mail, String haslo, String post, int a, int b) throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addExtensions(new File("E:\\bot\\captcha.crx"));
-        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
         /*
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Googlehttps://www.facebook.com/groups/172681430256680/\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Googlehttps://www.facebook.com/groups/172681430256680/\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile "+profil);
          */
         options.addArguments("--disable-notifications");
-        Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\" + mail + "\\linki.txt", true));
+        Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\dumci\\Desktop\\klikanie\\posty\\screeny\\" + mail + "\\linki.txt", true));
         ChromeDriver driver = new ChromeDriver(options);
         Robot robot = new Robot();
         String[] grupy = new String[100];
@@ -739,7 +739,7 @@ public class Main extends Narzedzia {
                         driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div/div[2]/div[1]/div/div/div/div[2]/div/div[3]/div[2]/div/table/tbody/tr[1]/td[1]/div/div/span/a/div[2]")).click();
                     }
                     Thread.sleep(5000);
-                    Narzedzia.Kopiuj("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\klos.jpg");
+                    Narzedzia.Kopiuj("C:\\Users\\dumci\\Desktop\\klikanie\\posty\\klos.jpg");
                     Thread.sleep(1000);
                     Narzedzia.Wklej();
                     Thread.sleep(1000);
@@ -780,16 +780,16 @@ public class Main extends Narzedzia {
     }
 
     public static void dodajPostLepakNowy(String profil, String mail, String haslo, String post, int a, int b, boolean flaga) throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addExtensions(new File("E:\\bot\\captcha.crx"));
-        options.addExtensions(new File("E:\\bot\\buster.crx"));
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
 
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile " + profil);
 
         options.addArguments("--disable-notifications");
-        Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\screeny\\" + mail + "\\linki.txt", true));
+        Writer linki = new BufferedWriter(new FileWriter("C:\\Users\\dumci\\Desktop\\klikanie\\posty\\screeny\\" + mail + "\\linki.txt", true));
         ChromeDriver driver = new ChromeDriver(options);
         Robot robot = new Robot();
         String[] grupy = new String[70];
@@ -806,7 +806,7 @@ public class Main extends Narzedzia {
         grupy[9] = "https://www.facebook.com/groups/995656560478126/";
         grupy[10] = "https://www.facebook.com/groups/389679508482812/";
         grupy[11] = "https://www.facebook.com/groups/531288753733140/";	//akceptacja
-        grupy[12] = "https://www.facebook.com/groups/pracawmlm/";
+        grupy[12] = "https://www.facebook.com/groups/pracawmlm/";	//blok
         grupy[13] = "https://www.facebook.com/groups/331639100303519/";
         grupy[14] = "https://www.facebook.com/groups/301376787777395/";
         grupy[15] = "https://www.facebook.com/groups/381018519002791/";
@@ -882,7 +882,7 @@ public class Main extends Narzedzia {
         grupy2[23] = "https://www.facebook.com/groups/553406364833950/";
         grupy2[24] = "https://www.facebook.com/groups/328630974620800/";
         grupy2[25] = "https://www.facebook.com/groups/401862109918110/";
-        grupy2[26] = "https://www.facebook.com/groups/zarabianieprzezneta/";
+        grupy2[26] = "https://www.facebook.com/groups/zarabianieprzezneta/";	//akceptacja
         grupy2[27] = "https://www.facebook.com/groups/1450613121819428/";
         grupy2[28] = "https://www.facebook.com/groups/682480818432113/";
         grupy2[29] = "https://www.facebook.com/groups/1269496053078983/";
@@ -895,7 +895,7 @@ public class Main extends Narzedzia {
         grupy2[36] = "https://www.facebook.com/groups/603093386381123/";
         grupy2[37] = "https://www.facebook.com/groups/281402322004801/";
         grupy2[38] = "https://www.facebook.com/groups/736793290304625/";	//nie mozna post
-        grupy2[39] = "https://www.facebook.com/groups/SpelniajMarzenia/";
+        grupy2[39] = "https://www.facebook.com/groups/SpelniajMarzenia/";	//akceptacja
         grupy2[40] = "https://www.facebook.com/groups/419672628799764/";
         grupy2[41] = "https://www.facebook.com/groups/112506316105896/";
         grupy2[42] = "https://www.facebook.com/groups/as.polska.polski/";
@@ -909,7 +909,6 @@ public class Main extends Narzedzia {
         grupy2[50] = "https://www.facebook.com/groups/292714161260017/";
         grupy2[51] = "https://www.facebook.com/groups/482209278847962/";
         grupy2[52] = "https://www.facebook.com/groups/976057992777858/";	//nie mozna dac posta
-        grupy2[53] = "https://www.facebook.com/groups/482209278847962/";
 
         JavascriptExecutor js = (JavascriptExecutor) driver;	
         driver.manage().window().maximize();
@@ -934,16 +933,6 @@ public class Main extends Narzedzia {
 
 
         for (int i = a; i < b; i++) {
-                /*
-                try {
-                    driver.findElement(By.xpath("//*[text()='Twoje konto zostało zablokowane']")).click();
-                    System.out.println("ZABLOKOWANE");
-                    driver.quit();
-                    break;
-                } catch (Exception e) {
-                    System.out.println("la");
-                }
-                */
             try {
                 Thread.sleep(2000);
                 if (flaga)
@@ -959,13 +948,14 @@ public class Main extends Narzedzia {
                 Narzedzia.Wklej();
                 Thread.sleep(2000);
 //                ZDJECIE =======================
-//                Kopiuj("C:\\Users\\Artur\\Desktop\\klikanie\\posty\\klos.jpg");
-//                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[1]/span/div/div/div/div/div[1]/i")).click();
-//                Thread.sleep(2000);
-//                Wklej();
-//                Thread.sleep(1000);
-//                robot.keyPress(KeyEvent.VK_ENTER);
-//                Thread.sleep(3000);
+                Kopiuj("C:\\Users\\dumci\\Desktop\\klikanie\\posty\\klos.jpg");
+                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[2]/span/div/div/div[1]/div/div/div[1]/i" +
+                        "")).click();
+                Thread.sleep(2000);
+                Wklej();
+                Thread.sleep(1000);
+                robot.keyPress(KeyEvent.VK_ENTER);
+                Thread.sleep(3000);
 
                 driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
                 Thread.sleep(5000);
@@ -997,9 +987,9 @@ public class Main extends Narzedzia {
     }
 
     public static void poprawGrupe(String profil) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile " + profil);
         options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
@@ -1052,7 +1042,7 @@ public class Main extends Narzedzia {
     }
 
     public static void sprawdzGrupe(String mail) throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> images = new HashMap<String, Object>();
         images.put("images", 2);
@@ -1061,7 +1051,7 @@ public class Main extends Narzedzia {
         options.addArguments("--disable-notifications");
         options.setExperimentalOption("prefs", prefs);
         ChromeDriver driver = new ChromeDriver(options);
-        Writer niedolaczone = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\" + mail + ".txt", true));
+        Writer niedolaczone = new BufferedWriter(new FileWriter("C:\\Users\\dumci\\Desktop\\klikanie\\" + mail + ".txt", true));
         Robot robot = new Robot();
         String[] grupy = new String[45];
         grupy[0] = "https://www.facebook.com/groups/125548817802832/";
@@ -1133,9 +1123,9 @@ public class Main extends Narzedzia {
     }
 
     public static void dolaczDoGrupy(String mail, String profil) throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile " + profil);
         LocalDate data = LocalDate.now();
         HashMap<String, Object> images = new HashMap<String, Object>();
@@ -1430,10 +1420,10 @@ public class Main extends Narzedzia {
     }
 
     public static void dolaczDoGrupyPoczatek(String mail, String haslo) throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         /*
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile "+profil);
 
          */
@@ -1551,10 +1541,10 @@ public class Main extends Narzedzia {
     }
 
     public static void dolaczDoGrupyLepak(String mail, String haslo, int a, int b) throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         /*
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile "+profil);
 
          */
@@ -1812,10 +1802,10 @@ public class Main extends Narzedzia {
     }
 
     public static void lajkuj(String mail, String haslo) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         /*
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile "+profil);
 
          */
@@ -1894,18 +1884,18 @@ public class Main extends Narzedzia {
     }
 
     public static void testGrup(String url) {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile 39");
         WebDriver driver = new ChromeDriver(options);
         driver.get(url);
     }
 
     public static void testPost(String mail, String post, String profil) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile " + profil);
         options.addArguments("--disable-notifications");
         ChromeDriver driver = new ChromeDriver(options);
@@ -1927,11 +1917,11 @@ public class Main extends Narzedzia {
     }
 
     public static void scrollujFejsa(String mail, String profil) throws AWTException, InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         Random r = new Random();
         int lajk = r.nextInt(2);
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile " + profil);
         options.addArguments("--disable-notifications");
         ChromeDriver driver = new ChromeDriver(options);
@@ -1968,9 +1958,9 @@ public class Main extends Narzedzia {
     }
 
     public static void theCrims() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\");
+        options.addArguments("user-data-dir=C:\\Users\\dumci\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("profile-directory=Profile " + "113");
         options.addArguments("--disable-notifications");
         ChromeDriver driver = new ChromeDriver(options);
@@ -2047,54 +2037,55 @@ public class Main extends Narzedzia {
     }
 
     public static void main(String[] args) throws InterruptedException, IOException, AWTException {
-        Scanner kod = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\kod.txt"));
-        Scanner cola = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\cola.txt"));
-        Scanner loginy = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\loginy.txt"));
-        Scanner nestle3 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\nestle3.txt"));
-        Scanner pam = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\pam.txt"));
-        Scanner kodVe = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\kody.txt"));
-        Scanner kodEn = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\kodyEn.txt"));
-        Scanner kodPam = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\kodyPam.txt"));
-        Scanner kodPam2 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\kodyPam2.txt"));
-        Scanner miastoVe = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\miasto.txt"));
-        Scanner miastoEn = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\miastoEn.txt"));
-        Scanner miastoPam = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\miastoPam.txt"));
-        Scanner ulicaVe = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\ulica.txt"));
-        Scanner ulicaPam = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\ulicaPam.txt"));
-        Scanner arkadia = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia.txt"));
-        Scanner arkadia2 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia2.txt"));
-        Scanner arkadia3 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia3.txt"));
-        Scanner arkadia4 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\arkadia4.txt"));
-        Scanner limango = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\limango.txt"));
-        Scanner travelist = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\travelist.txt"));
-        Scanner pampers = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\pampers.txt"));
-        Scanner pampers2 = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\pampers2.txt"));
-        Scanner lidl = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\lidl.txt"));
-        Scanner ecoin = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\ecoin.txt"));
-        Scanner potwierdzlidl = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\potwierdzlidl.txt"));
-        Scanner cu = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\cu.txt"));
-        Scanner numerKon = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\numerKon.txt"));
-        Scanner mailKon = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\konkursy.txt"));
-        Scanner spartoo = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\spartoo.txt"));
-        Scanner samsung = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\samsung.txt"));
-        Scanner enfamil = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\enfamil.txt"));
-        Scanner miasto = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\miasto.txt"));
-        Scanner numer = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\numerHei.txt"));
-        Scanner edison = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\edison.txt"));
-        Scanner numPam = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\numPam.txt"));
-        Scanner numEn = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\numEn.txt"));
-        Scanner news = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\news.txt"));
-        Scanner przepisy = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\przepisy.txt"));
-        Scanner biedronka = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\biedronka.txt"));
-        Scanner bimago = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\bimago.txt"));
-        Scanner bgz = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\bgz.txt"));
-        Scanner bgzNum = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\bgzNum.txt"));
-        Scanner dekoral = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\dekoral.txt"));
+        Scanner kod = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\kod.txt"));
+        Scanner cola = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\cola.txt"));
+        Scanner loginy = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\loginy.txt"));
+        Scanner nestle3 = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\nestle3.txt"));
+        Scanner pam = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\pam.txt"));
+        Scanner kodVe = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\kody.txt"));
+        Scanner kodEn = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\kodyEn.txt"));
+        Scanner kodPam = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\kodyPam.txt"));
+        Scanner kodPam2 = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\kodyPam2.txt"));
+        Scanner miastoVe = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\miasto.txt"));
+        Scanner miastoEn = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\miastoEn.txt"));
+        Scanner miastoPam = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\miastoPam.txt"));
+        Scanner ulicaVe = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\ulica.txt"));
+        Scanner ulicaPam = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\ulicaPam.txt"));
+        Scanner arkadia = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\arkadia.txt"));
+        Scanner arkadia2 = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\arkadia2.txt"));
+        Scanner arkadia3 = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\arkadia3.txt"));
+        Scanner arkadia4 = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\arkadia4.txt"));
+        Scanner limango = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\limango.txt"));
+        Scanner travelist = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\travelist.txt"));
+        Scanner pampers = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\pampers.txt"));
+        Scanner pampers2 = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\pampers2.txt"));
+        Scanner lidl = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\lidl.txt"));
+        Scanner ecoin = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\ecoin.txt"));
+        Scanner potwierdzlidl = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\potwierdzlidl.txt"));
+        Scanner cu = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\cu.txt"));
+        Scanner numerKon = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\numerKon.txt"));
+        Scanner mailKon = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\konkursy.txt"));
+        Scanner spartoo = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\spartoo.txt"));
+        Scanner samsung = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\samsung.txt"));
+        Scanner enfamil = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\enfamil.txt"));
+        Scanner miasto = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\miasto.txt"));
+        Scanner numer = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\numerHei.txt"));
+        Scanner edison = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\edison.txt"));
+        Scanner numPam = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\numPam.txt"));
+        Scanner numEn = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\numEn.txt"));
+        Scanner news = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\news.txt"));
+        Scanner przepisy = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\przepisy.txt"));
+        Scanner biedronka = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\biedronka.txt"));
+        Scanner bimago = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\bimago.txt"));
+        Scanner bgz = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\bgz.txt"));
+        Scanner bgzNum = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\bgzNum.txt"));
+        Scanner dekoral = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\dekoral.txt"));
+        Scanner letty = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\letty.txt"));
 
-        Scanner every = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\every.txt"));
-        Scanner everyInt = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\everyInt.txt"));
-        //Scanner chili = new Scanner(new File("C:\\Users\\Artur\\Desktop\\klikanie\\chili.txt"));
-        PrintWriter blad = new PrintWriter("C:\\Users\\Artur\\Desktop\\klikanie\\blad.txt");
+        Scanner every = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\every.txt"));
+        Scanner everyInt = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\everyInt.txt"));
+        //Scanner chili = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\chili.txt"));
+        PrintWriter blad = new PrintWriter("C:\\Users\\dumci\\Desktop\\klikanie\\blad.txt");
         String kodd[] = new String[43785];
         String mail;
         String mailEv;
@@ -2135,15 +2126,33 @@ public class Main extends Narzedzia {
 
         String mail2;
         String mail3;
-        String post = "Szukamy ludzi do pracy przy wklejaniu postów na FB. \n" +
-                "Płacimy codziennie! Można robić posty z wielu kont i zarobi się więcej. Mamy w zespole ludzi co zarabiają po 5000zl w skali miesiaca poswiecajac godzinę pracy dziennie. \n" +
+        String post = "Uwaga!\n" +
                 "\n" +
-                "Kontakt tylko mailowy:\n" +
+                "Post od Pana Miroslawa Klos, którego gorąco polecam.\n" +
                 "\n" +
-                "Pracujekiedychce@gmail.com\n" +
+                "Witajcie nazywam się Miroslaw Klos a posty które widzicie są wstawiane przez osoby, które pracują dla mnie. Płacę najwięcej w Polsce za taką robotę ale dziś nie o tym...\n" +
+                "W internecie zarabiam od wielu lat i to z powodzeniem. Prowadzę Bloga jak i kanał na youtubie gdzie skutecznie obnażam te wszystkie bzdury i scamy jakie widzicie tu na co dzień.\n" +
+                "Może dlatego mało lubiany jestem w pewnych gronach ;)\n" +
+                "Był słynny na całą polskę program RB gdzie włożyłem 12.000zł tylko po to aby pokazać jak działa ten syf. Film macie na moim kanale gdzie prowadziłem psychologiczną zagrywkę z całym supportem.\n" +
+                "Czy zarobiłem? Sprawdźcie sami! \n" +
+                "Była też słynna Madzia ze Szczecina czyli wariatka a jak nie którzy twierdzą zakochana we mnie chora kobieta. Która zgłaszała mnie masowo na policję, prokuraturę czy do US. Filmy z przygód z tą wariatką również na moim kanale!\n" +
                 "\n" +
-                "Nie odpowiadamy na wiadomości na FB oraz komentarze pod postem. \n" +
-                "Nawet ich NIE czytamy. Proszę pisać TYLKO na email.";
+                "Prowadzę w tej chwili już kilka biznesów online ale głównym jest sprzedaż gier komputerowych w formie cyfrowej. Które wysyłamy do klienta mailowo. NIC sami nie kupujemy do puki sami nie sprzedamy.\n" +
+                "Jedną grę bierzemy za 20zł i sprzedajemy cały czas generując stały zysk na portalach aukcyjnych na całym świecie.\n" +
+                "Współpracuje ze mną wiele osób i jeżeli masz ochotę to zapraszam na Bloga gdzie możesz zapoznać się ze wszystkim.\n" +
+                "\n" +
+                "Blog:  Miroslawklos .pl  (Bez spacji bo FB tnie zasięgi)\n" +
+                "\n" +
+                "Na koniec dwa słowa do tych wszystkich dzbanów co biegają za mną od dobrych 5 lat! Kolejny rok dobiega końca a Wy kolejny rok swojego życia poświęcacie na promocje mojej osoby ;)\n" +
+                "Dziękuje za wszelkie komentarze, których co prawda nie czytam ale zawsze podbijają one posty!\n" +
+                "Po części to dzięki Wam mam te pokoje kinowe, karty za grube tysiące czy wyjazdy na moją ukochaną Ibizę jak w inne miejsca na świecie.\n" +
+                "Wielu z Was już wyjaśniłem w moich filmach. Wielu pewnie jeszcze wyjaśnię....\n" +
+                "\n" +
+                "Masz pytania? Napisz do mnie na maila:\n" +
+                "Dishar82@gmail.com\n" +
+                "\n" +
+                "Zapraszam do współpracy!\n" +
+                "Mirek";
 
         String fb[] = {"dumcio.97@wp.pl","ewa1dymkowska@gmail.com"};
         String[] profil = {"113","194",};
@@ -2153,67 +2162,41 @@ public class Main extends Narzedzia {
         String num3;
         String miastEn;
         String koEn;
-        dodajPostLepakNowy(profil[0],fb[0],"",post,0,30,true);
 
-//        try {
+        for (int i=1;i<=80;i++) {
+            mail = letty.nextLine();
+            if (i%2==0)
+                Neworklead.aLetty(mail);
+            else
+                Neworklead.lkLetty(mail);
+            if (i<13) {
+                mail2 = nestle3.nextLine();
+                if (i<4)
+                    Neworklead.NestleMB(mail2);
+                else if (i<9)
+                    Neworklead.NestleTAR(mail2);
+                else
+                    Neworklead.NestleDC(mail2);
+            }
+            System.out.println(i);
+            System.out.println(mail);
+            Koniec.Restart();
+        }
 
-            String mail4;
-            String bgzNumer;
-//Koniec.Restart();
-//            for (int i=49;i<200;i++) {
-//                mail = dekoral.nextLine();
-//                mail3 = bimago.nextLine();
-////                mail4 = bgz.nextLine();
-////                bgzNumer = bgzNum.nextLine();
-//                if (i<10) {
-//                    mail2 = enfamil.nextLine();
-//                    Neworklead.EnfamilDBL(mail2);
-//                }
-//                else if (i<20) {
-//                    mail2 = enfamil.nextLine();
-//                    Neworklead.gwEnfamil(mail2);
-//                }
-//                if (i<30)
-//                    Dodatkowy.Bimago(mail3);
-//                if (i<99)
-//                    Neworklead.BimagoK1M(mail3);
-//                if (i<35)
-//                    Dodatkowy.Dekoral(mail);
-//                else {
-//                    if (i%2==0)
-//                        Neworklead.Dekoral(mail);
-//                    else
-//                        Neworklead.DekoralMail(mail);
-//                }
-//
-////                if (i<30)
-////                    Neworklead.Bgz(mail4,bgzNumer);
-////                else if (i<37)
-////                    Neworklead.aBgzkz(mail4,bgzNumer);
-////                else if (i<44)
-////                    Neworklead.aBgzkg(mail4,bgzNumer);
-////                else if (i<51)
-////                    Neworklead.lkBgz(mail4,bgzNumer);
-////                else if (i<58)
-////                    Neworklead.lkBgzkg(mail4,bgzNumer);
-//
-//                System.out.println(i);
-//                System.out.println(mail);
-//                Koniec.Restart();
-//
-//            }
-//            dodajPostLepakNowy(profil[0],fb[0],"",post,0,62,false);
-//            Koniec.Restart();
-//            dodajPostLepakNowy(profil[1],fb[1],"",post,0,54,true);
+        try {
 
-//        } catch (Exception e) {
-//            blad.println(e);
-//            blad.close();
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            wylacz();
-//        }
+
+        } catch (Exception e) {
+            blad.println(e);
+            blad.close();
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            wylacz();
+        }
+//        dodajPostLepakNowy(profil[0],fb[0],"",post,8,55,false);
+//        Koniec.Restart();
+//        dodajPostLepakNowy(profil[1],fb[1],"",post,0,62,true);
 
 //        wylacz();
     }
