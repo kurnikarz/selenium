@@ -808,7 +808,7 @@ public class Main extends Narzedzia {
         grupy[11] = "https://www.facebook.com/groups/531288753733140/";	//akceptacja
         grupy[12] = "https://www.facebook.com/groups/pracawmlm/";	//blok
         grupy[13] = "https://www.facebook.com/groups/331639100303519/";
-        grupy[14] = "https://www.facebook.com/groups/301376787777395/";
+        grupy[14] = "https://www.facebook.com/groups/301376787777395/";	//dyskusja
         grupy[15] = "https://www.facebook.com/groups/381018519002791/";
         grupy[16] = "https://www.facebook.com/groups/pracaonline24/";
         grupy[17] = "https://www.facebook.com/groups/341616220426009/";
