@@ -3460,7 +3460,7 @@ public class Neworklead extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver, 10000);
 
-//        try {
+        try {
         Thread.sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"gigya-textbox-86190741038286000\"]"))));
         Thread.sleep(1000);
@@ -3548,9 +3548,9 @@ public class Neworklead extends Narzedzia {
             }
 
         }
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            driver.quit();
+        }
 
 
     }
@@ -3561,7 +3561,7 @@ public class Neworklead extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
+        try {
         driver.get("https://neworklead.pl/zadanie/f0ac5f0b10eb516b13d7668dffc9d080/f01407d6df5471acaba030aa4e7556d7/d654be842d14f320ad92ef039fb6aa4c");
 //            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
         Thread.sleep(5000);
@@ -3574,9 +3574,9 @@ public class Neworklead extends Narzedzia {
         Thread.sleep(3000);
         driver.quit();
 
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            driver.quit();
+        }
 
 
     }
@@ -3613,7 +3613,7 @@ public class Neworklead extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-//        try {
+        try {
         driver.get("https://neworklead.pl/zadanie/420c686708233d45fa04510f29cc7f8f/ffe0e7f4a3fa976bcedb0dfa7dfaba0c/d654be842d14f320ad92ef039fb6aa4c");
 //            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
         Thread.sleep(5000);
@@ -3626,9 +3626,9 @@ public class Neworklead extends Narzedzia {
         Thread.sleep(3000);
         driver.quit();
 
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            driver.quit();
+        }
 
 
     }
@@ -4807,13 +4807,13 @@ public class Neworklead extends Narzedzia {
         options.addExtensions(new File("C:\\bot\\buster.crx"));
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-//        try {
+        try {
         driver.get("https://neworklead.pl/zadanie/3ab90b42d05142635cb8a8a7e2e44fbf/4e8c1979b43b284a7f4697a346092526/d654be842d14f320ad92ef039fb6aa4c");
         Thread.sleep(6000);
         Letty(driver, mail);
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            driver.quit();
+        }
 
     }
 
