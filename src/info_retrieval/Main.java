@@ -2062,7 +2062,6 @@ public class Main extends Narzedzia {
         Scanner nestle3 = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\nestle3.txt"));
         Scanner pam = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\pam.txt"));
         Scanner kodVe = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\kody.txt"));
-        Scanner kodEn = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\kodyEn.txt"));
         Scanner kodPam = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\kodyPam.txt"));
         Scanner kodPam2 = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\kodyPam2.txt"));
         Scanner miastoVe = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\miasto.txt"));
@@ -2100,6 +2099,7 @@ public class Main extends Narzedzia {
         Scanner bgzNum = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\bgzNum.txt"));
         Scanner dekoral = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\dekoral.txt"));
         Scanner letty = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\letty.txt"));
+        Scanner iphone = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\iphone.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\everyInt.txt"));
@@ -2161,27 +2161,31 @@ public class Main extends Narzedzia {
         String num3;
         String miastEn;
         String koEn;
-//        Koniec.Restart();
-//        try {
-            for (int i=1;i<=80;i++) {
-                mail = letty.nextLine();
-                if (i%2==0)
-                    Neworklead.aLetty(mail);
-                else
-                    Neworklead.lkLetty(mail);
-//                if (i<14) {
-//                    mail2 = nestle3.nextLine();
-//                    if (i<5)
-//                        Neworklead.NestleMB(mail2);
-//                    else if (i<10)
-//                        Neworklead.NestleTAR(mail2);
-//                    else
-//                        Neworklead.NestleDC(mail);
-//                }
-                System.out.println(i);
-                System.out.println(mail);
-                Koniec.Restart();
+//    Koniec.Restart();
+
+        int x = 45;
+        for(int i = 0; i < x; i++) {
+            mail = iphone.nextLine();
+            ulicaVee = ulicaPam.nextLine();
+            kodVee = kodPam2.nextLine();
+            kodVee2 = kodPam.nextLine();
+            miastoVee = miastoPam.nextLine();
+            num = numPam.nextLine();
+            if(i == 0) { Neworklead.Iphone(mail,ulicaVee,kodVee,kodVee2,miastoVee,num);}
+            if(i == 1) { Neworklead.lkIphone(mail,ulicaVee,kodVee,kodVee2,miastoVee,num); }
+            if(i == 2) {
+                Neworklead.aIphone(mail,ulicaVee,kodVee,kodVee2,miastoVee,num);
+                x -= 3;
+                i=-1;
             }
+            System.out.println(mail);
+            System.out.println(i);
+            System.out.println(x);
+            Koniec.Restart();
+        }
+
+//        try {
+
 
 //        } catch (Exception e) {
 //            blad.println(e);
@@ -2193,6 +2197,6 @@ public class Main extends Narzedzia {
 //        }
 
 
-        wylacz();
+//        wylacz();
     }
 }
