@@ -685,16 +685,16 @@ public class Narzedzia {
     }
 
     public static void pobierzAdres(int ile) throws AWTException, FileNotFoundException, InterruptedException {
-        System.setProperty("webdriver.gecko.driver", "E:\\bot\\geckodriver\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
         String kods,ulicak,miaston;
         WebDriver driver = new FirefoxDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
         Robot robot = new Robot();
-        PrintWriter kodo = new PrintWriter("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\kody.txt");
+        PrintWriter kodo = new PrintWriter("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\kody.txt");
         //PrintWriter kodo2 = new PrintWriter("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\kody2.txt");
-        PrintWriter ulica = new PrintWriter("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\ulica.txt");
-        PrintWriter miastok = new PrintWriter("C:\\Users\\Artur\\Desktop\\klikanie\\VeePee\\miasto.txt");
+        PrintWriter ulica = new PrintWriter("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\ulica.txt");
+        PrintWriter miastok = new PrintWriter("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\miasto.txt");
         try {
             driver.get("https://www.fakeaddressgenerator.com/World/Poland_address_generator");
 

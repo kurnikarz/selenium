@@ -2065,7 +2065,6 @@ public class Main extends Narzedzia {
         Scanner kodPam = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\kodyPam.txt"));
         Scanner kodPam2 = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\kodyPam2.txt"));
         Scanner miastoVe = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\miasto.txt"));
-        Scanner miastoEn = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\miastoEn.txt"));
         Scanner miastoPam = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\miastoPam.txt"));
         Scanner ulicaVe = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\ulica.txt"));
         Scanner ulicaPam = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\VeePee\\ulicaPam.txt"));
@@ -2163,40 +2162,51 @@ public class Main extends Narzedzia {
         String koEn;
 //    Koniec.Restart();
 
-        int x = 45;
-        for(int i = 0; i < x; i++) {
+
+        for (int i=0;i<40;i++) {
             mail = iphone.nextLine();
             ulicaVee = ulicaPam.nextLine();
             kodVee = kodPam2.nextLine();
             kodVee2 = kodPam.nextLine();
             miastoVee = miastoPam.nextLine();
-            num = numPam.nextLine();
-            if(i == 0) { Neworklead.Iphone(mail,ulicaVee,kodVee,kodVee2,miastoVee,num);}
-            if(i == 1) { Neworklead.lkIphone(mail,ulicaVee,kodVee,kodVee2,miastoVee,num); }
-            if(i == 2) {
-                Neworklead.aIphone(mail,ulicaVee,kodVee,kodVee2,miastoVee,num);
-                x -= 3;
-                i=-1;
-            }
-            System.out.println(mail);
+            Neworklead.aPampers(mail,ulicaVee,kodVee,kodVee2,miastoVee);
             System.out.println(i);
-            System.out.println(x);
-            Koniec.Restart();
+            System.out.println(mail);
         }
 
-//        try {
+        try {
 
-
-//        } catch (Exception e) {
-//            blad.println(e);
-//            blad.close();
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            wylacz();
-//        }
-
-
+//            int x = 80;
+//            for(int i = 0; i < x; i++) {
+//                mail = iphone.nextLine();
+//                ulicaVee = ulicaPam.nextLine();
+//                kodVee = kodPam2.nextLine();
+//                kodVee2 = kodPam.nextLine();
+//                miastoVee = miastoPam.nextLine();
+//                num = numPam.nextLine();
+//                if(i == 0) { Neworklead.Iphone(mail,ulicaVee,kodVee,kodVee2,miastoVee,num);}
+//                if(i == 1) { Neworklead.lkIphone(mail,ulicaVee,kodVee,kodVee2,miastoVee,num); }
+//                if(i == 2) {
+//                    Neworklead.aIphone(mail,ulicaVee,kodVee,kodVee2,miastoVee,num);
+//                    x -= 3;
+//                    i=-1;
+//                }
+//                System.out.println(mail);
+//                System.out.println(i);
+//                System.out.println(x);
+//                Koniec.Restart();
+//            }
+//
+        } catch (Exception e) {
+            blad.println(e);
+            blad.close();
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            wylacz();
+        }
+//
+//
 //        wylacz();
     }
 }
