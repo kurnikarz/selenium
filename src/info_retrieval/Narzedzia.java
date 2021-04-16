@@ -1,9 +1,6 @@
 package info_retrieval;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,10 +12,9 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.*;
+import java.util.List;
 
 public class Narzedzia {
 
@@ -1213,5 +1209,38 @@ public class Narzedzia {
         } catch (Exception e) {
 
         }
+    }
+
+    public static void pobierzNumer(String strona, int pocztek, int koniec) throws InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        String numer = "";
+        Writer numery = new BufferedWriter(new FileWriter("C:\\Users\\dumci\\Desktop\\klikanie\\pobraneNumery.txt", true));
+
+        for (int i=pocztek; i<koniec;i++) {
+            driver.get(strona+i);
+            Thread.sleep(3000);
+            List<WebElement> firmy = driver.findElements(By.cssSelector(".lista-firma-naglowek a"));
+            String[] linki = new String[10];
+            for (int j=0;i< firmy.size();j++) {
+                linki[j] = (firmy.get(j).getAttribute("href"));
+            }
+
+            for (int j = 0;j<linki.length;j++) {
+                driver.get(linki[j]);
+                Thread.sleep(5000);
+                var numer2  = driver.findElement(By.cssSelector("#tel-kom-hide"));
+                numer2.click();
+                Thread.sleep(500);
+                numery.append(driver.findElement(By.xpath("//*[@id=\"tel-kom-hide-a\"]")).getText()+"\r\n");
+                Thread.sleep(1000);
+            }
+        }
+        driver.get("https://www.odi.pl/firmy/zdrowie/8/");
+        Thread.sleep(3000);
+
+        numery.close();
     }
 }

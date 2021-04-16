@@ -2162,32 +2162,23 @@ public class Main extends Narzedzia {
         String koEn;
 //    Koniec.Restart();
 
+//        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",6,7);
 
-        for (int i=0;i<40;i++) {
-            mail = iphone.nextLine();
-            ulicaVee = ulicaPam.nextLine();
-            kodVee = kodPam2.nextLine();
-            kodVee2 = kodPam.nextLine();
-            miastoVee = miastoPam.nextLine();
-            Neworklead.aPampers(mail,ulicaVee,kodVee,kodVee2,miastoVee);
-            System.out.println(i);
-            System.out.println(mail);
-        }
+        Neworklead.gwEnfamil("rupniewska.zosia@wp.pl");
 
-        try {
-
-//            int x = 80;
+//        try {
+//
+//            int x = 75;
 //            for(int i = 0; i < x; i++) {
 //                mail = iphone.nextLine();
 //                ulicaVee = ulicaPam.nextLine();
 //                kodVee = kodPam2.nextLine();
 //                kodVee2 = kodPam.nextLine();
 //                miastoVee = miastoPam.nextLine();
-//                num = numPam.nextLine();
-//                if(i == 0) { Neworklead.Iphone(mail,ulicaVee,kodVee,kodVee2,miastoVee,num);}
-//                if(i == 1) { Neworklead.lkIphone(mail,ulicaVee,kodVee,kodVee2,miastoVee,num); }
+//                if(i == 0) { Neworklead.aPampers(mail,ulicaVee,kodVee,kodVee2,miastoVee);}
+//                if(i == 1) { Neworklead.lkPampers(mail,ulicaVee,kodVee,kodVee2,miastoVee); }
 //                if(i == 2) {
-//                    Neworklead.aIphone(mail,ulicaVee,kodVee,kodVee2,miastoVee,num);
+//                    Neworklead.gwPampers(mail,ulicaVee,kodVee,kodVee2,miastoVee);
 //                    x -= 3;
 //                    i=-1;
 //                }
@@ -2197,15 +2188,14 @@ public class Main extends Narzedzia {
 //                Koniec.Restart();
 //            }
 //
-        } catch (Exception e) {
-            blad.println(e);
-            blad.close();
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            wylacz();
-        }
-//
+//        } catch (Exception e) {
+//            blad.println(e);
+//            blad.close();
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            wylacz();
+//        }
 //
 //        wylacz();
     }

@@ -3662,10 +3662,10 @@ public class Neworklead extends Narzedzia {
     public static void Enfamil(WebDriver driver, String mail) throws InterruptedException, AWTException {
         Random r = new Random();
         int dzienUro = r.nextInt(29) + 1;
-        int miesUro = r.nextInt(10) + 1;
+        int miesUro = r.nextInt(12 - 7) + 7;
         String rokUro = "2020";
         int dzienSpo = r.nextInt(29) + 1;
-        int miesSpo = r.nextInt(2) + 1;
+        int miesSpo = r.nextInt(11 - 6) + 6;
         String rokSpo = "2021";
         int dziecko = r.nextInt(5 - 3 + 1) + 3;
 //        try {
@@ -3880,7 +3880,21 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 //        try {
-        driver.get("https://neworklead.pl/zadanie/bef161d4f91f846dfb54bae7edf52575/f15208f4c18be321749c7430afaeb9cb/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/5491ecf29ac8c4ff62b23cf90dc2f278/cf9715d4c0dcfaa58f38b7e3e861cee6/d654be842d14f320ad92ef039fb6aa4c");
+        Thread.sleep(6000);
+        Neworklead.Enfamil(driver, mail);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void strzEnfamil(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("https://neworklead.pl/zadanie/90fa16b3880053bac81563e212ec25c0/71b8ba7b222d4533f5006fa782ebc201/d654be842d14f320ad92ef039fb6aa4c");
         Thread.sleep(6000);
         Neworklead.Enfamil(driver, mail);
 //        } catch (Exception e) {
@@ -4866,7 +4880,7 @@ public class Neworklead extends Narzedzia {
         int m = 0;
         String dzien = String.valueOf(r.nextInt(29) + 1);
         String mies = String.valueOf(r.nextInt(11) + 1);
-        String rok = String.valueOf(r.nextInt(1995 - 1985 + 1) + 1985);
+        String rok = String.valueOf(r.nextInt(1990 - 1980 + 1) + 1980);
         String numer = String.valueOf(r.nextInt(70) + 1);
         String imie;
         String nazwisko;
@@ -5047,7 +5061,7 @@ public class Neworklead extends Narzedzia {
             nazwisko = genNazwisko();
         }
 
-//        try {
+        try {
             WebDriverWait wait = new WebDriverWait(driver, 60);
             driver.findElement(By.xpath("//*[@id=\"email_field\"]")).sendKeys(mail);
             driver.findElement(By.xpath("//*[@id=\"name_field\"]")).sendKeys(imie);
@@ -5180,15 +5194,15 @@ public class Neworklead extends Narzedzia {
 
             }
             driver.quit();
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            driver.quit();
+        }
 
 
 
     }
 
-    public static void Iphone(String mail, String ulica, String kod1, String kod2, String miasto) throws InterruptedException, AWTException {
+    public static void gwIphone(String mail, String ulica, String kod1, String kod2, String miasto) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -5234,13 +5248,9 @@ public class Neworklead extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-//        try {
         driver.get("https://neworklead.pl/zadanie/34b6c287168677bed58de7fec79f7316/cbb67ffa20f77a1ae00504de1ac298d4/d654be842d14f320ad92ef039fb6aa4c");
         Thread.sleep(6000);
         konkursPampers(driver, mail,ulica,kod1,kod2,miasto);
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
 
     }
 
