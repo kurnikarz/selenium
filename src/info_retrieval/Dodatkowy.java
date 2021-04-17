@@ -3039,11 +3039,11 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Enfamil(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         try {
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/9635acafe27392db9125eea2b00cf43c/885fcc6b2c73ed7ff4a5983fbba3d39e/201920950f63cee967982b759fde80b1");
+        driver.get("http://dodatkowypieniadz.com/zadanie/ed54b2380679aa985707ec00972aa2cc/6da91cc77baeb22524542e712ad5c4e1/201920950f63cee967982b759fde80b1");
         wpiszHaslo();
         Thread.sleep(10000);
         clickXY(770,770);
@@ -3055,11 +3055,11 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Enfamil3(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         try {
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/d3e89f6a8be6f2b9d2168f349adea656/e9b94bc4cb1be7020724724230aba89d/201920950f63cee967982b759fde80b1");
+        driver.get("http://dodatkowypieniadz.com/zadanie/620cd91795b3b3b565a097fee93629ff/36912cd2d148bfeb230daadfbdc3f325/201920950f63cee967982b759fde80b1");
         wpiszHaslo();
             Thread.sleep(10000);
         clickXY(780,800);
@@ -3071,14 +3071,14 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Enfamil2(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         try {
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/4d9e602824538b43595f6c63db4b68a9/e23874773ebec80cfb4548f71082e5f1/201920950f63cee967982b759fde80b1");
+        driver.get("http://dodatkowypieniadz.com/zadanie/be710bf0586df6e0c91424c65406e5c5/d3c1b23c13b2504a69a0e31548d26d53/201920950f63cee967982b759fde80b1");
         wpiszHaslo();
         Thread.sleep(10000);
-        clickXY(780,600);
+        clickXY(780,740);
         Thread.sleep(6000);
         Neworklead.Enfamil(driver,mail);
         } catch (Exception e) {

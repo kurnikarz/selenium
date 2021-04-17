@@ -1224,21 +1224,30 @@ public class Narzedzia {
             Thread.sleep(3000);
             List<WebElement> firmy = driver.findElements(By.cssSelector(".lista-firma-naglowek a"));
             String[] linki = new String[10];
-            for (int j=0;i< firmy.size();j++) {
+            for (int j=0;j< firmy.size();j++) {
                 linki[j] = (firmy.get(j).getAttribute("href"));
             }
 
             for (int j = 0;j<linki.length;j++) {
                 driver.get(linki[j]);
-                Thread.sleep(5000);
-                var numer2  = driver.findElement(By.cssSelector("#tel-kom-hide"));
-                numer2.click();
-                Thread.sleep(500);
-                numery.append(driver.findElement(By.xpath("//*[@id=\"tel-kom-hide-a\"]")).getText()+"\r\n");
+                try {
+                    wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"tel-kom-hide\"]"))));
+                    Thread.sleep(1000);
+                    var numer2  = driver.findElement(By.cssSelector("#tel-kom-hide"));
+                    numer2.click();
+                    Thread.sleep(500);
+                    numery.append(driver.findElement(By.xpath("//*[@id=\"tel-kom-hide-a\"]")).getText()+"\r\n");
+                } catch (Exception e) {
+                    wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"tel-hide\"]"))));
+                    Thread.sleep(1000);
+                    var numer2  = driver.findElement(By.cssSelector("#tel-hide"));
+                    numer2.click();
+                    Thread.sleep(500);
+                    numery.append(driver.findElement(By.xpath("//*[@id=\"tel-hide-a\"]")).getText()+"\r\n");
+                }
                 Thread.sleep(1000);
             }
         }
-        driver.get("https://www.odi.pl/firmy/zdrowie/8/");
         Thread.sleep(3000);
 
         numery.close();

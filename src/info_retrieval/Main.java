@@ -2141,7 +2141,7 @@ public class Main extends Narzedzia {
         odp.add("Często odwiedza nas wujek z rodziną i świętujemy razem");
         odp.add("Wyjeżdżamy gdzieś do rodziny na święta"); //23
 
-
+//        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",10,20);
         String mail2;
         String mail3;
         String post = "Post od Pana Miroslawa Klos\n" +
@@ -2162,11 +2162,14 @@ public class Main extends Narzedzia {
         String koEn;
 //    Koniec.Restart();
 
-//        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",6,7);
+//        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",10,20);
+        Koniec.Restart();
+        Neworklead.aRossman("bogusia.pyclik@wp.pl","Lelewela","75","450","Koszalin","577505081");
 
-        Neworklead.gwEnfamil("rupniewska.zosia@wp.pl");
 
-//        try {
+
+
+        try {
 //
 //            int x = 75;
 //            for(int i = 0; i < x; i++) {
@@ -2187,16 +2190,29 @@ public class Main extends Narzedzia {
 //                System.out.println(x);
 //                Koniec.Restart();
 //            }
+//            Koniec.Restart();
+//            for (int i=0;i<52;i++) {
+//                mail = enfamil.nextLine();
+//                if (i<17)
+//                    Dodatkowy.Enfamil(mail);
+//                else if (i<27)
+//                    Dodatkowy.Enfamil2(mail);
+//                else if (i<52)
+//                    Dodatkowy.Enfamil3(mail);
+//                System.out.println(i);
+//                System.out.println(mail);
+//                Koniec.Restart();
+//            }
 //
-//        } catch (Exception e) {
-//            blad.println(e);
-//            blad.close();
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            wylacz();
-//        }
-//
+        } catch (Exception e) {
+            blad.println(e);
+            blad.close();
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            wylacz();
+        }
+
 //        wylacz();
     }
 }
