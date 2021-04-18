@@ -940,7 +940,7 @@ public class Main extends Narzedzia {
 
 
         for (int i = a; i < b; i++) {
-//            try {
+            try {
                 Thread.sleep(2000);
                 if (flaga)
                     driver.get(grupy[i]);
@@ -955,21 +955,33 @@ public class Main extends Narzedzia {
                     driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[1]/div/div/div/div[1]/div/div[1]/span")).click();
                 }
 
+                //ZMIANY
+//                post = "POLECAM! ";
                 Thread.sleep(3000);
                 Narzedzia.Kopiuj(post);
                 clickXY(915, 500);
-                Thread.sleep(1000);
-                Narzedzia.Wklej();
-                Thread.sleep(2000);
-//                ZDJECIE =======================
-                Kopiuj("C:\\Users\\dumci\\Desktop\\klikanie\\posty\\klos.jpg");
-                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[2]/span/div/div/div[1]/div/div/div[1]/i" +
-                        "")).click();
-                Thread.sleep(2000);
+//                Thread.sleep(1000);
+//                Narzedzia.Wklej();
+//                Kopiuj("@Miroslaw Klos");
+//                Thread.sleep(1000);
+//                Wklej();
+//                Thread.sleep(2000);
+//                robot.keyPress(KeyEvent.VK_ENTER);
+//                robot.keyRelease(KeyEvent.VK_ENTER);
+//                Thread.sleep(2000);
+//                post = "\nhttps://www.facebook.com/100065355582256/posts/120316316823554/?d=n";
+//                Kopiuj(post);
                 Wklej();
-                Thread.sleep(1000);
-                robot.keyPress(KeyEvent.VK_ENTER);
                 Thread.sleep(3000);
+//                ZDJECIE =======================
+//                Kopiuj("C:\\Users\\dumci\\Desktop\\klikanie\\posty\\klos.jpg");
+//                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div[1]/form/div/div[1]/div/div/div[1]/div[3]/div[1]/div[2]/div[2]/span/div/div/div[1]/div/div/div[1]/i" +
+//                        "")).click();
+//                Thread.sleep(2000);
+//                Wklej();
+//                Thread.sleep(1000);
+//                robot.keyPress(KeyEvent.VK_ENTER);
+//                Thread.sleep(3000);
 
                 driver.findElement(By.xpath("//*[text()='Opublikuj']")).click();
                 Thread.sleep(5000);
@@ -979,7 +991,16 @@ public class Main extends Narzedzia {
                     try {
                         driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span")).click();
                     } catch (Exception f) {
-                        driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[3]/span/a/span/span")).click();
+                        try {
+                            driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[3]/span/a/span/span")).click();
+                        } catch (Exception g) {
+                            try {
+                                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span/a/span/span/span[2]")).click();
+                            } catch (Exception h) {
+                                driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div[4]/div/div/div/div/div[1]/div[3]/div[1]/div/div/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/span/span/span[2]/span/a")).click();
+                            }
+                        }
+
                     }
 
                 }
@@ -989,14 +1010,14 @@ public class Main extends Narzedzia {
                 linki.append(driver.getCurrentUrl() + "\r\n");
 
 
-//            } catch (Exception e) {
-//                try {
-//                    driver.findElement(By.xpath("//*[text()='Dołacz do grupy']")).click();
-//                    Thread.sleep(5000);
-//                } catch (Exception d) {
-//                    System.out.println("====================== " + grupy[i] + " ===================");
-//                }
-//            }
+            } catch (Exception e) {
+                try {
+                    driver.findElement(By.xpath("//*[text()='Dołacz do grupy']")).click();
+                    Thread.sleep(5000);
+                } catch (Exception d) {
+                    System.out.println("====================== " + grupy[i] + " ===================");
+                }
+            }
 
 
         }
@@ -2144,13 +2165,31 @@ public class Main extends Narzedzia {
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",10,20);
         String mail2;
         String mail3;
-        String post = "Post od Pana Miroslawa Klos\n" +
-                "Jedni nazywają mnie pogromcą smoków inni gwałcicielem niewiast ;) Ogólnie nazwisko Klos mocno elektryzuje ludzi w internecie. Działam już publicznie od wielu lat zarabiając na grach wideo w wersji cyfrowej. W skrócie kupujemy jedną grę za 20zł i sprzedajemy cały czas na portalach aukcyjnych jak Allegro czy Ebay. Generując w ten sposób stały zysk. Przez te wszystkie lata były już przeróżne historie na mój temat. Była słynna na całą Polskę Madzia ze Szczecina. Wariatka, chora kobieta czy jak wielu sądzi nieszczęśliwie zakochana we mnie, która w rozpaczy zgłasza mnie na policję czy do urzędu skarbowego. Był nie mniej słynny Recacly Bot gdzie zainwestowałem 13000zł tylko po to aby pokazać jak tego typu programy zarabiania działają. Pamiętam jak mnie wtedy tu linczowali ‘Klos oszuście nie kłam! Ten program wypłaca!” Gdzie dziś jest RB? Pewnie tam gdzie Wasze pieniądze \uD83D\uDE02 czyli chu* wie gdzie \uD83D\uDE2D\n" +
-                "Wszystkie te historie jak i wiele więcej znajdziecie na moim blogu jak i na kanale youtube. Obnażając te Wasze scamy stałem się wrogiem publicznym nr 1. Ponieważ uświadamiam ludzi i nie możecie już tylu jeleni łapać co kiedyś \uD83E\uDD8C\n" +
-                "Gry wideo to branża, która rozwija się niesamowicie. Dziś grają wszyscy i Ci mali i Ci duzi. Sam działam na ponad 10 portalach aukcyjnych głównie za granicą i mam aktywnych ponad 1000 aukcji! Na tym etapie to wszystko już pracuje samodzielnie. Razem ze mną współpracuje wielu z Was! Wielu też odmieniło swoje życie i bardzo się ciesze, że miałem w tym swój udział. \n" +
-                "I pamiętajcie to Wy jesteście kowalem swojego życia! Nie te wszystkie oszołomy co potrafią Was tylko krytykować a sami nie robią kompletnie nic!\n" +
+        String post = "Uwaga!\n" +
+                "Uwaga!\n" +
+                "Post od Pana Miroslaw Klos \n" +
                 "\n" +
-                "Napisz do mnie: Dishar82@gmail.com";
+                "Witajcie!\n" +
+                "Dawno mnie nie było i mam nadzieję, że za mocno się nie stęskniliście ;) \n" +
+                "\n" +
+                "W internecie zarabiam od wielu lat i to bardzo skutecznie. Stworzyłem potężny biznes oparty na sprzedaży gier wideo w formie cyfrowej. W wielkim skrócie jedną grę kupujemy za 20zł i sprzedajemy cały czas generując stały zysk na portalach aukcyjnych na całym świecie. \n" +
+                "\n" +
+                "Z racji, że masę scamów ujawniłem i tych waszych cudownych biznesów to dość mało lubiany jestem w pewnych gronach ;)\n" +
+                "Tak do Was teraz mówię dzbany co próbujecie ludzi naciągać na te Wasze Omegi (Co padło ostatnio?) adblasty, futernety i inne pierdoły co miały przynosić zyski. Gdzie dziś są Ci wszyscy krzykacze co mówili abym cicho siedział? Pewnie tam gdzie Wasze pieniądze ;) \n" +
+                "\n" +
+                "Była słynna na całą Polskę akcja z RB gdzie zainwestowałem 13000zł aby pokazać jak to wszystko działa. Film macie na moim blogu jak i kanale youtube.\n" +
+                "\n" +
+                "Była nie mniej słynna Madzia ze Szczecina czyli wariatka nieszczęśliwie we mnie zakochana czy jak niektórzy twierdzą chora kobieta. Która zgłaszała mnie do prokuratury i urzędu skarbowego ;) Oj Madzia, Madzia... Dziś tylko uśmiech politowania na mej twarzy się pojawia gdy o Tobie pomyślę ;) Film też na moim blogu.\n" +
+                "\n" +
+                "Było też masę innych dzbanów, których wyjaśniłem bardzo konkretnie przez te lata. Jak jeden wyłudzał pieniądze na węgiel dla matki inny perfidnie podszywał się pod moją osobę... A część z nich zwyczajnie ma ból d... jak widzą jakie pieniądze zarabiam i wydaję po 60K na pokoje kinowe czy tydzień na Ibizie   \n" +
+                "\n" +
+                "Tak to już jest nic tak Polaka nie wqrwia jak sukces sąsiada. Pamiętajcie wy swoje życie marnujecie na Kłosa a ja ze swoim jadę dalej! Zapraszam jeżeli chcesz dołączyć do mojego zespołu i zarabiać razem z nami!\n" +
+                "\n" +
+                "Blog: Miroslawklos .pl (Bez spacji przed kropką bo FB tnie zasięgi)\n" +
+                "\n" +
+                "Lub napisz do mnie na email: Dishar82@gmail .com (Też bez spacji dla zasięgów)\n" +
+                "\n" +
+                "https://youtu.be/KTmkeuK3jJI";
 
         String fb[] = {"dumcio.97@wp.pl","ewa1dymkowska@gmail.com"};
         String[] profil = {"1","2",};
@@ -2163,13 +2202,17 @@ public class Main extends Narzedzia {
 //    Koniec.Restart();
 
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",10,20);
-        Koniec.Restart();
-        Neworklead.aRossman("bogusia.pyclik@wp.pl","Lelewela","75","450","Koszalin","577505081");
 
-
-
+        dodajPostLepakNowy(profil[0],fb[0],"",post,1,62,true);
 
         try {
+//            for (int i=0;i<20;i++) {
+//                mail = enfamil.nextLine();
+//                Dodatkowy.Enfamil4(mail);
+//                System.out.println(i);
+//                System.out.println(mail);
+//                Koniec.Restart();
+//            }
 //
 //            int x = 75;
 //            for(int i = 0; i < x; i++) {

@@ -3087,14 +3087,14 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Enfamil4(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         try {
-        driver.get("http://www.dodatkowypieniadz.com/zadanie/c990bac44c20d02bf46991dfd6a5a646/519a71f9ffecf483f038095cdf40ed77/201920950f63cee967982b759fde80b1");
+        driver.get("http://dodatkowypieniadz.com/zadanie/92706a329408291328093b208bcf652e/643b3640ea8bfa2aa3b661a9b7665b7f/201920950f63cee967982b759fde80b1");
         wpiszHaslo();
         Thread.sleep(10000);
-        clickXY(780,800);
+        clickXY(780,618);
         Thread.sleep(6000);
         Neworklead.Enfamil(driver,mail);
         } catch (Exception e) {
