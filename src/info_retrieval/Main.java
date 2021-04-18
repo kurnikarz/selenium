@@ -2201,9 +2201,10 @@ public class Main extends Narzedzia {
         String koEn;
 //    Koniec.Restart();
 
-//        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",10,20);
+        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",20,40);
 
-        dodajPostLepakNowy(profil[0],fb[0],"",post,1,62,true);
+//        dodajPostLepakNowy(profil[0],fb[0],"",post,1,62,true);
+
 
         try {
 //            for (int i=0;i<20;i++) {

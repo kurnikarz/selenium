@@ -1238,12 +1238,7 @@ public class Narzedzia {
                     Thread.sleep(500);
                     numery.append(driver.findElement(By.xpath("//*[@id=\"tel-kom-hide-a\"]")).getText()+"\r\n");
                 } catch (Exception e) {
-                    wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"tel-hide\"]"))));
-                    Thread.sleep(1000);
-                    var numer2  = driver.findElement(By.cssSelector("#tel-hide"));
-                    numer2.click();
-                    Thread.sleep(500);
-                    numery.append(driver.findElement(By.xpath("//*[@id=\"tel-hide-a\"]")).getText()+"\r\n");
+
                 }
                 Thread.sleep(1000);
             }
@@ -1251,5 +1246,6 @@ public class Narzedzia {
         Thread.sleep(3000);
 
         numery.close();
+        driver.quit();
     }
 }
