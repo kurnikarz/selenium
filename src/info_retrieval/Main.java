@@ -2165,31 +2165,15 @@ public class Main extends Narzedzia {
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",10,20);
         String mail2;
         String mail3;
-        String post = "Uwaga!\n" +
-                "Uwaga!\n" +
-                "Post od Pana Miroslaw Klos \n" +
+        String post = "Szukamy ludzi do pracy przy wklejaniu postów na FB. \n" +
+                "Płacimy codziennie! Można robić posty z wielu kont i zarobi się więcej. Mamy w zespole ludzi co zarabiają po 5000zl w skali miesiaca poswiecajac godzinę pracy dziennie. \n" +
                 "\n" +
-                "Witajcie!\n" +
-                "Dawno mnie nie było i mam nadzieję, że za mocno się nie stęskniliście ;) \n" +
+                "Kontakt tylko mailowy:\n" +
                 "\n" +
-                "W internecie zarabiam od wielu lat i to bardzo skutecznie. Stworzyłem potężny biznes oparty na sprzedaży gier wideo w formie cyfrowej. W wielkim skrócie jedną grę kupujemy za 20zł i sprzedajemy cały czas generując stały zysk na portalach aukcyjnych na całym świecie. \n" +
+                "Pracujekiedychce@gmail.com\n" +
                 "\n" +
-                "Z racji, że masę scamów ujawniłem i tych waszych cudownych biznesów to dość mało lubiany jestem w pewnych gronach ;)\n" +
-                "Tak do Was teraz mówię dzbany co próbujecie ludzi naciągać na te Wasze Omegi (Co padło ostatnio?) adblasty, futernety i inne pierdoły co miały przynosić zyski. Gdzie dziś są Ci wszyscy krzykacze co mówili abym cicho siedział? Pewnie tam gdzie Wasze pieniądze ;) \n" +
-                "\n" +
-                "Była słynna na całą Polskę akcja z RB gdzie zainwestowałem 13000zł aby pokazać jak to wszystko działa. Film macie na moim blogu jak i kanale youtube.\n" +
-                "\n" +
-                "Była nie mniej słynna Madzia ze Szczecina czyli wariatka nieszczęśliwie we mnie zakochana czy jak niektórzy twierdzą chora kobieta. Która zgłaszała mnie do prokuratury i urzędu skarbowego ;) Oj Madzia, Madzia... Dziś tylko uśmiech politowania na mej twarzy się pojawia gdy o Tobie pomyślę ;) Film też na moim blogu.\n" +
-                "\n" +
-                "Było też masę innych dzbanów, których wyjaśniłem bardzo konkretnie przez te lata. Jak jeden wyłudzał pieniądze na węgiel dla matki inny perfidnie podszywał się pod moją osobę... A część z nich zwyczajnie ma ból d... jak widzą jakie pieniądze zarabiam i wydaję po 60K na pokoje kinowe czy tydzień na Ibizie   \n" +
-                "\n" +
-                "Tak to już jest nic tak Polaka nie wqrwia jak sukces sąsiada. Pamiętajcie wy swoje życie marnujecie na Kłosa a ja ze swoim jadę dalej! Zapraszam jeżeli chcesz dołączyć do mojego zespołu i zarabiać razem z nami!\n" +
-                "\n" +
-                "Blog: Miroslawklos .pl (Bez spacji przed kropką bo FB tnie zasięgi)\n" +
-                "\n" +
-                "Lub napisz do mnie na email: Dishar82@gmail .com (Też bez spacji dla zasięgów)\n" +
-                "\n" +
-                "https://youtu.be/KTmkeuK3jJI";
+                "Nie odpowiadamy na wiadomości na FB oraz komentarze pod postem. \n" +
+                "Nawet ich NIE czytamy. Proszę pisać TYLKO na email.";
 
         String fb[] = {"dumcio.97@wp.pl","ewa1dymkowska@gmail.com"};
         String[] profil = {"1","2",};
@@ -2201,19 +2185,30 @@ public class Main extends Narzedzia {
         String koEn;
 //    Koniec.Restart();
 
-        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",20,40);
+//        https://tajemniczaakkonstaa.blogspot.com/2017/11/makijaz-pauliny.html
+//        https://tajemniczaakkonstaa.blogspot.com/2018/02/spacer.html
 
-//        dodajPostLepakNowy(profil[0],fb[0],"",post,1,62,true);
+//        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",20,40);
+
+
 
 
         try {
-//            for (int i=0;i<20;i++) {
-//                mail = enfamil.nextLine();
-//                Dodatkowy.Enfamil4(mail);
-//                System.out.println(i);
-//                System.out.println(mail);
-//                Koniec.Restart();
-//            }
+//            dodajPostLepakNowy(profil[0],fb[0],"",post,0,62,true);
+            for (int i=0;i<80;i++) {
+                mail = enfamil.nextLine();
+                if (i<17)
+                    Dodatkowy.Enfamil(mail);
+                else if (i<30)
+                    Dodatkowy.Enfamil2(mail);
+                else if (i<55)
+                    Dodatkowy.Enfamil3(mail);
+                else if (i<80)
+                    Dodatkowy.Enfamil4(mail);
+                System.out.println(i);
+                System.out.println(mail);
+                Koniec.Restart();
+            }
 //
 //            int x = 75;
 //            for(int i = 0; i < x; i++) {
@@ -2257,6 +2252,6 @@ public class Main extends Narzedzia {
             wylacz();
         }
 
-//        wylacz();
+        wylacz();
     }
 }

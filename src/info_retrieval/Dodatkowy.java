@@ -3047,6 +3047,7 @@ public class Dodatkowy extends Narzedzia {
         wpiszHaslo();
         Thread.sleep(10000);
         clickXY(770,770);
+        clickXY(790,770);
         Thread.sleep(6000);
         Neworklead.Enfamil(driver,mail);
         } catch (Exception e) {
@@ -3063,6 +3064,7 @@ public class Dodatkowy extends Narzedzia {
         wpiszHaslo();
             Thread.sleep(10000);
         clickXY(780,800);
+        clickXY(800,800);
         Thread.sleep(6000);
         Neworklead.Enfamil(driver,mail);
         } catch (Exception e) {
@@ -3079,6 +3081,7 @@ public class Dodatkowy extends Narzedzia {
         wpiszHaslo();
         Thread.sleep(10000);
         clickXY(780,740);
+        clickXY(800,740);
         Thread.sleep(6000);
         Neworklead.Enfamil(driver,mail);
         } catch (Exception e) {
@@ -3095,6 +3098,7 @@ public class Dodatkowy extends Narzedzia {
         wpiszHaslo();
         Thread.sleep(10000);
         clickXY(780,618);
+        clickXY(800,618);
         Thread.sleep(6000);
         Neworklead.Enfamil(driver,mail);
         } catch (Exception e) {
