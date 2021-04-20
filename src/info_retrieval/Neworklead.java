@@ -1360,7 +1360,8 @@ public class Neworklead extends Narzedzia {
         String imie = genImieZen();
         String nazwisko = genNazwiskoZen();
         Random r = new Random();
-        int miesiac = r.nextInt(12 - 2 + 1) + 2;
+        String[] miesiace = new String[]{"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+        int miesiac = r.nextInt(miesiace.length);
         int rok = r.nextInt(1995 - 1986 + 1) + 1986;
         int dzien = r.nextInt(29) + 1;
         int odp1 = r.nextInt(4);
@@ -1373,9 +1374,10 @@ public class Neworklead extends Narzedzia {
         int m = 0;
         boolean cookie = false;
         Robot robot = new Robot();
-        String roko = String.valueOf(rok);
+        String dataUr = String.valueOf(dzien)+" "+miesiace[miesiac]+", "+String.valueOf(rok);
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
         WebDriverWait wait = new WebDriverWait(driver, 60);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
         //WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[2]/a"));
         //driver.get("https://www.everydayme.pl/konkurszimowy");
@@ -1400,37 +1402,31 @@ public class Neworklead extends Narzedzia {
         ScrollBy(driver, "1000");
         Thread.sleep(1000);
         try {
-            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[1]/div[4]/a[1]")).click();
+            driver.findElement(By.xpath("//*[@id=\"main\"]/div[6]/div/div/a")).click();
         } catch (Exception e) {
             driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[1]/div[4]/a[1]")).click();
         }
         Thread.sleep(10000);
-        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)", "");
-        Thread.sleep(1000);
-        WebElement button = driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[1]/div[2]/button"));
+        WebElement button = driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/section[2]"));
         while (!button.isEnabled()) {
-            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[1]/div[2]/div/label")).click();
+            driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/section[1]/div/label")).click();
             Thread.sleep(2000);
         }
         button.click();
 
         Thread.sleep(3000);
-        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)", "");
+        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/div[2]/section[1]/div/div/input")).sendKeys(imie);
+        js.executeScript("document.getElementsByClassName(\"mu-text-field-input\").removeAttribute(\"readonly\")");
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"Kobieta \"]")).click();
-        driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys(imie);
-        driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys(nazwisko);
-        Select miesiacc = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[1]")));
-        miesiacc.selectByIndex(miesiac);
-        Select rokk = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[2]")));
-        rokk.selectByValue(roko);
+        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/div[2]/section[2]/div[2]/div/input")).sendKeys(dataUr);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"addressPostalCode\"]")).sendKeys(kod);
-        driver.findElement(By.xpath("//*[@id=\"emailAddress\"]")).sendKeys(mail);
-        driver.findElement(By.xpath("//*[@id=\"newPassword\"]")).sendKeys("Mamatata14");
+        driver.findElement(By.xpath("/html/body/div[6]/div/div/div/div[2]/div[2]/button/div/div")).click();
         Thread.sleep(1000);
-        clickXY(x, 1012);
-        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,700)", "");
+        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/div[2]/section[3]/div/div/input")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/div[2]/section[4]/div[2]/div/input")).sendKeys(mail+"V2");
+        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/label")).click();
+
+
         try {
             driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus\"]")).click();
         } catch (Exception e) {
