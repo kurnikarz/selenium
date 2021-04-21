@@ -2138,29 +2138,31 @@ public class Main extends Narzedzia {
         String[] maileArk = new String[80];
 
         //Co najchętniej robisz ze swoją rodziną w czasie Bożego Narodzenia? ?
-        odp.add("Jemy wspólną kolację wigilijną i śpiewamy kolędy");
-        odp.add("Dzielimy się opłatkiem i składamy sobie życzenia");
-        odp.add("Wspólnie czytamy ulubione książki naszych dzieci");
-        odp.add("Wychodzimy razem na długie rodzinne spacery");
-        odp.add("Gramy razem w różne gry planszowe");
-        odp.add("Oglądamy wspólnie filmy familijne, rozrywkowe lub bajki");
-        odp.add("Wspólnie śpiewamy kolędy");
-        odp.add("Odwiedzamy naszych znajomych i zabieramy nasze dzieci");
-        odp.add("Wspólnie całą rodziną idziemy do kina");
-        odp.add("Idziemy do kina z rodziną i przyjaciółmi");
-        odp.add("Oglądamy nasze stare zdjęcia z rodzinnego albumu");
-        odp.add("Oglądamy śmieszne filmiki na youtube");
-        odp.add("Chodzimy razem po kościołach i oglądamy przepiękne szopki");
-        odp.add("Robimy sobię listę marzeń na nowy rok, każdy swoją");
-        odp.add("Całą rodziną idziemy na lodowisko");
-        odp.add("Całą rodziną oraz ze znajomymi idziemy na lodowisko");
-        odp.add("Planujemy sobie wspólny weekendowy wypad");
-        odp.add("Udajemy się na koncert piosenki dziecięcej");
-        odp.add("W wigilię wspólnie ubieramy choinkę");
-        odp.add("Moje dzieci pomagają mi gdy przygotowuję kolację wigilijną");
-        odp.add("Jak jest ładna pogoda udajemy się całą rodziną na rodzinny spacer");
-        odp.add("Często odwiedza nas wujek z rodziną i świętujemy razem");
-        odp.add("Wyjeżdżamy gdzieś do rodziny na święta"); //23
+        odp.add("Stopniowo sprzątam swoje mieszkanie, w każdy dzień tygodnia zajmuję się czymś innym");
+        odp.add("Sprzątam zgodnie z wskazówkami ruchu zegara, czyli od lewej do pracy i od góry do dołu");
+        odp.add("Sprzątanie mieszkania zaczynam od wytarcia kurzów");
+        odp.add("Do umycia okien używam zwykłego octu, nie zostawia smug !");
+        odp.add("Do czyszczenia mebli stosuję naturalne sposoby, na przykład kilka kropel soku z cytryny o oliwy z oliwek w proporcji 1:1");
+        odp.add("Robię swój własny odświeżacz powietrza z destylowaną wodą i kroplaki olejku elektrycznego");
+        odp.add("Do prania firanek używam soli kuchennej, doskonale się sprawdza");
+        odp.add("Fugi i lustro są trudne do wyczyszczenia, ja wspomagam się zwykłą szczoteczką do zębów i pastą");
+        odp.add("Do naostrzenia noży używam soli kuchennej");
+        odp.add("Aby wyczyścić mikrofalówkę, używam sody oczyszczonej");
+        odp.add("Do wyczyszczenia kuchenki gazowej używam fusów z kawy którą wcześniej wypiłam :)");
+        odp.add("Za każdym razem gdy sprzątam mieszkanie na sam koniec zostawiam sobie odkurzanie, nigdy wcześniej !");
+        odp.add("Staram się sporzątanie odkładać na czwartek lub piątek aby w weekend odpocząć po ciężkiej pracy");
+        odp.add("Nie zmuszam się do sprzątania, po prostu to lubię, robienie czegoś na siłę nigdy nie wychodzi dobrze");
+        odp.add("Do sprzątania staram się angażować całą rodzinę");
+        odp.add("Staram się nie marnować zbyt szybko rzeczy, które mogą się przydać na przykład nie wyrzucam tak szybko gombki");
+        odp.add("Żeby umyć okna używam zwykły płyn do naczyć i płyn do szyb, plus gazeta");
+        odp.add("Aby wyczyścić żaluzje używam najzywklejszych w świecie skarpetek");
+        odp.add("Płynu do szyb używam do polerowania baterii czy też płyty indukcyjnej");
+        odp.add("Najwięcej problemów sprawia mi zawsze łazienka, ale używam prosty trik - spryskać płynem, zawinąć szczelnie folią/workiem i odstawić na godzinę, a później wyczyścić");
+        odp.add("Staram się systematycznie sprzątać aby nie mieć dużo roboty na jeden raz");
+        odp.add("Aby wyczyścić pilot od telewizora, szczoteczkę do zębów zamoczam w spirytusie. Nadmiar odsączam na papierowej serwetce. Szoruję pilot, a następnie wycieram.");
+        odp.add("Przypalony garnek bez trudu czyszczę dzięki zastosowaniu płynu do płukania tkanin");
+        odp.add("Aby wyciścić dywan, posypuję go sodą oczyszczoną a po 30 minutach odkurzam");
+        odp.add("Aby udrożnić odpływ, wsypuję do niego pół szklanki sody i wlewam szklankę octu. Gdy pojawi się piana zmywam ją wrzątkiem");    //25
 
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",10,20);
         String mail2;
@@ -2205,19 +2207,19 @@ public class Main extends Narzedzia {
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",20,40);
 
 
-
+        Dodatkowy.Every("idaliaasa2.fijolek53@interia.pl","szybko i skutecznie");
 
         try {
 //            dodajPostLepakNowy(profil[0],fb[0],"",post,4,6,false);
-//            for (int i=0;i<80;i++) {
+//            for (int i=3;i<91;i++) {
 //                mail = enfamil.nextLine();
-//                if (i<17)
+//                if (i<25)
 //                    Dodatkowy.Enfamil(mail);
-//                else if (i<30)
+//                else if (i<38)
 //                    Dodatkowy.Enfamil2(mail);
-//                else if (i<55)
+//                else if (i<63)
 //                    Dodatkowy.Enfamil3(mail);
-//                else if (i<80)
+//                else if (i<91)
 //                    Dodatkowy.Enfamil4(mail);
 //                System.out.println(i);
 //                System.out.println(mail);

@@ -2606,18 +2606,41 @@ public class Dodatkowy extends Narzedzia {
 //        }
     }
 
-    public static void Every(String mail, String kod, String ulica, String miasto, String odp) throws InterruptedException, AWTException {
+    public static void Every(String mail, String odp) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+//            driver.get("http://dodatkowypieniadz.com/zadanie/9b8b4339cf7f85f70a010fcd79f31034/bcffb48f69ac0c6d11fefea6dcabe24a/201920950f63cee967982b759fde80b1");
+//            Thread.sleep(2000);
+//            driver.get("https://tajemniczaakkonstaa.blogspot.com/2017/11/makijaz-pauliny.html");
+//            wpiszHaslo();
+//            Thread.sleep(10000);
+//            clickXY(770,770);
+//            clickXY(790,750);
+            driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
+            Thread.sleep(6000);
+            Neworklead.Everyday(driver,mail,odp);
+
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
+
+    public static void Every2(String mail, String odp) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         try {
+            driver.get("http://dodatkowypieniadz.com/zadanie/9b8b4339cf7f85f70a010fcd79f31034/bcffb48f69ac0c6d11fefea6dcabe24a/201920950f63cee967982b759fde80b1");
+            Thread.sleep(2000);
             driver.get("https://tajemniczaakkonstaa.blogspot.com/2017/11/makijaz-pauliny.html");
             wpiszHaslo();
             Thread.sleep(10000);
             clickXY(770,770);
             clickXY(790,750);
             Thread.sleep(6000);
-            Neworklead.Everyday(driver,mail,kod,ulica,miasto,odp);
+            Neworklead.Everyday(driver,mail,odp);
 
         } catch (Exception e) {
             driver.quit();

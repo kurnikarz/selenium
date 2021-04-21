@@ -1327,31 +1327,6 @@ public class MyPay extends Narzedzia{
 
     }
 
-    public static void Every(String mail, String kod, String ulica, String miasto, String odp) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--allow-running-insecure-content");
-        options.addArguments("--disable-notifications");
-        WebDriver driver = new ChromeDriver(options);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        driver.manage().window().maximize();
-
-        try {
-            driver.get("https://www.mypay.pl/webapp/extern.php?k=7374&u=230491");
-            Thread.sleep(25000);
-            Neworklead.Everyday(driver, mail, kod, ulica, miasto, odp);
-            Thread.sleep(1000);
-
-        } catch (Exception e){
-            driver.quit();
-        }
-
-
-
-
-    }
-
     public static void Nestle(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         String imie = genImieZen();
