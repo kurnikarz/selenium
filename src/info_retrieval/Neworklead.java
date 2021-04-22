@@ -1461,21 +1461,28 @@ public class Neworklead extends Narzedzia {
                 break;
         }
         Thread.sleep(2000);
-        switch (odp3) {
-            case 0:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[2]/div")).click();
-                break;
-            case 1:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[3]/div")).click();
-                break;
+        clickXY(1260,756);
+        Thread.sleep(1000);
+        try {
+            switch (odp3) {
+                case 0:
+                    driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[4]/div")).click();
+                    break;
+                case 1:
+                    driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[3]/div")).click();
+                    break;
+            }
+        } catch (Exception e) {
+
         }
+
         Thread.sleep(2000);
 
         driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div/div[2]/textarea[2]")).sendKeys(odp);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[2]/section/div[1]")).click();
 
-        Thread.sleep(3000);
+        Thread.sleep(30000);
         driver.get("https://www.everydayme.pl/oferty");
         Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/label/div")).click();
@@ -1485,6 +1492,8 @@ public class Neworklead extends Narzedzia {
         driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/ul/li[2]/div/div/div[1]/div/div[3]/div[3]/div")).click();
         Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id=\"main\"]/div[4]/div/div/div/button[2]")).click();
+        Thread.sleep(30000);
+        driver.quit();
 
 //        } catch (Exception e) {
 //            niewykorzystane.append(mail+"\r\n");
@@ -5570,7 +5579,8 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 //        try {
-        driver.get("https://neworklead.pl/zadanie/695a22ce9d707573217fbb0f9594d4f6/b4e3d0ccbfcb8694caae6b5fe18c60c1/d654be842d14f320ad92ef039fb6aa4c");
+//        driver.get("https://neworklead.pl/zadanie/695a22ce9d707573217fbb0f9594d4f6/b4e3d0ccbfcb8694caae6b5fe18c60c1/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
 
