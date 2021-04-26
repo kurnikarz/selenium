@@ -2611,14 +2611,13 @@ public class Dodatkowy extends Narzedzia {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 //        try {
-//            driver.get("http://dodatkowypieniadz.com/zadanie/9b8b4339cf7f85f70a010fcd79f31034/bcffb48f69ac0c6d11fefea6dcabe24a/201920950f63cee967982b759fde80b1");
-//            Thread.sleep(2000);
-//            driver.get("https://tajemniczaakkonstaa.blogspot.com/2017/11/makijaz-pauliny.html");
-//            wpiszHaslo();
-//            Thread.sleep(10000);
-//            clickXY(770,770);
-//            clickXY(790,750);
-            driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
+            driver.get("http://dodatkowypieniadz.com/zadanie/9b8b4339cf7f85f70a010fcd79f31034/bcffb48f69ac0c6d11fefea6dcabe24a/201920950f63cee967982b759fde80b1");
+            Thread.sleep(2000);
+            driver.get("https://tajemniczaakkonstaa.blogspot.com/2017/11/makijaz-pauliny.html");
+            wpiszHaslo();
+            Thread.sleep(6000);
+            clickXY(770,770);
+            clickXY(790,750);
             Thread.sleep(6000);
             Neworklead.Everyday(driver,mail,odp);
 
@@ -2627,23 +2626,105 @@ public class Dodatkowy extends Narzedzia {
 //        }
     }
 
-    public static void Every2(String mail, String odp) throws InterruptedException, AWTException {
+    public static void Everyy(String mail, String odp) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        try {
-            driver.get("http://dodatkowypieniadz.com/zadanie/9b8b4339cf7f85f70a010fcd79f31034/bcffb48f69ac0c6d11fefea6dcabe24a/201920950f63cee967982b759fde80b1");
-            Thread.sleep(2000);
-            driver.get("https://tajemniczaakkonstaa.blogspot.com/2017/11/makijaz-pauliny.html");
-            wpiszHaslo();
-            Thread.sleep(10000);
-            clickXY(770,770);
-            clickXY(790,750);
-            Thread.sleep(6000);
-            Neworklead.Everyday(driver,mail,odp);
+//        try {
+        driver.get("http://dodatkowypieniadz.com/zadanie/9b8b4339cf7f85f70a010fcd79f31034/bcffb48f69ac0c6d11fefea6dcabe24a/201920950f63cee967982b759fde80b1");
+        Thread.sleep(2000);
+        driver.get("https://tajemniczaakkonstaa.blogspot.com/2018/02/spacer.html");
+        wpiszHaslo();
+        Thread.sleep(6000);
+        clickXY(770,770);
+        clickXY(790,750);
+        Thread.sleep(6000);
+        Neworklead.Everyday(driver,mail,odp);
 
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
+
+    public static void Every2a(String mail, String odp) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("http://dodatkowypieniadz.com/zadanie/8f8f69b80cfbd2a7d48e830175b36787/51e5a1be893327fd5d5e130846079847/201920950f63cee967982b759fde80b1");
+        Thread.sleep(2000);
+        driver.get("https://tajemniczaakkonstaa.blogspot.com/2016/10/odzywka-do-rzes-long-4-lashes.html");
+        Thread.sleep(3000);
+        wpiszHaslo();
+        Thread.sleep(6000);
+        clickXY(770,770);
+        clickXY(790,750);
+        Thread.sleep(6000);
+        Neworklead.Everyday(driver,mail,odp);
+
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
+
+    public static void Every2b(String mail, String odp) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("http://dodatkowypieniadz.com/zadanie/8f8f69b80cfbd2a7d48e830175b36787/51e5a1be893327fd5d5e130846079847/201920950f63cee967982b759fde80b1");
+        Thread.sleep(2000);
+        driver.get("https://tajemniczaakkonstaa.blogspot.com/2016/10/tusz-do-rzes-max-factor-2000-calorie.html");
+        Thread.sleep(3000);
+        wpiszHaslo();
+        Thread.sleep(6000);
+        clickXY(770,707);
+        clickXY(790,707);
+        Thread.sleep(6000);
+        Neworklead.Everyday(driver,mail,odp);
+
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
+
+    public static void Every2c(String mail, String odp) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("http://dodatkowypieniadz.com/zadanie/8f8f69b80cfbd2a7d48e830175b36787/51e5a1be893327fd5d5e130846079847/201920950f63cee967982b759fde80b1");
+        Thread.sleep(2000);
+        driver.get("https://tajemniczaakkonstaa.blogspot.com/2016/10/paznokcie-hybrydowe-zestaw-neonail.html");
+        Thread.sleep(3000);
+        wpiszHaslo();
+        Thread.sleep(6000);
+        clickXY(770,770);
+        clickXY(790,750);
+        Thread.sleep(6000);
+        Neworklead.Everyday(driver,mail,odp);
+
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
+
+    public static void Every3(String mail, String odp) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("http://dodatkowypieniadz.com/zadanie/d43baebdb58cf053a175ef3da965484c/9e88ae43f7e5ce9606bf648905e619c6/201920950f63cee967982b759fde80b1");
+        Thread.sleep(3000);
+        wpiszHaslo();
+        Thread.sleep(6000);
+        clickXY(770,615);
+        clickXY(790,615);
+        Thread.sleep(6000);
+        Neworklead.Everyday(driver,mail,odp);
+
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
     }
 }
