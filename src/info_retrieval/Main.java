@@ -2191,43 +2191,37 @@ public class Main extends Narzedzia {
 
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",20,40);
 
-        int j = 0;
+        int j = 4;
 
-//        int x = 30;
-
-
-
-        try {
-
-            for (int i = 0; i < 85; i++) {
-            mail = everyInt.nextLine();
-            if (i<5)
-                Dodatkowy.Every(mail,odp.get(j));
-            else if (i<10)
-                Dodatkowy.Everyy(mail,odp.get(j));
-            else if (i<20)
-                Dodatkowy.Every2a(mail,odp.get(j));
-            else if (i<30)
-                Dodatkowy.Every2b(mail,odp.get(j));
-            else if (i<45)
-                Dodatkowy.Every2c(mail,odp.get(j));
-            else if (i<85)
-                Dodatkowy.Every3(mail,odp.get(j));
-            j++;
-            if (j > 24)
-                j = 0;
+        int x = 45;
+//        for(int i = 2; i < x; i++) {
+//            mail = everyInt.nextLine();
+//            if(i == 0) { Ads.EveryAdp(mail,odp.get(j));}
+//            if(i == 1) { Neworklead.strzEveryAF(mail,odp.get(j)); }
+//            if(i == 2) {
+//                Neworklead.strzEveryAF(mail,odp.get(j));
+//                x -= 3;
+//                i=-1;
+//            }
+//            j++;
+//            if (j > 24)
+//                j = 0;
+//            System.out.println(i);
+//            System.out.println(j);
+//            System.out.println(mail);
+//            Koniec.Restart();
+//        }
+        Koniec.Restart();
+        for (int i=52;i<67;i++) {
+            mail = nestle3.nextLine();
+            Neworklead.NestleTAR(mail);
             System.out.println(i);
-            System.out.println(j);
             System.out.println(mail);
             Koniec.Restart();
         }
-//        Koniec.Restart();
-//            for (int i=0;i<200;i++) {
-//                interia();
-//                System.out.println(i);
-//                if (i%20==0)
-//                    Koniec.Restart();
-//            }
+
+        try {
+
 
         } catch (Exception e) {
             blad.println(e);

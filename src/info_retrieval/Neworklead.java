@@ -1381,7 +1381,7 @@ public class Neworklead extends Narzedzia {
 
         //WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[2]/a"));
         //driver.get("https://www.everydayme.pl/konkurszimowy");
-        try {
+//        try {
         zmienKarte(driver);
         Thread.sleep(3000);
         while (!cookie) {
@@ -1416,7 +1416,10 @@ public class Neworklead extends Narzedzia {
         driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/div[2]/section[1]/div/div/input")).sendKeys(imie);
         driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/div[2]/section[2]/div[2]/div/input")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[6]/div/div/div/div[2]/div[1]/div[3]/div/div/div[2]/button[2]")).click();
+//        driver.findElement(By.xpath("/html/body/div[6]/div/div/div/div[2]/div[1]/div[3]/div/div/div[2]/button[2]")).click();
+        driver.findElement(By.xpath("/html/body/div[6]/div/div/div/div[2]/div[1]/div[1]/button[1]/div/div")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[6]/div/div/div/div[2]/div[1]/div[3]/div/div/div[2]/button[4]/span")).click();
         Thread.sleep(1000);
         js.executeScript("document.querySelector('[readonly]').removeAttribute(\"readonly\")");
         Thread.sleep(1000);
@@ -1495,11 +1498,11 @@ public class Neworklead extends Narzedzia {
         Thread.sleep(30000);
         driver.quit();
 
-        } catch (Exception e) {
-            niewykorzystane.append(mail+"\r\n");
-            niewykorzystane.close();
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            niewykorzystane.append(mail+"\r\n");
+//            niewykorzystane.close();
+//            driver.quit();
+//        }
 
 
     }
@@ -3414,7 +3417,7 @@ public class Neworklead extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver, 10000);
 
-        try {
+//        try {
         Thread.sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"gigya-textbox-86190741038286000\"]"))));
         Thread.sleep(1000);
@@ -3448,9 +3451,11 @@ public class Neworklead extends Narzedzia {
             driver.findElement(By.xpath("//*[@id=\"gigya-textbox-153337984387971650_5\"]")).sendKeys(dzieckoSpodziewane);
         }
         Thread.sleep(1000);
-        clickXY(1417, 510);
+        clickXY(1400, 740);
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-0-63592377505834030\"]")).click();
+        Thread.sleep(1000);
+        ScrollBy(driver,"500");
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"mbf-registration-one-step-form\"]/div[4]/div[24]/input")).click();
         Thread.sleep(5000);
@@ -3502,9 +3507,9 @@ public class Neworklead extends Narzedzia {
             }
 
         }
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
 
     }
@@ -3541,8 +3546,8 @@ public class Neworklead extends Narzedzia {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
 
-        try {
-            driver.get("https://neworklead.pl/zadanie/e83dc2836712c211ca957adeb69ca9e6/aaa25e7d780701ac82c4a27c03e1fa94/d654be842d14f320ad92ef039fb6aa4c");
+//        try {
+            driver.get("https://neworklead.pl/zadanie/6db790ee2fa5692dd5a997e2bfaabb62/49e6d2c2cbe1b7eafcc0e1f1e7deb374/d654be842d14f320ad92ef039fb6aa4c");
 //            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
             Thread.sleep(5000);
 
@@ -3554,9 +3559,9 @@ public class Neworklead extends Narzedzia {
             Thread.sleep(3000);
             driver.quit();
 
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
 
     }
@@ -5559,7 +5564,17 @@ public class Neworklead extends Narzedzia {
         Neworklead.Everyday(driver,mail,odp);
     }
 
-    public static void EveryDC(String mail, String odp) throws InterruptedException, AWTException, IOException {
+    public static void strzEveryTar(String mail, String odp) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://neworklead.pl/zadanie/b4e73b4222f071e582f0a37f459640df/c63e8ec1bd0531f3458108bfa75b0c76/d654be842d14f320ad92ef039fb6aa4c");
+//        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
+        Thread.sleep(6000);
+        Neworklead.Everyday(driver,mail,odp);
+    }
+
+    public static void strzEveryDC(String mail, String odp) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -5569,7 +5584,7 @@ public class Neworklead extends Narzedzia {
         Neworklead.Everyday(driver,mail,odp);
     }
 
-    public static void EveryAF(String mail, String odp) throws InterruptedException, AWTException, IOException {
+    public static void strzEveryAF(String mail, String odp) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -5609,11 +5624,11 @@ public class Neworklead extends Narzedzia {
         Neworklead.Everyday(driver,mail,odp);
     }
 
-    public static void gwEvery1(String mail, String odp) throws InterruptedException, AWTException, IOException {
+    public static void gwEveryAF(String mail, String odp) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://neworklead.pl/zadanie/1a15f1776cc3d466bcee906520dd412c/7243e1a4b47a6dffbcd89659a1ed28d5/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/37839c9829e4ab5374c715e0e79f7e7f/cbc6b8a70fb6f5fb478c53fafb9b761f/d654be842d14f320ad92ef039fb6aa4c");
 //        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);

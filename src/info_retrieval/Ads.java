@@ -273,7 +273,7 @@ public class Ads extends Narzedzia {
         driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr/td/div[8]/div/div/div/div/div/div/div/a/span")).click();
     }
 
-    public static void Every(String mail, String odp) throws InterruptedException, AWTException, IOException {
+    public static void EveryAF(String mail, String odp) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
