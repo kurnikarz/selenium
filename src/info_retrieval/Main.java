@@ -2183,9 +2183,9 @@ public class Main extends Narzedzia {
         String miastEn;
         String koEn;
 
-//        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",40,60);
+        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",60,80);
+        pobierzAdres(100);
 
-        Neworklead.aPampers("siewior.kamila@wp.pl","Wolności","41","800","Zabrze","500656575");
 
         int j = 4;
 

@@ -1229,8 +1229,8 @@ public class Narzedzia {
             }
 
             for (int j = 0;j<linki.length;j++) {
-                driver.get(linki[j]);
                 try {
+                    driver.get(linki[j]);
                     wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"tel-kom-hide\"]"))));
                     Thread.sleep(1000);
                     var numer2  = driver.findElement(By.cssSelector("#tel-kom-hide"));
