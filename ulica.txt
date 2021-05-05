@@ -1,82 +1,194 @@
-ul. Sępia 80
-ul. Ondraszka 1
-ul. Małopolska 94
-ul. Brűcknera Aleksandra 111
-ul. Wrzeciono 133
-ul. Rąblowska 133
-ul. Pługi 19
-ul. Spokojna 58
-ul. Nad Strugą 22
-ul. Torfowa 64
-ul. Świętokrzyska 95
-ul. Na Skwierzynkę 112
-ul. Jordana 24
-ul. Wesołowska 21
-Pl. Gdański 99
-ul. Jodłowa 15
-ul. Ostródzka 7
-ul. Prokocimska 115
-ul. Potok 31
-ul. Niedźwiedzia 111
-ul. Trasa imienia Nikodema i Józefa Renców 60
-ul. Tybetańska 91
-ul. Sobolewo 26
-ul. Cytrusowa 95
-ul. Przecznica 6
-ul. Nad Stołczyńską 93
-ul. Bydgoskiego Batalionu Obrony Narodowej 82
-ul. Rynek Bursztynowy 98
-ul. Rycerska 51
-Pl. Lecha 66
-Al. Pokoju 73
-ul. Gorzycka 124
-ul. Człopska 114
-ul. Tetmajera Kazimierza 68
-Al. Jana Pawła II 60
-ul. Dźwigowa 72
-ul. Jagiellońska 15
-ul. Jagiellońska 119
-ul. Kasprowicza Jana 28
-ul. Łężce 55
-ul. Fabryczna 142
-ul. Szronowa 62
-ul. Księcia Jerzego II Piasta 34
-ul. Szewska 141
-Pl. Strzegomski 118
-ul. Frontowa 25
-ul. Klecka 148
-ul. Kwiatkowskiego 2
-ul. Makuszyńskiego Kornela 97
-ul. Krasickiego Ignacego 101
-ul. Borówkowa 150
-ul. Kardynała Wyszyńskiego Stefana 21
-ul. Ławica 36
-ul. Chylicka 92
-ul. Gorczyna Jana Aleksandra 123
-ul. Chopina Fryderyka 136
-ul. Waszyngtona 66
-ul. Krzelowska 107
-ul. Mosiężna 42
-ul. Paganiniego Niccola 84
-ul. Ochota 148
-ul. Górnickiego Łukasza 108
-ul. Obronców Westerplatte 7
-ul. Gdańska 76
-ul. Zachodnia 137
-ul. Gajowa 145
-ul. Rodziewiczówny Marii 114
-ul. Granowska 137
-ul. Krucza 35
-ul. Bacewiczówny Grażyny 59
-ul. Judyma Tomasza 99
-ul. Ogińskiego Michała Kleofasa 147
-ul. Legionów Józefa Piłsudskiego 130
-ul. Żwirki i Wigury 131
-ul. Plater Emilii 67
-ul. Kordeckiego Augustyna 120
-ul. Chabrowa 119
-ul. Równoległa 18
-ul. Dobrzelin 110
-ul. Płatnerska 32
-ul. Solskiego Ludwika 72
-ul. Obozowa 7
+Borkowska
+Kolejowa
+Nad Jarem
+Baczyńskiego
+Ostrzycka
+Chałubińskiego Tytusa
+Podwale
+Jagiellońska
+Kaliny Antoniego
+Tymiankowa
+3 Maja
+Joselewicza Berka
+Widok
+Akademii Zamojskiej
+Janosika
+Duracza Teodora
+Nad Strugą
+Księdza Skargi Piotra
+Kaliska
+Pod Wierzbami
+Ogrodowa
+Jankiela
+Gazowa
+Sienkiewicza Henryka
+Kusocińskiego Janusza
+Solińska
+Piotrkowska
+Miodowa
+Witkiewicza Stanisława
+Parkowa
+Jagodowa
+Świętego Maksymiliana Kolbego
+Przodowników
+Kosmonautów
+Dniestrzańska
+Grzybowa
+Puszczykowa
+Korkowa
+Pszenna
+Boratyńskiego Czesława
+Igielnicka
+Kątowa
+Przybrodzka
+Stellera Pawła
+Jeździecka
+Standego Ryszarda
+Pocztowa
+Kwiatowa
+Chrobrego
+Grochowa
+Ostrowiecka
+Seminaryjna
+Kreczmara Adama
+Żółwia
+Orzeszkowej Elizy
+Darłowska
+3 Maja
+Baczyńskiego Krzysztofa Kamila
+Szendzielarza Zygmunta
+Głogowiec
+Pl Daszyńskiego Ignacego
+Krótka
+Oficerska
+Generała Pułaskiego Kazimierza
+Kameralna
+Kunickiego Władysława
+Łącząca
+Gajowa
+Gołębi
+Równa
+Krakowskie Przedmieście
+Generała Połbina Iwana
+Żwirki i Wigury
+Suchy Jar
+Kurska
+Rozmarynowa
+Niecała
+Kościuszki Tadeusza
+Załęże
+Górna
+Diamentowa
+Karowa
+Łukaszewicza Ignacego
+Przylaszczkowa
+Klemensiewicza Zenona
+Legnicka
+Pl Księdza Prałata Gustkowicza Jana
+Kraszewskiego Józefa Ignacego
+Targowa
+Gryfa Pomorskiego
+Śliwińskiego
+Czarnieckiego Stefana
+Miła
+Broniewskiego Władysława
+Zdrojowa
+Konopna
+Chlewińska
+Świętej Faustyny
+Zamkowa
+Hektarowa
+Błotna
+Żywiecka
+Styrska
+Al Gwiazd
+Ukośna
+Bałtycka
+Sośnicka
+Cerery
+Wąski Dunaj
+Żwirki i Wigury
+Budryka Witolda
+Gronowa
+Kępińska
+Solskiego Ludwika
+Talowskiego Teodora
+Rzewuskiego Wacława
+Średnia
+Mglista
+Wielicka
+Pałucka
+Portowa
+Stoigniewa
+Waryńskiego Ludwika
+Skoczylasa
+Żywiecka
+Czwartaków
+Borowska
+Sienkiewicza
+Koszalińska
+Dębowa
+Jaglana
+Skalista
+Boleslawa Chrobrego
+Dzielna
+Barokowa
+Jastrzębia
+Ku Słońcu
+Sołtana Andrzeja
+Sikorskiego
+Powodowska
+Ciupki Józefa
+Prokocimska
+Chorzowska
+Gajowa
+Taklińskiego Władysława
+Husarska
+Urbana Rafała
+Główna
+Praskiego Pułku
+Chmielna
+Anny Jagiellonki
+Kopernika Mikołaja
+Falskiego Mariana
+Krokusów
+Bohaterów Warszawy
+Magnolii
+Tamka
+Jasińskiego Jakuba
+Poniedziałkowy Dół
+Kubusia Puchatka
+Strążyska
+Pl Księżnej Ofki Piastówny
+Szlifierzy
+Rojna
+Truskolaska
+Działkowa
+Drzymały Michała
+Strąkowa
+Północna
+Wojewódzka
+Powązkowska
+Osiedleńcza
+Grunwaldzka
+Rzemieślnicza
+Ciżemki
+Maltańska
+Roosevelta
+Chłopickiego Józefa
+Panewnicka
+Ognik
+Siemiradzkiego Henryka
+Mysłowicka
+Cienista
+Portowa
+Dworcowa
+Rynek Łazarski
+Komuny Paryskiej
+Generała Abrahama Romana
+Jasińskiego Jakuba
+Kasprowicza Jana
+Ordynacka
+Kraśnicka
+Latawcowa
+Warowna

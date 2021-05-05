@@ -2136,7 +2136,7 @@ public class Main extends Narzedzia {
         String ulicaAv;
         List<String> odp = new ArrayList<>();
         String[] maileArk = new String[80];
-
+//        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",40,60);
         //Co najchętniej robisz ze swoją rodziną w czasie Bożego Narodzenia? ?
         odp.add("Stopniowo sprzątam swoje mieszkanie, w każdy dzień tygodnia zajmuję się czymś innym");
         odp.add("Sprzątam zgodnie z wskazówkami ruchu zegara, czyli od lewej do pracy i od góry do dołu");
@@ -2163,8 +2163,6 @@ public class Main extends Narzedzia {
         odp.add("Przypalony garnek bez trudu czyszczę dzięki zastosowaniu płynu do płukania tkanin");
         odp.add("Aby wyciścić dywan, posypuję go sodą oczyszczoną a po 30 minutach odkurzam");
         odp.add("Aby udrożnić odpływ, wsypuję do niego pół szklanki sody i wlewam szklankę octu. Gdy pojawi się piana zmywam ją wrzątkiem");    //25
-
-//        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",10,20);
         String mail2;
         String mail3;
         String post = "Szukamy ludzi do pracy przy wklejaniu postów na FB. \n" +
@@ -2185,24 +2183,21 @@ public class Main extends Narzedzia {
         String miastEn;
         String koEn;
 
+//        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",40,60);
 
-//        https://tajemniczaakkonstaa.blogspot.com/2017/11/makijaz-pauliny.html
-//        https://tajemniczaakkonstaa.blogspot.com/2018/02/spacer.html
-
-//        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",20,40);
+        Neworklead.aPampers("siewior.kamila@wp.pl","Wolności","41","800","Zabrze","500656575");
 
         int j = 4;
 
         int x = 45;
-//        for(int i = 2; i < x; i++) {
+
+//        Koniec.Restart();
+//        for (int i=1;i<=50;i++) {
 //            mail = everyInt.nextLine();
-//            if(i == 0) { Ads.EveryAdp(mail,odp.get(j));}
-//            if(i == 1) { Neworklead.strzEveryAF(mail,odp.get(j)); }
-//            if(i == 2) {
-//                Neworklead.strzEveryAF(mail,odp.get(j));
-//                x -= 3;
-//                i=-1;
-//            }
+//            if (i%2==0)
+//                Neworklead.strzEveryTar(mail,odp.get(j));
+//            else
+//                Neworklead.strzEveryDC(mail,odp.get(j));
 //            j++;
 //            if (j > 24)
 //                j = 0;
@@ -2211,14 +2206,6 @@ public class Main extends Narzedzia {
 //            System.out.println(mail);
 //            Koniec.Restart();
 //        }
-        Koniec.Restart();
-        for (int i=52;i<67;i++) {
-            mail = nestle3.nextLine();
-            Neworklead.NestleTAR(mail);
-            System.out.println(i);
-            System.out.println(mail);
-            Koniec.Restart();
-        }
 
         try {
 
@@ -2232,6 +2219,6 @@ public class Main extends Narzedzia {
             wylacz();
         }
 
-        wylacz();
+//        wylacz();
     }
 }
