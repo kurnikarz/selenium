@@ -5831,6 +5831,34 @@ public class Neworklead extends Narzedzia {
 
     }
 
+    public static void lkKaufland(String mail, String ulica, String kod1, String kod2, String miasto, String numer) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("https://neworklead.pl/zadanie/cb25419a907eb50e3f967500b8aa9d45/f42e7d09b263440e79113b090a2afcd5/d654be842d14f320ad92ef039fb6aa4c");
+        Thread.sleep(6000);
+        Kaufland(driver, mail,ulica, kod1,kod2,miasto,numer);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void gwKaufland(String mail, String ulica, String kod1, String kod2, String miasto, String numer) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("https://neworklead.pl/zadanie/9dbdd0b22b6024c36040d32d11e29286/00d2550d3eb0d6bb17870f974e87c333/d654be842d14f320ad92ef039fb6aa4c");
+        Thread.sleep(6000);
+        Kaufland(driver, mail,ulica, kod1,kod2,miasto,numer);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+    }
+
     public static void aPampers(String mail, String ulica, String kod1, String kod2, String miasto, String tel) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -5845,7 +5873,7 @@ public class Neworklead extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://neworklead.pl/zadanie/ef7b0dd029b1f5437d352f022cc6d223/3cd1367b2d67d763ee88958452f6288a/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/e58af4cc1072cefc2a2bc5ad48c6bfa7/623abaf3f80a9233a80a1094d8b088b9/d654be842d14f320ad92ef039fb6aa4c");
         Thread.sleep(6000);
         konkursPampers(driver, mail,ulica,kod1,kod2,miasto,tel);
 
@@ -5855,7 +5883,7 @@ public class Neworklead extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://neworklead.pl/zadanie/fe1d5bf6846a48fefd06ee3ab72537fe/2e2e1886e1b12c00420f35b07a35f51c/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/bde951ce2ee07c6183eab40d557bfade/b5efee9d073d9671ad27058a4d1368da/d654be842d14f320ad92ef039fb6aa4c");
         Thread.sleep(6000);
         konkursPampers(driver, mail,ulica,kod1,kod2,miasto,tel);
 
