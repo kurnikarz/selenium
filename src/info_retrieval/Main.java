@@ -2183,8 +2183,8 @@ public class Main extends Narzedzia {
         String miastEn;
         String koEn;
 
-        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",60,80);
-        pobierzAdres(100);
+//        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/uslugi/",50,100);
+//        pobierzAdres(100);
 
 
         int j = 4;
@@ -2192,23 +2192,95 @@ public class Main extends Narzedzia {
         int x = 45;
 
 //        Koniec.Restart();
-//        for (int i=1;i<=50;i++) {
-//            mail = everyInt.nextLine();
-//            if (i%2==0)
-//                Neworklead.strzEveryTar(mail,odp.get(j));
-//            else
-//                Neworklead.strzEveryDC(mail,odp.get(j));
-//            j++;
-//            if (j > 24)
-//                j = 0;
-//            System.out.println(i);
-//            System.out.println(j);
-//            System.out.println(mail);
-//            Koniec.Restart();
-//        }
 
+//Koniec.Restart();
         try {
+//            for (int i=46;i<=81;i++) {
+//                mail = everyInt.nextLine();
+////                mail2 = enfamil.nextLine();
+//                if (i<=45) {
+//                    if (i%2==0)
+//                        Dodatkowy.Every(mail,odp.get(j));
+//                    else
+//                        Dodatkowy.Everyy(mail,odp.get(j));
+//                } else if (i<=80) {
+//                    if (i%2==0)
+//                        Dodatkowy.Every2a(mail,odp.get(j));
+//                    else
+//                        Dodatkowy.Every2b(mail,odp.get(j));
+//                } else if (i<=110)
+//                    Dodatkowy.Every3(mail,odp.get(j));
+////                if (i<=15)
+////                    Dodatkowy.Enfamil3(mail2);
+////                else if (i<=23)
+////                    Dodatkowy.Enfamil2(mail2);
+////                else if (i<=52)
+////                    Dodatkowy.Enfamil4(mail2);
+//                j++;
+//                if (j > 24)
+//                    j = 0;
+//                System.out.println(i);
+//                System.out.println(j);
+//                System.out.println(mail);
+//                Koniec.Restart();
+//            }
 
+//            for (int i = 4; i <= 100; i++) {
+//                mail = everyInt.nextLine();
+////                if (i % 2 == 0)
+//                    Neworklead.strzEveryTar(mail, odp.get(j));
+////                else
+////                    Neworklead.strzEveryDC(mail, odp.get(j));
+//                j++;
+//                if (j > 24)
+//                    j = 0;
+//                System.out.println(i);
+//                System.out.println(j);
+//                System.out.println(mail);
+//                Koniec.Restart();
+//            }
+//
+//            for (int i=1;i<=50;i++) {
+//                mail = everyInt.nextLine();
+//                Neworklead.strzEveryTar(mail,odp.get(j));
+//                j++;
+//                if (j > 24)
+//                    j = 0;
+//                System.out.println(i);
+//                System.out.println(j);
+//                System.out.println(mail);
+//                Koniec.Restart();
+//            }
+
+//            for (int i=1;i<200;i++) {
+//                interia();
+//                if (i%20==0)
+//                    Koniec.Restart();
+//                System.out.println(i);
+//            }
+
+            x = 90;
+            for(int i = 1; i < x; i++) {
+                mail = iphone.nextLine();
+                ulicaVee = ulicaPam.nextLine();
+                kodVee = kodPam.nextLine();
+                kodVee2 = kodPam2.nextLine();
+                miastoVee = miastoPam.nextLine();
+                num = numPam.nextLine();
+
+                if(i == 0) { Neworklead.aKaufland(mail,ulicaVee,kodVee,kodVee2,miastoVee,num);}
+                if(i == 1) { Neworklead.lkKaufland(mail,ulicaVee,kodVee,kodVee2,miastoVee,num); }
+                if(i == 2) {
+                    Neworklead.gwKaufland(mail,ulicaVee,kodVee,kodVee2,miastoVee,num);
+                    x -= 3;
+                    i=-1;
+                }
+
+                System.out.println(i);
+                System.out.println(x);
+                System.out.println(mail);
+                Koniec.Restart();
+            }
 
         } catch (Exception e) {
             blad.println(e);
@@ -2219,6 +2291,6 @@ public class Main extends Narzedzia {
             wylacz();
         }
 
-//        wylacz();
+        wylacz();
     }
 }

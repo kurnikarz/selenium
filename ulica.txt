@@ -1,194 +1,98 @@
-Borkowska
-Kolejowa
-Nad Jarem
-Baczyńskiego
-Ostrzycka
-Chałubińskiego Tytusa
-Podwale
-Jagiellońska
-Kaliny Antoniego
-Tymiankowa
-3 Maja
-Joselewicza Berka
-Widok
-Akademii Zamojskiej
-Janosika
-Duracza Teodora
-Nad Strugą
-Księdza Skargi Piotra
-Kaliska
-Pod Wierzbami
-Ogrodowa
-Jankiela
-Gazowa
-Sienkiewicza Henryka
-Kusocińskiego Janusza
-Solińska
-Piotrkowska
-Miodowa
-Witkiewicza Stanisława
-Parkowa
-Jagodowa
-Świętego Maksymiliana Kolbego
-Przodowników
-Kosmonautów
-Dniestrzańska
-Grzybowa
-Puszczykowa
-Korkowa
-Pszenna
-Boratyńskiego Czesława
-Igielnicka
-Kątowa
-Przybrodzka
-Stellera Pawła
-Jeździecka
-Standego Ryszarda
-Pocztowa
-Kwiatowa
-Chrobrego
-Grochowa
-Ostrowiecka
-Seminaryjna
-Kreczmara Adama
-Żółwia
-Orzeszkowej Elizy
-Darłowska
-3 Maja
-Baczyńskiego Krzysztofa Kamila
-Szendzielarza Zygmunta
-Głogowiec
-Pl Daszyńskiego Ignacego
-Krótka
-Oficerska
-Generała Pułaskiego Kazimierza
-Kameralna
-Kunickiego Władysława
-Łącząca
-Gajowa
-Gołębi
-Równa
-Krakowskie Przedmieście
-Generała Połbina Iwana
-Żwirki i Wigury
-Suchy Jar
-Kurska
-Rozmarynowa
-Niecała
-Kościuszki Tadeusza
-Załęże
-Górna
-Diamentowa
-Karowa
-Łukaszewicza Ignacego
-Przylaszczkowa
-Klemensiewicza Zenona
-Legnicka
-Pl Księdza Prałata Gustkowicza Jana
-Kraszewskiego Józefa Ignacego
-Targowa
-Gryfa Pomorskiego
-Śliwińskiego
-Czarnieckiego Stefana
-Miła
-Broniewskiego Władysława
-Zdrojowa
-Konopna
-Chlewińska
-Świętej Faustyny
-Zamkowa
-Hektarowa
-Błotna
-Żywiecka
-Styrska
-Al Gwiazd
-Ukośna
-Bałtycka
-Sośnicka
-Cerery
-Wąski Dunaj
-Żwirki i Wigury
-Budryka Witolda
-Gronowa
-Kępińska
-Solskiego Ludwika
-Talowskiego Teodora
-Rzewuskiego Wacława
-Średnia
-Mglista
-Wielicka
-Pałucka
-Portowa
-Stoigniewa
-Waryńskiego Ludwika
-Skoczylasa
-Żywiecka
-Czwartaków
-Borowska
-Sienkiewicza
-Koszalińska
-Dębowa
-Jaglana
-Skalista
-Boleslawa Chrobrego
-Dzielna
-Barokowa
-Jastrzębia
-Ku Słońcu
-Sołtana Andrzeja
-Sikorskiego
-Powodowska
-Ciupki Józefa
-Prokocimska
-Chorzowska
-Gajowa
-Taklińskiego Władysława
-Husarska
-Urbana Rafała
-Główna
-Praskiego Pułku
-Chmielna
-Anny Jagiellonki
-Kopernika Mikołaja
-Falskiego Mariana
-Krokusów
-Bohaterów Warszawy
-Magnolii
-Tamka
+Bułgarska
+Sikorki
+Kołobrzeska
+Robla Jana Zygmunta
+Brzezińska
+Solec
+Ostroroga Jana
+Płocka
+Karmelicka
+Osiedle Na Stoku
+Wróblewskiego Zygmunta
+Kmicica Andrzeja
+Wojska Polskiego
+Dobra
+Rymarska
+Różyckiego Ludomira
+Podgórna
+Wietnamska
+Krakowska
+Ciasna
+Lasek
+Kadłubka Wincentego
+Synów Pułku
+Płaszowska
+Marszałka Józefa Piłsudskiego
+Meiselsa Beera
+Leszka Białego
+Stanów Zjednoczonych
+Elbląska
+Jędrzejowska
+Jutlandzka
+Cylichowska
+Bohaterów Getta
+Warszawska
+Kłuszyńska
+Generała Maczka Stanisława
+Krzywoń Anieli
+Wasilkowska
+29 Listopada
+Stelmachów
+Wilczkowska
+Nowotoruńska
+Forsycjowa
 Jasińskiego Jakuba
-Poniedziałkowy Dół
-Kubusia Puchatka
-Strążyska
-Pl Księżnej Ofki Piastówny
-Szlifierzy
-Rojna
-Truskolaska
-Działkowa
-Drzymały Michała
-Strąkowa
+Wierzbowa
+Porazińskiej Janiny
+Noworybna
+Trakt Świętego Wojciecha
+Zawiślańska
+Makowskiego Tadeusza
+Katowicka
+Legendy
+Stolarska
+Przyleśna
+Dąbrowskiego Jarosława
+Ogród Dendrologiczny imienia Profesora S. Kownasa
+Grodzieńska
+Łabiszyńska
+Kartuska
+Piekarnicza
+Narutowicza Gabriela
+Podbagnie
+Rezedowa
+Pobiedziska
+Derkacza
+Kwiatów Polskich
+Hafciarska
+Krasińskiego Zygmunta
+Cmentarna
+Bierkowicka
+Anielewicza Mordechaja
 Północna
-Wojewódzka
-Powązkowska
-Osiedleńcza
-Grunwaldzka
-Rzemieślnicza
-Ciżemki
-Maltańska
-Roosevelta
-Chłopickiego Józefa
-Panewnicka
-Ognik
-Siemiradzkiego Henryka
-Mysłowicka
-Cienista
+Prymulkowa
+Barlickiego Norberta
+Generała Sowińskiego Józefa Longina
+Fabryczna
+Ochocza
+Generała Fieldorfa Augusta Emila
+Lisia
+Jagiellońska
+Ślimaka
+Pazińskiego Romana
+Włodarzewska
+Czwartaków
+Podłącze
+Bukowego
+Przedpole
+Kowaczka Albina
+Andersena Christiana
+Karpacka
+Ariańska
+Rogowska
 Portowa
-Dworcowa
-Rynek Łazarski
-Komuny Paryskiej
-Generała Abrahama Romana
-Jasińskiego Jakuba
-Kasprowicza Jana
-Ordynacka
-Kraśnicka
-Latawcowa
-Warowna
+Księdza Suchowolca Stanisława
+Władysława Lokietka
+Bodziszkowa
+Beniowskiego Maurycego
+Czackiego Tadeusza

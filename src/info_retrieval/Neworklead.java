@@ -3897,7 +3897,7 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         try {
-        driver.get("https://neworklead.pl/zadanie/571d9ab22bb99e9adc5923f5a4cb94a0/85c9a38fb4fe436a4647631faaa0c5a4/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/a22f73b0d63a8ccd99a6e5decd6cf6c7/89f65fe230df775db2e4503ddcf22f9c/d654be842d14f320ad92ef039fb6aa4c");
         Thread.sleep(7000);
         Limango(driver, mail);
         } catch (Exception e) {
@@ -5112,7 +5112,7 @@ public class Neworklead extends Narzedzia {
             nazwisko = genNazwisko();
         }
 
-//        try {
+        try {
             WebDriverWait wait = new WebDriverWait(driver, 60);
             wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"1\"]/div[2]"))));
             driver.findElement(By.xpath("//*[@id=\"1\"]/div[2]")).click();
@@ -5285,9 +5285,9 @@ public class Neworklead extends Narzedzia {
 
             }
             driver.quit();
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            driver.quit();
+        }
 
 
 
@@ -5601,127 +5601,127 @@ public class Neworklead extends Narzedzia {
         }
 
 //        try {
-//            WebDriverWait wait = new WebDriverWait(driver, 60);
-//            driver.findElement(By.xpath("//*[@id=\"email_field\"]")).sendKeys(mail);
-//            driver.findElement(By.xpath("//*[@id=\"name_field\"]")).sendKeys(imie);
-//            Thread.sleep(1000);
-//            driver.findElement(By.xpath("//*[@id=\"btn-confirm\"]")).click();
-//            Thread.sleep(1000);
-//            driver.findElement(By.xpath("//*[@id=\"btn-confirm\"]")).click();
-//
-//            Thread.sleep(3000);
-//            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"surname_field\"]"))));
-//            driver.findElement(By.xpath("//*[@id=\"surname_field\"]")).sendKeys(nazwisko);
-//            driver.findElement(By.xpath("//*[@id=\"street_field\"]")).sendKeys(ulica);
-//            driver.findElement(By.xpath("//*[@id=\"building_no_field\"]")).sendKeys(numer);
-//            driver.findElement(By.xpath("//*[@id=\"postal-1\"]")).sendKeys(kod1);
-//            driver.findElement(By.xpath("//*[@id=\"postal-2\"]")).sendKeys(kod2);
-//            driver.findElement(By.xpath("//*[@id=\"town_field\"]")).sendKeys(miasto);
-//            driver.findElement(By.xpath("//*[@id=\"select-day\"]")).sendKeys(dzien);
-//            driver.findElement(By.xpath("//*[@id=\"select-month\"]")).sendKeys(mies);
-//            driver.findElement(By.xpath("//*[@id=\"select-year\"]")).sendKeys(rok);
-//            driver.findElement(By.xpath("//*[@id=\"phone_field\"]")).sendKeys(tel);
-//            driver.findElement(By.xpath("//*[@id=\"type_card_field\"]")).click();
-//            Thread.sleep(1000);
-//            driver.findElement(By.xpath("//*[@id=\"btn-next\"]")).click();
-//
-//            Thread.sleep(5000);
-//            try {
-//                driver.findElement(By.xpath("/html/body/section/div[1]/form/div[1]/div[2]/div[1]/label/img")).click();
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                Select ubezpieczenie = new Select(driver.findElement(By.xpath("//*[@id=\"q_SAMOCHOD_OC_AC\"]")));
-//                ubezpieczenie.selectByIndex(ubez);
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                driver.findElement(By.xpath("//*[@id=\"ans_630\"]")).click();
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                driver.findElement(By.xpath("//*[@id=\"ans_639\"]")).click();
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                driver.findElement(By.xpath("//*[@id=\"ans_640\"]")).click();
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                driver.findElement(By.xpath("//*[@id=\"ans_622\"]")).click();
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                driver.findElement(By.xpath("//*[@id=\"ans_644\"]")).click();
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                driver.findElement(By.xpath("//*[@id=\"ans_649\"]")).click();
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                driver.findElement(By.xpath("/html/body/section/div[1]/form/div[9]/div[2]/div[1]/input")).click();
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                driver.findElement(By.xpath("//*[@id=\"ans_674\"]")).click();
-//            } catch (Exception f) {
-//                try {
-//                    driver.findElement(By.xpath("/html/body/section/div[1]/form/div[9]/div[2]/div[1]/input")).click();
-//                } catch (Exception g) {
-//
-//                }
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                driver.findElement(By.xpath("/html/body/section/div[1]/form/div[1]/div/div/div[1]/label/img")).click();
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                Select oc = new Select(driver.findElement(By.xpath("/html/body/section/div[1]/form/div[2]/div/div/select"));
-//                oc.selectByIndex(10);
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                driver.findElement(By.xpath("/html/body/section/div[1]/form/div[8]/div/div/div[3]/input")).click();
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                driver.findElement(By.xpath("/html/body/section/div[1]/form/div[9]/div/div/div[4]/input")).click();
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(2000);
-//            try {
-//                driver.findElement(By.xpath("//*[@id=\"poll_submit\"]")).click();
-//            } catch (Exception f) {
-//
-//            }
-//            Thread.sleep(5000);
+            WebDriverWait wait = new WebDriverWait(driver, 60);
+            driver.findElement(By.xpath("//*[@id=\"email_field\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"name_field\"]")).sendKeys(imie);
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"btn-confirm\"]")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"btn-confirm\"]")).click();
+
+            Thread.sleep(3000);
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"surname_field\"]"))));
+            driver.findElement(By.xpath("//*[@id=\"surname_field\"]")).sendKeys(nazwisko);
+            driver.findElement(By.xpath("//*[@id=\"street_field\"]")).sendKeys(ulica);
+            driver.findElement(By.xpath("//*[@id=\"building_no_field\"]")).sendKeys(numer);
+            driver.findElement(By.xpath("//*[@id=\"postal-1\"]")).sendKeys(kod1);
+            driver.findElement(By.xpath("//*[@id=\"postal-2\"]")).sendKeys(kod2);
+            driver.findElement(By.xpath("//*[@id=\"town_field\"]")).sendKeys(miasto);
+            driver.findElement(By.xpath("//*[@id=\"select-day\"]")).sendKeys(dzien);
+            driver.findElement(By.xpath("//*[@id=\"select-month\"]")).sendKeys(mies);
+            driver.findElement(By.xpath("//*[@id=\"select-year\"]")).sendKeys(rok);
+            driver.findElement(By.xpath("//*[@id=\"phone_field\"]")).sendKeys(tel);
+            driver.findElement(By.xpath("//*[@id=\"type_card_field\"]")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"btn-next\"]")).click();
+
+            Thread.sleep(5000);
+            try {
+                driver.findElement(By.xpath("/html/body/section/div[1]/form/div[1]/div[2]/div[1]/label/img")).click();
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(2000);
+            try {
+                Select ubezpieczenie = new Select(driver.findElement(By.xpath("//*[@id=\"q_SAMOCHOD_OC_AC\"]")));
+                ubezpieczenie.selectByIndex(ubez);
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"ans_630\"]")).click();
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"ans_639\"]")).click();
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"ans_640\"]")).click();
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"ans_622\"]")).click();
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"ans_644\"]")).click();
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"ans_649\"]")).click();
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("/html/body/section/div[1]/form/div[9]/div[2]/div[1]/input")).click();
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"ans_674\"]")).click();
+            } catch (Exception f) {
+                try {
+                    driver.findElement(By.xpath("/html/body/section/div[1]/form/div[9]/div[2]/div[1]/input")).click();
+                } catch (Exception g) {
+
+                }
+            }
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("/html/body/section/div[1]/form/div[1]/div/div/div[1]/label/img")).click();
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(2000);
+            try {
+                Select oc = new Select(driver.findElement(By.xpath("/html/body/section/div[1]/form/div[2]/div/div/select")));
+                oc.selectByIndex(10);
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("/html/body/section/div[1]/form/div[8]/div/div/div[3]/input")).click();
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("/html/body/section/div[1]/form/div[9]/div/div/div[4]/input")).click();
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(2000);
+            try {
+                driver.findElement(By.xpath("//*[@id=\"poll_submit\"]")).click();
+            } catch (Exception f) {
+
+            }
+            Thread.sleep(5000);
 
             //WP
             driver.get("http://poczta.wp.pl/");
@@ -5963,7 +5963,7 @@ public class Neworklead extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://neworklead.pl/zadanie/31eb18afa660af614c2e8026b8019c7b/262a2dbebf8a9ab6b5e29f4a3bde2bae/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/ae7dc40b62251507fa4a1c04aec1ecf9/3d1bc493d8cc217bc1011ffab3204851/d654be842d14f320ad92ef039fb6aa4c");
 //        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
@@ -5973,7 +5973,7 @@ public class Neworklead extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://neworklead.pl/zadanie/766757eb8b7e1c1a9a0c3bf5aa922207/56e214d6cebc48951ecaf8e519c5265b/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/d71f9f938b16755d522ec65d934d3cd1/ac8d68dc5ee8e3c4acd6e1acedbb3a8e/d654be842d14f320ad92ef039fb6aa4c");
 //        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
@@ -6013,7 +6013,7 @@ public class Neworklead extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://neworklead.pl/zadanie/8a85450a18241028e5008078075cc94c/3a286d57b7c27232c4949b0ed00f8141/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/398bdde0ead84d316048146c62b9aade/95866d02ddf4b782fa2ff71810c38ab0/d654be842d14f320ad92ef039fb6aa4c");
 //        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
@@ -6034,6 +6034,16 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://neworklead.pl/zadanie/b87f13fd1265ff3a8af1eeb29f82a9f7/2410ac85f6df6f53bc6c7946eae4ae42/d654be842d14f320ad92ef039fb6aa4c");
+//        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
+        Thread.sleep(6000);
+        Neworklead.Everyday(driver,mail,odp);
+    }
+
+    public static void gwEvery1(String mail, String odp) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://neworklead.pl/zadanie/6389efd252f5078d08656cc3f6f2066d/2bd4a37257f9927f9f66433a0cc142bc/d654be842d14f320ad92ef039fb6aa4c");
 //        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
