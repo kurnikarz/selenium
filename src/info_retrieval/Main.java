@@ -2195,35 +2195,35 @@ public class Main extends Narzedzia {
 
 //Koniec.Restart();
         try {
-            for (int i=0;i<=110;i++) {
-                mail = everyInt.nextLine();
-                mail2 = enfamil.nextLine();
-                if (i<=45) {
-                    if (i%2==0)
-                        Dodatkowy.Every(mail,odp.get(j));
-                    else
-                        Dodatkowy.Everyy(mail,odp.get(j));
-                } else if (i<=80) {
-                    if (i%2==0)
-                        Dodatkowy.Every2a(mail,odp.get(j));
-                    else
-                        Dodatkowy.Every2b(mail,odp.get(j));
-                } else if (i<=110)
-                    Dodatkowy.Every3(mail,odp.get(j));
-                if (i<=15)
-                    Dodatkowy.Enfamil3(mail2);
-                else if (i<=23)
-                    Dodatkowy.Enfamil2(mail2);
-//                else if (i<=52)
-//                    Dodatkowy.Enfamil4(mail2);
-                j++;
-                if (j > 24)
-                    j = 0;
-                System.out.println(i);
-                System.out.println(j);
-                System.out.println(mail);
-                Koniec.Restart();
-            }
+//            for (int i=0;i<=110;i++) {
+//                mail = everyInt.nextLine();
+//                mail2 = enfamil.nextLine();
+//                if (i<=45) {
+//                    if (i%2==0)
+//                        Dodatkowy.Every(mail,odp.get(j));
+//                    else
+//                        Dodatkowy.Everyy(mail,odp.get(j));
+//                } else if (i<=80) {
+//                    if (i%2==0)
+//                        Dodatkowy.Every2a(mail,odp.get(j));
+//                    else
+//                        Dodatkowy.Every2b(mail,odp.get(j));
+//                } else if (i<=110)
+//                    Dodatkowy.Every3(mail,odp.get(j));
+//                if (i<=15)
+//                    Dodatkowy.Enfamil3(mail2);
+//                else if (i<=23)
+//                    Dodatkowy.Enfamil2(mail2);
+////                else if (i<=52)
+////                    Dodatkowy.Enfamil4(mail2);
+//                j++;
+//                if (j > 24)
+//                    j = 0;
+//                System.out.println(i);
+//                System.out.println(j);
+//                System.out.println(mail);
+//                Koniec.Restart();
+//            }
 
 //            for (int i = 4; i <= 100; i++) {
 //                mail = everyInt.nextLine();
@@ -2290,7 +2290,7 @@ public class Main extends Narzedzia {
             System.out.println("=============ERROR===============");
             wylacz();
         }
-
-        wylacz();
+pobierzAdres(100);
+//        wylacz();
     }
 }

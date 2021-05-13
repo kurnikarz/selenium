@@ -1,98 +1,100 @@
-Bułgarska
-Sikorki
-Kołobrzeska
-Robla Jana Zygmunta
-Brzezińska
-Solec
-Ostroroga Jana
-Płocka
-Karmelicka
-Osiedle Na Stoku
-Wróblewskiego Zygmunta
-Kmicica Andrzeja
-Wojska Polskiego
-Dobra
-Rymarska
-Różyckiego Ludomira
-Podgórna
-Wietnamska
+Racławicka
+Jugowicka
+Płociowa
+Rydla Lucjana
+Ulanowska
+Radłowska
+Nowa
+Niecała
+Jodłowa
+Pomykany
+Pl. Tarnowskiej Marii
+Turystyczna
+Osterwy Juliusza
+Lisa Kuli Leopolda
+Na Grabinach
+Kościuszkowców
+Rybnicka
 Krakowska
-Ciasna
-Lasek
-Kadłubka Wincentego
-Synów Pułku
-Płaszowska
-Marszałka Józefa Piłsudskiego
-Meiselsa Beera
-Leszka Białego
-Stanów Zjednoczonych
-Elbląska
-Jędrzejowska
-Jutlandzka
-Cylichowska
-Bohaterów Getta
-Warszawska
-Kłuszyńska
-Generała Maczka Stanisława
-Krzywoń Anieli
-Wasilkowska
-29 Listopada
-Stelmachów
-Wilczkowska
-Nowotoruńska
-Forsycjowa
-Jasińskiego Jakuba
+Bartka
+Batalionów Chłopskich
+Moraczewskiej Bibianny
+Sieradzka
+Tenisowa
+Krasińskiego
+Mokra
+Kasperka Jana
+Kielecka
+Mała
+Generała Andersa Władysława
+Bratkowa
+Pl. Kopernika Mikołaja
+Żabia
+Galileusza
+Badowska
+Fosa
+Ogrodowa
+Okólnik
+Worcella Stanisława
+Al. Pracy
+Pocztowa
+Łużycka
+Al. Marszałka Focha Ferdinanda
+Świętokrzyska
+Rajdowa
+Garbarska
+Skłodowskiej Curie Marii
+Czeladzka
+Fiedlera Arkadego
+Patkowskiego Aleksandra
+Beskidzka
+Spacerowa
+Zeusa
+Kuśnierska
+Generała Sowińskiego Józefa
+Lenartowicza Teofila
+Słowackiego Juliusza
+Gospodarska
+11 Listopada
+Ceramiczna
+Krasińskiego
+Pl. Wajdy Wincentego
+Malczewskiego Jacka
+Broniewskiego Władysława
+Klikowska
+Stary Rynek Oliwski
+Rolanda
+Schulza Brunona
+Chełmońskiego Józefa
+Księdza Tunkla Ludwika
+Kusocińskiego Janusza
+Gronowa
+Giszowiecka
+Chłodna
+Kameralna
+Konopnickiej Marii
+Solec
+Wolińska
+Orzeszkowej Elizy
+Żurawinowa
+Kukułeczki
+Łotewska
+Cedzyńska
+Średnia
 Wierzbowa
-Porazińskiej Janiny
-Noworybna
-Trakt Świętego Wojciecha
-Zawiślańska
-Makowskiego Tadeusza
-Katowicka
-Legendy
-Stolarska
-Przyleśna
-Dąbrowskiego Jarosława
-Ogród Dendrologiczny imienia Profesora S. Kownasa
-Grodzieńska
-Łabiszyńska
-Kartuska
-Piekarnicza
-Narutowicza Gabriela
-Podbagnie
-Rezedowa
-Pobiedziska
-Derkacza
-Kwiatów Polskich
-Hafciarska
-Krasińskiego Zygmunta
-Cmentarna
-Bierkowicka
-Anielewicza Mordechaja
-Północna
-Prymulkowa
-Barlickiego Norberta
-Generała Sowińskiego Józefa Longina
-Fabryczna
-Ochocza
-Generała Fieldorfa Augusta Emila
-Lisia
-Jagiellońska
-Ślimaka
-Pazińskiego Romana
-Włodarzewska
-Czwartaków
-Podłącze
-Bukowego
-Przedpole
-Kowaczka Albina
-Andersena Christiana
-Karpacka
-Ariańska
-Rogowska
-Portowa
-Księdza Suchowolca Stanisława
-Władysława Lokietka
-Bodziszkowa
-Beniowskiego Maurycego
-Czackiego Tadeusza
+Batorego Stefana
+Wspólna
+Suflerska
+Asnyka Adama
+Pergaminów
+Al. Wojska Polskiego
+Łubinowa
+Mostek
+Powstańców Śląskich
+Dywizjonu
+Różana
+ZBoWiD
+Świderska
+Braterstwa Broni
+Towarowa
+Dębickiego Zdzisława
