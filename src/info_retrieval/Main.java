@@ -2120,6 +2120,7 @@ public class Main extends Narzedzia {
         Scanner dekoral = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\dekoral.txt"));
         Scanner letty = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\letty.txt"));
         Scanner iphone = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\iphone.txt"));
+        Scanner wot = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\wot.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\everyInt.txt"));
@@ -2195,92 +2196,37 @@ public class Main extends Narzedzia {
 
 //Koniec.Restart();
         try {
-//            for (int i=0;i<=110;i++) {
+//            for (int i = 1; i <= 32; i++) {
 //                mail = everyInt.nextLine();
 //                mail2 = enfamil.nextLine();
-//                if (i<=45) {
-//                    if (i%2==0)
-//                        Dodatkowy.Every(mail,odp.get(j));
+//                if (i <= 12) {
+//                    if (i % 2 == 0)
+//                        Dodatkowy.Every(mail, odp.get(j));
 //                    else
-//                        Dodatkowy.Everyy(mail,odp.get(j));
-//                } else if (i<=80) {
-//                    if (i%2==0)
-//                        Dodatkowy.Every2a(mail,odp.get(j));
+//                        Dodatkowy.Everyy(mail, odp.get(j));
+//                } else if (i <= 25) {
+//                    if (i % 2 == 0)
+//                        Dodatkowy.Every2a(mail, odp.get(j));
 //                    else
-//                        Dodatkowy.Every2b(mail,odp.get(j));
-//                } else if (i<=110)
-//                    Dodatkowy.Every3(mail,odp.get(j));
-//                if (i<=15)
+//                        Dodatkowy.Every2b(mail, odp.get(j));
+//                } else if (i <= 50)
+//                    Dodatkowy.Every3(mail, odp.get(j));
+//                if (i <= 12)
 //                    Dodatkowy.Enfamil3(mail2);
-//                else if (i<=23)
+//                else if (i <= 17)
 //                    Dodatkowy.Enfamil2(mail2);
-////                else if (i<=52)
-////                    Dodatkowy.Enfamil4(mail2);
+//                else if (i <= 32)
+//                    Dodatkowy.Enfamil4(mail2);
 //                j++;
 //                if (j > 24)
 //                    j = 0;
 //                System.out.println(i);
 //                System.out.println(j);
-//                System.out.println(mail);
+//                System.out.println(mail2);
 //                Koniec.Restart();
 //            }
+//            Koniec.Restart();
 
-//            for (int i = 4; i <= 100; i++) {
-//                mail = everyInt.nextLine();
-////                if (i % 2 == 0)
-//                    Neworklead.strzEveryTar(mail, odp.get(j));
-////                else
-////                    Neworklead.strzEveryDC(mail, odp.get(j));
-//                j++;
-//                if (j > 24)
-//                    j = 0;
-//                System.out.println(i);
-//                System.out.println(j);
-//                System.out.println(mail);
-//                Koniec.Restart();
-//            }
-//
-//            for (int i=1;i<=50;i++) {
-//                mail = everyInt.nextLine();
-//                Neworklead.strzEveryTar(mail,odp.get(j));
-//                j++;
-//                if (j > 24)
-//                    j = 0;
-//                System.out.println(i);
-//                System.out.println(j);
-//                System.out.println(mail);
-//                Koniec.Restart();
-//            }
-
-//            for (int i=1;i<200;i++) {
-//                interia();
-//                if (i%20==0)
-//                    Koniec.Restart();
-//                System.out.println(i);
-//            }
-
-//            x = 90;
-//            for(int i = 1; i < x; i++) {
-//                mail = iphone.nextLine();
-//                ulicaVee = ulicaPam.nextLine();
-//                kodVee = kodPam.nextLine();
-//                kodVee2 = kodPam2.nextLine();
-//                miastoVee = miastoPam.nextLine();
-//                num = numPam.nextLine();
-//
-//                if(i == 0) { Neworklead.aKaufland(mail,ulicaVee,kodVee,kodVee2,miastoVee,num);}
-//                if(i == 1) { Neworklead.lkKaufland(mail,ulicaVee,kodVee,kodVee2,miastoVee,num); }
-//                if(i == 2) {
-//                    Neworklead.gwKaufland(mail,ulicaVee,kodVee,kodVee2,miastoVee,num);
-//                    x -= 3;
-//                    i=-1;
-//                }
-//
-//                System.out.println(i);
-//                System.out.println(x);
-//                System.out.println(mail);
-//                Koniec.Restart();
-//            }
 
         } catch (Exception e) {
             blad.println(e);
@@ -2290,7 +2236,17 @@ public class Main extends Narzedzia {
             System.out.println("=============ERROR===============");
             wylacz();
         }
-pobierzAdres(100);
-//        wylacz();
+//        String login;
+//        for (int i=7;i<50;i++) {
+//            mail = wot.nextLine();
+//            login = loginy.nextLine();
+//            Dodatkowy.WoT(mail,login);
+//            System.out.println(i);
+//            System.out.println(mail);
+//            Koniec.Restart();
+//        }
+        Neworklead.Bebilon2("zosia.conrad@wp.pl","Bielsko-Biała","Ks. Stanisława Stojałowskiego");
+
+        wylacz();
     }
 }

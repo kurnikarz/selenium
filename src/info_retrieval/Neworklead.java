@@ -5983,7 +5983,7 @@ public class Neworklead extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://neworklead.pl/zadanie/ea79978b6d7c79ef013187a1611a9d3b/80f7dcfdfdea534a0875d520cad01223/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/2908890be806c16dc9baab07cd2bf6cc/fb8a22bd494bcd2aff19a5810b9bcd34/d654be842d14f320ad92ef039fb6aa4c");
 //        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
@@ -6054,7 +6054,6 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://neworklead.pl/zadanie/0f2903e2d635751383fcf3e4d5673e15/5bbd6baa47357756839a002e3b072af2/d654be842d14f320ad92ef039fb6aa4c");
-//        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
     }
@@ -6064,8 +6063,132 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://neworklead.pl/zadanie/56549c5f48a7fef87bff27dec4b0a1a8/9c366d0c3ef0c199116187b91f3db181/d654be842d14f320ad92ef039fb6aa4c");
-//        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
+    }
+
+    public static void Bebilon(WebDriver driver, String mail, String miasto, String ulica) throws InterruptedException, AWTException {
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        Random r = new Random();
+        Robot robot = new Robot();
+
+        int mleko = r.nextInt(2);
+        int dzie = r.nextInt(29) + 1;
+        int mies;
+        String rok = "2021";
+        mies = r.nextInt(4 - 1 + 1) + 1;
+        String dzien = dodajZero(dzie);
+        String miesiac = dodajZero(mies);
+        String dataUr = dzien+"-"+miesiac+"-"+rok;
+        String nrDomu = String.valueOf(r.nextInt(39) + 1);
+        String imie = genImieZen();
+        String nazwisko = genNazwiskoZen();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+//        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/nt-cookie-popup/div[1]/div[2]/div[2]/nt-analytics/button"))));
+//        driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/nt-cookie-popup/div[1]/div[2]/div[2]/nt-analytics/button")).click();
+//        Thread.sleep(2000);
+//        clickXY(1266,420);
+//        Thread.sleep(2000);
+//        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[1]/div/div[1]/label")).click();
+//        Kopiuj(dataUr);
+//        Thread.sleep(500);
+//        Wklej();
+//        clickXY(1560,534);
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childData_survey_modificatedMilk\"]/div[1]/label")).click();
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childData_survey_orderPackage\"]/div[1]/label")).click();
+//        Thread.sleep(1000);
+//        try {
+//            driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_chooser\"]/div[1]/div/div/div/label")).click();
+//        } catch (Exception e) {
+//            driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_guide_chooser\"]/div[1]/div/div/div/label")).click();
+//        }
+//
+//        try {
+//            if (mleko == 0)
+//                driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_chooser_bebiko2_quick_order_type\"]/div[1]/label")).click();
+//            else
+//                driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_chooser_bebiko2_quick_order_type\"]/div[2]/label")).click();
+//        } catch (Exception e) {
+//
+//        }
+//
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_city\"]")).sendKeys(miasto);
+//        Thread.sleep(1000);
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        robot.keyRelease(KeyEvent.VK_ENTER);
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_street\"]")).sendKeys(ulica);
+//        Thread.sleep(1000);
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        robot.keyRelease(KeyEvent.VK_ENTER);
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_house\"]")).sendKeys(nrDomu);
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_personal_info_first_name\"]")).sendKeys(imie);
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_personal_info_last_name\"]")).sendKeys(nazwisko);
+//
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_commercialInfo_commercial_info\"]/div/div/label")).click();
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_newsletterData_newsletter\"]/div/div/label")).click();
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_email_first\"]")).sendKeys(mail);
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_email_second\"]")).sendKeys(mail);
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_plainPassword\"]")).sendKeys(mail+"V2");
+//        js.executeScript("document.getElementById(\"fos_user_registration_form_agreements_finishAgreements_0\").getElementsByTagName(\"a\")[0].style.display=\"none\"");
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements\"]/div[1]")).click();
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements_3\"]/div/label")).click();
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements_4\"]/div/label")).click();
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_submit\"]/nt-loading-icon/span/span")).click();
+//        Thread.sleep(10000);
+
+        //WP
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
+        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+        }
+        Thread.sleep(3000);
+boolean flaga = false;
+int m = 0;
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='BebiKlub']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div[3]/a")).click();
+                Thread.sleep(15000);
+
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 5) {
+                break;
+            }
+
+        }
+        driver.quit();
+
+    }
+
+    public static void Bebilon2(String mail, String miasto, String ulica) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://neworklead.pl/zadanie/cec3302a0b69f25d19d50cd4a1b34959/1119bd12c2b5441ccd4249c29b86d1c1/d654be842d14f320ad92ef039fb6aa4c");
+//        driver.get("https://www.bebiklub.pl/rejestracja");
+        Thread.sleep(6000);
+        Neworklead.Bebilon(driver,mail,miasto,ulica);
     }
 }

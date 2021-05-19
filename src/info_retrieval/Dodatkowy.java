@@ -2730,4 +2730,79 @@ public class Dodatkowy extends Narzedzia {
 //            driver.quit();
 //        }
     }
+
+    public static void WoT(String mail,String login) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        Random r = new Random();
+        login = login+String.valueOf(r.nextInt(99));
+
+        driver.manage().window().maximize();
+//        try {
+        driver.get("http://dodatkowypieniadz.com/zadanie/69a4b7595690cf32ccd7b8dc4b63dce7/5d766e0499c9ec0fb0bd676cb512253f/201920950f63cee967982b759fde80b1");
+        Thread.sleep(3000);
+        wpiszHaslo();
+        Thread.sleep(6000);
+        Zmniejsz(2);
+        clickXY(800,1023);
+        clickXY(820,1023);
+        Thread.sleep(6000);
+        zmienKarte(driver);
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"promoSection\"]/div/div/div[2]/div/div/button/span"))));
+        driver.findElement(By.xpath("//*[@id=\"promoSection\"]/div/div/div[2]/div/div/button/span")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"email-regform\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"name-regform\"]")).sendKeys(login);
+        driver.findElement(By.xpath("//*[@id=\"password-regform\"]")).sendKeys(login+"V2");
+        driver.findElement(By.xpath("//*[@id=\"password-confirm-regform\"]")).sendKeys(login+"V2");
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/form/div[6]/div/label")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/form/div[7]/div/label")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div/div/div/form/div[9]/div/button/span")).click();
+        Thread.sleep(25000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[3]/div[2]/div[1]/h2"));
+
+        //WP
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
+        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+        }
+        Thread.sleep(3000);
+        boolean flaga = false;
+        int m = 0;
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='Wargaming.net: Potwierdź email']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[2]/table/tbody/tr/td/a/nobr")).click();
+                Thread.sleep(10000);
+
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 5) {
+                break;
+            }
+
+        }
+        driver.quit();
+
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
 }
