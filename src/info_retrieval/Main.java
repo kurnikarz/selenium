@@ -2236,16 +2236,16 @@ public class Main extends Narzedzia {
             System.out.println("=============ERROR===============");
             wylacz();
         }
-//        String login;
-//        for (int i=7;i<50;i++) {
-//            mail = wot.nextLine();
-//            login = loginy.nextLine();
-//            Dodatkowy.WoT(mail,login);
-//            System.out.println(i);
-//            System.out.println(mail);
-//            Koniec.Restart();
-//        }
-        Neworklead.Bebilon2("zosia.conrad@wp.pl","Bielsko-Biała","Ks. Stanisława Stojałowskiego");
+        String login;
+        for (int i=0;i<10;i++) {
+            mail = wot.nextLine();
+            login = loginy.nextLine();
+            Dodatkowy.WoT(mail,login);
+            System.out.println(i);
+            System.out.println(mail);
+            Koniec.Restart();
+        }
+//        Neworklead.Bebilon2("zosia.conrad@wp.pl","Bielsko-Biała","Ks. Stanisława Stojałowskiego");
 
         wylacz();
     }

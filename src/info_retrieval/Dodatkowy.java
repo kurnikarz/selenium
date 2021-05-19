@@ -2733,7 +2733,10 @@ public class Dodatkowy extends Narzedzia {
 
     public static void WoT(String mail,String login) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
+        WebDriver driver = new ChromeDriver(options);
         WebDriverWait wait = new WebDriverWait(driver, 60);
         Random r = new Random();
         login = login+String.valueOf(r.nextInt(99));
