@@ -3418,123 +3418,6 @@ public class Neworklead extends Narzedzia {
         WebDriverWait wait = new WebDriverWait(driver, 10000);
 
 //        try {
-        Thread.sleep(2000);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"gigya-textbox-86190741038286000\"]"))));
-        Thread.sleep(1000);
-
-        driver.findElement(By.xpath("//*[@id=\"gigya-textbox-86190741038286000\"]")).sendKeys(imie);
-        driver.findElement(By.xpath("//*[@id=\"gigya-textbox-98147042545906400\"]")).sendKeys(nazwisko);
-        driver.findElement(By.xpath("//*[@id=\"gigya-textbox-32672274042894692\"]")).sendKeys(mail);
-        driver.findElement(By.xpath("//*[@id=\"gigya-password-40553674254645060\"]")).sendKeys(mail + "V2");
-        driver.findElement(By.xpath("//*[@id=\"gigya-password-49311983690159380\"]")).sendKeys(mail + "V2");
-        Thread.sleep(500);
-        ScrollBy(driver, "1200");
-        Thread.sleep(1000);
-
-        if (dziecko == 0) {
-            if (plec == 0) {
-                driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-1-135031870266671040_8\"]")).click();
-                driver.findElement(By.xpath("//*[@id=\"gigya-textbox-151298633113062270_4\"]")).sendKeys(genImieZen());
-            } else {
-                driver.findElement(By.xpath("//*[@id=\"gigya-textbox-151298633113062270_4\"]")).sendKeys(genImieMes());
-            }
-            js.executeScript("document.getElementById(\"gigya-textbox-65513374974246824_9\").removeAttribute(\"readonly\")");
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"gigya-textbox-65513374974246824_9\"]")).sendKeys(dzieckoUrodzone);
-        } else {
-            driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-1-87599078661341020_3\"]")).click();
-            if (plec == 0)
-                driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-0-135031870266671040_7\"]")).click();
-            else
-                driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-1-135031870266671040_8\"]")).click();
-            js.executeScript("document.getElementById(\"gigya-textbox-153337984387971650_5\").removeAttribute(\"readonly\")");
-            driver.findElement(By.xpath("//*[@id=\"gigya-textbox-153337984387971650_5\"]")).sendKeys(dzieckoSpodziewane);
-        }
-        Thread.sleep(1000);
-        clickXY(1400, 740);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-0-63592377505834030\"]")).click();
-        Thread.sleep(1000);
-        ScrollBy(driver,"500");
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"mbf-registration-one-step-form\"]/div[4]/div[24]/input")).click();
-        Thread.sleep(5000);
-
-
-        //WP
-        driver.get("http://poczta.wp.pl/");
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
-//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
-        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
-        Thread.sleep(5000);
-        try {
-            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
-        } catch (Exception e) {
-
-        }
-        Thread.sleep(3000);
-        while (!flaga) {
-            try {
-                driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div/div/button")).click();
-            } catch (Exception e) {
-                try {
-                    driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div/div/div/button")).click();
-                } catch (Exception f) {
-                    try {
-                        driver.findElement(By.xpath("/div/div[2]/div/div/div/div/button")).click();
-                    } catch (Exception g) {
-
-                    }
-                }
-            }
-
-            try {
-                driver.findElement(By.xpath("//*[text()='Nestlé Baby&me']")).click();
-                Thread.sleep(4000);
-                driver.findElement(By.xpath("//*[text()='Zweryfikuj adres e-mail']")).click();
-                Thread.sleep(10000);
-                flaga = true;
-            } catch (Exception e) {
-                driver.navigate().refresh();
-                Thread.sleep(5000);
-            }
-            m++;
-            if (m > 4) {
-                break;
-            }
-
-        }
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
-
-
-    }
-
-    public static void NestleInt(WebDriver driver, String mail) throws InterruptedException, AWTException {
-        String imie = genImieZen();
-        String nazwisko = genNazwiskoZen();
-        Random r = new Random();
-        int dziecko = r.nextInt(2);
-        int plec = r.nextInt(2);
-        int dzienUro = r.nextInt(29) + 1;
-        int miesUro = r.nextInt(12 - 1 + 1) + 1;
-        int rokUro = 2020;
-        int dzienSpo = r.nextInt(29) + 1;
-        int miesSpo = r.nextInt(11 - 5 + 1) + 5;
-        int rokSpo = 2021;
-        int m = 0;
-        boolean flaga = false;
-        Robot robot = new Robot();
-        String dzieckoUrodzone = String.valueOf(rokUro) + "-" + dodajZero(miesUro) + "-" + dodajZero(dzienUro);
-        String dzieckoSpodziewane = String.valueOf(rokSpo) + "-" + dodajZero(miesSpo) + "-" + dodajZero(dzienSpo);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebDriverWait wait = new WebDriverWait(driver, 10000);
-
-//        try {
 //        Thread.sleep(2000);
 //        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"gigya-textbox-86190741038286000\"]"))));
 //        Thread.sleep(1000);
@@ -3578,6 +3461,165 @@ public class Neworklead extends Narzedzia {
 //        Thread.sleep(5000);
 
 
+        //WP
+//        driver.get("http://poczta.wp.pl/");
+//        Thread.sleep(3000);
+//        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+////        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+//        Thread.sleep(5000);
+//        try {
+//            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+//        } catch (Exception e) {
+//
+//        }
+//        Thread.sleep(3000);
+//        while (!flaga) {
+//            try {
+//                driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div/div/button")).click();
+//            } catch (Exception e) {
+//                try {
+//                    driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div/div/div/button")).click();
+//                } catch (Exception f) {
+//                    try {
+//                        driver.findElement(By.xpath("/div/div[2]/div/div/div/div/button")).click();
+//                    } catch (Exception g) {
+//
+//                    }
+//                }
+//            }
+//
+//            try {
+//                driver.findElement(By.xpath("//*[text()='Nestlé Baby&me']")).click();
+//                Thread.sleep(4000);
+//                driver.findElement(By.xpath("//*[text()='Zweryfikuj adres e-mail']")).click();
+//                Thread.sleep(10000);
+//                flaga = true;
+//            } catch (Exception e) {
+//                driver.navigate().refresh();
+//                Thread.sleep(5000);
+//            }
+//            m++;
+//            if (m > 4) {
+//                break;
+//            }
+//
+//        }
+
+            //INTERIA
+        driver.get("https://poczta.interia.pl/logowanie/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(mail);
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("Mrcbuch123");
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/form/button")).click();
+        Thread.sleep(6000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[2]/div/div[2]/div/div[1]")).click();
+        } catch (Exception e) {
+            System.out.println("==================NIEMA===================");
+        }
+        try {
+            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/div/form/div[2]/input")).sendKeys("grapiu@wp.pl");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/div/form/fieldset/button[1]")).click();
+            Thread.sleep(2000);
+        } catch (Exception f) {
+            System.out.println("==================NIEMA===================");
+        }
+
+        Thread.sleep(1000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='Nestlé Baby&me']")).click();
+                flaga = true;
+                Thread.sleep(3000);
+                driver.switchTo().frame(0);
+                driver.findElement(By.xpath("/html/body/div[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr/td[4]/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[2]/table/tbody/tr[13]/td/table/tbody/tr/td[2]/table/tbody/tr/td[2]/a")).click();
+                Thread.sleep(10000);
+            } catch (Exception e) {
+                clickXY(85, 52);
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 4) {
+                break;
+            }
+        }
+
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
+
+    }
+
+    public static void NestleInt(WebDriver driver, String mail) throws InterruptedException, AWTException {
+        String imie = genImieZen();
+        String nazwisko = genNazwiskoZen();
+        Random r = new Random();
+        int dziecko = r.nextInt(2);
+        int plec = r.nextInt(2);
+        int dzienUro = r.nextInt(29) + 1;
+        int miesUro = r.nextInt(12 - 1 + 1) + 1;
+        int rokUro = 2020;
+        int dzienSpo = r.nextInt(29) + 1;
+        int miesSpo = r.nextInt(11 - 5 + 1) + 5;
+        int rokSpo = 2021;
+        int m = 0;
+        boolean flaga = false;
+        Robot robot = new Robot();
+        String dzieckoUrodzone = String.valueOf(rokUro) + "-" + dodajZero(miesUro) + "-" + dodajZero(dzienUro);
+        String dzieckoSpodziewane = String.valueOf(rokSpo) + "-" + dodajZero(miesSpo) + "-" + dodajZero(dzienSpo);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebDriverWait wait = new WebDriverWait(driver, 10000);
+
+//        try {
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"gigya-textbox-86190741038286000\"]"))));
+        Thread.sleep(1000);
+
+        driver.findElement(By.xpath("//*[@id=\"gigya-textbox-86190741038286000\"]")).sendKeys(imie);
+        driver.findElement(By.xpath("//*[@id=\"gigya-textbox-98147042545906400\"]")).sendKeys(nazwisko);
+        driver.findElement(By.xpath("//*[@id=\"gigya-textbox-32672274042894692\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"gigya-password-40553674254645060\"]")).sendKeys(mail + "V2");
+        driver.findElement(By.xpath("//*[@id=\"gigya-password-49311983690159380\"]")).sendKeys(mail + "V2");
+        Thread.sleep(500);
+        ScrollBy(driver, "1200");
+        Thread.sleep(1000);
+
+        if (dziecko == 0) {
+            if (plec == 0) {
+                driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-1-135031870266671040_8\"]")).click();
+                driver.findElement(By.xpath("//*[@id=\"gigya-textbox-151298633113062270_4\"]")).sendKeys(genImieZen());
+            } else {
+                driver.findElement(By.xpath("//*[@id=\"gigya-textbox-151298633113062270_4\"]")).sendKeys(genImieMes());
+            }
+            js.executeScript("document.getElementById(\"gigya-textbox-65513374974246824_9\").removeAttribute(\"readonly\")");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"gigya-textbox-65513374974246824_9\"]")).sendKeys(dzieckoUrodzone);
+        } else {
+            driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-1-87599078661341020_3\"]")).click();
+            if (plec == 0)
+                driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-0-135031870266671040_7\"]")).click();
+            else
+                driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-1-135031870266671040_8\"]")).click();
+            js.executeScript("document.getElementById(\"gigya-textbox-153337984387971650_5\").removeAttribute(\"readonly\")");
+            driver.findElement(By.xpath("//*[@id=\"gigya-textbox-153337984387971650_5\"]")).sendKeys(dzieckoSpodziewane);
+        }
+        Thread.sleep(1000);
+        clickXY(1400, 740);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"gigya-multiChoice-0-63592377505834030\"]")).click();
+        Thread.sleep(1000);
+        ScrollBy(driver,"500");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"mbf-registration-one-step-form\"]/div[4]/div[24]/input")).click();
+        Thread.sleep(5000);
+
         //INTERIA
         driver.get("https://poczta.interia.pl/logowanie/");
         Thread.sleep(3000);
@@ -3605,7 +3647,9 @@ public class Neworklead extends Narzedzia {
             try {
                 driver.findElement(By.xpath("//*[text()='Nestlé Baby&me']")).click();
                 Thread.sleep(3000);
+                ScrollBy(driver,"700");
                 driver.switchTo().frame(1);
+                Thread.sleep(1000);
                 driver.findElement(By.xpath("//*[text()='Zweryfikuj adres e-mail']")).click();
                 driver.findElement(By.xpath("//*[text()='Zweryfikuj adres e-mail']")).click();
                 Thread.sleep(10000);
@@ -3660,7 +3704,7 @@ public class Neworklead extends Narzedzia {
         driver.manage().window().maximize();
 
 //        try {
-            driver.get("https://neworklead.pl/zadanie/819aaa14ffc24d920906b0ee284c42c4/9b9279ad926f49c53260295ba2a86bb4/d654be842d14f320ad92ef039fb6aa4c");
+            driver.get("https://neworklead.pl/zadanie/3a5d9a70f01da01a09a1064be7689341/8dee71e72049b181f21bb7a86b436c1a/d654be842d14f320ad92ef039fb6aa4c");
 //            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
             Thread.sleep(5000);
 
@@ -3686,7 +3730,7 @@ public class Neworklead extends Narzedzia {
         driver.manage().window().maximize();
 
 //        try {
-        driver.get("https://neworklead.pl/zadanie/fef72eb10fcc0185b9624f04388033c2/4fdeeab470f4bc1155f348fd3997b94c/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/b43ca9a2244a3ef8bf3c2414d282c93c/197b368dc34f394fa85dcbc5fea03438/d654be842d14f320ad92ef039fb6aa4c");
 //            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
         Thread.sleep(5000);
 
