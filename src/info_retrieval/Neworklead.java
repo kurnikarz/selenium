@@ -6472,4 +6472,44 @@ int m = 0;
 //        }
 
     }
+
+    public static void Bondex(String mail) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        boolean flaga = false;
+        int m = 0;
+        String imie = null;
+        String nazwisko = null;
+        if (plec == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        ChromeDriver driver = new ChromeDriver();
+        Robot robot = new Robot();
+        driver.manage().window().maximize();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+
+//        try {
+        driver.get("https://neworklead.pl/zadanie/d731a66ba21984e3250730e14a818756/3815b913aae1082dfece28f25af74f70/d654be842d14f320ad92ef039fb6aa4c");
+//        driver.get("https://erli.pl/");
+
+        Thread.sleep(3000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div/div/div/div/form/div/div[1]/div[2]/input"))));
+        driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div/div/div/div/form/div/div[1]/div[2]/input")).sendKeys(imie);
+        driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div/div/div/div/form/div/div[2]/div[2]/input")).sendKeys(nazwisko);
+        driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div/div/div/div/form/div/div[5]/div[2]/input")).sendKeys(mail);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div/div/div/div/form/div/div[10]/div[2]/button")).click();
+        Thread.sleep(6000);
+        driver.quit();
+
+//        } catch (Exception f) {
+//            driver.quit();
+//        }
+
+    }
 }

@@ -2205,8 +2205,8 @@ public class Main extends Narzedzia {
             System.out.println("=============ERROR===============");
             wylacz();
         }
-//Koniec.Restart();
-        Neworklead.Erli("zosia.conrad@wp.pl");
+Koniec.Restart();
+        Neworklead.Bondex("zosia.conrad@wp.pl");
 
 //        wylacz();
     }
