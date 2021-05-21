@@ -2121,6 +2121,7 @@ public class Main extends Narzedzia {
         Scanner letty = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\letty.txt"));
         Scanner iphone = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\iphone.txt"));
         Scanner wot = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\wot.txt"));
+        Scanner bebilon = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\bebilon.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\everyInt.txt"));
@@ -2192,40 +2193,8 @@ public class Main extends Narzedzia {
 
         int x = 45;
 
-//        Koniec.Restart();
-
-//Koniec.Restart();
         try {
-//            for (int i = 1; i <= 32; i++) {
-//                mail = everyInt.nextLine();
-//                mail2 = enfamil.nextLine();
-//                if (i <= 12) {
-//                    if (i % 2 == 0)
-//                        Dodatkowy.Every(mail, odp.get(j));
-//                    else
-//                        Dodatkowy.Everyy(mail, odp.get(j));
-//                } else if (i <= 25) {
-//                    if (i % 2 == 0)
-//                        Dodatkowy.Every2a(mail, odp.get(j));
-//                    else
-//                        Dodatkowy.Every2b(mail, odp.get(j));
-//                } else if (i <= 50)
-//                    Dodatkowy.Every3(mail, odp.get(j));
-//                if (i <= 12)
-//                    Dodatkowy.Enfamil3(mail2);
-//                else if (i <= 17)
-//                    Dodatkowy.Enfamil2(mail2);
-//                else if (i <= 32)
-//                    Dodatkowy.Enfamil4(mail2);
-//                j++;
-//                if (j > 24)
-//                    j = 0;
-//                System.out.println(i);
-//                System.out.println(j);
-//                System.out.println(mail2);
-//                Koniec.Restart();
-//            }
-//            Koniec.Restart();
+
 
 
         } catch (Exception e) {
@@ -2236,25 +2205,9 @@ public class Main extends Narzedzia {
             System.out.println("=============ERROR===============");
             wylacz();
         }
-//        String login;
-//        for (int i=0;i<10;i++) {
-//            mail = wot.nextLine();
-//            login = loginy.nextLine();
-//            Dodatkowy.WoT(mail,login);
-//            System.out.println(i);
-//            System.out.println(mail);
-//            Koniec.Restart();
-//        }
+//Koniec.Restart();
+        Neworklead.Erli("zosia.conrad@wp.pl");
 
 //        wylacz();
-        Koniec.Restart();
-        for (int i=6;i<20;i++) {
-            mail = nestle3.nextLine();
-            Neworklead.NestleTAR(mail);
-            System.out.println(i);
-            System.out.println(mail);
-            Koniec.Restart();
-        }
-
     }
 }

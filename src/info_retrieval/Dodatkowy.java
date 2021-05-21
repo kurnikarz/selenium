@@ -1956,7 +1956,7 @@ public class Dodatkowy extends Narzedzia {
     }
 
     public static void Lidl(String mail) throws InterruptedException, AWTException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         Random r = new Random();
         int plec = r.nextInt(2);
         String imie;
@@ -1968,17 +1968,18 @@ public class Dodatkowy extends Narzedzia {
         WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().window().maximize();
 
-        try {
-            driver.get("http://www.dodatkowypieniadz.com/zadanie/3cd064c614323bca908d9c8b50b5a4a9/79d9519c1fb6ae9022ef25075a824180/201920950f63cee967982b759fde80b1");
+//        try {
+            driver.get("http://dodatkowypieniadz.com/zadanie/519a57dd24aa03e74ca5db171fb021df/3e95cc76296e7aeca26db5ba5bf39831/201920950f63cee967982b759fde80b1");
 
             Thread.sleep(3000);
             wpiszHaslo();
-            clickXY(780, 600);
+            Thread.sleep(6000);
+            clickXY(780, 730);
             Thread.sleep(5000);
             for (String winHandle : driver.getWindowHandles()) {
                 driver.switchTo().window(winHandle);
             }
-            Thread.sleep(1000);
+            Thread.sleep(3000);
             wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"CybotCookiebotDialog\"]/div/div[1]/button"))));
             driver.findElement(By.xpath("//*[@id=\"CybotCookiebotDialog\"]/div/div[1]/button")).click();
             Thread.sleep(1000);
@@ -2030,12 +2031,9 @@ public class Dodatkowy extends Narzedzia {
 
             }
             driver.quit();
-        } catch (Exception e){
-            driver.quit();
-        }
-
-
-///html/body/form/div[2]/div[2]/div[2]/div/div[1]/div[3]/input
+//        } catch (Exception e){
+//            driver.quit();
+//        }
 
     }
 

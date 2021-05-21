@@ -1525,7 +1525,7 @@ public class Neworklead extends Narzedzia {
         Robot robot = new Robot();
         String roko = String.valueOf(rok);
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
-        WebDriverWait wait = new WebDriverWait(driver, 1000);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         //WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[2]/a"));
         //driver.get("https://www.everydayme.pl/konkurszimowy");
 //        try {
@@ -3036,7 +3036,7 @@ public class Neworklead extends Narzedzia {
 
     }
 
-    public static void Samsung2(String mail) throws InterruptedException, AWTException, IOException {
+    public static void SamsungNewsletter(String mail) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         Random r = new Random();
@@ -3059,11 +3059,11 @@ public class Neworklead extends Narzedzia {
         driver.manage().window().maximize();
 
 
-        try {
-            driver.get("http://neworklead.elk.pl/action/5182/uid/122/");
-            /*
+//        try {
+            driver.get("https://neworklead.pl/zadanie/061c1b4e0c89878f368b3373042941dc/66ed051e3cf7d655825d3057f7068f8c/d654be842d14f320ad92ef039fb6aa4c");
+
             //driver.get("https://www.samsung.com/pl/unpacked/");
-            Thread.sleep(30000);
+            Thread.sleep(10000);
             try {
                 driver.findElement(By.xpath("//*[@id=\"truste-consent-button\"]")).click();
             } catch (Exception e){
@@ -3073,9 +3073,9 @@ public class Neworklead extends Narzedzia {
             ScrollBy(driver,"1000");
             driver.switchTo().frame(0);
             Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div/div[3]/div/div/input")).sendKeys(imie);
+            driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys(imie);
             driver.findElement(By.xpath("//*[@id=\"lastName\"]")).sendKeys(nazwisko);
-            driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(mail);
+
             try {
                 Select urzadzenie = new Select(driver.findElement(By.xpath("//*[@id=\"q1\"]")));
                 urzadzenie.selectByIndex(wybor1);
@@ -3102,7 +3102,7 @@ public class Neworklead extends Narzedzia {
             Thread.sleep(3000);
             clickXY(950,432);
             Thread.sleep(10000);
-        */
+
             //WP
             driver.get("http://poczta.wp.pl/");
             Thread.sleep(3000);
@@ -3141,9 +3141,9 @@ public class Neworklead extends Narzedzia {
             }
             driver.quit();
 
-        } catch (Exception f) {
-            driver.quit();
-        }
+//        } catch (Exception f) {
+//            driver.quit();
+//        }
 
     }
 
@@ -3631,6 +3631,7 @@ public class Neworklead extends Narzedzia {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(mail);
         driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("Mrcbuch123");
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"sitebar\"]/form/button")).click();
 
@@ -3648,6 +3649,7 @@ public class Neworklead extends Narzedzia {
                 driver.findElement(By.xpath("//*[text()='Nestlé Baby&me']")).click();
                 Thread.sleep(3000);
                 ScrollBy(driver,"700");
+                Thread.sleep(1000);
                 driver.switchTo().frame(1);
                 Thread.sleep(1000);
                 driver.findElement(By.xpath("//*[text()='Zweryfikuj adres e-mail']")).click();
@@ -3704,8 +3706,8 @@ public class Neworklead extends Narzedzia {
         driver.manage().window().maximize();
 
 //        try {
-            driver.get("https://neworklead.pl/zadanie/3a5d9a70f01da01a09a1064be7689341/8dee71e72049b181f21bb7a86b436c1a/d654be842d14f320ad92ef039fb6aa4c");
-//            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
+//            driver.get("https://neworklead.pl/zadanie/3a5d9a70f01da01a09a1064be7689341/8dee71e72049b181f21bb7a86b436c1a/d654be842d14f320ad92ef039fb6aa4c");
+            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
             Thread.sleep(5000);
 
             for (String winHandle : driver.getWindowHandles()) {
@@ -6124,68 +6126,72 @@ public class Neworklead extends Narzedzia {
         String dzien = dodajZero(dzie);
         String miesiac = dodajZero(mies);
         String dataUr = dzien+"-"+miesiac+"-"+rok;
-        String nrDomu = String.valueOf(r.nextInt(39) + 1);
+        String[] arrOfStr = ulica.split(" ");
+        String nrDomu = arrOfStr[1];
+        ulica = arrOfStr[0];
         String imie = genImieZen();
         String nazwisko = genNazwiskoZen();
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-//        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/nt-cookie-popup/div[1]/div[2]/div[2]/nt-analytics/button"))));
-//        driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/nt-cookie-popup/div[1]/div[2]/div[2]/nt-analytics/button")).click();
-//        Thread.sleep(2000);
-//        clickXY(1266,420);
-//        Thread.sleep(2000);
-//        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[1]/div/div[1]/label")).click();
-//        Kopiuj(dataUr);
-//        Thread.sleep(500);
-//        Wklej();
-//        clickXY(1560,534);
-//        Thread.sleep(1000);
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childData_survey_modificatedMilk\"]/div[1]/label")).click();
-//        Thread.sleep(1000);
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childData_survey_orderPackage\"]/div[1]/label")).click();
-//        Thread.sleep(1000);
-//        try {
-//            driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_chooser\"]/div[1]/div/div/div/label")).click();
-//        } catch (Exception e) {
-//            driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_guide_chooser\"]/div[1]/div/div/div/label")).click();
-//        }
-//
-//        try {
-//            if (mleko == 0)
-//                driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_chooser_bebiko2_quick_order_type\"]/div[1]/label")).click();
-//            else
-//                driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_chooser_bebiko2_quick_order_type\"]/div[2]/label")).click();
-//        } catch (Exception e) {
-//
-//        }
-//
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_city\"]")).sendKeys(miasto);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/nt-cookie-popup/div[1]/div[2]/div[2]/nt-analytics/button"))));
+        driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/nt-cookie-popup/div[1]/div[2]/div[2]/nt-analytics/button")).click();
+        Thread.sleep(2000);
+        clickXY(1266,420);
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[1]/div/div[1]/label")).click();
+        Kopiuj(dataUr);
+        Thread.sleep(500);
+        Wklej();
+        clickXY(1560,534);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childData_survey_modificatedMilk\"]/div[1]/label")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childData_survey_orderPackage\"]/div[1]/label")).click();
+        Thread.sleep(1000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_chooser\"]/div[1]/div/div/div/label")).click();
+        } catch (Exception e) {
+            driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_guide_chooser\"]/div[1]/div/div/div/label")).click();
+        }
+
+        try {
+            if (mleko == 0)
+                driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_chooser_bebiko2_quick_order_type\"]/div[1]/label")).click();
+            else
+                driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_chooser_bebiko2_quick_order_type\"]/div[2]/label")).click();
+        } catch (Exception e) {
+
+        }
+
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_city\"]")).sendKeys(miasto);
+        Thread.sleep(1000);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_street\"]")).sendKeys(ulica);
 //        Thread.sleep(1000);
 //        robot.keyPress(KeyEvent.VK_ENTER);
 //        robot.keyRelease(KeyEvent.VK_ENTER);
 //        Thread.sleep(1000);
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_street\"]")).sendKeys(ulica);
-//        Thread.sleep(1000);
-//        robot.keyPress(KeyEvent.VK_ENTER);
-//        robot.keyRelease(KeyEvent.VK_ENTER);
-//        Thread.sleep(1000);
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_house\"]")).sendKeys(nrDomu);
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_personal_info_first_name\"]")).sendKeys(imie);
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_personal_info_last_name\"]")).sendKeys(nazwisko);
-//
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_commercialInfo_commercial_info\"]/div/div/label")).click();
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_newsletterData_newsletter\"]/div/div/label")).click();
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_email_first\"]")).sendKeys(mail);
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_email_second\"]")).sendKeys(mail);
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_plainPassword\"]")).sendKeys(mail+"V2");
-//        js.executeScript("document.getElementById(\"fos_user_registration_form_agreements_finishAgreements_0\").getElementsByTagName(\"a\")[0].style.display=\"none\"");
-//        Thread.sleep(1000);
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements\"]/div[1]")).click();
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements_3\"]/div/label")).click();
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements_4\"]/div/label")).click();
-//        Thread.sleep(1000);
-//        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_submit\"]/nt-loading-icon/span/span")).click();
-//        Thread.sleep(10000);
+        clickXY(1560,534);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_house\"]")).sendKeys(nrDomu);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_personal_info_first_name\"]")).sendKeys(imie);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_personal_info_last_name\"]")).sendKeys(nazwisko);
+
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_commercialInfo_commercial_info\"]/div/div/label")).click();
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_newsletterData_newsletter\"]/div/div/label")).click();
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_email_first\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_email_second\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_plainPassword\"]")).sendKeys(mail+"V2");
+        js.executeScript("document.getElementById(\"fos_user_registration_form_agreements_finishAgreements_0\").getElementsByTagName(\"a\")[0].style.display=\"none\"");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements\"]/div[1]")).click();
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements_3\"]/div/label")).click();
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements_4\"]/div/label")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_submit\"]/nt-loading-icon/span/span")).click();
+        Thread.sleep(10000);
 
         //WP
         driver.get("http://poczta.wp.pl/");
@@ -6226,6 +6232,128 @@ int m = 0;
 
     }
 
+    public static void Bebiko(WebDriver driver, String mail, String miasto, String ulica) throws InterruptedException, AWTException {
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        Random r = new Random();
+        Robot robot = new Robot();
+
+        int mleko = r.nextInt(2);
+        int dzie = r.nextInt(29) + 1;
+        int mies;
+        String rok = "2021";
+        mies = r.nextInt(4 - 1 + 1) + 1;
+        String dzien = dodajZero(dzie);
+        String miesiac = dodajZero(mies);
+        String dataUr = dzien+"-"+miesiac+"-"+rok;
+//        String nrDomu = String.valueOf(r.nextInt(39) + 1);
+        String[] arrOfStr = ulica.split(" ");
+        String nrDomu = arrOfStr[1];
+        ulica = arrOfStr[0];
+
+        String imie = genImieZen();
+        String nazwisko = genNazwiskoZen();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"wrapper\"]/nt-cookie-popup/div[1]/div[1]/div[2]/nt-analytics/button"))));
+        driver.findElement(By.xpath("//*[@id=\"wrapper\"]/nt-cookie-popup/div[1]/div[1]/div[2]/nt-analytics/button")).click();
+        Thread.sleep(2000);
+        clickXY(1266,420);
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childData_birth_date\"]")).click();
+        Kopiuj(dataUr);
+        Thread.sleep(500);
+        Wklej();
+        clickXY(1560,534);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childData_survey_modificatedMilk\"]/div[1]/label")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childData_survey_orderPackage\"]/div[1]/label")).click();
+        Thread.sleep(1000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebilon2_quick_sample_chooser\"]/div[1]/div/div/div/label")).click();
+        } catch (Exception e) {
+            driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_guide_chooser\"]/div[1]/div/div/div/label")).click();
+        }
+
+        try {
+            if (mleko == 0)
+                driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebilon2_quick_sample_chooser_bebilon2_quick_order_type\"]/div[1]/label")).click();
+            else
+                driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebilon2_quick_sample_chooser_bebilon2_quick_order_type\"]/div[2]/label")).click();
+        } catch (Exception e) {
+
+        }
+
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_city\"]")).sendKeys(miasto);
+        Thread.sleep(1000);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_street\"]")).sendKeys(ulica);
+        Thread.sleep(1000);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(1000);
+
+//        clickXY(1560,534);
+//        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_house\"]")).sendKeys(nrDomu);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_personal_info_first_name\"]")).sendKeys(imie);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_personal_info_last_name\"]")).sendKeys(nazwisko);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_commercialInfo_commercial_info\"]/div/label")).click();
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_newsletterData_newsletter\"]/div/div/label")).click();
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_email_first\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_email_second\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_plainPassword\"]")).sendKeys(mail+"V2");
+        js.executeScript("document.getElementById(\"fos_user_registration_form_agreements_finishAgreements_0\").getElementsByTagName(\"a\")[0].style.display=\"none\"");
+        js.executeScript("document.getElementById(\"fos_user_registration_form_agreements_finishAgreements_0\").getElementsByTagName(\"a\")[1].style.display=\"none\"");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements_0\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements_3\"]/div/label")).click();
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements_4\"]/div/label")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_submit\"]")).click();
+        Thread.sleep(10000);
+
+        //WP
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
+        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+        }
+        Thread.sleep(3000);
+boolean flaga = false;
+int m = 0;
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='BebiProgram']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div[3]/a")).click();
+                Thread.sleep(15000);
+
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 5) {
+                break;
+            }
+
+        }
+        driver.quit();
+
+    }
+
     public static void Bebilon2(String mail, String miasto, String ulica) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -6234,5 +6362,114 @@ int m = 0;
 //        driver.get("https://www.bebiklub.pl/rejestracja");
         Thread.sleep(6000);
         Neworklead.Bebilon(driver,mail,miasto,ulica);
+    }
+
+    public static void MinusBebilon(String mail, String miasto, String ulica) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://neworklead.pl/zadanie/67de9662c1e7fa49da3f58bbea338ae4/8543c2f354dca1de0bf28d65c8bdb13b/d654be842d14f320ad92ef039fb6aa4c");
+//        driver.get("https://www.bebiklub.pl/rejestracja");
+        Thread.sleep(6000);
+        Neworklead.Bebiko(driver,mail,miasto,ulica);
+    }
+
+    public static void Bebiko(String mail, String miasto, String ulica) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        driver.get("https://neworklead.pl/zadanie/67de9662c1e7fa49da3f58bbea338ae4/8543c2f354dca1de0bf28d65c8bdb13b/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://www.bebiprogram.pl/rejestracja");
+        Thread.sleep(6000);
+        Neworklead.Bebiko(driver,mail,miasto,ulica);
+    }
+
+    public static void Erli(String mail) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        boolean flaga = false;
+        int m = 0;
+        String imie = null;
+        String nazwisko = null;
+        if (plec == 0) {
+            imie = genImieZen();
+            nazwisko = genNazwiskoZen();
+        } else {
+            imie = genImieMes();
+            nazwisko = genNazwisko();
+        }
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
+        ChromeDriver driver = new ChromeDriver(options);
+        Robot robot = new Robot();
+        driver.manage().window().maximize();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+
+//        try {
+        driver.get("https://neworklead.pl/zadanie/84d2025e570d8dd9f98cae722c4dbae0/b6216f4ce731081d7f98f6f17d279797/d654be842d14f320ad92ef039fb6aa4c");
+//        driver.get("https://erli.pl/");
+
+        Thread.sleep(3000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div[1]/div/button"))));
+        driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div[1]/div/button")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"root\"]/div/header/div[1]/div/a[2]/span/span[1]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div/div[8]/div/div/div[2]/a"))));
+        driver.findElement(By.xpath("/html/body/div/div[8]/div/div/div[2]/a")).click();
+        Thread.sleep(10000);
+        driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div/div[1]/div/i")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"input1\"]")).sendKeys(imie);
+        driver.findElement(By.xpath("//*[@id=\"input2\"]")).sendKeys(nazwisko);
+        driver.findElement(By.xpath("//*[@id=\"input3\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"input4\"]")).sendKeys(mail+"V2");
+        driver.findElement(By.xpath("//*[@id=\"root\"]/div/main/div/div/div[1]/div/form/div/section[2]/div[1]/div/label/span/span/span")).click();
+        driver.findElement(By.xpath("//*[@id=\"root\"]/div/main/div/div/div[1]/div/form/div/section[2]/div[2]/div/label")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"root\"]/div/main/div/div/div[1]/div/form/div/section[3]/button")).click();
+        Thread.sleep(6000);
+
+        //WP
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
+        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+
+        }
+        Thread.sleep(3000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='ERLI.pl']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/div[1]/div[1]/div[2]/div/a")).click();
+                Thread.sleep(10000);
+
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 5) {
+                break;
+            }
+
+        }
+        driver.quit();
+
+//        } catch (Exception f) {
+//            driver.quit();
+//        }
+
     }
 }
