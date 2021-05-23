@@ -2206,7 +2206,15 @@ public class Main extends Narzedzia {
             wylacz();
         }
 Koniec.Restart();
-        Neworklead.Bondex("zosia.conrad@wp.pl");
+        for (int i=0;i<20;i++) {
+            mail = bebilon.nextLine();
+            ulicaVee = ulicaPam.nextLine();
+            miastoVee = miastoPam.nextLine();
+            Neworklead.MinusBebilon(mail,miastoVee,ulicaVee);
+            System.out.println(i);
+            System.out.println(mail);
+            Koniec.Restart();
+        }
 
 //        wylacz();
     }

@@ -6126,9 +6126,7 @@ public class Neworklead extends Narzedzia {
         String dzien = dodajZero(dzie);
         String miesiac = dodajZero(mies);
         String dataUr = dzien+"-"+miesiac+"-"+rok;
-        String[] arrOfStr = ulica.split(" ");
-        String nrDomu = arrOfStr[1];
-        ulica = arrOfStr[0];
+        String nrDomu = String.valueOf(r.nextInt(39)+1);
         String imie = genImieZen();
         String nazwisko = genNazwiskoZen();
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -6245,10 +6243,7 @@ int m = 0;
         String dzien = dodajZero(dzie);
         String miesiac = dodajZero(mies);
         String dataUr = dzien+"-"+miesiac+"-"+rok;
-//        String nrDomu = String.valueOf(r.nextInt(39) + 1);
-        String[] arrOfStr = ulica.split(" ");
-        String nrDomu = arrOfStr[1];
-        ulica = arrOfStr[0];
+        String nrDomu = String.valueOf(r.nextInt(39) + 1);
 
         String imie = genImieZen();
         String nazwisko = genNazwiskoZen();
@@ -6291,12 +6286,12 @@ int m = 0;
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_street\"]")).sendKeys(ulica);
         Thread.sleep(1000);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
-        Thread.sleep(1000);
-
-//        clickXY(1560,534);
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        robot.keyRelease(KeyEvent.VK_ENTER);
 //        Thread.sleep(1000);
+
+        clickXY(1560,534);
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_house\"]")).sendKeys(nrDomu);
         driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_personal_info_first_name\"]")).sendKeys(imie);
         driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_personal_info_last_name\"]")).sendKeys(nazwisko);
