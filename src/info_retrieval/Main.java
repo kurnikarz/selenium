@@ -2137,6 +2137,7 @@ public class Main extends Narzedzia {
         String mailArk;
         String ulicaAv;
         List<String> odp = new ArrayList<>();
+        List<String> zyczenia = new ArrayList<>();
         String[] maileArk = new String[80];
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/agd-i-rtv/",40,60);
         //Co najchętniej robisz ze swoją rodziną w czasie Bożego Narodzenia? ?
@@ -2165,6 +2166,46 @@ public class Main extends Narzedzia {
         odp.add("Przypalony garnek bez trudu czyszczę dzięki zastosowaniu płynu do płukania tkanin");
         odp.add("Aby wyciścić dywan, posypuję go sodą oczyszczoną a po 30 minutach odkurzam");
         odp.add("Aby udrożnić odpływ, wsypuję do niego pół szklanki sody i wlewam szklankę octu. Gdy pojawi się piana zmywam ją wrzątkiem");    //25
+
+        zyczenia.add("Do przodu Polsko !");
+        zyczenia.add("Jesteśmy z wami");
+        zyczenia.add("Cała Polska jest z wami !");
+        zyczenia.add("Trzymamy kciuki");
+        zyczenia.add("Jesteście najlepsi !");
+        zyczenia.add("Całym sercem z wami ! <3");
+        zyczenia.add("Cała Polska jest z Wami !");
+        zyczenia.add("Jeszcze będzie dobrze");
+        zyczenia.add("Kochamy Was ! <3");
+        zyczenia.add("Przepiękne gole");
+        zyczenia.add("Szalejemy już z emocji !");
+        zyczenia.add("Życzę wam z całego serca wszystkiego dobrego i samych wygranych meczy");
+        zyczenia.add("Zawsze z wami !");
+        zyczenia.add("Jeden gol to za mało !");
+        zyczenia.add("Powodzenia w drodze do finału !");
+        zyczenia.add("Pokażcie że jesteście najlepsi");
+        zyczenia.add("Brawo wiecie jak to się robi");
+        zyczenia.add("Wiecie jak zrobić robotę !");
+        zyczenia.add("Z całej siły trzymam za was kciuki !");
+        zyczenia.add("Walczcie jak byki");
+        zyczenia.add("Każdy gol naszej reprezentacji przybiera mnie o dreszcze");
+        zyczenia.add("Każdy gol naszej reprezentacji powoduje u mnie dreszcze na całym ciele");
+        zyczenia.add("Cała polska razem z wami ! <3");
+        zyczenia.add("Do boju Polsko !");
+        zyczenia.add("Jesteśmy z wami całą piersią");
+        zyczenia.add("Jesteście naszą narodową dumą i radością. Trzymamu kciuki za najlepsze emocje !");
+        zyczenia.add("Wierzymy że dacie radę osiagnąć to co założyliście");
+        zyczenia.add("Samych wygranych życzę dla naszych orłów !");
+        zyczenia.add("Całą Polska jednoczy się dla was kochani !");
+        zyczenia.add("Do przodu Polsko !");
+        zyczenia.add("Dajcie z siebie wszystko Panowie do boju");
+        zyczenia.add("Zawsze jesteśmy z wami, nic was nie powstrzyma !");
+        zyczenia.add("Całą piersią zawsze z wami");
+        zyczenia.add("Cała Polska w was wierzy !");
+        zyczenia.add("Cała Polska trzyma kciuki");
+        zyczenia.add("Nic nie powstrzyma Polskich orłów");
+        zyczenia.add("Polskie orły są nie do powstrzymania");
+        zyczenia.add("Polska gola Polska gola !");
+
         String mail2;
         String mail3;
         String post = "Szukamy ludzi do pracy przy wklejaniu postów na FB. \n" +
@@ -2195,7 +2236,16 @@ public class Main extends Narzedzia {
 
         try {
 
-
+//            for (int i =1;i<=60;i++) {
+//                mail = nestle3.nextLine();
+//                if (i%2==0)
+//                    Neworklead.NestleTAR(mail);
+//                else
+//                    Neworklead.NestleDC(mail);
+//                System.out.println(i);
+//                System.out.println(mail);
+//                Koniec.Restart();
+//            }
 
         } catch (Exception e) {
             blad.println(e);
@@ -2205,17 +2255,7 @@ public class Main extends Narzedzia {
             System.out.println("=============ERROR===============");
             wylacz();
         }
-Koniec.Restart();
-        for (int i=0;i<20;i++) {
-            mail = bebilon.nextLine();
-            ulicaVee = ulicaPam.nextLine();
-            miastoVee = miastoPam.nextLine();
-            Neworklead.MinusBebilon(mail,miastoVee,ulicaVee);
-            System.out.println(i);
-            System.out.println(mail);
-            Koniec.Restart();
-        }
-
+Neworklead.Lotos("matego21@wp.pl","Jesteśmy z wami !","Gorzów");
 //        wylacz();
     }
 }
