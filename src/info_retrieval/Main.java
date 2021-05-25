@@ -2122,6 +2122,8 @@ public class Main extends Narzedzia {
         Scanner iphone = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\iphone.txt"));
         Scanner wot = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\wot.txt"));
         Scanner bebilon = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\bebilon.txt"));
+        Scanner erli = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\erli.txt"));
+        Scanner bondex = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\bebilon.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\everyInt.txt"));
@@ -2236,12 +2238,13 @@ public class Main extends Narzedzia {
 
         try {
 
-//            for (int i =1;i<=60;i++) {
+//            for (int i =1;i<30;i++) {
 //                mail = nestle3.nextLine();
-//                if (i%2==0)
-//                    Neworklead.NestleTAR(mail);
-//                else
-//                    Neworklead.NestleDC(mail);
+//                mail2 = erli.nextLine();
+//                mail3 = bondex.nextLine();
+//                Neworklead.Erli(mail2);
+//                Neworklead.NestleTAR(mail);
+//                Neworklead.Bondex(mail3);
 //                System.out.println(i);
 //                System.out.println(mail);
 //                Koniec.Restart();
@@ -2255,7 +2258,7 @@ public class Main extends Narzedzia {
             System.out.println("=============ERROR===============");
             wylacz();
         }
-Neworklead.Lotos("matego21@wp.pl","Jesteśmy z wami !","Gorzów");
+        Moje.konkursPampers("eryka.wnuk@wp.pl","Strzelecka","61","846","Poznań","608517164");
 //        wylacz();
     }
 }

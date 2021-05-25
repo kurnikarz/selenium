@@ -3706,8 +3706,8 @@ public class Neworklead extends Narzedzia {
         driver.manage().window().maximize();
 
 //        try {
-//            driver.get("https://neworklead.pl/zadanie/3a5d9a70f01da01a09a1064be7689341/8dee71e72049b181f21bb7a86b436c1a/d654be842d14f320ad92ef039fb6aa4c");
-            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
+            driver.get("https://neworklead.pl/zadanie/3a5d9a70f01da01a09a1064be7689341/8dee71e72049b181f21bb7a86b436c1a/d654be842d14f320ad92ef039fb6aa4c");
+//            driver.get("https://www.zdrowystartwprzyszlosc.pl/user/register");
             Thread.sleep(5000);
 
             for (String winHandle : driver.getWindowHandles()) {
@@ -6402,7 +6402,7 @@ int m = 0;
         driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, 60);
 
-//        try {
+        try {
         driver.get("https://neworklead.pl/zadanie/84d2025e570d8dd9f98cae722c4dbae0/b6216f4ce731081d7f98f6f17d279797/d654be842d14f320ad92ef039fb6aa4c");
 //        driver.get("https://erli.pl/");
 
@@ -6414,7 +6414,7 @@ int m = 0;
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div/div[8]/div/div/div[2]/a"))));
         driver.findElement(By.xpath("/html/body/div/div[8]/div/div/div[2]/a")).click();
         Thread.sleep(10000);
-        driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div/div[1]/div/i")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[1]/div/i")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"input1\"]")).sendKeys(imie);
         driver.findElement(By.xpath("//*[@id=\"input2\"]")).sendKeys(nazwisko);
@@ -6462,9 +6462,9 @@ int m = 0;
         }
         driver.quit();
 
-//        } catch (Exception f) {
-//            driver.quit();
-//        }
+        } catch (Exception f) {
+            driver.quit();
+        }
 
     }
 
@@ -6488,7 +6488,7 @@ int m = 0;
         driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, 60);
 
-//        try {
+        try {
         driver.get("https://neworklead.pl/zadanie/d731a66ba21984e3250730e14a818756/3815b913aae1082dfece28f25af74f70/d654be842d14f320ad92ef039fb6aa4c");
 //        driver.get("https://erli.pl/");
 
@@ -6502,9 +6502,9 @@ int m = 0;
         Thread.sleep(6000);
         driver.quit();
 
-//        } catch (Exception f) {
-//            driver.quit();
-//        }
+        } catch (Exception f) {
+            driver.quit();
+        }
 
     }
 
