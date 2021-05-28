@@ -2123,7 +2123,8 @@ public class Main extends Narzedzia {
         Scanner wot = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\wot.txt"));
         Scanner bebilon = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\bebilon.txt"));
         Scanner erli = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\erli.txt"));
-        Scanner bondex = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\bebilon.txt"));
+        Scanner bondex = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\bondex.txt"));
+        Scanner lotos = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\lotos.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\everyInt.txt"));
@@ -2232,23 +2233,59 @@ public class Main extends Narzedzia {
 //        pobierzAdres(100);
 
 
-        int j = 4;
-
-        int x = 45;
+        int j = 9;
 
         try {
 
-//            for (int i =1;i<30;i++) {
-//                mail = nestle3.nextLine();
-//                mail2 = erli.nextLine();
-//                mail3 = bondex.nextLine();
-//                Neworklead.Erli(mail2);
-//                Neworklead.NestleTAR(mail);
-//                Neworklead.Bondex(mail3);
+//            for (int i=0;i<=50;i++) {
+//                mail = lotos.nextLine();
+//                miastoVee = miastoPam.nextLine();
+//                if (i%2==0)
+//                    Neworklead.Lotos("https://neworklead.pl/zadanie/1e059976c5f5f42220c786d226ac6dcc/304581ddd69582cdf0dbaedcbd3a5fe9/d654be842d14f320ad92ef039fb6aa4c",mail,zyczenia.get(j),miastoVee);
+//                else
+//                    Neworklead.Lotos("https://neworklead.pl/zadanie/143913558c5b7b55d6b40ba4e37bf592/edfe2a9722b0ddfc457cc3b193b2b3b8/d654be842d14f320ad92ef039fb6aa4c",mail,zyczenia.get(j),miastoVee);
+//                j++;
+//                if (j>37)
+//                    j = 0;
 //                System.out.println(i);
 //                System.out.println(mail);
 //                Koniec.Restart();
 //            }
+            for (int i=1;i<=100;i++) {
+                mail = lotos.nextLine();
+                mail2 = bondex.nextLine();
+
+
+                if (i%2==0)
+                    Neworklead.Bondex("https://neworklead.pl/zadanie/5a60a02007e5cd9ed8d29d04d3fb74ff/245852e64ae09a63e66dd254e77519d2/d654be842d14f320ad92ef039fb6aa4c",mail2);
+                else
+                    Neworklead.Bondex("https://neworklead.pl/zadanie/d731a66ba21984e3250730e14a818756/3815b913aae1082dfece28f25af74f70/d654be842d14f320ad92ef039fb6aa4c",mail2);
+
+                if (i<30) {
+                    mail3 = enfamil.nextLine();
+                    if (i%2==0)
+                        Neworklead.gwEnfamil(mail3);
+                    else
+                        Neworklead.strzEnfamil(mail3);
+                }
+
+                if (i<20) {
+                    miastoVee = miastoPam.nextLine();
+                    Neworklead.Lotos("https://neworklead.pl/zadanie/143913558c5b7b55d6b40ba4e37bf592/edfe2a9722b0ddfc457cc3b193b2b3b8/d654be842d14f320ad92ef039fb6aa4c",mail,zyczenia.get(j),miastoVee);
+                }
+
+                else if (i<30) {
+                    miastoVee = miastoPam.nextLine();
+                    Neworklead.Lotos("https://neworklead.pl/zadanie/5ad5688fef7dc1a31a692186a7fe43e0/7281bcf46f5faca80d7e3cf143f1ff24/d654be842d14f320ad92ef039fb6aa4c",mail,zyczenia.get(j),miastoVee);
+                }
+
+                j++;
+                if (j>37)
+                    j=0;
+                System.out.println(i);
+                System.out.println(mail);
+                Koniec.Restart();
+            }
 
         } catch (Exception e) {
             blad.println(e);
@@ -2258,7 +2295,9 @@ public class Main extends Narzedzia {
             System.out.println("=============ERROR===============");
             wylacz();
         }
-        Moje.konkursPampers("eryka.wnuk@wp.pl","Strzelecka","61","846","Poznań","608517164");
-//        wylacz();
+//        Koniec.Restart();
+
+
+        wylacz();
     }
 }

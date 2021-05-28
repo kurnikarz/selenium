@@ -1395,19 +1395,24 @@ public class Neworklead extends Narzedzia {
             m++;
             if (m > 10)
                 break;
-
-
         }
         Thread.sleep(3000);
         ScrollBy(driver, "1000");
         Thread.sleep(1000);
         try {
-            driver.findElement(By.xpath("//*[@id=\"main\"]/div[6]/div/div/a")).click();
+            driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[1]/div/div/div[2]/div/a")).click();
+            driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[1]/div/div/div[2]/div/a")).click();
         } catch (Exception e) {
             driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[1]/div[4]/a[1]")).click();
         }
-        Thread.sleep(15000);
+        Thread.sleep(20000);
         driver.switchTo().frame(0);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
+        } catch (Exception e) {
+
+        }
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/section[1]/div/label")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/section[2]")).click();
@@ -1442,48 +1447,48 @@ public class Neworklead extends Narzedzia {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[2]/section/div[1]")).click();
 
-        Thread.sleep(2000);
-        switch (odp1) {
-            case 0:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[1]/div[2]")).click();
-                break;
-            case 1:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[2]/div[2]")).click();
-                break;
-            case 2:                         ////*[@id="scrollContainer"]/section/div[1]/div/section[2]/section/section/div/div[3]/div[2]
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[3]/div[2]")).click();
-                break;
-        }
-        Thread.sleep(2000);
-        switch (odp2) {
-            case 0:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[1]/div/span/div[2]")).click();
-                break;
-            case 1:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[2]/div/span/div[2]")).click();
-                break;
-        }
-        Thread.sleep(2000);
-        clickXY(1260,756);
-        Thread.sleep(1000);
-        try {
-            switch (odp3) {
-                case 0:
-                    driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[4]/div")).click();
-                    break;
-                case 1:
-                    driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[3]/div")).click();
-                    break;
-            }
-        } catch (Exception e) {
-
-        }
-
-        Thread.sleep(2000);
-
-        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div/div[2]/textarea[2]")).sendKeys(odp);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[2]/section/div[1]")).click();
+//        Thread.sleep(2000);
+//        switch (odp1) {
+//            case 0:
+//                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[1]/div[2]")).click();
+//                break;
+//            case 1:
+//                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[2]/div[2]")).click();
+//                break;
+//            case 2:                         ////*[@id="scrollContainer"]/section/div[1]/div/section[2]/section/section/div/div[3]/div[2]
+//                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[3]/div[2]")).click();
+//                break;
+//        }
+//        Thread.sleep(2000);
+//        switch (odp2) {
+//            case 0:
+//                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[1]/div/span/div[2]")).click();
+//                break;
+//            case 1:
+//                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[2]/div/span/div[2]")).click();
+//                break;
+//        }
+//        Thread.sleep(2000);
+//        clickXY(1260,756);
+//        Thread.sleep(1000);
+//        try {
+//            switch (odp3) {
+//                case 0:
+//                    driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[4]/div")).click();
+//                    break;
+//                case 1:
+//                    driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[3]/div")).click();
+//                    break;
+//            }
+//        } catch (Exception e) {
+//
+//        }
+//
+//        Thread.sleep(2000);
+//
+//        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div/div[2]/textarea[2]")).sendKeys(odp);
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[2]/section/div[1]")).click();
 
         Thread.sleep(30000);
         driver.get("https://www.everydayme.pl/oferty");
@@ -3972,7 +3977,7 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 //        try {
-        driver.get("https://neworklead.pl/zadanie/5491ecf29ac8c4ff62b23cf90dc2f278/cf9715d4c0dcfaa58f38b7e3e861cee6/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/ab8f77797840486722a5077474051029/ad7ca3991b764e5bc023520cc735c42a/d654be842d14f320ad92ef039fb6aa4c");
         Thread.sleep(6000);
         Neworklead.Enfamil(driver, mail);
 //        } catch (Exception e) {
@@ -3986,7 +3991,7 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 //        try {
-        driver.get("https://neworklead.pl/zadanie/90fa16b3880053bac81563e212ec25c0/71b8ba7b222d4533f5006fa782ebc201/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/0cb710bfb140ca355522e1ce11132f50/0df7db9906c29aedb2aeb8ab6da161f1/d654be842d14f320ad92ef039fb6aa4c");
         Thread.sleep(6000);
         Neworklead.Enfamil(driver, mail);
 //        } catch (Exception e) {
@@ -5999,7 +6004,27 @@ public class Neworklead extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://neworklead.pl/zadanie/695a22ce9d707573217fbb0f9594d4f6/b4e3d0ccbfcb8694caae6b5fe18c60c1/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/1b382996ed5a400851c8cdf3c6c37226/c9caeb96376facc095dca58b62c11ed0/d654be842d14f320ad92ef039fb6aa4c");
+//        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
+        Thread.sleep(6000);
+        Neworklead.Everyday(driver,mail,odp);
+    }
+
+    public static void aEveryNN(String mail, String odp) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://neworklead.pl/zadanie/7303e0173e308b35d66de49ca89ed2ad/d20f28a6ee231cbe4f2aeafc7c822070/d654be842d14f320ad92ef039fb6aa4c");
+//        driver.get("https://www.everydayme.pl/rodzina/zajecia/dzialajmy-razem");
+        Thread.sleep(6000);
+        Neworklead.Everyday(driver,mail,odp);
+    }
+
+    public static void gwEveryNN(String mail, String odp) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://neworklead.pl/zadanie/54585be0739d79b650dfc7f9a72f3aef/c0b6e3a851ddde834366c2110540d3cf/d654be842d14f320ad92ef039fb6aa4c");
 //        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
@@ -6079,7 +6104,7 @@ public class Neworklead extends Narzedzia {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://neworklead.pl/zadanie/b87f13fd1265ff3a8af1eeb29f82a9f7/2410ac85f6df6f53bc6c7946eae4ae42/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get("https://neworklead.pl/zadanie/1b382996ed5a400851c8cdf3c6c37226/c9caeb96376facc095dca58b62c11ed0/d654be842d14f320ad92ef039fb6aa4c");
 //        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
@@ -6468,7 +6493,7 @@ int m = 0;
 
     }
 
-    public static void Bondex(String mail) throws InterruptedException, AWTException, IOException {
+    public static void Bondex(String url, String mail) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         Random r = new Random();
         int plec = r.nextInt(2);
@@ -6489,7 +6514,7 @@ int m = 0;
         WebDriverWait wait = new WebDriverWait(driver, 60);
 
         try {
-        driver.get("https://neworklead.pl/zadanie/d731a66ba21984e3250730e14a818756/3815b913aae1082dfece28f25af74f70/d654be842d14f320ad92ef039fb6aa4c");
+        driver.get(url);
 //        driver.get("https://erli.pl/");
 
         Thread.sleep(3000);
@@ -6508,7 +6533,7 @@ int m = 0;
 
     }
 
-    public static void Lotos(String mail, String zyczenie, String miasto) throws InterruptedException, AWTException, IOException {
+    public static void Lotos(String url, String mail, String zyczenie, String miasto) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         Random r = new Random();
         int plec = r.nextInt(2);
@@ -6528,8 +6553,8 @@ int m = 0;
         driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, 60);
 
-//        try {
-        driver.get("https://neworklead.pl/zadanie/9b2940454a7ee674e3974e48ec506590/05ea7340f9d78530a0dbed2e16107b67/d654be842d14f320ad92ef039fb6aa4c");
+        try {
+        driver.get(url);
 //        driver.get("https://dajemyslowo.lotos.pl/wspieramyreprezentacje");
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[2]/div/div/button"))));
         driver.findElement(By.xpath("/html/body/div[2]/div/div/button")).click();
@@ -6542,13 +6567,13 @@ int m = 0;
         driver.findElement(By.xpath("/html/body/div[1]/div/div/div/form/div[7]/div/div/label")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/div/div/div/form/div[8]/div/button")).click();
-        Thread.sleep(8000);
-//        driver.quit();
+        Thread.sleep(5000);
+        driver.quit();
 
 
-//        } catch (Exception f) {
-//            driver.quit();
-//        }
+        } catch (Exception f) {
+            driver.quit();
+        }
 
     }
 }
