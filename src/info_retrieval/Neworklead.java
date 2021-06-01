@@ -6010,6 +6010,16 @@ public class Neworklead extends Narzedzia {
         Neworklead.Everyday(driver,mail,odp);
     }
 
+    public static void EveryDDDD(String mail, String odp) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://neworklead.pl/zadanie/61b95787191e1fe693ce92bc1964115c/e9605e4222f27e008b13370bf8fa9471/d654be842d14f320ad92ef039fb6aa4c");
+//        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
+        Thread.sleep(6000);
+        Neworklead.Everyday(driver,mail,odp);
+    }
+
     public static void aEveryNN(String mail, String odp) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -6105,6 +6115,16 @@ public class Neworklead extends Narzedzia {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://neworklead.pl/zadanie/1b382996ed5a400851c8cdf3c6c37226/c9caeb96376facc095dca58b62c11ed0/d654be842d14f320ad92ef039fb6aa4c");
+//        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
+        Thread.sleep(6000);
+        Neworklead.Everyday(driver,mail,odp);
+    }
+
+    public static void Every(String url, String mail, String odp) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(url);
 //        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
@@ -6553,7 +6573,7 @@ int m = 0;
         driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, 60);
 
-        try {
+//        try {
         driver.get(url);
 //        driver.get("https://dajemyslowo.lotos.pl/wspieramyreprezentacje");
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[2]/div/div/button"))));
@@ -6571,9 +6591,9 @@ int m = 0;
         driver.quit();
 
 
-        } catch (Exception f) {
-            driver.quit();
-        }
+//        } catch (Exception f) {
+//            driver.quit();
+//        }
 
     }
 }
