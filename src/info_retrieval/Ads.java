@@ -273,12 +273,14 @@ public class Ads extends Narzedzia {
         driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/table/tbody/tr/td/div[8]/div/div/div/div/div/div/div/a/span")).click();
     }
 
-    public static void EveryAF(String mail, String odp) throws InterruptedException, AWTException, IOException {
+    public static void EveryAdp(String mail, String odp) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 //        try {
-        driver.get("http://adsmaker.pl/action/2448/uid/26dd63a0ef72a51af97c0efa88357f15/ ");
+        driver.get("http://adsmaker.pl/action/2537/uid/26dd63a0ef72a51af97c0efa88357f15/");
+        Thread.sleep(2000);
+        driver.get("https://httpslink.com/ap7h");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
 
@@ -287,14 +289,14 @@ public class Ads extends Narzedzia {
 //        }
     }
 
-    public static void EveryAdp(String mail, String odp) throws InterruptedException, AWTException, IOException {
+    public static void EveryAdp2(String mail, String odp) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 //        try {
-        driver.get("http://adsmaker.pl/action/2421/uid/26dd63a0ef72a51af97c0efa88357f15/  ");
-        Thread.sleep(10000);
-        driver.get("https://httpslink.com/kccu");
+        driver.get("http://adsmaker.pl/action/2538/uid/26dd63a0ef72a51af97c0efa88357f15/");
+        Thread.sleep(2000);
+        driver.get("https://httpslink.com/zocq");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
 
