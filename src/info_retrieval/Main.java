@@ -48,7 +48,7 @@ public class Main extends Narzedzia {
         String cyfra1 = String.valueOf(r.nextInt(9));
         String cyfra2 = String.valueOf(r.nextInt(9));
 
-        try {
+//        try {
             ChromeDriver driver = new ChromeDriver(options);
             Robot robot = new Robot();
             driver.manage().window().maximize();
@@ -96,8 +96,8 @@ public class Main extends Narzedzia {
 
          */
 
-            driver.findElement(By.xpath("//*[@id=\"name\"]")).sendKeys(imie);
-            driver.findElement(By.xpath("//*[@id=\"surname\"]")).sendKeys(nazwiwsko);
+            driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div[2]/div/form/div[1]/div[1]/input")).sendKeys(imie);
+            driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div[2]/div/form/div[1]/div[2]/input")).sendKeys(nazwiwsko);
             driver.findElement(By.xpath("//*[@id=\"birthdayDay\"]")).sendKeys(String.valueOf(dzien));
             driver.findElement(By.xpath("//*[@id=\"mainApp\"]/div/div/div/div/div[2]/div/form/div[1]/div[3]/div[2]/label")).click();
             //Thread.sleep(1000);
@@ -106,10 +106,10 @@ public class Main extends Narzedzia {
             driver.findElement(By.xpath("//*[@id=\"mainApp\"]/div/div/div/div/div[2]/div/form/div[1]/div[4]/div[1]")).click();
             //Thread.sleep(1000);
             clickXY(1082, 544);
-            driver.findElement(By.xpath("//*[@id=\"login\"]")).click();
+            driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div[2]/div/form/div[1]/div[5]/div[1]/input")).click();
             Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(cyfra1 + cyfra2);
-            String mail = driver.findElement(By.xpath("//*[@id=\"login\"]")).getAttribute("value") + "@interia.pl";
+            driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div[2]/div/form/div[1]/div[5]/div[1]/input")).sendKeys(cyfra1 + cyfra2);
+            String mail = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/div/div[2]/div/form/div[1]/div[5]/div[1]/input")).getAttribute("value") + "@interia.pl";
             driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("Mrcbuch123");
             driver.findElement(By.xpath("//*[@id=\"rePassword\"]")).sendKeys("Mrcbuch123");
             driver.findElement(By.xpath("//*[@id=\"mainApp\"]/div/div/div/div/div[2]/div/form/div[2]/div[1]/div[1]/label/div/div")).click();
@@ -121,9 +121,9 @@ public class Main extends Narzedzia {
             maile.close();
             botowe.close();
             driver.quit();
-        } catch (Exception f) {
-            System.out.println("ERROR INTERIA");
-        }
+//        } catch (Exception f) {
+//            System.out.println("ERROR INTERIA");
+//        }
 
     }
 
@@ -2467,7 +2467,34 @@ public class Main extends Narzedzia {
         int j = 9;
 
         try {
-
+            int x = 60;
+            for(int i = 0; i < x; i++) {
+                mail = arkadia.nextLine();
+                mail2 = everyInt.nextLine();
+                mail3 = bondex.nextLine();
+                if (i == 0) {
+                    Neworklead.aArkadia(mail);
+                    Neworklead.Bondex("https://neworklead.pl/zadanie/6644c45e8cbd5affa45e4bc18c2db08a/e4540f64029213018e92a90eb06fea9f/d654be842d14f320ad92ef039fb6aa4c", mail3);
+                    Neworklead.Every("https://neworklead.pl/zadanie/03817042d5717149bc4d025622ca3f7e/d5339bede9911d21a6a3b52d14829a3d/d654be842d14f320ad92ef039fb6aa4c", mail2, "");
+                }
+                if (i == 1) {
+                    Neworklead.gwArkadia(mail);
+                    Neworklead.Bondex("https://neworklead.pl/zadanie/6644c45e8cbd5affa45e4bc18c2db08a/e4540f64029213018e92a90eb06fea9f/d654be842d14f320ad92ef039fb6aa4c", mail3);
+                    Ads.EveryAdp(mail2,"");
+                }
+                if (i == 2) {
+                    Neworklead.lkArkadia(mail);
+                    Neworklead.Bondex("https://neworklead.pl/zadanie/6644c45e8cbd5affa45e4bc18c2db08a/e4540f64029213018e92a90eb06fea9f/d654be842d14f320ad92ef039fb6aa4c", mail3);
+                    Ads.EveryAdp2(mail2,"");
+                    x -= 3;
+                    i = -1;
+                }
+                Narzedzia.potwierdzArkadia(mail);
+                System.out.println(i);
+                System.out.println(x);
+                System.out.println(mail);
+                Koniec.Restart();
+            }
 
         } catch (Exception e) {
             blad.println(e);
@@ -2478,35 +2505,14 @@ public class Main extends Narzedzia {
             wylacz();
         }
 
-        Koniec.Restart();
-        int x = 60;
-        for(int i = 0; i < x; i++) {
-            mail = arkadia.nextLine();
-            mail2 = everyInt.nextLine();
-            mail3 = bondex.nextLine();
-            if (i == 0) {
-                Neworklead.aArkadia(mail);
-                Neworklead.Bondex("https://neworklead.pl/zadanie/2c6bbe587642a6813ad119058a962aab/25bcf5c11b57d2a1ed93678f51137c59/d654be842d14f320ad92ef039fb6aa4c", mail3);
-                Ads.EveryAdp(mail2, "");
-            }
-            if (i == 1) {
-                Neworklead.gwArkadia(mail);
-                Neworklead.Bondex("https://neworklead.pl/zadanie/2c6bbe587642a6813ad119058a962aab/25bcf5c11b57d2a1ed93678f51137c59/d654be842d14f320ad92ef039fb6aa4c", mail3);
-                Ads.EveryAdp2(mail2, "");
-            }
-            if (i == 2) {
-                Neworklead.lkArkadia(mail);
-                Neworklead.Bondex("https://neworklead.pl/zadanie/2c6bbe587642a6813ad119058a962aab/25bcf5c11b57d2a1ed93678f51137c59/d654be842d14f320ad92ef039fb6aa4c", mail3);
-                Neworklead.Every("https://neworklead.pl/zadanie/7c22f414dfa4b882812d62a59cdcd442/e7258af54276606048f79d22278d7794/d654be842d14f320ad92ef039fb6aa4c", mail2, "");
-                x -= 3;
-                i = -1;
-            }
-            Narzedzia.potwierdzArkadia(mail);
-            System.out.println(i);
-            System.out.println(x);
-            System.out.println(mail);
-            Koniec.Restart();
-        }
+//        Koniec.Restart();
+
+//        for (int i=1;i<=50;i++) {
+//            interia();
+//            if (i%20==0)
+//                Koniec.Restart();
+//        }
+
         wylacz();
 
     }

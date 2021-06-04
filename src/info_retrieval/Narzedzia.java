@@ -209,7 +209,7 @@ public class Narzedzia {
 
 //        try {
             zmienKarte(driver);
-            Thread.sleep(1000);
+            Thread.sleep(5000);
             wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[8]/div[2]/div/div[3]/div[1]/div"))));
             driver.findElement(By.xpath("/html/body/div[8]/div[2]/div/div[3]/div[1]/div")).click();
             Thread.sleep(2000);
@@ -352,15 +352,6 @@ public class Narzedzia {
 //        } catch (Exception e) {
 //            driver.quit();
 //        }
-
-
-
-
-//        ((JavascriptExecutor) driver).executeScript("window.open()");
-//        Thread.sleep(1000);
-//        zmienKarte(driver);
-//        Thread.sleep(1000);
-//        potwierdzArkadia(mail);
 
     }
 
