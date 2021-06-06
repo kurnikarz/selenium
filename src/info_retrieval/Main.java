@@ -2466,35 +2466,12 @@ public class Main extends Narzedzia {
 
         int j = 9;
 
+
+
         try {
-            int x = 60;
-            for(int i = 0; i < x; i++) {
-                mail = arkadia.nextLine();
-                mail2 = everyInt.nextLine();
-                mail3 = bondex.nextLine();
-                if (i == 0) {
-                    Neworklead.aArkadia(mail);
-                    Neworklead.Bondex("https://neworklead.pl/zadanie/6644c45e8cbd5affa45e4bc18c2db08a/e4540f64029213018e92a90eb06fea9f/d654be842d14f320ad92ef039fb6aa4c", mail3);
-                    Neworklead.Every("https://neworklead.pl/zadanie/03817042d5717149bc4d025622ca3f7e/d5339bede9911d21a6a3b52d14829a3d/d654be842d14f320ad92ef039fb6aa4c", mail2, "");
-                }
-                if (i == 1) {
-                    Neworklead.gwArkadia(mail);
-                    Neworklead.Bondex("https://neworklead.pl/zadanie/6644c45e8cbd5affa45e4bc18c2db08a/e4540f64029213018e92a90eb06fea9f/d654be842d14f320ad92ef039fb6aa4c", mail3);
-                    Ads.EveryAdp(mail2,"");
-                }
-                if (i == 2) {
-                    Neworklead.lkArkadia(mail);
-                    Neworklead.Bondex("https://neworklead.pl/zadanie/6644c45e8cbd5affa45e4bc18c2db08a/e4540f64029213018e92a90eb06fea9f/d654be842d14f320ad92ef039fb6aa4c", mail3);
-                    Ads.EveryAdp2(mail2,"");
-                    x -= 3;
-                    i = -1;
-                }
-                Narzedzia.potwierdzArkadia(mail);
-                System.out.println(i);
-                System.out.println(x);
-                System.out.println(mail);
-                Koniec.Restart();
-            }
+
+//            Koniec.Restart();
+
 
         } catch (Exception e) {
             blad.println(e);
@@ -2505,13 +2482,40 @@ public class Main extends Narzedzia {
             wylacz();
         }
 
-//        Koniec.Restart();
-
-//        for (int i=1;i<=50;i++) {
+//        for (int i=1;i<=60;i++) {
 //            interia();
 //            if (i%20==0)
 //                Koniec.Restart();
 //        }
+
+        int x = 60;
+        for(int i = 0; i < x; i++) {
+            mail = arkadia.nextLine();
+            mail2 = everyInt.nextLine();
+            mail3 = bondex.nextLine();
+            if (i == 0) {
+                Neworklead.aArkadia(mail);
+                Neworklead.Bondex("https://neworklead.pl/zadanie/2c6bbe587642a6813ad119058a962aab/25bcf5c11b57d2a1ed93678f51137c59/d654be842d14f320ad92ef039fb6aa4c", mail3);
+//              Neworklead.Every("https://neworklead.pl/zadanie/efabad595dd89ada3286a63259c01ef1/d1e1827f654998fade1b9f309a846ff0/d654be842d14f320ad92ef039fb6aa4c",mail2,"");
+            }
+            if (i == 1) {
+                Neworklead.gwArkadia(mail);
+                Neworklead.Bondex("https://neworklead.pl/zadanie/2c6bbe587642a6813ad119058a962aab/25bcf5c11b57d2a1ed93678f51137c59/d654be842d14f320ad92ef039fb6aa4c", mail3);
+                Ads.EveryAdp(mail2,"");
+            }
+            if (i == 2) {
+                Neworklead.lkArkadia(mail);
+                Neworklead.Bondex("https://neworklead.pl/zadanie/2c6bbe587642a6813ad119058a962aab/25bcf5c11b57d2a1ed93678f51137c59/d654be842d14f320ad92ef039fb6aa4c", mail3);
+                Ads.EveryAdp2(mail2,"");
+                x -= 3;
+                i = -1;
+            }
+            Narzedzia.potwierdzArkadia(mail);
+            System.out.println(i);
+            System.out.println(x);
+            System.out.println(mail);
+            Koniec.Restart();
+        }
 
         wylacz();
 
