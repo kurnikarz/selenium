@@ -1315,7 +1315,7 @@ public class Neworklead extends Narzedzia {
             driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[2]/div/div/div[2]/div/a")).click();
             driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[2]/div/div/div[2]/div/a")).click();
         }
-        Thread.sleep(25000);
+        Thread.sleep(35000);
         driver.switchTo().frame(0);
         try {
             driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
@@ -1400,18 +1400,24 @@ public class Neworklead extends Narzedzia {
 //        Thread.sleep(1000);
 //        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[2]/section/div[1]")).click();
 
-        Thread.sleep(30000);
+        Thread.sleep(15000);
         driver.get("https://www.everydayme.pl/oferty");
         Thread.sleep(20000);
-        driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/div/label")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/ul/li[1]/div/div/div[1]/div/div[3]/div[3]/div")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/ul/li[2]/div/div/div[1]/div/div[3]/div[3]/div")).click();
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[@id=\"main\"]/div[4]/div/div/div/button[2]")).click();
-        Thread.sleep(15000);
-        driver.quit();
+        try {
+            driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/div/label")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/ul/li[1]/div/div/div[1]/div/div[3]/div[3]/div")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/ul/li[2]/div/div/div[1]/div/div[3]/div[3]/div")).click();
+            Thread.sleep(3000);
+            driver.findElement(By.xpath("//*[@id=\"main\"]/div[4]/div/div/div/button[2]")).click();
+            Thread.sleep(15000);
+            driver.quit();
+        } catch (Exception e) {
+            Thread.sleep(10000);
+            driver.quit();
+        }
+
 
 //        } catch (Exception e) {
 //            niewykorzystane.append(mail+"\r\n");
