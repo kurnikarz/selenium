@@ -2701,4 +2701,24 @@ public class Dodatkowy extends Narzedzia {
 //            driver.quit();
 //        }
     }
+
+    public static void Wroclavia(String mail) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+
+        driver.manage().window().maximize();
+//        try {
+        driver.get("http://dodatkowypieniadz.com/zadanie/161d7418799912df4ede9c8c0804c706/22ed123ddc5f6423208ccf04acd0e57d/201920950f63cee967982b759fde80b1");
+        Thread.sleep(1000);
+        wpiszHaslo();
+        Thread.sleep(6000);
+        clickXY(750,604);
+        clickXY(780,604);
+        Thread.sleep(6000);
+        Wroclavia(driver,mail);
+
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
 }

@@ -2466,35 +2466,31 @@ public class Main extends Narzedzia {
 
         int j = 9;
 //        try {
-            int x = 15;
-            for (int i = 2; i < x; i++) {
-                mail = arkadia.nextLine();
-                mail2 = everyInt.nextLine();
-//                mail3 = bondex.nextLine();
-                if (i == 0) {
-//                    Neworklead.gwGaleria(mail);
-//                    Neworklead.Bondex("https://neworklead.pl/zadanie/2c6bbe587642a6813ad119058a962aab/25bcf5c11b57d2a1ed93678f51137c59/d654be842d14f320ad92ef039fb6aa4c", mail3);
-                Ads.EveryBd(mail2,"*");
-                }
-                if (i == 1) {
-                    Neworklead.gwArkadia(mail);
-//                    Neworklead.Bondex("https://neworklead.pl/zadanie/2c6bbe587642a6813ad119058a962aab/25bcf5c11b57d2a1ed93678f51137c59/d654be842d14f320ad92ef039fb6aa4c", mail3);
-                    Ads.EveryAdp(mail2, "");
-                }
-                if (i == 2) {
-                    Neworklead.lkArkadia(mail);
-//                    Neworklead.Bondex("https://neworklead.pl/zadanie/2c6bbe587642a6813ad119058a962aab/25bcf5c11b57d2a1ed93678f51137c59/d654be842d14f320ad92ef039fb6aa4c", mail3);
-                    Ads.EveryAdp2(mail2, "");
-                    x -= 3;
-                    i = -1;
-                }
-                if (i != 0)
-                    Narzedzia.potwierdzArkadia(mail);
-                System.out.println(i);
-                System.out.println(x);
-                System.out.println(mail);
-                Koniec.Restart();
-            }
+            int x = 60;
+//            for (int i = 0; i < x; i++) {
+////                mail = arkadia.nextLine();
+//                mail2 = everyInt.nextLine();
+//                if (i == 0) {
+////                    Neworklead.gwGaleria(mail);
+//                Ads.EveryBd(mail2,"*");
+//                }
+//                if (i == 1) {
+////                    Neworklead.gwArkadia(mail);
+//                    Ads.EveryAdp(mail2, "");
+//                }
+//                if (i == 2) {
+////                    Neworklead.lkArkadia(mail);
+//                    Ads.EveryAdp2(mail2, "");
+//                    x -= 3;
+//                    i = -1;
+//                }
+////                if (i != 0)
+////                    Narzedzia.potwierdzArkadia(mail);
+//                System.out.println(i);
+//                System.out.println(x);
+//                System.out.println(mail2);
+//                Koniec.Restart();
+//            }
 
 
 //        } catch (Exception e) {
@@ -2512,7 +2508,8 @@ public class Main extends Narzedzia {
 //                Koniec.Restart();
 //        }
 
+        Narzedzia.potwierdzWroclaviaInteria("mariola.dzbanek@interia.pl");
 
-            wylacz();
+//            wylacz();
     }
 }
