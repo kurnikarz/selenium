@@ -1312,8 +1312,14 @@ public class Neworklead extends Narzedzia {
             driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[1]/div/div/div[2]/div/a")).click();
             driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[1]/div/div/div[2]/div/a")).click();
         } catch (Exception e) {
-            driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[2]/div/div/div[2]/div/a")).click();
-            driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[2]/div/div/div[2]/div/a")).click();
+            try {
+                driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[2]/div/div/div[2]/div/a")).click();
+                driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[2]/div/div/div[2]/div/a")).click();
+            } catch (Exception f) {
+                driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[3]/div/div/div[2]/div/a")).click();
+                driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[3]/div/div/div[2]/div/a")).click();
+            }
+
         }
         Thread.sleep(35000);
         driver.switchTo().frame(0);

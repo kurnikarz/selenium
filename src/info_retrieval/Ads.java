@@ -332,4 +332,18 @@ public class Ads extends Narzedzia {
 //            driver.quit();
 //        }
     }
+
+    public static void EveryBd(String mail, String odp) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+        driver.get("http://adsmaker.pl/action/2542/uid/26dd63a0ef72a51af97c0efa88357f15/ ");
+        Thread.sleep(6000);
+        Neworklead.Everyday(driver,mail,odp);
+
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
 }

@@ -2465,36 +2465,31 @@ public class Main extends Narzedzia {
 
 
         int j = 9;
-
-
-
 //        try {
-
-
-//            Koniec.Restart();
-            int x = 39;
-            for(int i = 2; i < x; i++) {
+            int x = 15;
+            for (int i = 2; i < x; i++) {
                 mail = arkadia.nextLine();
                 mail2 = everyInt.nextLine();
 //                mail3 = bondex.nextLine();
                 if (i == 0) {
-                    Neworklead.aArkadia(mail);
+//                    Neworklead.gwGaleria(mail);
 //                    Neworklead.Bondex("https://neworklead.pl/zadanie/2c6bbe587642a6813ad119058a962aab/25bcf5c11b57d2a1ed93678f51137c59/d654be842d14f320ad92ef039fb6aa4c", mail3);
-              Neworklead.Every("https://neworklead.pl/zadanie/2d10e227eb982807a557edce5acbf0ee/857bbcc88502abf45c0ad07284c6a7d0/d654be842d14f320ad92ef039fb6aa4c",mail2,"");
+                Ads.EveryBd(mail2,"*");
                 }
                 if (i == 1) {
                     Neworklead.gwArkadia(mail);
 //                    Neworklead.Bondex("https://neworklead.pl/zadanie/2c6bbe587642a6813ad119058a962aab/25bcf5c11b57d2a1ed93678f51137c59/d654be842d14f320ad92ef039fb6aa4c", mail3);
-                    Ads.EveryAdp(mail2,"");
+                    Ads.EveryAdp(mail2, "");
                 }
                 if (i == 2) {
                     Neworklead.lkArkadia(mail);
 //                    Neworklead.Bondex("https://neworklead.pl/zadanie/2c6bbe587642a6813ad119058a962aab/25bcf5c11b57d2a1ed93678f51137c59/d654be842d14f320ad92ef039fb6aa4c", mail3);
-                    Ads.EveryAdp2(mail2,"");
+                    Ads.EveryAdp2(mail2, "");
                     x -= 3;
                     i = -1;
                 }
-                Narzedzia.potwierdzArkadia(mail);
+                if (i != 0)
+                    Narzedzia.potwierdzArkadia(mail);
                 System.out.println(i);
                 System.out.println(x);
                 System.out.println(mail);
@@ -2518,7 +2513,6 @@ public class Main extends Narzedzia {
 //        }
 
 
-        wylacz();
-
+            wylacz();
     }
 }
