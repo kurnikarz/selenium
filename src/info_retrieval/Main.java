@@ -2464,52 +2464,52 @@ public class Main extends Narzedzia {
 //        pobierzAdres(100);
 
 
-        int j = 9;
-//        try {
+//        int j = 9;
+        try {
+            Koniec.Restart();
             int x = 60;
-//            for (int i = 0; i < x; i++) {
-////                mail = arkadia.nextLine();
-//                mail2 = everyInt.nextLine();
-//                if (i == 0) {
-////                    Neworklead.gwGaleria(mail);
-//                Ads.EveryBd(mail2,"*");
-//                }
-//                if (i == 1) {
-////                    Neworklead.gwArkadia(mail);
-//                    Ads.EveryAdp(mail2, "");
-//                }
-//                if (i == 2) {
-////                    Neworklead.lkArkadia(mail);
-//                    Ads.EveryAdp2(mail2, "");
-//                    x -= 3;
-//                    i = -1;
-//                }
-////                if (i != 0)
-////                    Narzedzia.potwierdzArkadia(mail);
-//                System.out.println(i);
-//                System.out.println(x);
-//                System.out.println(mail2);
-//                Koniec.Restart();
-//            }
+            for (int i = 0; i < x; i++) {
+//                mail = arkadia.nextLine();
+                mail2 = everyInt.nextLine();
+
+//                Dodatkowy.Galeria(mail);
+                if (i == 0) {
+//                    Neworklead.gwGaleria(mail);
+                Ads.EveryBd(mail2,"");
+                }
+                if (i == 1) {
+//                    Neworklead.gwArkadia(mail);
+                    Ads.EveryAdp(mail2, "");
+                }
+                if (i == 2) {
+//                    Neworklead.lkArkadia(mail);
+                    Ads.EveryBd2(mail2, "");
+                    x -= 3;
+                    i = -1;
+                }
+//                Narzedzia.potwierdzGaleria(mail);
+                System.out.println(i);
+                System.out.println(x);
+                System.out.println(mail2);
+                Koniec.Restart();
+            }
 
 
-//        } catch (Exception e) {
-//            blad.println(e);
-//            blad.close();
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            wylacz();
-//        }
+        } catch (Exception e) {
+            blad.println(e);
+            blad.close();
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            wylacz();
+        }
 
-//        for (int i=1;i<=60;i++) {
+//        for (int i=1;i<=200;i++) {
 //            interia();
 //            if (i%20==0)
 //                Koniec.Restart();
 //        }
 
-        Narzedzia.potwierdzWroclaviaInteria("mariola.dzbanek@interia.pl");
-
-//            wylacz();
+            wylacz();
     }
 }
