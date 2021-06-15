@@ -2461,32 +2461,34 @@ public class Main extends Narzedzia {
         String koEn;
 
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/uslugi/",50,100);
-//        pobierzAdres(100);
 
+//        try {
 
-//        int j = 9;
-        try {
-            Koniec.Restart();
-            int x = 60;
-            for (int i = 0; i < x; i++) {
+//        Koniec.Restart();
+            int x = 52;
+            int k = 0;
+            for (int i = 1; i < x; i++) {
 //                mail = arkadia.nextLine();
                 mail2 = everyInt.nextLine();
 
 //                Dodatkowy.Galeria(mail);
                 if (i == 0) {
-//                    Neworklead.gwGaleria(mail);
-                Ads.EveryBd(mail2,"");
+                Ads.EveryOlympicsAdp(mail2,"");
                 }
                 if (i == 1) {
-//                    Neworklead.gwArkadia(mail);
-                    Ads.EveryAdp(mail2, "");
+                    Ads.EveryBd(mail2, "");
                 }
                 if (i == 2) {
-//                    Neworklead.lkArkadia(mail);
-                    Ads.EveryBd2(mail2, "");
-                    x -= 3;
+                    Ads.EveryAdp(mail2, "");
+                }
+                if (i == 3) {
+                    Ads.EveryAdp2(mail2, "");
+                    x -= 4;
                     i = -1;
                 }
+                if (k < 6)
+                    Dodatkowy.Galeria(arkadia.nextLine());
+                k++;
 //                Narzedzia.potwierdzGaleria(mail);
                 System.out.println(i);
                 System.out.println(x);
@@ -2495,20 +2497,23 @@ public class Main extends Narzedzia {
             }
 
 
-        } catch (Exception e) {
-            blad.println(e);
-            blad.close();
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            wylacz();
-        }
+//        } catch (Exception e) {
+//            blad.println(e);
+//            blad.close();
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            wylacz();
+//        }
 
 //        for (int i=1;i<=200;i++) {
 //            interia();
 //            if (i%20==0)
 //                Koniec.Restart();
 //        }
+//        https://www.wroclavia.pl/registration
+//        Dodatkowy.Galeria("alicja.czarna@interia.pl");
+//        potwierdzWroclaviaInteria("zuzia.buzek@interia.pl");
 
             wylacz();
     }

@@ -372,11 +372,16 @@ public class Narzedzia {
         WebDriverWait wait = new WebDriverWait(driver,60);
         Robot robot = new Robot();
 
-        try {
+//        try {
             zmienKarte(driver);
-            Thread.sleep(1000);
-            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[6]/div[2]/div/div[3]/div[1]/div"))));
-            driver.findElement(By.xpath("/html/body/div[6]/div[2]/div/div[3]/div[1]/div")).click();
+            Thread.sleep(5000);
+            try {
+                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[6]/div[2]/div/div[3]/div[1]/div"))));
+                driver.findElement(By.xpath("/html/body/div[6]/div[2]/div/div[3]/div[1]/div")).click();
+            } catch (Exception e) {
+                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div"))));
+                driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div")).click();
+            }
             Thread.sleep(2000);
             driver.findElement(By.xpath("//*[@id=\"idms\"]")).click();
             driver.findElement(By.xpath("//*[@id=\"firstnameReg\"]")).sendKeys(genImieZen());
@@ -515,9 +520,9 @@ public class Narzedzia {
 //        }
 
             driver.quit();
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
 
@@ -539,9 +544,14 @@ public class Narzedzia {
         Robot robot = new Robot();
 
         zmienKarte(driver);
-        Thread.sleep(1000);
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[6]/div[2]/div/div[3]/div[1]/div"))));
-        driver.findElement(By.xpath("/html/body/div[6]/div[2]/div/div[3]/div[1]/div")).click();
+        Thread.sleep(5000);
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[6]/div[2]/div/div[3]/div[1]/div"))));
+            driver.findElement(By.xpath("/html/body/div[6]/div[2]/div/div[3]/div[1]/div")).click();
+        } catch (Exception e) {
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div"))));
+            driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div")).click();
+        }
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"idms\"]")).click();
         driver.findElement(By.xpath("//*[@id=\"firstnameReg\"]")).sendKeys(genImieZen());
@@ -871,7 +881,7 @@ public class Narzedzia {
         int wybor3 = r.nextInt(6);
         WebDriverWait wait = new WebDriverWait(driver,60);
 
-        try {
+//        try {
             //WP
             driver.get("http://poczta.wp.pl/");
             Thread.sleep(3000);
@@ -899,9 +909,15 @@ public class Narzedzia {
                     Thread.sleep(2000);
                     zmienKarte(driver);
                     Thread.sleep(5000);
-                    wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div"))));
-                    Thread.sleep(1000);
-                    driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div")).click();
+                    try {
+                        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div"))));
+                        Thread.sleep(1000);
+                        driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div")).click();
+                    } catch (Exception e) {
+                        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div[1]/div"))));
+                        Thread.sleep(1000);
+                        driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div[1]/div")).click();
+                    }
                     Thread.sleep(2000);
                     driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/form/div[2]/label[1]/span")).click();
                     Thread.sleep(1000);
@@ -992,9 +1008,9 @@ public class Narzedzia {
             }
 
             driver.quit();
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
 
@@ -1129,6 +1145,69 @@ public class Narzedzia {
     }
 
     public static void potwierdzWroclaviaInteria(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String winHandleBefore = driver.getWindowHandle();
+        driver.manage().window().maximize();
+        boolean flaga = false;
+        int m = 0;
+        Random r = new Random();
+        int wybor1 = r.nextInt(6);
+        int wybor2 = r.nextInt(5);
+        int wybor3 = r.nextInt(6);
+        WebDriverWait wait = new WebDriverWait(driver,60);
+
+        //INTERIA
+        driver.get("https://poczta.interia.pl/logowanie/");
+        Thread.sleep(3000);
+        try {
+            driver.findElement(By.xpath("/html/body/div[4]/div[2]/button[3]")).click();
+        } catch (Exception e) {
+            driver.findElement(By.xpath("/html/body/div[3]/div[2]/button[3]")).click();
+        }
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(mail);
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("Mrcbuch123");
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/form/button")).click();
+        Thread.sleep(6000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[2]/div/div[2]/div/div[1]")).click();
+        } catch (Exception e) {
+            System.out.println("==================NIEMA===================");
+        }
+        try {
+            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/div/form/div[2]/input")).sendKeys("grapiu@wp.pl");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/div/form/fieldset/button[1]")).click();
+            Thread.sleep(2000);
+        } catch (Exception f) {
+            System.out.println("==================NIEMA===================");
+        }
+
+        Thread.sleep(1000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='Wroclavia']")).click();
+                flaga = true;
+                Thread.sleep(3000000);
+                driver.switchTo().frame(0);
+                driver.findElement(By.xpath("/html/body/div[1]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr/td[4]/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td[2]/table/tbody/tr[13]/td/table/tbody/tr/td[2]/table/tbody/tr/td[2]/a")).click();
+                Thread.sleep(10000);
+            } catch (Exception e) {
+                clickXY(85, 52);
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 4) {
+                break;
+            }
+        }
+        driver.quit();
+    }
+
+    public static void potwierdzGaleriaInteria(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         String winHandleBefore = driver.getWindowHandle();

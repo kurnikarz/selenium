@@ -1290,7 +1290,7 @@ public class Neworklead extends Narzedzia {
 
         //WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[2]/a"));
         //driver.get("https://www.everydayme.pl/konkurszimowy");
-        try {
+//        try {
         zmienKarte(driver);
         Thread.sleep(3000);
         while (!cookie) {
@@ -1316,8 +1316,14 @@ public class Neworklead extends Narzedzia {
                 driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[2]/div/div/div[2]/div/a")).click();
                 driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[2]/div/div/div[2]/div/a")).click();
             } catch (Exception f) {
-                driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[3]/div/div/div[2]/div/a")).click();
-                driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[3]/div/div/div[2]/div/a")).click();
+                try {
+                    driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[3]/div/div/div[2]/div/a")).click();
+                    driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[3]/div/div/div[2]/div/a")).click();
+                } catch (Exception g) {
+                    driver.findElement(By.xpath("//*[@id=\"main\"]/div[5]/div/div/a")).click();
+                    driver.findElement(By.xpath("//*[@id=\"main\"]/div[5]/div/div/a")).click();
+                }
+
             }
 
         }
@@ -1425,11 +1431,11 @@ public class Neworklead extends Narzedzia {
         }
 
 
-        } catch (Exception e) {
-            niewykorzystane.append(mail+"\r\n");
-            niewykorzystane.close();
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            niewykorzystane.append(mail+"\r\n");
+//            niewykorzystane.close();
+//            driver.quit();
+//        }
 
 
     }
