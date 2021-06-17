@@ -2464,32 +2464,30 @@ public class Main extends Narzedzia {
 
 //        try {
 
-//        Koniec.Restart();
-            int x = 52;
-            int k = 0;
-            for (int i = 1; i < x; i++) {
-//                mail = arkadia.nextLine();
+        Koniec.Restart();
+            int x = 53;
+            for (int i = 0; i < x; i++) {
+                mail = arkadia.nextLine();
                 mail2 = everyInt.nextLine();
 
-//                Dodatkowy.Galeria(mail);
                 if (i == 0) {
-                Ads.EveryOlympicsAdp(mail2,"");
+                    Ads.EveryAdp2(mail2, "");
                 }
                 if (i == 1) {
                     Ads.EveryBd(mail2, "");
                 }
                 if (i == 2) {
-                    Ads.EveryAdp(mail2, "");
-                }
-                if (i == 3) {
-                    Ads.EveryAdp2(mail2, "");
+                    Ads.EveryOlympicsAdp(mail2, "");
+                    Ads.Pampers(pampers.nextLine());
                     x -= 4;
                     i = -1;
                 }
-                if (k < 6)
-                    Dodatkowy.Galeria(arkadia.nextLine());
-                k++;
-//                Narzedzia.potwierdzGaleria(mail);
+//                if (i == 3) {
+//                    Ads.EveryOlympicsAf(mail2,"");
+//                    x -= 4;
+//                    i = -1;
+//                }
+                Dodatkowy.Galeria(mail);
                 System.out.println(i);
                 System.out.println(x);
                 System.out.println(mail2);
@@ -2506,14 +2504,6 @@ public class Main extends Narzedzia {
 //            wylacz();
 //        }
 
-//        for (int i=1;i<=200;i++) {
-//            interia();
-//            if (i%20==0)
-//                Koniec.Restart();
-//        }
-//        https://www.wroclavia.pl/registration
-//        Dodatkowy.Galeria("alicja.czarna@interia.pl");
-//        potwierdzWroclaviaInteria("zuzia.buzek@interia.pl");
 
             wylacz();
     }

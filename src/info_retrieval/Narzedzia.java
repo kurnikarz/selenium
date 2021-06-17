@@ -543,34 +543,35 @@ public class Narzedzia {
         WebDriverWait wait = new WebDriverWait(driver, 60);
         Robot robot = new Robot();
 
-        zmienKarte(driver);
-        Thread.sleep(5000);
-        try {
-            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[6]/div[2]/div/div[3]/div[1]/div"))));
-            driver.findElement(By.xpath("/html/body/div[6]/div[2]/div/div[3]/div[1]/div")).click();
-        } catch (Exception e) {
-            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div"))));
-            driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div")).click();
-        }
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"idms\"]")).click();
-        driver.findElement(By.xpath("//*[@id=\"firstnameReg\"]")).sendKeys(genImieZen());
-        driver.findElement(By.xpath("//*[@id=\"lastnameReg\"]")).sendKeys(genNazwiskoZen());
-        driver.findElement(By.xpath("//*[@id=\"emailReg\"]")).sendKeys(mail);
-        driver.findElement(By.xpath("//*[@id=\"firstpassword\"]")).sendKeys(mail + "V2");
-        Thread.sleep(1000);
-        Kopiuj(dzie);
-        driver.findElement(By.xpath("//*[@id=\"dateDOB\"]")).click();
-        Thread.sleep(500);
-        Wklej();
-        driver.findElement(By.xpath("//*[@id=\"monthDOB\"]")).sendKeys(mie);
-        driver.findElement(By.xpath("//*[@id=\"yearDOB\"]")).sendKeys(ro);
-        driver.findElement(By.xpath("//*[@id=\"lblcommercialoptin\"]/span")).click();
-        driver.findElement(By.xpath("//*[@id=\"lblloyaloptin\"]/span[1]")).click();
-        js.executeScript("window.scrollBy(0,1000)");
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"regSubmit\"]")).click();
-        Thread.sleep(15000);
+//        try {
+            zmienKarte(driver);
+            Thread.sleep(5000);
+            try {
+                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[6]/div[2]/div/div[3]/div[1]/div"))));
+                driver.findElement(By.xpath("/html/body/div[6]/div[2]/div/div[3]/div[1]/div")).click();
+            } catch (Exception e) {
+                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div"))));
+                driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/div[3]/div[1]/div")).click();
+            }
+            Thread.sleep(2000);
+            driver.findElement(By.xpath("//*[@id=\"idms\"]")).click();
+            driver.findElement(By.xpath("//*[@id=\"firstnameReg\"]")).sendKeys(genImieZen());
+            driver.findElement(By.xpath("//*[@id=\"lastnameReg\"]")).sendKeys(genNazwiskoZen());
+            driver.findElement(By.xpath("//*[@id=\"emailReg\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"firstpassword\"]")).sendKeys(mail + "V2");
+            Thread.sleep(1000);
+            Kopiuj(dzie);
+            driver.findElement(By.xpath("//*[@id=\"dateDOB\"]")).click();
+            Thread.sleep(500);
+            Wklej();
+            driver.findElement(By.xpath("//*[@id=\"monthDOB\"]")).sendKeys(mie);
+            driver.findElement(By.xpath("//*[@id=\"yearDOB\"]")).sendKeys(ro);
+            driver.findElement(By.xpath("//*[@id=\"lblcommercialoptin\"]/span")).click();
+            driver.findElement(By.xpath("//*[@id=\"lblloyaloptin\"]/span[1]")).click();
+            js.executeScript("window.scrollBy(0,1000)");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"regSubmit\"]")).click();
+            Thread.sleep(15000);
 
 //        driver.get("http://poczta.wp.pl/");
 //        Thread.sleep(3000);
@@ -687,7 +688,11 @@ public class Narzedzia {
 //            }
 //
 //        }
-        driver.quit();
+            driver.quit();
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+
     }
 
     public static void pobierzAdres(int ile) throws AWTException, FileNotFoundException, InterruptedException {

@@ -1320,8 +1320,13 @@ public class Neworklead extends Narzedzia {
                     driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[3]/div/div/div[2]/div/a")).click();
                     driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[3]/div/div/div[2]/div/a")).click();
                 } catch (Exception g) {
-                    driver.findElement(By.xpath("//*[@id=\"main\"]/div[5]/div/div/a")).click();
-                    driver.findElement(By.xpath("//*[@id=\"main\"]/div[5]/div/div/a")).click();
+                    try {
+                        driver.findElement(By.xpath("//*[@id=\"main\"]/div[5]/div/div/a")).click();
+                        driver.findElement(By.xpath("//*[@id=\"main\"]/div[5]/div/div/a")).click();
+                    } catch (Exception h) {
+                        driver.findElement(By.xpath("//*[@id=\"main\"]/section[3]/div/div/div[1]/div/div/div[2]/div/a")).click();
+                        driver.findElement(By.xpath("//*[@id=\"main\"]/section[3]/div/div/div[1]/div/div/div[2]/div/a")).click();
+                    }
                 }
 
             }
@@ -1439,268 +1444,6 @@ public class Neworklead extends Narzedzia {
 
 
     }
-
-    public static void Everyday2(WebDriver driver, String mail) throws AWTException, IOException, InterruptedException {
-        String imie = genImieZen();
-        String nazwisko = genNazwiskoZen();
-        Random r = new Random();
-        int miesiac = r.nextInt(12 - 2 + 1) + 2;
-        int rok = r.nextInt(1995 - 1986 + 1) + 1986;
-        int dzien = r.nextInt(29) + 1;
-        int odp1 = r.nextInt(3);
-        int odp2 = r.nextInt(2);
-        int odp3 = r.nextInt(4);
-        int odp4 = r.nextInt(4);
-        int kupon1 = r.nextInt(2);
-        int x = 1750;
-        int m = 0;
-        boolean cookie = false;
-        Robot robot = new Robot();
-        String roko = String.valueOf(rok);
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
-        WebDriverWait wait = new WebDriverWait(driver, 60);
-        //WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[2]/a"));
-        //driver.get("https://www.everydayme.pl/konkurszimowy");
-//        try {
-        zmienKarte(driver);
-        Thread.sleep(3000);
-        while (!cookie) {
-            try {
-                driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
-                cookie = true;
-            } catch (Exception e) {
-                Thread.sleep(5000);
-            }
-
-            m++;
-            if (m > 10)
-                break;
-
-
-        }
-        Thread.sleep(3000);
-        ScrollBy(driver, "1000");
-        Thread.sleep(1000);
-        try {
-            driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/div/div/div/div[1]/div/div/form/div[3]/div/div/button[1]")).click();
-        } catch (Exception e) {
-            driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/div/div/div/div[1]/div/div/form/div[3]/div/div/button[1]")).click();
-        }
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"firstName\"]")));
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"firstName\"]")).sendKeys(imie);
-        driver.findElement(By.xpath("//*[@id=\"emailAddress\"]")).sendKeys(mail);
-        driver.findElement(By.xpath("//*[@id=\"newPassword\"]")).sendKeys("Mamatata14");
-        Select dzie = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[1]")));
-        dzie.selectByIndex(dzien);
-        Select mies = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[2]")));
-        mies.selectByIndex(miesiac);
-        Select ro = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[3]")));
-        ro.selectByValue(roko);
-        try {
-            driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus_1\"]")).click();
-        } catch (Exception e) {
-            driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus\"]")).click();
-        }
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/div/div/div/div[1]/div/div/div[2]/div/div[2]/form/div[8]/button")).click();
-        try {
-            Thread.sleep(2000);
-            driver.switchTo().frame(7);
-            driver.findElement(By.xpath("/html/body/div/div/div[3]/div[2]/div[1]/div[1]/div[6]/button")).click();
-            Thread.sleep(10000);
-//            boolean solve = false;
-            try {
-//                while (!solve) {
-                WebElement incorrect = driver.findElement(By.xpath("/html/body/div/div/div[1]"));
-                driver.findElement(By.xpath("/html/body/div/div/div[7]/div[2]/div[1]/div[1]/div[6]/button")).click();
-                Thread.sleep(5000);
-//                    solve = true;
-//                }
-            } catch (Exception f) {
-
-            }
-        } catch (Exception e) {
-
-        }
-        Thread.sleep(30000);
-        driver.quit();
-
-//        } catch (Exception e) {
-//            niewykorzystane.append(mail+"\r\n");
-//            niewykorzystane.close();
-//            driver.quit();
-//        }
-
-
-    }
-
-    public static void Everyday3(WebDriver driver, String mail, String kod, String ulica, String miasto, String odp) throws AWTException, IOException, InterruptedException {
-        String imie = genImieZen();
-        String nazwisko = genNazwiskoZen();
-        Random r = new Random();
-        //24 Apr, 1997
-        int miesiacIndex = r.nextInt(12);
-        String[] miesiac = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
-        int rok = r.nextInt(1995 - 1986 + 1) + 1986;
-        int dzien = r.nextInt(29) + 1;
-        int odp1 = r.nextInt(4);
-        int odp2 = r.nextInt(4);
-        int odp3 = r.nextInt(3);
-        int odp4 = r.nextInt(4);
-        int kupon1 = r.nextInt(2);
-        int kupon2 = r.nextInt(2);
-        int x = 1750;
-        int m = 0;
-        boolean cookie = false;
-        Robot robot = new Robot();
-        String roko = String.valueOf(rok);
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
-        WebDriverWait wait = new WebDriverWait(driver, 60);
-
-        //WebElement element = driver.findElement(By.xpath("/html/body/header/div[1]/div/div[3]/div[1]/div[5]/div[1]/div[2]/a"));
-        //driver.get("https://www.everydayme.pl/konkurszimowy");
-//        try {
-        zmienKarte(driver);
-        Thread.sleep(3000);
-        while (!cookie) {
-            try {
-                driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
-                cookie = true;
-            } catch (Exception e) {
-                Thread.sleep(5000);
-            }
-
-            m++;
-            if (m > 10)
-                break;
-
-
-        }
-        Thread.sleep(3000);
-        ScrollBy(driver, "1000");
-        Thread.sleep(1000);
-        try {
-            driver.findElement(By.xpath("//*[@id=\"root\"]/div[6]/div/div/a")).click();
-        } catch (Exception e) {
-            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[1]/div[4]/a[1]")).click();
-        }
-        Thread.sleep(10000);
-//        WebElement button = driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[1]/div[2]/button"));
-//        while (!button.isEnabled()) {
-//            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[1]/div[2]/div/label")).click();
-//            Thread.sleep(2000);
-//        }
-//        button.click();
-        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/section[1]/div/label")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/section[2]")).click();
-        Thread.sleep(1000000);
-
-//        Thread.sleep(3000);
-//        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/div[2]/section[1]/div/div/input")).sendKeys(imie);
-//        Select miesiacc = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[1]")));
-//        miesiacc.selectByIndex(miesiac);
-//        Select rokk = new Select(driver.findElement(By.xpath("//*[@id=\"dob\"]/select[2]")));
-//        rokk.selectByValue(roko);
-//        Thread.sleep(1000);
-//        driver.findElement(By.xpath("//*[@id=\"addressPostalCode\"]")).sendKeys(kod);
-//        driver.findElement(By.xpath("//*[@id=\"emailAddress\"]")).sendKeys(mail);
-//        driver.findElement(By.xpath("//*[@id=\"newPassword\"]")).sendKeys("Mamatata14");
-//        Thread.sleep(1000);
-//        clickXY(x, 1012);
-//        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,700)", "");
-//        try {
-//            driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus\"]")).click();
-//        } catch (Exception e) {
-//            driver.findElement(By.xpath("//*[@id=\" globalOpt_optStatus_1\"]")).click();
-//        }
-//        Thread.sleep(1000);
-//        driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[1]/div[3]/div/div/div[2]/form/div[11]/button")).click();
-
-        //
-
-        Thread.sleep(25000);
-        switch (odp1) {
-            case 0:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[1]/div")).click();
-                break;
-            case 1:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[2]/div")).click();
-                break;
-            case 2:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[3]/div")).click();
-                break;
-            case 3:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[4]/div")).click();
-                break;
-        }
-        Thread.sleep(2000);
-        switch (odp2) {
-            case 0:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[1]/div")).click();
-                break;
-            case 1:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[2]/div")).click();
-                break;
-            case 2:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[3]/div")).click();
-                break;
-            case 3:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[5]/div")).click();
-                break;
-
-        }
-        Thread.sleep(2000);
-        switch (odp3) {
-            case 0:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[1]/div")).click();
-                break;
-            case 1:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[2]/div")).click();
-                break;
-            case 2:
-                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[3]/div")).click();
-                break;
-        }
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div/input")).sendKeys(odp);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[2]/section/div[1]")).click();
-        Thread.sleep(5000);
-        driver.findElement(By.xpath("//*[@id=\"root\"]/header/div/div[2]/nav/ol/li[4]/div/a")).click();
-        Thread.sleep(5000);
-        Zmniejsz(5);
-        Thread.sleep(1000);
-        switch (kupon1) {
-            case 0:
-                clickXY(876, 693);
-                break;
-            case 1:
-                clickXY(1153, 693);
-                break;
-        }
-        switch (kupon2) {
-            case 0:
-                clickXY(876, 844);
-                break;
-            case 1:
-                clickXY(1153, 844);
-                break;
-        }
-        Thread.sleep(10000);
-        driver.quit();
-
-//        } catch (Exception e) {
-//            niewykorzystane.append(mail+"\r\n");
-//            niewykorzystane.close();
-//            driver.quit();
-//        }
-
-
-    }
-
 
     public static void Pampers(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
@@ -6360,6 +6103,33 @@ int m = 0;
         driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div/div/div/div/form/div/div[10]/div[2]/button")).click();
         Thread.sleep(6000);
         driver.quit();
+
+//        } catch (Exception f) {
+//            driver.quit();
+//        }
+
+    }
+
+    public static void DadaBiedronka(String url, String mail) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        Random r = new Random();
+        int plec = r.nextInt(2);
+        boolean flaga = false;
+        int m = 0;
+        String imie = null;
+        String nazwisko = null;
+        imie = genImieZen();
+        nazwisko = genNazwiskoZen();
+        ChromeDriver driver = new ChromeDriver();
+        Robot robot = new Robot();
+        driver.manage().window().maximize();
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+
+//        try {
+        driver.get(url);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[10]/div/a"))));
+        driver.findElement(By.xpath("/html/body/div[10]/div/a")).click();
+        Thread.sleep(1000);
 
 //        } catch (Exception f) {
 //            driver.quit();
