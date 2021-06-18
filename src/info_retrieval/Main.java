@@ -2466,8 +2466,8 @@ public class Main extends Narzedzia {
 
         Koniec.Restart();
             int x = 53;
-            for (int i = 0; i < x; i++) {
-                mail = arkadia.nextLine();
+            for (int i = 2; i < x; i++) {
+//                mail = arkadia.nextLine();
                 mail2 = everyInt.nextLine();
 
                 if (i == 0) {
@@ -2478,16 +2478,14 @@ public class Main extends Narzedzia {
                 }
                 if (i == 2) {
                     Ads.EveryOlympicsAdp(mail2, "");
-                    Ads.Pampers(pampers.nextLine());
+                }
+                if (i == 3) {
+                    Ads.EveryOlympicsAf(mail2, "");
                     x -= 4;
                     i = -1;
                 }
-//                if (i == 3) {
-//                    Ads.EveryOlympicsAf(mail2,"");
-//                    x -= 4;
-//                    i = -1;
-//                }
-                Dodatkowy.Galeria(mail);
+
+//                Dodatkowy.Galeria(mail);
                 System.out.println(i);
                 System.out.println(x);
                 System.out.println(mail2);
