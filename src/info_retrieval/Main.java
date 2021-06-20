@@ -2462,45 +2462,54 @@ public class Main extends Narzedzia {
 
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/uslugi/",50,100);
 
-//        try {
+        try {
 
         Koniec.Restart();
             int x = 53;
-            for (int i = 2; i < x; i++) {
+            for (int i = 0; i < x; i++) {
 //                mail = arkadia.nextLine();
                 mail2 = everyInt.nextLine();
+
 
                 if (i == 0) {
                     Ads.EveryAdp2(mail2, "");
                 }
                 if (i == 1) {
-                    Ads.EveryBd(mail2, "");
-                }
-                if (i == 2) {
                     Ads.EveryOlympicsAdp(mail2, "");
                 }
+                if (i == 2) {
+                    Neworklead.Every("https://neworklead.pl/zadanie/efabad595dd89ada3286a63259c01ef1/d1e1827f654998fade1b9f309a846ff0/d654be842d14f320ad92ef039fb6aa4c4c",mail2, "");
+                }
                 if (i == 3) {
-                    Ads.EveryOlympicsAf(mail2, "");
-                    x -= 4;
+                    Neworklead.Every("https://neworklead.pl/zadanie/f7dc87ccadf0cb3665913b82f9b23c74/4015d12683ef7985748f4419bad8bad7/d654be842d14f320ad92ef039fb6aa4c",mail2, "");
+                }
+                if (i == 4) {
+                    Neworklead.Every("https://neworklead.pl/zadanie/9c023237074947a57fd31137bf3b5e76/4a3f74368ce1e9ce1c2ce2a71be064de/d654be842d14f320ad92ef039fb6aa4c",mail2, "");
+                    x -= 5;
                     i = -1;
                 }
-
-//                Dodatkowy.Galeria(mail);
+//                Dodatkowy.GaleriaNew(mail);
                 System.out.println(i);
                 System.out.println(x);
                 System.out.println(mail2);
                 Koniec.Restart();
             }
 
+//            for (int i=1;i<200;i++) {
+//                interia();
+//                if (i%20==0)
+//                    Koniec.Restart();
+//            }
 
-//        } catch (Exception e) {
-//            blad.println(e);
-//            blad.close();
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            wylacz();
-//        }
+
+        } catch (Exception e) {
+            blad.println(e);
+            blad.close();
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            wylacz();
+        }
 
 
             wylacz();
