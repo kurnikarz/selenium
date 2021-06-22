@@ -2488,26 +2488,26 @@ public class Main extends Narzedzia {
 //                Koniec.Restart();
 //            }
 
-        for (int i=1;i<30;i++) {
-            mail = arkadia.nextLine();
-            mail2 = everyInt.nextLine();
+//        for (int i=1;i<30;i++) {
+//            mail = arkadia.nextLine();
+//            mail2 = everyInt.nextLine();
+//
+//            if (i%2==0)
+//                Ads.EveryAdp2(mail2,"");
+//            else
+//                Neworklead.Every("https://neworklead.pl/zadanie/efabad595dd89ada3286a63259c01ef1/d1e1827f654998fade1b9f309a846ff0/d654be842d14f320ad92ef039fb6aa4c",mail2, "");
+//
+//            Dodatkowy.GaleriaNew(mail);
+//            System.out.println(i);
+//            System.out.println(mail2);
+//            Koniec.Restart();
+//        }
 
-            if (i%2==0)
-                Ads.EveryAdp2(mail2,"");
-            else
-                Neworklead.Every("https://neworklead.pl/zadanie/efabad595dd89ada3286a63259c01ef1/d1e1827f654998fade1b9f309a846ff0/d654be842d14f320ad92ef039fb6aa4c",mail2, "");
-
-            Dodatkowy.GaleriaNew(mail);
-            System.out.println(i);
-            System.out.println(mail2);
-            Koniec.Restart();
-        }
-
-//            for (int i=1;i<200;i++) {
-//                interia();
-//                if (i%20==0)
-//                    Koniec.Restart();
-//            }
+            for (int i=1;i<200;i++) {
+                interia();
+                if (i%20==0)
+                    Koniec.Restart();
+            }
 
 
 //        } catch (Exception e) {
