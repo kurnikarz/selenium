@@ -2465,7 +2465,8 @@ public class Main extends Narzedzia {
 //        try {
 
 //        Koniec.Restart();
-//            int x = 53;
+//            int x = 60;
+//            int k = 16;
 //            for (int i = 1; i < x; i++) {
 //                mail = arkadia.nextLine();
 //                mail2 = everyInt.nextLine();
@@ -2474,40 +2475,31 @@ public class Main extends Narzedzia {
 //                    Ads.EveryAdp2(mail2, "");
 //                }
 //                if (i == 1) {
-//                    Neworklead.Every("https://neworklead.pl/zadanie/9c023237074947a57fd31137bf3b5e76/4a3f74368ce1e9ce1c2ce2a71be064de/d654be842d14f320ad92ef039fb6aa4c",mail2, "");
+//                    Neworklead.Every("https://neworklead.pl/zadanie/d3cf3aac9662dd4d4b35758984afdf02/da6ccf4b9e837a0c75981a50f59f6005/d654be842d14f320ad92ef039fb6aa4c",mail2, "");
 //                }
 //                if (i == 2) {
-//                    Neworklead.Every("https://neworklead.pl/zadanie/efabad595dd89ada3286a63259c01ef1/d1e1827f654998fade1b9f309a846ff0/d654be842d14f320ad92ef039fb6aa4c",mail2, "");
+//                    Neworklead.Every("https://neworklead.pl/zadanie/8014cd68c4eba6742c13fd997731fad4/d3c3594feb691d12118b92bfc6b6104d/d654be842d14f320ad92ef039fb6aa4c",mail2, "");
 //                    x -= 3;
 //                    i = -1;
 //                }
-//                Dodatkowy.GaleriaNew(mail);
+//
+//                if (k<15)
+//                    Neworklead.Galeria(mail);
+//                else if (k<30)
+//                    Neworklead.Wroclavia(mail);
+//                k++;
 //                System.out.println(i);
 //                System.out.println(x);
+//                System.out.println(k);
 //                System.out.println(mail2);
 //                Koniec.Restart();
 //            }
 
-//        for (int i=1;i<30;i++) {
-//            mail = arkadia.nextLine();
-//            mail2 = everyInt.nextLine();
-//
-//            if (i%2==0)
-//                Ads.EveryAdp2(mail2,"");
-//            else
-//                Neworklead.Every("https://neworklead.pl/zadanie/efabad595dd89ada3286a63259c01ef1/d1e1827f654998fade1b9f309a846ff0/d654be842d14f320ad92ef039fb6aa4c",mail2, "");
-//
-//            Dodatkowy.GaleriaNew(mail);
-//            System.out.println(i);
-//            System.out.println(mail2);
-//            Koniec.Restart();
-//        }
-
-            for (int i=1;i<200;i++) {
-                interia();
-                if (i%20==0)
-                    Koniec.Restart();
-            }
+//            for (int i=1;i<200;i++) {
+//                interia();
+//                if (i%20==0)
+//                    Koniec.Restart();
+//            }
 
 
 //        } catch (Exception e) {
@@ -2518,6 +2510,22 @@ public class Main extends Narzedzia {
 //            System.out.println("=============ERROR===============");
 //            wylacz();
 //        }
+//        Koniec.Restart();
+        for (int i=0;i<48;i++) {
+            mail = everyInt.nextLine();
+            mail2 = arkadia.nextLine();
+            mail3 = enfamil.nextLine();
+
+            Neworklead.Every("https://neworklead.pl/zadanie/03817042d5717149bc4d025622ca3f7e/d5339bede9911d21a6a3b52d14829a3d/d654be842d14f320ad92ef039fb6aa4c",mail,"");
+            if (i<30)
+                Neworklead.aGaleria(mail2);
+            Neworklead.Enfamil("https://neworklead.pl/zadanie/16d8cc94ddaf3b01d2fcfd88f354d54c/86d533b7fded0578c706ef16fd282c72/d654be842d14f320ad92ef039fb6aa4c",mail3);
+
+            System.out.println(i);
+            System.out.println(mail);
+            Koniec.Restart();
+        }
+
 
 
             wylacz();

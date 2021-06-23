@@ -1324,8 +1324,13 @@ public class Neworklead extends Narzedzia {
                         driver.findElement(By.xpath("//*[@id=\"main\"]/div[5]/div/div/a")).click();
                         driver.findElement(By.xpath("//*[@id=\"main\"]/div[5]/div/div/a")).click();
                     } catch (Exception h) {
-                        driver.findElement(By.xpath("//*[@id=\"main\"]/section[3]/div/div/div[1]/div/div/div[2]/div/a")).click();
-                        driver.findElement(By.xpath("//*[@id=\"main\"]/section[3]/div/div/div[1]/div/div/div[2]/div/a")).click();
+                        try {
+                            driver.findElement(By.xpath("//*[@id=\"main\"]/section[3]/div/div/div[1]/div/div/div[2]/div/a")).click();
+                            driver.findElement(By.xpath("//*[@id=\"main\"]/section[3]/div/div/div[1]/div/div/div[2]/div/a")).click();
+                        } catch (Exception i) {
+                            driver.findElement(By.xpath("//*[@id=\"main\"]/section[3]/div/div/div[2]/div/div/div[2]/div/a")).click();
+                            driver.findElement(By.xpath("//*[@id=\"main\"]/section[3]/div/div/div[2]/div/div/div[2]/div/a")).click();
+                        }
                     }
                 }
 
@@ -3436,7 +3441,7 @@ public class Neworklead extends Narzedzia {
         int miesSpo = r.nextInt(11 - 6) + 6;
         String rokSpo = "2021";
         int dziecko = r.nextInt(5 - 3 + 1) + 3;
-        try {
+//        try {
 
         Thread.sleep(1000);
         zmienKarte(driver);
@@ -3463,9 +3468,9 @@ public class Neworklead extends Narzedzia {
         driver.findElement(By.xpath("//*[@id=\"edit-submit\"]")).click();
         Thread.sleep(12000);
         driver.quit();
-        } catch (Exception e) {
-            driver.quit();
-        }
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
 
     }
 
@@ -5621,6 +5626,16 @@ public class Neworklead extends Narzedzia {
         Neworklead.Everyday(driver,mail,odp);
     }
 
+    public static void Enfamil(String url, String mail) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(url);
+//        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
+        Thread.sleep(6000);
+        Neworklead.Enfamil(driver,mail);
+    }
+
     public static void gwEvery1(String mail, String odp) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -5685,6 +5700,15 @@ public class Neworklead extends Narzedzia {
     }
 
     public static void Galeria(String mail) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://neworklead.pl/zadanie/0e1c6590201d9ef010c5de41d57cdac4/904d4ea358bf96a5ae7f6aae0d8a84a2/d654be842d14f320ad92ef039fb6aa4c");
+        Thread.sleep(6000);
+        Narzedzia.Galeria(driver,mail);
+    }
+
+    public static void aGaleria(String mail) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
