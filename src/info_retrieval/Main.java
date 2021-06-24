@@ -2462,7 +2462,7 @@ public class Main extends Narzedzia {
 
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/uslugi/",50,100);
 
-//        try {
+        try {
 
 //        Koniec.Restart();
 //            int x = 60;
@@ -2495,36 +2495,33 @@ public class Main extends Narzedzia {
 //                Koniec.Restart();
 //            }
 
-//            for (int i=1;i<200;i++) {
-//                interia();
-//                if (i%20==0)
-//                    Koniec.Restart();
-//            }
-
-
-//        } catch (Exception e) {
-//            blad.println(e);
-//            blad.close();
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            System.out.println("=============ERROR===============");
-//            wylacz();
+            for (int i=1;i<200;i++) {
+                interia();
+                if (i%20==0)
+                    Koniec.Restart();
+            }
+//                for (int i=8;i<50;i++) {
+//            mail = everyInt.nextLine();
+//            mail3 = enfamil.nextLine();
+//
+//            Neworklead.Every("https://neworklead.pl/zadanie/7be77c19390a26eb27dccc71f292947f/39cd25b1ea50cab3ee54e47a3b8442d8/d654be842d14f320ad92ef039fb6aa4c",mail,"");
+//            Neworklead.Enfamil("https://neworklead.pl/zadanie/86252b7f43f83ae8a6a428dfd4fff361/60a9e795be8d15d8436baccb85f41fbd/d654be842d14f320ad92ef039fb6aa4c",mail3);
+//
+//            System.out.println(i);
+//            System.out.println(mail);
+//            Koniec.Restart();
 //        }
-//        Koniec.Restart();
-        for (int i=0;i<48;i++) {
-            mail = everyInt.nextLine();
-            mail2 = arkadia.nextLine();
-            mail3 = enfamil.nextLine();
 
-            Neworklead.Every("https://neworklead.pl/zadanie/03817042d5717149bc4d025622ca3f7e/d5339bede9911d21a6a3b52d14829a3d/d654be842d14f320ad92ef039fb6aa4c",mail,"");
-            if (i<30)
-                Neworklead.aGaleria(mail2);
-            Neworklead.Enfamil("https://neworklead.pl/zadanie/16d8cc94ddaf3b01d2fcfd88f354d54c/86d533b7fded0578c706ef16fd282c72/d654be842d14f320ad92ef039fb6aa4c",mail3);
 
-            System.out.println(i);
-            System.out.println(mail);
-            Koniec.Restart();
+        } catch (Exception e) {
+            blad.println(e);
+            blad.close();
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            System.out.println("=============ERROR===============");
+            wylacz();
         }
+
 
 
 
