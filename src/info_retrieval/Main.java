@@ -2461,6 +2461,8 @@ public class Main extends Narzedzia {
         String koEn;
 
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/uslugi/",50,100);
+        Narzedzia.pobierzFirmy("https://www.odi.pl/firmy/internet/",11,20);
+        Narzedzia.sprawdzDuplikat("C:\\Users\\dumci\\Desktop\\klikanie\\firmy.txt");
 
         try {
 
@@ -2500,18 +2502,18 @@ public class Main extends Narzedzia {
 //                if (i%20==0)
 //                    Koniec.Restart();
 //            }
-            Koniec.Restart();
-                for (int i=0;i<57;i++) {
-            mail = everyInt.nextLine();
-            mail3 = enfamil.nextLine();
-
-            Neworklead.Every("https://neworklead.pl/zadanie/7be77c19390a26eb27dccc71f292947f/39cd25b1ea50cab3ee54e47a3b8442d8/d654be842d14f320ad92ef039fb6aa4c",mail,"");
-            Neworklead.Enfamil("https://neworklead.pl/zadanie/e7ad4814435a57bb2b648c38cffd7cf8/f5fcaf0b2539a270def4b8e110cb2a47/d654be842d14f320ad92ef039fb6aa4c",mail3);
-
-            System.out.println(i);
-            System.out.println(mail);
-            Koniec.Restart();
-        }
+//            Koniec.Restart();
+//                for (int i=0;i<57;i++) {
+//            mail = everyInt.nextLine();
+//            mail3 = enfamil.nextLine();
+//
+//            Neworklead.Every("https://neworklead.pl/zadanie/7be77c19390a26eb27dccc71f292947f/39cd25b1ea50cab3ee54e47a3b8442d8/d654be842d14f320ad92ef039fb6aa4c",mail,"");
+//            Neworklead.Enfamil("https://neworklead.pl/zadanie/e7ad4814435a57bb2b648c38cffd7cf8/f5fcaf0b2539a270def4b8e110cb2a47/d654be842d14f320ad92ef039fb6aa4c",mail3);
+//
+//            System.out.println(i);
+//            System.out.println(mail);
+//            Koniec.Restart();
+//        }
 
 
         } catch (Exception e) {
@@ -2526,6 +2528,6 @@ public class Main extends Narzedzia {
 
 
 
-            wylacz();
+//            wylacz();
     }
 }
