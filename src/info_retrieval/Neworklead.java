@@ -1450,6 +1450,78 @@ public class Neworklead extends Narzedzia {
 
     }
 
+    public static void Askcleanteam(WebDriver driver, String mail) throws AWTException, IOException, InterruptedException {
+        String imie = genImieZen();
+        String nazwisko = genNazwiskoZen();
+        Random r = new Random();
+        Robot robot = new Robot();
+        boolean flaga = false;
+        int m = 0;
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+//        try {
+        zmienKarte(driver);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]"))));
+        driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[5]/div/div/button"))));
+        driver.findElement(By.xpath("/html/body/div[5]/div/div/button")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"register-site-login\"]/div[1]/div[1]/input")).sendKeys(imie);
+        driver.findElement(By.xpath("//*[@id=\"register-site-login\"]/div[1]/div[2]/input")).sendKeys(nazwisko);
+        driver.findElement(By.xpath("//*[@id=\"register-site-login\"]/div[1]/div[3]/div/input")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"register-site-login\"]/div[4]/input")).sendKeys(mail+"V2");
+        driver.findElement(By.xpath("//*[@id=\"register-site-login\"]/div[5]/input")).sendKeys(mail+"V2");
+        driver.findElement(By.xpath("//*[@id=\"gigya-checkbox-subscribe\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"gigya-checkbox-terms\"]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"register-site-login\"]/div[8]/input")).click();
+        Thread.sleep(10000);
+
+        ///WP
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+        Thread.sleep(1000);
+        //driver.findElement(By.xpath("//*[@id=\"btnSubmit\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
+        } catch (Exception e) {
+
+        }//zaneta.dobosiewicz@wp.pl
+        Thread.sleep(3000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='Ask Team Clean']")).click();
+                flaga = true;
+                Thread.sleep(3000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/center/table/tbody/tr/td/table/tbody/tr[5]/td/table/tbody/tr/td/table/tbody/tr/td/p[3]/a")).click();
+                Thread.sleep(10000);
+
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 15) {
+                break;
+            }
+
+        }
+        driver.quit();
+//        } catch (Exception e) {
+//            niewykorzystane.append(mail+"\r\n");
+//            niewykorzystane.close();
+//            driver.quit();
+//        }
+
+
+    }
+
     public static void Pampers(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");   //LIMIT 100
         WebDriver driver = new ChromeDriver();
@@ -5624,6 +5696,15 @@ public class Neworklead extends Narzedzia {
 //        driver.get("https://www.everydayme.pl/dom-i-ogrod/dom/wiosenne-porzadki");
         Thread.sleep(6000);
         Neworklead.Everyday(driver,mail,odp);
+    }
+
+    public static void Askclenteam(String url, String mail) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(url);
+        Thread.sleep(6000);
+        Neworklead.Askcleanteam(driver,mail);
     }
 
     public static void Enfamil(String url, String mail) throws InterruptedException, AWTException, IOException {
