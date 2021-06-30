@@ -2459,12 +2459,13 @@ public class Main extends Narzedzia {
         String num3;
         String miastEn;
         String koEn;
-Neworklead.Askclenteam("https://www.askteamclean.com/pl/pl/ambasadorzy-kapsulek-power-caps/rejestracja.html","matego21@wp.pl");
+
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/uslugi/",50,100);
-//        Narzedzia.pobierzFirmy("https://www.odi.pl/firmy/internet/",20,50);
-//        Narzedzia.sprawdzDuplikat("C:\\Users\\dumci\\Desktop\\klikanie\\firmy.txt");
 
         try {
+
+            Narzedzia.pobierzFirmy("https://www.odi.pl/firmy/internet/",80,150);
+            Narzedzia.sprawdzDuplikat("C:\\Users\\dumci\\Desktop\\klikanie\\firmy.txt");
 
 //        Koniec.Restart();
 //            int x = 60;
@@ -2528,6 +2529,6 @@ Neworklead.Askclenteam("https://www.askteamclean.com/pl/pl/ambasadorzy-kapsulek-
 
 
 
-//            wylacz();
+            wylacz();
     }
 }
