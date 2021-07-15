@@ -1450,7 +1450,7 @@ public class Neworklead extends Narzedzia {
 
     }
 
-    public static void Askcleanteam(WebDriver driver, String mail) throws AWTException, IOException, InterruptedException {
+    public static void Askcleanteam(WebDriver driver, String mail, String login) throws AWTException, IOException, InterruptedException {
         String imie = genImieZen();
         String nazwisko = genNazwiskoZen();
         Random r = new Random();
@@ -1464,8 +1464,8 @@ public class Neworklead extends Narzedzia {
         zmienKarte(driver);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]"))));
         driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[5]/div/div/button"))));
-        driver.findElement(By.xpath("/html/body/div[5]/div/div/button")).click();
+//        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[5]/div/div/button"))));
+//        driver.findElement(By.xpath("/html/body/div[5]/div/div/button")).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"register-site-login\"]/div[1]/div[1]/input")).sendKeys(imie);
         driver.findElement(By.xpath("//*[@id=\"register-site-login\"]/div[1]/div[2]/input")).sendKeys(nazwisko);
@@ -1486,7 +1486,7 @@ public class Neworklead extends Narzedzia {
         //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
         Thread.sleep(1000);
         //driver.findElement(By.xpath("//*[@id=\"btnSubmit\"]")).click();
-        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        driver.findElement(By.xpath("//*[@id=\"stgMain\"]/div/div/div/form/button")).click();
         Thread.sleep(5000);
         try {
             driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
@@ -1500,8 +1500,11 @@ public class Neworklead extends Narzedzia {
                 flaga = true;
                 Thread.sleep(3000);
                 driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/center/table/tbody/tr/td/table/tbody/tr[5]/td/table/tbody/tr/td/table/tbody/tr/td/p[3]/a")).click();
-                Thread.sleep(10000);
-
+                Thread.sleep(6000);
+                driver.findElement(By.xpath("/html/body/main/div/div/div/div[1]/div[5]/div/div/div[2]/div/form/div[1]/div[2]/input")).sendKeys(login);
+                Thread.sleep(1000);
+                driver.findElement(By.xpath("/html/body/main/div/div/div/div[1]/div[5]/div/div/div[2]/div/form/div[1]/div[4]/input")).click();
+                Thread.sleep(5000);
             } catch (Exception e) {
                 driver.navigate().refresh();
                 Thread.sleep(10000);
@@ -1512,7 +1515,7 @@ public class Neworklead extends Narzedzia {
             }
 
         }
-        driver.quit();
+//        driver.quit();
 //        } catch (Exception e) {
 //            niewykorzystane.append(mail+"\r\n");
 //            niewykorzystane.close();
@@ -5698,13 +5701,13 @@ public class Neworklead extends Narzedzia {
         Neworklead.Everyday(driver,mail,odp);
     }
 
-    public static void Askclenteam(String url, String mail) throws InterruptedException, AWTException, IOException {
+    public static void Askclenteam(String url, String mail, String login) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(url);
         Thread.sleep(6000);
-        Neworklead.Askcleanteam(driver,mail);
+        Neworklead.Askcleanteam(driver,mail,login);
     }
 
     public static void Enfamil(String url, String mail) throws InterruptedException, AWTException, IOException {

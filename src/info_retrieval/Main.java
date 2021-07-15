@@ -2461,60 +2461,10 @@ public class Main extends Narzedzia {
         String koEn;
 
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/uslugi/",50,100);
+        //            Narzedzia.pobierzFirmy("https://www.odi.pl/firmy/internet/",200,250);
+//            Narzedzia.sprawdzDuplikat("C:\\Users\\dumci\\Desktop\\klikanie\\firmy.txt");
 
         try {
-
-            Narzedzia.pobierzFirmy("https://www.odi.pl/firmy/internet/",80,150);
-            Narzedzia.sprawdzDuplikat("C:\\Users\\dumci\\Desktop\\klikanie\\firmy.txt");
-
-//        Koniec.Restart();
-//            int x = 60;
-//            int k = 16;
-//            for (int i = 1; i < x; i++) {
-//                mail = arkadia.nextLine();
-//                mail2 = everyInt.nextLine();
-//
-//                if (i == 0) {
-//                    Ads.EveryAdp2(mail2, "");
-//                }
-//                if (i == 1) {
-//                    Neworklead.Every("https://neworklead.pl/zadanie/d3cf3aac9662dd4d4b35758984afdf02/da6ccf4b9e837a0c75981a50f59f6005/d654be842d14f320ad92ef039fb6aa4c",mail2, "");
-//                }
-//                if (i == 2) {
-//                    Neworklead.Every("https://neworklead.pl/zadanie/8014cd68c4eba6742c13fd997731fad4/d3c3594feb691d12118b92bfc6b6104d/d654be842d14f320ad92ef039fb6aa4c",mail2, "");
-//                    x -= 3;
-//                    i = -1;
-//                }
-//
-//                if (k<15)
-//                    Neworklead.Galeria(mail);
-//                else if (k<30)
-//                    Neworklead.Wroclavia(mail);
-//                k++;
-//                System.out.println(i);
-//                System.out.println(x);
-//                System.out.println(k);
-//                System.out.println(mail2);
-//                Koniec.Restart();
-//            }
-
-//            for (int i=1;i<200;i++) {
-//                interia();
-//                if (i%20==0)
-//                    Koniec.Restart();
-//            }
-//            Koniec.Restart();
-//                for (int i=0;i<57;i++) {
-//            mail = everyInt.nextLine();
-//            mail3 = enfamil.nextLine();
-//
-//            Neworklead.Every("https://neworklead.pl/zadanie/7be77c19390a26eb27dccc71f292947f/39cd25b1ea50cab3ee54e47a3b8442d8/d654be842d14f320ad92ef039fb6aa4c",mail,"");
-//            Neworklead.Enfamil("https://neworklead.pl/zadanie/e7ad4814435a57bb2b648c38cffd7cf8/f5fcaf0b2539a270def4b8e110cb2a47/d654be842d14f320ad92ef039fb6aa4c",mail3);
-//
-//            System.out.println(i);
-//            System.out.println(mail);
-//            Koniec.Restart();
-//        }
 
 
         } catch (Exception e) {
@@ -2527,8 +2477,8 @@ public class Main extends Narzedzia {
         }
 
 
+        Neworklead.Askclenteam("https://www.askteamclean.com/pl/pl/profile/join-team-clean.html","kononowicz.miroslawa@wp.pl","mirkana02");
 
-
-            wylacz();
+//            wylacz();
     }
 }
