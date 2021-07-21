@@ -1450,6 +1450,7 @@ public class Neworklead extends Narzedzia {
 
     }
 
+
     public static void Askcleanteam(WebDriver driver, String mail, String login) throws AWTException, IOException, InterruptedException {
         String imie = genImieZen();
         String nazwisko = genNazwiskoZen();
@@ -1516,6 +1517,39 @@ public class Neworklead extends Narzedzia {
 
         }
 //        driver.quit();
+//        } catch (Exception e) {
+//            niewykorzystane.append(mail+"\r\n");
+//            niewykorzystane.close();
+//            driver.quit();
+//        }
+
+
+    }
+
+    public static void Dove(WebDriver driver, String mail) throws AWTException, IOException, InterruptedException {
+        String imie = genImieZen();
+        Random r = new Random();
+        Robot robot = new Robot();
+        boolean flaga = false;
+        int m = 0;
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+//        try {
+        zmienKarte(driver);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]"))));
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/form/div[2]/div/div/div/input")).sendKeys(mail);
+        driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/form/div[3]/div/div/div/input")).sendKeys(imie);
+        driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/form/div[4]/div/div/div[2]/div/div/label/span")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/form/div[4]/div/div/div[3]/div/div/label/span")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div/form/div[11]/div/div/button")).click();
+        Thread.sleep(10000);
+
+        driver.quit();
 //        } catch (Exception e) {
 //            niewykorzystane.append(mail+"\r\n");
 //            niewykorzystane.close();

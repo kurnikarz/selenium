@@ -2605,6 +2605,23 @@ public class Dodatkowy extends Narzedzia {
 //        }
     }
 
+    public static void Dove(String mail) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+            driver.get("https://www.dove.com/pl/secure/pieknobezfiltra-materialy.html");
+//            wpiszHaslo();
+//            Thread.sleep(10000);
+//            clickXY(780,800);
+//            Thread.sleep(6000);
+//            zmienKarte(driver);
+            Neworklead.Dove(driver,mail);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
+
     public static void Every(String mail, String odp) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();

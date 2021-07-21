@@ -2477,7 +2477,7 @@ public class Main extends Narzedzia {
         }
 
 
-        Neworklead.Askclenteam("https://www.askteamclean.com/pl/pl/profile/join-team-clean.html","kononowicz.miroslawa@wp.pl","mirkana02");
+        Dodatkowy.Dove("raberawu@wp.pl");
 
 //            wylacz();
     }
