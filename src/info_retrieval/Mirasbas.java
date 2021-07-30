@@ -364,8 +364,8 @@ public class Mirasbas extends Narzedzia {
         String winHandleBefore = driver.getWindowHandle();
         driver.manage().window().maximize();
         try {
-//            driver.get("https://mirasbas.pl/zadanie/12/149ba14d0352f9133a371dca827148f1");
-            driver.get("https://www.galeriamokotow.pl/registration");
+            driver.get("https://mirasbas.pl/zadanie/12/149ba14d0352f9133a371dca827148f1");
+//            driver.get("https://www.galeriamokotow.pl/registration");
             Thread.sleep(10000);
             Narzedzia.Galeria(driver, mail);
 //            Narzedzia.potwierdzArkadia(driver,mail);
@@ -394,7 +394,6 @@ public class Mirasbas extends Narzedzia {
         String winHandleBefore = driver.getWindowHandle();
         driver.manage().window().maximize();
         try {
-//            driver.get("https://mirasbas.pl/zadanie/12/149ba14d0352f9133a371dca827148f1");
             driver.get("https://mirasbas.pl/zadanie/13/149ba14d0352f9133a371dca827148f1");
             Thread.sleep(10000);
             Narzedzia.Wroclavia(driver, mail);

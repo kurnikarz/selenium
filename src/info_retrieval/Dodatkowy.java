@@ -2725,32 +2725,12 @@ public class Dodatkowy extends Narzedzia {
 
         driver.manage().window().maximize();
 //        try {
-        driver.get("http://dodatkowypieniadz.com/zadanie/161d7418799912df4ede9c8c0804c706/22ed123ddc5f6423208ccf04acd0e57d/201920950f63cee967982b759fde80b1");
+        driver.get("http://dodatkowypieniadz.com/zadanie/d37e68e863bf31a1110ff52a6497e38b/6b79882134444cff6a16d0ef980b3e28/201920950f63cee967982b759fde80b1");
         Thread.sleep(1000);
         wpiszHaslo();
         Thread.sleep(6000);
-        clickXY(750,604);
-        clickXY(780,604);
-        Thread.sleep(6000);
-        Wroclavia(driver,mail);
-
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
-    }
-
-    public static void WroclaviaNew(String mail) throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-
-        driver.manage().window().maximize();
-//        try {
-        driver.get("http://dodatkowypieniadz.com/zadanie/161d7418799912df4ede9c8c0804c706/22ed123ddc5f6423208ccf04acd0e57d/201920950f63cee967982b759fde80b1");
-        Thread.sleep(1000);
-        wpiszHaslo();
-        Thread.sleep(6000);
-        clickXY(750,960);
-        clickXY(780,969);
+        clickXY(775,665);
+        clickXY(795,665);
         Thread.sleep(6000);
         Wroclavia(driver,mail);
 
@@ -2765,7 +2745,7 @@ public class Dodatkowy extends Narzedzia {
 
         driver.manage().window().maximize();
 //        try {
-        driver.get("http://dodatkowypieniadz.com/zadanie/f0c46aef0706d4ed0efa3944df3c9f26/380c6e4c2eb1b55982ae147f2ebac521/201920950f63cee967982b759fde80b1");
+        driver.get("http://dodatkowypieniadz.com/zadanie/3c6027a15d97387ad3a74c5ab7641d87/ce4e9aa90c2df7c7048f9d3933d571ec/201920950f63cee967982b759fde80b1");
         Thread.sleep(1000);
         wpiszHaslo();
         Thread.sleep(6000);
@@ -2779,23 +2759,4 @@ public class Dodatkowy extends Narzedzia {
 //        }
     }
 
-    public static void GaleriaNew(String mail) throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-
-        driver.manage().window().maximize();
-//        try {
-        driver.get("http://dodatkowypieniadz.com/zadanie/f0c46aef0706d4ed0efa3944df3c9f26/380c6e4c2eb1b55982ae147f2ebac521/201920950f63cee967982b759fde80b1");
-        Thread.sleep(1000);
-        wpiszHaslo();
-        Thread.sleep(6000);
-        clickXY(750,843);
-        clickXY(780,843);
-        Thread.sleep(6000);
-        Galeria(driver,mail);
-
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
-    }
 }

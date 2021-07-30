@@ -2465,7 +2465,19 @@ public class Main extends Narzedzia {
 //            Narzedzia.sprawdzDuplikat("C:\\Users\\dumci\\Desktop\\klikanie\\firmy.txt");
 
         try {
-
+//            Koniec.Restart();
+            for (int i=5;i<100;i++) {
+                mail = everyInt.nextLine();
+                mail2 = arkadia.nextLine();
+                Ads.EveryAdp2(mail,"");
+                if (i<12)
+                    Mirasbas.Galeria(mail2);
+                else
+                    Mirasbas.Wroclawia(mail2);
+                System.out.println(i);
+                System.out.println(mail);
+                Koniec.Restart();
+            }
 
         } catch (Exception e) {
             blad.println(e);
@@ -2476,9 +2488,6 @@ public class Main extends Narzedzia {
             wylacz();
         }
 
-
-        Dodatkowy.Dove("raberawu@wp.pl");
-
-//            wylacz();
+            wylacz();
     }
 }
