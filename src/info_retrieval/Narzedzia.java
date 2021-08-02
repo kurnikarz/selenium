@@ -372,7 +372,7 @@ public class Narzedzia {
         WebDriverWait wait = new WebDriverWait(driver, 60);
         Robot robot = new Robot();
 
-//        try {
+        try {
         zmienKarte(driver);
         Thread.sleep(5000);
         try {
@@ -403,9 +403,9 @@ public class Narzedzia {
         Thread.sleep(15000);
 
         driver.quit();
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
+        } catch (Exception e) {
+            driver.quit();
+        }
 
     }
 

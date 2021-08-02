@@ -2355,6 +2355,7 @@ public class Main extends Narzedzia {
         Scanner erli = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\erli.txt"));
         Scanner bondex = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\bondex.txt"));
         Scanner lotos = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\lotos.txt"));
+        Scanner dove = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\dove.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\everyInt.txt"));
@@ -2464,19 +2465,51 @@ public class Main extends Narzedzia {
         //            Narzedzia.pobierzFirmy("https://www.odi.pl/firmy/internet/",200,250);
 //            Narzedzia.sprawdzDuplikat("C:\\Users\\dumci\\Desktop\\klikanie\\firmy.txt");
 
+
         try {
 //            Koniec.Restart();
-            for (int i=5;i<100;i++) {
-                mail = everyInt.nextLine();
-                mail2 = arkadia.nextLine();
-                Ads.EveryAdp2(mail,"");
-                if (i<12)
-                    Mirasbas.Galeria(mail2);
-                else
-                    Mirasbas.Wroclawia(mail2);
-                System.out.println(i);
-                System.out.println(mail);
-                Koniec.Restart();
+//            for (int i=5;i<100;i++) {
+//                mail = everyInt.nextLine();
+//                mail2 = arkadia.nextLine();
+//                Ads.EveryAdp2(mail,"");
+//                if (i<12)
+//                    Mirasbas.Galeria(mail2);
+//                else
+//                    Mirasbas.Wroclawia(mail2);
+//                System.out.println(i);
+//                System.out.println(mail);
+//                Koniec.Restart();
+//            }
+//            Koniec.Restart();
+            int x = 75;
+
+//
+//            for(int i = 0; i < x; i++) {
+//                mail = dove.nextLine();
+//                mail2 = arkadia.nextLine();
+//                Dodatkowy.Dove2(mail);
+//                if(i == 0) { Neworklead.aGaleria(mail2);}
+//                if(i == 1) {
+//                    Neworklead.aWroclavia(mail2);
+//                    mail3 = everyInt.nextLine();
+//                    Ads.EveryAdp2(mail3,"");
+//                }
+//                if(i == 2) {
+//                    Neworklead.gwGaleria(mail2);
+//                    x -= 3;
+//                    i=-1;
+//                }
+//                System.out.println(i);
+//                System.out.println(x);
+//                System.out.println(mail);
+//                Koniec.Restart();
+//
+//            }
+
+            for (int i=1;i<200;i++) {
+                interia();
+                if (i%20==0)
+                    Koniec.Restart();
             }
 
         } catch (Exception e) {

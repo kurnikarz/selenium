@@ -24,7 +24,7 @@ public class Dodatkowy extends Narzedzia {
     public static void wpiszHaslo() throws InterruptedException, AWTException {
         Robot robot = new Robot();
         Kopiuj("av126");
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         Wklej();
         Thread.sleep(500);
         robot.keyPress(KeyEvent.VK_ENTER);
@@ -76,203 +76,6 @@ public class Dodatkowy extends Narzedzia {
         Thread.sleep(6000);
 
         driver.quit();
-    }
-
-    public static void Nivea(String mail) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        boolean flaga = true;
-        boolean flaga2 = true;
-        String imie = genImieZen();
-        int m = 0;
-        WebElement blad;
-        Random r = new Random();
-        int dzie = r.nextInt(29);
-        int mies = r.nextInt(12 - 2 + 1) + 2;
-        int ro = r.nextInt(1996 - 1985 + 1) + 1985;
-        int odp1 = r.nextInt(5);
-        int odp2 = r.nextInt(5);
-        Robot robot = new Robot();
-        //options.addArguments("user-data-dir=C:\\Users\\Artur\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1");
-        Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\Artur\\Desktop\\klikanie\\niewykorzystanaNivea.txt", true));
-        options.addExtensions(new File("E:\\botPythonn\\captcha.crx"));
-        HashMap<String, Object> images = new HashMap<String, Object>();
-        images.put("images", 2);
-        HashMap<String, Object> prefs = new HashMap<String, Object>();
-        prefs.put("profile.default_content_setting_values", images);
-        options.setExperimentalOption("prefs", prefs);
-
-
-        WebDriver driver = new ChromeDriver(options);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        driver.manage().window().maximize();
-
-        try {
-            driver.get("http://dodatkowypieniadz.com/wykonaj.php?a=1599&u=153&k=59f3635dd821e60a50bd7");
-
-            Thread.sleep(15000);
-            clickXY(1322, 750);
-            Thread.sleep(15000);
-
-            for (String winHandle : driver.getWindowHandles()) {
-                driver.switchTo().window(winHandle);
-            }
-            Thread.sleep(1000);
-            String mainWin = driver.getWindowHandle();
-            driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/button")).click();
-            Thread.sleep(1000);//509,963
-
-            //RECAPTCHA=============================================================================
-            while (flaga) {
-                driver.switchTo().frame(0);
-                driver.findElement(By.xpath("//*[@id=\"rc-anchor-container\"]")).click();
-                Thread.sleep(4000);
-                Narzedzia.clickXY(509, 963);
-                Thread.sleep(1000);
-                clickXY(512, 1016);
-                //driver.switchTo().window(mainWin);
-                Thread.sleep(5000);
-                Narzedzia.clickXY(512, 839);
-                Thread.sleep(5000);
-                try {
-                    driver.findElement(By.xpath("//*[text()='You are verified']"));
-                    flaga = false;
-                } catch (Exception e) {
-                    robot.keyPress(KeyEvent.VK_F5);
-                    robot.keyRelease(KeyEvent.VK_F5);
-                    Thread.sleep(4000);
-                }
-                if (m == 15) {
-                    driver.get("http://www.dodatkowypieniadz.com/");
-                    Thread.sleep(2000);
-                    driver.findElement(By.xpath("/html/body/section/form/input[1]")).sendKeys("arturvx");
-                    driver.findElement(By.xpath("/html/body/section/form/input[2]")).sendKeys("b2K22gbTbTg");
-                    Thread.sleep(1000);
-                    driver.findElement(By.xpath("/html/body/section/form/input[4]")).click();
-                    Thread.sleep(3000);
-                    driver.findElement(By.xpath("/html/body/section[2]/section[1]/section/div[1]/div/a[2]")).click();
-                    Thread.sleep(5000);
-                    clickXY(1312, 490);
-                    Thread.sleep(10000);
-                    niewykorzystane.append(mail + ";");
-                    niewykorzystane.close();
-                    driver.quit();
-                    return;
-                }
-                m++;
-            }
-            //===================================================================================
-            Thread.sleep(1000);
-            driver.switchTo().window(mainWin);
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"name\"]")).sendKeys(imie);
-            driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(mail);
-            driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div[3]/form/div[1]/div[3]/div/label")).click();
-            driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div[3]/form/div[1]/div[4]/div/label")).click();
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"formularz\"]/form/div[3]/button")).click();
-            //clickXY(950,894);
-            Thread.sleep(7000);
-
-            //WP
-            driver.get("http://poczta.wp.pl/");
-            Thread.sleep(3000);
-            driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
-            driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
-            //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
-            Thread.sleep(1000);
-            clickXY(332, 597);
-            Thread.sleep(4000);
-            driver.findElement(By.xpath("//*[text()='Newslettery']")).click();
-            Thread.sleep(5000);
-
-            while (flaga2) {
-                try {
-                    driver.findElement(By.xpath("//*[text()='NIVEA']")).click();
-                    flaga2 = false;
-                    Thread.sleep(5000);
-                    //clickXY(961,655);
-                    driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div[1]/div/div/table[2]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/a/img")).click();
-                    Thread.sleep(12000);
-
-                    for (String winHandle : driver.getWindowHandles()) {
-                        driver.switchTo().window(winHandle);
-                    }
-                    Thread.sleep(1000);
-                    ScrollBy(driver, "700");
-                    Thread.sleep(1000);
-                    try {
-                        driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[1]/div[2]/div[1]/label")).click();
-                        Thread.sleep(1000);
-                        Select dzien = new Select(driver.findElement(By.xpath("//*[@id=\"questionnaire_birthday_day\"]")));
-                        dzien.selectByIndex(dzie);
-                        Select miesiac = new Select(driver.findElement(By.xpath("//*[@id=\"questionnaire_birthday_month\"]")));
-                        miesiac.selectByIndex(mies);
-                        Select rok = new Select(driver.findElement(By.xpath("//*[@id=\"questionnaire_birthday_year\"]")));
-                        rok.selectByValue(String.valueOf(ro));
-                        Thread.sleep(1000);
-                        switch (odp1) {
-                            case 0:
-                                driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[3]/div[2]/div[1]/label/span[1]")).click();
-                                break;
-                            case 1:
-                                driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[3]/div[2]/div[2]/label/span[1]")).click();
-                                break;
-                            case 2:
-                                driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[3]/div[2]/div[3]/label/span[1]")).click();
-                                break;
-                            case 3:
-                                driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[3]/div[2]/div[4]/label/span[1]")).click();
-                                break;
-                            case 4:
-                                driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[3]/div[2]/div[5]/label/span[1]")).click();
-                                break;
-                        }
-
-                        Thread.sleep(1000);
-                        switch (odp2) {
-                            case 0:
-                                driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[4]/div[2]/div[1]/label/span[1]")).click();
-                                break;
-                            case 1:
-                                driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[4]/div[2]/div[2]/label/span[1]")).click();
-                                break;
-                            case 2:
-                                driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[4]/div[2]/div[3]/label/span[1]")).click();
-                                break;
-                            case 3:
-                                driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[4]/div[2]/div[4]/label/span[1]")).click();
-                                break;
-                            case 4:
-                                driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[4]/div[2]/div[5]/label/span[1]")).click();
-                                break;
-                        }
-                        Thread.sleep(1000);
-                        ScrollBy(driver, "700");
-                        Thread.sleep(1000);
-                        driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[5]/button")).click();
-                        Thread.sleep(10000);
-                        driver.quit();
-                    } catch (Exception e) {
-                        driver.quit();
-                    }
-
-
-                } catch (Exception e) {
-                    robot.keyPress(KeyEvent.VK_F5);
-                    Thread.sleep(10000);
-                }
-                m++;
-                if (m == 10) {
-                    driver.quit();
-                    break;
-                }
-            }
-
-        } catch (Exception e) {
-            driver.quit();
-        }
-
     }
 
     public static int NiveaTest(String mail) throws AWTException, InterruptedException {
@@ -455,114 +258,6 @@ public class Dodatkowy extends Narzedzia {
             return bladCaptcha;
         }
         return bladCaptcha;
-    }
-
-    public static void PotwierdzNivea(String mail, String haslo) throws AWTException, InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        HashMap<String, Object> images = new HashMap<String, Object>();
-        images.put("images", 2);
-        HashMap<String, Object> prefs = new HashMap<String, Object>();
-        prefs.put("profile.default_content_setting_values", images);
-        options.setExperimentalOption("prefs", prefs);
-        boolean flaga = true;
-        boolean flaga2 = true;
-        int m = 0;
-        Random r = new Random();
-        int dzie = r.nextInt(29);
-        int mies = r.nextInt(12 - 2 + 1) + 2;
-        int ro = r.nextInt(1996 - 1985 + 1) + 1985;
-        int odp1 = r.nextInt(5);
-        int odp2 = r.nextInt(5);
-        Robot robot = new Robot();
-        WebDriver driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-
-        try {
-            //WP
-            driver.get("http://poczta.wp.pl/");
-            Thread.sleep(3000);
-            driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
-            driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys(haslo);
-            //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
-            Thread.sleep(1000);
-            clickXY(332, 597);
-            Thread.sleep(4000);
-            driver.findElement(By.xpath("//*[text()='Newslettery']")).click();
-            Thread.sleep(5000);
-            driver.findElement(By.xpath("//*[text()='NIVEA']")).click();
-            flaga2 = false;
-            Thread.sleep(5000);
-            //clickXY(961,655);
-            driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div[1]/div/div/table[2]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/a/img")).click();
-            Thread.sleep(12000);
-
-            for (String winHandle : driver.getWindowHandles()) {
-                driver.switchTo().window(winHandle);
-            }
-            Thread.sleep(1000);
-            ScrollBy(driver, "700");
-            Thread.sleep(1000);
-            try {
-                driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[1]/div[2]/div[1]/label")).click();
-                Thread.sleep(1000);
-                Select dzien = new Select(driver.findElement(By.xpath("//*[@id=\"questionnaire_birthday_day\"]")));
-                dzien.selectByIndex(dzie);
-                Select miesiac = new Select(driver.findElement(By.xpath("//*[@id=\"questionnaire_birthday_month\"]")));
-                miesiac.selectByIndex(mies);
-                Select rok = new Select(driver.findElement(By.xpath("//*[@id=\"questionnaire_birthday_year\"]")));
-                rok.selectByValue(String.valueOf(ro));
-                Thread.sleep(1000);
-                switch (odp1) {
-                    case 0:
-                        driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[3]/div[2]/div[1]/label/span[1]")).click();
-                        break;
-                    case 1:
-                        driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[3]/div[2]/div[2]/label/span[1]")).click();
-                        break;
-                    case 2:
-                        driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[3]/div[2]/div[3]/label/span[1]")).click();
-                        break;
-                    case 3:
-                        driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[3]/div[2]/div[4]/label/span[1]")).click();
-                        break;
-                    case 4:
-                        driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[3]/div[2]/div[5]/label/span[1]")).click();
-                        break;
-                }
-
-                Thread.sleep(1000);
-                switch (odp2) {
-                    case 0:
-                        driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[4]/div[2]/div[1]/label/span[1]")).click();
-                        break;
-                    case 1:
-                        driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[4]/div[2]/div[2]/label/span[1]")).click();
-                        break;
-                    case 2:
-                        driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[4]/div[2]/div[3]/label/span[1]")).click();
-                        break;
-                    case 3:
-                        driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[4]/div[2]/div[4]/label/span[1]")).click();
-                        break;
-                    case 4:
-                        driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[4]/div[2]/div[5]/label/span[1]")).click();
-                        break;
-                }
-                Thread.sleep(1000);
-                ScrollBy(driver, "700");
-                Thread.sleep(1000);
-                driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div[2]/div/form/div[5]/button")).click();
-                Thread.sleep(10000);
-                driver.quit();
-            } catch (Exception e) {
-                driver.quit();
-            }
-
-
-        } catch (Exception e) {
-            driver.quit();
-        }
     }
 
     public static void Totalizator2(String mail, String numer) throws InterruptedException, AWTException, IOException {
@@ -2610,13 +2305,61 @@ public class Dodatkowy extends Narzedzia {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 //        try {
-            driver.get("https://www.dove.com/pl/secure/pieknobezfiltra-materialy.html");
-//            wpiszHaslo();
-//            Thread.sleep(10000);
-//            clickXY(780,800);
-//            Thread.sleep(6000);
-//            zmienKarte(driver);
+            driver.get("http://dodatkowypieniadz.com/zadanie/de7695caf706117ec45e6334020378fe/33090503bacd3c5bd762887ce42d282e/201920950f63cee967982b759fde80b1");
+            Thread.sleep(1000);
+            wpiszHaslo();
+            Thread.sleep(6000);
+            clickXY(780,600);
+            Thread.sleep(6000);
+            zmienKarte(driver);
             Neworklead.Dove(driver,mail);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
+
+    public static void Dove2(String mail) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+//        try {
+            driver.get("http://dodatkowypieniadz.com/zadanie/295f45cbad114f9965f2facb996143c2/257e9320c42fbb09c90408f55d1709d0/201920950f63cee967982b759fde80b1");
+            Thread.sleep(1000);
+            wpiszHaslo();
+            Thread.sleep(6000);
+            clickXY(780,600);
+            clickXY(800,600);
+            Thread.sleep(6000);
+            zmienKarte(driver);
+            Neworklead.Dove(driver,mail);
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
+
+    public static void Nivea(String mail) throws AWTException, InterruptedException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        Robot robot = new Robot();
+        driver.manage().window().maximize();
+//        try {
+            Kopiuj("https://tajemniczaakkonstaa.blogspot.com/2017/02/olejek-rycynowy.html");
+            clickXY(785,182);
+            Thread.sleep(500);
+            Wklej();
+            Thread.sleep(500);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            Thread.sleep(2000);
+            wpiszHaslo();
+            clickXY(1346, 749);
+            Thread.sleep(3000);
+            clickXY(1402, 1000);
+            //klik w baner
+
+            Thread.sleep(4000);
+            clickXY(1760,835);
+            clickXY(950,725);
 //        } catch (Exception e) {
 //            driver.quit();
 //        }

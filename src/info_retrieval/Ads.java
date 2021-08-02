@@ -280,7 +280,7 @@ public class Ads extends Narzedzia {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 //        try {
-        driver.get("http://adsmaker.pl/action/2702/uid/26dd63a0ef72a51af97c0efa88357f15/ ");
+        driver.get("http://adsmaker.pl/action/2719/uid/26dd63a0ef72a51af97c0efa88357f15/ ");
         Thread.sleep(2000);
         driver.get("https://httpslink.com/8d0na");
         Thread.sleep(6000);
