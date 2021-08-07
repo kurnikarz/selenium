@@ -53,7 +53,7 @@ public class Main extends Narzedzia {
             Robot robot = new Robot();
             driver.manage().window().maximize();
             driver.get("https://konto-pocztowe.interia.pl/#/nowe-konto/darmowe");
-            Thread.sleep(5000);
+            Thread.sleep(3000);
             //                try {
             //                    driver.switchTo().frame(5);
             //                    //driver.findElement(By.xpath("//*[@id=\"reset-button\"]")).click();
@@ -2480,9 +2480,7 @@ public class Main extends Narzedzia {
 //                System.out.println(mail);
 //                Koniec.Restart();
 //            }
-//            Koniec.Restart();
-            int x = 75;
-
+//            Koniec.Restart();av126
 //
 //            for(int i = 0; i < x; i++) {
 //                mail = dove.nextLine();
@@ -2520,6 +2518,18 @@ public class Main extends Narzedzia {
             System.out.println("=============ERROR===============");
             wylacz();
         }
+
+//        Koniec.Restart();
+//        for (int i=0;i<10;i++) {
+//            Dodatkowy.Nivea();
+//            System.out.println(i);
+//            Koniec.Restart();
+//        }
+
+
+//        Robot robot = new Robot();
+//        Thread.sleep(1000);
+//        robot.mouseWheel(3000);
 
             wylacz();
     }

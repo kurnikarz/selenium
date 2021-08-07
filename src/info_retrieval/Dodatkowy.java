@@ -28,7 +28,7 @@ public class Dodatkowy extends Narzedzia {
         Wklej();
         Thread.sleep(500);
         robot.keyPress(KeyEvent.VK_ENTER);
-        Thread.sleep(7000);
+        Thread.sleep(2000);
     }
 
     public static void Lenovo(String mail, String temat, String opinia) throws InterruptedException, AWTException {
@@ -2337,13 +2337,13 @@ public class Dodatkowy extends Narzedzia {
 //        }
     }
 
-    public static void Nivea(String mail) throws AWTException, InterruptedException, IOException {
-        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+    public static void Nivea() throws AWTException, InterruptedException, IOException {
         Robot robot = new Robot();
-        driver.manage().window().maximize();
+        Random r = new Random();
+        int rokUr = r.nextInt(7);
 //        try {
-            Kopiuj("https://tajemniczaakkonstaa.blogspot.com/2017/02/olejek-rycynowy.html");
+            Kopiuj("http://dodatkowypieniadz.com/zadanie/9b76e564b0bbb2364b0d9cb79f5420d4/5562eeb10ca8a48e2ee34af4221f5956/201920950f63cee967982b759fde80b1");
+//            Kopiuj("https://tajemniczaakkonstaa.blogspot.com/2017/02/olejek-rycynowy.html");
             clickXY(785,182);
             Thread.sleep(500);
             Wklej();
@@ -2351,15 +2351,79 @@ public class Dodatkowy extends Narzedzia {
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
             Thread.sleep(2000);
+            clickXY(890,670);
+            Thread.sleep(500);
             wpiszHaslo();
             clickXY(1346, 749);
             Thread.sleep(3000);
             clickXY(1402, 1000);
             //klik w baner
+            Thread.sleep(3000);
+            robot.mouseWheel(3000);
+            Thread.sleep(2000);
+            clickXY(650,420);
 
             Thread.sleep(4000);
             clickXY(1760,835);
             clickXY(950,725);
+            Thread.sleep(1000);
+            clickXY(900,940);
+            Thread.sleep(2000);
+            clickXY(950,830);
+            Thread.sleep(3000);
+            clickXY(930,940);
+            Thread.sleep(3000);
+
+            Kopiuj(genImieZen());
+            clickXY(900,750);
+            Thread.sleep(500);
+            Wklej();
+            Thread.sleep(500);
+            clickXY(960,874);
+            Thread.sleep(1000);
+            switch (rokUr) {
+                case 0:
+                    clickXY(906,810);
+                    break;
+                case 1:
+                    clickXY(906,736);
+                    break;
+                case 2:
+                    clickXY(906,650);
+                    break;
+                case 3:
+                    clickXY(906,560);
+                    break;
+                case 4:
+                    clickXY(906,470);
+                    break;
+                case 5:
+                    clickXY(906,380);
+                    break;
+                case 6:
+                    clickXY(906,300);
+                    break;
+            }
+            Thread.sleep(1000);
+            clickXY(860,930);
+            Thread.sleep(3000);
+            clickXY(1760,1006);
+            Thread.sleep(3000);
+            clickXY(844,112);
+
+            //czyszczenie cache
+            clickXY(1807,190);
+            Thread.sleep(500);
+            clickXY(1480,616);
+            Thread.sleep(2000);
+            clickXY(660,375);
+            Thread.sleep(2000);
+            clickXY(1720,990);
+            Thread.sleep(2000);
+            clickXY(514,113);
+            Thread.sleep(1000);
+            clickXY(436,111);
+
 //        } catch (Exception e) {
 //            driver.quit();
 //        }
