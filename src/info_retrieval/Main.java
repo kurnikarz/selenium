@@ -2465,50 +2465,10 @@ public class Main extends Narzedzia {
         //            Narzedzia.pobierzFirmy("https://www.odi.pl/firmy/internet/",200,250);
 //            Narzedzia.sprawdzDuplikat("C:\\Users\\dumci\\Desktop\\klikanie\\firmy.txt");
 
+        Neworklead.Every("https://www.everydayme.pl/testuj-wygrywaj/eco-konkurs","laura.przybyszewska06@interia.pl","");
 
         try {
-//            Koniec.Restart();
-//            for (int i=5;i<100;i++) {
-//                mail = everyInt.nextLine();
-//                mail2 = arkadia.nextLine();
-//                Ads.EveryAdp2(mail,"");
-//                if (i<12)
-//                    Mirasbas.Galeria(mail2);
-//                else
-//                    Mirasbas.Wroclawia(mail2);
-//                System.out.println(i);
-//                System.out.println(mail);
-//                Koniec.Restart();
-//            }
-//            Koniec.Restart();av126
-//
-//            for(int i = 0; i < x; i++) {
-//                mail = dove.nextLine();
-//                mail2 = arkadia.nextLine();
-//                Dodatkowy.Dove2(mail);
-//                if(i == 0) { Neworklead.aGaleria(mail2);}
-//                if(i == 1) {
-//                    Neworklead.aWroclavia(mail2);
-//                    mail3 = everyInt.nextLine();
-//                    Ads.EveryAdp2(mail3,"");
-//                }
-//                if(i == 2) {
-//                    Neworklead.gwGaleria(mail2);
-//                    x -= 3;
-//                    i=-1;
-//                }
-//                System.out.println(i);
-//                System.out.println(x);
-//                System.out.println(mail);
-//                Koniec.Restart();
-//
-//            }
 
-            for (int i=1;i<200;i++) {
-                interia();
-                if (i%20==0)
-                    Koniec.Restart();
-            }
 
         } catch (Exception e) {
             blad.println(e);
@@ -2519,18 +2479,6 @@ public class Main extends Narzedzia {
             wylacz();
         }
 
-//        Koniec.Restart();
-//        for (int i=0;i<10;i++) {
-//            Dodatkowy.Nivea();
-//            System.out.println(i);
-//            Koniec.Restart();
-//        }
-
-
-//        Robot robot = new Robot();
-//        Thread.sleep(1000);
-//        robot.mouseWheel(3000);
-
-            wylacz();
+//        wylacz();
     }
 }
