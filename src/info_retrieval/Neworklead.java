@@ -5834,7 +5834,7 @@ public class Neworklead extends Narzedzia {
         Narzedzia.Galeria(driver,mail);
     }
 
-    public static void Bebilon(WebDriver driver, String mail, String miasto, String ulica) throws InterruptedException, AWTException {
+    public static void Bebilon(WebDriver driver, String mail) throws InterruptedException, AWTException {
         WebDriverWait wait = new WebDriverWait(driver, 60);
         Random r = new Random();
         Robot robot = new Robot();
@@ -5842,8 +5842,8 @@ public class Neworklead extends Narzedzia {
         int mleko = r.nextInt(2);
         int dzie = r.nextInt(29) + 1;
         int mies;
-        String rok = "2021";
-        mies = r.nextInt(4 - 1 + 1) + 1;
+        String rok = "2020";
+        mies = r.nextInt(12 - 1 + 1) + 1;
         String dzien = dodajZero(dzie);
         String miesiac = dodajZero(mies);
         String dataUr = dzien+"-"+miesiac+"-"+rok;
@@ -5852,65 +5852,25 @@ public class Neworklead extends Narzedzia {
         String nazwisko = genNazwiskoZen();
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/nt-cookie-popup/div[1]/div[2]/div[2]/nt-analytics/button"))));
-        driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/nt-cookie-popup/div[1]/div[2]/div[2]/nt-analytics/button")).click();
+        zmienKarte(driver);
         Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"wrapper\"]/nt-cookie-popup/div[1]/div[1]/div[2]/nt-analytics/button")))).click();
+        Thread.sleep(3000);
         clickXY(1266,420);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[1]/div/div[1]/label")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/main/div[1]/div/form/div[1]/div[2]/div[2]/div/div[1]/div[2]/div[1]/input")).click();
         Kopiuj(dataUr);
         Thread.sleep(500);
         Wklej();
-        clickXY(1560,534);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childData_survey_modificatedMilk\"]/div[1]/label")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childData_survey_orderPackage\"]/div[1]/label")).click();
-        Thread.sleep(1000);
-        try {
-            driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_chooser\"]/div[1]/div/div/div/label")).click();
-        } catch (Exception e) {
-            driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_guide_chooser\"]/div[1]/div/div/div/label")).click();
-        }
-
-        try {
-            if (mleko == 0)
-                driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_chooser_bebiko2_quick_order_type\"]/div[1]/label")).click();
-            else
-                driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_children_0_childAgreement_bebiko2_quick_chooser_bebiko2_quick_order_type\"]/div[2]/label")).click();
-        } catch (Exception e) {
-
-        }
-
-        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_city\"]")).sendKeys(miasto);
-        Thread.sleep(1000);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_street\"]")).sendKeys(ulica);
-//        Thread.sleep(1000);
-//        robot.keyPress(KeyEvent.VK_ENTER);
-//        robot.keyRelease(KeyEvent.VK_ENTER);
-//        Thread.sleep(1000);
-        clickXY(1560,534);
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_address_address_house\"]")).sendKeys(nrDomu);
-        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_personal_info_first_name\"]")).sendKeys(imie);
-        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profile_contact_data_personal_info_last_name\"]")).sendKeys(nazwisko);
-
-        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_commercialInfo_commercial_info\"]/div/div/label")).click();
-        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_newsletterData_newsletter\"]/div/div/label")).click();
         driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_email_first\"]")).sendKeys(mail);
         driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_email_second\"]")).sendKeys(mail);
         driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_profileData_plainPassword\"]")).sendKeys(mail+"V2");
-        js.executeScript("document.getElementById(\"fos_user_registration_form_agreements_finishAgreements_0\").getElementsByTagName(\"a\")[0].style.display=\"none\"");
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements\"]/div[1]")).click();
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements_0\"]/div/label")).click();
         driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements_3\"]/div/label")).click();
         driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_agreements_finishAgreements_4\"]/div/label")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_submit\"]/nt-loading-icon/span/span")).click();
-        Thread.sleep(10000);
+        driver.findElement(By.xpath("//*[@id=\"fos_user_registration_form_submit\"]")).click();
+        Thread.sleep(6000);
 
         //WP
         driver.get("http://poczta.wp.pl/");
@@ -5920,7 +5880,7 @@ public class Neworklead extends Narzedzia {
 //        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
         //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"loginForm\"]/div[3]/button")).click();
+        driver.findElement(By.xpath("//*[@id=\"stgMain\"]/div/div/div[1]/form/button")).click();
         Thread.sleep(5000);
         try {
             driver.findElement(By.xpath("//*[@id=\"agreements\"]/div[6]/button")).click();
@@ -6070,24 +6030,14 @@ int m = 0;
 
     }
 
-    public static void Bebilon2(String mail, String miasto, String ulica) throws InterruptedException, AWTException, IOException {
+    public static void Bebilon(String url, String mail) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://neworklead.pl/zadanie/cec3302a0b69f25d19d50cd4a1b34959/1119bd12c2b5441ccd4249c29b86d1c1/d654be842d14f320ad92ef039fb6aa4c");
-//        driver.get("https://www.bebiklub.pl/rejestracja");
+//        driver.get(url);
+        driver.get("https://www.bebiprogram.pl/rejestracja");
         Thread.sleep(6000);
-        Neworklead.Bebilon(driver,mail,miasto,ulica);
-    }
-
-    public static void MinusBebilon(String mail, String miasto, String ulica) throws InterruptedException, AWTException, IOException {
-        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://neworklead.pl/zadanie/67de9662c1e7fa49da3f58bbea338ae4/8543c2f354dca1de0bf28d65c8bdb13b/d654be842d14f320ad92ef039fb6aa4c");
-//        driver.get("https://www.bebiklub.pl/rejestracja");
-        Thread.sleep(6000);
-        Neworklead.Bebiko(driver,mail,miasto,ulica);
+        Neworklead.Bebilon(driver,mail);
     }
 
     public static void Bebiko(String mail, String miasto, String ulica) throws InterruptedException, AWTException, IOException {
