@@ -1062,6 +1062,39 @@ public class Dodatkowy extends Narzedzia {
 
     }
 
+    public static void Nivea(WebDriver driver, String mail) throws InterruptedException, AWTException {
+        String imie = genImieZen();
+        String nazwisko = genNazwiskoZen();
+        Random r = new Random();
+        int dziecko = r.nextInt(2);
+        int plec = r.nextInt(2);
+        int dzienUro = r.nextInt(29) + 1;
+        int miesUro = r.nextInt(10 - 4 + 1) + 4;
+        int rokUro = 2019;
+        int dzienSpo = r.nextInt(29) + 1;
+        int miesSpo = r.nextInt(7 - 3 + 1) + 3;
+        int rokSpo = 2020;
+        int m = 0;
+        boolean flaga = false;
+        Robot robot = new Robot();
+        String dzieckoUrodzone = String.valueOf(rokUro) + "-" + dodajZero(miesUro) + "-" + dodajZero(dzienUro);
+        String dzieckoSpodziewane = String.valueOf(rokSpo) + "-" + dodajZero(miesSpo) + "-" + dodajZero(dzienSpo);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebDriverWait wait = new WebDriverWait(driver,60);
+//jaka pielegancje stosujesz po codziennym treningu ?
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[1]/div/div/div[4]/div[2]/button")))).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[1]/div/div[1]/div/label")).click();
+        driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[2]/div/input")).sendKeys(imie);
+        driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[3]/div/input")).sendKeys(mail);
+        driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[4]/div/input")).sendKeys(mail+"V2");
+
+
+
+
+//        driver.quit();
+    }
+
     public static void Nestle3(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
@@ -1092,6 +1125,19 @@ public class Dodatkowy extends Narzedzia {
             driver.quit();
         }
 
+
+    }
+
+    public static void Nivea(String mail) throws InterruptedException, AWTException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        options.addExtensions(new File("C:\\bot\\captcha.crx"));
+        options.addExtensions(new File("C:\\bot\\buster.crx"));
+        ChromeDriver driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+
+        driver.get("https://www.nivea.pl/moja-nivea/rejestracja-konkurs");
+        Nivea(driver,mail);
 
     }
 

@@ -2465,9 +2465,11 @@ public class Main extends Narzedzia {
         //            Narzedzia.pobierzFirmy("https://www.odi.pl/firmy/internet/",200,250);
 //            Narzedzia.sprawdzDuplikat("C:\\Users\\dumci\\Desktop\\klikanie\\firmy.txt");
 
-        Neworklead.Askcleanteam("","zuzils@interia.pl");
-
 //        Neworklead.Bebilon("https://neworklead.pl/zadanie/d507bf2e51f95e9faa569f2942d1c458/f31244a18b3b1c2336cb4263af37d068/d654be842d14f320ad92ef039fb6aa4c","agnieszka.cendrowicz@wp.pl");
+
+
+        Ads.AskPotwierdz("eliza.sierszula@wp.pl");
+
 
         try {
 
