@@ -127,6 +127,58 @@ public class Main extends Narzedzia {
 
     }
 
+    public static void interiaLogin(String mail) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        HashMap<String, Object> images = new HashMap<String, Object>();
+        images.put("images", 2);
+        HashMap<String, Object> prefs = new HashMap<String, Object>();
+        prefs.put("profile.default_content_setting_values", images);
+        options.setExperimentalOption("prefs", prefs);
+        ChromeDriver driver = new ChromeDriver(options);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        driver.manage().window().maximize();
+
+        //INTERIA
+        driver.get("https://poczta.interia.pl/logowanie/");
+        Thread.sleep(3000);
+        try {
+            try {
+                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[2]/div[2]/button[3]"))));
+            } catch (Exception e) {
+                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[2]/button[3]"))));
+            }
+        } catch (Exception e) {
+            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[4]/div[2]/button[3]"))));
+        }
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[3]/div[2]/button[3]")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"sitebar\"]/form/button")).click();
+
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("//*[@id=\"tel\"]")).clear();
+            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id=\"tel\"]")).sendKeys("698389667");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div/div[2]/div/div[2]/form/div[3]/button[1]")).click();
+        } catch (Exception e) {
+
+        }
+        try {
+            driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div[2]/div[2]/div[2]/div/div[2]/button")).click();
+            Thread.sleep(1000);
+        } catch (Exception e) {
+
+        }
+        Thread.sleep(3000);
+        driver.quit();
+    }
+
     public static void Maile(String mail) throws InterruptedException {
         FirefoxDriver firefox = new FirefoxDriver();
         firefox.manage().window().maximize();
@@ -2356,6 +2408,7 @@ public class Main extends Narzedzia {
         Scanner bondex = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\bondex.txt"));
         Scanner lotos = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\lotos.txt"));
         Scanner dove = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\dove.txt"));
+        Scanner askclean = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\askclean.txt"));
 
         Scanner every = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\every.txt"));
         Scanner everyInt = new Scanner(new File("C:\\Users\\dumci\\Desktop\\klikanie\\everyInt.txt"));
@@ -2467,21 +2520,26 @@ public class Main extends Narzedzia {
 
 //        Neworklead.Bebilon("https://neworklead.pl/zadanie/d507bf2e51f95e9faa569f2942d1c458/f31244a18b3b1c2336cb4263af37d068/d654be842d14f320ad92ef039fb6aa4c","agnieszka.cendrowicz@wp.pl");
 
+//        Koniec.Restart();
+//        interiaLogin("ilza.grygiel51@interia.pl");
 
-        Ads.AskPotwierdz("eliza.sierszula@wp.pl");
+        AskOdp odps = new AskOdp(2);
+
+        System.out.println(odps.ile);
 
 
-        try {
+//        try {
+//        Koniec.Restart();
 
 
-        } catch (Exception e) {
-            blad.println(e);
-            blad.close();
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            System.out.println("=============ERROR===============");
-            wylacz();
-        }
+//        } catch (Exception e) {
+//            blad.println(e);
+//            blad.close();
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            System.out.println("=============ERROR===============");
+//            wylacz();
+//        }
 
 //        wylacz();
     }
