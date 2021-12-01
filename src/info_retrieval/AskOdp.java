@@ -11,169 +11,9 @@ public class AskOdp {
     public AskOdp(int index) {
         List<String> odpowiedzi = new ArrayList<>();
 
-        odpowiedzi.add("Kapusta biała\n" +
-                "Ziemniaki\n" +
-                "Marchewka\n" +
-                "Cebula\n" +
-                "Kalafior\n" +
-                "Cukinia\n" +
-                "Natka pietruszki\n" +
-                "Puszka czarnej fasoli\n" +
-                "Pomidory\n" +
-                "Piramidka rosołowa Lidl\n" +
-                "Pętka ostrych białych kiełbasek smażonych\n" +
+        odpowiedzi.add("Ciasto z mrożonymi owocami: " +
                 "" +
-                "1. Kiełbaski nakłuć widelcem i wrzucić na rozgrzaną patelnię bez tłuszczu. Przykryć i poczekać, aż puści sosy. Obsmażyć z obu stron." +
-                "2. Ponieważ tak jak mówiłam są to resztki nie podaje ilości. Wykorzystujesz to co jest. Warzywa umyć i pokroić. Ziemniaki w kostkę bez obierania. Marchewkę obrać i też w kostkę. Kapustę posiekać. Kalafior w małe różyczki, cukinia w plastry. Pietruszkę posiekać. Kiełbaski zdjąć z patelni i dodać warzywa. Smażyć na tłuszczu z kiełbasy, mieszając." +
-                "3. Saszetkę wrzucić do gotującej wody i gotować, aż da smak. Jest to produkt naturalny na bazie suszonych warzyw. Ilość wody zależy od ilości składników. Zupa ma być gęsta. Do gotowego bulionu dodać podsmażone warzywa. Gotować wszystko do miękkości. Dodać odsączoną fasole i pokrojone pomidory. Wymieszać i spróbować. Smaku zupy nadaje tłuszcz od kiełbasek. Sól i zawsze możecie dosmaczyć po swojemu. Na koniec dodajemy kiełbaski i podajemy." +
-                "4. Smacznego");
-
-        // ==========================================================================================================
-
-        odpowiedzi.add("Bułka wrocławska\n" +
-                "Szynka\n" +
-                "Ser\n" +
-                "Szczypiorek\n" +
-                "Masło\n" +
-                "Czosnek\n" +
-                "" +
-                "1. Włącz piekarnik na 180 stopni przecisnij przez praske czosnek i dodaj masło następnie posmaruj bułkę lub chleb" +
-                "2. Połóż szynkę ser oraz szczypiorek piecz ok 5 min aż ser się roztopi i bułka będzie chrupka" +
-                "3. Podawaj z ulubionym sosem ketchup majonez lub inny Smacznego");
-
-        // ==========================================================================================================
-
-        odpowiedzi.add("\n" +
                 "\n" +
-                "    250 gr mąki pszennej\n" +
-                "    150 gr zimnego masła\n" +
-                "    3 jajka i 1 żółtko pomieszane z małą ilością wody\n" +
-                "    1 mix kolorowych papryk\n" +
-                "    1 mała dynia piżmowa\n" +
-                "    1 duży filet z kurczaka\n" +
-                "    200 ml śmietanki 30%\n" +
-                "    Sól, pieprz, tymianek, czosnek granulowany\n" +
-                "    Olej rzepakowy\n" +
-                "\n" +
-                "" +
-                "1. Z przesianej mąki, masła i żółtka z wodą i solą wyrabiam ciasto kruche, a następnie wkładam je do lodówki na 30 min." +
-                "2. W tym czasie piekę obraną i skropioną dynię w piekarniku przez 30 min w temp 180 st. Gdy jest miękka, miksuje ją na puree. Na oleju podsmażam pokrojone w paski papryki a następnie pokrojoną w kostkę pierś z kurczaka. Wszystko doprawiam solą, pieprzem, tymiankiem i czosnkiem granulowanym." +
-                "3. Dodaje do warzyw i kurczaka, 3 jajka i śmietankę oraz purre z dyni. Ciasto kruche wałkuje i wyklejam nim foremkę do tarty. Wkładam do piekarnika nagrzanego do 200 st na 15 min wraz z suchą fasolą dla obciążenia dna." +
-                "4. Po tym czasie wyjmuje ciasto, usuwam fasolę i przekladam do ciasta moją masę. Wkladam całość do piekarnika i piekę jeszcze okoko 20 min." +
-                "5. Tarta pysznie smakuje zarówno na ciepło jak i na zimno, podana np. z lekkim, jogurtowo czosnkowym sosem");
-
-
-        // ==========================================================================================================
-
-
-        odpowiedzi.add("\n" +
-                "\n" +
-                "    250 gr mąki pszennej\n" +
-                "    150 gr zimnego masła\n" +
-                "    3 jajka i 1 żółtko pomieszane z małą ilością wody\n" +
-                "    1 mix kolorowych papryk\n" +
-                "    1 mała dynia piżmowa\n" +
-                "    1 duży filet z kurczaka\n" +
-                "    200 ml śmietanki 30%\n" +
-                "    Sól, pieprz, tymianek, czosnek granulowany\n" +
-                "    Olej rzepakowy\n" +
-                "\n" +
-                "" +
-                "1. Z przesianej mąki, masła i żółtka z wodą i solą wyrabiam ciasto kruche, a następnie wkładam je do lodówki na 30 min." +
-                "2. W tym czasie piekę obraną i skropioną dynię w piekarniku przez 30 min w temp 180 st. Gdy jest miękka, miksuje ją na puree. Na oleju podsmażam pokrojone w paski papryki a następnie pokrojoną w kostkę pierś z kurczaka. Wszystko doprawiam solą, pieprzem, tymiankiem i czosnkiem granulowanym." +
-                "3. Dodaje do warzyw i kurczaka, 3 jajka i śmietankę oraz purre z dyni. Ciasto kruche wałkuje i wyklejam nim foremkę do tarty. Wkładam do piekarnika nagrzanego do 200 st na 15 min wraz z suchą fasolą dla obciążenia dna." +
-                "4. Po tym czasie wyjmuje ciasto, usuwam fasolę i przekladam do ciasta moją masę. Wkladam całość do piekarnika i piekę jeszcze okoko 20 min.");
-
-
-
-        // ==========================================================================================================
-
-
-        odpowiedzi.add("\n" +
-                "\n" +
-                "    3 ugotowane jajka\n" +
-                "    4 plastry mortadeli wp paprykowej\n" +
-                "    1/2 cebuli\n" +
-                "    Garść świeżej natki pietruszki\n" +
-                "    1 łyżka majonezu\n" +
-                "    1 łyżka śmietany\n" +
-                "    1 łyżeczka musztardy\n" +
-                "    Sól pieprz\n" +
-                "\n" +
-                "" +
-                "1. Ugotowane na twardo jajka zmiąć drobno widelcem. Cebulę i mortadelę pokroić w drobną kostkę. Natkę pietruszki posiekać." +
-                "2. W/w składniki połączyć z majonezem śmietaną i musztardą. Doprawić solą i pieprzem. Dobrze wymieszać.");
-
-
-        // ==========================================================================================================
-
-
-        odpowiedzi.add("\n" +
-                "\n" +
-                "    2 kopiaste łyżki dżemu truskawkowego\n" +
-                "    100 gramów orzechów nerkowca\n" +
-                "    100 gramów czekolady deserowa\n" +
-                "    1 łyżka miękkiego masła\n" +
-                "    Polewa z czekolady\n" +
-                "    Ja wykorzystałam\n" +
-                "    450 gramów kakaowego biszkoptu (może być jasny biszkopt+2 łyżki ciemnego kakao)\n" +
-                "    50 gramów ciasteczek typu petit\n" +
-                "    2 łyżki nutelli\n" +
-                "    1 łyżeczka ekstraktu rumowego\n" +
-                "    50 ml. ajerkoniaku lub innego likieru\n" +
-                "    5 łyżek mleka\n" +
-                "\n" +
-                "1. Wszystkie kruche składniki biszkopt, ciasteczka, orzechy rozdrabniamy w malakserze lub blenderze kielichowym.\n" +
-                "Można również ciasta drobno rozkruszyć a orzechy drobno posiekać. Wszystko przekładamy do miski dodajemy resztę składników całość zagniatamy dłońmi do połączenia składników. Masa powinna być zbita, wilgotna i mieć taką konsystencję aby można było łatwo uformować kule." +
-                "2. Jeżeli masa jest zbyt luźna to dodajemy więcej suchych składników, jeżeli zbyt sucha to dodajemy więcej dżemu, nutelli lub masła orzechowego.\n" +
-                "Z ciasta formujemy kule o dowolnej wielkości i zanurzamy we wcześniej roztopionej czekoladzie z mlekiem i łyżką masła." +
-                "3. \n" +
-                "\n" +
-                "Można opcjonalnie dodatkowo posypać kokosem, płatkami migdałów lub inna dowolna posypką.\n" +
-                "Tak przygotowane bajaderki wkładamy do lodówki na 1-2 godziny\n");
-
-
-        // ==========================================================================================================
-
-
-        odpowiedzi.add("\n" +
-                "\n" +
-                "    3 jajka\n" +
-                "    kawałek kiełbasy lub wędlina ok50g\n" +
-                "    1 cebula\n" +
-                "    kilka oliwek i pieczarek\n" +
-                "    30 g sera\n" +
-                "    masło\n" +
-                "    2-3 łyżki śmietany lub mleka\n" +
-                "\n" +
-                "1. Kiełbasę lub wędlinę pokroić w drobną kostkę i smażyć na patelni do zrumienienia. Dodać pokrojoną w drobną kostkę cebulę i pieczarki, smażyć ok 8 minut, a następnie dodać oliwki. Smażyć jeszcze ok 2 minut i zdjąć z patelni." +
-                "2. Jajka rozmieszać z mlekiem lub śmietaną. Aby omlet był pulchniejszy można białka wcześniej ubić na sztywną pianę. Na patelni rozgrzać łyżkę masła, wlać jajka i przykryć pokrywką. Smażyć ok 4 - 5 minut na małym ogniu. Można przewrócić na drigą stronę ale pod przykryciem powinna się góra lekko ściąć." +
-                "3. Gdy spód będzie złoty omlet posypuję startym serem, dodaję podsmażone wcześniej dodatki na jedną połowę i przykrywamy drugą. Podajemy samo lub z ulubionymi dodatkami.");
-
-
-
-        // ==========================================================================================================
-
-
-        odpowiedzi.add("Użyłam wody po ugotowanym kalafiorze\n" +
-                "1/2 słoika dużego koncentratu pomidorowego\n" +
-                "Piramidka smaku do rosoły marki Lidl\n" +
-                "Masło\n" +
-                "1/2 dużej twardej i soczystej gruszki\n" +
-                "Śmietana 18%\n" +
-                "Laska cynamonu\n" +
-                "Sól\n" +
-                "100 g ryżu\n" +
-                "Natka pietruszki lub pietruszka suszona\n" +
-                "" +
-                "1. Do wody po ugotowanym kalafiorze wkładamy piramidkę smaku, która zawiera suszone zioła w idealnych proporcjach (cebula, pieprz czarny, lubczyk, ziele angielskie, liść laurowy) oraz laskę cynamonu. Gotujemy, aż zawrze i dodajemy ryż, który gotujemy do miękkości." +
-                "2. Na rozgrzaną patelnie dajemy koncentrat z dodatkiem masła i smażymy. Do koncentratu dodajemy obraną gruszkę, którą należy utrzeć na drobnej tarce. Mieszamy i zalewamy wywarem. Dokładnie rozprowadzamy i wlewamy do garnka. Solimy i dodajemy śmietanę, którą hartujemy wcześniej zupą oraz pietruszkę siekaną bądź suszoną natkę. Można użyć jeszcze przypraw np. cukru i pieprzu zależy jaką ostrość lubimy.");
-
-
-        // ==========================================================================================================
-
-
-        odpowiedzi.add("\n" +
                 "\n" +
                 "    5 jajek\n" +
                 "    3/4 - 1 szklanki cukru(zależy jak słodkie chcesz ciasto)\n" +
@@ -193,37 +33,147 @@ public class AskOdp {
                 "7. Na ciasto wykładamy zamrożone, przemieszane z cukrem i bułką tartą owoce." +
                 "8. Wstawiamy do piekarnika o temperaturze 175-180 stopni na około 45 minut." +
                 "9. Ciasto jest upieczone gdy wbity w nie patyczek jest po wyjęciu suchy." +
-                "10. Po wyjęciu z piekarnika obsypujemy wierzch ciasta cukrem pudrem. Smacznego! ");
+                "10. \n" +
+                "\n" +
+                "Po wyjęciu z piekarnika obsypujemy wierzch ciasta cukrem pudrem. Smacznego! ");
 
 
-        // ==========================================================================================================
+        // ================================================================================
+
+        odpowiedzi.add("Wiśniowe bajaderki " +
+                "\n" +
+                "    500 g resztek ciast\n" +
+                "    1 szklanka parzonych rodzynek\n" +
+                "    1/2 szklanki orzeszków ziemnych\n" +
+                "    100 g cukru\n" +
+                "    150 ml mleka\n" +
+                "    75 g masła\n" +
+                "    1 łyżka nutelli\n" +
+                "    1 łyżka masła orzechowego\n" +
+                "    2 łyżki dżemu wiśniowego\n" +
+                "    3 łyżki mielonego maku\n" +
+                "    4 łyżki wiórków kokosowych\n" +
+                "    Wiórki kokosowe do obtoczenia\n" +
+                "\n" +
+                        "1. Mleko, masło i cukier zagotuj. Następnie ostudź." +
+                        "2. Wszystkie składniki umieść w malakserze i zmiksuj na gładką masę. Następnie schowaj do lodówki na 2 godziny." +
+                        "3. Z ok. 1 łyżki masy uformuj kulkę i obtocz w wiórkach kokosowych. Gotowe."
+                );
 
 
-        odpowiedzi.add("Szpinakowa pasta z bakłażanem:\n" +
-                "1 mniejszy bakłażan\n" +
-                "150 g świeżego szpinaku\n" +
-                "3 ząbki czosnku\n" +
-                "1 garść słonecznika (namoczonego lub podprażonego)\n" +
-                "1 łyżeczka suszonej cebuli\n" +
-                "1/2 łyżeczki suszonego czosnku\n" +
-                "2 łyżeczki białego octu balsamicznego\n" +
-                "1 łyżeczka płatków drożdżowych\n" +
-                "1 łyżeczka sosu sojowego\n" +
-                "1 łyżka soku z cytryny\n" +
-                "1 łyżka oleju konopnego (lub innego ulubionego)\n" +
-                "1 garść posiekanego świeżego tymianku\n" +
-                "skórka z 1/2 cytryny\n" +
-                "sól, pieprz\n" +
-                "1 łyżka oleju do smażenia (np. rzepakowego)\n" +
-                "1 większa pietruszka\n" +
-                "1/2 pęczka szparagów\n" +
+        // ================================================================================
+
+
+        odpowiedzi.add("Cynamonowe racuchy na jogurcie i śmietanie " +
                 "" +
-                "1. Bakłażana nakłuwam widelcem. Opiekam na gazie lub palnikiem, by zwęglić trochę skórkę i by nabrał lekko dymnego aromatu. Przekładam do piekarnika i piekę do miękkości (190' ok 30min).\n" +
-                "Ostudzonego obieram ze skórki, a miąższ rwę lub kroję na mniejsze kawałki." +
-                "2. Na patelni podsmażam czosnek pokrojony w plasterki. Na mniejszym ogniu ok 2 min. Dokładam szpinak, szczyptę soli i podsmażam dalej, aż zwiędnie, a nadmiar wody odparuje.\n" +
-                "Przekładam do bakłażana, dodaje resztę składników i blenduję pulsacyjnie w paru miejscach (nie chcę konsystencji pasty, zależy mi by zostały wyczuwalne kawałki). Doprawiam odpowiednio solą i pieprzem." +
-                "3. Przy pomocy obieraczki kroję szparagi i pietruszkę na kształt tagliatelle. Na patelni lub w rondelku na odrobinie wody duszę chwilę pietruszkę posypując szczyptą soli (1-2min). Dodaję szparagi i duszę jeszcze kolejną minutkę lub dwie (zależy jaką twardość chcę uzyskać, ja lubię al dente). Opdarowuje ewentualny nadmiar wody, dodaję moją pastę i mieszam." +
-                "4. Gotowe danie podaję posypuję odrobiną świeżego tymianku i skórki z cytryny. Można również posypać podprażonymi orzeszkami (np posiekanymi migdałami) czy pestkami (np dyni).");
+                "\n" +
+                "\n" +
+                "    100 g mąki pszennej\n" +
+                "    1 jajko\n" +
+                "    70 g śmietany 18 %\n" +
+                "    180 g jogurtu naturalnego gęstego\n" +
+                "    1 szczypta soli\n" +
+                "    25 g oliwy z oliwek\n" +
+                "    50 g cukru\n" +
+                "    1 łyżeczka sody oczyszczonej\n" +
+                "    1 łyżeczka proszku do pieczenia\n" +
+                "    1 łyżeczka cynamonu\n" +
+                "    olej do smażenia\n" +
+                "    dżem / marmolada / domowa nutella / cukier puder\n" +
+                "\n" +
+                "1. Mąkę, cukier, sól, cynamon, sodę oczyszczoną i proszek do pieczenia, wymieszać." +
+                "2. Wlać jogurt naturalny, śmietanę 18 %, oliwę z oliwek i jajko, dokładnie wymieszać." +
+                "3. Smażyć na rozgrzanym oleju (niezbyt mocnym, aby zdążyły się upiec w środku)." +
+                "4. Podawać z tym na co mamy ochotę.");
+
+
+        // ================================================================================
+
+        odpowiedzi.add("Makaron z duszonymi warzywami z kalarepką " +
+                "" +
+                "\n" +
+                "\n" +
+                "    50 gram makaronu pełnoziarnistego\n" +
+                "    1 Papryka czerwona\n" +
+                "    Pół kalarepki\n" +
+                "    Liście i łodygi kalarepy\n" +
+                "    3 ząbki czosnku\n" +
+                "    Pół cebuli\n" +
+                "    Kawałek cukinii\n" +
+                "    2 łyżki oliwy do smażenia\n" +
+                "    Przyprawy\n" +
+                "    Bazylia\n" +
+                "    Sól\n" +
+                "    Pieprz\n" +
+                "    Natka pietruszki\n" +
+                "\n" +
+                "1. Warzywa umyj i pokrój w kosteczkę, liście i łodygi kalarepki rozdrobnij" +
+                "2. Wstaw wodę na makaron, wrzuć do osolonej wody pokrojoną kalarepkę (korzeń)" +
+                "3. Na oliwie podsmaż paprykę cukinię cebulę i czosnek. Dodaj też pokrojone liście i łodygi kalarepki. Duś pod przykryciem. W razie potrzeby dodaj wody. Przypraw do smaku." +
+                "4. Po 10 minutach do gotującej się kalarepki wrzuć makaron i gotuj jeszcze około 10 minut zgodnie z przepisem na opakowaniu" +
+                "5. Odcedź makaron i kalarepkę. Wyłóż wszystko na talerz. Posyp natką pietruszki i bazylią. Smacznego");
+
+
+        // ================================================================================
+
+
+        odpowiedzi.add("Sałatka Grecka-Niemiecka  " +
+                "\n" +
+                "\n" +
+                "\n" +
+                "    200 g białych szparagów\n" +
+                "    200 g zielonych szparagów\n" +
+                "    1 czerwona papryka\n" +
+                "    1 mały zielony ogórek\n" +
+                "    1 cebula\n" +
+                "    200 g pomidorków koktajlowych\n" +
+                "    15 czarnych oliwek\n" +
+                "    1 łyżka kaparów\n" +
+                "    ewentualnie 150 g sera halummi\n" +
+                "    2 łyżki posiekanej natki pietruszki lub kolendry\n" +
+                "    5 łyżek oliwy z oliwek\n" +
+                "    sok z połówki cytryny\n" +
+                "    Sól i pieprz\n" +
+                "\n" +
+                "1. Szparagi myjemy, białe obieramy, z zielonych odłamujemy tylko zdrewniałą część\n" +
+                "Kroimy na około 3 cm kawałki i gotujemy w osolonej wodzie - najpierw białe około 5 minut, po czym dodajemy zielone i gotujemy je przez kolejne 3 minuty. Odcedzamy i przelewamy zimną wodą dla zahartowania." +
+                "2. Paprykę oczyszczamy z gniazd nasiennych i kroimy w większą kostkę. Podpiekamy na suchej patelni przez chwilę do zarumienienia. Cebulę obieramy, kroimy w pióra. Ogórka myjemy, kroimy na pół, wydrążamy środek i kroimy w grubszą kostkę. Pomidorki myjemy i przekrawamy w ćwiartki. Oliwki kroimy na połówki. Jeżeli wykorzystujemy ser to również kroimy go grubszą kostkę." +
+                "3. Przestudzone szparagi, paprykę, pozostałe warzywa mieszamy ze sobą dodajemy kapary, posiekaną pietruszkę, sok z cytryny, oliwę i doprawiamy dla smaku solą i pieprzem. Można podawać ze świeżą bagietką. Smacznego!");
+
+
+        // ================================================================================
+
+
+        odpowiedzi.add("Sałatka na kilka kęsów " +
+                "\n" +
+                "sos :\n" +
+                "1 łyżeczka musztardy chrzanowej\n" +
+                "4 łyżki oleju lnianego\n" +
+                "1 łyżeczka octu\n" +
+                "do smaku sól\n" +
+                "do smaku słodka papryka\n" +
+                "do smaku pieprz\n" +
+                "1 łyżeczka syropu trzcinowego\n" +
+                "składniki sałatki :\n" +
+                "1 garść sałaty rzymskiej (młode liście)\n" +
+                "1 mała garść świeżego szpinaku\n" +
+                "1 jajko (ugotowane na twardo)\n" +
+                "1/4 pomidora\n" +
+                "1 plaster cebuli\n" +
+                "1 truskawka\n" +
+                "2 plastry szynki lub innej wędliny\n" +
+                "1 łyżka sera sałatkowego typu feta\n" +
+                "2 łyżki grzanek czosnkowych\n" +
+                "1/2 łyżeczki czarnuszki\n" +
+                "kilka szczypiorków\n" +
+                "1 mała gałązka natki pietruszki\n" +
+                "" +
+                "1. Liście sałaty i szpinaku umyć i dokładnie osuszyć.\n" +
+                "Rozłożyć w misce i przygotować pozostałe składniki.\n" +
+                "Jajko pokroić na ćwiartki, pomidora na cząstki, wędlinę pokroić na pół i zwinąć w rożki, cebulę pokroić na cienkie paseczki, truskawkę na ćwiartki.\n" +
+                "Składniki sosu wymieszać najlepiej umieszczając składniki w małym słoiczku, zakręcić zakrętkę i energicznie potrząsnąć kilka razy." +
+                "2. Na zieleninie rozłożyć przygotowane składniki, posypać grzankami i czarnuszką oraz rozdrobnionym serem, polać sosem i na sam koniec dodać odrobinę szczypiorku i natki.\n" +
+                "Sałatka gotowa jest do spożycia.");
 
 
         odp = odpowiedzi.get(index);
