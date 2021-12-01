@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -45,6 +47,7 @@ public class Koniec {
             }
             //Thread.sleep(3000);
             Thread.sleep(1000);
+
             firefox.findElement(By.cssSelector("#btnReboot > span:nth-child(1) > span:nth-child(1) > span:nth-child(1)")).click();
             Thread.sleep(2000);
             try {
@@ -56,6 +59,64 @@ public class Koniec {
             }
             Thread.sleep(100000);
             Thread.sleep(10000);
+            firefox.quit();
+        } catch (Exception e) {
+
+        }
+
+}
+
+    public static void Restart2() throws InterruptedException{
+        System.setProperty("webdriver.gecko.driver", "C:\\bot\\geckodriver\\geckodriver.exe");
+
+        try {
+            WebDriver firefox = new FirefoxDriver();
+            firefox.manage().window().maximize();
+            firefox.get("http://192.168.1.1/");
+
+            //Thread.sleep(4000);
+            Thread.sleep(1000);
+            firefox.findElement(By.cssSelector("#txt_Username")).sendKeys("admin");
+            firefox.findElement(By.cssSelector("#txt_Password")).sendKeys("admin");
+            Thread.sleep(1000);
+            firefox.findElement(By.cssSelector("#login_btn")).click();
+            //Thread.sleep(4000);
+            Thread.sleep(1000);
+
+            try {
+                firefox.findElement(By.cssSelector("#Admin_0_7_0 > a:nth-child(1)")).click();
+            }
+            catch (Exception e) {
+                firefox.findElement(By.cssSelector("#txt_Username")).sendKeys("admin");
+                Thread.sleep(1000);
+                firefox.findElement(By.cssSelector("#txt_Password")).sendKeys("admin");
+                Thread.sleep(1000);
+                firefox.findElement(By.cssSelector("#login_btn")).click();
+                Thread.sleep(1000);
+                //Thread.sleep(4000);
+                firefox.findElement(By.cssSelector("#Admin_0_7_0 > a:nth-child(1)")).click();
+            }
+            //Thread.sleep(3000);
+            Thread.sleep(1000);
+
+            firefox.get("http://192.168.1.1/html/ntwkall/wan_settings.asp");
+            Thread.sleep(2000);
+
+            Select tryb = new Select(firefox.findElement(By.xpath("//*[@id=\"wanNetworkMode\"]")));
+            System.out.println(tryb.getFirstSelectedOption().getText());
+            if (tryb.getFirstSelectedOption().getText().equals("Automatycznie")) {
+                tryb.selectByIndex(1);
+            }
+            else {
+                tryb.selectByIndex(0);
+            }
+
+            Thread.sleep(1000);
+
+            firefox.findElement(By.xpath("/html/body/div[1]/div/div[3]/div[2]/div/div[2]/div[10]/div[7]/span[1]/span/span/span")).click();
+
+            Thread.sleep(8000);
+
             firefox.quit();
         } catch (Exception e) {
 

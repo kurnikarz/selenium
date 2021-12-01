@@ -2523,9 +2523,7 @@ public class Main extends Narzedzia {
 //        Koniec.Restart();
 //        interiaLogin("ilza.grygiel51@interia.pl");
 
-        AskOdp odps = new AskOdp(2);
-
-        System.out.println(odps.ile);
+        Koniec.Restart2();
 
 
 //        try {
