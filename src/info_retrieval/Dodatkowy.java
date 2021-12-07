@@ -1095,6 +1095,112 @@ public class Dodatkowy extends Narzedzia {
 //        driver.quit();
     }
 
+    public static void Bebiko(WebDriver driver, String mail) throws InterruptedException, AWTException {
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        Random r = new Random();
+        Robot robot = new Robot();
+
+        int mleko = r.nextInt(2);
+        int dzie = r.nextInt(29) + 1;
+        int mies;
+        int pyt1 = r.nextInt(2);
+        int pyt2 = r.nextInt(2);
+        int news = r.nextInt(2);
+        String rok = "2022";
+        mies = r.nextInt(4 - 1 + 1) + 1;
+        String dzien = dodajZero(dzie);
+        String miesiac = dodajZero(mies);
+        String dataUr = dzien+"-"+miesiac+"-"+rok;
+        String nrDomu = String.valueOf(r.nextInt(39) + 1);
+
+        String imie = genImieZen();
+        String nazwisko = genNazwiskoZen();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        Thread.sleep(2000);
+
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div/nt-cookie-popup/div[1]/div[2]/div[2]/nt-analytics/button")))).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[1]/div/div[1]/label")).click();
+        Kopiuj(dataUr);
+        Thread.sleep(500);
+        Wklej();
+        clickXY(1560,534);
+        Thread.sleep(1000);
+
+        if (pyt1 == 0) {
+            driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[2]/nt-survey/div[1]/div[1]/nt-survey-question/div[1]/div[1]/label")).click();
+            Thread.sleep(2000);
+
+            if (pyt2 == 0) {
+                driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[2]/nt-survey/div[1]/div[2]/nt-survey-question/div[1]/div[1]/label")).click();
+            }
+            else {
+                driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[2]/nt-survey/div[1]/div[2]/nt-survey-question/div[1]/div[2]/label")).click();
+            }
+        }
+        else {
+            driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[2]/nt-survey/div[1]/div[1]/nt-survey-question/div[1]/div[2]/label")).click();
+        }
+
+        Thread.sleep(2000);
+
+        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[2]/nt-survey/div[1]/div[1]/nt-survey-question/div[1]/div[2]/label")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/nt-order-address/fieldset/div/div/div/div[2]/div[1]/div[1]/div/div/div/label")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/nt-order-address/fieldset/div/div/div/div[2]/div[2]/div/div[1]/div/div/div/label")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[2]/div/div/div/div[2]/div[1]/div[1]/div[1]/input")).sendKeys(mail);
+        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[2]/div/div/div/div[2]/div[1]/div[2]/div[1]/input")).sendKeys(mail);
+        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[2]/div/div/div/div[2]/div[1]/nt-reveal-password/div/div[1]/div[1]/input")).sendKeys(mail+"V2");
+//        driver.findElement(By.xpath("//*[contains(text(),'Zapoznałem/am')]")).click();
+        Thread.sleep(1000);
+        clickXY(700,874);
+        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[3]/div/div/div/div[2]/div[1]/div/div[1]/div/div[3]/div[1]/div/div/label")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[3]/div/div/div/div[2]/div[1]/div/div[1]/div/div[4]/div[1]/div/div/label")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/div[3]/div/button")).click();
+        Thread.sleep(5000);
+
+        //WP
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
+        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/form/button")).click();
+        Thread.sleep(5000);
+        try {
+            driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div/div/div/div[2]/div[3]/button")).click();
+        } catch (Exception e) {
+        }
+        Thread.sleep(3000);
+boolean flaga = false;
+int m = 0;
+driver.get("https://poczta.wp.pl/w/#/mails/?label=152");
+Thread.sleep(3000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='BebiKlub']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div[3]/a")).click();
+                Thread.sleep(10000);
+
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 5) {
+                break;
+            }
+
+        }
+//        driver.quit();
+
+    }
+
     public static void Nestle3(String mail) throws InterruptedException, AWTException {
         System.setProperty("webdriver.chrome.driver", "E:\\bot\\chromedriver\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
@@ -2488,6 +2594,27 @@ public class Dodatkowy extends Narzedzia {
             clickXY(790,730);
             Thread.sleep(6000);
             Neworklead.Everyday(driver,mail,odp);
+
+//        } catch (Exception e) {
+//            driver.quit();
+//        }
+    }
+
+    public static void Bebiko(String mail ) throws InterruptedException, AWTException, IOException {
+        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        WebDriver driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+//        try {
+            driver.get("https://www.bebiklub.pl/rejestracja?origin=termoforki");
+//            Thread.sleep(2000);
+//            wpiszHaslo();
+//            Thread.sleep(6000);
+//            clickXY(750,730);
+//            clickXY(790,730);
+//            Thread.sleep(6000);
+            Dodatkowy.Bebiko(driver,mail);
 
 //        } catch (Exception e) {
 //            driver.quit();

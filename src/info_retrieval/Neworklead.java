@@ -6212,10 +6212,10 @@ int m = 0;
         options.addArguments("--disable-notifications");
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.get("https://www.bebiklub.pl/rejestracja?origin=termoforki");
-//        driver.get(url);
+//        driver.get("https://www.bebiklub.pl/rejestracja?origin=termoforki");
+        driver.get(url);
         Thread.sleep(6000);
-        Neworklead.Bebiko(driver,mail);
+        Dodatkowy.Bebiko(driver,mail);
     }
 
     public static void Erli(String mail) throws InterruptedException, AWTException, IOException {
