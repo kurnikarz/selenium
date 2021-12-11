@@ -17,6 +17,7 @@ import java.awt.event.KeyEvent;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 import java.util.TreeMap;
 
@@ -1066,19 +1067,12 @@ public class Dodatkowy extends Narzedzia {
         String imie = genImieZen();
         String nazwisko = genNazwiskoZen();
         Random r = new Random();
-        int dziecko = r.nextInt(2);
-        int plec = r.nextInt(2);
-        int dzienUro = r.nextInt(29) + 1;
-        int miesUro = r.nextInt(10 - 4 + 1) + 4;
-        int rokUro = 2019;
-        int dzienSpo = r.nextInt(29) + 1;
-        int miesSpo = r.nextInt(7 - 3 + 1) + 3;
-        int rokSpo = 2020;
+        int dzien = r.nextInt(27) + 1;
+        int mies = r.nextInt(11) + 1;
+        int rok = r.nextInt(1997 - 1986 + 1) + 1986;
         int m = 0;
         boolean flaga = false;
         Robot robot = new Robot();
-        String dzieckoUrodzone = String.valueOf(rokUro) + "-" + dodajZero(miesUro) + "-" + dodajZero(dzienUro);
-        String dzieckoSpodziewane = String.valueOf(rokSpo) + "-" + dodajZero(miesSpo) + "-" + dodajZero(dzienSpo);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver,60);
 //jaka pielegancje stosujesz po codziennym treningu ?
@@ -1088,8 +1082,19 @@ public class Dodatkowy extends Narzedzia {
         driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[2]/div/input")).sendKeys(imie);
         driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[3]/div/input")).sendKeys(mail);
         driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[4]/div/input")).sendKeys(mail+"V2");
+        driver.findElement(By.xpath("//*[@id=\"loyalty-form\"]/div[1]/div[1]/div[5]/div/div/div[1]/div/div[1]/div[1]")).click();
+        Thread.sleep(1000);
+        List<WebElement> odpowiedzi = new ArrayList<>();
 
-
+        Select dzienUro = new Select(driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[5]/div/div/div[1]/div/div[1]/select")));
+        dzienUro.selectByValue(String.valueOf(dzien));
+        Select miesUro = new Select(driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[5]/div/div/div[2]/div/div[1]/select")));
+        miesUro.selectByValue(String.valueOf(mies));
+        Select rokUro = new Select(driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[5]/div/div/div[3]/div/div[1]/select")));
+        rokUro.selectByValue(String.valueOf(rok));
+        driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[6]/div/label")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"registration_submit\"]")).click();
 
 
 //        driver.quit();
@@ -1326,7 +1331,7 @@ public class Dodatkowy extends Narzedzia {
         ChromeDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
 
-        driver.get("https://www.nivea.pl/moja-nivea/rejestracja-konkurs");
+        driver.get("https://www.nivea.pl/moja-nivea/rejestracja-klub");
         Nivea(driver,mail);
 
     }
@@ -2573,97 +2578,6 @@ public class Dodatkowy extends Narzedzia {
 //        }
     }
 
-    public static void Nivea() throws AWTException, InterruptedException, IOException {
-        Robot robot = new Robot();
-        Random r = new Random();
-        int rokUr = r.nextInt(7);
-//        try {
-            Kopiuj("http://dodatkowypieniadz.com/zadanie/9b76e564b0bbb2364b0d9cb79f5420d4/5562eeb10ca8a48e2ee34af4221f5956/201920950f63cee967982b759fde80b1");
-//            Kopiuj("https://tajemniczaakkonstaa.blogspot.com/2017/02/olejek-rycynowy.html");
-            clickXY(785,182);
-            Thread.sleep(500);
-            Wklej();
-            Thread.sleep(500);
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
-            Thread.sleep(2000);
-            clickXY(890,670);
-            Thread.sleep(500);
-            wpiszHaslo();
-            clickXY(1346, 749);
-            Thread.sleep(3000);
-            clickXY(1402, 1000);
-            //klik w baner
-            Thread.sleep(3000);
-            robot.mouseWheel(3000);
-            Thread.sleep(2000);
-            clickXY(650,420);
-
-            Thread.sleep(4000);
-            clickXY(1760,835);
-            clickXY(950,725);
-            Thread.sleep(1000);
-            clickXY(900,940);
-            Thread.sleep(2000);
-            clickXY(950,830);
-            Thread.sleep(3000);
-            clickXY(930,940);
-            Thread.sleep(3000);
-
-            Kopiuj(genImieZen());
-            clickXY(900,750);
-            Thread.sleep(500);
-            Wklej();
-            Thread.sleep(500);
-            clickXY(960,874);
-            Thread.sleep(1000);
-            switch (rokUr) {
-                case 0:
-                    clickXY(906,810);
-                    break;
-                case 1:
-                    clickXY(906,736);
-                    break;
-                case 2:
-                    clickXY(906,650);
-                    break;
-                case 3:
-                    clickXY(906,560);
-                    break;
-                case 4:
-                    clickXY(906,470);
-                    break;
-                case 5:
-                    clickXY(906,380);
-                    break;
-                case 6:
-                    clickXY(906,300);
-                    break;
-            }
-            Thread.sleep(1000);
-            clickXY(860,930);
-            Thread.sleep(3000);
-            clickXY(1760,1006);
-            Thread.sleep(3000);
-            clickXY(844,112);
-
-            //czyszczenie cache
-            clickXY(1807,190);
-            Thread.sleep(500);
-            clickXY(1480,616);
-            Thread.sleep(2000);
-            clickXY(660,375);
-            Thread.sleep(2000);
-            clickXY(1720,990);
-            Thread.sleep(2000);
-            clickXY(514,113);
-            Thread.sleep(1000);
-            clickXY(436,111);
-
-//        } catch (Exception e) {
-//            driver.quit();
-//        }
-    }
 
     public static void Every(String mail, String odp) throws InterruptedException, AWTException, IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
