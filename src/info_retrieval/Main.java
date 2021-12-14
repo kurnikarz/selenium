@@ -2524,13 +2524,14 @@ public class Main extends Narzedzia {
 //        interiaLogin("ilza.grygiel51@interia.pl");
 //        Koniec.Restart2();
 
-//        Dodatkowy.Nivea("jolanta.kananowicz@wp.pl");
+
+//        Dodatkowy.Nivea("julita.jemiola@wp.pl");
 //          WebDriver driver = Neworklead.Pb("oliwia.misior@wp.pl");
 //          Thread.sleep(10000);
-        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-          Neworklead.PotwierdzPb(driver,"oliwia.misior@wp.pl");
+//        System.setProperty("webdriver.chrome.driver", "C:\\bot\\chromedriver\\chromedriver.exe");
+//        WebDriver driver = new ChromeDriver();
+//        driver.manage().window().maximize();
+//          Neworklead.PotwierdzPb(driver,"oliwia.misior@wp.pl");
 
 
 

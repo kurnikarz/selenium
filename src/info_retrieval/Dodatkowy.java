@@ -1082,20 +1082,99 @@ public class Dodatkowy extends Narzedzia {
         driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[2]/div/input")).sendKeys(imie);
         driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[3]/div/input")).sendKeys(mail);
         driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[4]/div/input")).sendKeys(mail+"V2");
-        driver.findElement(By.xpath("//*[@id=\"loyalty-form\"]/div[1]/div[1]/div[5]/div/div/div[1]/div/div[1]/div[1]")).click();
-        Thread.sleep(1000);
-        List<WebElement> odpowiedzi = new ArrayList<>();
 
-        Select dzienUro = new Select(driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[5]/div/div/div[1]/div/div[1]/select")));
-        dzienUro.selectByValue(String.valueOf(dzien));
-        Select miesUro = new Select(driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[5]/div/div/div[2]/div/div[1]/select")));
-        miesUro.selectByValue(String.valueOf(mies));
-        Select rokUro = new Select(driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[5]/div/div/div[3]/div/div[1]/select")));
-        rokUro.selectByValue(String.valueOf(rok));
+        js.executeScript("document.getElementsByName('day')[0].value="+dzien);
+        Thread.sleep(250);
+        js.executeScript("document.getElementsByName('month')[0].value="+mies);
+        Thread.sleep(250);
+        js.executeScript("document.getElementsByName('year')[0].value="+rok);
+        Thread.sleep(250);
         driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[1]/div[6]/div/label")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"registration_submit\"]")).click();
+        ScrollBy(driver,"600");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/main/div[1]/section[2]/div/section/div/div/div[2]/div/div[1]/div/div/div/div[1]/div[1]/div/section/form/div[1]/div[2]/div[1]/div/button")).click();
+        Thread.sleep(7000);
 
+        //WP
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        boolean poczta = false;
+        while (!poczta) {
+            try {
+                driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+                driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+                Thread.sleep(3000);
+                try {
+                    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[1]/form/button")).click();
+                } catch (Exception e) {
+                    driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/form/button")).click();
+                }
+
+                Thread.sleep(3000);
+                poczta = true;
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(5000);
+            }
+        }
+        Thread.sleep(3000);
+        try {
+            driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div[2]/div/nh-sidebar/div/div/div[3]/div[1]/div[1]/div[2]"));
+        } catch (Exception e) {
+            driver.navigate().refresh();
+            Thread.sleep(5000);
+            driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+            Thread.sleep(3000);
+            try {
+                driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[1]/form/button")).click();
+            } catch (Exception a) {
+                driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/form/button")).click();
+            }
+            try {
+                driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div/div/div/div/div[2]/div[3]/button")).click();
+            } catch (Exception g) {
+                try {
+                    driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div/div/div/div[2]/div[3]/button")).click();
+                } catch (Exception f) {
+
+                }
+            }
+            Thread.sleep(3000);
+        }
+
+        try {
+            driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div/div/div/div/div[2]/div[3]/button")).click();
+        } catch (Exception g) {
+            try {
+                driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div/div/div/div[2]/div[3]/button")).click();
+            } catch (Exception f) {
+
+            }
+        }
+        Thread.sleep(1000);
+
+        driver.get("https://poczta.wp.pl/w/#/mails/?label=152");
+        Thread.sleep(3000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='MOJA NIVEA']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div/div/div[3]/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table[2]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/a")).click();
+                Thread.sleep(10000);
+
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 7) {
+                break;
+            }
+
+        }
 
 //        driver.quit();
     }
