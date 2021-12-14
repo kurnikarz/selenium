@@ -1112,8 +1112,6 @@ public class Dodatkowy extends Narzedzia {
         int pyt2 = r.nextInt(2);
         int news = r.nextInt(2);
         String rok = "2022";
-        boolean flaga = false;
-        int m = 10;
         mies = r.nextInt(4 - 1 + 1) + 1;
         String dzien = dodajZero(dzie);
         String miesiac = dodajZero(mies);
@@ -1124,7 +1122,9 @@ public class Dodatkowy extends Narzedzia {
         String nazwisko = genNazwiskoZen();
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
+        zmienKarte(driver);
+        Thread.sleep(1000);
 
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div/nt-cookie-popup/div[1]/div[2]/div[2]/nt-analytics/button")))).click();
         Thread.sleep(2000);
@@ -1135,20 +1135,20 @@ public class Dodatkowy extends Narzedzia {
         clickXY(1560,534);
         Thread.sleep(1000);
 
-        if (pyt1 == 0) {
-            driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[2]/nt-survey/div[1]/div[1]/nt-survey-question/div[1]/div[1]/label")).click();
-            Thread.sleep(2000);
-
-            if (pyt2 == 0) {
-                driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[2]/nt-survey/div[1]/div[2]/nt-survey-question/div[1]/div[1]/label")).click();
-            }
-            else {
-                driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[2]/nt-survey/div[1]/div[2]/nt-survey-question/div[1]/div[2]/label")).click();
-            }
-        }
-        else {
-            driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[2]/nt-survey/div[1]/div[1]/nt-survey-question/div[1]/div[2]/label")).click();
-        }
+//        if (pyt1 == 0) {
+//            driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[2]/nt-survey/div[1]/div[1]/nt-survey-question/div[1]/div[1]/label")).click();
+//            Thread.sleep(2000);
+//
+//            if (pyt2 == 0) {
+//                driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[2]/nt-survey/div[1]/div[2]/nt-survey-question/div[1]/div[1]/label")).click();
+//            }
+//            else {
+//                driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[2]/nt-survey/div[1]/div[2]/nt-survey-question/div[1]/div[2]/label")).click();
+//            }
+//        }
+//        else {
+        driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[1]/div/div/div/div[2]/div/div[2]/nt-survey/div[1]/div[1]/nt-survey-question/div[1]/div[2]/label")).click();
+//        }
 
         Thread.sleep(2000);
 
@@ -1160,133 +1160,95 @@ public class Dodatkowy extends Narzedzia {
         driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[2]/div/div/div/div[2]/div[1]/nt-reveal-password/div/div[1]/div[1]/input")).sendKeys(mail+"V2");
 //        driver.findElement(By.xpath("//*[contains(text(),'Zapoznałem/am')]")).click();
         Thread.sleep(1000);
-        clickXY(700,874);
+        clickXY(506,770);
         driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[3]/div/div/div/div[2]/div[1]/div/div[1]/div/div[3]/div[1]/div/div/label")).click();
         driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/fieldset[3]/div/div/div/div[2]/div[1]/div/div[1]/div/div[4]/div[1]/div/div/label")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[1]/main/nt-analytics/form/div[3]/div/button")).click();
         Thread.sleep(5000);
 
-        //INTERIA
-        driver.get("https://poczta.interia.pl/logowanie/");
-        Thread.sleep(3000);
-        try {
-            try {
-                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[2]/div[2]/button[3]")))).click();
-            } catch (Exception e) {
-                wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[3]/div[2]/button[3]")))).click();
-            }
-        } catch (Exception e) {
-            wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("/html/body/div[4]/div[2]/button[3]")))).click();
-        }
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(mail);
-//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("Mrcbuch123");
-        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/form/button")).click();
-        Thread.sleep(5000);
-        try {
-            driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[2]/div/div[2]/div/div[1]")).click();
-        } catch (Exception e) {
-            System.out.println("==================NIEMA===================");
-        }
-        try {
-            driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div[2]/div/div[2]/form/div[2]/div[2]/input")).clear();
-            Thread.sleep(500);
-            driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div[2]/div/div[2]/form/div[2]/div[2]/input")).sendKeys("grapiu@wp.pl");
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div[2]/div/div[2]/form/div[3]/button")).click();
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div[2]/div/div[2]/form/div[3]/button")).click();
-            Thread.sleep(2000);
-        } catch (Exception f) {
-            System.out.println("==================NIEMA===================");
-        }
-
-        try {
-            driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div[2]/div[2]/div[2]/div/div[2]/button")).click();
-            Thread.sleep(2000);
-        } catch (Exception f) {
-            System.out.println("==================NIEMA===================");
-        }
-
-        try {
-            driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div/div[2]/div/div[2]/div/div[2]/button")).click();
-            Thread.sleep(2000);
-        } catch (Exception f) {
-            System.out.println("==================NIEMA===================");
-        }
-
-        Thread.sleep(3000);
-//        while (!flaga) {
-//            try {
-//
-//                try {
-//                    driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div[2]/div[2]/div[2]/div/div[2]/button")).click();
-//                    Thread.sleep(1000);
-//                } catch (Exception e) {
-//
-//                }
-//
-//                driver.findElement(By.xpath("//*[text()='Ask Team Clean']")).click();
-//                flaga = true;
-//                Thread.sleep(3000);
-//                driver.switchTo().frame(1);
-//                driver.findElement(By.xpath("/html/body/center/table/tbody/tr/td/table/tbody/tr[5]/td/table/tbody/tr/td/table/tbody/tr/td/p[3]/a")).click();
-//                Thread.sleep(1000);
-//                driver.findElement(By.xpath("/html/body/center/table/tbody/tr/td/table/tbody/tr[5]/td/table/tbody/tr/td/table/tbody/tr/td/p[3]/a")).click();
-//                Thread.sleep(4000);
-//            } catch (Exception e) {
-//                driver.navigate().refresh();
-//                Thread.sleep(10000);
-//            }
-//            m++;
-//            if (m > 4) {
-//                break;
-//            }
-//        }
-//
-//        driver.quit();
-
+        boolean poczta = false;
         //WP
-//        driver.get("http://poczta.wp.pl/");
-//        Thread.sleep(3000);
-//        driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
-//        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
-////        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2020");
-//        //driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("szczyt2019");
-//        Thread.sleep(1000);
-//        driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/form/button")).click();
-//        Thread.sleep(5000);
-//        try {
-//            driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div/div/div/div[2]/div[3]/button")).click();
-//        } catch (Exception e) {
-//        }
-//        Thread.sleep(3000);
-//        boolean flaga = false;
-//        int m = 0;
-//        driver.get("https://poczta.wp.pl/w/#/mails/?label=152");
-//        Thread.sleep(3000);
-//        while (!flaga) {
-//            try {
-//                driver.findElement(By.xpath("//*[text()='BebiKlub']")).click();
-//                flaga = true;
-//                Thread.sleep(4000);
-//                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div[3]/a")).click();
-//                Thread.sleep(10000);
-//
-//            } catch (Exception e) {
-//                driver.navigate().refresh();
-//                Thread.sleep(10000);
-//            }
-//            m++;
-//            if (m > 5) {
-//                break;
-//            }
-//
-//        }
-//        driver.quit();
+        driver.get("http://poczta.wp.pl/");
+        Thread.sleep(3000);
+        while (!poczta) {
+            try {
+                driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+                driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+                Thread.sleep(3000);
+                try {
+                    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[1]/form/button")).click();
+                } catch (Exception e) {
+                    driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/form/button")).click();
+                }
+
+                Thread.sleep(3000);
+                poczta = true;
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(5000);
+            }
+        }
+        Thread.sleep(3000);
+        boolean flaga = false;
+        int m = 0;
+        try {
+            driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div[2]/div/nh-sidebar/div/div/div[3]/div[1]/div[1]/div[2]"));
+        } catch (Exception e) {
+            driver.navigate().refresh();
+            Thread.sleep(5000);
+            driver.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(mail);
+            driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("mrcbuch2");
+            Thread.sleep(3000);
+            try {
+                driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/div[1]/form/button")).click();
+            } catch (Exception a) {
+                driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div[1]/form/button")).click();
+            }
+            try {
+                driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div/div/div/div/div[2]/div[3]/button")).click();
+            } catch (Exception g) {
+                try {
+                    driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div/div/div/div[2]/div[3]/button")).click();
+                } catch (Exception f) {
+
+                }
+            }
+            Thread.sleep(3000);
+        }
+
+        try {
+            driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div/div/div/div/div[2]/div[3]/button")).click();
+        } catch (Exception g) {
+            try {
+                driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div/div/div/div/div/div[2]/div[3]/button")).click();
+            } catch (Exception f) {
+
+            }
+        }
+        Thread.sleep(3000);
+
+        driver.get("https://poczta.wp.pl/w/#/mails/?label=152");
+        Thread.sleep(3000);
+        while (!flaga) {
+            try {
+                driver.findElement(By.xpath("//*[text()='BebiKlub']")).click();
+                flaga = true;
+                Thread.sleep(4000);
+                driver.findElement(By.xpath("/html/body/div[2]/nh-app-view/div/div/div/div[1]/div/div/nh-show-item/div/div/div/div/nh-html-compile/div/div[3]/a")).click();
+                Thread.sleep(10000);
+
+            } catch (Exception e) {
+                driver.navigate().refresh();
+                Thread.sleep(10000);
+            }
+            m++;
+            if (m > 7) {
+                break;
+            }
+
+        }
+        driver.quit();
 
     }
 
