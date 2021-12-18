@@ -1282,6 +1282,7 @@ public class Neworklead extends Narzedzia {
         int x = 1750;
         int m = 0;
         boolean cookie = false;
+        int ankieta = r.nextInt(3);
         Robot robot = new Robot();
         String dataUr = String.valueOf(dzien)+" "+miesiace[miesiac]+", "+String.valueOf(rok);
         Writer niewykorzystane = new BufferedWriter(new FileWriter("C:\\Users\\dumci\\Desktop\\klikanie\\niewykorzystaneEvery.txt", true));
@@ -1308,36 +1309,15 @@ public class Neworklead extends Narzedzia {
         Thread.sleep(3000);
         ScrollBy(driver, "1000");
         Thread.sleep(1000);
-        try {
-            driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[1]/div/div/div[2]/div/a")).click();
-            driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[1]/div/div/div[2]/div/a")).click();
-        } catch (Exception e) {
-            try {
-                driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[2]/div/div/div[2]/div/a")).click();
-                driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[2]/div/div/div[2]/div/a")).click();
-            } catch (Exception f) {
-                try {
-                    driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[3]/div/div/div[2]/div/a")).click();
-                    driver.findElement(By.xpath("//*[@id=\"main\"]/section[2]/div/div/div[3]/div/div/div[2]/div/a")).click();
-                } catch (Exception g) {
-                    try {
-                        driver.findElement(By.xpath("//*[@id=\"main\"]/div[5]/div/div/a")).click();
-                        driver.findElement(By.xpath("//*[@id=\"main\"]/div[5]/div/div/a")).click();
-                    } catch (Exception h) {
-                        try {
-                            driver.findElement(By.xpath("//*[@id=\"main\"]/section[3]/div/div/div[1]/div/div/div[2]/div/a")).click();
-                            driver.findElement(By.xpath("//*[@id=\"main\"]/section[3]/div/div/div[1]/div/div/div[2]/div/a")).click();
-                        } catch (Exception i) {
-                            driver.findElement(By.xpath("//*[@id=\"main\"]/section[3]/div/div/div[2]/div/div/div[2]/div/a")).click();
-                            driver.findElement(By.xpath("//*[@id=\"main\"]/section[3]/div/div/div[2]/div/div/div[2]/div/a")).click();
-                        }
-                    }
-                }
+        driver.findElement(By.xpath("/html/body/div[1]/div[2]/section[12]/div/div/div[1]/div/div/div[2]/div/a")).click();
+        Thread.sleep(10000);
 
-            }
+        try {
+            driver.findElement(By.xpath("/html/body/div[3]/div/div/div/button")).click();
+        } catch (Exception e) {
 
         }
-        Thread.sleep(35000);
+        Thread.sleep(1000);
         driver.switchTo().frame(0);
         try {
             driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
@@ -1351,7 +1331,14 @@ public class Neworklead extends Narzedzia {
 
         Thread.sleep(3000);
         driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/div[2]/section[1]/div/div/input")).sendKeys(imie);
-        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/div[2]/section[2]/div[2]/div/input")).click();
+        driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/div[2]/section[2]/div/div[2]")).click();
+        Thread.sleep(500);
+        driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/div[2]/section[2]/div/div[2]/input")).sendKeys("kobieta");
+        Thread.sleep(500);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(500);
+        driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/div[2]/section[3]/div[2]/div/input")).click();
         Thread.sleep(1000);
 //        driver.findElement(By.xpath("/html/body/div[6]/div/div/div/div[2]/div[1]/div[3]/div/div/div[2]/button[2]")).click();
         driver.findElement(By.xpath("/html/body/div[6]/div/div/div/div[2]/div[1]/div[1]/button[1]/div/div")).click();
@@ -1360,7 +1347,7 @@ public class Neworklead extends Narzedzia {
         Thread.sleep(1000);
         js.executeScript("document.querySelector('[readonly]').removeAttribute(\"readonly\")");
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/div[2]/section[2]/div[2]/div/input")).click();
+        driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/div[2]/section[3]/div[2]/div/input")).click();
         Thread.sleep(1000);
         robot.keyPress(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_A);
@@ -1369,76 +1356,79 @@ public class Neworklead extends Narzedzia {
         robot.keyRelease(KeyEvent.VK_A);
         robot.keyRelease(KeyEvent.VK_DELETE);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/div[2]/section[2]/div[2]/div/input")).sendKeys(dataUr);
+        clickXY(1210,573);
+        Thread.sleep(500);
+        clickXY(1210,573);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[6]/div/div/div/div[2]/div[2]/button/div/div")).click();
+        driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/div[2]/section[3]/div[2]/div/input")).sendKeys(dataUr);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/div[2]/section[3]/div/div/input")).sendKeys(mail);
-        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/div[2]/section[4]/div[2]/div/input")).sendKeys(mail+"V2");
-        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/label")).click();
+        clickXY(1210,573);
+        Thread.sleep(500);
+        clickXY(1210,573);
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[2]/section/div[1]")).click();
-
-//        Thread.sleep(2000);
-//        switch (odp1) {
-//            case 0:
-//                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[1]/div[2]")).click();
-//                break;
-//            case 1:
-//                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[2]/div[2]")).click();
-//                break;
-//            case 2:                         ////*[@id="scrollContainer"]/section/div[1]/div/section[2]/section/section/div/div[3]/div[2]
-//                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[3]/div[2]")).click();
-//                break;
-//        }
-//        Thread.sleep(2000);
-//        switch (odp2) {
-//            case 0:
-//                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[1]/div/span/div[2]")).click();
-//                break;
-//            case 1:
-//                driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[2]/div/span/div[2]")).click();
-//                break;
-//        }
-//        Thread.sleep(2000);
-//        clickXY(1260,756);
-//        Thread.sleep(1000);
-//        try {
-//            switch (odp3) {
+        driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/div[2]/section[4]/div/div/input")).sendKeys(mail);
+        driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/div[2]/section[5]/div[2]/div/input")).sendKeys(mail+"V2");
+        driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/section/div/label")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[2]/section/div[1]")).click();
+        Thread.sleep(15000);
+        driver.quit();
+//        if (ankieta == 2) {
+//            switch (odp1) {
 //                case 0:
-//                    driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[4]/div")).click();
+//                    driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/section/div/div[1]/div")).click();
 //                    break;
 //                case 1:
-//                    driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div[3]/div")).click();
+//                    driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/section/div/div[2]/div")).click();
+//                    break;
+//                case 2:
+//                    driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/section/div/div[3]/div")).click();
 //                    break;
 //            }
-//        } catch (Exception e) {
-//
+//            Thread.sleep(3000);
+//            switch (odp2) {
+//                case 0:
+//                    driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/section/div/div[4]/div")).click();
+//                    break;
+//                case 1:
+//                    driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/section/div/div[3]/div")).click();
+//                    break;
+//            }
+//            Thread.sleep(3000);
+//            switch (odp3) {
+//                case 0:
+//                    driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/section/div/div[1]/div")).click();
+//                    break;
+//                case 1:
+//                    driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/section/div/div[2]/div")).click();
+//                    break;
+//            }
+//            Thread.sleep(3000);
+//            driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[2]/section/div[1]")).click();
+//            Thread.sleep(3000);
+//            driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/section/div/div[1]/div")).click();
+//            Thread.sleep(1000);
+//            driver.findElement(By.xpath("/html/body/div[2]/div/section/div[2]/section/div[1]/div/section[2]/section/section/div/div[2]/div")).click();
+//            Thread.sleep(1000);
 //        }
-//
-//        Thread.sleep(2000);
-//
-//        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[1]/div/section[2]/section/section/div/div/div[2]/textarea[2]")).sendKeys(odp);
-//        Thread.sleep(1000);
-//        driver.findElement(By.xpath("//*[@id=\"scrollContainer\"]/section/div[2]/section/div[1]")).click();
 
-        Thread.sleep(15000);
-        driver.get("https://www.everydayme.pl/oferty");
-        Thread.sleep(20000);
-        try {
-            driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/div/label")).click();
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/ul/li[1]/div/div/div[1]/div/div[3]/div[3]/div")).click();
-            Thread.sleep(1000);
-            driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/ul/li[2]/div/div/div[1]/div/div[3]/div[3]/div")).click();
-            Thread.sleep(3000);
-            driver.findElement(By.xpath("//*[@id=\"main\"]/div[4]/div/div/div/button[2]")).click();
-            Thread.sleep(15000);
-            driver.quit();
-        } catch (Exception e) {
-            Thread.sleep(10000);
-            driver.quit();
-        }
+
+//        driver.get("https://www.everydayme.pl/oferty");
+//        Thread.sleep(20000);
+//        try {
+//            driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/div/label")).click();
+//            Thread.sleep(1000);
+//            driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/ul/li[1]/div/div/div[1]/div/div[3]/div[3]/div")).click();
+//            Thread.sleep(1000);
+//            driver.findElement(By.xpath("//*[@id=\"main\"]/section/div/ul/li[2]/div/div/div[1]/div/div[3]/div[3]/div")).click();
+//            Thread.sleep(3000);
+//            driver.findElement(By.xpath("//*[@id=\"main\"]/div[4]/div/div/div/button[2]")).click();
+//            Thread.sleep(15000);
+//            driver.quit();
+//        } catch (Exception e) {
+//            Thread.sleep(10000);
+//            driver.quit();
+//        }
 
 
 //        } catch (Exception e) {

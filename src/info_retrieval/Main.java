@@ -2514,6 +2514,10 @@ public class Main extends Narzedzia {
         String miastEn;
         String koEn;
 
+
+        Neworklead.Every("https://www.everydayme.pl/testuj-wygrywaj/wielkie-testowanie-jesien","kronugt@wp.pl","");
+
+
 //        Narzedzia.pobierzNumer("https://www.odi.pl/firmy/uslugi/",50,100);
         //            Narzedzia.pobierzFirmy("https://www.odi.pl/firmy/internet/",200,250);
 //            Narzedzia.sprawdzDuplikat("C:\\Users\\dumci\\Desktop\\klikanie\\firmy.txt");
